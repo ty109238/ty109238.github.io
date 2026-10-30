@@ -1,0 +1,3945 @@
+{
+  "schema": 1,
+  "updatedAt": "2026-10-30T01:52:51.912Z",
+  "note": "由原站 2tjfel75d5ee6.kimi.site 完整抓取生成，字段与原站一一对应，未作任何内容改动。",
+  "creatures": [
+    {
+      "id": 1,
+      "dexNo": 1,
+      "name": "小火弹",
+      "element": "火",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "元素",
+      "family": "火系元素",
+      "imageKey": "creatures/01一阶火系元素小火弹-transparent-6eaa1738.png",
+      "portraitKey": "action-portraits/01-小火弹-63ff049b.webp",
+      "description": "从篝火余烬中诞生的幼小元素灵宠。看似总在生气，其实只是不擅长表达亲近；感受到危险时，会把尾焰卷成一枚温暖的火环。",
+      "evolutionCondition": "初始形态，无需进化。与训练家建立信任后，火焰会逐渐稳定。",
+      "captureLocation": "余烬丘陵 · 暖阳洞窟",
+      "hatchCondition": "将灵宠蛋放在温暖的篝火旁，累计行走 1,200 步，并保持蛋壳干燥。",
+      "arenaRate": 8,
+      "exploreRate": 31,
+      "hp": 48,
+      "speed": 62,
+      "spAttack": 68,
+      "spDefense": 45,
+      "attack": 42,
+      "defense": 40,
+      "createdAt": "2026-10-29T05:31:43.000Z",
+      "updatedAt": "2026-10-29T15:50:24.000Z"
+    },
+    {
+      "id": 2,
+      "dexNo": 2,
+      "name": "烈焰弹",
+      "element": "火",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "元素",
+      "family": "火系元素",
+      "imageKey": "creatures/02二阶火系元素烈焰弹-transparent-101470c5.png",
+      "portraitKey": "action-portraits/02-烈焰弹-93361a2d.webp",
+      "description": "火焰核心更加凝实，能够长时间漂浮并操控周身火舌。它会主动替弱小灵宠驱散寒冷，但兴奋时仍容易把周围烤得滚烫。",
+      "evolutionCondition": "小火弹与训练家亲密度达到 60，并在晴热环境完成 3 次元素练习后进化。",
+      "captureLocation": "赤焰峡谷 · 浮火台地",
+      "hatchCondition": "在晴热天气累计行走 1,800 步，孵化前使用一枚温热火晶唤醒核心。",
+      "arenaRate": 16,
+      "exploreRate": 24,
+      "hp": 66,
+      "speed": 78,
+      "spAttack": 91,
+      "spDefense": 62,
+      "attack": 55,
+      "defense": 58,
+      "createdAt": "2026-10-29T05:31:44.000Z",
+      "updatedAt": "2026-10-29T15:50:24.000Z"
+    },
+    {
+      "id": 3,
+      "dexNo": 3,
+      "name": "熔岩伊芙",
+      "element": "火",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "元素",
+      "family": "火系元素",
+      "imageKey": "creatures/03三阶火系元素熔岩伊芙-transparent-94fd2fc3.png",
+      "portraitKey": "action-portraits/03-熔岩伊芙-2e704439.webp",
+      "description": "掌控熔岩与烈焰的元素统领。帽檐般的火冠会映照情绪，真正认真时，脚下会展开一片不灼伤同伴的赤金火域。",
+      "evolutionCondition": "烈焰弹在火山热源旁完成元素共鸣，并携带纯净火晶完成试炼后进化。",
+      "captureLocation": "熔冠火山 · 赤金火域（领主时段）",
+      "hatchCondition": "在火山热源旁累计行走 2,400 步，以纯净火晶维持温度直至破壳。",
+      "arenaRate": 29,
+      "exploreRate": 13,
+      "hp": 88,
+      "speed": 92,
+      "spAttack": 126,
+      "spDefense": 82,
+      "attack": 70,
+      "defense": 76,
+      "createdAt": "2026-10-29T05:31:46.000Z",
+      "updatedAt": "2026-10-29T15:50:24.000Z"
+    },
+    {
+      "id": 4,
+      "dexNo": 4,
+      "name": "探险鲨",
+      "element": "水",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "海洋",
+      "family": "水系鲨",
+      "imageKey": "creatures/04一阶水系近战探险鲨-transparent-bbe0e480.png",
+      "portraitKey": "action-portraits/04-探险鲨-94dff6b6.webp",
+      "description": "戴着护目镜、住在便携水立方里的小探险家。面对陌生水域充满好奇，遇到同伴受欺负时，会第一个挡在前面。",
+      "evolutionCondition": "初始形态，无需进化。喜欢收集各地水域的漂亮石子。",
+      "captureLocation": "浅蓝海湾 · 漂流礁石",
+      "hatchCondition": "保持灵宠蛋湿润，在清澈水域累计行走 1,200 步后孵化。",
+      "arenaRate": 11,
+      "exploreRate": 35,
+      "hp": 68,
+      "speed": 50,
+      "spAttack": 38,
+      "spDefense": 52,
+      "attack": 66,
+      "defense": 61,
+      "createdAt": "2026-10-29T05:31:47.000Z",
+      "updatedAt": "2026-10-29T15:50:24.000Z"
+    },
+    {
+      "id": 5,
+      "dexNo": 5,
+      "name": "冒险鲨",
+      "element": "水",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "海洋",
+      "family": "水系鲨",
+      "imageKey": "creatures/05二阶水系近战冒险鲨-transparent-c542ff17.png",
+      "portraitKey": "action-portraits/05-冒险鲨-dea80546.webp",
+      "description": "换上轻便冒险装束的少年鲨，围巾里总藏着一张手绘地图。拳势比外形可靠得多，是旅途中值得托付后背的伙伴。",
+      "evolutionCondition": "探险鲨完成 5 次未知水域探索，并在实战中掌握水方冲拳后进化。",
+      "captureLocation": "蓝潮水道的秘境 · 冒险者营地",
+      "hatchCondition": "累计完成 3 次水域探索并行走 1,800 步，让灵宠蛋聆听一次潮声。",
+      "arenaRate": 19,
+      "exploreRate": 27,
+      "hp": 91,
+      "speed": 68,
+      "spAttack": 48,
+      "spDefense": 68,
+      "attack": 92,
+      "defense": 82,
+      "createdAt": "2026-10-29T05:31:48.000Z",
+      "updatedAt": "2026-10-29T15:50:24.000Z"
+    },
+    {
+      "id": 6,
+      "dexNo": 6,
+      "name": "鲨羽骑士",
+      "element": "水",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "海洋",
+      "family": "水系鲨",
+      "imageKey": "creatures/06三阶水系近战鲨羽骑士-transparent-904ed4c5.png",
+      "portraitKey": "action-portraits/06-鲨羽骑士-b17cd218.webp",
+      "description": "以羽饰与骑士礼装见证誓约的近战守护者。看似不再嬉闹，其实仍会在胜利后悄悄扬起嘴角；巨拳落下时如潮涌崩岸。",
+      "evolutionCondition": "冒险鲨通过骑士试炼，在守护同伴的战斗中领悟潮汐真意后进化。",
+      "captureLocation": "沧澜王城 · 羽骑士试炼场",
+      "hatchCondition": "在潮汐高峰时累计行走 2,400 步，并以一枚骑士羽饰完成唤醒仪式。",
+      "arenaRate": 34,
+      "exploreRate": 16,
+      "hp": 122,
+      "speed": 78,
+      "spAttack": 58,
+      "spDefense": 91,
+      "attack": 128,
+      "defense": 108,
+      "createdAt": "2026-10-29T05:31:50.000Z",
+      "updatedAt": "2026-10-29T15:50:24.000Z"
+    },
+    {
+      "id": 7,
+      "dexNo": 7,
+      "name": "香蕉虫",
+      "element": "草",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "植物",
+      "family": "草系蕉",
+      "imageKey": "creatures/07一阶草系远攻香蕉虫-transparent-846d8e3c.png",
+      "portraitKey": "action-portraits/07-香蕉虫-c415fae8.webp",
+      "description": "藏在香蕉外壳里的胆小远攻手，会把自己的果皮当成移动小屋。它发射的籽弹看似轻飘，落地后却会迅速长成藤蔓。",
+      "evolutionCondition": "初始形态，无需进化。每天晒足晨光会让果皮更加鲜亮。",
+      "captureLocation": "青蕉雨林 · 晨光果径",
+      "hatchCondition": "每日接受晨光照射，累计行走 1,200 步，避免灵宠蛋长时间淋雨。",
+      "arenaRate": 7,
+      "exploreRate": 38,
+      "hp": 52,
+      "speed": 58,
+      "spAttack": 64,
+      "spDefense": 56,
+      "attack": 35,
+      "defense": 44,
+      "createdAt": "2026-10-29T05:31:51.000Z",
+      "updatedAt": "2026-10-29T15:50:24.000Z"
+    },
+    {
+      "id": 8,
+      "dexNo": 8,
+      "name": "芭蕉小姐",
+      "element": "草",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "植物",
+      "family": "草系蕉",
+      "imageKey": "creatures/08二阶草系远攻芭蕉小姐-transparent-38018240.png",
+      "portraitKey": "action-portraits/08-芭蕉小姐-1bc5020c.webp",
+      "description": "撑开芭蕉叶裙的优雅灵宠，能用叶脉感知远处动静。她对射击节奏十分讲究，从不浪费任何一颗蕴含生机的种子。",
+      "evolutionCondition": "香蕉虫累计接受 7 日晨光滋养，并学会精准控制蕉籽点射后进化。",
+      "captureLocation": "芭蕉庭院 · 叶影回廊",
+      "hatchCondition": "在绿荫环境累计行走 1,800 步，以新鲜蕉叶覆盖灵宠蛋保持湿度。",
+      "arenaRate": 17,
+      "exploreRate": 29,
+      "hp": 70,
+      "speed": 82,
+      "spAttack": 90,
+      "spDefense": 78,
+      "attack": 46,
+      "defense": 62,
+      "createdAt": "2026-10-29T05:31:53.000Z",
+      "updatedAt": "2026-10-29T15:50:24.000Z"
+    },
+    {
+      "id": 9,
+      "dexNo": 9,
+      "name": "聚蕉女士",
+      "element": "草",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "植物",
+      "family": "草系蕉",
+      "imageKey": "creatures/09三阶草系远攻聚蕉女士-transparent-1a886694.png",
+      "portraitKey": "action-portraits/09-聚蕉女士-8406a85a.webp",
+      "description": "蕉林公认的远攻贤者，能同时催动多重蕉叶与种荚。她将力量用于维系林地生机，出手克制，却总能准确止住纷争。",
+      "evolutionCondition": "芭蕉小姐在古老蕉林中完成生命共鸣，并使一枚枯种重新萌芽后进化。",
+      "captureLocation": "古老蕉林 · 枯荣圣所",
+      "hatchCondition": "累计行走 2,400 步，在破壳前让一枚枯种于灵宠蛋旁重新萌芽。",
+      "arenaRate": 27,
+      "exploreRate": 18,
+      "hp": 92,
+      "speed": 98,
+      "spAttack": 124,
+      "spDefense": 101,
+      "attack": 58,
+      "defense": 81,
+      "createdAt": "2026-10-29T05:31:54.000Z",
+      "updatedAt": "2026-10-29T15:50:24.000Z"
+    },
+    {
+      "id": 60001,
+      "dexNo": 10,
+      "name": "菜菜子",
+      "element": "草",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "植物",
+      "family": "草系绿翼",
+      "imageKey": "creatures/10一阶草系辅助菜菜子-transparent-196029c9.png",
+      "portraitKey": "action-portraits/10-菜菜子-ad8dad50.webp",
+      "description": "披着嫩叶斗篷的小小辅助灵宠，总会把最精神的叶片让给同伴。它的轻声哼唱能沿着叶脉传得很远，为迷路者指引回家的方向。",
+      "evolutionCondition": "初始形态，无需进化。与同伴共同照顾一株幼苗，会让头顶的叶片更加茂盛。",
+      "captureLocation": "青芽草甸 · 嫩叶小径",
+      "hatchCondition": "在清晨绿荫下累计行走 1,200 步，每天让灵宠蛋听一段轻柔歌声。",
+      "arenaRate": 6,
+      "exploreRate": 36,
+      "hp": 52,
+      "speed": 55,
+      "spAttack": 66,
+      "spDefense": 60,
+      "attack": 34,
+      "defense": 48,
+      "createdAt": "2026-10-29T10:52:21.000Z",
+      "updatedAt": "2026-10-29T15:50:24.000Z"
+    },
+    {
+      "id": 60002,
+      "dexNo": 11,
+      "name": "叶洋洋",
+      "element": "草",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "植物",
+      "family": "草系绿翼",
+      "imageKey": "creatures/11二阶草系辅助叶洋洋-transparent-4fa35b91.png",
+      "portraitKey": "action-portraits/11-叶洋洋-9738ec92.webp",
+      "description": "斗篷长成了层层叶裙，歌声也拥有了安抚整座林地的力量。它喜欢在树梢间领唱，让疲惫的探险队重新迈出轻快的步子。",
+      "evolutionCondition": "菜菜子与同伴累计完成 5 次援助，并在绿荫中学会稳定叶脉合唱后进化。",
+      "captureLocation": "青芽草甸 · 合唱树梢",
+      "hatchCondition": "累计行走 1,800 步，以新鲜叶片覆盖灵宠蛋，并在破壳前完成一次三人合唱。",
+      "arenaRate": 15,
+      "exploreRate": 28,
+      "hp": 72,
+      "speed": 73,
+      "spAttack": 86,
+      "spDefense": 78,
+      "attack": 54,
+      "defense": 66,
+      "createdAt": "2026-10-29T10:52:27.000Z",
+      "updatedAt": "2026-10-29T15:50:24.000Z"
+    },
+    {
+      "id": 60003,
+      "dexNo": 12,
+      "name": "绿翼天使",
+      "element": "草",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "植物",
+      "family": "草系绿翼",
+      "imageKey": "creatures/12三阶草系辅助绿翼天使-transparent-7bbeca95.png",
+      "portraitKey": "action-portraits/12-绿翼天使-3d091e5e.webp",
+      "description": "叶斗篷舒展成繁茂绿翼，头顶花冠会随同伴的士气绽放。它巡视林地时从不忘俯身照顾最幼小的嫩芽，是温柔可靠的守护者。",
+      "evolutionCondition": "叶洋洋在古老花树下完成守护试炼，并用自己的歌声唤醒一片枯萎叶翼后进化。",
+      "captureLocation": "绿翼圣林 · 繁花树冠",
+      "hatchCondition": "在花香与绿荫中累计行走 2,400 步，破壳前让一朵鲜花在灵宠蛋旁开放。",
+      "arenaRate": 25,
+      "exploreRate": 17,
+      "hp": 92,
+      "speed": 91,
+      "spAttack": 106,
+      "spDefense": 96,
+      "attack": 74,
+      "defense": 84,
+      "createdAt": "2026-10-29T10:52:34.000Z",
+      "updatedAt": "2026-10-29T15:50:25.000Z"
+    },
+    {
+      "id": 60004,
+      "dexNo": 13,
+      "name": "音乐猿",
+      "element": "草",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "动物",
+      "family": "草系节奏猿",
+      "imageKey": "creatures/13一阶草系近战音乐猿-transparent-31bb6603.png",
+      "portraitKey": "action-portraits/13-音乐猿-3e5e777b.webp",
+      "description": "戴着大耳机与蓝眼镜的林间节奏手，会把每次出拳都卡在鼓点上。看似只顾耍酷，其实总会悄悄用藤蔓替同伴清出安全道路。",
+      "evolutionCondition": "初始形态，无需进化。每天练习节拍与藤蔓拳法，是它最坚持的功课。",
+      "captureLocation": "节拍雨林 · 鼓点溪谷",
+      "hatchCondition": "在轻快音乐中累计行走 1,200 步，每天轻拍灵宠蛋四次与之互动。",
+      "arenaRate": 9,
+      "exploreRate": 33,
+      "hp": 54,
+      "speed": 64,
+      "spAttack": 48,
+      "spDefense": 44,
+      "attack": 70,
+      "defense": 50,
+      "createdAt": "2026-10-29T10:52:42.000Z",
+      "updatedAt": "2026-10-29T15:50:25.000Z"
+    },
+    {
+      "id": 60005,
+      "dexNo": 14,
+      "name": "科技猿",
+      "element": "草",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "动物",
+      "family": "草系节奏猿",
+      "imageKey": "creatures/14二阶草系近战科技猿-transparent-c6b68d5e.png",
+      "portraitKey": "action-portraits/14-科技猿-5cd16318.webp",
+      "description": "为耳机和目镜加入叶晶科技后，能实时分析对手的出手节奏。它把复杂计算藏在轻松口哨里，一旦踏起拍点，藤蔓与拳势便严丝合缝。",
+      "evolutionCondition": "音乐猿在实战中连续完成 12 次节拍连击，并让叶晶目镜与自然频率同步后进化。",
+      "captureLocation": "节拍雨林 · 叶晶实验林",
+      "hatchCondition": "累计行走 1,800 步，以一枚叶晶记录稳定节拍，破壳前播放完整节奏。",
+      "arenaRate": 18,
+      "exploreRate": 25,
+      "hp": 74,
+      "speed": 82,
+      "spAttack": 68,
+      "spDefense": 62,
+      "attack": 90,
+      "defense": 68,
+      "createdAt": "2026-10-29T10:52:49.000Z",
+      "updatedAt": "2026-10-29T15:50:25.000Z"
+    },
+    {
+      "id": 60006,
+      "dexNo": 15,
+      "name": "程序猿",
+      "element": "草",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "动物",
+      "family": "草系节奏猿",
+      "imageKey": "creatures/15三阶草系近战程序猿-transparent-62b3cceb.png",
+      "portraitKey": "action-portraits/15-程序猿-f240a808.webp",
+      "description": "能够用自然算法编排整片雨林节奏的大师，耳机里流动着风、叶与心跳的和声。认真时会摘下轻松表情，以一记全频重拳终止混乱。",
+      "evolutionCondition": "科技猿完成雨林核心算法，在大型演奏会中同时保持百段藤蔓节拍后进化。",
+      "captureLocation": "节拍雨林 · 核心演算树冠",
+      "hatchCondition": "累计行走 2,400 步，以自然声与电子声交替唤醒灵宠蛋直至破壳。",
+      "arenaRate": 29,
+      "exploreRate": 15,
+      "hp": 94,
+      "speed": 100,
+      "spAttack": 88,
+      "spDefense": 80,
+      "attack": 110,
+      "defense": 86,
+      "createdAt": "2026-10-29T10:52:56.000Z",
+      "updatedAt": "2026-10-29T15:50:25.000Z"
+    },
+    {
+      "id": 60007,
+      "dexNo": 16,
+      "name": "小雪球",
+      "element": "冰",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "元素",
+      "family": "冰系雪人",
+      "imageKey": "creatures/16一阶冰系防御小雪球-transparent-3a1f0294.png",
+      "portraitKey": "action-portraits/16-小雪球-7bc3cf6d.webp",
+      "description": "抱着半块透明冰壳的小雪球，身体暖和，坐下时却总留下一圈薄霜。它不擅长进攻，最开心的事是替伙伴挡住迎面吹来的寒风。",
+      "evolutionCondition": "初始形态，无需进化。冰壳上的每道纹路，都记录着它守护同伴的一次经历。",
+      "captureLocation": "绵绵雪原 · 冰壳洼地",
+      "hatchCondition": "保持灵宠蛋凉爽但不结冰，在雪地累计行走 1,200 步后孵化。",
+      "arenaRate": 8,
+      "exploreRate": 34,
+      "hp": 72,
+      "speed": 38,
+      "spAttack": 52,
+      "spDefense": 64,
+      "attack": 40,
+      "defense": 66,
+      "createdAt": "2026-10-29T10:53:03.000Z",
+      "updatedAt": "2026-10-29T15:50:25.000Z"
+    },
+    {
+      "id": 60008,
+      "dexNo": 17,
+      "name": "雪雪人",
+      "element": "冰",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "元素",
+      "family": "冰系雪人",
+      "imageKey": "creatures/17二阶冰系防御雪雪人-transparent-3a47a497.png",
+      "portraitKey": "action-portraits/17-雪雪人-d2e90102.webp",
+      "description": "长出了圆滚滚的雪人身躯，还会捏出两只小雪人帮忙巡逻。它把树枝手臂练得十分稳当，挡在队伍前方时像一座会微笑的小雪墙。",
+      "evolutionCondition": "小雪球累计挡下 20 次攻击，并在雪夜中保护两只幼崽直到天明后进化。",
+      "captureLocation": "绵绵雪原 · 雪人村落",
+      "hatchCondition": "累计行走 1,800 步，用干净新雪包裹灵宠蛋，并在旁边安放一只小雪人。",
+      "arenaRate": 17,
+      "exploreRate": 26,
+      "hp": 92,
+      "speed": 56,
+      "spAttack": 72,
+      "spDefense": 82,
+      "attack": 60,
+      "defense": 84,
+      "createdAt": "2026-10-29T10:53:10.000Z",
+      "updatedAt": "2026-10-29T15:50:25.000Z"
+    },
+    {
+      "id": 60009,
+      "dexNo": 18,
+      "name": "雪巨人",
+      "element": "冰",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "元素",
+      "family": "冰系雪人",
+      "imageKey": "creatures/18三阶冰系防御雪巨人-transparent-6e325c17.png",
+      "portraitKey": "action-portraits/18-雪巨人-377e1798.webp",
+      "description": "由坚实新雪与古老冰晶组成的巨人，鹿角与绿芽象征着雪原的复苏。它脚步沉稳，双臂一合便能挡住雪崩，掌心却始终为小鸟留着温暖位置。",
+      "evolutionCondition": "雪雪人在雪崩试炼中守住雪人村落，并让冰壳核心与新雪完全融合后进化。",
+      "captureLocation": "绵绵雪原 · 巨壁雪岭",
+      "hatchCondition": "在极寒雪夜累计行走 2,400 步，以古老冰晶维持灵宠蛋核心温度。",
+      "arenaRate": 28,
+      "exploreRate": 16,
+      "hp": 112,
+      "speed": 74,
+      "spAttack": 92,
+      "spDefense": 100,
+      "attack": 80,
+      "defense": 102,
+      "createdAt": "2026-10-29T10:53:17.000Z",
+      "updatedAt": "2026-10-29T15:50:25.000Z"
+    },
+    {
+      "id": 60010,
+      "dexNo": 19,
+      "name": "咖啡豆",
+      "element": "土",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "虫",
+      "family": "土系咖啡蚁",
+      "imageKey": "creatures/19一阶沙土系辅助咖啡豆-transparent-c8dc0ade.png",
+      "portraitKey": "action-portraits/19-咖啡豆-7172bb28.webp",
+      "description": "住在小纸杯里的咖啡豆灵宠，头顶嫩芽会随香气轻轻摇摆。它看起来总没睡醒，却能在同伴疲惫时准时送上一缕提神香雾。",
+      "evolutionCondition": "初始形态，无需进化。喜欢把收集到的细砂与咖啡香气藏进杯底。",
+      "captureLocation": "咖啡沙丘 · 纸杯绿洲",
+      "hatchCondition": "置于干燥温暖处累计行走 1,200 步，每天让灵宠蛋闻一次淡淡咖啡香。",
+      "arenaRate": 5,
+      "exploreRate": 37,
+      "hp": 58,
+      "speed": 42,
+      "spAttack": 62,
+      "spDefense": 58,
+      "attack": 38,
+      "defense": 62,
+      "createdAt": "2026-10-29T10:53:23.000Z",
+      "updatedAt": "2026-10-29T15:50:25.000Z"
+    },
+    {
+      "id": 60011,
+      "dexNo": 20,
+      "name": "咖啡蚁",
+      "element": "土",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "虫",
+      "family": "土系咖啡蚁",
+      "imageKey": "creatures/20二阶沙土系辅助咖啡蚁-transparent-f40d7194.png",
+      "portraitKey": "action-portraits/20-咖啡蚁-c0a35ba0.webp",
+      "description": "从纸杯中探出身子的咖啡蚁，背着一座装满香醇砂土的小丘。它能指挥细砂般的蚁群搬运补给，再用柔软绒毛把受伤的伙伴稳稳托起。",
+      "evolutionCondition": "咖啡豆完成 8 次队伍补给，并学会用香气指挥砂土蚁群后进化。",
+      "captureLocation": "咖啡沙丘 · 香醇蚁道",
+      "hatchCondition": "累计行走 1,800 步，在灵宠蛋周围铺一圈干燥细砂，保持环境安静。",
+      "arenaRate": 13,
+      "exploreRate": 30,
+      "hp": 78,
+      "speed": 60,
+      "spAttack": 82,
+      "spDefense": 76,
+      "attack": 58,
+      "defense": 80,
+      "createdAt": "2026-10-29T10:53:30.000Z",
+      "updatedAt": "2026-10-29T15:50:25.000Z"
+    },
+    {
+      "id": 60012,
+      "dexNo": 21,
+      "name": "咖啡蚁后",
+      "element": "土",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "虫",
+      "family": "土系咖啡蚁",
+      "imageKey": "creatures/21三阶沙土系辅助咖啡蚁后-transparent-6c9b2298.png",
+      "portraitKey": "action-portraits/21-咖啡蚁后-c58027e9.webp",
+      "description": "统领咖啡沙丘的沉静蚁后，山形巢穴中储藏着重整土地的肥沃砂土。她很少提高声音，只要轻轻扇动触须，整个蚁群便会开始有序救援。",
+      "evolutionCondition": "咖啡蚁建成可容纳百只灵宠的地下绿洲，并在沙暴中维持蚁群秩序后进化。",
+      "captureLocation": "咖啡沙丘 · 蚁后绿洲",
+      "hatchCondition": "累计行走 2,400 步，以肥沃砂土覆盖灵宠蛋，破壳前保持蚁群香薰环绕。",
+      "arenaRate": 23,
+      "exploreRate": 20,
+      "hp": 98,
+      "speed": 78,
+      "spAttack": 102,
+      "spDefense": 94,
+      "attack": 78,
+      "defense": 98,
+      "createdAt": "2026-10-29T10:53:37.000Z",
+      "updatedAt": "2026-10-29T15:50:25.000Z"
+    },
+    {
+      "id": 60013,
+      "dexNo": 22,
+      "name": "木呆瓶",
+      "element": "草",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "植物",
+      "family": "草系蜜瓶",
+      "imageKey": "creatures/22一阶草系肉盾木呆瓶-transparent-6e4df498.png",
+      "portraitKey": "action-portraits/22-木呆瓶-abb73381.webp",
+      "description": "表情呆呆的木质蜜瓶，瓶口住着一位爱观察世界的小花灵。受到冲撞时只会晃两下，瓶里的花蜜却总会分给口渴的旅人。",
+      "evolutionCondition": "初始形态，无需进化。每天晒一会儿太阳，木瓶上的叶纹会更加清晰。",
+      "captureLocation": "蜜露林地 · 木瓶花坡",
+      "hatchCondition": "在花香环境中累计行走 1,200 步，保持灵宠蛋直立并避免剧烈摇晃。",
+      "arenaRate": 7,
+      "exploreRate": 35,
+      "hp": 78,
+      "speed": 32,
+      "spAttack": 50,
+      "spDefense": 58,
+      "attack": 44,
+      "defense": 68,
+      "createdAt": "2026-10-29T10:53:42.000Z",
+      "updatedAt": "2026-10-29T15:50:26.000Z"
+    },
+    {
+      "id": 60014,
+      "dexNo": 23,
+      "name": "瓶草战士",
+      "element": "草",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "植物",
+      "family": "草系蜜瓶",
+      "imageKey": "creatures/23二阶草系肉盾瓶草战士-transparent-127cab15.png",
+      "portraitKey": "action-portraits/23-瓶草战士-e748da54.webp",
+      "description": "木瓶长出了灵活藤臂，宽大叶片如同可靠的盾檐。它仍保留木呆时期的直率，只是如今会更主动地迎向危险，把同伴护在叶影之后。",
+      "evolutionCondition": "木呆瓶累计承受 30 次正面攻击，并用花蜜救助 5 名同伴后进化。",
+      "captureLocation": "蜜露林地 · 藤臂训练场",
+      "hatchCondition": "累计行走 1,800 步，以花蜜轻涂蛋壳纹路，并在破壳前浇一次清泉。",
+      "arenaRate": 16,
+      "exploreRate": 27,
+      "hp": 98,
+      "speed": 50,
+      "spAttack": 70,
+      "spDefense": 76,
+      "attack": 64,
+      "defense": 86,
+      "createdAt": "2026-10-29T10:53:48.000Z",
+      "updatedAt": "2026-10-29T15:50:26.000Z"
+    },
+    {
+      "id": 60015,
+      "dexNo": 24,
+      "name": "蜜瓶老人",
+      "element": "草",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "植物",
+      "family": "草系蜜瓶",
+      "imageKey": "creatures/24三阶草系肉盾蜜瓶老人-transparent-cb89b537.png",
+      "portraitKey": "action-portraits/24-蜜瓶老人-2024fca1.webp",
+      "description": "在漫长岁月中长成古老蜜瓶的林地长者，瓶里藏着能帮助种子安睡的甘蜜。看似动作缓慢，却总能及时伸出藤蔓，接住每一位跌倒的伙伴。",
+      "evolutionCondition": "瓶草战士守护一片花坡度过四季，并使瓶口老花再次绽放后进化。",
+      "captureLocation": "蜜露林地 · 古瓶长寿园",
+      "hatchCondition": "累计行走 2,400 步，让灵宠蛋经历一次完整昼夜花香变化后孵化。",
+      "arenaRate": 27,
+      "exploreRate": 16,
+      "hp": 118,
+      "speed": 68,
+      "spAttack": 90,
+      "spDefense": 94,
+      "attack": 84,
+      "defense": 104,
+      "createdAt": "2026-10-29T10:53:54.000Z",
+      "updatedAt": "2026-10-29T15:50:26.000Z"
+    },
+    {
+      "id": 60016,
+      "dexNo": 25,
+      "name": "铁铁",
+      "element": "钢",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "机械",
+      "family": "钢系熔炉",
+      "imageKey": "creatures/25一阶钢系肉盾铁铁-transparent-855ee78a.png",
+      "portraitKey": "action-portraits/25-铁铁-b410214b.webp",
+      "description": "方头方脑的小锅炉，胸口的炉火一着急就会挤成皱巴巴的形状。虽然还没有熟练控制炉压，但宽大的铁脚让它成为值得信赖的小小盾牌。",
+      "evolutionCondition": "初始形态，无需进化。需要定期清理炉灰，并用温和火焰保持炉心稳定。",
+      "captureLocation": "铆钉工坊 · 小锅炉间",
+      "hatchCondition": "置于通风温暖处累计行走 1,200 步，每日轻敲蛋壳检查炉心回响。",
+      "arenaRate": 10,
+      "exploreRate": 30,
+      "hp": 76,
+      "speed": 36,
+      "spAttack": 42,
+      "spDefense": 56,
+      "attack": 62,
+      "defense": 72,
+      "createdAt": "2026-10-29T10:54:01.000Z",
+      "updatedAt": "2026-10-29T15:50:26.000Z"
+    },
+    {
+      "id": 60017,
+      "dexNo": 26,
+      "name": "熔熔炉",
+      "element": "钢",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "机械",
+      "family": "钢系熔炉",
+      "imageKey": "creatures/26二阶钢系肉盾熔熔炉-transparent-891a1b11.png",
+      "portraitKey": "action-portraits/26-熔熔炉-74b5fec7.webp",
+      "description": "炉体更厚重，也长出了能锻造金属的橙色铁臂。它会把攻击当成锤炼炉心的敲击，越是危险的战斗，炉门里的火光就越明亮。",
+      "evolutionCondition": "铁铁在工坊完成 20 次锻压练习，并承受住一次满载炉压后进化。",
+      "captureLocation": "铆钉工坊 · 百锻车间",
+      "hatchCondition": "累计行走 1,800 步，以温热铁砂包围灵宠蛋，破壳前完成一次均匀加热。",
+      "arenaRate": 20,
+      "exploreRate": 23,
+      "hp": 96,
+      "speed": 54,
+      "spAttack": 62,
+      "spDefense": 74,
+      "attack": 82,
+      "defense": 90,
+      "createdAt": "2026-10-29T10:54:07.000Z",
+      "updatedAt": "2026-10-29T15:50:26.000Z"
+    },
+    {
+      "id": 60018,
+      "dexNo": 27,
+      "name": "熔炉长官",
+      "element": "钢",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "机械",
+      "family": "钢系熔炉",
+      "imageKey": "creatures/27三阶钢系肉盾熔炉长官-transparent-a79be97a.png",
+      "portraitKey": "action-portraits/27-熔炉长官-32ab1db5.webp",
+      "description": "统领百锻车间的熔炉长官，双肩压力阀会在关键时刻喷出白色蒸汽。它对每件作品都要求严格，对伙伴却格外宽厚，总会用巨臂挡下最猛烈的冲击。",
+      "evolutionCondition": "熔熔炉独自完成百锻核心，并在炉压极限下守住整座工坊后进化。",
+      "captureLocation": "铆钉工坊 · 长官锻造塔",
+      "hatchCondition": "累计行走 2,400 步，以百锻铁晶维持恒温，破壳时释放一次安全炉压。",
+      "arenaRate": 31,
+      "exploreRate": 14,
+      "hp": 116,
+      "speed": 72,
+      "spAttack": 82,
+      "spDefense": 92,
+      "attack": 102,
+      "defense": 108,
+      "createdAt": "2026-10-29T10:54:14.000Z",
+      "updatedAt": "2026-10-29T15:50:26.000Z"
+    },
+    {
+      "id": 60019,
+      "dexNo": 28,
+      "name": "抱抱豹",
+      "element": "暗",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "动物",
+      "family": "暗系胖豹",
+      "imageKey": "creatures/28一阶暗系诅咒抱抱豹-transparent-d4f9833e.png",
+      "portraitKey": "action-portraits/28-抱抱豹-febf9078.webp",
+      "description": "圆滚滚的小豹子，喜欢用看起来凶凶的表情索要拥抱。胡须间偶尔会蹦出紫色咒火，但只要被挠挠下巴，火焰就会变成无害的小星星。",
+      "evolutionCondition": "初始形态，无需进化。抱抱豹每天都需要一个真诚拥抱来稳定咒火。",
+      "captureLocation": "紫暮林地 · 拥抱树洞",
+      "hatchCondition": "在柔和暗光中累计行走 1,200 步，每天轻声安抚灵宠蛋一次。",
+      "arenaRate": 12,
+      "exploreRate": 28,
+      "hp": 52,
+      "speed": 60,
+      "spAttack": 70,
+      "spDefense": 52,
+      "attack": 46,
+      "defense": 44,
+      "createdAt": "2026-10-29T10:54:20.000Z",
+      "updatedAt": "2026-10-29T15:50:26.000Z"
+    },
+    {
+      "id": 60020,
+      "dexNo": 29,
+      "name": "紫焰豹",
+      "element": "暗",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "动物",
+      "family": "暗系胖豹",
+      "imageKey": "creatures/29二阶暗系诅咒紫焰豹-transparent-9a195f6d.png",
+      "portraitKey": "action-portraits/29-紫焰豹-1925a476.webp",
+      "description": "身形变得修长矫健，口中紫焰能画出复杂的咒纹。它依旧喜欢被揉耳朵，只是战斗时会先把这份亲昵藏好，用锐利眼神盯住对手的破绽。",
+      "evolutionCondition": "抱抱豹在紫暮中掌握三种咒纹，并独自穿越咒火回廊后进化。",
+      "captureLocation": "紫暮林地 · 咒火回廊",
+      "hatchCondition": "累计行走 1,800 步，以紫晶微光环绕灵宠蛋，避免被强光直射。",
+      "arenaRate": 22,
+      "exploreRate": 21,
+      "hp": 72,
+      "speed": 78,
+      "spAttack": 90,
+      "spDefense": 70,
+      "attack": 66,
+      "defense": 62,
+      "createdAt": "2026-10-29T10:54:27.000Z",
+      "updatedAt": "2026-10-29T15:50:26.000Z"
+    },
+    {
+      "id": 60021,
+      "dexNo": 30,
+      "name": "飞天胖豹",
+      "element": "暗",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "动物",
+      "family": "暗系胖豹",
+      "imageKey": "creatures/30三阶暗系诅咒飞天胖豹-transparent-5a4121e8.png",
+      "portraitKey": "action-portraits/30-飞天胖豹-dc006e1f.webp",
+      "description": "舒展开巨大暗翼后依旧保持圆润体态的空中咒术师。它飞行时安静得像一片夜色，只有胸前白毛随呼吸起伏，紫焰则忠诚地绕着翼尖巡航。",
+      "evolutionCondition": "紫焰豹在无月夜飞越暗翼峡谷，并让自身咒火与夜空暗流共鸣后进化。",
+      "captureLocation": "紫暮林地 · 暗翼峡谷",
+      "hatchCondition": "累计行走 2,400 步，在无月夜让灵宠蛋感受高空风流直至破壳。",
+      "arenaRate": 33,
+      "exploreRate": 13,
+      "hp": 92,
+      "speed": 96,
+      "spAttack": 110,
+      "spDefense": 88,
+      "attack": 86,
+      "defense": 80,
+      "createdAt": "2026-10-29T10:54:34.000Z",
+      "updatedAt": "2026-10-29T15:50:26.000Z"
+    },
+    {
+      "id": 60022,
+      "dexNo": 31,
+      "name": "礼貌鹅",
+      "element": "风",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "天空",
+      "family": "风系绅士鹅",
+      "imageKey": "creatures/31一阶风系爆发礼貌鹅-transparent-12958c88.png",
+      "portraitKey": "action-portraits/31-礼貌鹅-0f41b694.webp",
+      "description": "戴着高礼帽与领带的轮滑小将，见面时总会认真点头致意。它把速度训练称为“准时赴约”，一旦滑起来，尾流能掀开沿途所有落叶。",
+      "evolutionCondition": "初始形态，无需进化。每天擦亮轮滑与礼帽，是它保持风度的秘诀。",
+      "captureLocation": "风帽大道 · 轮滑广场",
+      "hatchCondition": "在微风环境累计行走 1,200 步，每天带着灵宠蛋完成一段平稳滑行。",
+      "arenaRate": 11,
+      "exploreRate": 31,
+      "hp": 50,
+      "speed": 78,
+      "spAttack": 48,
+      "spDefense": 44,
+      "attack": 72,
+      "defense": 42,
+      "createdAt": "2026-10-29T10:54:41.000Z",
+      "updatedAt": "2026-10-29T15:50:26.000Z"
+    },
+    {
+      "id": 60023,
+      "dexNo": 32,
+      "name": "优雅鹅",
+      "element": "风",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "天空",
+      "family": "风系绅士鹅",
+      "imageKey": "creatures/32二阶风系爆发优雅鹅-transparent-f83b3d39.png",
+      "portraitKey": "action-portraits/32-优雅鹅-acb3d50a.webp",
+      "description": "换上了更合身的礼服与金色轮带，滑行转身时连风都像经过精心编排。它重视礼仪，也重视胜负，绝不会因为帽檐歪了而放慢追击。",
+      "evolutionCondition": "礼貌鹅在风车巡游中完成全套轮滑礼仪，并赢得一场无碰撞竞速后进化。",
+      "captureLocation": "风帽大道 · 金带巡游线",
+      "hatchCondition": "累计行走 1,800 步，让灵宠蛋随清风平稳旋转，保持礼帽形蛋壳整洁。",
+      "arenaRate": 21,
+      "exploreRate": 23,
+      "hp": 70,
+      "speed": 96,
+      "spAttack": 68,
+      "spDefense": 62,
+      "attack": 92,
+      "defense": 60,
+      "createdAt": "2026-10-29T10:54:48.000Z",
+      "updatedAt": "2026-10-29T15:50:26.000Z"
+    },
+    {
+      "id": 60024,
+      "dexNo": 33,
+      "name": "绅士鹅",
+      "element": "风",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "天空",
+      "family": "风系绅士鹅",
+      "imageKey": "creatures/33三阶风系爆发绅士鹅-transparent-16e2b981.png",
+      "portraitKey": "action-portraits/33-绅士鹅-1bcc210c.webp",
+      "description": "风帽大道最具风度的竞速冠军，单片镜能捕捉高速气流中的微小变化。无论战况多紧张，他都会先扶正礼帽，再用一次无可挑剔的终步分出胜负。",
+      "evolutionCondition": "优雅鹅穿越十二道高空风门，并在冠军巡游中保持全程优雅无碰撞后进化。",
+      "captureLocation": "风帽大道 · 冠军风门",
+      "hatchCondition": "累计行走 2,400 步，让灵宠蛋感受十二种不同风向，破壳前完成一次高空巡游。",
+      "arenaRate": 32,
+      "exploreRate": 14,
+      "hp": 90,
+      "speed": 114,
+      "spAttack": 88,
+      "spDefense": 80,
+      "attack": 112,
+      "defense": 78,
+      "createdAt": "2026-10-29T10:54:55.000Z",
+      "updatedAt": "2026-10-29T15:50:27.000Z"
+    },
+    {
+      "id": 60025,
+      "dexNo": 34,
+      "name": "豆丁蛹",
+      "element": "暗",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "元素",
+      "family": "暗系岩甲",
+      "imageKey": "creatures/34一阶暗系防御豆丁蛹-transparent-c88b2633.png",
+      "portraitKey": "action-portraits/34-豆丁蛹-33b53fc5.webp",
+      "description": "裹着黑色蛹壳的小豆丁，头顶红结会随着警觉程度立起。它不爱移动，却会把壳上最坚硬的一面朝向危险，安静保护身后的伙伴。",
+      "evolutionCondition": "初始形态，无需进化。喜欢贴着温暖岩石休息，让蛹壳慢慢吸收暗晶。",
+      "captureLocation": "黑晶洞窟 · 豆丁蛹穴",
+      "hatchCondition": "放在阴凉岩洞中累计行走 1,200 步，每日轻轻擦去蛋壳上的暗尘。",
+      "arenaRate": 7,
+      "exploreRate": 36,
+      "hp": 70,
+      "speed": 34,
+      "spAttack": 52,
+      "spDefense": 68,
+      "attack": 46,
+      "defense": 66,
+      "createdAt": "2026-10-29T10:55:02.000Z",
+      "updatedAt": "2026-10-29T15:50:27.000Z"
+    },
+    {
+      "id": 60026,
+      "dexNo": 35,
+      "name": "岩垒石",
+      "element": "暗",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "元素",
+      "family": "暗系岩甲",
+      "imageKey": "creatures/35二阶暗系防御岩垒石-transparent-2d559555.png",
+      "portraitKey": "action-portraits/35-岩垒石-d37e247a.webp",
+      "description": "蛹壳化为层层黑岩，短小四肢也能稳稳支撑厚重身体。岩缝中的红光像缓慢呼吸，遭遇冲击时会亮起，把力量导入脚下地脉。",
+      "evolutionCondition": "豆丁蛹吸收足够暗晶，并在洞窟震动中保持壁垒整夜不倒后进化。",
+      "captureLocation": "黑晶洞窟 · 岩垒深层",
+      "hatchCondition": "累计行走 1,800 步，以黑晶碎石围住灵宠蛋，保持四周稳定无震动。",
+      "arenaRate": 16,
+      "exploreRate": 28,
+      "hp": 90,
+      "speed": 52,
+      "spAttack": 72,
+      "spDefense": 86,
+      "attack": 66,
+      "defense": 84,
+      "createdAt": "2026-10-29T10:55:09.000Z",
+      "updatedAt": "2026-10-29T15:50:27.000Z"
+    },
+    {
+      "id": 60027,
+      "dexNo": 36,
+      "name": "覆甲岩",
+      "element": "暗",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "元素",
+      "family": "暗系岩甲",
+      "imageKey": "creatures/36三阶暗系防御覆甲岩-transparent-1531c6b6.png",
+      "portraitKey": "action-portraits/36-覆甲岩-1189ed16.webp",
+      "description": "全身覆盖着熔纹黑甲的移动城塞，巨拳落下时如同小型山崩。它平时蹲坐成不起眼的小丘，只有同伴靠近时才会睁开可靠而平静的眼睛。",
+      "evolutionCondition": "岩垒石在地脉深处完成覆甲试炼，并承受住黑晶熔流的全压后进化。",
+      "captureLocation": "黑晶洞窟 · 覆甲地脉",
+      "hatchCondition": "累计行走 2,400 步，让灵宠蛋吸收地脉热流与暗晶粉末直至破壳。",
+      "arenaRate": 26,
+      "exploreRate": 18,
+      "hp": 110,
+      "speed": 70,
+      "spAttack": 92,
+      "spDefense": 104,
+      "attack": 86,
+      "defense": 102,
+      "createdAt": "2026-10-29T10:55:15.000Z",
+      "updatedAt": "2026-10-29T15:50:27.000Z"
+    },
+    {
+      "id": 60028,
+      "dexNo": 37,
+      "name": "喵喵草",
+      "element": "草",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "植物",
+      "family": "草系四叶喵",
+      "imageKey": "creatures/37一阶苔系远攻喵喵草-transparent-8be712d4.png",
+      "portraitKey": "action-portraits/37-喵喵草-60ae3208.webp",
+      "description": "头顶四叶草的小猫草，叶丛里总藏着几颗圆滚滚种弹。它眯起眼睛时看似在打瞌睡，其实正用叶尖感知远处风向，准备一次精准射击。",
+      "evolutionCondition": "初始形态，无需进化。四叶草在获得真诚祝福后会变得更加鲜亮。",
+      "captureLocation": "幸运苔原 · 四叶浅滩",
+      "hatchCondition": "在柔软苔藓上累计行走 1,200 步，每天让灵宠蛋接受一次温和日照。",
+      "arenaRate": 6,
+      "exploreRate": 38,
+      "hp": 50,
+      "speed": 68,
+      "spAttack": 70,
+      "spDefense": 56,
+      "attack": 34,
+      "defense": 48,
+      "createdAt": "2026-10-29T10:55:22.000Z",
+      "updatedAt": "2026-10-29T15:50:27.000Z"
+    },
+    {
+      "id": 60029,
+      "dexNo": 38,
+      "name": "幸运喵",
+      "element": "草",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "植物",
+      "family": "草系四叶喵",
+      "imageKey": "creatures/38二阶苔系远攻幸运喵-transparent-b6ba0b17.png",
+      "portraitKey": "action-portraits/38-幸运喵-db09dd06.webp",
+      "description": "叶耳与叶爪更加灵巧，能把四叶草当作回旋镖抛出。它的幸运并非毫无来由，每一次看似巧合的命中，都来自对风与叶脉的耐心观察。",
+      "evolutionCondition": "喵喵草累计完成 30 次精准远射，并在苔原找到一枚天然四叶纹后进化。",
+      "captureLocation": "幸运苔原 · 回旋叶丘",
+      "hatchCondition": "累计行走 1,800 步，以四片鲜叶围住灵宠蛋，破壳前保持微风流动。",
+      "arenaRate": 15,
+      "exploreRate": 30,
+      "hp": 70,
+      "speed": 86,
+      "spAttack": 90,
+      "spDefense": 74,
+      "attack": 54,
+      "defense": 66,
+      "createdAt": "2026-10-29T10:55:28.000Z",
+      "updatedAt": "2026-10-29T15:50:27.000Z"
+    },
+    {
+      "id": 60030,
+      "dexNo": 39,
+      "name": "四叶喵",
+      "element": "草",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "植物",
+      "family": "草系四叶喵",
+      "imageKey": "creatures/39三阶苔系远攻四叶喵-transparent-34af9dd1.png",
+      "portraitKey": "action-portraits/39-四叶喵-f5580073.webp",
+      "description": "四叶花茎高高舒展的苔原贤者，闭眼也能让种弹沿最美妙的弧线命中目标。它会把好运分给同行者，因此身后常跟着一串寻找四叶草的小灵宠。",
+      "evolutionCondition": "幸运喵让一片稀有三叶苔原长出四叶新芽，并完成幸运祝福仪式后进化。",
+      "captureLocation": "幸运苔原 · 万叶祝福地",
+      "hatchCondition": "累计行走 2,400 步，在四叶花环中保持灵宠蛋温暖，破壳前送出一次真诚祝福。",
+      "arenaRate": 25,
+      "exploreRate": 19,
+      "hp": 90,
+      "speed": 104,
+      "spAttack": 110,
+      "spDefense": 92,
+      "attack": 74,
+      "defense": 84,
+      "createdAt": "2026-10-29T10:55:35.000Z",
+      "updatedAt": "2026-10-29T15:50:27.000Z"
+    },
+    {
+      "id": 60031,
+      "dexNo": 40,
+      "name": "喷气鸡",
+      "element": "雷",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "天空",
+      "family": "雷系旅行鸡",
+      "imageKey": "creatures/40一阶雷系辅助喷气鸡-transparent-14027393.png",
+      "portraitKey": "action-portraits/40-喷气鸡-82859fb7.webp",
+      "description": "背着旅行喷气包的小小信使，箭头形头冠永远指向下一个目的地。它能用短促电流调整气流，为同行者送上恰到好处的顺风。",
+      "evolutionCondition": "初始形态，无需进化。旅行包里装着第一枚风向标，是它最珍爱的行李。",
+      "captureLocation": "雷云旅行季 · 起风机坪",
+      "hatchCondition": "活动期间在微风机坪累计行走 1,200 步，让灵宠蛋聆听三次起飞提示音。",
+      "arenaRate": 14,
+      "exploreRate": 22,
+      "hp": 54,
+      "speed": 64,
+      "spAttack": 66,
+      "spDefense": 60,
+      "attack": 40,
+      "defense": 52,
+      "createdAt": "2026-10-29T10:55:42.000Z",
+      "updatedAt": "2026-10-29T15:50:27.000Z"
+    },
+    {
+      "id": 60032,
+      "dexNo": 41,
+      "name": "顺风鸡",
+      "element": "雷",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "天空",
+      "family": "雷系旅行鸡",
+      "imageKey": "creatures/41二阶雷系辅助顺风鸡-transparent-63e42398.png",
+      "portraitKey": "action-portraits/41-顺风鸡-16dd7991.webp",
+      "description": "能够用风向标读懂高空天气的旅行向导，红蓝头冠是最醒目的集合信号。无论云层多厚，它都能找到一条让全队省力又安全的顺风航线。",
+      "evolutionCondition": "喷气鸡完成 5 次雷雨领航，并带领全队安全穿越顺风航道后进化。",
+      "captureLocation": "雷云旅行季 · 顺风航道",
+      "hatchCondition": "活动期间累计行走 1,800 步，让灵宠蛋感受三种风向并以雷晶保持温暖。",
+      "arenaRate": 23,
+      "exploreRate": 17,
+      "hp": 74,
+      "speed": 82,
+      "spAttack": 86,
+      "spDefense": 78,
+      "attack": 60,
+      "defense": 70,
+      "createdAt": "2026-10-29T10:55:49.000Z",
+      "updatedAt": "2026-10-29T15:50:27.000Z"
+    },
+    {
+      "id": 60033,
+      "dexNo": 42,
+      "name": "压力鸡",
+      "element": "雷",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "天空",
+      "family": "雷系旅行鸡",
+      "imageKey": "creatures/42三阶雷系辅助压力鸡-transparent-1f51e655.png",
+      "portraitKey": "action-portraits/42-压力鸡-d002dc2f.webp",
+      "description": "背负旋翼风塔的首席航空官，能把巨大风压精确分成一束束安全气流。名字听着紧张，实际上它越是从容，身后的队伍就越不会偏离航线。",
+      "evolutionCondition": "顺风鸡在雷暴中稳定十二级风压，并完成一次无补给长途领航后进化。",
+      "captureLocation": "雷云旅行季 · 高压航站",
+      "hatchCondition": "活动期间累计行走 2,400 步，以旋翼维持稳定气流直至灵宠蛋破壳。",
+      "arenaRate": 35,
+      "exploreRate": 10,
+      "hp": 94,
+      "speed": 100,
+      "spAttack": 106,
+      "spDefense": 96,
+      "attack": 80,
+      "defense": 88,
+      "createdAt": "2026-10-29T10:55:55.000Z",
+      "updatedAt": "2026-10-29T15:50:27.000Z"
+    },
+    {
+      "id": 60034,
+      "dexNo": 43,
+      "name": "雷电壳",
+      "element": "雷",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "虫",
+      "family": "雷系甲虫",
+      "imageKey": "creatures/43一阶雷系元素雷电壳-transparent-4307beac.png",
+      "portraitKey": "action-portraits/43-雷电壳-47fc0fc0.webp",
+      "description": "背着蓝色硬壳的小甲虫，两支雷角总在兴奋时噼啪发亮。它喜欢把细小电光藏在壳里，遇到同伴靠近便只露出温柔的一点亮。",
+      "evolutionCondition": "初始形态，无需进化。雨天后会在高处晾晒甲壳，整理储存的电光。",
+      "captureLocation": "雷霆活动周 · 电壳草丛",
+      "hatchCondition": "活动期间累计行走 1,200 步，以低亮雷晶陪伴灵宠蛋，避免强烈震动。",
+      "arenaRate": 12,
+      "exploreRate": 24,
+      "hp": 52,
+      "speed": 58,
+      "spAttack": 70,
+      "spDefense": 50,
+      "attack": 44,
+      "defense": 48,
+      "createdAt": "2026-10-29T10:56:02.000Z",
+      "updatedAt": "2026-10-29T15:50:28.000Z"
+    },
+    {
+      "id": 60035,
+      "dexNo": 44,
+      "name": "雷甲壳",
+      "element": "雷",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "虫",
+      "family": "雷系甲虫",
+      "imageKey": "creatures/44二阶雷系元素雷甲壳-transparent-ef8f3441.png",
+      "portraitKey": "action-portraits/44-雷甲壳-1e757682.webp",
+      "description": "甲壳与雷角都更加坚固，足尖能在云层间抓住细小电流。它会先用硬壳护住同伴，再把双角间积蓄的雷光一次性送向远处。",
+      "evolutionCondition": "雷电壳成功蓄满三次雷角，并在雷雨活动中守住甲壳完整后进化。",
+      "captureLocation": "雷霆活动周 · 双角云台",
+      "hatchCondition": "活动期间累计行走 1,800 步，以两枚微电雷晶交替唤醒灵宠蛋。",
+      "arenaRate": 22,
+      "exploreRate": 18,
+      "hp": 72,
+      "speed": 76,
+      "spAttack": 90,
+      "spDefense": 68,
+      "attack": 64,
+      "defense": 66,
+      "createdAt": "2026-10-29T10:56:09.000Z",
+      "updatedAt": "2026-10-29T15:50:28.000Z"
+    },
+    {
+      "id": 60036,
+      "dexNo": 45,
+      "name": "霹雳甲虫",
+      "element": "雷",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "虫",
+      "family": "雷系甲虫",
+      "imageKey": "creatures/45三阶雷系辅助霹雳甲虫-transparent-cae4a9f8.png",
+      "portraitKey": "action-portraits/45-霹雳甲虫-d2eafbf7.webp",
+      "description": "雷云活动中坐镇云端的霹雳统领，深色甲壳能容纳一场小型雷暴。它的长角像精确天线，一声低鸣便能让散乱电流排成守护队伍的光阵。",
+      "evolutionCondition": "雷甲壳在雷暴核心完成长角共鸣，并引导万伏电流安全回归云层后进化。",
+      "captureLocation": "雷霆活动周 · 霹雳云端",
+      "hatchCondition": "活动期间累计行走 2,400 步，让灵宠蛋在绝缘云台吸收整夜温和雷光。",
+      "arenaRate": 34,
+      "exploreRate": 11,
+      "hp": 92,
+      "speed": 94,
+      "spAttack": 110,
+      "spDefense": 86,
+      "attack": 84,
+      "defense": 84,
+      "createdAt": "2026-10-29T10:56:15.000Z",
+      "updatedAt": "2026-10-29T15:50:28.000Z"
+    },
+    {
+      "id": 60037,
+      "dexNo": 46,
+      "name": "海宝宝",
+      "element": "水",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "海洋",
+      "family": "水系洋流王子",
+      "imageKey": "creatures/46一阶海系辅助海宝宝-transparent-270c7db8.png",
+      "portraitKey": "action-portraits/46-海宝宝-094eaaad.webp",
+      "description": "戴着小小王冠的海洋宝宝，游到哪里都会带起一串晶亮水泡。它虽然还不懂王室礼仪，却已经会用柔软胸鳍把落水伙伴轻轻托回水面。",
+      "evolutionCondition": "初始形态，无需进化。喜欢收集形状特别的贝壳，装饰自己的小王冠。",
+      "captureLocation": "洋流庆典 · 宝宝浅湾",
+      "hatchCondition": "活动期间保持灵宠蛋湿润，在浅湾累计行走 1,200 步并聆听三次潮声。",
+      "arenaRate": 13,
+      "exploreRate": 23,
+      "hp": 58,
+      "speed": 54,
+      "spAttack": 68,
+      "spDefense": 62,
+      "attack": 36,
+      "defense": 54,
+      "createdAt": "2026-10-29T10:56:22.000Z",
+      "updatedAt": "2026-10-29T15:50:28.000Z"
+    },
+    {
+      "id": 60038,
+      "dexNo": 47,
+      "name": "水王子",
+      "element": "水",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "海洋",
+      "family": "水系洋流王子",
+      "imageKey": "creatures/47二阶海系辅助水王子-transparent-43d04774.png",
+      "portraitKey": "action-portraits/47-水王子-a83124d9.webp",
+      "description": "学会驾驭海流圆舞的少年王子，蓝晶王冠会映出附近水域的情绪。他举止温和，面对受伤灵宠时总会先放下王子的矜持，亲自俯身查看。",
+      "evolutionCondition": "海宝宝完成三次浅湾救援，并用王冠与蓝晶海流产生共鸣后进化。",
+      "captureLocation": "洋流庆典 · 蓝晶回廊",
+      "hatchCondition": "活动期间累计行走 1,800 步，以蓝晶贝壳环绕灵宠蛋并保持水流清澈。",
+      "arenaRate": 24,
+      "exploreRate": 17,
+      "hp": 78,
+      "speed": 72,
+      "spAttack": 88,
+      "spDefense": 80,
+      "attack": 56,
+      "defense": 72,
+      "createdAt": "2026-10-29T10:56:28.000Z",
+      "updatedAt": "2026-10-29T15:50:28.000Z"
+    },
+    {
+      "id": 60039,
+      "dexNo": 48,
+      "name": "洋流王子",
+      "element": "水",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "海洋",
+      "family": "水系洋流王子",
+      "imageKey": "creatures/48三阶海系辅助洋流王子-transparent-9b4965c0.png",
+      "portraitKey": "action-portraits/48-洋流王子-870d53d0.webp",
+      "description": "舒展海翼、统御万流的温柔王子，王冠上的宝石能听见遥远潮汐。他从不以王命强迫水流，而是用一声清澈潮鸣，邀请整片海洋共同守护伙伴。",
+      "evolutionCondition": "水王子在洋流庆典完成万流巡礼，并使三条分离海流重新汇合后进化。",
+      "captureLocation": "洋流庆典 · 万流加冕海",
+      "hatchCondition": "活动期间累计行走 2,400 步，让灵宠蛋随安全洋流轻轻旋转直至破壳。",
+      "arenaRate": 36,
+      "exploreRate": 10,
+      "hp": 98,
+      "speed": 90,
+      "spAttack": 108,
+      "spDefense": 98,
+      "attack": 76,
+      "defense": 90,
+      "createdAt": "2026-10-29T10:56:35.000Z",
+      "updatedAt": "2026-10-29T15:50:28.000Z"
+    },
+    {
+      "id": 60040,
+      "dexNo": 49,
+      "name": "快快",
+      "element": "冰",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "动物",
+      "family": "冰系快快",
+      "imageKey": "creatures/49一阶冰系近战快快-transparent-7507a9f0.png",
+      "portraitKey": "action-portraits/49-快快-b9e8af7d.webp",
+      "description": "雪地中总是第一个冲出去的小白虎，蓬松绒毛能藏住细细冰晶。它出爪快、转弯也快，唯独扑进同伴怀里时会突然放慢脚步，轻轻收好爪子。",
+      "evolutionCondition": "初始形态，尚未发现后续进化。与训练家完成雪地追逐游戏可提升默契。",
+      "captureLocation": "霜爪雪原 · 快风坡",
+      "hatchCondition": "在细雪环境累计行走 1,200 步，每天带着灵宠蛋完成一段轻快追逐。",
+      "arenaRate": 10,
+      "exploreRate": 32,
+      "hp": 58,
+      "speed": 74,
+      "spAttack": 44,
+      "spDefense": 48,
+      "attack": 76,
+      "defense": 52,
+      "createdAt": "2026-10-29T10:56:42.000Z",
+      "updatedAt": "2026-10-29T15:50:28.000Z"
+    },
+    {
+      "id": 60041,
+      "dexNo": 50,
+      "name": "慢慢",
+      "element": "风",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "动物",
+      "family": "风系慢慢",
+      "imageKey": "creatures/50一阶风系远攻慢慢-transparent-89d6830f.png",
+      "portraitKey": "action-portraits/50-慢慢-9ebd5cd5.webp",
+      "description": "总爱不慌不忙观察风向的小白虎，耳内橙色绒毛能捕捉最轻的呼啸。它瞄准很慢、思考很慢，但风羽离弦的一瞬间，往往已经精准穿过目标。",
+      "evolutionCondition": "初始形态，尚未发现后续进化。与训练家安静观察一次完整日落可提升默契。",
+      "captureLocation": "橙耳风谷 · 从容瞭望台",
+      "hatchCondition": "在微风环境累计行走 1,200 步，不摇晃灵宠蛋，让其安静感受气流。",
+      "arenaRate": 9,
+      "exploreRate": 34,
+      "hp": 56,
+      "speed": 52,
+      "spAttack": 76,
+      "spDefense": 54,
+      "attack": 38,
+      "defense": 54,
+      "createdAt": "2026-10-29T10:56:48.000Z",
+      "updatedAt": "2026-10-29T15:50:28.000Z"
+    },
+    {
+      "id": 60042,
+      "dexNo": 51,
+      "name": "噗噗",
+      "element": "冰",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "天空",
+      "family": "冰系噗噗",
+      "imageKey": "creatures/51一阶冰系远攻噗噗-transparent-14d49294.png",
+      "portraitKey": "action-portraits/51-噗噗-a5d4fe5d.webp",
+      "description": "长着晶蓝翅膀的长颈小鸟，发射冰晶前总会认真地嘟起嘴。它的“噗噗”声听起来毫无威胁，紧接着到来的细密冰羽却能让整片空地结霜。",
+      "evolutionCondition": "初始形态，尚未发现后续进化。与训练家完成冰晶投掷练习可提升默契。",
+      "captureLocation": "晶羽冰湖 · 噗噗浅滩",
+      "hatchCondition": "保持灵宠蛋凉爽，在冰湖旁累计行走 1,200 步并聆听轻柔水声。",
+      "arenaRate": 8,
+      "exploreRate": 35,
+      "hp": 54,
+      "speed": 60,
+      "spAttack": 74,
+      "spDefense": 56,
+      "attack": 38,
+      "defense": 50,
+      "createdAt": "2026-10-29T10:56:55.000Z",
+      "updatedAt": "2026-10-29T15:50:28.000Z"
+    },
+    {
+      "id": 103171,
+      "dexNo": 52,
+      "name": "咻咻",
+      "element": "钢",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "机械",
+      "family": "钢系咻咻",
+      "imageKey": "creatures/52一阶机械系辅助咻咻-transparent-ce64de3f.png",
+      "portraitKey": "action-portraits/52-咻咻-b3812344.webp",
+      "description": "背着橡果形能源包的小机械助手，灰色外壳里藏着一套温柔的协作程序。它总会眯起眼睛鼓励同伴，再用头顶叶片天线捕捉求援信号，把修理与补给准时送到。",
+      "evolutionCondition": "初始形态，尚未发现后续进化。与训练家共同完成机械修理和团队协作练习可提升默契。",
+      "captureLocation": "橡果工坊 · 辅助机坪",
+      "hatchCondition": "在温暖通风的工坊累计行走 1,200 步，每天用轻柔齿轮声唤醒灵宠蛋一次。",
+      "arenaRate": 10,
+      "exploreRate": 32,
+      "hp": 62,
+      "speed": 58,
+      "spAttack": 60,
+      "spDefense": 68,
+      "attack": 40,
+      "defense": 56,
+      "createdAt": "2026-10-29T12:38:46.000Z",
+      "updatedAt": "2026-10-29T15:50:28.000Z"
+    },
+    {
+      "id": 103172,
+      "dexNo": 53,
+      "name": "露露",
+      "element": "水",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "元素",
+      "family": "水系露露",
+      "imageKey": "creatures/53一阶水系元素露露-transparent-868cd208.png",
+      "portraitKey": "action-portraits/53-露露-9fa4cd79.webp",
+      "description": "从清晨第一滴蓝露中诞生的水元素，伞状身体会随着潮汐轻轻晃动。它喜欢把干净水泡送给路过的伙伴，脸上的小小水纹会在开心时泛起明亮涟漪。",
+      "evolutionCondition": "初始形态，尚未发现后续进化。与训练家守护一处清泉恢复清澈可提升默契。",
+      "captureLocation": "蓝露清泉 · 水蕈浅滩",
+      "hatchCondition": "保持灵宠蛋湿润，在清晨水雾中累计行走 1,200 步并聆听三次滴答声。",
+      "arenaRate": 9,
+      "exploreRate": 35,
+      "hp": 58,
+      "speed": 62,
+      "spAttack": 76,
+      "spDefense": 62,
+      "attack": 36,
+      "defense": 50,
+      "createdAt": "2026-10-29T12:38:50.000Z",
+      "updatedAt": "2026-10-29T15:50:29.000Z"
+    },
+    {
+      "id": 103173,
+      "dexNo": 54,
+      "name": "墩墩",
+      "element": "土",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "动物",
+      "family": "土系墩墩",
+      "imageKey": "creatures/54一阶岩石系肉盾墩墩-transparent-33e161cb.png",
+      "portraitKey": "action-portraits/54-墩墩-aea81178.webp",
+      "description": "披着厚重岩甲的小熊，坐下时像一座圆滚滚的小山。它看似有些委屈，其实只是在认真判断危险来自哪里；一旦同伴需要保护，三条小短腿会立刻站得稳稳当当。",
+      "evolutionCondition": "初始形态，尚未发现后续进化。与训练家完成山地守护训练可提升默契。",
+      "captureLocation": "墩岩山地 · 熊甲岩坡",
+      "hatchCondition": "将灵宠蛋放在平稳岩床上累计行走 1,200 步，避免摇晃并保持环境温暖干燥。",
+      "arenaRate": 12,
+      "exploreRate": 30,
+      "hp": 88,
+      "speed": 30,
+      "spAttack": 38,
+      "spDefense": 70,
+      "attack": 64,
+      "defense": 82,
+      "createdAt": "2026-10-29T12:38:55.000Z",
+      "updatedAt": "2026-10-29T15:50:29.000Z"
+    }
+  ],
+  "skills": {
+    "1": [
+      {
+        "slot": 1,
+        "name": "火星轻碰",
+        "pp": 25,
+        "description": "弹出一枚小火星，造成火系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "暖焰守护",
+        "pp": 15,
+        "description": "以暖焰包裹自身，短时提升特防。"
+      },
+      {
+        "slot": 3,
+        "name": "烬光闪烁",
+        "pp": 20,
+        "description": "发出醒目亮光，降低对手命中。"
+      },
+      {
+        "slot": 4,
+        "name": "怒意火苗",
+        "pp": 10,
+        "description": "生命较低时，释放更强的火焰冲击。"
+      }
+    ],
+    "2": [
+      {
+        "slot": 1,
+        "name": "烈焰回旋",
+        "pp": 15,
+        "description": "挥舞环形火舌，对周围对手造成伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "燃心",
+        "pp": 10,
+        "description": "点燃元素核心，提升下一次特攻。"
+      },
+      {
+        "slot": 3,
+        "name": "熔流冲刺",
+        "pp": 15,
+        "description": "化作流光撞击对手，兼具速度与冲击。"
+      },
+      {
+        "slot": 4,
+        "name": "余烬复燃",
+        "pp": 5,
+        "description": "受到致命伤害时保留少量生命，每场一次。"
+      }
+    ],
+    "3": [
+      {
+        "slot": 1,
+        "name": "熔冠审判",
+        "pp": 10,
+        "description": "凝聚火冠能量，释放高威力熔岩光束。"
+      },
+      {
+        "slot": 2,
+        "name": "赤金火域",
+        "pp": 10,
+        "description": "展开火域，持续强化友方火系技能。"
+      },
+      {
+        "slot": 3,
+        "name": "流焰斗篷",
+        "pp": 15,
+        "description": "以流焰护体，减轻伤害并灼烧近身对手。"
+      },
+      {
+        "slot": 4,
+        "name": "伊芙的怒火",
+        "pp": 5,
+        "description": "消耗剩余能量发动终结一击，之后特攻下降。"
+      }
+    ],
+    "4": [
+      {
+        "slot": 1,
+        "name": "水方冲拳",
+        "pp": 20,
+        "description": "带动水立方挥拳，造成水系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "泡泡屏障",
+        "pp": 15,
+        "description": "生成泡泡屏障，提升自身物防。"
+      },
+      {
+        "slot": 3,
+        "name": "探险脚步",
+        "pp": 20,
+        "description": "灵巧逼近对手，提高下一次攻击命中。"
+      },
+      {
+        "slot": 4,
+        "name": "尾鳍拍击",
+        "pp": 15,
+        "description": "转身用尾鳍重击，偶尔令对手退缩。"
+      }
+    ],
+    "5": [
+      {
+        "slot": 1,
+        "name": "逐浪连拳",
+        "pp": 15,
+        "description": "踏着浪势连续出拳，最多命中三次。"
+      },
+      {
+        "slot": 2,
+        "name": "冒险直觉",
+        "pp": 10,
+        "description": "洞察对手动作，提升闪避与暴击。"
+      },
+      {
+        "slot": 3,
+        "name": "围巾束缚",
+        "pp": 15,
+        "description": "用浸水围巾限制对手，降低其速度。"
+      },
+      {
+        "slot": 4,
+        "name": "破浪头槌",
+        "pp": 10,
+        "description": "蓄势后猛冲，对防御中的对手同样有效。"
+      }
+    ],
+    "6": [
+      {
+        "slot": 1,
+        "name": "潮冠重拳",
+        "pp": 10,
+        "description": "汇聚潮汐于巨拳，造成极高水系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "羽骑士誓约",
+        "pp": 5,
+        "description": "替一名同伴承受攻击，并提升自身物防。"
+      },
+      {
+        "slot": 3,
+        "name": "静潮架势",
+        "pp": 10,
+        "description": "进入防守反击姿态，受击后立刻还击。"
+      },
+      {
+        "slot": 4,
+        "name": "沧海落星",
+        "pp": 5,
+        "description": "跃起后携浪潮坠击，对全体对手造成冲击。"
+      }
+    ],
+    "7": [
+      {
+        "slot": 1,
+        "name": "蕉籽点射",
+        "pp": 25,
+        "description": "连续发射蕉籽，造成草系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "果皮掩体",
+        "pp": 15,
+        "description": "躲进果皮，提升物防与特防。"
+      },
+      {
+        "slot": 3,
+        "name": "青藤缠绕",
+        "pp": 15,
+        "description": "催生藤蔓，降低对手速度。"
+      },
+      {
+        "slot": 4,
+        "name": "香甜气息",
+        "pp": 10,
+        "description": "释放果香，吸引对手注意并降低其物攻。"
+      }
+    ],
+    "8": [
+      {
+        "slot": 1,
+        "name": "蕉叶连射",
+        "pp": 15,
+        "description": "以叶片为弓连续射出种弹。"
+      },
+      {
+        "slot": 2,
+        "name": "叶脉感知",
+        "pp": 10,
+        "description": "读取周围叶脉，提升命中与闪避。"
+      },
+      {
+        "slot": 3,
+        "name": "绿荫回复",
+        "pp": 10,
+        "description": "借绿荫恢复生命，晴天效果增强。"
+      },
+      {
+        "slot": 4,
+        "name": "花苞束缚",
+        "pp": 15,
+        "description": "让花苞在对手脚下绽放，限制其行动。"
+      }
+    ],
+    "9": [
+      {
+        "slot": 1,
+        "name": "万籽星雨",
+        "pp": 10,
+        "description": "唤来密集种弹，对全体对手造成草系伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "蕉林国度",
+        "pp": 5,
+        "description": "展开蕉林领域，持续恢复友方并强化草系技能。"
+      },
+      {
+        "slot": 3,
+        "name": "翠影换位",
+        "pp": 10,
+        "description": "与叶影交换位置，躲避下一次攻击。"
+      },
+      {
+        "slot": 4,
+        "name": "枯荣之种",
+        "pp": 5,
+        "description": "种下枯荣之种，吸收伤害后绽放并回复生命。"
+      }
+    ],
+    "60001": [
+      {
+        "slot": 1,
+        "name": "嫩叶音波",
+        "pp": 25,
+        "description": "唱出带叶香的音波，造成草系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "小叶鼓掌",
+        "pp": 20,
+        "description": "有节奏地拍动叶片，提升自身与相邻同伴的速度。"
+      },
+      {
+        "slot": 3,
+        "name": "清香抚慰",
+        "pp": 15,
+        "description": "释放清香，回复一名同伴少量生命。"
+      },
+      {
+        "slot": 4,
+        "name": "种荚守护",
+        "pp": 10,
+        "description": "种下守护种荚，为一名同伴抵挡部分伤害。"
+      }
+    ],
+    "60002": [
+      {
+        "slot": 1,
+        "name": "叶浪合唱",
+        "pp": 20,
+        "description": "掀起层层叶浪，对全体对手造成草系伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "洋洋鼓舞",
+        "pp": 15,
+        "description": "唱出明亮旋律，提升全队特攻。"
+      },
+      {
+        "slot": 3,
+        "name": "花苞铃铛",
+        "pp": 15,
+        "description": "摇响花苞，造成伤害并有概率令对手瞌睡。"
+      },
+      {
+        "slot": 4,
+        "name": "绿荫疗愈",
+        "pp": 10,
+        "description": "展开绿荫，持续回复全队生命。"
+      }
+    ],
+    "60003": [
+      {
+        "slot": 1,
+        "name": "花翼圣歌",
+        "pp": 10,
+        "description": "以花翼唱响圣歌，对全体对手造成强力草系伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "天使叶羽",
+        "pp": 15,
+        "description": "射出轻柔叶羽，命中后为生命最低的同伴回复生命。"
+      },
+      {
+        "slot": 3,
+        "name": "繁花祝福",
+        "pp": 5,
+        "description": "令繁花在队伍中绽放，大量回复并解除负面状态。"
+      },
+      {
+        "slot": 4,
+        "name": "绿翼庇护",
+        "pp": 10,
+        "description": "张开绿翼，为全队生成吸收伤害的叶绿护盾。"
+      }
+    ],
+    "60004": [
+      {
+        "slot": 1,
+        "name": "节拍摆拳",
+        "pp": 25,
+        "description": "踩着鼓点挥出摆拳，造成草系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "耳机调频",
+        "pp": 20,
+        "description": "调整耳机捕捉对手节奏，提升命中。"
+      },
+      {
+        "slot": 3,
+        "name": "音波拍掌",
+        "pp": 15,
+        "description": "拍出带音波的双掌，有概率令对手退缩。"
+      },
+      {
+        "slot": 4,
+        "name": "藤蔓舞步",
+        "pp": 15,
+        "description": "踏着藤蔓移动，提升速度并强化下一次近战攻击。"
+      }
+    ],
+    "60005": [
+      {
+        "slot": 1,
+        "name": "电子连击",
+        "pp": 15,
+        "description": "按计算好的节奏连续出拳，最多命中三次。"
+      },
+      {
+        "slot": 2,
+        "name": "扫描目镜",
+        "pp": 10,
+        "description": "扫描对手动作，降低其闪避并提升自身暴击。"
+      },
+      {
+        "slot": 3,
+        "name": "程序藤鞭",
+        "pp": 15,
+        "description": "操纵藤蔓按轨迹抽击，准确命中远处对手。"
+      },
+      {
+        "slot": 4,
+        "name": "低音震荡",
+        "pp": 10,
+        "description": "释放低频冲击，对周围对手造成伤害并降低速度。"
+      }
+    ],
+    "60006": [
+      {
+        "slot": 1,
+        "name": "全频重拳",
+        "pp": 10,
+        "description": "将全部节拍汇入重拳，造成极高草系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "代码森林",
+        "pp": 5,
+        "description": "展开自然演算领域，持续强化全队命中与草系技能。"
+      },
+      {
+        "slot": 3,
+        "name": "节拍超频",
+        "pp": 10,
+        "description": "短暂超频节奏，提升物攻与速度。"
+      },
+      {
+        "slot": 4,
+        "name": "终演音爆",
+        "pp": 5,
+        "description": "发动终结演出的音爆重击，对全体对手造成冲击。"
+      }
+    ],
+    "60007": [
+      {
+        "slot": 1,
+        "name": "冰壳撞击",
+        "pp": 25,
+        "description": "推着冰壳撞向对手，造成冰系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "雪球滚动",
+        "pp": 20,
+        "description": "团成雪球滚动，提升速度并躲避下一次远程攻击。"
+      },
+      {
+        "slot": 3,
+        "name": "寒气凝甲",
+        "pp": 15,
+        "description": "让寒气在冰壳表面凝结，提升物防。"
+      },
+      {
+        "slot": 4,
+        "name": "小小冰息",
+        "pp": 20,
+        "description": "呼出细小冰息，造成冰系特攻伤害。"
+      }
+    ],
+    "60008": [
+      {
+        "slot": 1,
+        "name": "雪人重拳",
+        "pp": 15,
+        "description": "挥动厚实雪拳，造成冰系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "萝卜鼻瞄准",
+        "pp": 15,
+        "description": "用胡萝卜鼻锁定目标，提升全队命中。"
+      },
+      {
+        "slot": 3,
+        "name": "小雪人援护",
+        "pp": 10,
+        "description": "派出小雪人替同伴承伤，并回复少量生命。"
+      },
+      {
+        "slot": 4,
+        "name": "冰霜壁垒",
+        "pp": 10,
+        "description": "筑起冰墙，显著提升自身物防与特防。"
+      }
+    ],
+    "60009": [
+      {
+        "slot": 1,
+        "name": "极寒臂锤",
+        "pp": 10,
+        "description": "以巨大雪臂砸下冰晶重锤，造成高威力伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "雪原巨壁",
+        "pp": 5,
+        "description": "展开守护全队的雪墙，大幅提升双防。"
+      },
+      {
+        "slot": 3,
+        "name": "冰晶震地",
+        "pp": 10,
+        "description": "重踏地面，掀起冰晶冲击全体对手。"
+      },
+      {
+        "slot": 4,
+        "name": "胡萝卜号令",
+        "pp": 5,
+        "description": "召来雪人伙伴共同防守，并持续恢复生命。"
+      }
+    ],
+    "60010": [
+      {
+        "slot": 1,
+        "name": "咖啡香雾",
+        "pp": 25,
+        "description": "喷出浓香雾气，造成土系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "硬壳杯守",
+        "pp": 20,
+        "description": "缩进纸杯硬壳，提升物防。"
+      },
+      {
+        "slot": 3,
+        "name": "豆芽触手",
+        "pp": 15,
+        "description": "伸出嫩芽缠住对手，降低其速度。"
+      },
+      {
+        "slot": 4,
+        "name": "提神香气",
+        "pp": 10,
+        "description": "驱散同伴疲惫，回复生命并解除瞌睡。"
+      }
+    ],
+    "60011": [
+      {
+        "slot": 1,
+        "name": "蚁群咖啡弹",
+        "pp": 15,
+        "description": "让蚁群连续抛出咖啡砂弹，造成多次伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "土堡搬运",
+        "pp": 15,
+        "description": "筑起小型土堡，提升全队物防。"
+      },
+      {
+        "slot": 3,
+        "name": "香醇支援",
+        "pp": 10,
+        "description": "把香醇补给送给同伴，回复生命并提升特攻。"
+      },
+      {
+        "slot": 4,
+        "name": "沙穴埋伏",
+        "pp": 20,
+        "description": "藏入沙穴躲避攻击，下回合提升闪避。"
+      }
+    ],
+    "60012": [
+      {
+        "slot": 1,
+        "name": "蚁后香薰",
+        "pp": 10,
+        "description": "释放王室香薰，持续回复全队并提升特防。"
+      },
+      {
+        "slot": 2,
+        "name": "砂土王座",
+        "pp": 5,
+        "description": "升起砂土王座，大幅强化自身双防与辅助效果。"
+      },
+      {
+        "slot": 3,
+        "name": "百蚁豆炮",
+        "pp": 10,
+        "description": "指挥蚁群齐射咖啡砂弹，攻击全体对手。"
+      },
+      {
+        "slot": 4,
+        "name": "肥沃领地",
+        "pp": 5,
+        "description": "改造脚下土地，使全队每回合回复生命。"
+      }
+    ],
+    "60013": [
+      {
+        "slot": 1,
+        "name": "瓶身撞击",
+        "pp": 25,
+        "description": "用坚硬木瓶撞击对手，造成草系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "木呆硬撑",
+        "pp": 20,
+        "description": "站稳脚步准备承伤，提升物防。"
+      },
+      {
+        "slot": 3,
+        "name": "花蜜黏雾",
+        "pp": 15,
+        "description": "喷出黏稠蜜雾，降低对手速度。"
+      },
+      {
+        "slot": 4,
+        "name": "小叶庇护",
+        "pp": 15,
+        "description": "展开瓶口小叶，提升自身与相邻同伴特防。"
+      }
+    ],
+    "60014": [
+      {
+        "slot": 1,
+        "name": "叶刃瓶拳",
+        "pp": 15,
+        "description": "以叶片包裹瓶拳击出，造成强力草系伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "蜜瓶格挡",
+        "pp": 10,
+        "description": "进入格挡姿态，受击后挥动藤臂反击。"
+      },
+      {
+        "slot": 3,
+        "name": "藤臂横扫",
+        "pp": 15,
+        "description": "挥动藤臂横扫，对周围对手造成伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "花冠扎根",
+        "pp": 10,
+        "description": "扎根吸收养分，回复生命并提升物防。"
+      }
+    ],
+    "60015": [
+      {
+        "slot": 1,
+        "name": "古瓶镇压",
+        "pp": 10,
+        "description": "以古瓶与藤臂全力镇压，造成高威力物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "蜜香长寿",
+        "pp": 5,
+        "description": "分享陈年甘蜜，大量回复全队生命。"
+      },
+      {
+        "slot": 3,
+        "name": "盘根守卫",
+        "pp": 5,
+        "description": "令盘根连接全队，分担伤害并提升双防。"
+      },
+      {
+        "slot": 4,
+        "name": "百花叶掌",
+        "pp": 10,
+        "description": "挥动繁茂叶掌，造成范围伤害并回复自身。"
+      }
+    ],
+    "60016": [
+      {
+        "slot": 1,
+        "name": "铁块撞头",
+        "pp": 25,
+        "description": "用坚硬额头撞击对手，造成钢系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "锅炉硬撑",
+        "pp": 20,
+        "description": "压低身体稳住炉脚，提升物防。"
+      },
+      {
+        "slot": 3,
+        "name": "铆钉飞弹",
+        "pp": 20,
+        "description": "射出一枚安全钝头铆钉，造成远程物攻伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "热气蒸腾",
+        "pp": 15,
+        "description": "释放洁净蒸汽，解除自身一个负面状态。"
+      }
+    ],
+    "60017": [
+      {
+        "slot": 1,
+        "name": "熔炉重拳",
+        "pp": 15,
+        "description": "挥动炽热铁臂重拳，造成钢系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "炉门闭锁",
+        "pp": 10,
+        "description": "关闭炉门进入防御，显著提升双防。"
+      },
+      {
+        "slot": 3,
+        "name": "炭火喷流",
+        "pp": 15,
+        "description": "从炉口喷出高压热流，造成范围伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "铁臂锻打",
+        "pp": 10,
+        "description": "锻打手臂使其更坚固，提升物攻与物防。"
+      }
+    ],
+    "60018": [
+      {
+        "slot": 1,
+        "name": "长官重锤",
+        "pp": 10,
+        "description": "以长官巨臂全力锤击，造成极高钢系伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "钢铁防线",
+        "pp": 5,
+        "description": "呼叫工坊防线，为全队提供钢壁与伤害分担。"
+      },
+      {
+        "slot": 3,
+        "name": "炉心过载",
+        "pp": 5,
+        "description": "短时释放炉心极限，强化物攻与物防但下回合速度下降。"
+      },
+      {
+        "slot": 4,
+        "name": "万吨锻压",
+        "pp": 5,
+        "description": "汇聚全部炉压完成重击，对防御中的对手额外有效。"
+      }
+    ],
+    "60019": [
+      {
+        "slot": 1,
+        "name": "暗影扑抱",
+        "pp": 25,
+        "description": "带着暗影扑向对手，造成暗系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "紫火喷嚏",
+        "pp": 20,
+        "description": "喷出一团紫色咒火，造成暗系特攻伤害。"
+      },
+      {
+        "slot": 3,
+        "name": "诅咒胡须",
+        "pp": 15,
+        "description": "用胡须留下咒印，降低对手特攻。"
+      },
+      {
+        "slot": 4,
+        "name": "胖豹蜷缩",
+        "pp": 15,
+        "description": "蜷成毛团保护自己，提升物防与特防。"
+      }
+    ],
+    "60020": [
+      {
+        "slot": 1,
+        "name": "紫焰爪",
+        "pp": 15,
+        "description": "以利爪带出紫色咒焰，造成物攻与特攻混合伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "暗火连尾",
+        "pp": 15,
+        "description": "甩出两道追踪暗火，连续攻击对手。"
+      },
+      {
+        "slot": 3,
+        "name": "咒焰标记",
+        "pp": 10,
+        "description": "标记对手，使其受到的暗系伤害提高。"
+      },
+      {
+        "slot": 4,
+        "name": "夜幕潜行",
+        "pp": 10,
+        "description": "融入夜幕，提升闪避与下一次技能暴击率。"
+      }
+    ],
+    "60021": [
+      {
+        "slot": 1,
+        "name": "翼影坠击",
+        "pp": 10,
+        "description": "从高空携暗翼坠击，造成高威力暗系伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "紫焰风暴",
+        "pp": 10,
+        "description": "扇动紫焰风暴，对全体对手造成特攻伤害。"
+      },
+      {
+        "slot": 3,
+        "name": "暗夜咒域",
+        "pp": 5,
+        "description": "展开咒域，持续削弱对手回复与暗系抗性。"
+      },
+      {
+        "slot": 4,
+        "name": "胖豹回旋",
+        "pp": 15,
+        "description": "灵活旋转暗翼冲撞对手，随后提升自身闪避。"
+      }
+    ],
+    "60022": [
+      {
+        "slot": 1,
+        "name": "礼帽冲击",
+        "pp": 20,
+        "description": "压低礼帽迎风冲刺，造成风系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "轮滑冲刺",
+        "pp": 25,
+        "description": "猛然加速滑行，提升自身速度。"
+      },
+      {
+        "slot": 3,
+        "name": "绅士啄击",
+        "pp": 25,
+        "description": "以干脆利落的啄击攻击对手。"
+      },
+      {
+        "slot": 4,
+        "name": "风度闪避",
+        "pp": 15,
+        "description": "优雅侧身闪过攻击，提升闪避。"
+      }
+    ],
+    "60023": [
+      {
+        "slot": 1,
+        "name": "旋风滑步",
+        "pp": 15,
+        "description": "踏着旋风连续滑步撞击，最多命中两次。"
+      },
+      {
+        "slot": 2,
+        "name": "领结风刃",
+        "pp": 20,
+        "description": "从领结两侧放出风刃，造成风系特攻伤害。"
+      },
+      {
+        "slot": 3,
+        "name": "白翼连击",
+        "pp": 15,
+        "description": "以白翼完成优雅连击，提升后续攻击速度。"
+      },
+      {
+        "slot": 4,
+        "name": "优雅挑衅",
+        "pp": 10,
+        "description": "向对手致意并发起挑战，使其优先攻击自己并降低命中。"
+      }
+    ],
+    "60024": [
+      {
+        "slot": 1,
+        "name": "礼帽风暴",
+        "pp": 10,
+        "description": "旋起礼帽引导风暴，对全体对手造成伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "极速轮舞",
+        "pp": 10,
+        "description": "以高速轮舞连续攻击，并在结束后提升速度。"
+      },
+      {
+        "slot": 3,
+        "name": "绅士终步",
+        "pp": 5,
+        "description": "完成精准终步，以极高威力冲击单个对手。"
+      },
+      {
+        "slot": 4,
+        "name": "风场护航",
+        "pp": 5,
+        "description": "展开护航风场，提升全队速度与闪避。"
+      }
+    ],
+    "60025": [
+      {
+        "slot": 1,
+        "name": "暗茧撞击",
+        "pp": 25,
+        "description": "用坚硬蛹壳撞击对手，造成暗系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "蛹壳固守",
+        "pp": 20,
+        "description": "收紧蛹壳进入守势，提升物防。"
+      },
+      {
+        "slot": 3,
+        "name": "影子粉尘",
+        "pp": 20,
+        "description": "洒出暗影粉尘，造成特攻伤害并降低命中。"
+      },
+      {
+        "slot": 4,
+        "name": "蜷缩休息",
+        "pp": 15,
+        "description": "蜷缩休息，回复生命并解除一个负面状态。"
+      }
+    ],
+    "60026": [
+      {
+        "slot": 1,
+        "name": "落岩拳",
+        "pp": 15,
+        "description": "挥出附带碎岩的重拳，造成暗系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "岩垒屏障",
+        "pp": 10,
+        "description": "竖起岩垒屏障，大幅提升自身双防。"
+      },
+      {
+        "slot": 3,
+        "name": "暗晶突刺",
+        "pp": 15,
+        "description": "从地面升起暗晶尖刺，造成特攻伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "不动扎根",
+        "pp": 10,
+        "description": "将身体固定于地脉，持续回复并免疫击退。"
+      }
+    ],
+    "60027": [
+      {
+        "slot": 1,
+        "name": "覆甲碎击",
+        "pp": 10,
+        "description": "以覆甲巨拳击碎防线，造成高威力暗系伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "黑岩城塞",
+        "pp": 5,
+        "description": "展开城塞阵型，分担全队伤害并提升双防。"
+      },
+      {
+        "slot": 3,
+        "name": "熔缝震爆",
+        "pp": 10,
+        "description": "引爆甲缝能量，对周围对手造成冲击。"
+      },
+      {
+        "slot": 4,
+        "name": "山岳架势",
+        "pp": 5,
+        "description": "进入山岳架势，受到攻击后必定反击一次。"
+      }
+    ],
+    "60028": [
+      {
+        "slot": 1,
+        "name": "四叶籽弹",
+        "pp": 25,
+        "description": "发射带四叶纹的种弹，造成草系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "喵叶连射",
+        "pp": 20,
+        "description": "快速抖动叶片，连续射出两枚种弹。"
+      },
+      {
+        "slot": 3,
+        "name": "幸运摇叶",
+        "pp": 15,
+        "description": "摇动四叶草，提升自身闪避与暴击。"
+      },
+      {
+        "slot": 4,
+        "name": "苔香治愈",
+        "pp": 10,
+        "description": "释放苔藓清香，回复一名同伴生命。"
+      }
+    ],
+    "60029": [
+      {
+        "slot": 1,
+        "name": "三叶镖雨",
+        "pp": 15,
+        "description": "投出回旋叶镖，从多个方向攻击对手。"
+      },
+      {
+        "slot": 2,
+        "name": "幸运扑击",
+        "pp": 15,
+        "description": "踏着叶影扑击，造成物攻伤害并提升闪避。"
+      },
+      {
+        "slot": 3,
+        "name": "四叶预感",
+        "pp": 10,
+        "description": "预判气流与对手动作，提升暴击与命中。"
+      },
+      {
+        "slot": 4,
+        "name": "苔影替身",
+        "pp": 10,
+        "description": "留下苔影替身，躲避下一次直接攻击。"
+      }
+    ],
+    "60030": [
+      {
+        "slot": 1,
+        "name": "四叶星芒",
+        "pp": 10,
+        "description": "射出四叶形星芒，造成高威力草系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "幸运花雨",
+        "pp": 5,
+        "description": "令幸运花雨覆盖全场，攻击对手并祝福全队。"
+      },
+      {
+        "slot": 3,
+        "name": "万花喵射",
+        "pp": 10,
+        "description": "同时催动多重叶片，连续射击全体对手。"
+      },
+      {
+        "slot": 4,
+        "name": "永恒四叶",
+        "pp": 5,
+        "description": "留下永恒四叶祝福，抵挡一次致命伤害。"
+      }
+    ],
+    "60031": [
+      {
+        "slot": 1,
+        "name": "电羽气流",
+        "pp": 25,
+        "description": "扇出带电气流，造成雷系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "背包喷射",
+        "pp": 20,
+        "description": "启动喷气背包，提升自身速度与闪避。"
+      },
+      {
+        "slot": 3,
+        "name": "风向标",
+        "pp": 15,
+        "description": "转动风向标修正航路，提升全队命中。"
+      },
+      {
+        "slot": 4,
+        "name": "旅行补给",
+        "pp": 10,
+        "description": "分发旅行补给，回复一名同伴生命并解除疲惫。"
+      }
+    ],
+    "60032": [
+      {
+        "slot": 1,
+        "name": "顺风电喙",
+        "pp": 15,
+        "description": "借着顺风以电喙冲击对手，造成雷系伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "气流导航",
+        "pp": 10,
+        "description": "为全队规划气流航线，提升速度与闪避。"
+      },
+      {
+        "slot": 3,
+        "name": "风袋冲击",
+        "pp": 15,
+        "description": "释放旅行包中的压缩风，造成范围伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "云端休整",
+        "pp": 10,
+        "description": "召来柔软云层，持续回复全队生命。"
+      }
+    ],
+    "60033": [
+      {
+        "slot": 1,
+        "name": "风压雷炮",
+        "pp": 10,
+        "description": "将风压与雷电压缩后发射，造成高威力特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "旋翼天穹",
+        "pp": 5,
+        "description": "启动旋翼领域，持续强化全队速度与雷系技能。"
+      },
+      {
+        "slot": 3,
+        "name": "高压护航",
+        "pp": 10,
+        "description": "以高压气流护住全队，生成可吸收伤害的护盾。"
+      },
+      {
+        "slot": 4,
+        "name": "旅行终航",
+        "pp": 5,
+        "description": "完成终航俯冲，对全体对手造成风雷冲击。"
+      }
+    ],
+    "60034": [
+      {
+        "slot": 1,
+        "name": "电壳冲击",
+        "pp": 25,
+        "description": "带着带电硬壳冲撞对手，造成雷系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "雷角蓄能",
+        "pp": 20,
+        "description": "为雷角蓄积电荷，提升下一次特攻。"
+      },
+      {
+        "slot": 3,
+        "name": "硬壳守势",
+        "pp": 15,
+        "description": "收起足肢以硬壳防守，提升物防。"
+      },
+      {
+        "slot": 4,
+        "name": "静电跳跃",
+        "pp": 20,
+        "description": "借静电轻轻跃起，提升速度与闪避。"
+      }
+    ],
+    "60035": [
+      {
+        "slot": 1,
+        "name": "甲虫雷钳",
+        "pp": 15,
+        "description": "用带电前足夹击对手，造成雷系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "雷光甲壳",
+        "pp": 10,
+        "description": "让雷光流过甲壳，提升物防与特防。"
+      },
+      {
+        "slot": 3,
+        "name": "双角放电",
+        "pp": 15,
+        "description": "从双角释放交叉电弧，造成雷系特攻伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "电流跳跃",
+        "pp": 10,
+        "description": "沿电流高速移动，提升速度并强化下一击。"
+      }
+    ],
+    "60036": [
+      {
+        "slot": 1,
+        "name": "霹雳角炮",
+        "pp": 10,
+        "description": "从长角发射霹雳光束，造成高威力雷系伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "万伏甲阵",
+        "pp": 5,
+        "description": "展开甲阵保护全队，并强化雷系技能。"
+      },
+      {
+        "slot": 3,
+        "name": "雷翅连闪",
+        "pp": 10,
+        "description": "振翅化作雷光连续攻击，随后提升闪避。"
+      },
+      {
+        "slot": 4,
+        "name": "虫鸣雷鸣",
+        "pp": 5,
+        "description": "以虫鸣引发雷鸣共振，对全体对手造成伤害并降低特防。"
+      }
+    ],
+    "60037": [
+      {
+        "slot": 1,
+        "name": "王冠水泡",
+        "pp": 25,
+        "description": "发射带王冠纹的水泡，造成水系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "海鳍祈愿",
+        "pp": 15,
+        "description": "轻轻摆动海鳍祈愿，回复一名同伴生命。"
+      },
+      {
+        "slot": 3,
+        "name": "洋流摆尾",
+        "pp": 20,
+        "description": "摆动尾鳍掀起小洋流，造成伤害并降低速度。"
+      },
+      {
+        "slot": 4,
+        "name": "小小王室",
+        "pp": 10,
+        "description": "鼓起王室勇气，为自身与相邻同伴生成水膜护盾。"
+      }
+    ],
+    "60038": [
+      {
+        "slot": 1,
+        "name": "王子潮刃",
+        "pp": 15,
+        "description": "挥出优雅潮刃，造成水系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "蓝晶冠冕",
+        "pp": 10,
+        "description": "点亮蓝晶王冠，提升特攻与特防。"
+      },
+      {
+        "slot": 3,
+        "name": "海流圆舞",
+        "pp": 15,
+        "description": "跳起海流圆舞，对周围对手造成伤害并回复自身。"
+      },
+      {
+        "slot": 4,
+        "name": "王室甘霖",
+        "pp": 10,
+        "description": "降下清澈甘霖，回复全队并解除一个负面状态。"
+      }
+    ],
+    "60039": [
+      {
+        "slot": 1,
+        "name": "洋流王令",
+        "pp": 10,
+        "description": "号令洋流汇成巨浪，造成高威力水系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "海翼潮鸣",
+        "pp": 10,
+        "description": "扇动海翼发出潮鸣，攻击全体对手并回复全队。"
+      },
+      {
+        "slot": 3,
+        "name": "碧蓝王域",
+        "pp": 5,
+        "description": "展开碧蓝王域，持续强化全队水系技能与回复效果。"
+      },
+      {
+        "slot": 4,
+        "name": "万流加冕",
+        "pp": 5,
+        "description": "汇聚万流完成加冕，生成强大护盾并净化全队。"
+      }
+    ],
+    "60040": [
+      {
+        "slot": 1,
+        "name": "冰爪连击",
+        "pp": 25,
+        "description": "以覆冰利爪连续攻击两次，造成冰系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "雪影突击",
+        "pp": 20,
+        "description": "化作雪影迅速突进，优先出手并提升暴击。"
+      },
+      {
+        "slot": 3,
+        "name": "快快助威",
+        "pp": 15,
+        "description": "轻快地踏脚助威，提升自身与相邻同伴速度。"
+      },
+      {
+        "slot": 4,
+        "name": "绒毛冰甲",
+        "pp": 15,
+        "description": "让冰晶覆盖蓬松绒毛，提升物防。"
+      }
+    ],
+    "60041": [
+      {
+        "slot": 1,
+        "name": "风羽慢箭",
+        "pp": 25,
+        "description": "从容射出风羽，造成风系特攻伤害且容易命中。"
+      },
+      {
+        "slot": 2,
+        "name": "从容瞄准",
+        "pp": 20,
+        "description": "静下心观察目标，提升命中与暴击。"
+      },
+      {
+        "slot": 3,
+        "name": "旋风尾射",
+        "pp": 15,
+        "description": "甩尾释放旋风弹，对远处对手造成伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "慢慢结界",
+        "pp": 10,
+        "description": "展开缓和风结界，降低对手速度并提升自身闪避。"
+      }
+    ],
+    "60042": [
+      {
+        "slot": 1,
+        "name": "冰晶噗射",
+        "pp": 25,
+        "description": "嘟嘴射出冰晶，造成冰系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "长颈冰息",
+        "pp": 20,
+        "description": "伸长脖颈吹出冰息，造成范围伤害并降低速度。"
+      },
+      {
+        "slot": 3,
+        "name": "晶翼散射",
+        "pp": 15,
+        "description": "张开晶翼散射冰羽，对全体对手造成伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "噗噗护羽",
+        "pp": 10,
+        "description": "用晶羽包裹自身，提升特防并回复少量生命。"
+      }
+    ],
+    "103171": [
+      {
+        "slot": 1,
+        "name": "橡果脉冲",
+        "pp": 25,
+        "description": "释放橡果能源包中的脉冲，造成钢系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "齿轮鼓舞",
+        "pp": 20,
+        "description": "播放轻快的齿轮节拍，提升全队速度与命中。"
+      },
+      {
+        "slot": 3,
+        "name": "铁皮护翼",
+        "pp": 15,
+        "description": "展开机械护翼，为一名同伴抵挡部分伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "咻咻修理",
+        "pp": 10,
+        "description": "发送修理纳米群，回复一名同伴生命并解除一个负面状态。"
+      }
+    ],
+    "103172": [
+      {
+        "slot": 1,
+        "name": "露滴水炮",
+        "pp": 25,
+        "description": "凝聚清露发射水炮，造成水系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "蓝露水环",
+        "pp": 20,
+        "description": "唤起环形水流，对周围对手造成伤害并提升自身特防。"
+      },
+      {
+        "slot": 3,
+        "name": "涟漪净化",
+        "pp": 15,
+        "description": "以清澈涟漪洗涤同伴，解除一个负面状态并回复少量生命。"
+      },
+      {
+        "slot": 4,
+        "name": "莹泡守护",
+        "pp": 10,
+        "description": "吹出晶莹水泡包裹全队，生成可吸收伤害的水膜护盾。"
+      }
+    ],
+    "103173": [
+      {
+        "slot": 1,
+        "name": "岩肩撞击",
+        "pp": 25,
+        "description": "用厚重岩肩撞向对手，造成土系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "墩墩固守",
+        "pp": 20,
+        "description": "压低重心进入守势，大幅提升物防并免疫击退。"
+      },
+      {
+        "slot": 3,
+        "name": "碎石熊掌",
+        "pp": 15,
+        "description": "挥动覆岩熊掌重击，造成伤害并有概率降低对手速度。"
+      },
+      {
+        "slot": 4,
+        "name": "地脉庇护",
+        "pp": 10,
+        "description": "连接脚下地脉，为自身与相邻同伴分担伤害并持续回复。"
+      }
+    ]
+  },
+  "traits": {
+    "1": [
+      {
+        "slot": 1,
+        "family": "火系元素",
+        "name": "余烬体温",
+        "description": "受到冰系攻击时伤害降低；生命低于三分之一时，火系技能威力提升。"
+      },
+      {
+        "slot": 2,
+        "family": "火系元素",
+        "name": "燃心共鸣",
+        "description": "回合结束时若本回合未受伤，获得一层特攻强化，最多叠加三层。"
+      }
+    ],
+    "2": [
+      {
+        "slot": 1,
+        "family": "火系元素",
+        "name": "余烬体温",
+        "description": "受到冰系攻击时伤害降低；生命低于三分之一时，火系技能威力提升。"
+      },
+      {
+        "slot": 2,
+        "family": "火系元素",
+        "name": "燃心共鸣",
+        "description": "回合结束时若本回合未受伤，获得一层特攻强化，最多叠加三层。"
+      }
+    ],
+    "3": [
+      {
+        "slot": 1,
+        "family": "火系元素",
+        "name": "余烬体温",
+        "description": "受到冰系攻击时伤害降低；生命低于三分之一时，火系技能威力提升。"
+      },
+      {
+        "slot": 2,
+        "family": "火系元素",
+        "name": "燃心共鸣",
+        "description": "回合结束时若本回合未受伤，获得一层特攻强化，最多叠加三层。"
+      }
+    ],
+    "4": [
+      {
+        "slot": 1,
+        "family": "水系鲨",
+        "name": "冒险直觉",
+        "description": "探索时更容易发现稀有道具；每场战斗首次受到攻击时，闪避率提升。"
+      },
+      {
+        "slot": 2,
+        "family": "水系鲨",
+        "name": "潮汐守护",
+        "description": "生命高于一半时物防提升；登场时为最虚弱的同伴生成一次水泡护盾。"
+      }
+    ],
+    "5": [
+      {
+        "slot": 1,
+        "family": "水系鲨",
+        "name": "冒险直觉",
+        "description": "探索时更容易发现稀有道具；每场战斗首次受到攻击时，闪避率提升。"
+      },
+      {
+        "slot": 2,
+        "family": "水系鲨",
+        "name": "潮汐守护",
+        "description": "生命高于一半时物防提升；登场时为最虚弱的同伴生成一次水泡护盾。"
+      }
+    ],
+    "6": [
+      {
+        "slot": 1,
+        "family": "水系鲨",
+        "name": "冒险直觉",
+        "description": "探索时更容易发现稀有道具；每场战斗首次受到攻击时，闪避率提升。"
+      },
+      {
+        "slot": 2,
+        "family": "水系鲨",
+        "name": "潮汐守护",
+        "description": "生命高于一半时物防提升；登场时为最虚弱的同伴生成一次水泡护盾。"
+      }
+    ],
+    "7": [
+      {
+        "slot": 1,
+        "family": "草系蕉",
+        "name": "晨光滋养",
+        "description": "晴天环境下每回合回复少量生命，并提高草系技能的命中。"
+      },
+      {
+        "slot": 2,
+        "family": "草系蕉",
+        "name": "果皮庇护",
+        "description": "满生命时受到的首次伤害降低；探索中可以抵消一次负面环境状态。"
+      }
+    ],
+    "8": [
+      {
+        "slot": 1,
+        "family": "草系蕉",
+        "name": "晨光滋养",
+        "description": "晴天环境下每回合回复少量生命，并提高草系技能的命中。"
+      },
+      {
+        "slot": 2,
+        "family": "草系蕉",
+        "name": "果皮庇护",
+        "description": "满生命时受到的首次伤害降低；探索中可以抵消一次负面环境状态。"
+      }
+    ],
+    "9": [
+      {
+        "slot": 1,
+        "family": "草系蕉",
+        "name": "晨光滋养",
+        "description": "晴天环境下每回合回复少量生命，并提高草系技能的命中。"
+      },
+      {
+        "slot": 2,
+        "family": "草系蕉",
+        "name": "果皮庇护",
+        "description": "满生命时受到的首次伤害降低；探索中可以抵消一次负面环境状态。"
+      }
+    ],
+    "60001": [
+      {
+        "slot": 1,
+        "family": "草系绿翼",
+        "name": "叶脉合唱",
+        "description": "使用辅助技能后，为生命最低的同伴回复少量生命；晴天下回复效果提升。"
+      },
+      {
+        "slot": 2,
+        "family": "草系绿翼",
+        "name": "花翼庇护",
+        "description": "生命首次低于一半时获得叶绿护盾，并提高自身的特防。"
+      }
+    ],
+    "60002": [
+      {
+        "slot": 1,
+        "family": "草系绿翼",
+        "name": "叶脉合唱",
+        "description": "使用辅助技能后，为生命最低的同伴回复少量生命；晴天下回复效果提升。"
+      },
+      {
+        "slot": 2,
+        "family": "草系绿翼",
+        "name": "花翼庇护",
+        "description": "生命首次低于一半时获得叶绿护盾，并提高自身的特防。"
+      }
+    ],
+    "60003": [
+      {
+        "slot": 1,
+        "family": "草系绿翼",
+        "name": "叶脉合唱",
+        "description": "使用辅助技能后，为生命最低的同伴回复少量生命；晴天下回复效果提升。"
+      },
+      {
+        "slot": 2,
+        "family": "草系绿翼",
+        "name": "花翼庇护",
+        "description": "生命首次低于一半时获得叶绿护盾，并提高自身的特防。"
+      }
+    ],
+    "60004": [
+      {
+        "slot": 1,
+        "family": "草系节奏猿",
+        "name": "节奏共鸣",
+        "description": "连续使用攻击技能会累积节拍，每层提高少量物攻，最多三层。"
+      },
+      {
+        "slot": 2,
+        "family": "草系节奏猿",
+        "name": "丛林舞步",
+        "description": "成功闪避后提升速度，并使下一次近战技能更容易命中。"
+      }
+    ],
+    "60005": [
+      {
+        "slot": 1,
+        "family": "草系节奏猿",
+        "name": "节奏共鸣",
+        "description": "连续使用攻击技能会累积节拍，每层提高少量物攻，最多三层。"
+      },
+      {
+        "slot": 2,
+        "family": "草系节奏猿",
+        "name": "丛林舞步",
+        "description": "成功闪避后提升速度，并使下一次近战技能更容易命中。"
+      }
+    ],
+    "60006": [
+      {
+        "slot": 1,
+        "family": "草系节奏猿",
+        "name": "节奏共鸣",
+        "description": "连续使用攻击技能会累积节拍，每层提高少量物攻，最多三层。"
+      },
+      {
+        "slot": 2,
+        "family": "草系节奏猿",
+        "name": "丛林舞步",
+        "description": "成功闪避后提升速度，并使下一次近战技能更容易命中。"
+      }
+    ],
+    "60007": [
+      {
+        "slot": 1,
+        "family": "冰系雪人",
+        "name": "雪躯御寒",
+        "description": "受到冰系与风系攻击时伤害降低，冰冻环境中每回合缓慢回复生命。"
+      },
+      {
+        "slot": 2,
+        "family": "冰系雪人",
+        "name": "团结雪人",
+        "description": "登场时获得一层雪盾；同伴受到攻击后，自身物防短暂提升。"
+      }
+    ],
+    "60008": [
+      {
+        "slot": 1,
+        "family": "冰系雪人",
+        "name": "雪躯御寒",
+        "description": "受到冰系与风系攻击时伤害降低，冰冻环境中每回合缓慢回复生命。"
+      },
+      {
+        "slot": 2,
+        "family": "冰系雪人",
+        "name": "团结雪人",
+        "description": "登场时获得一层雪盾；同伴受到攻击后，自身物防短暂提升。"
+      }
+    ],
+    "60009": [
+      {
+        "slot": 1,
+        "family": "冰系雪人",
+        "name": "雪躯御寒",
+        "description": "受到冰系与风系攻击时伤害降低，冰冻环境中每回合缓慢回复生命。"
+      },
+      {
+        "slot": 2,
+        "family": "冰系雪人",
+        "name": "团结雪人",
+        "description": "登场时获得一层雪盾；同伴受到攻击后，自身物防短暂提升。"
+      }
+    ],
+    "60010": [
+      {
+        "slot": 1,
+        "family": "土系咖啡蚁",
+        "name": "香醇清醒",
+        "description": "不会陷入睡眠，使用回复技能时额外解除一个轻度负面状态。"
+      },
+      {
+        "slot": 2,
+        "family": "土系咖啡蚁",
+        "name": "群蚁协作",
+        "description": "场上每有一名其他同伴，自身特防少量提升，最多计算三名同伴。"
+      }
+    ],
+    "60011": [
+      {
+        "slot": 1,
+        "family": "土系咖啡蚁",
+        "name": "香醇清醒",
+        "description": "不会陷入睡眠，使用回复技能时额外解除一个轻度负面状态。"
+      },
+      {
+        "slot": 2,
+        "family": "土系咖啡蚁",
+        "name": "群蚁协作",
+        "description": "场上每有一名其他同伴，自身特防少量提升，最多计算三名同伴。"
+      }
+    ],
+    "60012": [
+      {
+        "slot": 1,
+        "family": "土系咖啡蚁",
+        "name": "香醇清醒",
+        "description": "不会陷入睡眠，使用回复技能时额外解除一个轻度负面状态。"
+      },
+      {
+        "slot": 2,
+        "family": "土系咖啡蚁",
+        "name": "群蚁协作",
+        "description": "场上每有一名其他同伴，自身特防少量提升，最多计算三名同伴。"
+      }
+    ],
+    "60013": [
+      {
+        "slot": 1,
+        "family": "草系蜜瓶",
+        "name": "蜜露储备",
+        "description": "每回合储存少量蜜露，受到治疗时消耗蜜露并提高回复量。"
+      },
+      {
+        "slot": 2,
+        "family": "草系蜜瓶",
+        "name": "木瓶扎根",
+        "description": "停留在场时逐回合提升物防，受到草系攻击时额外回复生命。"
+      }
+    ],
+    "60014": [
+      {
+        "slot": 1,
+        "family": "草系蜜瓶",
+        "name": "蜜露储备",
+        "description": "每回合储存少量蜜露，受到治疗时消耗蜜露并提高回复量。"
+      },
+      {
+        "slot": 2,
+        "family": "草系蜜瓶",
+        "name": "木瓶扎根",
+        "description": "停留在场时逐回合提升物防，受到草系攻击时额外回复生命。"
+      }
+    ],
+    "60015": [
+      {
+        "slot": 1,
+        "family": "草系蜜瓶",
+        "name": "蜜露储备",
+        "description": "每回合储存少量蜜露，受到治疗时消耗蜜露并提高回复量。"
+      },
+      {
+        "slot": 2,
+        "family": "草系蜜瓶",
+        "name": "木瓶扎根",
+        "description": "停留在场时逐回合提升物防，受到草系攻击时额外回复生命。"
+      }
+    ],
+    "60016": [
+      {
+        "slot": 1,
+        "family": "钢系熔炉",
+        "name": "耐热炉壳",
+        "description": "受到火系攻击时伤害降低，且不会被灼烧；生命较高时物防提升。"
+      },
+      {
+        "slot": 2,
+        "family": "钢系熔炉",
+        "name": "锻压回弹",
+        "description": "受到近战攻击后积累炉压，下一次物攻技能按炉压造成额外伤害。"
+      }
+    ],
+    "60017": [
+      {
+        "slot": 1,
+        "family": "钢系熔炉",
+        "name": "耐热炉壳",
+        "description": "受到火系攻击时伤害降低，且不会被灼烧；生命较高时物防提升。"
+      },
+      {
+        "slot": 2,
+        "family": "钢系熔炉",
+        "name": "锻压回弹",
+        "description": "受到近战攻击后积累炉压，下一次物攻技能按炉压造成额外伤害。"
+      }
+    ],
+    "60018": [
+      {
+        "slot": 1,
+        "family": "钢系熔炉",
+        "name": "耐热炉壳",
+        "description": "受到火系攻击时伤害降低，且不会被灼烧；生命较高时物防提升。"
+      },
+      {
+        "slot": 2,
+        "family": "钢系熔炉",
+        "name": "锻压回弹",
+        "description": "受到近战攻击后积累炉压，下一次物攻技能按炉压造成额外伤害。"
+      }
+    ],
+    "60019": [
+      {
+        "slot": 1,
+        "family": "暗系胖豹",
+        "name": "咒焰体温",
+        "description": "暗系技能命中后可能留下咒焰，使对手的回复效果降低。"
+      },
+      {
+        "slot": 2,
+        "family": "暗系胖豹",
+        "name": "柔软着陆",
+        "description": "受到高威力攻击时减轻部分伤害，每场战斗首次触发时额外提升闪避。"
+      }
+    ],
+    "60020": [
+      {
+        "slot": 1,
+        "family": "暗系胖豹",
+        "name": "咒焰体温",
+        "description": "暗系技能命中后可能留下咒焰，使对手的回复效果降低。"
+      },
+      {
+        "slot": 2,
+        "family": "暗系胖豹",
+        "name": "柔软着陆",
+        "description": "受到高威力攻击时减轻部分伤害，每场战斗首次触发时额外提升闪避。"
+      }
+    ],
+    "60021": [
+      {
+        "slot": 1,
+        "family": "暗系胖豹",
+        "name": "咒焰体温",
+        "description": "暗系技能命中后可能留下咒焰，使对手的回复效果降低。"
+      },
+      {
+        "slot": 2,
+        "family": "暗系胖豹",
+        "name": "柔软着陆",
+        "description": "受到高威力攻击时减轻部分伤害，每场战斗首次触发时额外提升闪避。"
+      }
+    ],
+    "60022": [
+      {
+        "slot": 1,
+        "family": "风系绅士鹅",
+        "name": "绅士风度",
+        "description": "生命高于一半时命中与闪避提升，受到降低能力的影响时自动减轻一层。"
+      },
+      {
+        "slot": 2,
+        "family": "风系绅士鹅",
+        "name": "轮滑先行",
+        "description": "登场后的前两回合速度提升，使用冲刺类技能后获得少量护盾。"
+      }
+    ],
+    "60023": [
+      {
+        "slot": 1,
+        "family": "风系绅士鹅",
+        "name": "绅士风度",
+        "description": "生命高于一半时命中与闪避提升，受到降低能力的影响时自动减轻一层。"
+      },
+      {
+        "slot": 2,
+        "family": "风系绅士鹅",
+        "name": "轮滑先行",
+        "description": "登场后的前两回合速度提升，使用冲刺类技能后获得少量护盾。"
+      }
+    ],
+    "60024": [
+      {
+        "slot": 1,
+        "family": "风系绅士鹅",
+        "name": "绅士风度",
+        "description": "生命高于一半时命中与闪避提升，受到降低能力的影响时自动减轻一层。"
+      },
+      {
+        "slot": 2,
+        "family": "风系绅士鹅",
+        "name": "轮滑先行",
+        "description": "登场后的前两回合速度提升，使用冲刺类技能后获得少量护盾。"
+      }
+    ],
+    "60025": [
+      {
+        "slot": 1,
+        "family": "暗系岩甲",
+        "name": "黑晶硬壳",
+        "description": "受到暴击时额外降低伤害，并不易被对手击退或打断。"
+      },
+      {
+        "slot": 2,
+        "family": "暗系岩甲",
+        "name": "地脉稳固",
+        "description": "每回合结束时若未移动，回复少量生命并提升物防与特防。"
+      }
+    ],
+    "60026": [
+      {
+        "slot": 1,
+        "family": "暗系岩甲",
+        "name": "黑晶硬壳",
+        "description": "受到暴击时额外降低伤害，并不易被对手击退或打断。"
+      },
+      {
+        "slot": 2,
+        "family": "暗系岩甲",
+        "name": "地脉稳固",
+        "description": "每回合结束时若未移动，回复少量生命并提升物防与特防。"
+      }
+    ],
+    "60027": [
+      {
+        "slot": 1,
+        "family": "暗系岩甲",
+        "name": "黑晶硬壳",
+        "description": "受到暴击时额外降低伤害，并不易被对手击退或打断。"
+      },
+      {
+        "slot": 2,
+        "family": "暗系岩甲",
+        "name": "地脉稳固",
+        "description": "每回合结束时若未移动，回复少量生命并提升物防与特防。"
+      }
+    ],
+    "60028": [
+      {
+        "slot": 1,
+        "family": "草系四叶喵",
+        "name": "四叶幸运",
+        "description": "技能附加效果的触发率提高，每场战斗首次受到致命伤害时保留少量生命。"
+      },
+      {
+        "slot": 2,
+        "family": "草系四叶喵",
+        "name": "苔藓再生",
+        "description": "使用草系技能后回复少量生命，晴天或绿荫环境中效果翻倍。"
+      }
+    ],
+    "60029": [
+      {
+        "slot": 1,
+        "family": "草系四叶喵",
+        "name": "四叶幸运",
+        "description": "技能附加效果的触发率提高，每场战斗首次受到致命伤害时保留少量生命。"
+      },
+      {
+        "slot": 2,
+        "family": "草系四叶喵",
+        "name": "苔藓再生",
+        "description": "使用草系技能后回复少量生命，晴天或绿荫环境中效果翻倍。"
+      }
+    ],
+    "60030": [
+      {
+        "slot": 1,
+        "family": "草系四叶喵",
+        "name": "四叶幸运",
+        "description": "技能附加效果的触发率提高，每场战斗首次受到致命伤害时保留少量生命。"
+      },
+      {
+        "slot": 2,
+        "family": "草系四叶喵",
+        "name": "苔藓再生",
+        "description": "使用草系技能后回复少量生命，晴天或绿荫环境中效果翻倍。"
+      }
+    ],
+    "60031": [
+      {
+        "slot": 1,
+        "family": "雷系旅行鸡",
+        "name": "顺风旅行",
+        "description": "登场时提升全队少量速度，探索中减少恶劣天气带来的消耗。"
+      },
+      {
+        "slot": 2,
+        "family": "雷系旅行鸡",
+        "name": "气压蓄电",
+        "description": "每承受一次攻击便储存电荷，下一次雷系技能按电荷层数增强。"
+      }
+    ],
+    "60032": [
+      {
+        "slot": 1,
+        "family": "雷系旅行鸡",
+        "name": "顺风旅行",
+        "description": "登场时提升全队少量速度，探索中减少恶劣天气带来的消耗。"
+      },
+      {
+        "slot": 2,
+        "family": "雷系旅行鸡",
+        "name": "气压蓄电",
+        "description": "每承受一次攻击便储存电荷，下一次雷系技能按电荷层数增强。"
+      }
+    ],
+    "60033": [
+      {
+        "slot": 1,
+        "family": "雷系旅行鸡",
+        "name": "顺风旅行",
+        "description": "登场时提升全队少量速度，探索中减少恶劣天气带来的消耗。"
+      },
+      {
+        "slot": 2,
+        "family": "雷系旅行鸡",
+        "name": "气压蓄电",
+        "description": "每承受一次攻击便储存电荷，下一次雷系技能按电荷层数增强。"
+      }
+    ],
+    "60034": [
+      {
+        "slot": 1,
+        "family": "雷系甲虫",
+        "name": "导电甲壳",
+        "description": "受到雷系攻击时不受伤害并转化为特攻强化，每场最多触发两次。"
+      },
+      {
+        "slot": 2,
+        "family": "雷系甲虫",
+        "name": "雷光蓄角",
+        "description": "未发动攻击的回合会蓄积雷光，下一次攻击获得额外威力与命中。"
+      }
+    ],
+    "60035": [
+      {
+        "slot": 1,
+        "family": "雷系甲虫",
+        "name": "导电甲壳",
+        "description": "受到雷系攻击时不受伤害并转化为特攻强化，每场最多触发两次。"
+      },
+      {
+        "slot": 2,
+        "family": "雷系甲虫",
+        "name": "雷光蓄角",
+        "description": "未发动攻击的回合会蓄积雷光，下一次攻击获得额外威力与命中。"
+      }
+    ],
+    "60036": [
+      {
+        "slot": 1,
+        "family": "雷系甲虫",
+        "name": "导电甲壳",
+        "description": "受到雷系攻击时不受伤害并转化为特攻强化，每场最多触发两次。"
+      },
+      {
+        "slot": 2,
+        "family": "雷系甲虫",
+        "name": "雷光蓄角",
+        "description": "未发动攻击的回合会蓄积雷光，下一次攻击获得额外威力与命中。"
+      }
+    ],
+    "60037": [
+      {
+        "slot": 1,
+        "family": "水系洋流王子",
+        "name": "王室潮流",
+        "description": "使用水系技能后为全队回复少量生命，生命最低的同伴获得更多回复。"
+      },
+      {
+        "slot": 2,
+        "family": "水系洋流王子",
+        "name": "海翼润泽",
+        "description": "登场时净化自身一个负面状态，雨天中特攻与特防提升。"
+      }
+    ],
+    "60038": [
+      {
+        "slot": 1,
+        "family": "水系洋流王子",
+        "name": "王室潮流",
+        "description": "使用水系技能后为全队回复少量生命，生命最低的同伴获得更多回复。"
+      },
+      {
+        "slot": 2,
+        "family": "水系洋流王子",
+        "name": "海翼润泽",
+        "description": "登场时净化自身一个负面状态，雨天中特攻与特防提升。"
+      }
+    ],
+    "60039": [
+      {
+        "slot": 1,
+        "family": "水系洋流王子",
+        "name": "王室潮流",
+        "description": "使用水系技能后为全队回复少量生命，生命最低的同伴获得更多回复。"
+      },
+      {
+        "slot": 2,
+        "family": "水系洋流王子",
+        "name": "海翼润泽",
+        "description": "登场时净化自身一个负面状态，雨天中特攻与特防提升。"
+      }
+    ],
+    "60040": [
+      {
+        "slot": 1,
+        "family": "冰系快快",
+        "name": "雪原疾足",
+        "description": "冰雹或雪地环境中速度提升，登场后的第一次近战攻击优先出手。"
+      },
+      {
+        "slot": 2,
+        "family": "冰系快快",
+        "name": "冰绒反震",
+        "description": "受到近战攻击时以冰绒反震对手，少量降低其速度。"
+      }
+    ],
+    "60041": [
+      {
+        "slot": 1,
+        "family": "风系慢慢",
+        "name": "从容狙击",
+        "description": "本回合未受到攻击时，下一次远攻技能命中与暴击率提升。"
+      },
+      {
+        "slot": 2,
+        "family": "风系慢慢",
+        "name": "风息回稳",
+        "description": "受到负面状态后生成风息，回合结束时减轻一层能力下降。"
+      }
+    ],
+    "60042": [
+      {
+        "slot": 1,
+        "family": "冰系噗噗",
+        "name": "晶羽散射",
+        "description": "冰系远攻命中后有概率追加一枚小冰晶，造成少量特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "family": "冰系噗噗",
+        "name": "冰息回响",
+        "description": "连续两回合使用冰系技能时，第二次技能获得额外威力。"
+      }
+    ],
+    "103171": [
+      {
+        "slot": 1,
+        "family": "钢系咻咻",
+        "name": "协作齿轮",
+        "description": "使用辅助技能后为生命最低的同伴生成小型齿轮护盾，并略微提升其速度。"
+      },
+      {
+        "slot": 2,
+        "family": "钢系咻咻",
+        "name": "应急修理",
+        "description": "每场战斗首次有同伴生命低于三分之一时，立即为其回复少量生命并解除一个负面状态。"
+      }
+    ],
+    "103172": [
+      {
+        "slot": 1,
+        "family": "水系露露",
+        "name": "清露流转",
+        "description": "使用水系技能后回复少量生命；处于雨天或清澈水域时，额外提升特防。"
+      },
+      {
+        "slot": 2,
+        "family": "水系露露",
+        "name": "涟漪净化",
+        "description": "登场时净化自身一个负面状态，受到控制效果后以涟漪缩短其持续时间。"
+      }
+    ],
+    "103173": [
+      {
+        "slot": 1,
+        "family": "土系墩墩",
+        "name": "厚岩皮层",
+        "description": "受到物攻伤害时额外减轻部分伤害，生命高于一半时效果更明显。"
+      },
+      {
+        "slot": 2,
+        "family": "土系墩墩",
+        "name": "不动岩心",
+        "description": "不易被击退或打断；每回合未移动时，回合结束回复少量生命并提升物防。"
+      }
+    ]
+  },
+  "evolution": {
+    "1": [
+      1,
+      2,
+      3
+    ],
+    "2": [
+      1,
+      2,
+      3
+    ],
+    "3": [
+      1,
+      2,
+      3
+    ],
+    "4": [
+      4,
+      5,
+      6
+    ],
+    "5": [
+      4,
+      5,
+      6
+    ],
+    "6": [
+      4,
+      5,
+      6
+    ],
+    "7": [
+      7,
+      8,
+      9
+    ],
+    "8": [
+      7,
+      8,
+      9
+    ],
+    "9": [
+      7,
+      8,
+      9
+    ],
+    "60001": [
+      60001,
+      60002,
+      60003
+    ],
+    "60002": [
+      60001,
+      60002,
+      60003
+    ],
+    "60003": [
+      60001,
+      60002,
+      60003
+    ],
+    "60004": [
+      60004,
+      60005,
+      60006
+    ],
+    "60005": [
+      60004,
+      60005,
+      60006
+    ],
+    "60006": [
+      60004,
+      60005,
+      60006
+    ],
+    "60007": [
+      60007,
+      60008,
+      60009
+    ],
+    "60008": [
+      60007,
+      60008,
+      60009
+    ],
+    "60009": [
+      60007,
+      60008,
+      60009
+    ],
+    "60010": [
+      60010,
+      60011,
+      60012
+    ],
+    "60011": [
+      60010,
+      60011,
+      60012
+    ],
+    "60012": [
+      60010,
+      60011,
+      60012
+    ],
+    "60013": [
+      60013,
+      60014,
+      60015
+    ],
+    "60014": [
+      60013,
+      60014,
+      60015
+    ],
+    "60015": [
+      60013,
+      60014,
+      60015
+    ],
+    "60016": [
+      60016,
+      60017,
+      60018
+    ],
+    "60017": [
+      60016,
+      60017,
+      60018
+    ],
+    "60018": [
+      60016,
+      60017,
+      60018
+    ],
+    "60019": [
+      60019,
+      60020,
+      60021
+    ],
+    "60020": [
+      60019,
+      60020,
+      60021
+    ],
+    "60021": [
+      60019,
+      60020,
+      60021
+    ],
+    "60022": [
+      60022,
+      60023,
+      60024
+    ],
+    "60023": [
+      60022,
+      60023,
+      60024
+    ],
+    "60024": [
+      60022,
+      60023,
+      60024
+    ],
+    "60025": [
+      60025,
+      60026,
+      60027
+    ],
+    "60026": [
+      60025,
+      60026,
+      60027
+    ],
+    "60027": [
+      60025,
+      60026,
+      60027
+    ],
+    "60028": [
+      60028,
+      60029,
+      60030
+    ],
+    "60029": [
+      60028,
+      60029,
+      60030
+    ],
+    "60030": [
+      60028,
+      60029,
+      60030
+    ],
+    "60031": [
+      60031,
+      60032,
+      60033
+    ],
+    "60032": [
+      60031,
+      60032,
+      60033
+    ],
+    "60033": [
+      60031,
+      60032,
+      60033
+    ],
+    "60034": [
+      60034,
+      60035,
+      60036
+    ],
+    "60035": [
+      60034,
+      60035,
+      60036
+    ],
+    "60036": [
+      60034,
+      60035,
+      60036
+    ],
+    "60037": [
+      60037,
+      60038,
+      60039
+    ],
+    "60038": [
+      60037,
+      60038,
+      60039
+    ],
+    "60039": [
+      60037,
+      60038,
+      60039
+    ],
+    "60040": [
+      60040
+    ],
+    "60041": [
+      60041
+    ],
+    "60042": [
+      60042
+    ],
+    "103171": [
+      103171
+    ],
+    "103172": [
+      103172
+    ],
+    "103173": [
+      103173
+    ]
+  },
+  "images": {
+    "creatures/01一阶火系元素小火弹-transparent-6eaa1738.png": "/media/creatures/01.png",
+    "action-portraits/01-小火弹-63ff049b.webp": "/media/portraits/01.webp",
+    "creatures/02二阶火系元素烈焰弹-transparent-101470c5.png": "/media/creatures/02.png",
+    "action-portraits/02-烈焰弹-93361a2d.webp": "/media/portraits/02.webp",
+    "creatures/03三阶火系元素熔岩伊芙-transparent-94fd2fc3.png": "/media/creatures/03.png",
+    "action-portraits/03-熔岩伊芙-2e704439.webp": "/media/portraits/03.webp",
+    "creatures/04一阶水系近战探险鲨-transparent-bbe0e480.png": "/media/creatures/04.png",
+    "action-portraits/04-探险鲨-94dff6b6.webp": "/media/portraits/04.webp",
+    "creatures/05二阶水系近战冒险鲨-transparent-c542ff17.png": "/media/creatures/05.png",
+    "action-portraits/05-冒险鲨-dea80546.webp": "/media/portraits/05.webp",
+    "creatures/06三阶水系近战鲨羽骑士-transparent-904ed4c5.png": "/media/creatures/06.png",
+    "action-portraits/06-鲨羽骑士-b17cd218.webp": "/media/portraits/06.webp",
+    "creatures/07一阶草系远攻香蕉虫-transparent-846d8e3c.png": "/media/creatures/07.png",
+    "action-portraits/07-香蕉虫-c415fae8.webp": "/media/portraits/07.webp",
+    "creatures/08二阶草系远攻芭蕉小姐-transparent-38018240.png": "/media/creatures/08.png",
+    "action-portraits/08-芭蕉小姐-1bc5020c.webp": "/media/portraits/08.webp",
+    "creatures/09三阶草系远攻聚蕉女士-transparent-1a886694.png": "/media/creatures/09.png",
+    "action-portraits/09-聚蕉女士-8406a85a.webp": "/media/portraits/09.webp",
+    "creatures/10一阶草系辅助菜菜子-transparent-196029c9.png": "/media/creatures/10.png",
+    "action-portraits/10-菜菜子-ad8dad50.webp": "/media/portraits/10.webp",
+    "creatures/11二阶草系辅助叶洋洋-transparent-4fa35b91.png": "/media/creatures/11.png",
+    "action-portraits/11-叶洋洋-9738ec92.webp": "/media/portraits/11.webp",
+    "creatures/12三阶草系辅助绿翼天使-transparent-7bbeca95.png": "/media/creatures/12.png",
+    "action-portraits/12-绿翼天使-3d091e5e.webp": "/media/portraits/12.webp",
+    "creatures/13一阶草系近战音乐猿-transparent-31bb6603.png": "/media/creatures/13.png",
+    "action-portraits/13-音乐猿-3e5e777b.webp": "/media/portraits/13.webp",
+    "creatures/14二阶草系近战科技猿-transparent-c6b68d5e.png": "/media/creatures/14.png",
+    "action-portraits/14-科技猿-5cd16318.webp": "/media/portraits/14.webp",
+    "creatures/15三阶草系近战程序猿-transparent-62b3cceb.png": "/media/creatures/15.png",
+    "action-portraits/15-程序猿-f240a808.webp": "/media/portraits/15.webp",
+    "creatures/16一阶冰系防御小雪球-transparent-3a1f0294.png": "/media/creatures/16.png",
+    "action-portraits/16-小雪球-7bc3cf6d.webp": "/media/portraits/16.webp",
+    "creatures/17二阶冰系防御雪雪人-transparent-3a47a497.png": "/media/creatures/17.png",
+    "action-portraits/17-雪雪人-d2e90102.webp": "/media/portraits/17.webp",
+    "creatures/18三阶冰系防御雪巨人-transparent-6e325c17.png": "/media/creatures/18.png",
+    "action-portraits/18-雪巨人-377e1798.webp": "/media/portraits/18.webp",
+    "creatures/19一阶沙土系辅助咖啡豆-transparent-c8dc0ade.png": "/media/creatures/19.png",
+    "action-portraits/19-咖啡豆-7172bb28.webp": "/media/portraits/19.webp",
+    "creatures/20二阶沙土系辅助咖啡蚁-transparent-f40d7194.png": "/media/creatures/20.png",
+    "action-portraits/20-咖啡蚁-c0a35ba0.webp": "/media/portraits/20.webp",
+    "creatures/21三阶沙土系辅助咖啡蚁后-transparent-6c9b2298.png": "/media/creatures/21.png",
+    "action-portraits/21-咖啡蚁后-c58027e9.webp": "/media/portraits/21.webp",
+    "creatures/22一阶草系肉盾木呆瓶-transparent-6e4df498.png": "/media/creatures/22.png",
+    "action-portraits/22-木呆瓶-abb73381.webp": "/media/portraits/22.webp",
+    "creatures/23二阶草系肉盾瓶草战士-transparent-127cab15.png": "/media/creatures/23.png",
+    "action-portraits/23-瓶草战士-e748da54.webp": "/media/portraits/23.webp",
+    "creatures/24三阶草系肉盾蜜瓶老人-transparent-cb89b537.png": "/media/creatures/24.png",
+    "action-portraits/24-蜜瓶老人-2024fca1.webp": "/media/portraits/24.webp",
+    "creatures/25一阶钢系肉盾铁铁-transparent-855ee78a.png": "/media/creatures/25.png",
+    "action-portraits/25-铁铁-b410214b.webp": "/media/portraits/25.webp",
+    "creatures/26二阶钢系肉盾熔熔炉-transparent-891a1b11.png": "/media/creatures/26.png",
+    "action-portraits/26-熔熔炉-74b5fec7.webp": "/media/portraits/26.webp",
+    "creatures/27三阶钢系肉盾熔炉长官-transparent-a79be97a.png": "/media/creatures/27.png",
+    "action-portraits/27-熔炉长官-32ab1db5.webp": "/media/portraits/27.webp",
+    "creatures/28一阶暗系诅咒抱抱豹-transparent-d4f9833e.png": "/media/creatures/28.png",
+    "action-portraits/28-抱抱豹-febf9078.webp": "/media/portraits/28.webp",
+    "creatures/29二阶暗系诅咒紫焰豹-transparent-9a195f6d.png": "/media/creatures/29.png",
+    "action-portraits/29-紫焰豹-1925a476.webp": "/media/portraits/29.webp",
+    "creatures/30三阶暗系诅咒飞天胖豹-transparent-5a4121e8.png": "/media/creatures/30.png",
+    "action-portraits/30-飞天胖豹-dc006e1f.webp": "/media/portraits/30.webp",
+    "creatures/31一阶风系爆发礼貌鹅-transparent-12958c88.png": "/media/creatures/31.png",
+    "action-portraits/31-礼貌鹅-0f41b694.webp": "/media/portraits/31.webp",
+    "creatures/32二阶风系爆发优雅鹅-transparent-f83b3d39.png": "/media/creatures/32.png",
+    "action-portraits/32-优雅鹅-acb3d50a.webp": "/media/portraits/32.webp",
+    "creatures/33三阶风系爆发绅士鹅-transparent-16e2b981.png": "/media/creatures/33.png",
+    "action-portraits/33-绅士鹅-1bcc210c.webp": "/media/portraits/33.webp",
+    "creatures/34一阶暗系防御豆丁蛹-transparent-c88b2633.png": "/media/creatures/34.png",
+    "action-portraits/34-豆丁蛹-33b53fc5.webp": "/media/portraits/34.webp",
+    "creatures/35二阶暗系防御岩垒石-transparent-2d559555.png": "/media/creatures/35.png",
+    "action-portraits/35-岩垒石-d37e247a.webp": "/media/portraits/35.webp",
+    "creatures/36三阶暗系防御覆甲岩-transparent-1531c6b6.png": "/media/creatures/36.png",
+    "action-portraits/36-覆甲岩-1189ed16.webp": "/media/portraits/36.webp",
+    "creatures/37一阶苔系远攻喵喵草-transparent-8be712d4.png": "/media/creatures/37.png",
+    "action-portraits/37-喵喵草-60ae3208.webp": "/media/portraits/37.webp",
+    "creatures/38二阶苔系远攻幸运喵-transparent-b6ba0b17.png": "/media/creatures/38.png",
+    "action-portraits/38-幸运喵-db09dd06.webp": "/media/portraits/38.webp",
+    "creatures/39三阶苔系远攻四叶喵-transparent-34af9dd1.png": "/media/creatures/39.png",
+    "action-portraits/39-四叶喵-f5580073.webp": "/media/portraits/39.webp",
+    "creatures/40一阶雷系辅助喷气鸡-transparent-14027393.png": "/media/creatures/40.png",
+    "action-portraits/40-喷气鸡-82859fb7.webp": "/media/portraits/40.webp",
+    "creatures/41二阶雷系辅助顺风鸡-transparent-63e42398.png": "/media/creatures/41.png",
+    "action-portraits/41-顺风鸡-16dd7991.webp": "/media/portraits/41.webp",
+    "creatures/42三阶雷系辅助压力鸡-transparent-1f51e655.png": "/media/creatures/42.png",
+    "action-portraits/42-压力鸡-d002dc2f.webp": "/media/portraits/42.webp",
+    "creatures/43一阶雷系元素雷电壳-transparent-4307beac.png": "/media/creatures/43.png",
+    "action-portraits/43-雷电壳-47fc0fc0.webp": "/media/portraits/43.webp",
+    "creatures/44二阶雷系元素雷甲壳-transparent-ef8f3441.png": "/media/creatures/44.png",
+    "action-portraits/44-雷甲壳-1e757682.webp": "/media/portraits/44.webp",
+    "creatures/45三阶雷系辅助霹雳甲虫-transparent-cae4a9f8.png": "/media/creatures/45.png",
+    "action-portraits/45-霹雳甲虫-d2eafbf7.webp": "/media/portraits/45.webp",
+    "creatures/46一阶海系辅助海宝宝-transparent-270c7db8.png": "/media/creatures/46.png",
+    "action-portraits/46-海宝宝-094eaaad.webp": "/media/portraits/46.webp",
+    "creatures/47二阶海系辅助水王子-transparent-43d04774.png": "/media/creatures/47.png",
+    "action-portraits/47-水王子-a83124d9.webp": "/media/portraits/47.webp",
+    "creatures/48三阶海系辅助洋流王子-transparent-9b4965c0.png": "/media/creatures/48.png",
+    "action-portraits/48-洋流王子-870d53d0.webp": "/media/portraits/48.webp",
+    "creatures/49一阶冰系近战快快-transparent-7507a9f0.png": "/media/creatures/49.png",
+    "action-portraits/49-快快-b9e8af7d.webp": "/media/portraits/49.webp",
+    "creatures/50一阶风系远攻慢慢-transparent-89d6830f.png": "/media/creatures/50.png",
+    "action-portraits/50-慢慢-9ebd5cd5.webp": "/media/portraits/50.webp",
+    "creatures/51一阶冰系远攻噗噗-transparent-14d49294.png": "/media/creatures/51.png",
+    "action-portraits/51-噗噗-a5d4fe5d.webp": "/media/portraits/51.webp",
+    "creatures/52一阶机械系辅助咻咻-transparent-ce64de3f.png": "/media/creatures/52.png",
+    "action-portraits/52-咻咻-b3812344.webp": "/media/portraits/52.webp",
+    "creatures/53一阶水系元素露露-transparent-868cd208.png": "/media/creatures/53.png",
+    "action-portraits/53-露露-9fa4cd79.webp": "/media/portraits/53.webp",
+    "creatures/54一阶岩石系肉盾墩墩-transparent-33e161cb.png": "/media/creatures/54.png",
+    "action-portraits/54-墩墩-aea81178.webp": "/media/portraits/54.webp"
+  }
+}

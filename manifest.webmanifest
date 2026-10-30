@@ -1,0 +1,16 @@
+{
+  "name": "咻噗-奥灵宠图鉴",
+  "short_name": "奥灵宠图鉴",
+  "description": "咻噗-奥灵宠图鉴：查阅灵宠属性、阶段、形态、进化链、种族值与技能。",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#2a2520",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
