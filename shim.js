@@ -1011,7 +1011,7 @@
     m.className = 'notice-modal';
     m.innerHTML =
       '<div class="notice-box" role="dialog" aria-label="公告">' +
-        '<div class="notice-head"><div><p>NOTICE</p><h2>更新公告</h2></div>' +
+        '<div class="notice-head"><div><p>NOTICE</p><h2>' + (DATA.announcementTitle || '更新公告') + '</h2></div>' +
         (day ? '<span>' + day + '</span>' : '') + '</div>' +
         '<ul class="notice-list">' + items.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul>' +
         '<div class="notice-foot">' +

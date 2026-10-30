@@ -818,6 +818,31 @@
     ];
   }
 
+  function openNoticeEditor() {
+    if (!S.content) return;
+    const ta = el('textarea', { style: 'min-height:38vh' });
+    ta.value = (S.content.announcement || []).join('\n');
+    ta.placeholder = '每行一条，显示在网站顶部「公告」弹窗里；留空则由系统自动生成';
+    ta.addEventListener('input', () => {
+      S.content.announcement = ta.value.split('\n').map((s) => s.trim()).filter(Boolean);
+      markDirty();
+    });
+    const titleInput = el('input', { type: 'text', value: S.content.announcementTitle || '更新公告' });
+    titleInput.addEventListener('input', () => {
+      S.content.announcementTitle = titleInput.value;
+      markDirty();
+    });
+    openModal([
+      el('h2', {}, '公告'),
+      el('p', { class: 'sub' }, '访客点顶部「公告」时弹出的内容。每行一条，建议 4–6 条，简洁一点。'),
+      el('label', { class: 'ed-field' }, el('span', {}, '标题'), titleInput),
+      el('label', { class: 'ed-field' }, el('span', {}, '公告内容（每行一条）'), ta),
+      el('div', { class: 'ed-modal-actions' },
+        el('button', { class: 'ed-btn primary', type: 'button', onclick: closeModal }, '完成')
+      )
+    ]);
+  }
+
   function openFamilies() {
     if (!S.content) return;
     S.content.familyNotes = S.content.familyNotes || {};
@@ -947,6 +972,7 @@
     $('btnImport').addEventListener('click', importJson);
     $('btnSettings').addEventListener('click', () => openSettings());
     $('btnFamilies').addEventListener('click', openFamilies);
+    $('btnNotice').addEventListener('click', openNoticeEditor);
     $('btnPublish').addEventListener('click', openPublish);
     $('btnNew').addEventListener('click', newCreature);
     $('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
