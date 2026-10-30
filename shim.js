@@ -566,21 +566,52 @@
     return sec;
   }
 
+  /* ---------- 首页：最近更新 ---------- */
+  function buildRecentSection() {
+    var lp = DATA.lastPublished;
+    if (!lp || !lp.ids || !lp.ids.length) return null;
+    var ids = lp.ids;
+    var list = DATA.creatures.filter(function (c) { return ids.indexOf(c.id) >= 0; });
+    if (!list.length) return null;
+    var day = String(lp.at || '').slice(0, 10);
+    var sec = document.createElement('section');
+    sec.className = 'recent-section';
+    var html = '<div class="recent-head"><div><p>WHAT&#39;S NEW</p><h2>最近更新</h2></div>' +
+      '<span>' + day + ' · ' + list.length + ' 只</span></div><div class="recent-strip">';
+    list.slice(0, 10).forEach(function (c) {
+      var src = c.imageKey ? (DATA.images[c.imageKey] || '') : '';
+      html += '<a class="recent-card" href="/creature/' + c.id + '">' +
+        (src ? '<img src="' + src + '" alt="' + c.name + '" loading="lazy">' : '') +
+        '<b>' + c.name + '</b><small>No.' + String(c.dexNo).padStart(3, '0') + ' · ' + c.stage + '</small></a>';
+    });
+    html += '</div>';
+    sec.innerHTML = html;
+    return sec;
+  }
+
+  function syncRecent() {
+    if (!DATA || document.querySelector('.recent-section')) return;
+    var anchor = document.querySelector('.catalog-section');
+    if (!anchor || !anchor.parentElement) return;
+    var sec = buildRecentSection();
+    if (sec) anchor.parentElement.insertBefore(sec, anchor);
+  }
+
   function watchDetail() {
     var root = document.getElementById('root');
     if (!root) return;
     var timer = null;
     new MutationObserver(function () {
       clearTimeout(timer);
-      timer = setTimeout(function () { syncEggSection(); syncHome(); }, 120);
+      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); }, 120);
     }).observe(root, { childList: true, subtree: true });
-    setInterval(function () { syncEggSection(); syncHome(); }, 1200);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); }, 1200);
   }
 
   /* ---------- 离线支持 ---------- */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/sw.js?v=8', { scope: '/', updateViaCache: 'none' }).catch(function () {});
+      navigator.serviceWorker.register('/sw.js?v=9', { scope: '/', updateViaCache: 'none' }).catch(function () {});
     });
   }
 

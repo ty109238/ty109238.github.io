@@ -288,7 +288,7 @@
       return;
     }
 
-    const touch = () => { markDirty(); };
+    const touch = () => { c.updatedAt = iso(); markDirty(); };
 
     /* 基础信息 */
     const base = el('section', { class: 'ed-card' },
@@ -670,6 +670,17 @@
     }
 
     S.content.updatedAt = iso();
+    // 记录本次发布改动了哪些灵宠，首页「最近更新」用
+    try {
+      var baseMap = {};
+      (S.base.creatures || []).forEach(function (x) { baseMap[x.id] = JSON.stringify(x); });
+      var changed = [];
+      S.content.creatures.forEach(function (x) {
+        if (baseMap[x.id] !== JSON.stringify(x) && changed.indexOf(x.id) < 0) changed.push(x.id);
+      });
+      S.content.lastPublished = { at: iso(), ids: changed };
+      log('本次更新 ' + changed.length + ' 只');
+    } catch (e) {}
     log('↑ data/content.json');
     const text = JSON.stringify(S.content, null, 2) + '\n';
     await putFile(cfg, 'data/content.json', bytesToBase64(new TextEncoder().encode(text)), '更新图鉴内容 ' + iso(), log);
