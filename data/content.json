@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedAt": "2026-10-30T02:38:27.979Z",
+  "updatedAt": "2026-10-30T02:43:58.421Z",
   "note": "由原站 2tjfel75d5ee6.kimi.site 完整抓取生成，字段与原站一一对应，未作任何内容改动。",
   "creatures": [
     {
@@ -117,7 +117,7 @@
       "species": "海洋",
       "family": "水系鲨",
       "imageKey": "creatures/05二阶水系近战冒险鲨-transparent-c542ff17.png",
-      "portraitKey": "action-portraits/05-冒险鲨-dea80546.webp",
+      "portraitKey": "uploads/20261030023437-z3v69.jpg",
       "description": "换上轻便冒险装束的少年鲨，围巾里总藏着一张手绘地图。拳势比外形可靠得多，是旅途中值得托付后背的伙伴。",
       "evolutionCondition": "探险鲨完成 5 次未知水域探索，并在实战中掌握水方冲拳后进化。",
       "captureLocation": "蓝潮水道的秘境 · 冒险者营地",
@@ -143,7 +143,7 @@
       "species": "海洋",
       "family": "水系鲨",
       "imageKey": "creatures/06三阶水系近战鲨羽骑士-transparent-904ed4c5.png",
-      "portraitKey": "action-portraits/06-鲨羽骑士-b17cd218.webp",
+      "portraitKey": "uploads/20261030023444-sjd6g.jpg",
       "description": "以羽饰与骑士礼装见证誓约的近战守护者。看似不再嬉闹，其实仍会在胜利后悄悄扬起嘴角；巨拳落下时如潮涌崩岸。",
       "evolutionCondition": "冒险鲨通过骑士试炼，在守护同伴的战斗中领悟潮汐真意后进化。",
       "captureLocation": "沧澜王城 · 羽骑士试炼场",
@@ -3940,6 +3940,8 @@
     "creatures/53一阶水系元素露露-transparent-868cd208.png": "/media/creatures/53.png",
     "action-portraits/53-露露-9fa4cd79.webp": "/media/portraits/53.webp",
     "creatures/54一阶岩石系肉盾墩墩-transparent-33e161cb.png": "/media/creatures/54.png",
-    "action-portraits/54-墩墩-aea81178.webp": "/media/portraits/54.webp"
+    "action-portraits/54-墩墩-aea81178.webp": "/media/portraits/54.webp",
+    "uploads/20261030023437-z3v69.jpg": "/media/uploads/20261030023437-z3v69.jpg",
+    "uploads/20261030023444-sjd6g.jpg": "/media/uploads/20261030023444-sjd6g.jpg"
   }
 }
