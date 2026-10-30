@@ -982,6 +982,41 @@
     }
   }
 
+  /* ---------- 首页：工作室 ---------- */
+  function buildStudioSection() {
+    var s = DATA.studio || { name: '谭熠的橘子工作室', members: [{ role: '主策划', name: '谭熠' }, { role: '角色审核建模', name: '吴静秋' }] };
+    var sec = document.createElement('section');
+    sec.className = 'studio-section';
+    var rows = (s.members || []).map(function (m) {
+      return '<div class="studio-row"><span>' + m.role + '</span><b>' + m.name + '</b></div>';
+    }).join('');
+    sec.innerHTML =
+      '<div class="studio-inner">' +
+        '<div class="studio-left">' +
+          '<p class="studio-kicker">STUDIO</p>' +
+          '<div class="studio-mark">橘</div>' +
+        '</div>' +
+        '<div class="studio-right">' +
+          '<h2>' + s.name + '</h2>' +
+          '<p class="studio-sub">《咻噗 · 奥灵宠图鉴》由这个小小的工作室一起做出来。</p>' +
+          '<div class="studio-rows">' + rows + '</div>' +
+        '</div>' +
+      '</div>';
+    return sec;
+  }
+
+  function syncStudio() {
+    if (!DATA || document.querySelector('.studio-section')) return;
+    if (currentCreatureId()) return;
+    var anchor = document.querySelector('.catalog-section');
+    if (!anchor || !anchor.parentElement) return;
+    var holder = anchor.parentElement;
+    var foot = document.querySelector('footer');
+    var sec = buildStudioSection();
+    if (foot && foot.parentElement === holder) holder.insertBefore(sec, foot);
+    else holder.appendChild(sec);
+  }
+
   /* ---------- 公告 ---------- */
   function noticeItems() {
     var lp = DATA.lastPublished;
@@ -1124,9 +1159,9 @@
     var timer = null;
     new MutationObserver(function () {
       clearTimeout(timer);
-      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); }, 120);
+      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); }, 120);
     }).observe(root, { childList: true, subtree: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); }, 1200);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); }, 1200);
   }
 
   window.__dexOpenNotice = openNotice;
