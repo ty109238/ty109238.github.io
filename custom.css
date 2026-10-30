@@ -1,0 +1,210 @@
+/* 图鉴视觉优化（覆盖原站样式，不动原文件）
+ * 目标：板块更紧凑、卡片化、场景写真缩小成卡片
+ */
+
+:root {
+  --ink: #262722;
+  --blue: #1570ef;
+  --yellow: #ffeb85;
+  --pink: #dd2590;
+  --soft: #f5faff;
+  --line: #cbdfef;
+  --card-shadow: 6px 6px 0 rgba(38, 39, 34, 0.1);
+  --radius: 16px;
+}
+
+/* ---------- 详情页：板块卡片化 ---------- */
+
+/* 每个板块变成白色卡片 */
+.portrait-section,
+.evolution-section,
+.traits-section,
+.ecology-section,
+.stats-section,
+.skills-section,
+.element-section,
+.egg-section {
+  max-width: 1120px;
+  margin: 26px auto 0;
+  padding: 22px 26px 26px;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  height: auto !important;
+}
+
+/* 板块标题收紧 */
+.record-heading {
+  margin-bottom: 16px !important;
+  padding-bottom: 12px !important;
+  border-bottom: 2px solid var(--ink);
+}
+.record-heading p {
+  margin: 0 0 2px;
+  font-size: 11px !important;
+  letter-spacing: 0.16em;
+  font-weight: 800;
+  color: var(--pink) !important;
+}
+.record-heading h2 {
+  margin: 0 !important;
+  font-size: 30px !important;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.record-heading > span {
+  font-size: 12px !important;
+  color: #6b7d92 !important;
+}
+
+/* ---------- 场景写真 → 小卡片 ---------- */
+.portrait-section .portrait-frame {
+  width: min(100%, 380px) !important;
+  max-width: 380px !important;
+  margin: 4px auto 14px !important;
+  padding: 8px;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(38, 39, 34, 0.1);
+  height: auto !important;
+  aspect-ratio: auto !important;
+  transform: none !important;
+}
+.portrait-section .portrait-frame::before,
+.portrait-section .portrait-frame::after,
+.portrait-section .portrait-frame a::before,
+.portrait-section .portrait-frame a::after {
+  display: none !important;
+  content: none !important;
+}
+.portrait-section .portrait-frame a {
+  display: block;
+  height: auto !important;
+}
+.portrait-section .portrait-frame img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  max-height: 340px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.portrait-section .portrait-caption {
+  margin: 0 auto;
+  max-width: 520px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.portrait-section .portrait-caption strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+/* ---------- 蛋形态占位卡 ---------- */
+.egg-section .egg-card {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+}
+.egg-frame {
+  width: 220px;
+  height: 220px;
+  border: 2px dashed #b9c6d4;
+  border-radius: var(--radius);
+  background: repeating-conic-gradient(#f7fbff 0% 25%, #fff 0% 50%) 50% / 16px 16px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.egg-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.egg-empty {
+  font-size: 12px;
+  color: #8ea3b8;
+  text-align: center;
+  line-height: 1.7;
+}
+.egg-body h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+.egg-body p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #4d5f74;
+}
+.egg-meta {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.egg-meta span {
+  padding: 4px 10px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  background: var(--soft);
+}
+
+/* ---------- 其它板块的密度 ---------- */
+.evolution-section .evolution-chain {
+  gap: 12px !important;
+}
+.evolution-card,
+.evolution-chain > div {
+  border-radius: 12px !important;
+}
+.traits-section .trait-list,
+.ecology-section .ecology-grid,
+.stats-section .stats-grid,
+.skills-section .skill-list,
+.element-section .element-body {
+  gap: 14px !important;
+}
+.stats-section .radar-wrap {
+  max-width: 340px;
+  margin-inline: auto;
+}
+
+/* 卡片圆角统一 */
+.creature-card,
+.partner-card,
+.trait-card,
+.skill-card,
+.ecology-card,
+.evolution-card {
+  border-radius: 14px !important;
+}
+
+/* 手机上更紧凑 */
+@media (max-width: 720px) {
+  .portrait-section,
+  .evolution-section,
+  .traits-section,
+  .ecology-section,
+  .stats-section,
+  .skills-section,
+  .element-section,
+  .egg-section {
+    margin-top: 16px;
+    padding: 16px 14px 18px;
+    border-radius: 16px;
+    box-shadow: none;
+  }
+  .record-heading h2 { font-size: 22px !important; }
+  .portrait-section .portrait-frame { max-width: 100% !important; }
+  .egg-section .egg-card { grid-template-columns: 1fr; }
+  .egg-frame { width: 100%; height: 200px; }
+}

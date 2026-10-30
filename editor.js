@@ -318,6 +318,19 @@
       )
     ));
 
+    /* 蛋形态 */
+    pane.appendChild(el('section', { class: 'ed-card' },
+      el('h2', {}, '蛋形态', el('span', { class: 'hint' }, '详情页会单独开一块卡片')),
+      el('div', { class: 'ed-card-body' },
+        el('div', { class: 'ed-image-row' },
+          imageSlot(c, 'eggKey', '蛋形态配图（可留空）')
+        ),
+        el('div', { class: 'ed-grid', style: 'margin-top:14px' },
+          field('蛋形态说明', areaInput(c.eggNote, (v) => { c.eggNote = v; touch(); }), true)
+        )
+      )
+    ));
+
     /* 文案 */
     pane.appendChild(el('section', { class: 'ed-card' },
       el('h2', {}, '图鉴文案'),

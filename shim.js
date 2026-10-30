@@ -212,6 +212,62 @@
     }
   };
 
+  /* ---------- 详情页：注入「蛋形态」板块 ---------- */
+  function currentCreatureId() {
+    var m = /\/creature\/(\d+)/.exec(location.pathname);
+    return m ? Number(m[1]) : null;
+  }
+
+  function buildEggSection(c) {
+    var imgPath = c.eggKey ? (DATA.images[c.eggKey] || '') : '';
+    var frame = imgPath
+      ? '<div class="egg-frame"><img src="' + imgPath + '" alt="' + c.name + ' 蛋形态" loading="lazy"></div>'
+      : '<div class="egg-frame"><div class="egg-empty">待补充配图<br>（在编辑台「蛋形态」处上传）</div></div>';
+    var note = c.eggNote || '孵化前它只是一枚安静的蛋，外壳上已经能看出这一族的纹路。';
+    var chips = [];
+    if (c.family) chips.push('家族 · ' + c.family);
+    if (c.element) chips.push('属性 · ' + c.element);
+    if (c.hatchCondition) chips.push('孵化条件见下方');
+
+    var sec = document.createElement('section');
+    sec.className = 'egg-section';
+    sec.setAttribute('data-egg-for', String(c.id));
+    sec.innerHTML =
+      '<div class="record-heading"><div><p>EGG FORM</p><h2>蛋形态</h2></div><span>孵化之前的样子</span></div>' +
+      '<div class="egg-card">' + frame +
+      '<div class="egg-body"><h3>' + c.name + ' · 蛋</h3><p>' + note + '</p>' +
+      '<div class="egg-meta">' + chips.map(function (t) { return '<span>' + t + '</span>'; }).join('') + '</div>' +
+      '</div></div>';
+    return sec;
+  }
+
+  function syncEggSection() {
+    if (!DATA) return;
+    var id = currentCreatureId();
+    var existing = document.querySelector('.egg-section');
+    if (!id) { if (existing) existing.remove(); return; }
+    var c = null;
+    for (var i = 0; i < DATA.creatures.length; i++) if (DATA.creatures[i].id === id) { c = DATA.creatures[i]; break; }
+    if (!c) { if (existing) existing.remove(); return; }
+    if (existing && existing.getAttribute('data-egg-for') === String(c.id)) return;
+
+    var anchor = document.querySelector('.portrait-section');
+    if (!anchor) return;
+    if (existing) existing.remove();
+    anchor.parentElement.insertBefore(buildEggSection(c), anchor);
+  }
+
+  function watchDetail() {
+    var root = document.getElementById('root');
+    if (!root) return;
+    var timer = null;
+    new MutationObserver(function () {
+      clearTimeout(timer);
+      timer = setTimeout(syncEggSection, 120);
+    }).observe(root, { childList: true, subtree: true });
+    setInterval(syncEggSection, 1500);
+  }
+
   /* ---------- 离线支持 ---------- */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
@@ -259,5 +315,7 @@
     });
   }, 3000);
 
-  load();
+  load().then(function () {
+    watchDetail();
+  });
 })();
