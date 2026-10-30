@@ -592,8 +592,15 @@
     let json = null;
     try { json = JSON.parse(text); } catch (e) {}
     if (!res.ok) {
-      const msg = (json && json.message) || text.slice(0, 160);
-      const err = new Error(res.status + ' ' + msg);
+      const raw = (json && json.message) || text.slice(0, 160);
+      const HINTS = {
+        401: 'Token 无效或已过期，或者粘贴时带了空格 —— 去「设置」里重新粘贴',
+        403: 'Token 权限不够 —— 需要 Contents: Read and write',
+        404: '仓库 / 分支不存在 —— 检查用户名、仓库名、分支有没有拼错；也确认这枚 Token 勾选了这个仓库',
+        409: '分支或文件冲突，过 30 秒再试一次',
+        422: '写入被拒绝 —— 通常是 Token 没有 Contents 写权限'
+      };
+      const err = new Error(res.status + ' ' + raw + (HINTS[res.status] ? '\n→ ' + HINTS[res.status] : ''));
       err.status = res.status;
       throw err;
     }
@@ -628,6 +635,13 @@
   async function publish(cfg, log) {
     const bad = validate();
     if (bad) throw new Error(bad);
+
+    log('目标仓库：' + cfg.owner + '/' + cfg.repo + ' @ ' + (cfg.branch || 'main'));
+    const info = await ghApi(cfg, '');
+    if (info && info.permissions && info.permissions.push === false) {
+      throw new Error('这枚 Token 对这个仓库只有读权限，不能写入 —— 把 Contents 权限改成 Read and write');
+    }
+    log('仓库可写：' + (info.full_name || cfg.owner + '/' + cfg.repo));
 
     const published = new Set(JSON.parse(localStorage.getItem(LS.published) || '[]'));
     const pending = [...S.files.entries()].filter(([p]) => !published.has(p));
@@ -674,24 +688,47 @@
         '令牌只保存在这台设备的浏览器里，不会写进网页代码，别人翻源码也看不到。'
       ),
       mk('GitHub 用户名 / 组织名', 'owner', 'text', '例如 yourname'),
-      mk('仓库名', 'repo', 'text', '例如 aoling-dex'),
+      mk('仓库名', 'repo', 'text', '例如 yourname.github.io'),
       mk('分支', 'branch', 'text', 'main'),
       mk('访问令牌 (token)', 'token', 'password', 'github_pat_...'),
       el('p', { class: 'ed-hint-inline' },
-        '提示：仓库 → Settings → Pages → Source 选 “Deploy from a branch”，分支 main、目录 / (root)。发布后约 1 分钟线上生效。'
+        '点「测试连接并保存」会先读一次仓库：能读到、且 Token 有写权限，才算设置成功。'
       ),
+      el('p', { class: 'ed-log', id: 'settingsErr', hidden: true }),
       el('div', { class: 'ed-modal-actions' },
         el('button', { class: 'ed-btn', type: 'button', onclick: closeModal }, '取消'),
         el('button', {
           class: 'ed-btn primary', type: 'button',
-          onclick: () => {
+          onclick: async (ev) => {
+            const b = ev.currentTarget;
             if (!state.owner || !state.repo || !state.token) { toast('三项都要填', true); return; }
-            localStorage.setItem(LS.gh, JSON.stringify(state));
-            closeModal();
-            toast('发布设置已保存');
-            if (onDone) onDone();
+            const old = b.textContent;
+            b.disabled = true;
+            b.textContent = '检查中…';
+            const box = document.getElementById('settingsErr');
+            if (box) box.hidden = true;
+            try {
+              const info = await ghApi(state, '');
+              if (!info || !info.full_name) throw new Error('读不到仓库信息');
+              if (info.permissions && info.permissions.push === false) {
+                throw new Error('这枚 Token 只能读、不能写：把 Contents 权限改成 Read and write 再生成');
+              }
+              localStorage.setItem(LS.gh, JSON.stringify(state));
+              closeModal();
+              toast('连接正常：' + info.full_name + '（默认分支 ' + info.default_branch + '）');
+              if (info.default_branch && state.branch && info.default_branch !== state.branch) {
+                toast('注意：仓库默认分支是 ' + info.default_branch + '，你填的是 ' + state.branch, true);
+              }
+              if (onDone) onDone();
+            } catch (e) {
+              if (box) { box.hidden = false; box.textContent = e.message; }
+              toast('设置没通过：' + e.message.split('\n')[0], true);
+            } finally {
+              b.disabled = false;
+              b.textContent = old;
+            }
           }
-        }, '保存')
+        }, '测试连接并保存')
       )
     ];
   }
@@ -719,6 +756,7 @@
       btn,
       logBox,
       el('div', { class: 'ed-modal-actions' },
+        el('button', { class: 'ed-btn', type: 'button', onclick: () => openSettings(() => openPublish()) }, '检查发布设置'),
         el('button', { class: 'ed-btn', type: 'button', onclick: closeModal }, '关闭')
       )
     ]);
