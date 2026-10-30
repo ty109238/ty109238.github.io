@@ -1,5 +1,5 @@
 /* 离线缓存：首次打开后，断网也能完整浏览 */
-const VERSION = 'v1';
+const VERSION = 'v3';
 const SHELL = 'dex-shell-' + VERSION;
 const IMG = 'dex-img-' + VERSION;
 
@@ -14,8 +14,7 @@ const SHELL_URLS = [
   '/editor.js',
   '/editor.css',
   '/assets/index-C8GPqduH.js',
-  '/assets/index-C7tQ-E0c.css',
-  '/data/content.json'
+  '/assets/index-C7tQ-E0c.css'
 ];
 
 self.addEventListener('install', (e) => {
@@ -39,17 +38,27 @@ self.addEventListener('activate', (e) => {
   })());
 });
 
-async function networkFirst(req, cacheName) {
+/** 数据文件：先要网络，最多等 6 秒，失败才回落到缓存 */
+async function freshFirst(req, cacheName, timeoutMs = 6000) {
   const cache = await caches.open(cacheName);
+  const key = new URL(req.url);
+  key.search = '';
+  const cacheKey = key.toString();
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), timeoutMs);
   try {
-    const fresh = await fetch(req);
-    if (fresh && fresh.ok) cache.put(req, fresh.clone());
-    return fresh;
+    const fresh = await fetch(req.url, { cache: 'no-store', signal: ctrl.signal });
+    clearTimeout(timer);
+    if (fresh && fresh.ok) {
+      cache.put(cacheKey, fresh.clone());
+      return fresh;
+    }
   } catch (err) {
-    const hit = await cache.match(req);
-    if (hit) return hit;
-    throw err;
+    clearTimeout(timer);
   }
+  const hit = await cache.match(cacheKey);
+  if (hit) return hit;
+  return fetch(cacheKey, { cache: 'reload' });
 }
 
 async function cacheFirst(req, cacheName) {
@@ -88,7 +97,7 @@ self.addEventListener('fetch', (event) => {
   }
 
   if (url.pathname === '/data/content.json') {
-    event.respondWith(networkFirst(req, SHELL));
+    event.respondWith(freshFirst(req, SHELL));
     return;
   }
 

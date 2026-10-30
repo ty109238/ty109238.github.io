@@ -23,7 +23,7 @@
 
   function load() {
     if (loading) return loading;
-    loading = fetch(CONTENT_URL, { cache: 'no-cache' })
+    loading = fetch(CONTENT_URL + '?t=' + Date.now(), { cache: 'no-store' })
       .then(function (r) {
         if (!r.ok) throw new Error('content.json HTTP ' + r.status);
         return r.json();
@@ -215,7 +215,7 @@
   /* ---------- 离线支持 ---------- */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
+      navigator.serviceWorker.register('/sw.js?v=3', { scope: '/', updateViaCache: 'none' }).catch(function () {});
     });
   }
 
