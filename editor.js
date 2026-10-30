@@ -747,6 +747,30 @@
     ];
   }
 
+  function openFamilies() {
+    if (!S.content) return;
+    S.content.familyNotes = S.content.familyNotes || {};
+    const fams = [...new Set(S.content.creatures.map((c) => c.family).filter(Boolean))].sort();
+    const rows = fams.map((f) => {
+      const ta = el('textarea', {});
+      ta.value = S.content.familyNotes[f] || '';
+      ta.addEventListener('input', () => {
+        S.content.familyNotes[f] = ta.value;
+        markDirty();
+      });
+      return el('label', { class: 'ed-field', style: 'margin-bottom:10px' },
+        el('span', {}, f), ta);
+    });
+    openModal([
+      el('h2', {}, '家族简介'),
+      el('p', { class: 'sub' }, '每个家族一句介绍，会显示在首页「按家族查看」的家族标题下面。改完记得保存草稿并发布。'),
+      el('div', { style: 'max-height:52vh;overflow:auto;padding-right:6px' }, rows),
+      el('div', { class: 'ed-modal-actions' },
+        el('button', { class: 'ed-btn primary', type: 'button', onclick: closeModal }, '完成')
+      )
+    ]);
+  }
+
   function openSettings(after) {
     openModal(settingsBody(ghConfig(), after));
   }
@@ -851,6 +875,7 @@
     $('btnExport').addEventListener('click', exportJson);
     $('btnImport').addEventListener('click', importJson);
     $('btnSettings').addEventListener('click', () => openSettings());
+    $('btnFamilies').addEventListener('click', openFamilies);
     $('btnPublish').addEventListener('click', openPublish);
     $('btnNew').addEventListener('click', newCreature);
     $('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });

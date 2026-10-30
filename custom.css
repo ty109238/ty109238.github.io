@@ -487,3 +487,34 @@
 .egg-section .egg-empty { color: var(--element-color, #8ea3b8) !important; opacity: 0.75; }
 .egg-section .egg-body h3 { color: var(--element-color, inherit); }
 .egg-section .egg-meta span { background: var(--element-soft, #f5faff); }
+/* 列表工具条 */
+.catalog-tools {
+  display: flex;
+  gap: 10px;
+  margin: 0 0 12px;
+  flex-wrap: wrap;
+}
+.catalog-tools select {
+  padding: 7px 12px;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+/* 蛋形态 → 孵化手册 */
+.egg-manual {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--element-color, var(--blue));
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 1px;
+}
+.egg-manual:hover { opacity: 0.75; }

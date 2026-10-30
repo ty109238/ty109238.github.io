@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#2a2520" />
+    <meta name="description" content="咻噗-奥灵宠图鉴 · 蛋形态孵化手册：按家族查看每种灵宠孵化前的样子。" />
+    <title>孵化手册 · 咻噗-奥灵宠图鉴</title>
+    <link rel="icon" href="/icon.svg" />
+    <link rel="stylesheet" href="/eggs.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a href="/">← 返回图鉴</a>
+      <div>
+        <h1>孵化手册</h1>
+        <p>按家族收录 · 孵化之前的它们</p>
+      </div>
+    </header>
+    <main class="wrap">
+      <section class="hero">
+        <h2>每一只，都先是一枚蛋</h2>
+        <p>观察局按家族整理了所有已知的蛋形态。绝大多数的壳纹都能对应到家族的属性——拿不准的时候，看颜色。</p>
+      </section>
+      <div id="list"></div>
+      <p class="foot">咻噗 · 奥灵宠图鉴 · 灵宠观察局</p>
+    </main>
+    <script>
+      (function () {
+        var ELEMENT_CLASS = { 火: 'element-火', 水: 'element-水', 草: 'element-草', 冰: 'element-冰', 土: 'element-土', 钢: 'element-钢', 雷: 'element-雷', 风: 'element-风', 光: 'element-光', 暗: 'element-暗' };
+        var COLORS = { 火: '#f15a3c', 水: '#1570ef', 草: '#3e9c68', 冰: '#4aa8d8', 土: '#a97b3f', 钢: '#60778e', 雷: '#e0a11b', 风: '#3aa6a0', 光: '#d9a400', 暗: '#6c4a8e' };
+        var SOFT = { 火: '#fff0e7', 水: '#e7f6ff', 草: '#eef9e9', 冰: '#e9f6fd', 土: '#fdf3e3', 钢: '#eef2f6', 雷: '#fff7dd', 风: '#e8f7f6', 光: '#fffaе0', 暗: '#f3ecfb' };
+
+        fetch('/data/content.json?t=' + Date.now(), { cache: 'no-store' })
+          .then(function (r) { return r.json(); })
+          .then(render)
+          .catch(function (e) {
+            document.getElementById('list').innerHTML = '<p style="color:#b3153f">数据加载失败：' + e.message + '</p>';
+          });
+
+        function render(data) {
+          var byFam = {};
+          (data.creatures || []).forEach(function (c) {
+            var k = c.family || '未分组';
+            (byFam[k] = byFam[k] || []).push(c);
+          });
+          var fams = Object.keys(byFam).sort(function (a, b) {
+            return Math.min.apply(null, byFam[a].map(function (x) { return x.dexNo; })) -
+              Math.min.apply(null, byFam[b].map(function (x) { return x.dexNo; }));
+          });
+
+          var html = '';
+          fams.forEach(function (fam) {
+            var list = byFam[fam].sort(function (a, b) { return a.dexNo - b.dexNo; });
+            var intro = (data.familyNotes && data.familyNotes[fam]) || '';
+            var el = list[0].element || '';
+            html += '<section class="fam" style="--element-color:' + (COLORS[el] || '#b9c6d4') + ';--element-soft:' + (SOFT[el] || '#f7fbff') + '">';
+            html += '<div class="fam-head"><h3>' + fam + '</h3><span>' + list.length + ' 只 · ' + el + '系</span></div>';
+            if (intro) html += '<p class="fam-intro">' + intro + '</p>';
+            html += '<div class="eggs">';
+            list.forEach(function (c) {
+              var img = c.eggKey && data.images[c.eggKey] ? '<img src="' + data.images[c.eggKey] + '" alt="' + c.name + ' 蛋形态" loading="lazy">'
+                : '<div class="ph">待补充配图</div>';
+              var note = c.eggNote || '';
+              html += '<a class="egg" href="/creature/' + c.id + '" style="text-decoration:none;color:inherit">' +
+                img + '<b>' + c.name + '</b><small>No.' + String(c.dexNo).padStart(3, '0') + ' · ' + c.stage + '</small>' +
+                (note ? '<p class="note">' + note + '</p>' : '') + '</a>';
+            });
+            html += '</div></section>';
+          });
+          document.getElementById('list').innerHTML = html;
+        }
+      })();
+    </script>
+  </body>
+</html>

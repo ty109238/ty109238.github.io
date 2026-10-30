@@ -268,6 +268,7 @@
       '<div class="egg-card">' + frame +
       '<div class="egg-body"><h3>' + c.name + ' · 蛋</h3><p>' + note + '</p>' +
       '<div class="egg-meta">' + chips.map(function (t) { return '<span>' + t + '</span>'; }).join('') + '</div>' +
+      '<a class="egg-manual" href="/eggs.html">查看全部蛋形态 →</a>' +
       '</div></div>';
     return sec;
   }
@@ -389,16 +390,18 @@
     var anchor = document.querySelector('.portrait-section');
     if (!anchor) return;
     if (existing) existing.remove();
-    if (famExisting) famExisting.remove();
+    document.querySelectorAll('.family-section').forEach(function (n) { n.remove(); });
     anchor.parentElement.insertBefore(buildEggSection(c), anchor);
 
-    var fam = buildFamilySection(c);
-    if (fam) {
-      var last = document.querySelector('.element-section');
-      var holder = last ? last.parentElement : anchor.parentElement;
-      if (last && last.nextSibling) holder.insertBefore(fam, last.nextSibling);
-      else holder.appendChild(fam);
-    }
+    var last = document.querySelector('.element-section');
+    var holder = last ? last.parentElement : anchor.parentElement;
+    var after = last || anchor;
+    [buildFamilySection(c), buildRegionSection(c)].forEach(function (node) {
+      if (!node) return;
+      if (after && after.nextSibling) holder.insertBefore(node, after.nextSibling);
+      else holder.appendChild(node);
+      after = node;
+    });
   }
 
   /* ---------- 首页：按家族分组视图 ---------- */
@@ -438,7 +441,10 @@
   function syncHome() {
     if (!DATA) return;
     var grid = document.querySelector('.creature-grid');
-    if (!grid || document.querySelector('.view-toggle')) return;
+    if (!grid) return;
+    tagCatalog();
+    buildCatalogTools();
+    if (document.querySelector('.view-toggle')) { applyCatalog(); return; }
 
     var btn = document.createElement('button');
     btn.type = 'button';
@@ -458,6 +464,108 @@
     });
   }
 
+  /* ---------- 首页：排序 / 阶段筛选 ---------- */
+  var catState = { stage: '全部', sort: 'default' };
+
+  function tagCatalog() {
+    var cards = document.querySelectorAll('a.creature-card');
+    for (var i = 0; i < cards.length; i++) {
+      var a = cards[i];
+      if (a.getAttribute('data-tagged') === '1') continue;
+      var m = /\/creature\/(\d+)/.exec(a.getAttribute('href') || '');
+      if (!m) continue;
+      var id = Number(m[1]);
+      var c = null;
+      for (var k = 0; k < DATA.creatures.length; k++) if (DATA.creatures[k].id === id) { c = DATA.creatures[k]; break; }
+      if (!c) continue;
+      a.setAttribute('data-tagged', '1');
+      a.setAttribute('data-stage', c.stage || '');
+      a.setAttribute('data-total', String((c.hp || 0) + (c.attack || 0) + (c.defense || 0) + (c.spAttack || 0) + (c.spDefense || 0) + (c.speed || 0)));
+      a.setAttribute('data-dex', String(c.dexNo || 0));
+    }
+  }
+
+  function applyCatalog() {
+    var cards = [].slice.call(document.querySelectorAll('a.creature-card[data-tagged="1"]'));
+    if (!cards.length) return;
+    cards.forEach(function (a) {
+      var show = catState.stage === '全部' || a.getAttribute('data-stage') === catState.stage;
+      a.style.display = show ? '' : 'none';
+      a.style.order = '';
+    });
+    var visible = cards.filter(function (a) { return a.style.display !== 'none'; });
+    if (catState.sort === 'total') {
+      visible.sort(function (x, y) { return Number(y.getAttribute('data-total')) - Number(x.getAttribute('data-total')); });
+    } else if (catState.sort === 'dexdesc') {
+      visible.sort(function (x, y) { return Number(y.getAttribute('data-dex')) - Number(x.getAttribute('data-dex')); });
+    } else {
+      return;
+    }
+    visible.forEach(function (a, i) { a.style.order = String(i); });
+  }
+
+  function buildCatalogTools() {
+    var grid = document.querySelector('.creature-grid');
+    if (!grid || document.querySelector('.catalog-tools')) return;
+
+    var wrap = document.createElement('div');
+    wrap.className = 'catalog-tools';
+
+    var stageSel = document.createElement('select');
+    ['全部', '一阶', '二阶', '三阶'].forEach(function (s) {
+      var o = document.createElement('option');
+      o.value = s;
+      o.textContent = s === '全部' ? '全部阶段' : '只看' + s;
+      stageSel.appendChild(o);
+    });
+    stageSel.addEventListener('change', function () { catState.stage = stageSel.value; applyCatalog(); });
+
+    var sortSel = document.createElement('select');
+    [['default', '默认排序'], ['total', '种族值高→低'], ['dexdesc', '编号倒序']].forEach(function (s) {
+      var o = document.createElement('option');
+      o.value = s[0];
+      o.textContent = s[1];
+      sortSel.appendChild(o);
+    });
+    sortSel.addEventListener('change', function () { catState.sort = sortSel.value; applyCatalog(); });
+
+    wrap.appendChild(stageSel);
+    wrap.appendChild(sortSel);
+    var host = grid.parentElement;
+    host.insertBefore(wrap, grid);
+  }
+
+  /* ---------- 详情页：这片区域还能遇到 ---------- */
+  function buildRegionSection(c) {
+    var region = String(c.captureLocation || '').split('·')[0].trim();
+    if (!region) return null;
+    var mates = [];
+    for (var i = 0; i < DATA.creatures.length; i++) {
+      var x = DATA.creatures[i];
+      if (x.id === c.id) continue;
+      if (String(x.captureLocation || '').indexOf(region) === 0) mates.push(x);
+    }
+    if (!mates.length) return null;
+    mates.sort(function (a, b) { return a.dexNo - b.dexNo; });
+
+    var sec = document.createElement('section');
+    sec.className = 'family-section region-section';
+    sec.setAttribute('data-region-for', String(c.id));
+    var html = '<div class="record-heading"><div><p>HABITAT</p><h2>这片区域还能遇到</h2></div>' +
+      '<span>' + region + ' · ' + mates.length + ' 只</span></div><div class="family-strip">';
+    for (var k = 0; k < mates.length && k < 12; k++) {
+      var s = mates[k];
+      var src = s.imageKey ? (DATA.images[s.imageKey] || '') : '';
+      var sub = String(s.captureLocation || '').split('·')[1] || '';
+      html += '<a class="family-card" href="/creature/' + s.id + '">' +
+        (src ? '<img src="' + src + '" alt="' + s.name + '" loading="lazy">' : '') +
+        '<b>' + s.name + '</b><small>No.' + String(s.dexNo).padStart(3, '0') + ' · ' + sub + '</small></a>';
+    }
+    html += '</div>';
+    sec.innerHTML = html;
+    return sec;
+  }
+
   function watchDetail() {
     var root = document.getElementById('root');
     if (!root) return;
@@ -472,7 +580,7 @@
   /* ---------- 离线支持 ---------- */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/sw.js?v=7', { scope: '/', updateViaCache: 'none' }).catch(function () {});
+      navigator.serviceWorker.register('/sw.js?v=8', { scope: '/', updateViaCache: 'none' }).catch(function () {});
     });
   }
 
