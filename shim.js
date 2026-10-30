@@ -429,6 +429,7 @@
 
     decorateDetail(c);
     applyElementVars();
+    syncTrain(c);
     makeCollapsible();
     syncPetNav(c);
 
@@ -619,13 +620,19 @@
     var list = DATA.creatures.filter(function (c) { return ids.indexOf(c.id) >= 0; });
     if (!list.length) return null;
     var day = String(lp.at || '').slice(0, 10);
+    var fams = [];
+    list.forEach(function (c) { if (c.family && fams.indexOf(c.family) < 0) fams.push(c.family); });
     var sec = document.createElement('section');
     sec.className = 'recent-section';
     var html = '<div class="recent-head"><div><p>WHAT&#39;S NEW</p><h2>最近更新</h2></div>' +
-      '<span>' + day + ' · ' + list.length + ' 只</span></div><div class="recent-strip">';
-    list.slice(0, 10).forEach(function (c) {
+      '<span>' + day + ' · 共 ' + list.length + ' 只</span></div>' +
+      '<p class="recent-desc">本次新增 ' + list.length + ' 只灵宠，来自 ' + fams.length + ' 个家族：' +
+      fams.join('、') + '。左右拖动可以看完全部，点卡片直接进详情页。</p>' +
+      '<div class="recent-strip">';
+    list.forEach(function (c) {
       var src = c.imageKey ? (DATA.images[c.imageKey] || '') : '';
       html += '<a class="recent-card" href="/creature/' + c.id + '">' +
+        '<span class="recent-new">NEW</span>' +
         (src ? '<img src="' + src + '" alt="' + c.name + '" loading="lazy">' : '') +
         '<b>' + c.name + '</b><small>No.' + String(c.dexNo).padStart(3, '0') + ' · ' + c.stage + '</small></a>';
     });
@@ -636,10 +643,103 @@
 
   function syncRecent() {
     if (!DATA || document.querySelector('.recent-section')) return;
+    if (currentCreatureId()) return; // 只在首页出现
     var anchor = document.querySelector('.catalog-section');
     if (!anchor || !anchor.parentElement) return;
     var sec = buildRecentSection();
     if (sec) anchor.parentElement.insertBefore(sec, anchor);
+  }
+
+  /* ---------- 详情页：养成模拟（天赋 / 等级 / 星级 / 阶段 → 战斗力） ---------- */
+  var TALENTS = ['一无是处', '表现平平', '随处可见', '普普通通', '稍微稀有', '稀有', '百里挑一', '独一无二', '唯我独尊'];
+  var TALENT_MULT = [0.80, 0.90, 1.00, 1.10, 1.22, 1.35, 1.50, 1.66, 1.85];
+  var STAGE_DEFAULT = { '一阶': 1, '二阶': 2, '三阶': 3 };
+
+  function trainKey(id) { return 'dex:train:' + id; }
+
+  function loadTrain(id, c) {
+    var def = { level: 1, talent: 3, star: 1, stage: STAGE_DEFAULT[c.stage] || 1 };
+    try {
+      var s = JSON.parse(localStorage.getItem(trainKey(id)) || 'null');
+      if (s) return { level: s.level || def.level, talent: s.talent == null ? def.talent : s.talent, star: s.star || def.star, stage: s.stage || def.stage };
+    } catch (e) {}
+    return def;
+  }
+
+  function calcPower(base, st) {
+    var lm = 1 + (st.level - 1) * 0.02;
+    var tm = TALENT_MULT[st.talent] || 1;
+    var sm = 1 + (st.star - 1) * 0.08;
+    var gm = 1 + (st.stage - 1) * 0.15;
+    return Math.round(base * lm * tm * sm * gm);
+  }
+
+  function buildTrainPanel(c) {
+    var base = (c.hp || 0) + (c.attack || 0) + (c.defense || 0) + (c.spAttack || 0) + (c.spDefense || 0) + (c.speed || 0);
+    var st = loadTrain(c.id, c);
+
+    var sec = document.createElement('section');
+    sec.className = 'train-section';
+    sec.setAttribute('data-train-for', String(c.id));
+
+    function row(key, label, min, max, val, suffix) {
+      return '<div class="train-row">' +
+        '<span class="train-label">' + label + '</span>' +
+        '<input type="range" min="' + min + '" max="' + max + '" step="1" value="' + val + '" data-k="' + key + '">' +
+        '<b class="train-val" data-v="' + key + '">' + val + (suffix || '') + '</b>' +
+        '</div>';
+    }
+
+    sec.innerHTML =
+      '<div class="record-heading"><div><p>TRAINING</p><h2>养成模拟</h2></div><span>拖动调整 · 数据只保存在你的浏览器</span></div>' +
+      '<div class="train-grid">' +
+        '<div class="power-box">' +
+          '<span class="power-cap">战斗力</span>' +
+          '<b class="power-num">' + calcPower(base, st).toLocaleString('en-US') + '</b>' +
+          '<span class="power-sub">种族值 ' + base + ' × 等级 × 天赋 × 星级 × 阶段</span>' +
+        '</div>' +
+        '<div class="train-controls">' +
+          row('level', '等级', 1, 60, st.level, ' 级') +
+          row('talent', '天赋', 0, 8, st.talent, '') +
+          row('star', '星级', 1, 9, st.star, ' ★') +
+          row('stage', '阶段', 1, 6, st.stage, ' 阶') +
+        '</div>' +
+      '</div>';
+
+    var talentVal = sec.querySelector('[data-v="talent"]');
+    talentVal.textContent = TALENTS[st.talent];
+
+    function refresh() {
+      var lvl = Number(sec.querySelector('[data-k="level"]').value);
+      var tal = Number(sec.querySelector('[data-k="talent"]').value);
+      var star = Number(sec.querySelector('[data-k="star"]').value);
+      var stage = Number(sec.querySelector('[data-k="stage"]').value);
+      var p = { level: lvl, talent: tal, star: star, stage: stage };
+
+      sec.querySelector('[data-v="level"]').textContent = lvl + ' 级';
+      sec.querySelector('[data-v="talent"]').textContent = TALENTS[tal] + ' · ×' + TALENT_MULT[tal].toFixed(2);
+      sec.querySelector('[data-v="star"]').textContent = star + ' ★';
+      sec.querySelector('[data-v="stage"]').textContent = stage + ' 阶';
+      sec.querySelector('.power-num').textContent = calcPower(base, p).toLocaleString('en-US');
+
+      try { localStorage.setItem(trainKey(c.id), JSON.stringify(p)); } catch (e) {}
+    }
+
+    sec.querySelectorAll('input[type="range"]').forEach(function (inp) {
+      inp.addEventListener('input', refresh);
+    });
+    refresh();
+
+    return sec;
+  }
+
+  function syncTrain(c) {
+    var old = document.querySelector('.train-section');
+    if (old && old.getAttribute('data-train-for') === String(c.id)) return;
+    if (old) old.remove();
+    var anchor = document.querySelector('.stats-section');
+    if (!anchor || !anchor.parentElement) return;
+    anchor.parentElement.insertBefore(buildTrainPanel(c), anchor);
   }
 
   function watchDetail() {
@@ -656,7 +756,7 @@
   /* ---------- 离线支持 ---------- */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/sw.js?v=9', { scope: '/', updateViaCache: 'none' }).catch(function () {});
+      navigator.serviceWorker.register('/sw.js?v=10', { scope: '/', updateViaCache: 'none' }).catch(function () {});
     });
   }
 
