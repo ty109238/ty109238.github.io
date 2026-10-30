@@ -1,0 +1,162 @@
+/* UI 增强样式：属性图标 / 收藏 / 设置面板 / 渐变边框 / 特性卡上色 / 克制高亮 */
+
+/* ---------- 元素小图标 ---------- */
+.elem-ico {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  vertical-align: -3px;
+  margin-right: 4px;
+  flex: 0 0 auto;
+}
+.has-ico { display: inline-flex; align-items: center; }
+.filter-options .has-ico { gap: 1px; }
+
+/* ---------- 顶部导航图标 ---------- */
+.ui-ico { width: 18px; height: 18px; object-fit: contain; }
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: none;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  color: inherit;
+  cursor: pointer;
+}
+.nav-btn:hover { border-color: currentColor; }
+.nav-btn.is-on { border-color: var(--pink, #dd2590); color: var(--pink, #dd2590); }
+
+/* ---------- 收藏 ---------- */
+.fav-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 3;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--ink, #262722);
+  color: #c9d5e0;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.creature-card:hover .fav-btn,
+.creature-card.is-fav .fav-btn { opacity: 1; }
+.fav-btn:hover { transform: scale(1.12); }
+.creature-card.is-fav .fav-btn { color: #f2b53c; border-color: #f2b53c; }
+body.show-favs a.creature-card:not(.is-fav) { display: none !important; }
+
+/* ---------- 设置面板 ---------- */
+.ui-sheet {
+  position: fixed;
+  right: 18px;
+  top: 68px;
+  z-index: 2147482000;
+  width: 240px;
+  padding: 16px;
+  background: #fff;
+  border: 2px solid var(--ink, #262722);
+  border-radius: 14px;
+  box-shadow: 6px 8px 0 rgba(38, 39, 34, 0.16);
+  font-size: 13px;
+}
+.ui-sheet h4 { margin: 0 0 10px; font-size: 14px; }
+.ui-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 0;
+  border-bottom: 1px dashed #e2ebf4;
+  cursor: pointer;
+}
+.ui-mini {
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px;
+  border: 2px solid var(--ink, #262722);
+  border-radius: 10px;
+  background: #f5faff;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.ui-tip { margin: 8px 0 0; font-size: 11px; color: #8ea3b8; }
+
+/* ---------- 紧凑模式 / 关闭动效 ---------- */
+html.density-compact .creature-grid { gap: 10px !important; }
+html.density-compact .creature-art { height: 110px !important; }
+html.density-compact .creature-card-copy p { display: none !important; }
+html.no-motion *,
+html.no-motion *::before,
+html.no-motion *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* ---------- 首页卡片：按属性做渐变描边 ---------- */
+.creature-card {
+  position: relative;
+  border: 2px solid var(--ink, #262722) !important;
+  background-image: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--element-color, #1570ef) 20%, #fff) 0%,
+    #fff 46%,
+    #fff 100%
+  ) !important;
+}
+.creature-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--element-color, #1570ef) 34%, transparent);
+  opacity: 0.55;
+}
+.creature-card:hover::after { opacity: 1; }
+
+/* ---------- 特性卡上色 ---------- */
+.traits-section .trait-entry {
+  background: var(--element-soft, #f5faff) !important;
+  border-color: var(--element-color, #262722) !important;
+  box-shadow: 4px 4px 0 var(--element-pale, #dcecf8) !important;
+}
+.traits-section .trait-entry:nth-child(2n) {
+  background: var(--element-soft, #f5faff) !important;
+  box-shadow: 4px 4px 0 var(--element-pale, #dcecf8) !important;
+}
+.traits-section .trait-emblem {
+  background: var(--element-color, #1570ef) !important;
+  color: #fff !important;
+}
+
+/* ---------- 属性克制：高亮当前属性节点 ---------- */
+.element-wheel-chart g { transition: transform 0.2s ease; }
+.element-wheel-chart g.is-current {
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--element-color, #1570ef) 65%, transparent));
+}
+.element-wheel-chart g.is-current circle,
+.element-wheel-chart g.is-current path {
+  stroke: #262722 !important;
+  stroke-width: 5 !important;
+}
+.element-wheel-chart g.is-current text {
+  fill: #fff !important;
+  font-weight: 900 !important;
+  font-size: 1.06em !important;
+}
+.element-wheel-chart g.is-current > *:first-child {
+  filter: drop-shadow(0 0 8px rgba(38, 39, 34, 0.35));
+}
