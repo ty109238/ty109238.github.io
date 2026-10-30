@@ -339,6 +339,49 @@
     }
   }
 
+  /* 上一只 / 下一只 */
+  function buildPetNav(c) {
+    var list = DATA.creatures.slice().sort(function (a, b) { return a.dexNo - b.dexNo; });
+    var idx = -1;
+    for (var i = 0; i < list.length; i++) if (list[i].id === c.id) { idx = i; break; }
+    if (idx < 0) return null;
+    var prev = list[idx - 1];
+    var next = list[idx + 1];
+    var nav = document.createElement('nav');
+    nav.className = 'pet-nav';
+    nav.setAttribute('data-nav-for', String(c.id));
+    nav.innerHTML =
+      (prev ? '<a href="/creature/' + prev.id + '">← ' + prev.name + '</a>' : '<span class="off">已是第一只</span>') +
+      (next ? '<a href="/creature/' + next.id + '">' + next.name + ' →</a>' : '<span class="off">已是最后一只</span>');
+    return nav;
+  }
+
+  function syncPetNav(c) {
+    var hero = document.querySelector('.detail-hero');
+    if (!hero) return;
+    var old = hero.querySelector('.pet-nav');
+    if (old && old.getAttribute('data-nav-for') === String(c.id)) return;
+    if (old) old.remove();
+    var nav = buildPetNav(c);
+    if (!nav) return;
+    var back = hero.querySelector('.back-link');
+    if (back && back.parentElement === hero) hero.insertBefore(nav, back.nextSibling);
+    else hero.insertBefore(nav, hero.firstChild);
+  }
+
+  /* 把属性色变量注入技能区，让技能卡跟着属性上色 */
+  function applyElementVars() {
+    var src = document.querySelector('.portrait-section.element-') || document.querySelector('[class*="element-"]');
+    if (!src) return;
+    var cs = getComputedStyle(src);
+    var targets = document.querySelectorAll('.skills-section, .traits-section, .stats-section');
+    for (var i = 0; i < targets.length; i++) {
+      targets[i].style.setProperty('--element-color', cs.getPropertyValue('--element-color'));
+      targets[i].style.setProperty('--element-soft', cs.getPropertyValue('--element-soft'));
+      targets[i].style.setProperty('--element-pale', cs.getPropertyValue('--element-pale'));
+    }
+  }
+
   function makeCollapsible() {
     var sec = document.querySelector('.element-section');
     if (!sec || sec.getAttribute('data-collapsed') === '1') return;
@@ -385,7 +428,9 @@
     if (existing && existing.getAttribute('data-egg-for') === String(c.id)) return;
 
     decorateDetail(c);
+    applyElementVars();
     makeCollapsible();
+    syncPetNav(c);
 
     var anchor = document.querySelector('.portrait-section');
     if (!anchor) return;
