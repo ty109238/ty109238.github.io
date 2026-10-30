@@ -215,9 +215,49 @@
   /* ---------- 离线支持 ---------- */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/sw.js?v=3', { scope: '/', updateViaCache: 'none' }).catch(function () {});
+      navigator.serviceWorker.register('/sw.js?v=4', { scope: '/', updateViaCache: 'none' }).catch(function () {});
     });
   }
+
+  /* ---------- 有新内容时提示刷新 ---------- */
+  function showUpdateBar() {
+    if (document.getElementById('dex-update-bar')) return;
+    var bar = document.createElement('div');
+    bar.id = 'dex-update-bar';
+    bar.textContent = '图鉴有新内容 · 点这里刷新';
+    bar.style.cssText = [
+      'position:fixed', 'left:50%', 'bottom:28px', 'transform:translateX(-50%)',
+      'z-index:2147483000', 'padding:12px 22px', 'border-radius:999px',
+      'background:#262722', 'color:#fff', 'border:2px solid #e7bd55',
+      'box-shadow:5px 5px 0 rgba(38,39,34,.35)',
+      'font:700 15px/1 "Microsoft YaHei","PingFang SC",system-ui,sans-serif',
+      'letter-spacing:.04em', 'cursor:pointer'
+    ].join(';');
+    bar.addEventListener('click', function () {
+      try { localStorage.removeItem('dex:preview'); } catch (e) {}
+      location.reload();
+    });
+    document.body.appendChild(bar);
+  }
+
+  function checkFresh() {
+    if (!DATA || !DATA.updatedAt) return;
+    if (document.hidden) return;
+    fetch(CONTENT_URL + '?probe=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) {
+        if (j && j.updatedAt && j.updatedAt !== DATA.updatedAt) showUpdateBar();
+      })
+      .catch(function () {});
+  }
+
+  setTimeout(function () {
+    checkFresh();
+    setInterval(checkFresh, 60000);
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) checkFresh();
+    });
+  }, 3000);
 
   load();
 })();
