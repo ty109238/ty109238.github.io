@@ -340,3 +340,129 @@
   .egg-section .egg-card { grid-template-columns: 1fr; }
   .egg-frame { width: 100%; height: 200px; }
 }
+
+/* ---------- 关键数据 ---------- */
+.key-stats {
+  display: flex;
+  gap: 0;
+  margin: 18px 0 4px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+.key-stat {
+  flex: 1;
+  padding: 12px 8px 11px;
+  text-align: center;
+  border-right: 1px solid #dbe6f0;
+}
+.key-stat:last-child { border-right: 0; }
+.key-stat b {
+  display: block;
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.key-stat span {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: #6b7d92;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- 博士批注 ---------- */
+.prof-note {
+  margin: 16px 0 0;
+  padding: 10px 14px;
+  border-left: 4px solid var(--pink);
+  background: #fff7fb;
+  border-radius: 0 10px 10px 0;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #5d4a55;
+}
+.prof-note span {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--pink);
+  color: #fff;
+  font-style: normal;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  vertical-align: 2px;
+}
+
+/* ---------- 属性克制折叠 ---------- */
+.collapse-toggle {
+  margin-left: auto;
+  padding: 6px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--yellow);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ink);
+  cursor: pointer;
+}
+.collapse-toggle:hover { background: #fff3b0; }
+.collapse-body.is-hidden { display: none; }
+
+/* ---------- 按家族查看 ---------- */
+.view-toggle {
+  display: block;
+  margin: 0 0 14px auto;
+  padding: 7px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: #fff;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.view-toggle:hover { background: var(--soft); }
+.family-view { display: none; }
+.family-view.is-on { display: block; }
+.fgroup {
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  background: #fff;
+  padding: 14px 16px 16px;
+  margin-bottom: 14px;
+  box-shadow: 3px 4px 0 rgba(38, 39, 34, 0.07);
+}
+.fgroup-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e3edf6;
+  padding-bottom: 8px;
+}
+.fgroup-head h3 { margin: 0; font-size: 17px; letter-spacing: -0.01em; }
+.fgroup-head span { font-size: 11.5px; color: #6b7d92; }
+.fgroup-cards { display: flex; flex-wrap: wrap; gap: 10px; }
+.gcard {
+  width: 104px;
+  padding: 6px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: var(--soft);
+  text-align: center;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 0.15s ease;
+}
+.gcard:hover { transform: translateY(-3px); }
+.gcard img { width: 100%; height: 74px; object-fit: contain; }
+.gcard b { display: block; font-size: 12.5px; margin-top: 3px; }
+.gcard small { font-size: 10px; color: #6b7d92; }
+/* 家族视图容器与切换按钮的排布 */
+.section-heading { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.view-toggle { margin-left: auto; margin-bottom: 0; }
+.catalog-results .family-view { margin-top: 6px; }

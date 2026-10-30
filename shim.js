@@ -300,6 +300,70 @@
     return sec;
   }
 
+  /* ---------- 详情页：关键数据 / 博士批注 / 属性克制折叠 ---------- */
+  function decorateDetail(c) {
+    var copy = document.querySelector('.detail-copy');
+    if (!copy || copy.getAttribute('data-deco') === String(c.id)) return;
+    copy.setAttribute('data-deco', String(c.id));
+
+    var oldStats = copy.querySelector('.key-stats');
+    if (oldStats) oldStats.remove();
+    var total = (c.hp || 0) + (c.attack || 0) + (c.defense || 0) + (c.spAttack || 0) + (c.spDefense || 0) + (c.speed || 0);
+    var stats = document.createElement('div');
+    stats.className = 'key-stats';
+    stats.innerHTML =
+      '<div class="key-stat"><b>' + total + '</b><span>种族值总和</span></div>' +
+      '<div class="key-stat"><b>' + (c.arenaRate || 0) + '%</b><span>竞技场出现率</span></div>' +
+      '<div class="key-stat"><b>' + (c.exploreRate || 0) + '%</b><span>探索出现率</span></div>';
+    var tags = copy.querySelector('.detail-tags');
+    var h1 = copy.querySelector('h1');
+    var anchorEl = h1 ? (h1.nextElementSibling || h1) : null;
+    if (anchorEl && anchorEl.nextSibling) copy.insertBefore(stats, anchorEl.nextSibling);
+    else if (tags && tags.parentElement === copy && tags.nextSibling) copy.insertBefore(stats, tags.nextSibling);
+    else copy.appendChild(stats);
+
+    var oldNote = copy.querySelector('.prof-note');
+    if (oldNote) oldNote.remove();
+    if (c.note) {
+      var ps = copy.querySelectorAll('p');
+      var desc = null;
+      for (var i = 0; i < ps.length; i++) {
+        if ((ps[i].textContent || '').length > 20) { desc = ps[i]; break; }
+      }
+      var note = document.createElement('p');
+      note.className = 'prof-note';
+      note.innerHTML = '<span>博士批注</span>' + c.note;
+      if (desc && desc.nextSibling) copy.insertBefore(note, desc.nextSibling);
+      else copy.appendChild(note);
+    }
+  }
+
+  function makeCollapsible() {
+    var sec = document.querySelector('.element-section');
+    if (!sec || sec.getAttribute('data-collapsed') === '1') return;
+    var head = sec.querySelector('.record-heading');
+    if (!head) return;
+    sec.setAttribute('data-collapsed', '1');
+
+    var body = document.createElement('div');
+    body.className = 'collapse-body is-hidden';
+    var kids = [].slice.call(sec.children);
+    for (var i = 0; i < kids.length; i++) {
+      if (kids[i] !== head) body.appendChild(kids[i]);
+    }
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'collapse-toggle';
+    btn.textContent = '展开克制关系';
+    btn.addEventListener('click', function () {
+      var hidden = body.classList.toggle('is-hidden');
+      btn.textContent = hidden ? '展开克制关系' : '收起克制关系';
+    });
+    head.appendChild(btn);
+    sec.appendChild(body);
+  }
+
   function syncEggSection() {
     if (!DATA) return;
     var id = currentCreatureId();
@@ -319,6 +383,9 @@
     }
     if (existing && existing.getAttribute('data-egg-for') === String(c.id)) return;
 
+    decorateDetail(c);
+    makeCollapsible();
+
     var anchor = document.querySelector('.portrait-section');
     if (!anchor) return;
     if (existing) existing.remove();
@@ -334,21 +401,76 @@
     }
   }
 
+  /* ---------- 首页：按家族分组视图 ---------- */
+  function buildGroupedView() {
+    var byFam = {};
+    DATA.creatures.forEach(function (c) {
+      var k = c.family || '未分组';
+      if (!byFam[k]) byFam[k] = [];
+      byFam[k].push(c);
+    });
+    var names = Object.keys(byFam).sort(function (a, b) {
+      return Math.min.apply(null, byFam[a].map(function (x) { return x.dexNo; })) -
+        Math.min.apply(null, byFam[b].map(function (x) { return x.dexNo; }));
+    });
+    var wrap = document.createElement('div');
+    wrap.className = 'family-view';
+    var html = '';
+    names.forEach(function (fam) {
+      var list = byFam[fam].sort(function (a, b) { return a.dexNo - b.dexNo; });
+      html += '<section class="fgroup"><div class="fgroup-head"><h3>' + fam + '</h3><span>' +
+        list.length + ' 只 · ' + list.map(function (x) { return x.stage; }).join(' / ') + '</span></div>' +
+        '<div class="fgroup-cards">';
+      list.forEach(function (x) {
+        var src = x.imageKey ? (DATA.images[x.imageKey] || '') : '';
+        html += '<a class="gcard" href="/creature/' + x.id + '">' +
+          (src ? '<img src="' + src + '" alt="' + x.name + '" loading="lazy">' : '') +
+          '<b>' + x.name + '</b><small>No.' + String(x.dexNo).padStart(3, '0') + ' · ' + x.stage + '</small></a>';
+      });
+      html += '</div></section>';
+    });
+    wrap.innerHTML = html;
+    return wrap;
+  }
+
+  function syncHome() {
+    if (!DATA) return;
+    var grid = document.querySelector('.creature-grid');
+    if (!grid || document.querySelector('.view-toggle')) return;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'view-toggle';
+    btn.textContent = '按家族查看';
+    var host = grid.parentElement;
+    var heading = document.querySelector('.section-heading');
+    if (heading) heading.appendChild(btn);
+    else host.insertBefore(btn, grid);
+
+    var view = null;
+    btn.addEventListener('click', function () {
+      if (!view) { view = buildGroupedView(); host.appendChild(view); }
+      var grouped = view.classList.toggle('is-on');
+      grid.style.display = grouped ? 'none' : '';
+      btn.textContent = grouped ? '返回平铺' : '按家族查看';
+    });
+  }
+
   function watchDetail() {
     var root = document.getElementById('root');
     if (!root) return;
     var timer = null;
     new MutationObserver(function () {
       clearTimeout(timer);
-      timer = setTimeout(syncEggSection, 120);
+      timer = setTimeout(function () { syncEggSection(); syncHome(); }, 120);
     }).observe(root, { childList: true, subtree: true });
-    setInterval(syncEggSection, 1500);
+    setInterval(function () { syncEggSection(); syncHome(); }, 1200);
   }
 
   /* ---------- 离线支持 ---------- */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/sw.js?v=5', { scope: '/', updateViaCache: 'none' }).catch(function () {});
+      navigator.serviceWorker.register('/sw.js?v=6', { scope: '/', updateViaCache: 'none' }).catch(function () {});
     });
   }
 
