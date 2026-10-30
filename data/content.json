@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedAt": "2026-10-30T05:24:51.236Z",
+  "updatedAt": "2026-10-30T06:21:10.000Z",
   "note": "由原站 2tjfel75d5ee6.kimi.site 完整抓取生成，字段与原站一一对应，未作任何内容改动。",
   "creatures": [
     {
@@ -1406,6 +1406,526 @@
       "defense": 82,
       "createdAt": "2026-10-29T12:38:55.000Z",
       "updatedAt": "2026-10-29T15:50:29.000Z"
+    },
+    {
+      "id": 103174,
+      "dexNo": 55,
+      "name": "炎炎鱼",
+      "element": "火",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "海洋",
+      "family": "熔火游鱼族",
+      "imageKey": "creatures/55-炎炎鱼.png",
+      "portraitKey": "creatures/55-炎炎鱼.png",
+      "description": "漂在暖流表层的幼鱼灵宠，头顶的王冠其实是它自己烧硬的珊瑚。紧张时会鼓起鳃盖，把整条鱼胀成一枚滚烫的圆球。",
+      "evolutionCondition": "在温泉浅滩累计浸泡三次，并击败五只水系灵宠后，进化为焰车鱼。",
+      "captureLocation": "余烬丘陵 · 温泉浅滩",
+      "hatchCondition": "把灵宠蛋放进四十度以上的温泉水中，静置两天，蛋壳会自行裂开。",
+      "arenaRate": 9,
+      "exploreRate": 34,
+      "hp": 44,
+      "speed": 58,
+      "spAttack": 66,
+      "spDefense": 44,
+      "attack": 38,
+      "defense": 40,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103175,
+      "dexNo": 56,
+      "name": "焰车鱼",
+      "element": "火",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "海洋",
+      "family": "熔火游鱼族",
+      "imageKey": "creatures/56-焰车鱼.png",
+      "portraitKey": "creatures/56-焰车鱼.png",
+      "description": "学会了把尾鳍当轮子用，贴着水面滑行的少年期灵宠。它喜欢沿着滚烫的岩石坡道冲刺，身后拖着一道长长的白色蒸汽。",
+      "evolutionCondition": "携带「熔岩鳍」，等级达到二十四级。",
+      "captureLocation": "余烬丘陵 · 熔岩斜坡",
+      "hatchCondition": "将蛋放在流动的温泉出水口，累计经过九百次水流冲刷。",
+      "arenaRate": 6,
+      "exploreRate": 18,
+      "hp": 62,
+      "speed": 66,
+      "spAttack": 78,
+      "spDefense": 58,
+      "attack": 52,
+      "defense": 56,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103176,
+      "dexNo": 57,
+      "name": "老焰鱼王",
+      "element": "火",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "海洋",
+      "family": "熔火游鱼族",
+      "imageKey": "creatures/57-老焰鱼王.png",
+      "portraitKey": "creatures/57-老焰鱼王.png",
+      "description": "在滚烫岩层里活了很久的老鱼，鳞片被烤成了硬壳。它不再追逐猎物，只是安静守在温泉最深处，偶尔喷出一柱蒸汽，像在打哈欠。",
+      "evolutionCondition": "携带「熔岩鳍」，等级达到四十二级，并在竞技场取得三场胜利。",
+      "captureLocation": "余烬丘陵 · 地热深处",
+      "hatchCondition": "只有在地热裂缝旁连续孵化七天才会成功，蛋壳会慢慢变成黑色。",
+      "arenaRate": 3,
+      "exploreRate": 7,
+      "hp": 88,
+      "speed": 72,
+      "spAttack": 104,
+      "spDefense": 86,
+      "attack": 74,
+      "defense": 80,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103177,
+      "dexNo": 58,
+      "name": "冰冰钻",
+      "element": "冰",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "植物",
+      "family": "霜华花族",
+      "imageKey": "creatures/58-冰冰钻.png",
+      "portraitKey": "creatures/58-冰冰钻.png",
+      "description": "一颗刚从冰缝里长出来的花种，外面裹着厚厚的冰壳。它用头顶那朵小花判断温度，天冷时花瓣会缩回去。",
+      "evolutionCondition": "等级达到二十级，并在雪原完成至少三场战斗。",
+      "captureLocation": "浅蓝海湾 · 流冰礁石",
+      "hatchCondition": "把蛋埋在碎冰里，每天翻动一次，四天后冰壳会裂开。",
+      "arenaRate": 10,
+      "exploreRate": 30,
+      "hp": 46,
+      "speed": 40,
+      "spAttack": 62,
+      "spDefense": 66,
+      "attack": 42,
+      "defense": 58,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103178,
+      "dexNo": 59,
+      "name": "冰芙蓉",
+      "element": "冰",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "植物",
+      "family": "霜华花族",
+      "imageKey": "creatures/59-冰芙蓉.png",
+      "portraitKey": "creatures/59-冰芙蓉.png",
+      "description": "冰壳已经长成层层花瓣，走动时会落下细碎的冰粉。它把根须扎在浮冰下面，靠吸食冰水里的矿物质慢慢长大。",
+      "evolutionCondition": "等级达到三十二级，并在雪原停留超过三十分钟。",
+      "captureLocation": "浅蓝海湾 · 浮冰花园",
+      "hatchCondition": "把蛋放在结冰的湖面上，让它在冰层里冻足五天。",
+      "arenaRate": 6,
+      "exploreRate": 16,
+      "hp": 64,
+      "speed": 52,
+      "spAttack": 80,
+      "spDefense": 84,
+      "attack": 56,
+      "defense": 72,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103179,
+      "dexNo": 60,
+      "name": "高寒之花",
+      "element": "冰",
+      "stage": "三阶",
+      "form": "冰原",
+      "species": "植物",
+      "family": "霜华花族",
+      "imageKey": "creatures/60-高寒之花.png",
+      "portraitKey": "creatures/60-高寒之花.png",
+      "description": "只有在极寒冰原上才会开成这样。整株花被冻在半透明的冰柱里，看起来像一尊雕像，可它的花蕊一直在缓慢转动，替观察者看着四周。",
+      "evolutionCondition": "冰芙蓉在冰原地形下使用「寒蕊绽放」累计十次。",
+      "captureLocation": "浅蓝海湾 · 极北冰原",
+      "hatchCondition": "需要在零下二十度的环境中孵化，且全程不能见到阳光。",
+      "arenaRate": 2,
+      "exploreRate": 6,
+      "hp": 82,
+      "speed": 60,
+      "spAttack": 96,
+      "spDefense": 104,
+      "attack": 68,
+      "defense": 92,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103180,
+      "dexNo": 61,
+      "name": "盛放之花",
+      "element": "草",
+      "stage": "三阶",
+      "form": "雨林",
+      "species": "植物",
+      "family": "霜华花族",
+      "imageKey": "creatures/61-盛放之花.png",
+      "portraitKey": "creatures/61-盛放之花.png",
+      "description": "同一株花，被带到温暖湿润的雨林之后，会开成完全不同的样子。花瓣变得柔软宽大，能兜住一整夜的雨水，第二天再慢慢分给周围的小草。",
+      "evolutionCondition": "冰芙蓉在雨林地形下使用「寒蕊绽放」累计十次。",
+      "captureLocation": "雨林深处 · 树冠花海",
+      "hatchCondition": "需要在湿度八成以上的环境中孵化，并每天浇水一次。",
+      "arenaRate": 2,
+      "exploreRate": 6,
+      "hp": 84,
+      "speed": 66,
+      "spAttack": 92,
+      "spDefense": 88,
+      "attack": 86,
+      "defense": 78,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103181,
+      "dexNo": 62,
+      "name": "小火虾",
+      "element": "水",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "海洋",
+      "family": "熔流甲壳族",
+      "imageKey": "creatures/62-小火虾.png",
+      "portraitKey": "creatures/62-小火虾.png",
+      "description": "生活在热泉与海水交界处的小虾，尾扇一半是海水、一半是火。它挥动螯钳时会冒出白烟，那是水被烧开的声音。",
+      "evolutionCondition": "等级达到十八级，并在温泉与海水交界处完成三次战斗。",
+      "captureLocation": "浅蓝海湾 · 温泉入海口",
+      "hatchCondition": "把蛋放在温水里，保持水温三十五度左右，三天后孵化。",
+      "arenaRate": 12,
+      "exploreRate": 36,
+      "hp": 42,
+      "speed": 60,
+      "spAttack": 50,
+      "spDefense": 40,
+      "attack": 52,
+      "defense": 44,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103182,
+      "dexNo": 63,
+      "name": "激流炎虾",
+      "element": "水",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "海洋",
+      "family": "熔流甲壳族",
+      "imageKey": "creatures/63-激流炎虾.png",
+      "portraitKey": "creatures/63-激流炎虾.png",
+      "description": "长到少年期后，它开始追着热泉的喷口跑。被它螯钳扫过的水面会留下一道白色汽痕，很久都散不掉。",
+      "evolutionCondition": "等级达到三十级，并在温泉入海口完成一次夜间探索。",
+      "captureLocation": "浅蓝海湾 · 沸泉裂口",
+      "hatchCondition": "需要在水温四十五度的沸泉边孵化，并每天搅动一次水流。",
+      "arenaRate": 7,
+      "exploreRate": 17,
+      "hp": 60,
+      "speed": 78,
+      "spAttack": 68,
+      "spDefense": 56,
+      "attack": 74,
+      "defense": 62,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103183,
+      "dexNo": 64,
+      "name": "炎魔红虾",
+      "element": "水",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "海洋",
+      "family": "熔流甲壳族",
+      "imageKey": "creatures/64-炎魔红虾.png",
+      "portraitKey": "creatures/64-炎魔红虾.png",
+      "description": "成熟体的甲壳红得像一块烧透的炭。传说它守在地热裂口最深处，用自己的体温维持着整片温泉的温度。",
+      "evolutionCondition": "携带「沸泉之心」，等级达到四十五级，并在竞技场连胜三场。",
+      "captureLocation": "浅蓝海湾 · 地热核心",
+      "hatchCondition": "只有在地热核心旁、以沸泉水浸泡七日才能孵化。",
+      "arenaRate": 2,
+      "exploreRate": 6,
+      "hp": 86,
+      "speed": 96,
+      "spAttack": 92,
+      "spDefense": 72,
+      "attack": 108,
+      "defense": 84,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103184,
+      "dexNo": 65,
+      "name": "黄小矿",
+      "element": "土",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "动物",
+      "family": "矿脉蜥族",
+      "imageKey": "creatures/65-黄小矿.png",
+      "portraitKey": "creatures/65-黄小矿.png",
+      "description": "从矿洞里滚出来的小蜥蜴，背上还粘着没清干净的砂石。它喜欢把亮晶晶的东西塞进嘴里，腮帮子鼓鼓的，怎么劝都不肯吐出来。",
+      "evolutionCondition": "等级达到二十级，并吃掉十块矿石。",
+      "captureLocation": "沙岩峡谷 · 废弃矿道",
+      "hatchCondition": "把蛋埋进矿砂里，每天浇水会让蛋壳更硬一些。",
+      "arenaRate": 11,
+      "exploreRate": 33,
+      "hp": 50,
+      "speed": 48,
+      "spAttack": 38,
+      "spDefense": 42,
+      "attack": 58,
+      "defense": 52,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103185,
+      "dexNo": 66,
+      "name": "黄矿小怪",
+      "element": "土",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "动物",
+      "family": "矿脉蜥族",
+      "imageKey": "creatures/66-黄矿小怪.png",
+      "portraitKey": "creatures/66-黄矿小怪.png",
+      "description": "背上的砂石已经被压成薄薄一层铠甲。它会在矿道里来回巡逻，遇到挡路的人，就用尾巴把人扫到一边去。",
+      "evolutionCondition": "等级达到三十二级，并在矿道中击败五只土系灵宠。",
+      "captureLocation": "沙岩峡谷 · 深层矿脉",
+      "hatchCondition": "需要在矿砂与碎石混合的巢里孵化，并全程保持干燥。",
+      "arenaRate": 6,
+      "exploreRate": 15,
+      "hp": 68,
+      "speed": 56,
+      "spAttack": 46,
+      "spDefense": 52,
+      "attack": 80,
+      "defense": 74,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103186,
+      "dexNo": 67,
+      "name": "黄矿速蜥",
+      "element": "土",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "动物",
+      "family": "矿脉蜥族",
+      "imageKey": "creatures/67-黄矿速蜥.png",
+      "portraitKey": "creatures/67-黄矿速蜥.png",
+      "description": "全身覆盖层层叠叠的矿层，跑起来像一列小小的矿车。它挖出的隧道又直又稳，矿工们会顺着它的痕迹去找新的矿脉。",
+      "evolutionCondition": "携带「矿脉核心」，等级达到四十五级。",
+      "captureLocation": "沙岩峡谷 · 主矿脉",
+      "hatchCondition": "需在矿脉最深处孵化，周围必须有三块以上的原矿。",
+      "arenaRate": 2,
+      "exploreRate": 5,
+      "hp": 90,
+      "speed": 70,
+      "spAttack": 54,
+      "spDefense": 64,
+      "attack": 110,
+      "defense": 96,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103187,
+      "dexNo": 68,
+      "name": "乒乒",
+      "element": "钢",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "机械",
+      "family": "齿轮工坊族",
+      "imageKey": "creatures/68-乒乒.png",
+      "portraitKey": "creatures/68-乒乒.png",
+      "description": "工坊里最小的那只齿轮精灵，圆滚滚地到处弹。它一紧张就原地打转，发出「乒乒」的声音，听着倒像在给自己打气。",
+      "evolutionCondition": "等级达到二十二级后，会根据自己的性格分化为塔塔或铲铲。",
+      "captureLocation": "铁锈高地 · 废弃工坊",
+      "hatchCondition": "把蛋放进上弦的音乐盒里，拧满发条后静置三天。",
+      "arenaRate": 10,
+      "exploreRate": 28,
+      "hp": 44,
+      "speed": 64,
+      "spAttack": 44,
+      "spDefense": 46,
+      "attack": 56,
+      "defense": 50,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103188,
+      "dexNo": 69,
+      "name": "塔塔",
+      "element": "钢",
+      "stage": "二阶",
+      "form": "塔",
+      "species": "机械",
+      "family": "齿轮工坊族",
+      "imageKey": "creatures/69-塔塔.png",
+      "portraitKey": "creatures/69-塔塔.png",
+      "description": "选择了「向上堆叠」的那一半。它把自己垒成一座小塔，越高越稳，塔尖那盏灯会随心情变换颜色。",
+      "evolutionCondition": "由乒乒在等级二十二级、防御高于攻击时进化。",
+      "captureLocation": "铁锈高地 · 高塔遗址",
+      "hatchCondition": "由乒乒进化而来，无法通过孵化获得。",
+      "arenaRate": 5,
+      "exploreRate": 14,
+      "hp": 66,
+      "speed": 54,
+      "spAttack": 50,
+      "spDefense": 62,
+      "attack": 72,
+      "defense": 86,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103189,
+      "dexNo": 70,
+      "name": "铲铲",
+      "element": "钢",
+      "stage": "二阶",
+      "form": "铲",
+      "species": "机械",
+      "family": "齿轮工坊族",
+      "imageKey": "creatures/70-铲铲.png",
+      "portraitKey": "creatures/70-铲铲.png",
+      "description": "选择了「向外挖掘」的那一半。它把身体折成一把铲子，能在最硬的岩层上开出一条通道，挖完还会把土拍平。",
+      "evolutionCondition": "由乒乒在等级二十二级、攻击高于防御时进化。",
+      "captureLocation": "铁锈高地 · 采掘坑道",
+      "hatchCondition": "由乒乒进化而来，无法通过孵化获得。",
+      "arenaRate": 5,
+      "exploreRate": 14,
+      "hp": 64,
+      "speed": 68,
+      "spAttack": 46,
+      "spDefense": 56,
+      "attack": 88,
+      "defense": 70,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103190,
+      "dexNo": 71,
+      "name": "塔乒塔",
+      "element": "钢",
+      "stage": "三阶",
+      "form": "塔",
+      "species": "机械",
+      "family": "齿轮工坊族",
+      "imageKey": "creatures/71-塔乒塔.png",
+      "portraitKey": "creatures/71-塔乒塔.png",
+      "description": "三层结构叠成的巨型装置，中间那一层永远在转。它守在高塔顶端，用塔顶的光替夜里赶路的人指方向。",
+      "evolutionCondition": "由塔塔在等级四十级时携带「塔心齿轮」进化。",
+      "captureLocation": "铁锈高地 · 灯塔残骸",
+      "hatchCondition": "由塔塔进化而来，无法通过孵化获得。",
+      "arenaRate": 2,
+      "exploreRate": 5,
+      "hp": 92,
+      "speed": 60,
+      "spAttack": 58,
+      "spDefense": 78,
+      "attack": 96,
+      "defense": 118,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103191,
+      "dexNo": 72,
+      "name": "铲乒铲",
+      "element": "钢",
+      "stage": "三阶",
+      "form": "铲",
+      "species": "机械",
+      "family": "齿轮工坊族",
+      "imageKey": "creatures/72-铲乒铲.png",
+      "portraitKey": "creatures/72-铲乒铲.png",
+      "description": "两把铲刃首尾相接，转起来像一台掘进机。它挖开的隧道会自己塌回去，所以没有人能跟着它走第二遍。",
+      "evolutionCondition": "由铲铲在等级四十级时携带「铲心齿轮」进化。",
+      "captureLocation": "铁锈高地 · 深层坑道",
+      "hatchCondition": "由铲铲进化而来，无法通过孵化获得。",
+      "arenaRate": 2,
+      "exploreRate": 5,
+      "hp": 88,
+      "speed": 80,
+      "spAttack": 54,
+      "spDefense": 70,
+      "attack": 124,
+      "defense": 92,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103192,
+      "dexNo": 73,
+      "name": "浮游蟹",
+      "element": "水",
+      "stage": "一阶",
+      "form": "群居",
+      "species": "海洋",
+      "family": "浮空蟹族",
+      "imageKey": "creatures/73-浮游蟹.png",
+      "portraitKey": "creatures/73-浮游蟹.png",
+      "description": "总是一大群一起浮在海面上，远远看去像一片会移动的小岛。它们把气泡聚在一起，托起整群同伴，谁也不肯先沉下去。",
+      "evolutionCondition": "在群体中长大，形态稳定后固定为群居形态。",
+      "captureLocation": "浅蓝海湾 · 浮游浅滩",
+      "hatchCondition": "把蛋放进满是气泡的海草丛中，让它跟着气泡浮起来。",
+      "arenaRate": 8,
+      "exploreRate": 20,
+      "hp": 58,
+      "speed": 44,
+      "spAttack": 58,
+      "spDefense": 62,
+      "attack": 52,
+      "defense": 66,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
+    },
+    {
+      "id": 103193,
+      "dexNo": 74,
+      "name": "浮游蟹",
+      "element": "水",
+      "stage": "一阶",
+      "form": "独居",
+      "species": "海洋",
+      "family": "浮空蟹族",
+      "imageKey": "creatures/74-浮游蟹.png",
+      "portraitKey": "creatures/74-浮游蟹.png",
+      "description": "离群之后慢慢长成的样子。甲壳更厚，两只大螯可以夹碎贝壳，也不再需要气泡托着才能浮起来。",
+      "evolutionCondition": "群居形态的浮游蟹离群独处一段时间后转变而来。",
+      "captureLocation": "浅蓝海湾 · 断崖海蚀洞",
+      "hatchCondition": "单独孵化、不与其它蛋放在一起，才会长成独居形态。",
+      "arenaRate": 8,
+      "exploreRate": 20,
+      "hp": 56,
+      "speed": 52,
+      "spAttack": 54,
+      "spDefense": 56,
+      "attack": 60,
+      "defense": 58,
+      "createdAt": "2026-10-30T06:21:10.000Z",
+      "updatedAt": "2026-10-30T06:21:10.000Z"
     }
   ],
   "skills": {
@@ -2812,6 +3332,526 @@
         "pp": 10,
         "description": "连接脚下地脉，为自身与相邻同伴分担伤害并持续回复。"
       }
+    ],
+    "103174": [
+      {
+        "slot": 1,
+        "name": "火星泡泡",
+        "pp": 25,
+        "description": "吐出一串带火星的气泡，造成火系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "王冠撞击",
+        "pp": 20,
+        "description": "用烧硬的珊瑚王冠顶撞对手，造成物攻伤害并少量提升物防。"
+      },
+      {
+        "slot": 3,
+        "name": "温泉冲刺",
+        "pp": 15,
+        "description": "借水流的推力横冲直撞，提升自身速度。"
+      },
+      {
+        "slot": 4,
+        "name": "沸水吐息",
+        "pp": 10,
+        "description": "喷出滚烫的水汽，造成范围伤害并有概率灼烧。"
+      }
+    ],
+    "103175": [
+      {
+        "slot": 1,
+        "name": "焰轮冲刺",
+        "pp": 15,
+        "description": "把尾鳍点着当轮子撞向对手，造成火系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "蒸汽掩护",
+        "pp": 20,
+        "description": "喷出大片蒸汽，提升自身闪避。"
+      },
+      {
+        "slot": 3,
+        "name": "热浪拍击",
+        "pp": 15,
+        "description": "掀起热浪拍打，造成特攻伤害并降低对手速度。"
+      },
+      {
+        "slot": 4,
+        "name": "熔道标记",
+        "pp": 10,
+        "description": "在地面留下熔岩轨迹，对手换上场时受到少量伤害。"
+      }
+    ],
+    "103176": [
+      {
+        "slot": 1,
+        "name": "王冠焰柱",
+        "pp": 10,
+        "description": "从王冠喷出火柱，造成高威力火系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "地热领域",
+        "pp": 5,
+        "description": "展开地热领域，持续强化全队火系技能。"
+      },
+      {
+        "slot": 3,
+        "name": "老鳞回响",
+        "pp": 10,
+        "description": "用硬化的老鳞弹开攻击，提升物防并反弹少量伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "温泉安眠",
+        "pp": 5,
+        "description": "让温泉蒸汽包裹全队，回复体力并解除灼烧。"
+      }
+    ],
+    "103177": [
+      {
+        "slot": 1,
+        "name": "冰棱刺",
+        "pp": 25,
+        "description": "射出细小的冰棱，造成冰系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "花种护壳",
+        "pp": 20,
+        "description": "收拢花瓣形成冰壳，提升特防。"
+      },
+      {
+        "slot": 3,
+        "name": "低温霜雾",
+        "pp": 15,
+        "description": "喷出霜雾，降低对手速度。"
+      },
+      {
+        "slot": 4,
+        "name": "冰面滑行",
+        "pp": 15,
+        "description": "在冰面上滑行移动，提升自身闪避。"
+      }
+    ],
+    "103178": [
+      {
+        "slot": 1,
+        "name": "冰瓣飞散",
+        "pp": 15,
+        "description": "抖落冰瓣射向对手，造成范围冰系伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "寒蕊绽放",
+        "pp": 10,
+        "description": "绽开花蕊，提升全队冰系技能威力。"
+      },
+      {
+        "slot": 3,
+        "name": "霜甲",
+        "pp": 20,
+        "description": "用冰层覆盖自身，大幅提升物防。"
+      },
+      {
+        "slot": 4,
+        "name": "冻土扎根",
+        "pp": 10,
+        "description": "就地扎根，回复体力并免疫击退。"
+      }
+    ],
+    "103179": [
+      {
+        "slot": 1,
+        "name": "极寒花冠",
+        "pp": 10,
+        "description": "凝聚冰原寒气，造成高威力冰系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "永冻花瓣",
+        "pp": 5,
+        "description": "展开永冻花瓣，为全队附上冰甲。"
+      },
+      {
+        "slot": 3,
+        "name": "冰柱穿刺",
+        "pp": 10,
+        "description": "从地面升起冰柱，造成物攻伤害并有概率冻结。"
+      },
+      {
+        "slot": 4,
+        "name": "高寒绽放",
+        "pp": 5,
+        "description": "在极寒中绽放，回复全队体力并提升冰系威力。"
+      }
+    ],
+    "103180": [
+      {
+        "slot": 1,
+        "name": "雨林绽放",
+        "pp": 10,
+        "description": "借雨林的湿气绽放，造成高威力草系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "花蜜陷阱",
+        "pp": 15,
+        "description": "洒下花蜜，降低对手命中并回复自身。"
+      },
+      {
+        "slot": 3,
+        "name": "藤瓣缠绕",
+        "pp": 15,
+        "description": "用柔软的花瓣缠住对手，造成伤害并降低速度。"
+      },
+      {
+        "slot": 4,
+        "name": "四季轮转",
+        "pp": 5,
+        "description": "切换花期，回复全队体力并清除灼烧。"
+      }
+    ],
+    "103181": [
+      {
+        "slot": 1,
+        "name": "烫水弹",
+        "pp": 25,
+        "description": "射出一小团滚水，造成水系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "火钳夹击",
+        "pp": 20,
+        "description": "用烧红的螯钳夹击，造成物攻伤害并少量灼烧。"
+      },
+      {
+        "slot": 3,
+        "name": "逆流摆尾",
+        "pp": 20,
+        "description": "摆尾掀起水流，提升自身速度。"
+      },
+      {
+        "slot": 4,
+        "name": "泡影掩护",
+        "pp": 15,
+        "description": "吐出大量气泡，提升闪避。"
+      }
+    ],
+    "103182": [
+      {
+        "slot": 1,
+        "name": "激流螯击",
+        "pp": 15,
+        "description": "借水流加速螯击，造成水系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "蒸汽突进",
+        "pp": 10,
+        "description": "化作一道蒸汽突进，提升速度并附加灼烧。"
+      },
+      {
+        "slot": 3,
+        "name": "沸泉漩涡",
+        "pp": 15,
+        "description": "搅出沸水漩涡，造成范围伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "甲壳回温",
+        "pp": 10,
+        "description": "让甲壳吸收热量，回复体力并提升物防。"
+      }
+    ],
+    "103183": [
+      {
+        "slot": 1,
+        "name": "炎魔重钳",
+        "pp": 10,
+        "description": "挥下烧红的巨钳，造成高威力物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "沸海领域",
+        "pp": 5,
+        "description": "展开沸海领域，让全队水系技能附带灼烧。"
+      },
+      {
+        "slot": 3,
+        "name": "赤壳冲撞",
+        "pp": 10,
+        "description": "用赤红甲壳冲撞，造成伤害并降低对手物防。"
+      },
+      {
+        "slot": 4,
+        "name": "地热回响",
+        "pp": 5,
+        "description": "引动地热，回复全队体力并清除异常状态。"
+      }
+    ],
+    "103184": [
+      {
+        "slot": 1,
+        "name": "砂石弹",
+        "pp": 25,
+        "description": "吐出混着砂的石块，造成土系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "挖洞潜行",
+        "pp": 20,
+        "description": "钻进地下移动，提升闪避。"
+      },
+      {
+        "slot": 3,
+        "name": "嚼碎",
+        "pp": 20,
+        "description": "用坚硬的牙齿啃咬，造成物攻伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "矿砂护体",
+        "pp": 15,
+        "description": "让砂石覆盖全身，提升物防。"
+      }
+    ],
+    "103185": [
+      {
+        "slot": 1,
+        "name": "矿脉尾扫",
+        "pp": 15,
+        "description": "用覆满砂石的尾巴横扫，造成范围土系伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "碎石铠甲",
+        "pp": 15,
+        "description": "强化背部石甲，提升物防与特防。"
+      },
+      {
+        "slot": 3,
+        "name": "地刺",
+        "pp": 20,
+        "description": "从地下刺出石锥，造成物攻伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "掘地冲锋",
+        "pp": 10,
+        "description": "贴着地面冲锋，提升速度并造成伤害。"
+      }
+    ],
+    "103186": [
+      {
+        "slot": 1,
+        "name": "矿脉崩击",
+        "pp": 10,
+        "description": "砸下整条矿脉的重量，造成高威力土系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "隧道突袭",
+        "pp": 10,
+        "description": "钻入地下从背后突袭，提升暴击率。"
+      },
+      {
+        "slot": 3,
+        "name": "砂金护壁",
+        "pp": 5,
+        "description": "用砂金筑起护壁，为全队抵挡一次伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "矿层回响",
+        "pp": 5,
+        "description": "震响地下矿层，降低全体对手速度。"
+      }
+    ],
+    "103187": [
+      {
+        "slot": 1,
+        "name": "弹跳撞击",
+        "pp": 25,
+        "description": "像弹簧一样弹出去撞击，造成钢系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "上弦",
+        "pp": 20,
+        "description": "给自己上紧发条，提升速度。"
+      },
+      {
+        "slot": 3,
+        "name": "齿轮飞刃",
+        "pp": 20,
+        "description": "甩出小齿轮旋刃，造成特攻伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "哐当作响",
+        "pp": 15,
+        "description": "发出噪音干扰对手，降低其命中。"
+      }
+    ],
+    "103188": [
+      {
+        "slot": 1,
+        "name": "塔身重压",
+        "pp": 15,
+        "description": "用整个塔身压下来，造成钢系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "叠层加固",
+        "pp": 15,
+        "description": "再叠一层结构，提升物防与特防。"
+      },
+      {
+        "slot": 3,
+        "name": "塔顶光束",
+        "pp": 10,
+        "description": "从塔尖射出光束，造成特攻伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "地基稳固",
+        "pp": 10,
+        "description": "把地基钉进地面，免疫击退并回复体力。"
+      }
+    ],
+    "103189": [
+      {
+        "slot": 1,
+        "name": "铲刃斩",
+        "pp": 15,
+        "description": "用铲刃劈砍，造成钢系物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "掘进",
+        "pp": 20,
+        "description": "高速掘进，提升速度并降低对手物防。"
+      },
+      {
+        "slot": 3,
+        "name": "碎石抛射",
+        "pp": 15,
+        "description": "把挖出的碎石抛出，造成范围伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "铁铲格挡",
+        "pp": 10,
+        "description": "用铲面格挡，提升物防。"
+      }
+    ],
+    "103190": [
+      {
+        "slot": 1,
+        "name": "塔层碾压",
+        "pp": 10,
+        "description": "整座塔层压下来，造成高威力物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "齿轮壁垒",
+        "pp": 5,
+        "description": "展开齿轮壁垒，为全队抵挡伤害。"
+      },
+      {
+        "slot": 3,
+        "name": "塔光扫射",
+        "pp": 10,
+        "description": "塔顶光束横扫全场，造成特攻伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "永动塔心",
+        "pp": 5,
+        "description": "启动永动核心，每回合为全队回复体力。"
+      }
+    ],
+    "103191": [
+      {
+        "slot": 1,
+        "name": "双铲回旋",
+        "pp": 10,
+        "description": "双铲高速回旋，造成高威力物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "掘穿",
+        "pp": 10,
+        "description": "一击掘穿对手防线，大幅降低其物防。"
+      },
+      {
+        "slot": 3,
+        "name": "碎石风暴",
+        "pp": 15,
+        "description": "卷起碎石风暴，造成范围伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "坑道突进",
+        "pp": 5,
+        "description": "从坑道中突进，优先出手并获得护盾。"
+      }
+    ],
+    "103192": [
+      {
+        "slot": 1,
+        "name": "气泡炮",
+        "pp": 25,
+        "description": "压缩气泡射出去，造成水系特攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "群体护盾",
+        "pp": 15,
+        "description": "同伴聚拢成盾，提升全队物防。"
+      },
+      {
+        "slot": 3,
+        "name": "潮汐推力",
+        "pp": 15,
+        "description": "借潮水推着自己移动，提升速度。"
+      },
+      {
+        "slot": 4,
+        "name": "浮囊充气",
+        "pp": 10,
+        "description": "给浮囊充气，为一名同伴抵挡一次伤害。"
+      }
+    ],
+    "103193": [
+      {
+        "slot": 1,
+        "name": "巨螯夹击",
+        "pp": 20,
+        "description": "用大螯夹碎对手护甲，造成物攻伤害。"
+      },
+      {
+        "slot": 2,
+        "name": "甲壳硬化",
+        "pp": 15,
+        "description": "把甲壳里的盐分压实，提升物防。"
+      },
+      {
+        "slot": 3,
+        "name": "海蚀冲击",
+        "pp": 15,
+        "description": "带起碎浪冲撞，造成范围伤害。"
+      },
+      {
+        "slot": 4,
+        "name": "独自守望",
+        "pp": 10,
+        "description": "独自警戒，提升自身命中与暴击。"
+      }
     ]
   },
   "traits": {
@@ -3570,6 +4610,286 @@
         "name": "不动岩心",
         "description": "不易被击退或打断；每回合未移动时，回合结束回复少量生命并提升物防。"
       }
+    ],
+    "103174": [
+      {
+        "slot": 1,
+        "family": "熔火游鱼族",
+        "name": "温泉体质",
+        "description": "受到火系攻击时伤害降低；处于水域地形时，每回合回复少量体力。"
+      },
+      {
+        "slot": 2,
+        "family": "熔火游鱼族",
+        "name": "逆流而上",
+        "description": "生命低于一半时速度提升，水系技能威力提高。"
+      }
+    ],
+    "103175": [
+      {
+        "slot": 1,
+        "family": "熔火游鱼族",
+        "name": "温泉体质",
+        "description": "受到火系攻击时伤害降低；处于水域地形时，每回合回复少量体力。"
+      },
+      {
+        "slot": 2,
+        "family": "熔火游鱼族",
+        "name": "逆流而上",
+        "description": "生命低于一半时速度提升，水系技能威力提高。"
+      }
+    ],
+    "103176": [
+      {
+        "slot": 1,
+        "family": "熔火游鱼族",
+        "name": "温泉体质",
+        "description": "受到火系攻击时伤害降低；处于水域地形时，每回合回复少量体力。"
+      },
+      {
+        "slot": 2,
+        "family": "熔火游鱼族",
+        "name": "逆流而上",
+        "description": "生命低于一半时速度提升，水系技能威力提高。"
+      }
+    ],
+    "103177": [
+      {
+        "slot": 1,
+        "family": "霜华花族",
+        "name": "霜心",
+        "description": "冰系技能的消耗降低；但受到火系攻击时伤害提高。"
+      },
+      {
+        "slot": 2,
+        "family": "霜华花族",
+        "name": "花期感应",
+        "description": "天气为晴或雪时，回合结束时回复少量体力。"
+      }
+    ],
+    "103178": [
+      {
+        "slot": 1,
+        "family": "霜华花族",
+        "name": "霜心",
+        "description": "冰系技能的消耗降低；但受到火系攻击时伤害提高。"
+      },
+      {
+        "slot": 2,
+        "family": "霜华花族",
+        "name": "花期感应",
+        "description": "天气为晴或雪时，回合结束时回复少量体力。"
+      }
+    ],
+    "103179": [
+      {
+        "slot": 1,
+        "family": "霜华花族",
+        "name": "霜心",
+        "description": "冰系技能的消耗降低；但受到火系攻击时伤害提高。"
+      },
+      {
+        "slot": 2,
+        "family": "霜华花族",
+        "name": "花期感应",
+        "description": "天气为晴或雪时，回合结束时回复少量体力。"
+      }
+    ],
+    "103180": [
+      {
+        "slot": 1,
+        "family": "霜华花族",
+        "name": "霜心",
+        "description": "冰系技能的消耗降低；但受到火系攻击时伤害提高。"
+      },
+      {
+        "slot": 2,
+        "family": "霜华花族",
+        "name": "花期感应",
+        "description": "天气为晴或雪时，回合结束时回复少量体力。"
+      }
+    ],
+    "103181": [
+      {
+        "slot": 1,
+        "family": "熔流甲壳族",
+        "name": "耐热甲",
+        "description": "受到火系攻击时伤害降低，且不会陷入灼烧。"
+      },
+      {
+        "slot": 2,
+        "family": "熔流甲壳族",
+        "name": "沸水钳",
+        "description": "水系技能命中后，有概率附加灼烧。"
+      }
+    ],
+    "103182": [
+      {
+        "slot": 1,
+        "family": "熔流甲壳族",
+        "name": "耐热甲",
+        "description": "受到火系攻击时伤害降低，且不会陷入灼烧。"
+      },
+      {
+        "slot": 2,
+        "family": "熔流甲壳族",
+        "name": "沸水钳",
+        "description": "水系技能命中后，有概率附加灼烧。"
+      }
+    ],
+    "103183": [
+      {
+        "slot": 1,
+        "family": "熔流甲壳族",
+        "name": "耐热甲",
+        "description": "受到火系攻击时伤害降低，且不会陷入灼烧。"
+      },
+      {
+        "slot": 2,
+        "family": "熔流甲壳族",
+        "name": "沸水钳",
+        "description": "水系技能命中后，有概率附加灼烧。"
+      }
+    ],
+    "103184": [
+      {
+        "slot": 1,
+        "family": "矿脉蜥族",
+        "name": "砂盾",
+        "description": "土系技能威力提升；受到岩系攻击时伤害降低。"
+      },
+      {
+        "slot": 2,
+        "family": "矿脉蜥族",
+        "name": "掘进本能",
+        "description": "探索时更容易发现矿石与埋藏道具。"
+      }
+    ],
+    "103185": [
+      {
+        "slot": 1,
+        "family": "矿脉蜥族",
+        "name": "砂盾",
+        "description": "土系技能威力提升；受到岩系攻击时伤害降低。"
+      },
+      {
+        "slot": 2,
+        "family": "矿脉蜥族",
+        "name": "掘进本能",
+        "description": "探索时更容易发现矿石与埋藏道具。"
+      }
+    ],
+    "103186": [
+      {
+        "slot": 1,
+        "family": "矿脉蜥族",
+        "name": "砂盾",
+        "description": "土系技能威力提升；受到岩系攻击时伤害降低。"
+      },
+      {
+        "slot": 2,
+        "family": "矿脉蜥族",
+        "name": "掘进本能",
+        "description": "探索时更容易发现矿石与埋藏道具。"
+      }
+    ],
+    "103187": [
+      {
+        "slot": 1,
+        "family": "齿轮工坊族",
+        "name": "上弦",
+        "description": "每回合速度小幅提升，最多叠加三层。"
+      },
+      {
+        "slot": 2,
+        "family": "齿轮工坊族",
+        "name": "零件回收",
+        "description": "倒下时为一名同伴提供一层护盾。"
+      }
+    ],
+    "103188": [
+      {
+        "slot": 1,
+        "family": "齿轮工坊族",
+        "name": "上弦",
+        "description": "每回合速度小幅提升，最多叠加三层。"
+      },
+      {
+        "slot": 2,
+        "family": "齿轮工坊族",
+        "name": "零件回收",
+        "description": "倒下时为一名同伴提供一层护盾。"
+      }
+    ],
+    "103189": [
+      {
+        "slot": 1,
+        "family": "齿轮工坊族",
+        "name": "上弦",
+        "description": "每回合速度小幅提升，最多叠加三层。"
+      },
+      {
+        "slot": 2,
+        "family": "齿轮工坊族",
+        "name": "零件回收",
+        "description": "倒下时为一名同伴提供一层护盾。"
+      }
+    ],
+    "103190": [
+      {
+        "slot": 1,
+        "family": "齿轮工坊族",
+        "name": "上弦",
+        "description": "每回合速度小幅提升，最多叠加三层。"
+      },
+      {
+        "slot": 2,
+        "family": "齿轮工坊族",
+        "name": "零件回收",
+        "description": "倒下时为一名同伴提供一层护盾。"
+      }
+    ],
+    "103191": [
+      {
+        "slot": 1,
+        "family": "齿轮工坊族",
+        "name": "上弦",
+        "description": "每回合速度小幅提升，最多叠加三层。"
+      },
+      {
+        "slot": 2,
+        "family": "齿轮工坊族",
+        "name": "零件回收",
+        "description": "倒下时为一名同伴提供一层护盾。"
+      }
+    ],
+    "103192": [
+      {
+        "slot": 1,
+        "family": "浮空蟹族",
+        "name": "浮力囊",
+        "description": "免疫击退与浮空效果，速度小幅提升。"
+      },
+      {
+        "slot": 2,
+        "family": "浮空蟹族",
+        "name": "潮汐共鸣",
+        "description": "与其他浮空蟹族同伴同场时，全队特防提升。"
+      }
+    ],
+    "103193": [
+      {
+        "slot": 1,
+        "family": "浮空蟹族",
+        "name": "浮力囊",
+        "description": "免疫击退与浮空效果，速度小幅提升。"
+      },
+      {
+        "slot": 2,
+        "family": "浮空蟹族",
+        "name": "潮汐共鸣",
+        "description": "与其他浮空蟹族同伴同场时，全队特防提升。"
+      }
     ]
   },
   "evolution": {
@@ -3830,6 +5150,104 @@
     ],
     "103173": [
       103173
+    ],
+    "103174": [
+      103174,
+      103175,
+      103176
+    ],
+    "103175": [
+      103174,
+      103175,
+      103176
+    ],
+    "103176": [
+      103174,
+      103175,
+      103176
+    ],
+    "103177": [
+      103177,
+      103178,
+      103179
+    ],
+    "103178": [
+      103177,
+      103178,
+      103179
+    ],
+    "103179": [
+      103177,
+      103178,
+      103179
+    ],
+    "103180": [
+      103177,
+      103178,
+      103180
+    ],
+    "103181": [
+      103181,
+      103182,
+      103183
+    ],
+    "103182": [
+      103181,
+      103182,
+      103183
+    ],
+    "103183": [
+      103181,
+      103182,
+      103183
+    ],
+    "103184": [
+      103184,
+      103185,
+      103186
+    ],
+    "103185": [
+      103184,
+      103185,
+      103186
+    ],
+    "103186": [
+      103184,
+      103185,
+      103186
+    ],
+    "103187": [
+      103187,
+      103188,
+      103189
+    ],
+    "103188": [
+      103187,
+      103188,
+      103190
+    ],
+    "103189": [
+      103187,
+      103189,
+      103191
+    ],
+    "103190": [
+      103187,
+      103188,
+      103190
+    ],
+    "103191": [
+      103187,
+      103189,
+      103191
+    ],
+    "103192": [
+      103192,
+      103193
+    ],
+    "103193": [
+      103192,
+      103193
     ]
   },
   "images": {
@@ -3974,6 +5392,26 @@
     "uploads/20261030051946-nb4er.jpg": "/media/uploads/20261030051946-nb4er.jpg",
     "uploads/20261030051950-5f1hs.jpg": "/media/uploads/20261030051950-5f1hs.jpg",
     "uploads/20261030051957-52kie.jpg": "/media/uploads/20261030051957-52kie.jpg",
-    "uploads/20261030052003-vnq0g.jpg": "/media/uploads/20261030052003-vnq0g.jpg"
+    "uploads/20261030052003-vnq0g.jpg": "/media/uploads/20261030052003-vnq0g.jpg",
+    "creatures/55-炎炎鱼.png": "/media/creatures/55.png",
+    "creatures/56-焰车鱼.png": "/media/creatures/56.png",
+    "creatures/57-老焰鱼王.png": "/media/creatures/57.png",
+    "creatures/58-冰冰钻.png": "/media/creatures/58.png",
+    "creatures/59-冰芙蓉.png": "/media/creatures/59.png",
+    "creatures/60-高寒之花.png": "/media/creatures/60.png",
+    "creatures/61-盛放之花.png": "/media/creatures/61.png",
+    "creatures/62-小火虾.png": "/media/creatures/62.png",
+    "creatures/63-激流炎虾.png": "/media/creatures/63.png",
+    "creatures/64-炎魔红虾.png": "/media/creatures/64.png",
+    "creatures/65-黄小矿.png": "/media/creatures/65.png",
+    "creatures/66-黄矿小怪.png": "/media/creatures/66.png",
+    "creatures/67-黄矿速蜥.png": "/media/creatures/67.png",
+    "creatures/68-乒乒.png": "/media/creatures/68.png",
+    "creatures/69-塔塔.png": "/media/creatures/69.png",
+    "creatures/70-铲铲.png": "/media/creatures/70.png",
+    "creatures/71-塔乒塔.png": "/media/creatures/71.png",
+    "creatures/72-铲乒铲.png": "/media/creatures/72.png",
+    "creatures/73-浮游蟹.png": "/media/creatures/73.png",
+    "creatures/74-浮游蟹.png": "/media/creatures/74.png"
   }
 }
