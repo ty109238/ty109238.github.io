@@ -261,7 +261,7 @@
     if (c.hatchCondition) chips.push('孵化条件见下方');
 
     var sec = document.createElement('section');
-    sec.className = 'egg-section';
+    sec.className = 'egg-section element-' + (c.element || '普通');
     sec.setAttribute('data-egg-for', String(c.id));
     sec.innerHTML =
       '<div class="record-heading"><div><p>EGG FORM</p><h2>蛋形态</h2></div><span>孵化之前的样子</span></div>' +
@@ -418,8 +418,10 @@
     var html = '';
     names.forEach(function (fam) {
       var list = byFam[fam].sort(function (a, b) { return a.dexNo - b.dexNo; });
+      var intro = (DATA.familyNotes && DATA.familyNotes[fam]) || '';
       html += '<section class="fgroup"><div class="fgroup-head"><h3>' + fam + '</h3><span>' +
         list.length + ' 只 · ' + list.map(function (x) { return x.stage; }).join(' / ') + '</span></div>' +
+        (intro ? '<p class="fgroup-intro">' + intro + '</p>' : '') +
         '<div class="fgroup-cards">';
       list.forEach(function (x) {
         var src = x.imageKey ? (DATA.images[x.imageKey] || '') : '';
@@ -470,7 +472,7 @@
   /* ---------- 离线支持 ---------- */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/sw.js?v=6', { scope: '/', updateViaCache: 'none' }).catch(function () {});
+      navigator.serviceWorker.register('/sw.js?v=7', { scope: '/', updateViaCache: 'none' }).catch(function () {});
     });
   }
 

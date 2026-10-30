@@ -466,3 +466,24 @@
 .section-heading { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 .view-toggle { margin-left: auto; margin-bottom: 0; }
 .catalog-results .family-view { margin-top: 6px; }
+/* 家族简介 */
+.fgroup-intro {
+  margin: -2px 0 10px;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: #5b6b7d;
+}
+
+/* 蛋形态按家族/属性上色 */
+.egg-section .egg-frame {
+  border-color: var(--element-color, #b9c6d4) !important;
+  background: var(--element-soft, #f7fbff) !important;
+  background-image: repeating-conic-gradient(
+    rgba(255, 255, 255, 0.55) 0% 25%,
+    rgba(255, 255, 255, 0) 0% 50%
+  ) !important;
+  background-size: 16px 16px !important;
+}
+.egg-section .egg-empty { color: var(--element-color, #8ea3b8) !important; opacity: 0.75; }
+.egg-section .egg-body h3 { color: var(--element-color, inherit); }
+.egg-section .egg-meta span { background: var(--element-soft, #f5faff); }

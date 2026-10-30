@@ -339,7 +339,8 @@
           field('图鉴描述', areaInput(c.description, (v) => { c.description = v; touch(); }), true),
           field('进化条件', areaInput(c.evolutionCondition, (v) => { c.evolutionCondition = v; touch(); }), true),
           field('捕捉地点', textInput(c.captureLocation, (v) => { c.captureLocation = v; touch(); })),
-          field('孵化条件', areaInput(c.hatchCondition, (v) => { c.hatchCondition = v; touch(); }))
+          field('孵化条件', areaInput(c.hatchCondition, (v) => { c.hatchCondition = v; touch(); })),
+          field('博士批注（详情页斜体小字）', areaInput(c.note, (v) => { c.note = v; touch(); }), true)
         )
       )
     ));
