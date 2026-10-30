@@ -212,7 +212,38 @@
     }
   };
 
-  /* ---------- 详情页：注入「蛋形态」板块 ---------- */
+  /* ---------- 详情页：注入「蛋形态」/「同族伙伴」板块 ---------- */
+  var EGG_NOTES = {
+    '火系元素': '蛋壳上有一圈暗红纹路，摸上去是温的。放在篝火边，偶尔会发出细小的“噼啪”声。',
+    '水系鲨': '蛋壳带着一层薄薄的水膜，摸起来凉而滑。靠近海浪时，里面的小家伙会轻轻顶着壳壁。',
+    '草系蕉': '外壳像一片卷起来的嫩叶，闻起来有淡淡的青香蕉味。每天晒一会儿晨光，壳上的纹路会更清晰。',
+    '草系绿翼': '蛋壳薄得能透出一点绿光，贴着耳朵能听到很轻的哼唱，像远处有人在唱歌。',
+    '草系节奏猿': '敲一下会回响一记短促的鼓点，连敲三下它就会跟着打拍子，越敲越起劲。',
+    '冰系雪人': '整枚蛋裹着一层薄冰，掌心放一会儿也不会化。不能靠近火堆，否则壳面会起水珠。',
+    '土系咖啡蚁': '蛋壳是温热的砂土色，有股淡淡的咖啡香。埋在干燥细砂里最让它安心。',
+    '草系蜜瓶': '蛋壳像一只倒扣的小木瓶，摇一摇没有声音，只有一点点黏稠的流动感。',
+    '钢系熔炉': '外壳是冷硬的铁灰色，内里却持续传出微弱的暖意，夜里能听到金属膨胀的“咔哒”声。',
+    '暗系胖豹': '蛋壳是暗紫近黑的颜色，只有在阴影里才会显出隐约的斑纹。放在明亮处它会一直不安地滚动。',
+    '风系绅士鹅': '很轻，比同体积的蛋轻一半。放在窗边会被气流带着微微晃动，像随时要滚走。',
+    '暗系岩甲': '壳面像一块黑曜石，敲上去声音很闷。需要放在阴凉、干燥的石板上，不能见强光。',
+    '草系四叶喵': '壳上天然长着四片小叶纹，据说是好运的兆头。放在苔藓上，小叶会慢慢变绿。',
+    '雷系旅行鸡': '蛋壳表面时不时窜过一道细小的静电，靠近会让人觉得指尖发麻。',
+    '雷系甲虫': '壳面覆着一层硬甲纹，敲一下会有一声清脆的回响，像敲在金属上。',
+    '水系洋流王子': '蛋壳内侧有水流流动的声音。需要放在浅水中，水位刚好没过一半。',
+    '冰系快快': '壳面结着细小的霜花，温度很低。放在雪里它会自己往雪堆深处钻。',
+    '风系慢慢': '整枚蛋会随着风向极缓慢地转动，转速慢到要盯着看很久才看得出来。',
+    '冰系噗噗': '蛋壳上有一层冰晶羽纹，轻轻一碰会落下一点点冰粉，很快就会重新长出来。',
+    '钢系咻咻': '壳面像上了漆的金属，能映出模糊的影子。里面偶尔传出极轻的齿轮转动声。',
+    '水系露露': '整枚蛋是半透明的蓝色，能隐约看到里面有个小小的影子在缓慢地呼吸。',
+    '土系墩墩': '沉得惊人，一只手几乎拿不动。壳面粗糙像岩石，摸久了手掌会留下砂土的痕迹。',
+    '熔火游鱼族': '蛋壳像一枚被温泉水泡久了的鹅卵石，放进水里它会自己慢慢浮起来。',
+    '霜华花族': '蛋壳外面裹着一层薄冰，里面却封着一朵没开的小花，温度一高花瓣就会缩回去。',
+    '熔流甲壳族': '壳面一半凉一半烫，摸起来像刚从热水里捞出来的石头，外壳上还带着细小的气泡纹。',
+    '矿脉蜥族': '蛋壳混着细砂和碎矿，偶尔能看到一点金绿色的反光，掂起来比看上去重得多。',
+    '齿轮工坊族': '外壳是圆滚滚的金属罐，上弦之后会自己“叮叮”地转两圈，然后安静下来。',
+    '浮空蟹族': '很轻，蛋壳里像装了一小团空气。放在水面上它不会沉，会跟着水波慢慢漂。'
+  };
+
   function currentCreatureId() {
     var m = /\/creature\/(\d+)/.exec(location.pathname);
     return m ? Number(m[1]) : null;
@@ -223,7 +254,7 @@
     var frame = imgPath
       ? '<div class="egg-frame"><img src="' + imgPath + '" alt="' + c.name + ' 蛋形态" loading="lazy"></div>'
       : '<div class="egg-frame"><div class="egg-empty">待补充配图<br>（在编辑台「蛋形态」处上传）</div></div>';
-    var note = c.eggNote || '孵化前它只是一枚安静的蛋，外壳上已经能看出这一族的纹路。';
+    var note = c.eggNote || EGG_NOTES[c.family] || '孵化前它只是一枚安静的蛋，外壳上已经能看出这一族的纹路。';
     var chips = [];
     if (c.family) chips.push('家族 · ' + c.family);
     if (c.element) chips.push('属性 · ' + c.element);
@@ -241,20 +272,66 @@
     return sec;
   }
 
+  function buildFamilySection(c) {
+    var sibs = [];
+    for (var i = 0; i < DATA.creatures.length; i++) {
+      var x = DATA.creatures[i];
+      if (x.family === c.family && x.id !== c.id) sibs.push(x);
+    }
+    if (!sibs.length) return null;
+    sibs.sort(function (a, b) { return a.dexNo - b.dexNo; });
+
+    var sec = document.createElement('section');
+    sec.className = 'family-section';
+    sec.setAttribute('data-family-for', String(c.id));
+
+    var html = '<div class="record-heading"><div><p>FAMILY</p><h2>同族伙伴</h2></div>' +
+      '<span>' + c.family + ' · 共 ' + (sibs.length + 1) + ' 只</span></div>' +
+      '<div class="family-strip">';
+    for (var k = 0; k < sibs.length; k++) {
+      var s = sibs[k];
+      var src = s.imageKey ? (DATA.images[s.imageKey] || '') : '';
+      html += '<a class="family-card" href="/creature/' + s.id + '">' +
+        (src ? '<img src="' + src + '" alt="' + s.name + '" loading="lazy">' : '') +
+        '<b>' + s.name + '</b><small>No.' + String(s.dexNo).padStart(3, '0') + ' · ' + s.stage + '</small></a>';
+    }
+    html += '</div>';
+    sec.innerHTML = html;
+    return sec;
+  }
+
   function syncEggSection() {
     if (!DATA) return;
     var id = currentCreatureId();
     var existing = document.querySelector('.egg-section');
-    if (!id) { if (existing) existing.remove(); return; }
+    var famExisting = document.querySelector('.family-section');
+    if (!id) {
+      if (existing) existing.remove();
+      if (famExisting) famExisting.remove();
+      return;
+    }
     var c = null;
     for (var i = 0; i < DATA.creatures.length; i++) if (DATA.creatures[i].id === id) { c = DATA.creatures[i]; break; }
-    if (!c) { if (existing) existing.remove(); return; }
+    if (!c) {
+      if (existing) existing.remove();
+      if (famExisting) famExisting.remove();
+      return;
+    }
     if (existing && existing.getAttribute('data-egg-for') === String(c.id)) return;
 
     var anchor = document.querySelector('.portrait-section');
     if (!anchor) return;
     if (existing) existing.remove();
+    if (famExisting) famExisting.remove();
     anchor.parentElement.insertBefore(buildEggSection(c), anchor);
+
+    var fam = buildFamilySection(c);
+    if (fam) {
+      var last = document.querySelector('.element-section');
+      var holder = last ? last.parentElement : anchor.parentElement;
+      if (last && last.nextSibling) holder.insertBefore(fam, last.nextSibling);
+      else holder.appendChild(fam);
+    }
   }
 
   function watchDetail() {
@@ -271,7 +348,7 @@
   /* ---------- 离线支持 ---------- */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/sw.js?v=4', { scope: '/', updateViaCache: 'none' }).catch(function () {});
+      navigator.serviceWorker.register('/sw.js?v=5', { scope: '/', updateViaCache: 'none' }).catch(function () {});
     });
   }
 
