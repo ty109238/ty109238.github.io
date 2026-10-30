@@ -362,72 +362,121 @@
 .notice-list li { list-style: disc !important; }
 .notice-list li::marker { color: var(--pink); }
 
-/* ---------- 工作室 ---------- */
+/* ---------- 工作室（醒目版） ---------- */
 .studio-section {
   max-width: 1220px;
-  margin: 46px auto 60px;
+  margin: 54px auto 64px;
   padding: 0 20px;
 }
 .studio-inner {
+  position: relative;
   display: grid;
-  grid-template-columns: 190px minmax(0, 1fr);
-  gap: 28px;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 34px;
   align-items: center;
-  border: 2px solid var(--ink);
-  border-radius: 22px;
-  background: linear-gradient(150deg, #fffaf0 0%, #fff 55%);
-  padding: 28px 32px;
-  box-shadow: 6px 8px 0 rgba(38, 39, 34, 0.08);
+  border: 3px solid var(--ink);
+  border-radius: 26px;
+  padding: 34px 38px;
+  background:
+    radial-gradient(120% 140% at 8% 0%, #ffe6c2 0%, rgba(255, 230, 194, 0) 58%),
+    radial-gradient(120% 140% at 100% 100%, #ffe0b8 0%, rgba(255, 224, 184, 0) 55%),
+    linear-gradient(150deg, #fffdf7 0%, #fff8ec 100%);
+  box-shadow: 8px 10px 0 rgba(38, 39, 34, 0.1);
+  overflow: hidden;
 }
-.studio-left { display: grid; justify-items: center; gap: 10px; }
-.studio-kicker {
-  margin: 0;
-  font-size: 10.5px;
+.studio-inner::after {
+  content: 'EST. 2026';
+  position: absolute;
+  right: 26px;
+  top: 18px;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: rgba(180, 110, 30, 0.45);
   font-weight: 800;
-  letter-spacing: 0.28em;
-  color: #d97706;
 }
-.studio-mark {
-  width: 108px;
-  height: 108px;
+.studio-logo {
   display: grid;
   place-items: center;
-  border-radius: 50%;
-  border: 3px solid var(--ink);
-  background: radial-gradient(circle at 35% 30%, #ffd27a 0%, #ff9a3c 60%, #ef6c1a 100%);
-  color: #3a1f06;
-  font-size: 46px;
+}
+.studio-logo img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(0 8px 16px rgba(210, 120, 20, 0.28));
+  animation: studio-float 5s ease-in-out infinite;
+}
+@keyframes studio-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.studio-kicker {
+  margin: 0 0 8px;
+  font-size: 11px;
   font-weight: 900;
-  box-shadow: 4px 5px 0 rgba(38, 39, 34, 0.18);
+  letter-spacing: 0.26em;
+  color: #d97706;
 }
 .studio-right h2 {
-  margin: 0 0 6px;
-  font-size: clamp(24px, 2.6vw, 34px);
+  margin: 0 0 10px;
+  font-size: clamp(28px, 3vw, 40px);
   letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 .studio-sub {
-  margin: 0 0 18px;
-  font-size: 13px;
-  color: #6b7d92;
+  margin: 0 0 22px;
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: #6b5a45;
+  max-width: 46em;
 }
 .studio-rows {
-  display: flex;
-  gap: 36px;
-  flex-wrap: wrap;
-  border-top: 2px solid var(--ink);
-  padding-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  border-top: 2px solid rgba(38, 39, 34, 0.16);
+  padding-top: 18px;
 }
-.studio-row { display: grid; gap: 3px; }
-.studio-row span {
+.studio-member {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  padding: 14px 16px 14px 54px;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 3px 4px 0 rgba(38, 39, 34, 0.08);
+}
+.studio-num {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ff9a3c;
+  border: 2px solid var(--ink);
+  color: #3a1f06;
+  font-size: 11px;
+  font-weight: 900;
+}
+.studio-role {
   font-size: 11.5px;
-  color: #8ea3b8;
+  color: #9a8464;
   letter-spacing: 0.06em;
 }
-.studio-row b { font-size: 19px; letter-spacing: -0.01em; }
+.studio-name {
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
 
 @media (max-width: 720px) {
-  .studio-inner { grid-template-columns: 1fr; padding: 22px; gap: 18px; }
-  .studio-left { justify-items: start; }
-  .studio-mark { width: 80px; height: 80px; font-size: 34px; }
-  .studio-rows { gap: 20px; }
+  .studio-section { margin: 30px auto 40px; padding: 0 14px; }
+  .studio-inner { grid-template-columns: 1fr; padding: 24px 20px; gap: 18px; border-radius: 20px; }
+  .studio-logo img { max-width: 140px; }
+  .studio-inner::after { display: none; }
+  .studio-rows { grid-template-columns: 1fr; }
+  .studio-name { font-size: 19px; }
 }

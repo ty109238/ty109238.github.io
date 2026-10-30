@@ -987,18 +987,20 @@
     var s = DATA.studio || { name: '谭熠的橘子工作室', members: [{ role: '主策划', name: '谭熠' }, { role: '角色审核建模', name: '吴静秋' }] };
     var sec = document.createElement('section');
     sec.className = 'studio-section';
-    var rows = (s.members || []).map(function (m) {
-      return '<div class="studio-row"><span>' + m.role + '</span><b>' + m.name + '</b></div>';
+    var rows = (s.members || []).map(function (m, i) {
+      return '<div class="studio-member"><span class="studio-num">0' + (i + 1) + '</span>' +
+        '<span class="studio-role">' + m.role + '</span>' +
+        '<b class="studio-name">' + m.name + '</b></div>';
     }).join('');
     sec.innerHTML =
       '<div class="studio-inner">' +
-        '<div class="studio-left">' +
-          '<p class="studio-kicker">STUDIO</p>' +
-          '<div class="studio-mark">橘</div>' +
+        '<div class="studio-logo">' +
+          '<img src="/media/ui/studio-logo.webp" alt="' + s.name + '" loading="lazy">' +
         '</div>' +
         '<div class="studio-right">' +
+          '<p class="studio-kicker">STUDIO · 制作团队</p>' +
           '<h2>' + s.name + '</h2>' +
-          '<p class="studio-sub">《咻噗 · 奥灵宠图鉴》由这个小小的工作室一起做出来。</p>' +
+          '<p class="studio-sub">《咻噗 · 奥灵宠图鉴》由这个小小的工作室一起做出来。每一只灵宠、每一段说明，都从这张桌子出发。</p>' +
           '<div class="studio-rows">' + rows + '</div>' +
         '</div>' +
       '</div>';
