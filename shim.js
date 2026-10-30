@@ -982,6 +982,49 @@
     }
   }
 
+  /* ---------- 公告 ---------- */
+  function noticeItems() {
+    var lp = DATA.lastPublished;
+    if (DATA.announcement && DATA.announcement.length) return DATA.announcement.slice();
+    var items = [];
+    if (lp && lp.ids && lp.ids.length) {
+      var list = DATA.creatures.filter(function (c) { return lp.ids.indexOf(c.id) >= 0; });
+      var fams = [];
+      list.forEach(function (c) { if (c.family && fams.indexOf(c.family) < 0) fams.push(c.family); });
+      items.push('新增 ' + list.length + ' 只灵宠（No.' + String(list[0].dexNo).padStart(3, '0') + '–No.' +
+        String(list[list.length - 1].dexNo).padStart(3, '0') + '），来自 ' + fams.length + ' 个家族：' + fams.join('、') + '。');
+    }
+    items.push('每只灵宠新增「蛋形态」「博士批注」「同族伙伴」和「这片区域还能遇到」。');
+    items.push('新增「养成模拟」：等级 1–60、天赋 9 档、星级 1–9、阶段 1–6、24 种性格，拖动即可实时计算战斗力。');
+    items.push('新增「战斗力榜」，可以按属性或家族单独排行；养成面板还能一键生成战绩图分享。');
+    items.push('新增「孵化手册」：按家族收录所有蛋形态，从灵宠详情页的蛋形态卡片进入。');
+    return items;
+  }
+
+  function openNotice() {
+    var old = document.querySelector('.notice-modal');
+    if (old) { old.remove(); return; }
+    var items = noticeItems();
+    var day = (DATA.lastPublished && DATA.lastPublished.at) ? String(DATA.lastPublished.at).slice(0, 10) : '';
+
+    var m = document.createElement('div');
+    m.className = 'notice-modal';
+    m.innerHTML =
+      '<div class="notice-box" role="dialog" aria-label="公告">' +
+        '<div class="notice-head"><div><p>NOTICE</p><h2>更新公告</h2></div>' +
+        (day ? '<span>' + day + '</span>' : '') + '</div>' +
+        '<ul class="notice-list">' + items.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul>' +
+        '<div class="notice-foot">' +
+          '<a class="notice-more" href="/eggs.html">去看看孵化手册 →</a>' +
+          '<button type="button" class="notice-close">关闭</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(m);
+    m.addEventListener('click', function (e) {
+      if (e.target === m || e.target.className === 'notice-close') m.remove();
+    });
+  }
+
   /* ---------- 分享战绩图 ---------- */
   function makeShareCard(c, st, base) {
     var W = 1200, H = 630;
@@ -1085,6 +1128,8 @@
     }).observe(root, { childList: true, subtree: true });
     setInterval(function () { syncEggSection(); syncHome(); syncRecent(); }, 1200);
   }
+
+  window.__dexOpenNotice = openNotice;
 
   /* ---------- 离线支持 ---------- */
   if ('serviceWorker' in navigator) {

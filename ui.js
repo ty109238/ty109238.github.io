@@ -165,10 +165,9 @@
     notice.setAttribute('data-role', 'notice');
     notice.innerHTML = '<img class="ui-ico" src="/media/ui/ui-notice.webp" alt=""><span>公告</span>';
     notice.addEventListener('click', function () {
+      if (window.__dexOpenNotice) { window.__dexOpenNotice(); return; }
       var t = document.querySelector('.recent-section') || document.querySelector('.catalog-section');
       if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      notice.classList.add('is-on');
-      setTimeout(function () { notice.classList.remove('is-on'); }, 1200);
     });
 
     var fav = document.createElement('button');
