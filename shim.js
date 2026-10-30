@@ -310,9 +310,11 @@
     var oldStats = copy.querySelector('.key-stats');
     if (oldStats) oldStats.remove();
     var total = (c.hp || 0) + (c.attack || 0) + (c.defense || 0) + (c.spAttack || 0) + (c.spDefense || 0) + (c.speed || 0);
+    var power = calcPower(total, loadTrain(c.id, c));
     var stats = document.createElement('div');
     stats.className = 'key-stats';
     stats.innerHTML =
+      '<div class="key-stat key-power" data-k="power"><b>' + power.toLocaleString('en-US') + '</b><span>战斗力</span></div>' +
       '<div class="key-stat"><b>' + total + '</b><span>种族值总和</span></div>' +
       '<div class="key-stat"><b>' + (c.arenaRate || 0) + '%</b><span>竞技场出现率</span></div>' +
       '<div class="key-stat"><b>' + (c.exploreRate || 0) + '%</b><span>探索出现率</span></div>';
@@ -488,6 +490,7 @@
     if (!DATA) return;
     var grid = document.querySelector('.creature-grid');
     if (!grid) return;
+    ensureRankToggle();
     tagCatalog();
     buildCatalogTools();
     if (document.querySelector('.view-toggle')) { applyCatalog(); return; }
@@ -721,6 +724,8 @@
       sec.querySelector('[data-v="star"]').textContent = star + ' ★';
       sec.querySelector('[data-v="stage"]').textContent = stage + ' 阶';
       sec.querySelector('.power-num').textContent = calcPower(base, p).toLocaleString('en-US');
+      var topPower = document.querySelector('.key-stats [data-k="power"] b');
+      if (topPower) topPower.textContent = calcPower(base, p).toLocaleString('en-US');
 
       try { localStorage.setItem(trainKey(c.id), JSON.stringify(p)); } catch (e) {}
     }
@@ -740,6 +745,60 @@
     var anchor = document.querySelector('.stats-section');
     if (!anchor || !anchor.parentElement) return;
     anchor.parentElement.insertBefore(buildTrainPanel(c), anchor);
+  }
+
+  /* ---------- 首页：战斗力排行榜 ---------- */
+  function powerOf(c) {
+    var base = (c.hp || 0) + (c.attack || 0) + (c.defense || 0) + (c.spAttack || 0) + (c.spDefense || 0) + (c.speed || 0);
+    return calcPower(base, loadTrain(c.id, c));
+  }
+
+  function buildRankView() {
+    var list = DATA.creatures.map(function (c) { return { c: c, p: powerOf(c), st: loadTrain(c.id, c) }; });
+    list.sort(function (a, b) { return b.p - a.p || a.c.dexNo - b.c.dexNo; });
+
+    var wrap = document.createElement('div');
+    wrap.className = 'rank-view';
+    var html = '';
+    list.forEach(function (row, i) {
+      var c = row.c;
+      var src = c.imageKey ? (DATA.images[c.imageKey] || '') : '';
+      var rank = i + 1;
+      var cls = rank <= 3 ? ' is-top rank-' + rank : '';
+      html += '<a class="rank-row' + cls + '" href="/creature/' + c.id + '">' +
+        '<span class="rank-no">' + rank + '</span>' +
+        (src ? '<img src="' + src + '" alt="' + c.name + '" loading="lazy">' : '') +
+        '<span class="rank-name"><b>' + c.name + '</b><small>No.' + String(c.dexNo).padStart(3, '0') + ' · ' + c.stage + ' · ' + c.family + '</small></span>' +
+        '<span class="rank-tags">Lv.' + row.st.level + ' · ' + TALENTS[row.st.talent] + ' · ' + row.st.star + '★ · ' + row.st.stage + '阶</span>' +
+        '<span class="rank-power">' + row.p.toLocaleString('en-US') + '</span>' +
+        '</a>';
+    });
+    wrap.innerHTML = html;
+    return wrap;
+  }
+
+  function ensureRankToggle() {
+    var heading = document.querySelector('.section-heading');
+    if (!heading || document.querySelector('.rank-toggle')) return;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'rank-toggle';
+    btn.textContent = '战斗力榜';
+    heading.appendChild(btn);
+
+    var view = null;
+    btn.addEventListener('click', function () {
+      var grid = document.querySelector('.creature-grid');
+      var fam = document.querySelector('.family-view');
+      if (!view || !document.body.contains(view)) { view = buildRankView(); grid.parentElement.appendChild(view); }
+      var on = view.classList.toggle('is-on');
+      if (on && fam) fam.classList.remove('is-on');
+      if (on) { view.innerHTML = buildRankView().innerHTML; }
+      grid.style.display = on ? 'none' : '';
+      btn.textContent = on ? '返回列表' : '战斗力榜';
+      var vt = document.querySelector('.view-toggle');
+      if (on && vt) vt.textContent = '按家族查看';
+    });
   }
 
   function watchDetail() {
