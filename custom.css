@@ -613,3 +613,5 @@
   color: var(--pink) !important;
   font-weight: 900 !important;
 }
+/* 编辑台：官方推荐战力预览 */
+.hint-strong { font-size: 15px; font-weight: 900; color: var(--pink); }

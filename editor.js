@@ -266,6 +266,43 @@
     return t;
   }
 
+  /* 官方推荐养成 */
+  const TALENTS = ['一无是处', '表现平平', '随处可见', '普普通通', '稍微稀有', '稀有', '百里挑一', '独一无二', '唯我独尊'];
+  const TALENT_MULT = [0.8, 0.9, 1.0, 1.1, 1.22, 1.35, 1.5, 1.66, 1.85];
+  const NATURE_NAMES = ['孤僻', '固执', '调皮', '勇敢', '大胆', '淘气', '无虑', '悠闲', '保守', '稳重', '马虎', '冷静',
+    '温顺', '慎重', '沉着', '狂妄', '胆小', '急躁', '天真', '开朗', '害羞', '认真', '实干', '坦率'];
+  const NATURE_MOD = {
+    孤僻: ['attack', 'defense'], 固执: ['attack', 'spAttack'], 调皮: ['attack', 'spDefense'], 勇敢: ['attack', 'speed'],
+    大胆: ['defense', 'attack'], 淘气: ['defense', 'spAttack'], 无虑: ['defense', 'spDefense'], 悠闲: ['defense', 'speed'],
+    保守: ['spAttack', 'attack'], 稳重: ['spAttack', 'defense'], 马虎: ['spAttack', 'spDefense'], 冷静: ['spAttack', 'speed'],
+    温顺: ['spDefense', 'attack'], 慎重: ['spDefense', 'spAttack'], 沉着: ['spDefense', 'defense'], 狂妄: ['spDefense', 'speed'],
+    胆小: ['speed', 'attack'], 急躁: ['speed', 'defense'], 天真: ['speed', 'spDefense'], 开朗: ['speed', 'spAttack']
+  };
+
+  function selInput(value, opts, onchange) {
+    const s = el('select', {});
+    opts.forEach((o) => {
+      const opt = el('option', { value: String(o.v) }, o.t);
+      if (String(o.v) === String(value)) opt.selected = true;
+      s.appendChild(opt);
+    });
+    s.addEventListener('change', () => onchange(s.value));
+    return s;
+  }
+
+  function officialPower(c) {
+    const o = c.official || {};
+    const base0 = (c.hp || 0) + (c.attack || 0) + (c.defense || 0) + (c.spAttack || 0) + (c.spDefense || 0) + (c.speed || 0);
+    const mod = NATURE_MOD[o.nature];
+    let base = base0;
+    if (mod) base = base0 + (c[mod[0]] || 0) * 0.1 - (c[mod[1]] || 0) * 0.1;
+    const lm = 1 + ((o.level || 1) - 1) * 0.02;
+    const tm = TALENT_MULT[o.talent == null ? 3 : o.talent] || 1;
+    const sm = 1 + ((o.star || 1) - 1) * 0.08;
+    const gm = 1 + ((o.stage || 1) - 1) * 0.15;
+    return Math.round(base * lm * tm * sm * gm);
+  }
+
   function listInput(value, opts, oninput) {
     const id = 'dl-' + Math.random().toString(36).slice(2, 8);
     const inp = el('input', { type: 'text', value: value == null ? '' : String(value), list: id });
@@ -317,6 +354,29 @@
         )
       )
     ));
+
+    /* 官方推荐养成 */
+    const off = c.official || (c.official = { level: 1, talent: 3, star: 1, stage: 1, nature: '坦率' });
+    const offPower = el('b', { class: 'hint-strong' }, '');
+    const syncOff = () => {
+      offPower.textContent = '官方推荐战力 ' + officialPower(c);
+      touch();
+    };
+    pane.appendChild(el('section', { class: 'ed-card' },
+      el('h2', {}, '官方推荐养成', el('span', { class: 'hint' }, '访客第一次打开时用这套数值')),
+      el('div', { class: 'ed-card-body' },
+        el('div', { class: 'ed-grid' },
+          field('等级', selInput(off.level, Array.from({ length: 60 }, (_, i) => ({ v: i + 1, t: i + 1 })), (v) => { off.level = Number(v); syncOff(); })),
+          field('天赋', selInput(off.talent, TALENTS.map((t, i) => ({ v: i, t: t })), (v) => { off.talent = Number(v); syncOff(); })),
+          field('星级', selInput(off.star, Array.from({ length: 9 }, (_, i) => ({ v: i + 1, t: (i + 1) + ' 星' })), (v) => { off.star = Number(v); syncOff(); })),
+          field('阶段', selInput(off.stage, Array.from({ length: 6 }, (_, i) => ({ v: i + 1, t: (i + 1) + ' 阶' })), (v) => { off.stage = Number(v); syncOff(); })),
+          field('性格', selInput(off.nature, NATURE_NAMES.map((n) => ({ v: n, t: n })), (v) => { off.nature = v; syncOff(); })),
+          el('div', { class: 'ed-field wide' }, el('span', {}, '预览'), offPower)
+        )
+      )
+    ));
+    setTimeout(syncOffValue, 0);
+    function syncOffValue() { offPower.textContent = '官方推荐战力 ' + officialPower(c); }
 
     /* 蛋形态 */
     pane.appendChild(el('section', { class: 'ed-card' },

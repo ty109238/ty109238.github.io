@@ -658,13 +658,99 @@
   var TALENT_MULT = [0.80, 0.90, 1.00, 1.10, 1.22, 1.35, 1.50, 1.66, 1.85];
   var STAGE_DEFAULT = { '一阶': 1, '二阶': 2, '三阶': 3 };
 
+  /* 性格：20 种 ±10% 数值型 + 4 种特殊型 */
+  var STAT_LABEL = { attack: '攻击', defense: '防御', spAttack: '特攻', spDefense: '特防', speed: '速度' };
+  var NATURES = [
+    { n: '孤僻', up: 'attack', down: 'defense' },
+    { n: '固执', up: 'attack', down: 'spAttack' },
+    { n: '调皮', up: 'attack', down: 'spDefense' },
+    { n: '勇敢', up: 'attack', down: 'speed' },
+    { n: '大胆', up: 'defense', down: 'attack' },
+    { n: '淘气', up: 'defense', down: 'spAttack' },
+    { n: '无虑', up: 'defense', down: 'spDefense' },
+    { n: '悠闲', up: 'defense', down: 'speed' },
+    { n: '保守', up: 'spAttack', down: 'attack' },
+    { n: '稳重', up: 'spAttack', down: 'defense' },
+    { n: '马虎', up: 'spAttack', down: 'spDefense' },
+    { n: '冷静', up: 'spAttack', down: 'speed' },
+    { n: '温顺', up: 'spDefense', down: 'attack' },
+    { n: '慎重', up: 'spDefense', down: 'spAttack' },
+    { n: '沉着', up: 'spDefense', down: 'defense' },
+    { n: '狂妄', up: 'spDefense', down: 'speed' },
+    { n: '胆小', up: 'speed', down: 'attack' },
+    { n: '急躁', up: 'speed', down: 'defense' },
+    { n: '天真', up: 'speed', down: 'spDefense' },
+    { n: '开朗', up: 'speed', down: 'spAttack' },
+    { n: '害羞', special: '农场种植速度 +10%，远航速度 -10%' },
+    { n: '认真', special: '远航速度 +10%，农场种植速度 -10%' },
+    { n: '实干', special: '血量额外回复 +10%，受到直接伤害 +10%' },
+    { n: '坦率', special: '平衡型，经验获取 +2%' }
+  ];
+
+  function findNature(name) {
+    for (var i = 0; i < NATURES.length; i++) if (NATURES[i].n === name) return NATURES[i];
+    return null;
+  }
+
+  function natureDesc(nature) {
+    if (!nature) return '平衡';
+    if (nature.special) return nature.special;
+    return '+' + STAT_LABEL[nature.up] + ' 10% · -' + STAT_LABEL[nature.down] + ' 10%';
+  }
+
+  function statsTotal(c) {
+    return (c.hp || 0) + (c.attack || 0) + (c.defense || 0) + (c.spAttack || 0) + (c.spDefense || 0) + (c.speed || 0);
+  }
+
+  function baseWithNature(c, natureName) {
+    var base = statsTotal(c);
+    var nat = findNature(natureName);
+    if (!nat || !nat.up) return Math.round(base);
+    return Math.round(base + (c[nat.up] || 0) * 0.1 - (c[nat.down] || 0) * 0.1);
+  }
+
+  /* 按种族值推荐两个性格：加最高项，减最低的两项 */
+  function recommendNatures(c) {
+    var keys = ['attack', 'defense', 'spAttack', 'spDefense', 'speed'];
+    var sorted = keys.slice().sort(function (a, b) { return (c[b] || 0) - (c[a] || 0); });
+    var best = sorted[0];
+    var worst = sorted.slice(-2);
+    var out = [];
+    for (var i = 0; i < NATURES.length && out.length < 2; i++) {
+      var nat = NATURES[i];
+      if (nat.up === best && worst.indexOf(nat.down) >= 0) out.push(nat);
+    }
+    if (!out.length) {
+      for (var j = 0; j < NATURES.length && out.length < 2; j++) {
+        if (NATURES[j].up === best) out.push(NATURES[j]);
+      }
+    }
+    return out;
+  }
+
   function trainKey(id) { return 'dex:train:' + id; }
 
   function loadTrain(id, c) {
-    var def = { level: 1, talent: 3, star: 1, stage: STAGE_DEFAULT[c.stage] || 1 };
+    var rec = recommendNatures(c);
+    var o = c.official || null;
+    var def = {
+      level: o && o.level ? o.level : 1,
+      talent: o && o.talent != null ? o.talent : 3,
+      star: o && o.star ? o.star : 1,
+      stage: o && o.stage ? o.stage : (STAGE_DEFAULT[c.stage] || 1),
+      nature: (o && o.nature) || (rec.length ? rec[0].n : '坦率')
+    };
     try {
       var s = JSON.parse(localStorage.getItem(trainKey(id)) || 'null');
-      if (s) return { level: s.level || def.level, talent: s.talent == null ? def.talent : s.talent, star: s.star || def.star, stage: s.stage || def.stage };
+      if (s) {
+        return {
+          level: s.level || def.level,
+          talent: s.talent == null ? def.talent : s.talent,
+          star: s.star || def.star,
+          stage: s.stage || def.stage,
+          nature: s.nature || def.nature
+        };
+      }
     } catch (e) {}
     return def;
   }
@@ -678,8 +764,9 @@
   }
 
   function buildTrainPanel(c) {
-    var base = (c.hp || 0) + (c.attack || 0) + (c.defense || 0) + (c.spAttack || 0) + (c.spDefense || 0) + (c.speed || 0);
+    var base = statsTotal(c);
     var st = loadTrain(c.id, c);
+    var rec = recommendNatures(c);
 
     var sec = document.createElement('section');
     sec.className = 'train-section';
@@ -693,19 +780,34 @@
         '</div>';
     }
 
+    var natureOpts = NATURES.map(function (x) {
+      return '<option value="' + x.n + '"' + (x.n === st.nature ? ' selected' : '') + '>' + x.n + '（' + natureDesc(x) + '）</option>';
+    }).join('');
+
+    var recChips = rec.map(function (x) {
+      return '<button type="button" class="nature-chip" data-nature="' + x.n + '">官方推荐 · ' + x.n + '</button>';
+    }).join('');
+
     sec.innerHTML =
       '<div class="record-heading"><div><p>TRAINING</p><h2>养成模拟</h2></div><span>拖动调整 · 数据只保存在你的浏览器</span></div>' +
       '<div class="train-grid">' +
         '<div class="power-box">' +
           '<span class="power-cap">战斗力</span>' +
-          '<b class="power-num">' + calcPower(base, st).toLocaleString('en-US') + '</b>' +
-          '<span class="power-sub">种族值 ' + base + ' × 等级 × 天赋 × 星级 × 阶段</span>' +
+          '<b class="power-num">' + calcPower(baseWithNature(c, st.nature), st).toLocaleString('en-US') + '</b>' +
+          '<span class="power-sub">种族值 ' + base + ' × 性格 × 等级 × 天赋 × 星级 × 阶段</span>' +
+          '<button type="button" class="share-btn">生成战绩图</button>' +
         '</div>' +
         '<div class="train-controls">' +
           row('level', '等级', 1, 60, st.level, ' 级') +
           row('talent', '天赋', 0, 8, st.talent, '') +
           row('star', '星级', 1, 9, st.star, ' ★') +
           row('stage', '阶段', 1, 6, st.stage, ' 阶') +
+          '<div class="train-row nature-row">' +
+            '<span class="train-label">性格</span>' +
+            '<select class="nature-sel" data-k="nature">' + natureOpts + '</select>' +
+            '<b class="train-val" data-v="nature">' + st.nature + '</b>' +
+          '</div>' +
+          '<div class="nature-rec">' + recChips + '</div>' +
         '</div>' +
       '</div>';
 
@@ -717,15 +819,20 @@
       var tal = Number(sec.querySelector('[data-k="talent"]').value);
       var star = Number(sec.querySelector('[data-k="star"]').value);
       var stage = Number(sec.querySelector('[data-k="stage"]').value);
-      var p = { level: lvl, talent: tal, star: star, stage: stage };
+      var nat = sec.querySelector('[data-k="nature"]').value;
+      var p = { level: lvl, talent: tal, star: star, stage: stage, nature: nat };
 
       sec.querySelector('[data-v="level"]').textContent = lvl + ' 级';
       sec.querySelector('[data-v="talent"]').textContent = TALENTS[tal] + ' · ×' + TALENT_MULT[tal].toFixed(2);
       sec.querySelector('[data-v="star"]').textContent = star + ' ★';
       sec.querySelector('[data-v="stage"]').textContent = stage + ' 阶';
-      sec.querySelector('.power-num').textContent = calcPower(base, p).toLocaleString('en-US');
+      sec.querySelector('[data-v="nature"]').textContent = nat;
+      var nb = baseWithNature(c, nat);
+      var pw = calcPower(nb, p);
+      sec.querySelector('.power-num').textContent = pw.toLocaleString('en-US');
+      sec.querySelector('.power-sub').textContent = '种族值 ' + base + ' → 性格修正 ' + nb + ' × 等级 × 天赋 × 星级 × 阶段';
       var topPower = document.querySelector('.key-stats [data-k="power"] b');
-      if (topPower) topPower.textContent = calcPower(base, p).toLocaleString('en-US');
+      if (topPower) topPower.textContent = pw.toLocaleString('en-US');
 
       try { localStorage.setItem(trainKey(c.id), JSON.stringify(p)); } catch (e) {}
     }
@@ -733,6 +840,27 @@
     sec.querySelectorAll('input[type="range"]').forEach(function (inp) {
       inp.addEventListener('input', refresh);
     });
+    var natSel = sec.querySelector('[data-k="nature"]');
+    if (natSel) natSel.addEventListener('change', refresh);
+    sec.querySelectorAll('.nature-chip').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        if (natSel) natSel.value = chip.getAttribute('data-nature');
+        refresh();
+      });
+    });
+    var shareBtn = sec.querySelector('.share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', function () {
+        var st2 = {
+          level: Number(sec.querySelector('[data-k="level"]').value),
+          talent: Number(sec.querySelector('[data-k="talent"]').value),
+          star: Number(sec.querySelector('[data-k="star"]').value),
+          stage: Number(sec.querySelector('[data-k="stage"]').value),
+          nature: sec.querySelector('[data-k="nature"]').value
+        };
+        makeShareCard(c, st2, baseWithNature(c, st2.nature));
+      });
+    }
     refresh();
 
     return sec;
@@ -749,12 +877,20 @@
 
   /* ---------- 首页：战斗力排行榜 ---------- */
   function powerOf(c) {
-    var base = (c.hp || 0) + (c.attack || 0) + (c.defense || 0) + (c.spAttack || 0) + (c.spDefense || 0) + (c.speed || 0);
-    return calcPower(base, loadTrain(c.id, c));
+    var st = loadTrain(c.id, c);
+    return calcPower(baseWithNature(c, st.nature), st);
   }
 
+  var ELEM_COLOR = { 火: '#f15a3c', 水: '#1570ef', 草: '#3e9c68', 冰: '#4aa8d8', 土: '#a97b3f', 钢: '#60778e', 风: '#3aa6a0', 光: '#d9a400', 暗: '#6c4a8e', 雷: '#e0a11b' };
+
+  var rankFilter = { element: '全部', family: '全部' };
+
   function buildRankView() {
-    var list = DATA.creatures.map(function (c) { return { c: c, p: powerOf(c), st: loadTrain(c.id, c) }; });
+    var list = DATA.creatures.filter(function (c) {
+      if (rankFilter.element !== '全部' && c.element !== rankFilter.element) return false;
+      if (rankFilter.family !== '全部' && c.family !== rankFilter.family) return false;
+      return true;
+    }).map(function (c) { return { c: c, p: powerOf(c), st: loadTrain(c.id, c) }; });
     list.sort(function (a, b) { return b.p - a.p || a.c.dexNo - b.c.dexNo; });
 
     var wrap = document.createElement('div');
@@ -769,10 +905,11 @@
         '<span class="rank-no">' + rank + '</span>' +
         (src ? '<img src="' + src + '" alt="' + c.name + '" loading="lazy">' : '') +
         '<span class="rank-name"><b>' + c.name + '</b><small>No.' + String(c.dexNo).padStart(3, '0') + ' · ' + c.stage + ' · ' + c.family + '</small></span>' +
-        '<span class="rank-tags">Lv.' + row.st.level + ' · ' + TALENTS[row.st.talent] + ' · ' + row.st.star + '★ · ' + row.st.stage + '阶</span>' +
+        '<span class="rank-tags">Lv.' + row.st.level + ' · ' + TALENTS[row.st.talent] + ' · ' + row.st.star + '★ · ' + row.st.stage + '阶 · ' + row.st.nature + '</span>' +
         '<span class="rank-power">' + row.p.toLocaleString('en-US') + '</span>' +
         '</a>';
     });
+    if (!list.length) html = '<p class="rank-empty">这个筛选下没有灵宠</p>';
     wrap.innerHTML = html;
     return wrap;
   }
@@ -787,18 +924,155 @@
     heading.appendChild(btn);
 
     var view = null;
+    var tools = null;
+
+    function rerender() {
+      if (!view) return;
+      var fresh = buildRankView();
+      view.innerHTML = fresh.innerHTML;
+    }
+
     btn.addEventListener('click', function () {
       var grid = document.querySelector('.creature-grid');
       var fam = document.querySelector('.family-view');
-      if (!view || !document.body.contains(view)) { view = buildRankView(); grid.parentElement.appendChild(view); }
-      var on = view.classList.toggle('is-on');
+      var on = !(view && view.classList.contains('is-on'));
+
+      if (on) {
+        if (!tools) {
+          tools = document.createElement('div');
+          tools.className = 'rank-tools';
+          var elems = ['全部'].concat(Object.keys(ELEM_COLOR));
+          var fams = ['全部'];
+          DATA.creatures.forEach(function (c) { if (c.family && fams.indexOf(c.family) < 0) fams.push(c.family); });
+          tools.innerHTML =
+            '<select data-k="element">' + elems.map(function (e) { return '<option value="' + e + '">' + (e === '全部' ? '全部属性' : e + '系') + '</option>'; }).join('') + '</select>' +
+            '<select data-k="family">' + fams.map(function (f) { return '<option value="' + f + '">' + (f === '全部' ? '全部家族' : f) + '</option>'; }).join('') + '</select>' +
+            '<span class="rank-count"></span>';
+          grid.parentElement.insertBefore(tools, grid.nextSibling);
+          tools.addEventListener('change', function (e) {
+            var k = e.target.getAttribute('data-k');
+            if (!k) return;
+            rankFilter[k] = e.target.value;
+            rerender();
+            updateCount();
+          });
+        }
+        if (!view) { view = buildRankView(); grid.parentElement.appendChild(view); }
+        rerender();
+        tools.style.display = 'flex';
+        tools.parentElement.insertBefore(tools, view);
+        view.classList.add('is-on');
+        updateCount();
+      } else {
+        if (view) view.classList.remove('is-on');
+        if (tools) tools.style.display = 'none';
+      }
+
       if (on && fam) fam.classList.remove('is-on');
-      if (on) { view.innerHTML = buildRankView().innerHTML; }
       grid.style.display = on ? 'none' : '';
       btn.textContent = on ? '返回列表' : '战斗力榜';
       var vt = document.querySelector('.view-toggle');
       if (on && vt) vt.textContent = '按家族查看';
     });
+
+    function updateCount() {
+      var n = document.querySelectorAll('.rank-view .rank-row').length;
+      var cnt = document.querySelector('.rank-count');
+      if (cnt) cnt.textContent = '共 ' + n + ' 只';
+    }
+  }
+
+  /* ---------- 分享战绩图 ---------- */
+  function makeShareCard(c, st, base) {
+    var W = 1200, H = 630;
+    var cv = document.createElement('canvas');
+    cv.width = W;
+    cv.height = H;
+    var ctx = cv.getContext('2d');
+    var col = ELEM_COLOR[c.element] || '#1570ef';
+    var power = calcPower(base, st);
+
+    var g = ctx.createLinearGradient(0, 0, W, H);
+    g.addColorStop(0, '#0e1726');
+    g.addColorStop(1, '#1d2b47');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.fillStyle = col;
+    ctx.globalAlpha = 0.22;
+    ctx.beginPath();
+    ctx.arc(W - 120, 90, 220, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalAlpha = 1;
+
+    ctx.fillStyle = 'rgba(255,255,255,0.08)';
+    ctx.fillRect(60, 60, W - 120, H - 120);
+
+    ctx.fillStyle = '#ffd66b';
+    ctx.font = '700 24px "PingFang SC","Microsoft YaHei",sans-serif';
+    ctx.fillText('咻噗 · 奥灵宠图鉴', 96, 118);
+
+    ctx.fillStyle = '#fff';
+    ctx.font = '900 64px "PingFang SC","Microsoft YaHei",sans-serif';
+    ctx.fillText(c.name, 96, 210);
+
+    ctx.fillStyle = '#9fb3c8';
+    ctx.font = '500 22px "PingFang SC","Microsoft YaHei",sans-serif';
+    ctx.fillText('No.' + String(c.dexNo).padStart(3, '0') + ' · ' + c.family + ' · ' + c.stage, 96, 252);
+
+    ctx.fillStyle = '#f7fbff';
+    ctx.font = '700 20px "PingFang SC","Microsoft YaHei",sans-serif';
+    var tags = ['Lv.' + st.level, TALENTS[st.talent], st.star + ' 星', st.stage + ' 阶', st.nature];
+    var tx = 96;
+    tags.forEach(function (t) {
+      var w = ctx.measureText(t).width + 28;
+      ctx.fillStyle = col;
+      ctx.globalAlpha = 0.85;
+      ctx.beginPath();
+      ctx.roundRect ? ctx.roundRect(tx, 300, w, 40, 20) : ctx.rect(tx, 300, w, 40);
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = '#fff';
+      ctx.fillText(t, tx + 14, 327);
+      tx += w + 12;
+    });
+
+    ctx.fillStyle = '#9fb3c8';
+    ctx.font = '500 20px "PingFang SC","Microsoft YaHei",sans-serif';
+    ctx.fillText('种族值 ' + statsTotal(c) + '  →  性格修正 ' + base, 96, 470);
+
+    ctx.textAlign = 'right';
+    ctx.fillStyle = '#ffd66b';
+    ctx.font = '700 24px "PingFang SC","Microsoft YaHei",sans-serif';
+    ctx.fillText('战斗力', W - 96, 508);
+    ctx.fillStyle = '#fff';
+    ctx.font = '900 96px "PingFang SC","Microsoft YaHei",sans-serif';
+    ctx.fillText(power.toLocaleString('en-US'), W - 96, 594);
+    ctx.textAlign = 'left';
+
+    function show(dataUrl) {
+      var old = document.querySelector('.share-modal');
+      if (old) old.remove();
+      var m = document.createElement('div');
+      m.className = 'share-modal';
+      m.innerHTML = '<div class="share-box"><img src="' + dataUrl + '" alt="战力战绩图">' +
+        '<div class="share-actions"><a class="share-save" download="' + c.name + '-战斗力.png" href="' + dataUrl + '">保存图片</a>' +
+        '<button type="button" class="share-close">关闭</button></div>' +
+        '<p class="share-tip">手机上长按图片即可保存到相册</p></div>';
+      document.body.appendChild(m);
+      m.addEventListener('click', function (e) {
+        if (e.target === m || e.target.className === 'share-close') m.remove();
+      });
+    }
+
+    var img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = function () {
+      ctx.drawImage(img, 700, 70, 380, 380);
+      show(cv.toDataURL('image/png'));
+    };
+    img.onerror = function () { show(cv.toDataURL('image/png')); };
+    img.src = DATA.images[c.imageKey] || '';
   }
 
   function watchDetail() {
