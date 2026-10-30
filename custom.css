@@ -584,3 +584,32 @@
 .radar-dot { fill: var(--pink) !important; stroke: #fff !important; stroke-width: 2.5 !important; }
 .radar-label { fill: #ffffff !important; font-size: 14px !important; }
 .stats-section .radar-wrap { gap: 22px !important; }
+/* ---------- 能力条：白底上用深色数字 + 更粗字重 ---------- */
+.stats-section .stat-row > span {
+  color: #52657a !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.02em;
+}
+.stats-section .stat-row > strong {
+  color: #1b2430 !important;
+  font-weight: 900 !important;
+  font-size: 22px !important;
+  letter-spacing: -0.02em;
+}
+.stats-section .stat-row i {
+  height: 8px !important;
+  background: #e2ebf4 !important;
+}
+.stats-section .stat-row i > b {
+  background: linear-gradient(90deg, #ffcf5c, #e0a11b) !important;
+}
+.stats-section .stat-total {
+  color: #52657a !important;
+  font-weight: 700 !important;
+  border-top: 1px solid #e2ebf4 !important;
+}
+.stats-section .stat-total strong {
+  color: var(--pink) !important;
+  font-weight: 900 !important;
+}
