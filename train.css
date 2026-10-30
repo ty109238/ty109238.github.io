@@ -480,3 +480,16 @@
   .studio-rows { grid-template-columns: 1fr; }
   .studio-name { font-size: 19px; }
 }
+/* 工作室：进入页面的链接 */
+.studio-logo { display: block; transition: transform 0.18s ease; }
+.studio-logo:hover { transform: scale(1.03); }
+.studio-more {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #c2591a;
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+}
+.studio-more:hover { color: #ef6c1a; }

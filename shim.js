@@ -994,14 +994,15 @@
     }).join('');
     sec.innerHTML =
       '<div class="studio-inner">' +
-        '<div class="studio-logo">' +
+        '<a class="studio-logo" href="/studio.html" aria-label="进入工作室页面">' +
           '<img src="/media/ui/studio-logo.webp" alt="' + s.name + '" loading="lazy">' +
-        '</div>' +
+        '</a>' +
         '<div class="studio-right">' +
           '<p class="studio-kicker">STUDIO · 制作团队</p>' +
           '<h2>' + s.name + '</h2>' +
           '<p class="studio-sub">《咻噗 · 奥灵宠图鉴》由这个小小的工作室一起做出来。每一只灵宠、每一段说明，都从这张桌子出发。</p>' +
           '<div class="studio-rows">' + rows + '</div>' +
+          '<a class="studio-more" href="/studio.html">走进工作室 · 看制作手记 →</a>' +
         '</div>' +
       '</div>';
     return sec;

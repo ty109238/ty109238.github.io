@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#2a2520" />
+    <meta name="description" content="谭熠的橘子工作室 · Tarnn Yis's Orange Studio：咻噗·奥灵宠图鉴的制作团队、创作手记与鸣谢名单。" />
+    <title>工作室 · 谭熠的橘子工作室</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png" />
+    <link rel="stylesheet" href="/studio.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="back" href="/">← 返回图鉴</a>
+      <span class="crumb">谭熠的橘子工作室</span>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <div class="hero-logo">
+          <img src="/media/ui/studio-logo.webp" alt="谭熠的橘子工作室 徽章" />
+        </div>
+        <div>
+          <p class="hero-kicker">STUDIO · 制作团队</p>
+          <h1 id="studioName">谭熠的橘子工作室</h1>
+          <p class="en">TARNN YIS'S ORANGE STUDIO · EST. 2026</p>
+          <p class="lead">
+            一间很小的工作室。两个人，一张桌子，一只橘子。<br />
+            我们想做的其实只有一件事：把脑子里那些会发光的、会喷火的、会在雪地里打滚的小家伙，
+            一个一个搬到纸上，再让它们能被你翻到。
+          </p>
+          <div class="chips">
+            <span>独立工作室</span>
+            <span>2026 年成立</span>
+            <span>中国大陆</span>
+            <span>在做一个灵宠世界</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="block-head">
+          <p>ABOUT</p>
+          <h2>我们是谁</h2>
+          <span>两个人，一个世界观</span>
+        </div>
+        <div class="prose">
+          <p>
+            <strong>谭熠的橘子工作室</strong>是一间以「把想象做成能玩的东西」为目标的小工作室。
+            名字里那枚橘子，来自工作室成立那天桌上放着的一颗橘子——它被画成了徽章，也成了我们的吉祥物。
+          </p>
+          <p>
+            我们不太做「安全」的设计。灵宠不是数字的容器：小火弹生气时尾巴会鼓成火环，
+            菜菜子听到风声会闭眼，咖啡蚁后从不大声说话、但整片沙丘都听她的。
+            每一只都要先有一句「它是个什么样的人」，才允许有数值。
+          </p>
+          <p>
+            所以我们把图鉴做成现在这个样子：<strong>不是一个数据库，而是一本会被翻旧的手册</strong>。
+            你会看到博士批注、蛋形态、同族伙伴、这片区域还能遇到谁——那些原本不会出现在攻略站里的东西。
+          </p>
+          <p>
+            目前团队是两个人。偶尔会有朋友来帮忙测玩、挑错、给出「这只太丑了」这种非常珍贵的意见。
+            我们不急着做大，只想把这一本做完整。
+          </p>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="block-head">
+          <p>TEAM</p>
+          <h2>团队成员</h2>
+          <span id="memberCount">—</span>
+        </div>
+        <div class="members" id="members"></div>
+      </section>
+
+      <section class="block">
+        <div class="block-head">
+          <p>NOTES</p>
+          <h2>制作手记</h2>
+          <span>这一本是怎么长出来的</span>
+        </div>
+        <div class="timeline" id="notes"></div>
+      </section>
+
+      <section class="block">
+        <div class="block-head">
+          <p>THANKS</p>
+          <h2>鸣谢名单</h2>
+          <span>没有你们，这一本翻不到今天</span>
+        </div>
+        <div class="thanks" id="thanks"></div>
+      </section>
+
+      <div class="studio-sign">
+        <p>© 2026 谭熠的橘子工作室 · 图鉴内容由作者持续维护</p>
+        <a class="cta" href="/">回到图鉴，继续翻 →</a>
+      </div>
+    </main>
+
+    <script>
+      (function () {
+        var FALLBACK = {
+          name: '谭熠的橘子工作室',
+          members: [
+            { role: '主策划', name: '谭熠', what: '世界观、灵宠设定、数值与文案，也负责把想法写下来。' },
+            { role: '角色审核建模', name: '吴静秋', what: '把关每一只灵宠的造型与结构，让它们站得住、动得起来。' }
+          ]
+        };
+
+        var NOTES = [
+          { d: '2026 · 02', t: '一张草稿纸', p: '最早的灵宠只有三只，画在草稿纸背面：一个火球、一条鱼、一颗香蕉。当时只想着"能画出来就很好"。' },
+          { d: '2026 · 03', t: '名字定了', p: '"咻噗"来自灵宠落地时那声很轻的响动。我们试了十七个名字，最后选了这个——因为它听起来像一个小东西在跑。' },
+          { d: '2026 · 05', t: '第一批 54 只', p: '十系、三阶、种族值、技能表全部立起来。那段时间每天做的就是画图、改数值、再画图。' },
+          { d: '2026 · 07', t: '把"档案感"做进去', p: '加了图鉴编号、家族、博士批注。我们想让翻页像在查一份旧档案，而不是刷一个表格。' },
+          { d: '2026 · 09', t: '搬进自己的房子', p: '图鉴从临时页面搬到了自己的服务器上，加载从十几秒变成一两秒。那一刻才敢把链接发给朋友。' },
+          { d: '2026 · 10', t: '20 只新灵宠 · 养成系统', p: '新增六大新家族，加入蛋形态、同族伙伴、养成模拟和战斗力榜。你可以自己拖着玩，看看它能长到多强。' },
+          { d: '接下来', t: '还在做', p: '更多家族、更多蛋、以及一件我们一直想做的事：让每一只灵宠都有属于自己的声音。' }
+        ];
+
+        var THANKS = [
+          { t: '每一位来翻过页的玩家', d: '你们点开的每一次详情，都是这一本继续写下去的理由。' },
+          { t: '帮忙试玩和挑错的朋友', d: '包括那些说"这只太丑了"的直言。真的很有用。' },
+          { t: '最早的三只测试灵宠', d: '小火弹、探险鲨、香蕉虫。它们在草稿纸上待了最久。' },
+          { t: '提供灵感的小动物们', d: '窗台的猫、楼下的鹅、以及视频里滚来滚去的那些。' },
+          { t: '我们的家人', d: '容忍我们在饭桌上还在讨论一只蚂蚁的防御值。' },
+          { t: '正在等新灵宠的你', d: '再等一下。它们还在烤箱里。' }
+        ];
+
+        var el = function (id) { return document.getElementById(id); };
+
+        function renderStudio(s) {
+          if (s && s.name) el('studioName').textContent = s.name;
+          var list = (s && s.members && s.members.length) ? s.members : FALLBACK.members;
+          el('memberCount').textContent = list.length + ' 位成员';
+          el('members').innerHTML = list.map(function (m, i) {
+            return '<div class="member"><span class="no">0' + (i + 1) + '</span>' +
+              '<span class="role">' + m.role + '</span>' +
+              '<span class="name">' + m.name + '</span>' +
+              (m.what ? '<span class="what">' + m.what + '</span>' : '') +
+              '</div>';
+          }).join('');
+        }
+
+        function renderStatic() {
+          el('notes').innerHTML = NOTES.map(function (n) {
+            return '<div class="tl-item"><div class="tl-date">' + n.d + '</div>' +
+              '<h3>' + n.t + '</h3><p>' + n.p + '</p></div>';
+          }).join('');
+          el('thanks').innerHTML = THANKS.map(function (x) {
+            return '<div class="thank"><b>' + x.t + '</b><span>' + x.d + '</span></div>';
+          }).join('');
+        }
+
+        renderStatic();
+        fetch('/data/content.json?t=' + Date.now(), { cache: 'no-store' })
+          .then(function (r) { return r.json(); })
+          .then(function (d) { renderStudio(d.studio); })
+          .catch(function () { renderStudio(null); });
+      })();
+    </script>
+  </body>
+</html>

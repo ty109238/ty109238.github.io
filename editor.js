@@ -818,6 +818,52 @@
     ];
   }
 
+  function openStudioEditor() {
+    if (!S.content) return;
+    const s = S.content.studio || (S.content.studio = { name: '谭熠的橘子工作室', members: [] });
+    if (!s.members) s.members = [];
+
+    const nameInput = el('input', { type: 'text', value: s.name || '' });
+    nameInput.addEventListener('input', () => { s.name = nameInput.value; markDirty(); });
+
+    const box = el('div', {});
+    function renderMembers() {
+      box.textContent = '';
+      s.members.forEach((m, i) => {
+        box.appendChild(el('div', { style: 'border:2px solid #e2ebf4;border-radius:12px;padding:12px;margin-bottom:10px;background:#fbfdff' },
+          el('div', { class: 'ed-grid' },
+            field('职位', textInput(m.role, (v) => { m.role = v; markDirty(); })),
+            field('姓名', textInput(m.name, (v) => { m.name = v; markDirty(); }))
+          ),
+          field('一句话介绍', textInput(m.what, (v) => { m.what = v; markDirty(); }), true),
+          el('button', {
+            class: 'ed-btn small', type: 'button', style: 'margin-top:6px',
+            onclick: () => { s.members.splice(i, 1); markDirty(); renderMembers(); }
+          }, '删除这位成员')
+        ));
+      });
+      if (!s.members.length) box.appendChild(el('p', { class: 'sub' }, '还没有成员，点下面添加。'));
+    }
+    renderMembers();
+
+    const addBtn = el('button', {
+      class: 'ed-btn', type: 'button',
+      onclick: () => { s.members.push({ role: '职位', name: '姓名', what: '' }); markDirty(); renderMembers(); }
+    }, '＋ 添加成员');
+
+    openModal([
+      el('h2', {}, '工作室'),
+      el('p', { class: 'sub' }, '首页底部的工作室卡片和 /studio.html 页面都会读取这里的内容。'),
+      field('工作室名称', nameInput, true),
+      el('h3', { style: 'margin:16px 0 8px;font-size:14px' }, '团队成员'),
+      box,
+      addBtn,
+      el('div', { class: 'ed-modal-actions' },
+        el('button', { class: 'ed-btn primary', type: 'button', onclick: closeModal }, '完成')
+      )
+    ]);
+  }
+
   function openNoticeEditor() {
     if (!S.content) return;
     const ta = el('textarea', { style: 'min-height:38vh' });
@@ -973,6 +1019,7 @@
     $('btnSettings').addEventListener('click', () => openSettings());
     $('btnFamilies').addEventListener('click', openFamilies);
     $('btnNotice').addEventListener('click', openNoticeEditor);
+    $('btnStudio').addEventListener('click', openStudioEditor);
     $('btnPublish').addEventListener('click', openPublish);
     $('btnNew').addEventListener('click', newCreature);
     $('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
