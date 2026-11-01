@@ -493,3 +493,41 @@
   border-bottom: 2px solid currentColor;
 }
 .studio-more:hover { color: #ef6c1a; }
+
+/* ---------- 非首页：底部工作室条 ---------- */
+.studio-mini {
+  max-width: 1120px;
+  margin: 40px auto 26px;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  background: linear-gradient(150deg, #fffaf0 0%, #fff 70%);
+  box-shadow: 4px 5px 0 rgba(38, 39, 34, 0.08);
+}
+.studio-mini-logo img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+}
+.studio-mini-copy { display: grid; gap: 1px; }
+.studio-mini-copy span { font-size: 10.5px; letter-spacing: 0.18em; color: #c98a3c; font-weight: 800; }
+.studio-mini-copy b { font-size: 15px; letter-spacing: -0.01em; }
+.studio-mini-link {
+  margin-left: auto;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #c2591a;
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 1px;
+}
+.studio-mini-link:hover { color: #ef6c1a; }
+@media (max-width: 720px) {
+  .studio-mini { margin: 24px 14px 18px; padding: 12px 14px; }
+  .studio-mini-copy b { font-size: 13.5px; }
+  .studio-mini-link { font-size: 11.5px; }
+}

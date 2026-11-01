@@ -1020,6 +1020,25 @@
     else holder.appendChild(sec);
   }
 
+  /* ---------- 非首页：底部工作室条 ---------- */
+  function syncStudioMini() {
+    if (!DATA || document.querySelector('.studio-mini')) return;
+    if (!currentCreatureId()) return;
+    var foot = document.querySelector('footer');
+    var holder = foot ? foot.parentElement : (document.querySelector('article.detail-page') || document.querySelector('main'));
+    if (!holder) return;
+    var s = DATA.studio || { name: '谭熠的橘子工作室' };
+    var mini = document.createElement('div');
+    mini.className = 'studio-mini';
+    mini.innerHTML =
+      '<a class="studio-mini-logo" href="/studio.html" aria-label="' + s.name + '">' +
+        '<img src="/media/ui/studio-logo.webp" alt="" loading="lazy">' +
+      '</a>' +
+      '<div class="studio-mini-copy"><span>制作团队</span><b>' + s.name + '</b></div>' +
+      '<a class="studio-mini-link" href="/studio.html">了解工作室 →</a>';
+    if (foot) holder.insertBefore(mini, foot); else holder.appendChild(mini);
+  }
+
   /* ---------- 公告 ---------- */
   function noticeItems() {
     var lp = DATA.lastPublished;
@@ -1162,9 +1181,9 @@
     var timer = null;
     new MutationObserver(function () {
       clearTimeout(timer);
-      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); }, 120);
+      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); }, 120);
     }).observe(root, { childList: true, subtree: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); }, 1200);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); }, 1200);
   }
 
   window.__dexOpenNotice = openNotice;
