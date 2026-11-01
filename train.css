@@ -531,3 +531,110 @@
   .studio-mini-copy b { font-size: 13.5px; }
   .studio-mini-link { font-size: 11.5px; }
 }
+/* ---------- 全站搜索 ---------- */
+.search-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  display: grid;
+  place-items: start center;
+  padding: 12vh 20px 20px;
+  background: rgba(14, 23, 38, 0.66);
+}
+.search-box {
+  width: min(100%, 620px);
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.36);
+  overflow: hidden;
+}
+.search-head {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 2px solid var(--ink);
+}
+.search-input {
+  flex: 1;
+  padding: 9px 12px;
+  border: 2px solid #e2ebf4;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+}
+.search-input:focus { border-color: var(--blue); }
+.search-close {
+  padding: 8px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: #fff;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.search-results { overflow: auto; padding: 8px; }
+.search-row {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 9px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 13px;
+}
+.search-row small { color: #7b8ea1; font-size: 11.5px; }
+.search-row.is-active, .search-row:hover { background: #eef6ff; }
+.search-dex { font-size: 11px; color: #9aa9b8; font-variant-numeric: tabular-nums; }
+.search-empty { padding: 26px; text-align: center; color: #7b8ea1; font-size: 13px; }
+.nav-search-ico { font-size: 15px; line-height: 1; }
+
+/* ---------- 回到顶部 ---------- */
+.to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 24px;
+  z-index: 2147482000;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 4px 5px 0 rgba(38, 39, 34, 0.18);
+}
+.to-top:hover { background: var(--yellow); transform: translateY(-2px); }
+/* 搜索框布局修正（覆盖站点全局样式） */
+.search-head { display: flex !important; flex-wrap: nowrap !important; gap: 10px !important; align-items: center !important; }
+.search-input {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  box-sizing: border-box !important;
+  padding: 10px 14px !important;
+  border: 2px solid #dbe6f0 !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  color: #1b2430 !important;
+  font: 400 15px/1.4 "PingFang SC","Microsoft YaHei",sans-serif !important;
+}
+.search-close {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 72px !important;
+  white-space: nowrap !important;
+}
+.search-row { display: grid !important; }

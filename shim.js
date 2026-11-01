@@ -1039,6 +1039,85 @@
     if (foot) holder.insertBefore(mini, foot); else holder.appendChild(mini);
   }
 
+  /* ---------- 全站搜索 ---------- */
+  var searchIndex = null;
+
+  function buildSearchIndex() {
+    if (searchIndex) return searchIndex;
+    searchIndex = DATA.creatures.map(function (c) {
+      var sk = (DATA.skills && DATA.skills[c.id]) || [];
+      var tr = (DATA.traits && DATA.traits[c.id]) || [];
+      var parts = [c.name, c.family, c.element, c.stage, c.form, c.race, c.description, c.captureLocation, c.hatchCondition, c.note];
+      sk.forEach(function (x) { parts.push(x.name, x.description); });
+      tr.forEach(function (x) { parts.push(x.name, x.description); });
+      return {
+        id: c.id, name: c.name, dex: c.dexNo, family: c.family, element: c.element, stage: c.stage,
+        text: parts.join(' ').toLowerCase()
+      };
+    });
+    return searchIndex;
+  }
+
+  function openSearch() {
+    if (document.querySelector('.search-modal')) return;
+    var idx = buildSearchIndex();
+    var m = document.createElement('div');
+    m.className = 'search-modal';
+    m.innerHTML =
+      '<div class="search-box" role="dialog" aria-label="搜索">' +
+        '<div class="search-head">' +
+          '<input class="search-input" type="search" placeholder="搜名字 / 家族 / 属性 / 技能 / 描述…" autocomplete="off">' +
+          '<button type="button" class="search-close">关闭</button>' +
+        '</div>' +
+        '<div class="search-results"></div>' +
+      '</div>';
+    document.body.appendChild(m);
+
+    var input = m.querySelector('.search-input');
+    var list = m.querySelector('.search-results');
+    var active = 0;
+    var results = [];
+
+    function render(q) {
+      q = (q || '').trim().toLowerCase();
+      results = q ? idx.filter(function (x) { return x.text.indexOf(q) >= 0; }).slice(0, 24) : idx.slice(0, 12);
+      active = 0;
+      if (!results.length) {
+        list.innerHTML = '<p class="search-empty">没有找到「' + q + '」相关的灵宠</p>';
+        return;
+      }
+      list.innerHTML = results.map(function (r, i) {
+        return '<a class="search-row' + (i === 0 ? ' is-active' : '') + '" href="/creature/' + r.id + '">' +
+          '<span class="search-dex">No.' + String(r.dex).padStart(3, '0') + '</span>' +
+          '<b>' + r.name + '</b>' +
+          '<small>' + r.family + ' · ' + r.element + '系 · ' + r.stage + '</small></a>';
+      }).join('');
+    }
+
+    function move(d) {
+      var rows = list.querySelectorAll('.search-row');
+      if (!rows.length) return;
+      active = (active + d + rows.length) % rows.length;
+      rows.forEach(function (r, i) { r.classList.toggle('is-active', i === active); });
+      rows[active].scrollIntoView({ block: 'nearest' });
+    }
+
+    input.addEventListener('input', function () { render(input.value); });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); move(1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); move(-1); }
+      else if (e.key === 'Enter') {
+        var rows = list.querySelectorAll('.search-row');
+        if (rows[active]) location.href = rows[active].getAttribute('href');
+      } else if (e.key === 'Escape') { m.remove(); }
+    });
+    m.addEventListener('click', function (e) {
+      if (e.target === m || e.target.className === 'search-close') m.remove();
+    });
+    render('');
+    setTimeout(function () { input.focus(); }, 30);
+  }
+
   /* ---------- 公告 ---------- */
   function noticeItems() {
     var lp = DATA.lastPublished;
@@ -1187,6 +1266,7 @@
   }
 
   window.__dexOpenNotice = openNotice;
+  window.__dexOpenSearch = openSearch;
 
   /* ---------- 离线支持 ---------- */
   if ('serviceWorker' in navigator) {

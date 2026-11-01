@@ -183,8 +183,16 @@
     gear.innerHTML = '<img class="ui-ico" src="/media/ui/ui-settings.webp" alt=""><span>设置</span>';
     gear.addEventListener('click', openSettings);
 
+    var search = document.createElement('button');
+    search.type = 'button';
+    search.className = 'nav-link nav-btn';
+    search.setAttribute('data-role', 'search');
+    search.innerHTML = '<span class="nav-search-ico">⌕</span><span>搜索</span>';
+    search.addEventListener('click', function () { if (window.__dexOpenSearch) window.__dexOpenSearch(); });
+
     // 逐项补齐，React 重渲染后也能自动补回来
     if (!nav.querySelector('[data-role="notice"]')) nav.insertBefore(notice, nav.firstChild);
+    if (!nav.querySelector('[data-role="search"]')) nav.insertBefore(search, notice.nextSibling);
     if (!nav.querySelector('[data-role="fav"]')) nav.appendChild(fav);
     if (!nav.querySelector('[data-role="settings"]')) nav.appendChild(gear);
   }
@@ -247,12 +255,40 @@
     headerIcons();
   }
 
+  /* ---------- 快捷键 / 回到顶部 ---------- */
+  document.addEventListener('keydown', function (e) {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (window.__dexOpenSearch) window.__dexOpenSearch();
+    }
+  });
+
+  var topBtn = null;
+  function syncTopBtn() {
+    var y = window.scrollY || document.documentElement.scrollTop;
+    if (y > 900) {
+      if (!topBtn) {
+        topBtn = document.createElement('button');
+        topBtn.className = 'to-top';
+        topBtn.type = 'button';
+        topBtn.textContent = '↑';
+        topBtn.title = '回到顶部';
+        topBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        document.body.appendChild(topBtn);
+      }
+    } else if (topBtn) {
+      topBtn.remove();
+      topBtn = null;
+    }
+  }
+  window.addEventListener('scroll', syncTopBtn, { passive: true });
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () { restoreSettings(); tick(); });
   } else {
     restoreSettings();
     tick();
   }
-  setInterval(tick, 1500);
+  setInterval(function () { tick(); syncTopBtn(); }, 1500);
   window.addEventListener('load', tick);
 })();
