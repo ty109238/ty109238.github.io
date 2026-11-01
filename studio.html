@@ -143,6 +143,21 @@
           }).join('');
         }
 
+        function renderFromData(s) {
+          if (!s) return;
+          if (s.notes && s.notes.length) {
+            el('notes').innerHTML = s.notes.map(function (n) {
+              return '<div class="tl-item"><div class="tl-date">' + n.d + '</div>' +
+                '<h3>' + n.t + '</h3><p>' + n.p + '</p></div>';
+            }).join('');
+          }
+          if (s.thanks && s.thanks.length) {
+            el('thanks').innerHTML = s.thanks.map(function (x) {
+              return '<div class="thank"><b>' + x.t + '</b><span>' + x.d + '</span></div>';
+            }).join('');
+          }
+        }
+
         function renderStatic() {
           el('notes').innerHTML = NOTES.map(function (n) {
             return '<div class="tl-item"><div class="tl-date">' + n.d + '</div>' +
@@ -156,7 +171,7 @@
         renderStatic();
         fetch('/data/content.json?t=' + Date.now(), { cache: 'no-store' })
           .then(function (r) { return r.json(); })
-          .then(function (d) { renderStudio(d.studio); })
+          .then(function (d) { renderStudio(d.studio); renderFromData(d.studio); })
           .catch(function () { renderStudio(null); });
       })();
     </script>

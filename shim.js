@@ -1035,8 +1035,20 @@
         '<img src="/media/ui/studio-logo.webp" alt="" loading="lazy">' +
       '</a>' +
       '<div class="studio-mini-copy"><span>制作团队</span><b>' + s.name + '</b></div>' +
-      '<a class="studio-mini-link" href="/studio.html">了解工作室 →</a>';
+      '<a class="studio-mini-link" href="/studio.html">了解工作室 →</a>' +
+      '<button type="button" class="studio-mini-collapse" title="收起">×</button>';
     if (foot) holder.insertBefore(mini, foot); else holder.appendChild(mini);
+    var cb = mini.querySelector('.studio-mini-collapse');
+    if (cb) {
+      cb.addEventListener('click', function () {
+        document.documentElement.classList.add('hide-studio');
+        try {
+          var cur = JSON.parse(localStorage.getItem('dex:ui') || '{}');
+          cur.hideStudio = true;
+          localStorage.setItem('dex:ui', JSON.stringify(cur));
+        } catch (e) {}
+      });
+    }
   }
 
   /* ---------- 全站搜索 ---------- */

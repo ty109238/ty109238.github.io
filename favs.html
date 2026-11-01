@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#2a2520" />
+    <meta name="robots" content="noindex" />
+    <title>我的收藏 · 咻噗-奥灵宠图鉴</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png" />
+    <link rel="stylesheet" href="/favs.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a href="/">← 返回图鉴</a>
+      <h1>我的收藏</h1>
+    </header>
+    <main class="wrap">
+      <div class="head">
+        <h2>收藏夹</h2>
+        <span id="count"></span>
+      </div>
+      <div class="grid" id="grid"></div>
+    </main>
+    <script>
+      (function () {
+        var KEY = 'dex:favs';
+        function favs() {
+          try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; }
+        }
+        function save(list) {
+          try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+        }
+
+        function render(data) {
+          var ids = favs();
+          var map = {};
+          (data.creatures || []).forEach(function (c) { map[c.id] = c; });
+          var list = ids.map(function (id) { return map[id]; }).filter(Boolean);
+
+          document.getElementById('count').textContent = list.length ? '共 ' + list.length + ' 只' : '';
+          var grid = document.getElementById('grid');
+
+          if (!list.length) {
+            grid.outerHTML = '<div class="empty"><b>还没有收藏任何灵宠</b>' +
+              '在图鉴里把鼠标移到卡片左上角的星标上点一下，就会出现在这里。' +
+              '<br><a href="/">去挑几只 →</a></div>';
+            return;
+          }
+
+          grid.innerHTML = list.map(function (c) {
+            var src = c.imageKey && data.images[c.imageKey] ? data.images[c.imageKey] : '';
+            return '<a class="card" href="/creature/' + c.id + '">' +
+              '<span class="del" data-id="' + c.id + '" role="button" title="取消收藏">×</span>' +
+              (src ? '<img src="' + src + '" alt="' + c.name + '" loading="lazy">' : '') +
+              '<span class="copy"><b>' + c.name + '</b>' +
+              '<small>No.' + String(c.dexNo).padStart(3, '0') + ' · ' + c.family + ' · ' + c.stage + '</small></span></a>';
+          }).join('');
+
+          grid.addEventListener('click', function (e) {
+            var del = e.target.closest('.del');
+            if (!del) return;
+            e.preventDefault();
+            e.stopPropagation();
+            var id = Number(del.getAttribute('data-id'));
+            save(favs().filter(function (x) { return x !== id; }));
+            render(data);
+          });
+        }
+
+        fetch('/data/content.json?t=' + Date.now(), { cache: 'no-store' })
+          .then(function (r) { return r.json(); })
+          .then(render)
+          .catch(function (e) {
+            document.getElementById('grid').innerHTML = '<p style="color:#b3153f">加载失败：' + e.message + '</p>';
+          });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+/* 我的收藏 */
+:root { --ink:#262722; --soft:#f5faff; --pink:#dd2590; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: #fbfdff;
+  color: var(--ink);
+  font-family: "PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+}
+.top {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; gap: 14px;
+  padding: 13px 22px; background: #fffffff2;
+  border-bottom: 2px solid var(--ink); backdrop-filter: blur(6px);
+}
+.top a {
+  padding: 8px 16px; border: 2px solid var(--ink); border-radius: 999px;
+  background: #fff; text-decoration: none; font-size: 13px; font-weight: 800; color: var(--ink);
+}
+.top a:hover { background: #ffeb85; }
+.top h1 { margin: 0; font-size: 19px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 30px 22px 80px; }
+.head { display: flex; align-items: baseline; gap: 12px; border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 20px; }
+.head h2 { margin: 0; font-size: 26px; letter-spacing: -0.02em; }
+.head span { margin-left: auto; font-size: 12px; color: #7b8ea1; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; }
+.card {
+  position: relative; border: 2px solid var(--ink); border-radius: 14px; background: #fff;
+  overflow: hidden; text-decoration: none; color: var(--ink);
+  box-shadow: 3px 4px 0 rgba(38,39,34,.1); transition: transform .15s ease;
+}
+.card:hover { transform: translateY(-4px); }
+.card img { width: 100%; height: 140px; object-fit: contain; background: var(--soft); display: block; }
+.card .copy { padding: 10px 12px 12px; }
+.card b { display: block; font-size: 15px; }
+.card small { font-size: 11px; color: #7b8ea1; }
+.card .del {
+  position: absolute; top: 8px; right: 8px; width: 26px; height: 26px;
+  display: grid; place-items: center; border-radius: 50%;
+  border: 2px solid var(--ink); background: #fff; cursor: pointer; font-size: 13px; line-height: 1;
+}
+.card .del:hover { background: #ffe3ef; border-color: var(--pink); color: var(--pink); }
+.empty { padding: 70px 20px; text-align: center; color: #8ea3b8; }
+.empty b { display: block; font-size: 18px; color: #5b6b7d; margin-bottom: 8px; }
+.empty a { display: inline-block; margin-top: 16px; padding: 10px 22px; border: 2px solid var(--ink); border-radius: 999px; background: #ffeb85; color: var(--ink); text-decoration: none; font-weight: 800; }

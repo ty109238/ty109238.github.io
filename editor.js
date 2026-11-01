@@ -858,6 +858,34 @@
       el('h3', { style: 'margin:16px 0 8px;font-size:14px' }, '团队成员'),
       box,
       addBtn,
+      el('h3', { style: 'margin:18px 0 8px;font-size:14px' }, '制作手记'),
+      (() => {
+        const ta = el('textarea', { style: 'min-height:150px' });
+        ta.value = (s.notes || []).map((n) => [n.d, n.t, n.p].join('|')).join('\n');
+        ta.placeholder = '每行一条：日期|标题|正文';
+        ta.addEventListener('input', () => {
+          s.notes = ta.value.split('\n').map((line) => line.trim()).filter(Boolean).map((line) => {
+            const parts = line.split('|');
+            return { d: (parts[0] || '').trim(), t: (parts[1] || '').trim(), p: (parts.slice(2).join('|') || '').trim() };
+          });
+          markDirty();
+        });
+        return ta;
+      })(),
+      el('h3', { style: 'margin:18px 0 8px;font-size:14px' }, '鸣谢名单'),
+      (() => {
+        const ta = el('textarea', { style: 'min-height:120px' });
+        ta.value = (s.thanks || []).map((n) => [n.t, n.d].join('|')).join('\n');
+        ta.placeholder = '每行一条：标题|说明';
+        ta.addEventListener('input', () => {
+          s.thanks = ta.value.split('\n').map((line) => line.trim()).filter(Boolean).map((line) => {
+            const parts = line.split('|');
+            return { t: (parts[0] || '').trim(), d: (parts.slice(1).join('|') || '').trim() };
+          });
+          markDirty();
+        });
+        return ta;
+      })(),
       el('div', { class: 'ed-modal-actions' },
         el('button', { class: 'ed-btn primary', type: 'button', onclick: closeModal }, '完成')
       )

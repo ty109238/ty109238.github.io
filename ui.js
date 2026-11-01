@@ -174,7 +174,7 @@
     fav.className = 'nav-link nav-btn';
     fav.setAttribute('data-role', 'fav');
     fav.innerHTML = '<img class="ui-ico" src="/media/ui/ui-fav.webp" alt=""><span>收藏</span>';
-    fav.addEventListener('click', function () { applyFavFilter(); });
+    fav.addEventListener('click', function () { location.href = '/favs.html'; });
 
     var gear = document.createElement('button');
     gear.type = 'button';
@@ -205,12 +205,16 @@
     var sheet = document.createElement('div');
     sheet.className = 'ui-sheet';
     var compact = document.documentElement.classList.contains('density-compact');
+    var hideNotice = document.documentElement.classList.contains('hide-notice');
+    var hideStudio = document.documentElement.classList.contains('hide-studio');
     var motion = !document.documentElement.classList.contains('no-motion');
 
     sheet.innerHTML =
       '<h4>显示设置</h4>' +
       '<label class="ui-row"><span>紧凑模式</span><input type="checkbox" data-k="compact"' + (compact ? ' checked' : '') + '></label>' +
       '<label class="ui-row"><span>界面动效</span><input type="checkbox" data-k="motion"' + (motion ? ' checked' : '') + '></label>' +
+      '<label class="ui-row"><span>隐藏顶部公告</span><input type="checkbox" data-k="hideNotice"' + (hideNotice ? ' checked' : '') + '></label>' +
+      '<label class="ui-row"><span>隐藏工作室介绍</span><input type="checkbox" data-k="hideStudio"' + (hideStudio ? ' checked' : '') + '></label>' +
       '<button class="ui-mini" data-k="clear">清空本地收藏与缓存</button>' +
       '<p class="ui-tip">设置只保存在当前浏览器</p>';
 
@@ -220,10 +224,14 @@
       var k = e.target.getAttribute('data-k');
       if (k === 'compact') document.documentElement.classList.toggle('density-compact', e.target.checked);
       if (k === 'motion') document.documentElement.classList.toggle('no-motion', !e.target.checked);
+      if (k === 'hideNotice') document.documentElement.classList.toggle('hide-notice', e.target.checked);
+      if (k === 'hideStudio') document.documentElement.classList.toggle('hide-studio', e.target.checked);
       try {
         localStorage.setItem('dex:ui', JSON.stringify({
           compact: document.documentElement.classList.contains('density-compact'),
-          motion: !document.documentElement.classList.contains('no-motion')
+          motion: !document.documentElement.classList.contains('no-motion'),
+          hideNotice: document.documentElement.classList.contains('hide-notice'),
+          hideStudio: document.documentElement.classList.contains('hide-studio')
         }));
       } catch (err) {}
     });
@@ -244,6 +252,8 @@
       if (!s) return;
       document.documentElement.classList.toggle('density-compact', !!s.compact);
       document.documentElement.classList.toggle('no-motion', s.motion === false);
+      document.documentElement.classList.toggle('hide-notice', !!s.hideNotice);
+      document.documentElement.classList.toggle('hide-studio', !!s.hideStudio);
     } catch (e) {}
   }
 

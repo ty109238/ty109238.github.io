@@ -638,3 +638,22 @@
   white-space: nowrap !important;
 }
 .search-row { display: grid !important; }
+/* 收起：公告入口 / 工作室介绍 */
+html.hide-notice .nav-btn[data-role="notice"] { display: none !important; }
+html.hide-studio .studio-mini,
+html.hide-studio .studio-section { display: none !important; }
+.studio-mini-collapse {
+  margin-left: 8px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: #fff;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  color: #8ea3b8;
+}
+.studio-mini-collapse:hover { color: var(--pink); border-color: var(--pink); }
