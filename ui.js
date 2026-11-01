@@ -142,8 +142,7 @@
   /* ---------- 顶部导航图标 ---------- */
   function headerIcons() {
     var nav = document.querySelector('.site-nav');
-    if (!nav || nav.getAttribute('data-ui') === '1') return;
-    nav.setAttribute('data-ui', '1');
+    if (!nav) return;
 
     var links = nav.querySelectorAll('a.nav-link');
     for (var i = 0; i < links.length; i++) {
@@ -184,9 +183,10 @@
     gear.innerHTML = '<img class="ui-ico" src="/media/ui/ui-settings.webp" alt=""><span>设置</span>';
     gear.addEventListener('click', openSettings);
 
-    nav.insertBefore(notice, nav.firstChild);
-    nav.appendChild(fav);
-    nav.appendChild(gear);
+    // 逐项补齐，React 重渲染后也能自动补回来
+    if (!nav.querySelector('[data-role="notice"]')) nav.insertBefore(notice, nav.firstChild);
+    if (!nav.querySelector('[data-role="fav"]')) nav.appendChild(fav);
+    if (!nav.querySelector('[data-role="settings"]')) nav.appendChild(gear);
   }
 
   /* ---------- 显示设置 ---------- */
