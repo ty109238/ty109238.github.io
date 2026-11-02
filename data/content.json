@@ -2668,7 +2668,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 8,
+        "learnLevel": 9,
         "note": "",
         "role": "战术"
       },
@@ -2681,7 +2681,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 15,
+        "learnLevel": 16,
         "note": "",
         "role": "战术"
       },
@@ -2722,7 +2722,7 @@
         "category": "特殊",
         "power": 69,
         "accuracy": 95,
-        "learnLevel": 12,
+        "learnLevel": 13,
         "note": "",
         "role": "主力"
       },
@@ -2735,7 +2735,7 @@
         "category": "物理",
         "power": 57,
         "accuracy": 100,
-        "learnLevel": 20,
+        "learnLevel": 21,
         "note": "",
         "role": "战术"
       },
@@ -2748,7 +2748,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 28,
+        "learnLevel": 29,
         "note": "",
         "role": "战术"
       }
@@ -2884,7 +2884,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 12,
+        "learnLevel": 11,
         "note": "",
         "role": "战术"
       },
@@ -2897,7 +2897,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 20,
+        "learnLevel": 19,
         "note": "",
         "role": "战术"
       },
@@ -2910,7 +2910,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 28,
+        "learnLevel": 27,
         "note": "",
         "role": "战术"
       }
@@ -2938,7 +2938,7 @@
         "category": "物理",
         "power": 88,
         "accuracy": 95,
-        "learnLevel": 16,
+        "learnLevel": 14,
         "note": "",
         "role": "主力"
       },
@@ -2951,7 +2951,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 26,
+        "learnLevel": 24,
         "note": "",
         "role": "战术"
       },
@@ -2964,7 +2964,7 @@
         "category": "物理",
         "power": 108,
         "accuracy": 85,
-        "learnLevel": 36,
+        "learnLevel": 34,
         "note": "",
         "role": "终结"
       }
@@ -2992,7 +2992,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 8,
+        "learnLevel": 9,
         "note": "",
         "role": "战术"
       },
@@ -3005,7 +3005,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 15,
+        "learnLevel": 16,
         "note": "",
         "role": "战术"
       },
@@ -3100,7 +3100,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 16,
+        "learnLevel": 15,
         "note": "",
         "role": "战术"
       },
@@ -3113,7 +3113,7 @@
         "category": "物理",
         "power": 67,
         "accuracy": 100,
-        "learnLevel": 26,
+        "learnLevel": 25,
         "note": "",
         "role": "战术"
       },
@@ -3126,7 +3126,7 @@
         "category": "物理",
         "power": 110,
         "accuracy": 85,
-        "learnLevel": 36,
+        "learnLevel": 35,
         "note": "",
         "role": "终结"
       }
@@ -3370,7 +3370,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 12,
+        "learnLevel": 11,
         "note": "",
         "role": "战术"
       },
@@ -3383,7 +3383,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 20,
+        "learnLevel": 19,
         "note": "",
         "role": "战术"
       },
@@ -3396,7 +3396,7 @@
         "category": "物理",
         "power": 92,
         "accuracy": 90,
-        "learnLevel": 28,
+        "learnLevel": 27,
         "note": "",
         "role": "终结"
       }
@@ -3424,7 +3424,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 16,
+        "learnLevel": 15,
         "note": "",
         "role": "战术"
       },
@@ -3437,7 +3437,7 @@
         "category": "物理",
         "power": 67,
         "accuracy": 100,
-        "learnLevel": 26,
+        "learnLevel": 25,
         "note": "",
         "role": "战术"
       },
@@ -3450,7 +3450,7 @@
         "category": "物理",
         "power": 110,
         "accuracy": 85,
-        "learnLevel": 36,
+        "learnLevel": 35,
         "note": "",
         "role": "终结"
       }
@@ -3532,7 +3532,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 12,
+        "learnLevel": 11,
         "note": "",
         "role": "战术"
       },
@@ -3545,7 +3545,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 20,
+        "learnLevel": 19,
         "note": "",
         "role": "战术"
       },
@@ -3558,7 +3558,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 28,
+        "learnLevel": 27,
         "note": "",
         "role": "战术"
       }
@@ -3586,7 +3586,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 16,
+        "learnLevel": 15,
         "note": "",
         "role": "战术"
       },
@@ -3599,7 +3599,7 @@
         "category": "物理",
         "power": 68,
         "accuracy": 100,
-        "learnLevel": 26,
+        "learnLevel": 25,
         "note": "",
         "role": "战术"
       },
@@ -3612,7 +3612,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 36,
+        "learnLevel": 35,
         "note": "",
         "role": "战术"
       }
@@ -3856,7 +3856,7 @@
         "category": "物理",
         "power": 72,
         "accuracy": 95,
-        "learnLevel": 12,
+        "learnLevel": 11,
         "note": "",
         "role": "主力"
       },
@@ -3869,7 +3869,7 @@
         "category": "物理",
         "power": 55,
         "accuracy": 100,
-        "learnLevel": 20,
+        "learnLevel": 19,
         "note": "",
         "role": "战术"
       },
@@ -3882,7 +3882,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 28,
+        "learnLevel": 27,
         "note": "",
         "role": "战术"
       }
@@ -3910,7 +3910,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 16,
+        "learnLevel": 15,
         "note": "",
         "role": "战术"
       },
@@ -3923,7 +3923,7 @@
         "category": "物理",
         "power": 65,
         "accuracy": 100,
-        "learnLevel": 26,
+        "learnLevel": 25,
         "note": "",
         "role": "战术"
       },
@@ -3936,7 +3936,7 @@
         "category": "物理",
         "power": 113,
         "accuracy": 85,
-        "learnLevel": 36,
+        "learnLevel": 35,
         "note": "",
         "role": "终结"
       }
@@ -3964,7 +3964,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 8,
+        "learnLevel": 7,
         "note": "",
         "role": "战术"
       },
@@ -3977,7 +3977,7 @@
         "category": "物理",
         "power": 48,
         "accuracy": 100,
-        "learnLevel": 15,
+        "learnLevel": 14,
         "note": "",
         "role": "战术"
       },
@@ -3990,7 +3990,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 22,
+        "learnLevel": 21,
         "note": "",
         "role": "战术"
       }
@@ -4018,7 +4018,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 12,
+        "learnLevel": 11,
         "note": "",
         "role": "战术"
       },
@@ -4031,7 +4031,7 @@
         "category": "物理",
         "power": 56,
         "accuracy": 100,
-        "learnLevel": 20,
+        "learnLevel": 19,
         "note": "",
         "role": "战术"
       },
@@ -4044,7 +4044,7 @@
         "category": "物理",
         "power": 88,
         "accuracy": 90,
-        "learnLevel": 28,
+        "learnLevel": 27,
         "note": "",
         "role": "终结"
       }
@@ -4072,7 +4072,7 @@
         "category": "物理",
         "power": 86,
         "accuracy": 95,
-        "learnLevel": 16,
+        "learnLevel": 15,
         "note": "",
         "role": "主力"
       },
@@ -4085,7 +4085,7 @@
         "category": "物理",
         "power": 63,
         "accuracy": 100,
-        "learnLevel": 26,
+        "learnLevel": 25,
         "note": "",
         "role": "战术"
       },
@@ -4098,7 +4098,7 @@
         "category": "物理",
         "power": 109,
         "accuracy": 85,
-        "learnLevel": 36,
+        "learnLevel": 35,
         "note": "",
         "role": "终结"
       }
@@ -4342,7 +4342,7 @@
         "category": "特殊",
         "power": 70,
         "accuracy": 95,
-        "learnLevel": 12,
+        "learnLevel": 11,
         "note": "",
         "role": "主力"
       },
@@ -4355,7 +4355,7 @@
         "category": "物理",
         "power": 58,
         "accuracy": 100,
-        "learnLevel": 20,
+        "learnLevel": 19,
         "note": "",
         "role": "战术"
       },
@@ -4368,7 +4368,7 @@
         "category": "物理",
         "power": 91,
         "accuracy": 90,
-        "learnLevel": 28,
+        "learnLevel": 27,
         "note": "",
         "role": "终结"
       }
@@ -4396,7 +4396,7 @@
         "category": "物理",
         "power": 88,
         "accuracy": 95,
-        "learnLevel": 16,
+        "learnLevel": 15,
         "note": "",
         "role": "主力"
       },
@@ -4409,7 +4409,7 @@
         "category": "物理",
         "power": 66,
         "accuracy": 100,
-        "learnLevel": 26,
+        "learnLevel": 25,
         "note": "",
         "role": "战术"
       },
@@ -4422,7 +4422,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 36,
+        "learnLevel": 35,
         "note": "",
         "role": "战术"
       }
@@ -4504,7 +4504,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 12,
+        "learnLevel": 11,
         "note": "",
         "role": "战术"
       },
@@ -4517,7 +4517,7 @@
         "category": "特殊",
         "power": 54,
         "accuracy": 100,
-        "learnLevel": 20,
+        "learnLevel": 19,
         "note": "",
         "role": "战术"
       },
@@ -4530,7 +4530,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 28,
+        "learnLevel": 27,
         "note": "",
         "role": "战术"
       }
@@ -4558,7 +4558,7 @@
         "category": "物理",
         "power": 84,
         "accuracy": 95,
-        "learnLevel": 16,
+        "learnLevel": 15,
         "note": "",
         "role": "主力"
       },
@@ -4571,7 +4571,7 @@
         "category": "物理",
         "power": 67,
         "accuracy": 100,
-        "learnLevel": 26,
+        "learnLevel": 25,
         "note": "",
         "role": "战术"
       },
@@ -4584,7 +4584,7 @@
         "category": "物理",
         "power": 110,
         "accuracy": 85,
-        "learnLevel": 36,
+        "learnLevel": 35,
         "note": "",
         "role": "终结"
       }
@@ -4666,7 +4666,7 @@
         "category": "物理",
         "power": 70,
         "accuracy": 95,
-        "learnLevel": 12,
+        "learnLevel": 11,
         "note": "",
         "role": "主力"
       },
@@ -4679,7 +4679,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 20,
+        "learnLevel": 19,
         "note": "",
         "role": "战术"
       },
@@ -4692,7 +4692,7 @@
         "category": "物理",
         "power": 93,
         "accuracy": 90,
-        "learnLevel": 28,
+        "learnLevel": 27,
         "note": "",
         "role": "终结"
       }
@@ -4720,7 +4720,7 @@
         "category": "物理",
         "power": 85,
         "accuracy": 95,
-        "learnLevel": 16,
+        "learnLevel": 15,
         "note": "",
         "role": "主力"
       },
@@ -4733,7 +4733,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 26,
+        "learnLevel": 25,
         "note": "",
         "role": "战术"
       },
@@ -4746,7 +4746,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 36,
+        "learnLevel": 35,
         "note": "",
         "role": "战术"
       }
@@ -4828,7 +4828,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 12,
+        "learnLevel": 11,
         "note": "",
         "role": "战术"
       },
@@ -4841,7 +4841,7 @@
         "category": "物理",
         "power": 53,
         "accuracy": 100,
-        "learnLevel": 20,
+        "learnLevel": 19,
         "note": "",
         "role": "战术"
       },
@@ -4854,7 +4854,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 28,
+        "learnLevel": 27,
         "note": "",
         "role": "战术"
       }
@@ -4882,7 +4882,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 16,
+        "learnLevel": 15,
         "note": "",
         "role": "战术"
       },
@@ -4895,7 +4895,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 26,
+        "learnLevel": 25,
         "note": "",
         "role": "战术"
       },
@@ -4908,7 +4908,7 @@
         "category": "物理",
         "power": 112,
         "accuracy": 85,
-        "learnLevel": 36,
+        "learnLevel": 35,
         "note": "",
         "role": "终结"
       }
@@ -5152,7 +5152,7 @@
         "category": "特殊",
         "power": 73,
         "accuracy": 95,
-        "learnLevel": 12,
+        "learnLevel": 11,
         "note": "",
         "role": "主力"
       },
@@ -5165,7 +5165,7 @@
         "category": "物理",
         "power": 56,
         "accuracy": 100,
-        "learnLevel": 20,
+        "learnLevel": 19,
         "note": "",
         "role": "战术"
       },
@@ -5178,7 +5178,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 28,
+        "learnLevel": 27,
         "note": "",
         "role": "战术"
       }
@@ -5206,7 +5206,7 @@
         "category": "物理",
         "power": 86,
         "accuracy": 95,
-        "learnLevel": 16,
+        "learnLevel": 15,
         "note": "",
         "role": "主力"
       },
@@ -5219,7 +5219,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 26,
+        "learnLevel": 25,
         "note": "",
         "role": "战术"
       },
@@ -5232,7 +5232,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 36,
+        "learnLevel": 35,
         "note": "",
         "role": "战术"
       }
@@ -5260,7 +5260,7 @@
         "category": "物理",
         "power": 53,
         "accuracy": 95,
-        "learnLevel": 8,
+        "learnLevel": 7,
         "note": "",
         "role": "主力"
       },
@@ -5273,7 +5273,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 15,
+        "learnLevel": 14,
         "note": "",
         "role": "战术"
       },
@@ -5286,7 +5286,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 22,
+        "learnLevel": 21,
         "note": "",
         "role": "战术"
       }
@@ -5422,7 +5422,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 8,
+        "learnLevel": 7,
         "note": "",
         "role": "战术"
       },
@@ -5435,7 +5435,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 15,
+        "learnLevel": 14,
         "note": "",
         "role": "战术"
       },
@@ -5448,7 +5448,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 22,
+        "learnLevel": 21,
         "note": "",
         "role": "战术"
       }
@@ -5476,7 +5476,7 @@
         "category": "物理",
         "power": 58,
         "accuracy": 95,
-        "learnLevel": 8,
+        "learnLevel": 7,
         "note": "",
         "role": "主力"
       },
@@ -5489,7 +5489,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 15,
+        "learnLevel": 14,
         "note": "",
         "role": "战术"
       },
@@ -5502,7 +5502,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 22,
+        "learnLevel": 21,
         "note": "",
         "role": "战术"
       }
@@ -5530,7 +5530,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 8,
+        "learnLevel": 6,
         "note": "",
         "role": "战术"
       },
@@ -5543,7 +5543,7 @@
         "category": "物理",
         "power": 43,
         "accuracy": 100,
-        "learnLevel": 15,
+        "learnLevel": 13,
         "note": "",
         "role": "战术"
       },
@@ -5556,7 +5556,7 @@
         "category": "物理",
         "power": 74,
         "accuracy": 90,
-        "learnLevel": 22,
+        "learnLevel": 20,
         "note": "",
         "role": "终结"
       }
@@ -5584,7 +5584,7 @@
         "category": "物理",
         "power": 53,
         "accuracy": 95,
-        "learnLevel": 8,
+        "learnLevel": 9,
         "note": "",
         "role": "主力"
       },
@@ -5597,7 +5597,7 @@
         "category": "物理",
         "power": 44,
         "accuracy": 100,
-        "learnLevel": 15,
+        "learnLevel": 16,
         "note": "",
         "role": "战术"
       },
@@ -5638,7 +5638,7 @@
         "category": "物理",
         "power": 69,
         "accuracy": 95,
-        "learnLevel": 12,
+        "learnLevel": 14,
         "note": "",
         "role": "主力"
       },
@@ -5651,7 +5651,7 @@
         "category": "特殊",
         "power": 57,
         "accuracy": 100,
-        "learnLevel": 20,
+        "learnLevel": 22,
         "note": "",
         "role": "战术"
       },
@@ -5664,7 +5664,7 @@
         "category": "物理",
         "power": 90,
         "accuracy": 90,
-        "learnLevel": 28,
+        "learnLevel": 30,
         "note": "",
         "role": "终结"
       }
@@ -5692,7 +5692,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 16,
+        "learnLevel": 17,
         "note": "",
         "role": "战术"
       },
@@ -5705,7 +5705,7 @@
         "category": "物理",
         "power": 65,
         "accuracy": 100,
-        "learnLevel": 26,
+        "learnLevel": 27,
         "note": "",
         "role": "战术"
       },
@@ -5718,7 +5718,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 36,
+        "learnLevel": 37,
         "note": "",
         "role": "战术"
       }
@@ -5800,7 +5800,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 12,
+        "learnLevel": 13,
         "note": "",
         "role": "战术"
       },
@@ -5813,7 +5813,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 20,
+        "learnLevel": 21,
         "note": "",
         "role": "战术"
       },
@@ -5826,7 +5826,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 28,
+        "learnLevel": 29,
         "note": "",
         "role": "战术"
       }
@@ -5854,7 +5854,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 16,
+        "learnLevel": 18,
         "note": "",
         "role": "战术"
       },
@@ -5867,7 +5867,7 @@
         "category": "物理",
         "power": 66,
         "accuracy": 100,
-        "learnLevel": 26,
+        "learnLevel": 28,
         "note": "",
         "role": "战术"
       },
@@ -5880,7 +5880,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 36,
+        "learnLevel": 38,
         "note": "",
         "role": "战术"
       }
@@ -5908,7 +5908,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 16,
+        "learnLevel": 18,
         "note": "",
         "role": "战术"
       },
@@ -5921,7 +5921,7 @@
         "category": "物理",
         "power": 63,
         "accuracy": 100,
-        "learnLevel": 26,
+        "learnLevel": 28,
         "note": "",
         "role": "战术"
       },
@@ -5934,7 +5934,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 36,
+        "learnLevel": 38,
         "note": "",
         "role": "战术"
       }
@@ -5962,7 +5962,7 @@
         "category": "物理",
         "power": 53,
         "accuracy": 95,
-        "learnLevel": 8,
+        "learnLevel": 10,
         "note": "",
         "role": "主力"
       },
@@ -5975,7 +5975,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 15,
+        "learnLevel": 17,
         "note": "",
         "role": "战术"
       },
@@ -6016,7 +6016,7 @@
         "category": "物理",
         "power": 69,
         "accuracy": 95,
-        "learnLevel": 12,
+        "learnLevel": 13,
         "note": "",
         "role": "主力"
       },
@@ -6029,7 +6029,7 @@
         "category": "物理",
         "power": 57,
         "accuracy": 100,
-        "learnLevel": 20,
+        "learnLevel": 21,
         "note": "",
         "role": "战术"
       },
@@ -6042,7 +6042,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 28,
+        "learnLevel": 29,
         "note": "",
         "role": "战术"
       }
@@ -6124,7 +6124,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 8,
+        "learnLevel": 10,
         "note": "",
         "role": "战术"
       },
@@ -6137,7 +6137,7 @@
         "category": "物理",
         "power": 45,
         "accuracy": 100,
-        "learnLevel": 15,
+        "learnLevel": 17,
         "note": "",
         "role": "战术"
       },
@@ -6178,7 +6178,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 12,
+        "learnLevel": 14,
         "note": "",
         "role": "战术"
       },
@@ -6191,7 +6191,7 @@
         "category": "物理",
         "power": 58,
         "accuracy": 100,
-        "learnLevel": 20,
+        "learnLevel": 22,
         "note": "",
         "role": "战术"
       },
@@ -6204,7 +6204,7 @@
         "category": "物理",
         "power": 91,
         "accuracy": 90,
-        "learnLevel": 28,
+        "learnLevel": 30,
         "note": "",
         "role": "终结"
       }
@@ -6232,7 +6232,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 16,
+        "learnLevel": 18,
         "note": "",
         "role": "战术"
       },
@@ -6245,7 +6245,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 26,
+        "learnLevel": 28,
         "note": "",
         "role": "战术"
       },
@@ -6258,7 +6258,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 36,
+        "learnLevel": 38,
         "note": "",
         "role": "战术"
       }
@@ -6286,7 +6286,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 8,
+        "learnLevel": 9,
         "note": "",
         "role": "战术"
       },
@@ -6299,7 +6299,7 @@
         "category": "特殊",
         "power": 43,
         "accuracy": 100,
-        "learnLevel": 15,
+        "learnLevel": 16,
         "note": "",
         "role": "战术"
       },
@@ -6340,7 +6340,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 12,
+        "learnLevel": 13,
         "note": "",
         "role": "战术"
       },
@@ -6353,7 +6353,7 @@
         "category": "特殊",
         "power": 54,
         "accuracy": 100,
-        "learnLevel": 20,
+        "learnLevel": 21,
         "note": "",
         "role": "战术"
       },
@@ -6366,7 +6366,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 28,
+        "learnLevel": 29,
         "note": "",
         "role": "战术"
       }
@@ -6394,7 +6394,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 12,
+        "learnLevel": 13,
         "note": "",
         "role": "战术"
       },
@@ -6407,7 +6407,7 @@
         "category": "物理",
         "power": 57,
         "accuracy": 100,
-        "learnLevel": 20,
+        "learnLevel": 21,
         "note": "",
         "role": "战术"
       },
@@ -6420,7 +6420,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 28,
+        "learnLevel": 29,
         "note": "",
         "role": "战术"
       }
@@ -6448,7 +6448,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 16,
+        "learnLevel": 18,
         "note": "",
         "role": "战术"
       },
@@ -6461,7 +6461,7 @@
         "category": "特殊",
         "power": 65,
         "accuracy": 100,
-        "learnLevel": 26,
+        "learnLevel": 28,
         "note": "",
         "role": "战术"
       },
@@ -6474,7 +6474,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 36,
+        "learnLevel": 38,
         "note": "",
         "role": "战术"
       }
@@ -6502,7 +6502,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 16,
+        "learnLevel": 17,
         "note": "",
         "role": "战术"
       },
@@ -6515,7 +6515,7 @@
         "category": "物理",
         "power": 65,
         "accuracy": 100,
-        "learnLevel": 26,
+        "learnLevel": 27,
         "note": "",
         "role": "战术"
       },
@@ -6528,7 +6528,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 36,
+        "learnLevel": 37,
         "note": "",
         "role": "战术"
       }
@@ -6556,7 +6556,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 8,
+        "learnLevel": 7,
         "note": "",
         "role": "战术"
       },
@@ -6569,7 +6569,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 15,
+        "learnLevel": 14,
         "note": "",
         "role": "战术"
       },
@@ -6582,7 +6582,7 @@
         "category": "变化",
         "power": null,
         "accuracy": null,
-        "learnLevel": 22,
+        "learnLevel": 21,
         "note": "",
         "role": "战术"
       }
