@@ -2374,7 +2374,7 @@
       "imageKey": "creatures/68-乒乒.png",
       "portraitKey": "uploads/20261030075307-4k96y.webp",
       "description": "工坊里最小的那只齿轮精灵，圆滚滚地到处弹。它一紧张就原地打转，发出「乒乒」的声音，听着倒像在给自己打气。",
-      "evolutionCondition": "等级达到二十二级后，会根据自己的性格分化为塔塔或铲铲。",
+      "evolutionCondition": "等级达到二十二级后，按性格分化为「塔塔」或「铲铲」。",
       "captureLocation": "铁锈高地 · 废弃工坊",
       "hatchCondition": "把蛋放进上弦的音乐盒里，拧满发条后静置三天。",
       "arenaRate": 10,
@@ -2395,7 +2395,19 @@
         "stage": 1,
         "nature": "天真"
       },
-      "eggKey": "eggs/68.webp"
+      "eggKey": "eggs/68.webp",
+      "branch": [
+        {
+          "to": 103188,
+          "name": "塔塔",
+          "condition": "22 级 · 防御 > 攻击"
+        },
+        {
+          "to": 103189,
+          "name": "铲铲",
+          "condition": "22 级 · 攻击 > 防御"
+        }
+      ]
     },
     {
       "id": 103188,
@@ -5896,9 +5908,7 @@
       103186
     ],
     "103187": [
-      103187,
-      103188,
-      103189
+      103187
     ],
     "103188": [
       103187,
