@@ -1103,28 +1103,8 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
 }
 .trait-entry { align-items: center !important; gap: 12px !important; }
 .record-heading p + .sec-ico { display: none !important; }
-/* 被动特性：去掉卡片红底与白色圆底，只留图标和文字 */
-.traits-list,
-.traits-list .trait-entry,
-.trait-entry {
-  background: none !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  border: 0 !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-}
-.trait-entry {
-  padding: 6px 0 !important;
-  align-items: center !important;
-  gap: 10px !important;
-}
-.trait-entry::before,
-.trait-entry::after {
-  display: none !important;
-  content: none !important;
-}
+
+/* 只去掉「图标背后的底」，卡片本身的底色保留 */
 .trait-emblem,
 .trait-emblem::before,
 .trait-emblem::after {
@@ -1133,15 +1113,20 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   border: 0 !important;
   box-shadow: none !important;
   border-radius: 0 !important;
+  width: 58px !important;
+  height: 58px !important;
+  min-width: 58px !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  display: grid !important;
+  place-items: center !important;
 }
-.traits-list { display: grid !important; gap: 10px !important; }
-/* 特性卡内所有子元素也不带底色 */
-.trait-entry > div,
-.trait-entry > span,
-.trait-entry h3,
-.trait-entry p,
-.trait-entry small {
+.trait-emblem img,
+.trait-emblem .trait-ico {
+  width: 58px !important;
+  height: 58px !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  display: block !important;
   background: none !important;
-  background-image: none !important;
 }
-.traits-list { background: none !important; }
