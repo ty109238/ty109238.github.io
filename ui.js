@@ -36,12 +36,21 @@
       var n = nodes[i];
       if (n.getAttribute('data-elem-ico') === '1') continue;
       if (n.closest('svg')) continue;
-      if (n.children.length > 1) continue;
+      if (n.children.length > 2) continue;
       if (n.querySelector('img')) continue;
       if (n.classList.contains('sm-type')) continue;
-      var t = (n.textContent || '').trim();
+      var raw = (n.textContent || '').trim();
+      var t = raw.replace(/[^\u4e00-\u9fa5]/g, '');
       var m = reg.exec(t);
       if (!m) continue;
+      // 去掉标签里原有的符号图标（emoji 或 svg）
+      for (var ci = n.childNodes.length - 1; ci >= 0; ci--) {
+        var ch = n.childNodes[ci];
+        if (ch.nodeType === 1 && ch.tagName.toLowerCase() === 'svg') { ch.remove(); continue; }
+        if (ch.nodeType === 3 && !/[\u4e00-\u9fa5]/.test(ch.textContent) && ch.textContent.trim()) {
+          ch.textContent = ch.textContent.replace(/[^\s]/g, '');
+        }
+      }
       n.setAttribute('data-elem-ico', '1');
       n.insertBefore(iconImg(m[1]), n.firstChild);
       n.classList.add('has-ico');
