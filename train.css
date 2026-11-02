@@ -1080,3 +1080,26 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   margin-top: -2px;
 }
 .field-note.hatch > .note-ico { width: 52px; height: 52px; }
+/* 被动特性徽章：去掉留白与原圆形底 */
+.trait-emblem {
+  width: 58px !important;
+  height: 58px !important;
+  min-width: 58px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  display: grid !important;
+  place-items: center !important;
+}
+.trait-emblem img,
+.trait-emblem .trait-ico {
+  width: 58px !important;
+  height: 58px !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  display: block !important;
+}
+.trait-entry { align-items: center !important; gap: 12px !important; }
+.record-heading p + .sec-ico { display: none !important; }

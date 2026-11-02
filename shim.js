@@ -1108,9 +1108,10 @@
       var titleEl = el.querySelector('h2');
       if (!titleEl) continue;
       var title = titleEl.textContent.trim();
-      var icon = null;
-      if (title.indexOf('被动特性') >= 0) icon = 'trait-' + (ELEM_ICON[c.element] || 'fire');
-      else if (SEC_ICONS[title]) icon = SEC_ICONS[title];
+      var stale = el.querySelector('.sec-ico');
+      if (title.indexOf('被动特性') >= 0) { if (stale) stale.remove(); continue; }
+      if (stale) continue;
+      var icon = SEC_ICONS[title] || null;
       if (!icon) continue;
       var img = document.createElement('img');
       img.className = 'sec-ico';
