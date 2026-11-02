@@ -1030,6 +1030,7 @@
       { href: '/eggs.html', t: '孵化手册', d: '28 个家族的蛋形态', k: '蛋' },
       { href: '/types.html', t: '属性克制', d: '十系完整对照表', k: '克' },
       { href: '/family.html', t: '家族图鉴', d: '28 个家族总览', k: '族' },
+      { href: '/battle.html', t: '战斗模拟', d: '六对六回合制对战', k: '战' },
       { href: '/favs.html', t: '我的收藏', d: '你标星过的灵宠', k: '藏' },
       { href: '/studio.html', t: '工作室', d: '制作团队与手记', k: '橘' }
     ];

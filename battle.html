@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#2a2520" />
+    <meta name="description" content="咻噗·奥灵宠图鉴 · 战斗模拟器：六对六回合制对战，自由配队、分配学习力、挑选技能。" />
+    <title>战斗模拟器 · 咻噗-奥灵宠图鉴</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="stylesheet" href="/battle.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="back" href="/">← 返回图鉴</a>
+      <h1>战斗模拟器</h1>
+      <span class="step" id="step">第 1 步 · 组队</span>
+    </header>
+
+    <main class="wrap">
+      <!-- 建队 -->
+      <section id="buildView">
+        <div class="build-grid">
+          <div class="team-col" id="myCol">
+            <div class="team-head">
+              <h2>我方队伍</h2>
+              <span class="cnt" id="myCount">0 / 6</span>
+              <button class="mini" id="myRandom">随机填满</button>
+            </div>
+            <div class="slots" id="mySlots"></div>
+          </div>
+          <div class="team-col enemy" id="enemyCol">
+            <div class="team-head">
+              <h2>敌方队伍</h2>
+              <span class="cnt" id="enemyCount">0 / 6</span>
+              <button class="mini" id="enemyRandom">随机填满</button>
+            </div>
+            <div class="slots" id="enemySlots"></div>
+          </div>
+        </div>
+        <div class="build-actions">
+          <button class="big-btn ghost" id="clearAll">清空</button>
+          <button class="big-btn" id="startBattle" disabled>开始对战</button>
+        </div>
+      </section>
+
+      <!-- 战斗 -->
+      <section id="battleView" class="hidden">
+        <div class="battle-hud">
+          <div>
+            <div class="side-team" id="enemyRow"></div>
+          </div>
+          <div>
+            <div class="active-mon" id="enemyActive"></div>
+          </div>
+          <div>
+            <div class="active-mon" id="myActive"></div>
+          </div>
+        </div>
+        <div class="log" id="log"></div>
+        <div class="side-team" id="myRow" style="margin:0 0 10px"></div>
+        <div class="actions">
+          <div class="skill-bar" id="skillBar"></div>
+          <div class="switch-bar" id="switchBar"></div>
+        </div>
+        <div class="build-actions">
+          <button class="big-btn ghost" id="giveUp">认输并重来</button>
+        </div>
+      </section>
+
+      <!-- 结算 -->
+      <section id="resultView" class="hidden">
+        <div class="result">
+          <h2 id="resultTitle">对战结束</h2>
+          <p id="resultSub" style="color:#7b8ea1"></p>
+          <div class="build-actions" style="max-width:420px;margin:24px auto 0">
+            <button class="big-btn" id="again">再来一局</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 配置弹窗 -->
+    <div class="modal" id="modal" hidden>
+      <div class="mbox">
+        <h3 id="mboxTitle">配置灵宠</h3>
+        <p class="sub">选择灵宠，再调整等级 / 星级 / 天赋 / 阶段 / 性格 / 学习力 / 技能。</p>
+        <div id="mboxBody"></div>
+        <div class="build-actions">
+          <button class="big-btn ghost" id="mboxCancel">取消</button>
+          <button class="big-btn" id="mboxOk">确定</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/battle.js"></script>
+  </body>
+</html>

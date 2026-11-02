@@ -1,0 +1,168 @@
+/* 战斗模拟器 */
+:root {
+  --ink:#262722; --pink:#dd2590; --blue:#1570ef; --yellow:#ffeb85;
+  --soft:#f5faff; --line:#dbe6f0; --red:#e5484d; --green:#2f9e5f;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: #f4f7fa; color: var(--ink);
+  font-family: "PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button { font: inherit; cursor: pointer; }
+a { color: inherit; }
+.top {
+  position: sticky; top: 0; z-index: 30;
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 20px; background: #fffffff2;
+  border-bottom: 2px solid var(--ink); backdrop-filter: blur(6px);
+}
+.top a.back {
+  padding: 8px 15px; border: 2px solid var(--ink); border-radius: 999px;
+  background: #fff; text-decoration: none; font-size: 13px; font-weight: 800;
+}
+.top h1 { margin: 0; font-size: 18px; }
+.top .step { margin-left: auto; font-size: 12px; color: #7b8ea1; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 20px 18px 80px; }
+
+/* ---------- 建队 ---------- */
+.build-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.team-col {
+  background: #fff; border: 2px solid var(--ink); border-radius: 16px;
+  padding: 14px 16px 16px; box-shadow: 4px 5px 0 rgba(38,39,34,.08);
+}
+.team-col.enemy { background: #fffafb; }
+.team-head { display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--ink); padding-bottom: 9px; margin-bottom: 12px; }
+.team-head h2 { margin: 0; font-size: 17px; }
+.team-head .cnt { font-size: 11.5px; color: #7b8ea1; }
+.team-head .mini {
+  margin-left: auto; padding: 5px 12px; border: 2px solid var(--ink); border-radius: 999px;
+  background: #f7fbff; font-size: 11.5px; font-weight: 800;
+}
+.slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.slot {
+  position: relative; border: 2px dashed #c6d5e3; border-radius: 12px;
+  background: #fbfdff; min-height: 108px; padding: 6px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+}
+.slot.filled { border-style: solid; border-color: var(--ink); background: #fff; cursor: pointer; }
+.slot img { width: 56px; height: 56px; object-fit: contain; }
+.slot b { font-size: 12.5px; }
+.slot small { font-size: 10px; color: #7b8ea1; }
+.slot .empty-t { font-size: 12px; color: #9aa9b8; }
+.slot .x {
+  position: absolute; top: 4px; right: 4px; width: 20px; height: 20px; border-radius: 50%;
+  border: 1px solid #c6d5e3; background: #fff; font-size: 11px; line-height: 1;
+  display: grid; place-items: center; color: #9aa9b8;
+}
+.slot .x:hover { color: var(--red); border-color: var(--red); }
+.build-actions { display: flex; gap: 10px; margin-top: 18px; }
+.big-btn {
+  flex: 1; padding: 14px; border: 2px solid var(--ink); border-radius: 14px;
+  background: var(--yellow); font-size: 15px; font-weight: 900;
+  box-shadow: 4px 5px 0 rgba(38,39,34,.16);
+}
+.big-btn:disabled { background: #e9eef3; color: #9aa9b8; box-shadow: none; cursor: not-allowed; }
+.big-btn.ghost { background: #fff; }
+
+/* 配置弹窗 */
+.modal { position: fixed; inset: 0; z-index: 60; background: rgba(14,23,38,.6); display: grid; place-items: center; padding: 18px; }
+.modal[hidden] { display: none; }
+.mbox {
+  width: min(100%, 900px); max-height: 90vh; overflow: auto;
+  background: #fff; border: 2px solid var(--ink); border-radius: 18px; padding: 18px 20px 20px;
+}
+.mbox h3 { margin: 0 0 4px; font-size: 19px; }
+.mbox .sub { margin: 0 0 14px; font-size: 12.5px; color: #7b8ea1; }
+.pick-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; max-height: 210px; overflow: auto; padding: 4px; }
+.pick {
+  border: 2px solid var(--line); border-radius: 10px; background: #fff; padding: 4px; text-align: center; cursor: pointer;
+}
+.pick:hover { border-color: var(--ink); }
+.pick.on { border-color: var(--pink); background: #fff5fa; }
+.pick img { width: 44px; height: 44px; object-fit: contain; }
+.pick b { display: block; font-size: 11.5px; }
+.pick small { font-size: 9.5px; color: #7b8ea1; }
+.row2 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 12px 0; }
+.field { display: grid; gap: 4px; }
+.field span { font-size: 11px; font-weight: 800; color: #55677b; }
+.field select, .field input {
+  padding: 7px 9px; border: 2px solid var(--line); border-radius: 9px; font: inherit; font-size: 12.5px;
+}
+.ev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 14px; margin: 8px 0 4px; }
+.ev-row { display: grid; grid-template-columns: 42px 1fr 34px; align-items: center; gap: 6px; font-size: 11.5px; }
+.ev-row input { width: 100%; }
+.ev-left { font-size: 11.5px; color: #7b8ea1; }
+.ev-left b { color: var(--pink); }
+.skill-pick { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 8px; max-height: 200px; overflow: auto; }
+.sk {
+  border: 2px solid var(--line); border-radius: 10px; padding: 7px 9px; background: #fff; cursor: pointer; text-align: left;
+}
+.sk.on { border-color: var(--blue); background: #f2f8ff; }
+.sk b { font-size: 12.5px; }
+.sk small { display: block; font-size: 10.5px; color: #7b8ea1; }
+.sk .tag { font-size: 10px; padding: 1px 6px; border-radius: 999px; background: #eef4fa; margin-right: 4px; }
+
+/* ---------- 战斗 ---------- */
+.battle-hud { display: grid; grid-template-columns: 1fr 1.1fr 1fr; gap: 14px; align-items: start; }
+.side-team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.mini-card {
+  border: 2px solid var(--ink); border-radius: 10px; background: #fff; padding: 4px; text-align: center; position: relative;
+}
+.mini-card.dead { opacity: .38; filter: grayscale(1); }
+.mini-card.active { border-color: var(--pink); box-shadow: 0 0 0 2px #ffd6e8; }
+.mini-card img { width: 40px; height: 40px; object-fit: contain; }
+.mini-card .hpbar { height: 4px; border-radius: 99px; background: #e7eef5; overflow: hidden; margin-top: 3px; }
+.mini-card .hpbar i { display: block; height: 100%; background: var(--green); }
+.active-mon {
+  border: 2px solid var(--ink); border-radius: 14px; background: #fff; padding: 10px 12px;
+}
+.active-mon img { width: 96px; height: 96px; object-fit: contain; display: block; margin: 0 auto; }
+.active-mon h4 { margin: 4px 0 2px; font-size: 16px; text-align: center; }
+.active-mon .tags { text-align: center; font-size: 11px; color: #7b8ea1; }
+.hp-wrap { margin-top: 8px; }
+.hp-line { display: flex; justify-content: space-between; font-size: 11px; color: #55677b; }
+.hp-bar { height: 10px; border-radius: 99px; background: #e7eef5; overflow: hidden; margin-top: 3px; }
+.hp-bar i { display: block; height: 100%; background: linear-gradient(90deg,#63d68a,#2f9e5f); transition: width .25s ease; }
+.hp-bar.low i { background: linear-gradient(90deg,#ffb26b,#e5484d); }
+.st-line { margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { font-size: 10.5px; padding: 2px 8px; border-radius: 999px; background: #eef4fa; }
+.chip.bad { background: #ffe9e9; color: #b3352f; }
+.chip.good { background: #e9f7ec; color: #1f7a3d; }
+.log {
+  margin-top: 16px; background: #0e1726; color: #cfe0f2; border-radius: 14px; padding: 12px 14px;
+  height: 220px; overflow: auto; font-size: 12.5px; line-height: 1.8;
+}
+.log p { margin: 0 0 3px; }
+.log .dmg { color: #ffd66b; }
+.log .crit { color: #ff8fb8; font-weight: 800; }
+.log .eff { color: #8ef0a8; }
+.log .weak { color: #ffb3a8; }
+.log .turn { color: #7fa7d6; font-weight: 800; margin-top: 6px; }
+.actions { margin-top: 14px; }
+.skill-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.skill-btn {
+  border: 2px solid var(--ink); border-radius: 12px; background: #fff; padding: 10px; text-align: left;
+  box-shadow: 3px 4px 0 rgba(38,39,34,.1);
+}
+.skill-btn:disabled { opacity: .45; cursor: not-allowed; box-shadow: none; }
+.skill-btn b { display: block; font-size: 13.5px; }
+.skill-btn small { font-size: 10.5px; color: #7b8ea1; }
+.skill-btn .pp { float: right; font-size: 10.5px; color: var(--pink); font-weight: 800; }
+.switch-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
+.switch-btn { border: 2px solid var(--line); border-radius: 10px; background: #fff; padding: 7px; font-size: 11.5px; }
+.switch-btn:disabled { opacity: .4; }
+.result { text-align: center; padding: 40px 20px; }
+.result h2 { font-size: 34px; margin: 0 0 10px; }
+.result .win { color: var(--green); }
+.result .lose { color: var(--red); }
+.hidden { display: none !important; }
+
+@media (max-width: 900px) {
+  .build-grid { grid-template-columns: 1fr; }
+  .battle-hud { grid-template-columns: 1fr; }
+  .skill-bar { grid-template-columns: 1fr 1fr; }
+  .row2 { grid-template-columns: 1fr 1fr; }
+  .ev-grid { grid-template-columns: 1fr 1fr; }
+}
