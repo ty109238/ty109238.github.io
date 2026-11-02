@@ -1178,3 +1178,18 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
 }
 .trait-sec .record-heading { margin-bottom: 14px !important; }
 .trait-sec .traits-list { padding: 4px 2px !important; }
+/* 技能手册 展开/收起 */
+.skill-fold {
+  margin-left: auto;
+  padding: 6px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: #fff6d8;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.skill-fold:hover { background: #ffeb85; }
+.record-heading { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }

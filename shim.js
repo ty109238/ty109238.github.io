@@ -1134,9 +1134,40 @@
     var t = null;
     entryObs = new MutationObserver(function () {
       clearTimeout(t);
-      t = setTimeout(function () { syncEntryIcons(); frameTraitSection(); killTraitBg(); }, 80);
+      t = setTimeout(function () { syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); }, 80);
     });
     entryObs.observe(root, { childList: true, subtree: true });
+  }
+
+  function syncSkillCollapse() {
+    var secs = document.querySelectorAll('.detail-page > section');
+    var sec = null;
+    for (var i = 0; i < secs.length; i++) {
+      var h = secs[i].querySelector('.record-heading h2');
+      if (h && h.textContent.indexOf('技能手册') >= 0) { sec = secs[i]; break; }
+    }
+    if (!sec) return;
+    var entries = sec.querySelectorAll('.skill-entry');
+    if (entries.length <= 4) return;
+
+    var collapsed = localStorage.getItem('dex:skillfold') !== '0';
+    var head = sec.querySelector('.record-heading');
+    var btn = sec.querySelector('.skill-fold');
+    if (!btn) {
+      btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'skill-fold';
+      btn.addEventListener('click', function () {
+        var cur = localStorage.getItem('dex:skillfold') !== '0';
+        localStorage.setItem('dex:skillfold', cur ? '0' : '1');
+        syncSkillCollapse();
+      });
+      (head || sec).appendChild(btn);
+    }
+    btn.textContent = collapsed ? ('展开全部 ' + entries.length + ' 个技能 ▾') : '收起（只看前 4 个） ▴';
+    for (var k = 0; k < entries.length; k++) {
+      entries[k].style.display = (collapsed && k >= 4) ? 'none' : '';
+    }
   }
 
   function syncSectionIcons() {
@@ -1701,7 +1732,7 @@
       clearTimeout(timer);
       timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); }, 300);
     }).observe(root, { childList: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncMobileNav(); syncToc(); syncSectionIcons(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncMobileNav(); syncToc(); syncSectionIcons(); syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
   }
 
   window.__dexOpenNotice = openNotice;
