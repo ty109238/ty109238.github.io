@@ -27,6 +27,14 @@
   ];
   var STAT_LABEL = { hp: '生命', attack: '物攻', defense: '物防', spAttack: '魔攻', spDefense: '魔防', speed: '速度' };
   var STAGE_OPT = ['一阶', '二阶', '三阶'];
+  var WEATHERS = {
+    '晴朗': { fire: 1.2, water: 0.8, ice: 1.0, wind: 1.0, desc: '火系威力 +20%｜水系 -20%' },
+    '下雨': { fire: 0.8, water: 1.2, ice: 1.0, wind: 1.0, desc: '水系威力 +20%｜火系 -20%' },
+    '下雪': { fire: 0.9, water: 1.0, ice: 1.2, wind: 0.9, desc: '冰系威力 +20%｜风系 -10%' }
+  };
+  var WEATHER_KEYS = ['晴朗', '下雨', '下雪'];
+  var PRIORITY_WORDS = /先制|抢先|突袭|急速|迅捷|疾走|闪光/;
+  var SLOW_WORDS = /蓄力|重击|全力|耗尽|最后一击/;
 
   var state = {
     my: new Array(6).fill(null),
@@ -46,6 +54,19 @@
   function rnd(a, b) { return a + Math.random() * (b - a); }
   function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+  function skillPriority(s) {
+    var d = s.description || '';
+    if (PRIORITY_WORDS.test(d)) return 1;
+    if (SLOW_WORDS.test(d)) return -1;
+    return 0;
+  }
+
+  function weatherMult(weather, type) {
+    var w = WEATHERS[weather];
+    if (!w) return 1;
+    return w[{ 火: 'fire', 水: 'water', 冰: 'ice', 风: 'wind' }[type]] || 1;
+  }
 
   function skillCat(s) {
     if (s.category === '物理') return '物攻';
@@ -330,6 +351,18 @@
   }
 
   /* ---------------- 战斗 ---------------- */
+  function b0() { return state.battle; }
+
+  function maybeWeather() {
+    var b = state.battle;
+    if (!b || b.over) return;
+    if (b.turn % 3 !== 0) return;
+    if (Math.random() > 0.45) return;
+    var next = pick(WEATHER_KEYS.filter(function (k) { return k !== b.weather; }));
+    b.weather = next;
+    logLine('天气变成了 <b>' + next + '</b>（' + WEATHERS[next].desc + '）', 'turn');
+  }
+
   function startBattle() {
     if (!state.my.every(Boolean) || !state.enemy.every(Boolean)) return;
     state.battle = {
@@ -337,7 +370,9 @@
       en: state.enemy.map(function (cfg, i) { return makeMon(cfg, 'enemy', i); }),
       myActive: 0, enActive: 0,
       turn: 1, log: [], over: false, busy: false,
-      awaitingSwitch: false
+      awaitingSwitch: false,
+      weather: '晴朗',
+      ai: (document.getElementById('aiLevel') && document.getElementById('aiLevel').value) || 'normal'
     };
     $('buildView').classList.add('hidden');
     $('battleView').classList.remove('hidden');
@@ -345,6 +380,7 @@
     $('step').textContent = '第 2 步 · 战斗';
     renderBattle();
     logLine('对战开始！', 'turn');
+    logLine('当前天气：<b>' + b0().weather + '</b>（' + WEATHERS[b0().weather].desc + '）');
     logLine('我方首发 ' + state.battle.my[0].name + '，敌方首发 ' + state.battle.en[0].name + '。');
   }
 
@@ -357,7 +393,10 @@
     $('enemyActive').innerHTML = monCardHtml(em);
     $('myActive').innerHTML = monCardHtml(mm);
 
-    var bar = $('skillBar');
+    var wb = document.getElementById('weatherBadge');
+    if (wb) wb.innerHTML = '天气 <b>' + b.weather + '</b> · ' + WEATHERS[b.weather].desc;
+
+    var bar = skillBar;
     bar.innerHTML = '';
     mm.skills.forEach(function (s, i) {
       var btn = el('button', 'skill-btn');
@@ -440,8 +479,9 @@
     var base = (((2 * L) / 5 + 2) * power * (A / Math.max(1, D))) / 50 + 2;
     var tm = typeMult(s.type, defender.element);
     var stab = s.type === attacker.element ? 1.1 : 1;
+    var wm = weatherMult((state.battle && state.battle.weather) || '晴朗', s.type);
     var crit = Math.random() < 0.0625;
-    var dmg = base * tm * stab * (crit ? 1.5 : 1) * rnd(0.85, 1);
+    var dmg = base * tm * stab * wm * (crit ? 1.5 : 1) * rnd(0.85, 1);
     return { dmg: Math.max(1, Math.floor(dmg)), type: tm, crit: crit };
   }
 
@@ -568,18 +608,25 @@
   function finish(win) {
     var b = state.battle;
     b.over = true;
+    b.winner = win;
     $('battleView').classList.add('hidden');
     $('resultView').classList.remove('hidden');
     $('step').textContent = '对战结束';
     $('resultTitle').innerHTML = win ? '<span class="win">胜利！</span>' : '<span class="lose">惜败…</span>';
     var left = aliveIdx(b.my).length, eleft = aliveIdx(b.en).length;
-    $('resultSub').textContent = '我方剩余 ' + left + ' 只 · 敌方剩余 ' + eleft + ' 只 · 共 ' + b.turn + ' 回合';
+    resultSub.textContent = '我方剩余 ' + left + ' 只 · 敌方剩余 ' + eleft + ' 只 · 共 ' + b.turn + ' 回合 · 天气 ' + b.weather;
+    b.replayCode = buildReplayCode();
+    var rv = document.getElementById('replayBox');
+    if (rv) {
+      rv.value = b.replayCode;
+      document.getElementById('replayArea').classList.remove('hidden');
+    }
   }
 
   function switchTo(side, idx, manual) {
     var b = state.battle;
     if (side === 'my') {
-      logLine('换上 <b>' + b.my[idx].name + '</b>。');
+      logLine('换上 <b>' + b.my[idx].name + '</b>。（换人消耗本回合行动）');
       b.myActive = idx;
     } else {
       b.enActive = idx;
@@ -600,7 +647,11 @@
     var mySpeed = eff(me, 'speed') * (me.frozenSkip ? 1 : 1);
     var foeSpeed = eff(foe, 'speed');
 
-    var order = mySpeed >= foeSpeed ? [['my', mySkill], ['enemy', enemySkill]] : [['enemy', enemySkill], ['my', mySkill]];
+    var myPri = skillPriority(mySkill), foePri = skillPriority(enemySkill);
+    var order;
+    if (myPri !== foePri) order = myPri > foePri ? [['my', mySkill], ['enemy', enemySkill]] : [['enemy', enemySkill], ['my', mySkill]];
+    else order = mySpeed >= foeSpeed ? [['my', mySkill], ['enemy', enemySkill]] : [['enemy', enemySkill], ['my', mySkill]];
+    if (myPri > 0 || foePri > 0) logLine('（先制招式抢先出手）');
     logLine('—— 第 ' + b.turn + ' 回合 ——', 'turn');
 
     for (var i = 0; i < order.length; i++) {
@@ -623,6 +674,7 @@
 
     b.turn++;
     b.busy = false;
+    maybeWeather();
 
     if (aliveIdx(b.my).length === 0) return finish(false);
     if (aliveIdx(b.en).length === 0) return finish(true);
@@ -650,6 +702,10 @@
   }
 
   function chooseAiSkill(attacker, defender) {
+    var level = (state.battle && state.battle.ai) || 'normal';
+    var usable = attacker.skills.filter(function (s) { return s.ppNow > 0; });
+    if (!usable.length) return attacker.skills[0];
+    if (level === 'easy') return pick(usable);
     var best = null, bestScore = -1;
     attacker.skills.forEach(function (s) {
       if (s.ppNow <= 0) return;
@@ -664,12 +720,64 @@
       if (score > bestScore) { bestScore = score; best = s; }
     });
     if (!best) best = attacker.skills[0];
-    // 一点随机性，避免每回合都一样
-    if (Math.random() < 0.15) {
+    // 高难度不随机；普通难度偶尔换招
+    if (level !== 'hard' && Math.random() < 0.15) {
       var alt = pick(attacker.skills.filter(function (s) { return s.ppNow > 0; }));
       if (alt) best = alt;
     }
     return best;
+  }
+
+  /* ---------------- 回放 ---------------- */
+  function buildReplayCode() {
+    var b = state.battle;
+    var payload = {
+      v: 1, at: new Date().toISOString(), ai: b.ai, weather: b.weather,
+      winner: b.winner ? 'my' : 'enemy', turns: b.turn,
+      my: b.my.map(function (m) { return { n: m.name, lv: m.cfg.level, star: m.cfg.star, tal: m.cfg.talent, st: m.cfg.stage, na: m.cfg.nature }; }),
+      en: b.en.map(function (m) { return { n: m.name, lv: m.cfg.level, star: m.cfg.star, tal: m.cfg.talent, st: m.cfg.stage, na: m.cfg.nature }; }),
+      log: b.log.map(function (x) { return x.t; })
+    };
+    try { return btoa(unescape(encodeURIComponent(JSON.stringify(payload)))); } catch (e) { return ''; }
+  }
+
+  function decodeReplay(code) {
+    try { return JSON.parse(decodeURIComponent(escape(atob(code)))); } catch (e) { return null; }
+  }
+
+  function showReplay(data, idx) {
+    var box = document.getElementById('replayLog');
+    if (!box) return;
+    box.innerHTML = '';
+    for (var i = 0; i <= idx && i < data.log.length; i++) {
+      var p = document.createElement('p');
+      p.innerHTML = data.log[i];
+      box.appendChild(p);
+    }
+    box.scrollTop = box.scrollHeight;
+    var lbl = document.getElementById('replayPos');
+    if (lbl) lbl.textContent = (idx + 1) + ' / ' + data.log.length;
+  }
+
+  function startReplayPlayer(data) {
+    document.getElementById('buildView').classList.add('hidden');
+    document.getElementById('battleView').classList.add('hidden');
+    document.getElementById('resultView').classList.add('hidden');
+    var host = document.getElementById('replayView');
+    host.classList.remove('hidden');
+    document.getElementById('step').textContent = '回放 · ' + (data.winner === 'my' ? '我方胜利' : '敌方胜利');
+    document.getElementById('replayHead').textContent =
+      '我方：' + data.my.map(function (x) { return x.n; }).join('、') +
+      '　｜　敌方：' + data.en.map(function (x) { return x.n; }).join('、') +
+      '　｜　' + data.turns + ' 回合 · 天气 ' + data.weather;
+    var idx = 0;
+    showReplay(data, 0);
+    document.getElementById('replayNext').onclick = function () {
+      if (idx < data.log.length - 1) { idx++; showReplay(data, idx); }
+    };
+    document.getElementById('replayAll').onclick = function () {
+      idx = data.log.length - 1; showReplay(data, idx);
+    };
   }
 
   /* ---------------- 初始化 ---------------- */
@@ -706,6 +814,27 @@
           $('step').textContent = '第 1 步 · 组队';
           renderSlots();
         });
+        document.getElementById('copyReplay').addEventListener('click', function () {
+          var v = document.getElementById('replayBox');
+          v.select();
+          try { document.execCommand('copy'); this.textContent = '已复制'; } catch (e) { this.textContent = '请手动复制'; }
+        });
+        document.getElementById('downloadReplay').addEventListener('click', function () {
+          var code = document.getElementById('replayBox').value;
+          var data = decodeReplay(code);
+          var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+          var a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'aoling-battle-' + Date.now() + '.json';
+          a.click();
+        });
+
+        var m = /replay=([^&]+)/.exec(location.hash);
+        if (m) {
+          var data2 = decodeReplay(decodeURIComponent(m[1]));
+          if (data2) startReplayPlayer(data2);
+        }
+
         $('again').addEventListener('click', function () {
           state.battle = null;
           $('resultView').classList.add('hidden');
