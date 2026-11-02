@@ -38,6 +38,12 @@
             <div class="slots" id="enemySlots"></div>
           </div>
         </div>
+        <div class="mode-row">
+          <span class="mode-title">对战模式</span>
+          <button type="button" class="mode-btn on" id="modeSingle">单打 1v1</button>
+          <button type="button" class="mode-btn" id="modeDouble">双打 2v2</button>
+          <span class="mode-now" id="modeLabel">单打（1v1）</span>
+        </div>
         <div class="build-actions">
           <label class="field" style="flex:0 0 220px">
             <span>AI 难度</span>
@@ -74,6 +80,22 @@
         </div>
         <div class="build-actions">
           <button class="big-btn ghost" id="giveUp"><img class="btn-ico" src="/media/ui/fn-potion.webp" alt="">认输并重来</button>
+        </div>
+      </section>
+
+      <!-- 双打 -->
+      <section id="dblView" class="hidden">
+        <div class="weather-badge" id="dblWeather"></div>
+        <div class="dbl-grid">
+          <div class="dbl-side"><div class="dbl-side-title">敌方</div><div class="dbl-cards" id="dblEnemy"></div></div>
+          <div class="dbl-side"><div class="dbl-side-title">我方</div><div class="dbl-cards" id="dblMine"></div></div>
+        </div>
+        <div class="log" id="log2" style="height:190px"></div>
+        <div class="dbl-actions" id="dblActions"></div>
+        <div class="switch-bar" id="dblSwitch" style="margin-top:10px"></div>
+        <div class="build-actions">
+          <button class="big-btn ghost" id="dblGiveUp">认输并重来</button>
+          <button class="big-btn" id="dblConfirm"><img class="btn-ico" src="/media/ui/fn-team.webp" alt="">确认出手</button>
         </div>
       </section>
 

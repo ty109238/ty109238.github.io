@@ -188,3 +188,61 @@ a { color: inherit; }
 .recent-game { font-size: 10.5px; padding: 1px 8px; border-radius: 999px; border: 1px solid #dbe6f0; color: #7b8ea1; }
 .recent-game.win { background: #e9f7ec; border-color: #b6e0c2; color: #1f7a3d; }
 .recent-game.lose { background: #fdecea; border-color: #f3c1b8; color: #a4331f; }
+/* ---------- 模式切换 ---------- */
+.mode-row { display: flex; align-items: center; gap: 8px; margin: 14px 0 4px; flex-wrap: wrap; }
+.mode-title { font-size: 11.5px; font-weight: 800; color: #55677b; margin-right: 4px; }
+.mode-btn {
+  padding: 7px 16px; border: 2px solid var(--ink); border-radius: 999px;
+  background: #fff; font-size: 12.5px; font-weight: 800;
+}
+.mode-btn.on { background: var(--yellow); box-shadow: 3px 3px 0 rgba(38,39,34,.15); }
+.mode-now { font-size: 11.5px; color: #7b8ea1; margin-left: 4px; }
+
+/* ---------- 双打界面 ---------- */
+.dbl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 12px; }
+.dbl-side { border: 2px solid var(--ink); border-radius: 14px; background: #fff; padding: 10px 12px; }
+.dbl-side-title { font-size: 11.5px; font-weight: 900; color: #7b8ea1; letter-spacing: .12em; margin-bottom: 8px; }
+.dbl-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.dbl-card {
+  position: relative; border: 2px solid var(--ink); border-radius: 12px; background: #fbfdff;
+  padding: 8px; text-align: center;
+}
+.dbl-card.dead { opacity: .4; filter: grayscale(1); }
+.dbl-card.empty { display: grid; place-items: center; color: #c6d5e3; font-size: 20px; min-height: 120px; }
+.dbl-card img { width: 68px; height: 68px; object-fit: contain; display: block; margin: 0 auto; }
+.dbl-card b { display: block; font-size: 13px; margin-top: 2px; }
+.dbl-card small { font-size: 10px; color: #7b8ea1; }
+.dbl-tag {
+  position: absolute; top: 5px; left: 5px; padding: 1px 7px; border-radius: 999px;
+  background: var(--ink); color: #fff; font-size: 9.5px; font-weight: 900;
+}
+.dbl-card .hp-bar { height: 7px; }
+.dbl-hp { font-size: 10px; color: #7b8ea1; margin-top: 2px; }
+.dbl-actions { display: grid; gap: 10px; }
+.dbl-row {
+  display: grid; grid-template-columns: 108px minmax(0, 1fr); gap: 10px; align-items: center;
+  border: 2px solid var(--ink); border-radius: 12px; background: #fff; padding: 8px 10px;
+}
+.dbl-name { font-size: 12px; font-weight: 900; color: #55677b; }
+.dbl-skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.dbl-skills .skill-btn { padding: 7px 8px; }
+.dbl-skills .skill-btn.picked { border-color: var(--pink); background: #fff5fa; box-shadow: 0 0 0 2px #ffd6e8; }
+.skill-btn .tgt {
+  position: absolute; top: 6px; right: 8px; font-size: 9.5px; font-weight: 900;
+  padding: 1px 6px; border-radius: 999px; background: #ffeb85; color: #5b4708;
+}
+.dbl-skills .skill-btn { position: relative; }
+@media (max-width: 900px) {
+  .dbl-grid { grid-template-columns: 1fr; }
+  .dbl-row { grid-template-columns: 1fr; }
+  .dbl-skills { grid-template-columns: 1fr 1fr; }
+}
+/* 目标角标放右下，避免压住 PP */
+.skill-btn .tgt {
+  top: auto !important;
+  right: 6px !important;
+  bottom: 5px !important;
+  font-size: 9px !important;
+  padding: 0 5px !important;
+}
+.dbl-skills .skill-btn { padding-bottom: 18px !important; }

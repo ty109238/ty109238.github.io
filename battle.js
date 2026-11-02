@@ -524,12 +524,12 @@
     var b = state.battle;
     if (!b) return;
     b.log.push({ t: text, c: cls || '' });
-    var box = $('log');
-    if (!box) return;
-    var p = el('p', cls || '');
-    p.innerHTML = text;
-    box.appendChild(p);
-    box.scrollTop = box.scrollHeight;
+    document.querySelectorAll('.log').forEach(function (box) {
+      var p = el('p', cls || '');
+      p.innerHTML = text;
+      box.appendChild(p);
+      box.scrollTop = box.scrollHeight;
+    });
   }
 
   function aliveIdx(team) {
@@ -580,7 +580,7 @@
     if (/护盾|守护|抵挡/.test(d)) target.shield += Math.floor(mon.maxHp * 0.25);
   }
 
-  function useSkill(user, foe, s) {
+  function useSkill(user, foe, s, dmgMult) {
     if (s.ppNow <= 0) { logLine(user.name + ' 的技能没有 PP 了。'); return; }
     s.ppNow--;
     var label = '<b>' + user.name + '</b> 使用 <b>' + s.name + '</b>。';
@@ -608,7 +608,7 @@
     }
 
     var r = calcDamage(user, foe, s);
-    var dmg = r.dmg;
+    var dmg = Math.max(1, Math.floor(r.dmg * (dmgMult || 1)));
     if (foe.shield > 0) {
       var absorbed = Math.min(foe.shield, dmg);
       foe.shield -= absorbed;
@@ -952,6 +952,246 @@
     };
   }
 
+  /* ---------------- 双打 ---------------- */
+  var dbl = { on: false, b: null, pick: [null, null], target: [0, 0] };
+
+  function setMode(on) {
+    dbl.on = on;
+    var t = document.getElementById('modeLabel');
+    if (t) t.textContent = on ? '双打（2v2）' : '单打（1v1）';
+    var b1 = document.getElementById('modeSingle');
+    var b2 = document.getElementById('modeDouble');
+    if (b1 && b2) { b1.classList.toggle('on', !on); b2.classList.toggle('on', on); }
+  }
+
+  function startDoubles() {
+    var b = {
+      mode: 'double',
+      my: state.my.map(function (cfg, i) { return makeMon(cfg, 'my', i); }),
+      en: state.enemy.map(function (cfg, i) { return makeMon(cfg, 'enemy', i); }),
+      mySlots: [0, 1], enSlots: [0, 1],
+      turn: 1, log: [], over: false, busy: false, awaiting: false,
+      weather: '晴朗', winner: null,
+      ai: (document.getElementById('aiLevel') && document.getElementById('aiLevel').value) || 'normal'
+    };
+    dbl.b = b;
+    state.battle = b;          // 共享函数（天气/日志）读这个
+    dbl.pick = [null, null];
+    dbl.target = [0, 0];
+    document.getElementById('buildView').classList.add('hidden');
+    document.getElementById('battleView').classList.add('hidden');
+    document.getElementById('dblView').classList.remove('hidden');
+    document.getElementById('step').textContent = '第 2 步 · 双打 · 第 1 回合';
+    logLine('双打对战开始！', 'turn');
+    logLine('我方 ' + b.my[0].name + ' + ' + b.my[1].name + '　VS　' + b.en[0].name + ' + ' + b.en[1].name);
+    logLine('天气：<b>' + b.weather + '</b>（' + WEATHERS[b.weather].desc + '）');
+    renderDoubles();
+  }
+
+  function dblMon(side, slot) {
+    var b = dbl.b;
+    var idx = (side === 'my' ? b.mySlots : b.enSlots)[slot];
+    return (side === 'my' ? b.my : b.en)[idx];
+  }
+
+  function dblAliveSlot(side) {
+    var b = dbl.b;
+    var slots = side === 'my' ? b.mySlots : b.enSlots;
+    return slots.map(function (_, s) { return s; }).filter(function (s) { return dblMon(side, s) && !dblMon(side, s).fainted; });
+  }
+
+  function dblCard(m, tag) {
+    if (!m) return '<div class="dbl-card empty">—</div>';
+    var src = DATA.images[m.cfg.c.imageKey] || '';
+    var pct = Math.max(0, (m.hp / m.maxHp) * 100);
+    var st = Object.keys(m.status).map(function (k) { return '<span class="chip bad">' + k + '</span>'; }).join('');
+    if (m.shield > 0) st += '<span class="chip good">盾 ' + m.shield + '</span>';
+    var buffs = Object.keys(m.buffs).filter(function (k) { return m.buffs[k] !== 0; })
+      .map(function (k) { return '<span class="chip">' + STAT_LABEL[k] + (m.buffs[k] > 0 ? '+' : '') + m.buffs[k] + '</span>'; }).join('');
+    return '<div class="dbl-card' + (m.fainted ? ' dead' : '') + '">' +
+      '<span class="dbl-tag">' + tag + '</span>' +
+      '<img src="' + src + '" alt="">' +
+      '<b>' + m.name + '</b><small>Lv.' + m.cfg.level + ' · ' + m.element + '系</small>' +
+      '<div class="hp-bar' + (pct < 30 ? ' low' : '') + '"><i style="width:' + pct + '%"></i></div>' +
+      '<div class="dbl-hp">' + m.hp + ' / ' + m.maxHp + '</div>' +
+      '<div class="st-line">' + st + buffs + '</div></div>';
+  }
+
+  function renderDoubles() {
+    var b = dbl.b;
+    if (!b) return;
+    document.getElementById('dblEnemy').innerHTML = dblCard(dblMon('enemy', 0), '敌A') + dblCard(dblMon('enemy', 1), '敌B');
+    document.getElementById('dblMine').innerHTML = dblCard(dblMon('my', 0), '我A') + dblCard(dblMon('my', 1), '我B');
+    var wb = document.getElementById('dblWeather');
+    if (wb) wb.innerHTML = '天气 <b>' + b.weather + '</b> · ' + WEATHERS[b.weather].desc;
+    document.getElementById('step').textContent = '第 2 步 · 双打 · 第 ' + b.turn + ' 回合';
+
+    var host = document.getElementById('dblActions');
+    host.innerHTML = '';
+    [0, 1].forEach(function (slot) {
+      var m = dblMon('my', slot);
+      var row = el('div', 'dbl-row');
+      var name = ['我A', '我B'][slot];
+      if (!m || m.fainted) { row.innerHTML = '<span class="dbl-name">' + name + '（已倒下）</span>'; host.appendChild(row); return; }
+      row.appendChild(el('span', 'dbl-name', name + ' · ' + m.name));
+      var skRow = el('div', 'dbl-skills');
+      m.skills.forEach(function (s, i) {
+        var btn = el('button', 'skill-btn' + (dbl.pick[slot] === i ? ' picked' : ''));
+        var spread = /范围|全体|领域/.test(s.description || '');
+        var tgt = spread ? 'A+B' : (dbl.target[slot] === 0 ? 'A' : 'B');
+        btn.innerHTML = '<span class="pp">PP ' + s.ppNow + '</span><b>' + s.name + '</b>' +
+          '<small>' + s.type + '系 · ' + skillCat(s) + ' · ' + (s.power ? '威力 ' + s.power : '变化') + '</small>' +
+          '<span class="tgt">' + tgt + '</span>';
+        btn.disabled = s.ppNow <= 0 || b.busy;
+        btn.addEventListener('click', function (e) {
+          if (dbl.pick[slot] === i && !spread) {
+            dbl.target[slot] = dbl.target[slot] === 0 ? 1 : 0;
+          } else {
+            dbl.pick[slot] = i;
+          }
+          renderDoubles();
+        });
+        skRow.appendChild(btn);
+      });
+      row.appendChild(skRow);
+      host.appendChild(row);
+    });
+
+    var sw = document.getElementById('dblSwitch');
+    sw.innerHTML = '';
+    b.my.forEach(function (m, i) {
+      if (b.mySlots.indexOf(i) >= 0 || m.fainted) return;
+      var btn = el('button', 'switch-btn', m.name + ' · ' + m.hp + '/' + m.maxHp);
+      btn.disabled = b.busy;
+      btn.addEventListener('click', function () { dblSwitchIn(i); });
+      sw.appendChild(btn);
+    });
+  }
+
+  function dblSwitchIn(idx) {
+    var b = dbl.b;
+    if (b.busy) return;
+    var slot = b.mySlots.findIndex(function (i) { var m = b.my[i]; return m && m.fainted; });
+    if (slot < 0) { logLine('场上没有空位，无法换人。'); return; }
+    logLine('换上 <b>' + b.my[idx].name + '</b>。');
+    b.mySlots[slot] = idx;
+    renderDoubles();
+  }
+
+  function dblConfirm() {
+    var b = dbl.b;
+    if (b.busy || b.over) return;
+    var acts = [];
+    [0, 1].forEach(function (slot) {
+      var m = dblMon('my', slot);
+      if (!m || m.fainted) return;
+      var si = dbl.pick[slot];
+      var s = si == null ? null : m.skills[si];
+      if (!s || s.ppNow <= 0) {
+        var first = m.skills.filter(function (x) { return x.ppNow > 0; })[0] || STRUGGLE;
+        s = first;
+      }
+      acts.push({ side: 'my', slot: slot, mon: m, skill: s, target: dbl.target[slot] });
+    });
+    b.enSlots.forEach(function (_, slot) {
+      var m = dblMon('enemy', slot);
+      if (!m || m.fainted) return;
+      var s = chooseAiSkill(m, dblMon('my', 0) || m);
+      acts.push({ side: 'enemy', slot: slot, mon: m, skill: s, target: Math.random() < 0.5 ? 0 : 1 });
+    });
+
+    acts.sort(function (a, c) {
+      var pa = skillPriority(a.skill), pc = skillPriority(c.skill);
+      if (pa !== pc) return pc - pa;
+      return eff(c.mon, 'speed') - eff(a.mon, 'speed');
+    });
+
+    b.busy = true;
+    logLine('—— 第 ' + b.turn + ' 回合 ——', 'turn');
+    acts.forEach(function (a) {
+      if (b.over) return;
+      if (a.mon.fainted) return;
+      var foeSide = a.side === 'my' ? 'enemy' : 'my';
+      var foe = dblMon(foeSide, a.target) || dblMon(foeSide, 1 - a.target);
+      if (!foe || foe.fainted) foe = (foeSide === 'my' ? b.my : b.en).filter(function (m) { return !m.fainted; })[0];
+      if (!foe) return;
+      if (a.mon.status['冰冻'] && Math.random() < 0.3) { logLine(a.mon.name + ' 被冻住了。'); return; }
+      var spread = /范围|全体|领域/.test(a.skill.description || '');
+      if (spread) {
+        [0, 1].forEach(function (s2) {
+          var t2 = dblMon(foeSide, s2);
+          if (t2 && !t2.fainted) useSkill(a.mon, t2, a.skill, 0.75);
+        });
+      } else {
+        useSkill(a.mon, foe, a.skill);
+      }
+    });
+
+    endOfTurn(b.my); endOfTurn(b.en);
+    dblCheckFaint();
+    b.turn++;
+    b.busy = false;
+    dbl.pick = [null, null];
+    if (b.turn > 100) { finishDraw(); return; }
+    maybeWeather();
+    if (dblAliveSlot('my').length === 0) return dblFinish(false);
+    if (dblAliveSlot('enemy').length === 0) return dblFinish(true);
+    // 自动补位
+    ['my', 'enemy'].forEach(function (side) {
+      var b2 = dbl.b;
+      var slots = side === 'my' ? b2.mySlots : b2.enSlots;
+      var team = side === 'my' ? b2.my : b2.en;
+      slots.forEach(function (idx, s) {
+        if (team[idx] && !team[idx].fainted) return;
+        var next = team.map(function (m, i) { return { m: m, i: i }; })
+          .filter(function (x) { return !x.m.fainted && slots.indexOf(x.i) < 0; })[0];
+        if (next) {
+          slots[s] = next.i;
+          logLine((side === 'my' ? '我方换上 ' : '敌方换上 ') + '<b>' + next.m.name + '</b>。');
+        }
+      });
+    });
+    renderDoubles();
+  }
+
+  function dblCheckFaint() {
+    var b = dbl.b;
+    ['my', 'enemy'].forEach(function (side) {
+      var team = side === 'my' ? b.my : b.en;
+      var slots = side === 'my' ? b.mySlots : b.enSlots;
+      slots.forEach(function (i) {
+        var m = team[i];
+        if (m && m.hp <= 0 && !m.fainted) {
+          m.fainted = true;
+          logLine('<b>' + m.name + '</b> 倒下了。', 'turn');
+          if (m.effects && m.effects.onFaint) applyFaintTrait(m, side);
+        }
+      });
+    });
+  }
+
+  function dblFinish(win) {
+    var b = dbl.b;
+    b.over = true;
+    b.winner = win;
+    var rec = loadRecord();
+    rec.games++;
+    if (win) { rec.wins++; rec.streak++; if (rec.streak > rec.best) rec.best = rec.streak; }
+    else { rec.streak = 0; }
+    rec.recent = (rec.recent || []).slice(-4);
+    rec.recent.push({ w: win ? 1 : 0, t: b.turn, we: b.weather, at: Date.now() });
+    saveRecord(rec);
+
+    document.getElementById('dblView').classList.add('hidden');
+    document.getElementById('resultView').classList.remove('hidden');
+    document.getElementById('step').textContent = '对战结束';
+    document.getElementById('resultTitle').innerHTML = win ? '<span class="win">胜利！</span>' : '<span class="lose">惜败…</span>';
+    document.getElementById('resultSub').textContent = '双打 · 共 ' + b.turn + ' 回合 · 天气 ' + b.weather;
+    b.replayCode = buildReplayCode();
+    var rv = document.getElementById('replayBox');
+    if (rv) { rv.value = b.replayCode; document.getElementById('replayArea').classList.remove('hidden'); }
+  }
+
   /* ---------------- 初始化 ---------------- */
   function boot() {
     fetch('/data/content.json?t=' + Date.now(), { cache: 'no-store' })
@@ -974,13 +1214,24 @@
           renderSlots();
         });
         $('myRandom').addEventListener('click', function () { randomTeam('my'); });
+        var m1 = document.getElementById('modeSingle');
+        var m2 = document.getElementById('modeDouble');
+        if (m1) m1.addEventListener('click', function () { setMode(false); });
+        if (m2) m2.addEventListener('click', function () { setMode(true); });
+        var conf = document.getElementById('dblConfirm');
+        if (conf) conf.addEventListener('click', dblConfirm);
+        var dg = document.getElementById('dblGiveUp');
+        if (dg) dg.addEventListener('click', function () { if (!confirm('确定认输吗？')) return; document.getElementById('dblView').classList.add('hidden'); document.getElementById('buildView').classList.remove('hidden'); setMode(false); });
         $('enemyRandom').addEventListener('click', function () { randomTeam('enemy'); });
         $('clearAll').addEventListener('click', function () {
           state.my = new Array(6).fill(null);
           state.enemy = new Array(6).fill(null);
           renderSlots();
         });
-        $('startBattle').addEventListener('click', function () { saveTeam(); startBattle(); });
+        $('startBattle').addEventListener('click', function () {
+          saveTeam();
+          if (dbl.on) startDoubles(); else startBattle();
+        });
         $('giveUp').addEventListener('click', function () {
           if (!confirm('确定认输并返回组队吗？本局不算胜利。')) return;
           state.battle = null;
