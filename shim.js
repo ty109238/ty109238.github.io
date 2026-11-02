@@ -1042,6 +1042,10 @@
         img.src = '/media/ui/ui-author.webp';
         img.alt = '';
         a.insertBefore(img, a.firstChild);
+        [].slice.call(a.querySelectorAll('svg')).forEach(function (svg) { svg.remove(); });
+      }
+      if (t.indexOf('作者入口') === 0) {
+        [].slice.call(a.querySelectorAll('svg')).forEach(function (svg) { svg.remove(); });
       }
     }
   }
