@@ -6,6 +6,15 @@
   var ELEM_ICON = { 火: 'fire', 水: 'water', 草: 'grass', 冰: 'ice', 土: 'rock', 钢: 'steel', 风: 'wind', 光: 'light', 暗: 'dark', 雷: 'thunder' };
   var state = { cat: '全部', elem: '全部', book: '全部', q: '', sort: 'power' };
 
+  function loadBooks() {
+    try { return new Set(JSON.parse(localStorage.getItem('dex:books') || '[]')); }
+    catch (e) { return new Set(); }
+  }
+  function saveBooks(set) {
+    try { localStorage.setItem('dex:books', JSON.stringify([].slice.call(set))); } catch (e) {}
+  }
+  var owned = loadBooks();
+
   function $(id) { return document.getElementById(id); }
 
   function categoryOf(s) {
@@ -74,7 +83,7 @@
   function renderFilters() {
     var cats = ['全部', '物攻', '特攻', '防御', '辅助'];
     var elems = ['全部', '火', '水', '草', '冰', '土', '钢', '风', '光', '暗', '雷'];
-    var books = ['全部', '直接可用', '需技能书'];
+    var books = ['全部', '直接可用', '需技能书', '已获得', '未获得'];
     chips($('fCat'), cats, state.cat, function (v) { state.cat = v; renderFilters(); renderGrid(); });
     chips($('fElem'), elems, state.elem, function (v) { state.elem = v; renderFilters(); renderGrid(); });
     chips($('fBook'), books, state.book, function (v) { state.book = v; renderFilters(); renderGrid(); });
@@ -87,6 +96,8 @@
       if (state.elem !== '全部' && s.type !== state.elem) return false;
       if (state.book === '需技能书' && !s.book) return false;
       if (state.book === '直接可用' && s.book) return false;
+      if (state.book === '已获得' && !(s.book && owned.has(s.name))) return false;
+      if (state.book === '未获得' && !(s.book && !owned.has(s.name))) return false;
       if (q && (s.name + s.desc + s.owner).toLowerCase().indexOf(q) < 0) return false;
       return true;
     });
@@ -102,7 +113,8 @@
       card.className = 'sk-card';
       card.innerHTML =
         '<h3><img src="/media/ui/elem-' + (ELEM_ICON[s.type] || 'fire') + '.webp" alt="">' + s.name +
-        (s.book ? '<span class="sk-book">技能书</span>' : '') + '</h3>' +
+        (s.book ? '<button type="button" class="sk-book' + (owned.has(s.name) ? ' got' : '') +
+          '" data-name="' + s.name + '">' + (owned.has(s.name) ? '已获得' : '需技能书') + '</button>' : '') + '</h3>' +
         '<div class="sk-meta">' +
         '<span class="' + catClass(s.cat) + '">' + s.cat + '技能</span>' +
         '<span>' + s.type + '系</span>' +
@@ -116,7 +128,17 @@
       frag.appendChild(card);
     });
     grid.appendChild(frag);
-    $('count').textContent = '共 ' + LIST.length + ' 个技能 · 当前 ' + out.length + ' 个';
+    var bookTotal = LIST.filter(function (x) { return x.book; }).length;
+    $('count').textContent = '共 ' + LIST.length + ' 个技能 · 当前 ' + out.length +
+      ' 个 · 技能书 ' + owned.size + '/' + bookTotal;
+    grid.querySelectorAll('.sk-book').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var nm = btn.getAttribute('data-name');
+        if (owned.has(nm)) owned.delete(nm); else owned.add(nm);
+        saveBooks(owned);
+        renderGrid();
+      });
+    });
     $('empty').hidden = out.length > 0;
   }
 

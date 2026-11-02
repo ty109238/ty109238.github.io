@@ -75,3 +75,13 @@ body {
   .sp-grid { grid-template-columns: 1fr; }
   .sp-top h1 { font-size: 17px; }
 }
+
+/* 技能书按钮 */
+.sk-book {
+  font: inherit; font-size: 9.5px; font-weight: 900;
+  padding: 2px 9px; border-radius: 999px; cursor: pointer;
+  background: #ffe9f3; color: #b3157a; border: 1px solid #ffc2de;
+}
+.sk-book:hover { background: #ffd6e8; }
+.sk-book.got { background: #e9f7ec; color: #1f7a3d; border-color: #b6e0c2; }
+.sk-card:has(.sk-book:not(.got)) { opacity: .92; }
