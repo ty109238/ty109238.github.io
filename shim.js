@@ -834,6 +834,7 @@
             '<b class="train-val" data-v="nature">' + st.nature + '</b>' +
           '</div>' +
           '<div class="nature-rec">' + recChips + '</div>' +
+          '<p class="nature-effect" data-k="natureEffect"></p>' +
         '</div>' +
       '</div>';
 
@@ -853,6 +854,17 @@
       sec.querySelector('[data-v="star"]').textContent = star + ' ★';
       sec.querySelector('[data-v="stage"]').textContent = stage + ' 阶';
       sec.querySelector('[data-v="nature"]').textContent = nat;
+      var natObj = findNature(nat);
+      var effLine = sec.querySelector('[data-k="natureEffect"]');
+      if (effLine) {
+        if (natObj && natObj.up && NATURE_SKILL[natObj.up]) {
+          effLine.textContent = '✦ ' + nat + '：' + NATURE_SKILL[natObj.up].label + '（已计入技能威力）';
+        } else if (natObj && natObj.special) {
+          effLine.textContent = '✦ ' + nat + '：' + natObj.special + '（不影响技能威力）';
+        } else {
+          effLine.textContent = '';
+        }
+      }
       var nb = baseWithNature(c, nat);
       var pw = calcPower(nb, p);
       sec.querySelector('.power-num').textContent = pw.toLocaleString('en-US');
@@ -1355,6 +1367,33 @@
     return out;
   }
 
+  /* 技能与性格 / 养成的联动 */
+  var NATURE_SKILL = {
+    attack: { cats: ['物理'], mult: 1.10, label: '物理技能 +10%' },
+    spAttack: { cats: ['特殊'], mult: 1.10, label: '特殊技能 +10%' },
+    defense: { cats: [], mult: 1.00, label: '受到物理伤害 -10%' },
+    spDefense: { cats: [], mult: 1.00, label: '受到特殊伤害 -10%' },
+    speed: { cats: ['变化'], mult: 1.15, label: '变化技能效果 +15%' }
+  };
+  var TALENT_SKILL = [0.95, 0.98, 1.00, 1.02, 1.05, 1.08, 1.12, 1.16, 1.20];
+
+  function natureSkillBonus(natureName, category) {
+    var nat = findNature(natureName);
+    if (!nat || !nat.up) return { mult: 1, label: '' };
+    var rule = NATURE_SKILL[nat.up];
+    if (!rule) return { mult: 1, label: '' };
+    var hit = rule.cats.indexOf(category) >= 0;
+    return { mult: hit ? rule.mult : 1, label: rule.label };
+  }
+
+  function trainSkillMult(st) {
+    var lvl = 1 + (st.level - 1) * 0.004;
+    var star = 1 + (st.star - 1) * 0.03;
+    var stage = 1 + (st.stage - 1) * 0.05;
+    var talent = TALENT_SKILL[st.talent] || 1;
+    return { mult: lvl * star * stage * talent, lvl: lvl, star: star, stage: stage, talent: talent };
+  }
+
   function syncSkillMeta(c) {
     var sec = document.querySelector('.skills-section');
     if (!sec || !c) return;
@@ -1376,7 +1415,18 @@
       chips.push('<span class="sm-type"><img src="' + typeIco + '" alt="" width="16" height="16">' + s.type + '系</span>');
       chips.push('<span class="sm-cat sm-' + (s.category === '物理' ? 'phys' : s.category === '特殊' ? 'spec' : 'stat') + '">' + s.category + '</span>');
       if (s.role) chips.push('<span class="sm-role">' + s.role + '</span>');
-      chips.push('<span class="sm-num">威力 <b>' + (s.power == null ? '—' : s.power) + '</b></span>');
+      if (s.power == null) {
+        chips.push('<span class="sm-num">威力 <b>—</b></span>');
+      } else {
+        var stNow = loadTrain(c.id, c);
+        var nb = natureSkillBonus(stNow.nature, s.category);
+        var tb = trainSkillMult(stNow);
+        var eff = Math.round(s.power * nb.mult * tb.mult);
+        var tip = '基础 ' + s.power + '｜性格 ' + stNow.nature + ' ×' + nb.mult.toFixed(2) +
+          '｜等级 ×' + tb.lvl.toFixed(2) + '｜星级 ×' + tb.star.toFixed(2) +
+          '｜阶段 ×' + tb.stage.toFixed(2) + '｜天赋 ×' + tb.talent.toFixed(2);
+        chips.push('<span class="sm-num sm-eff" title="' + tip + '">威力 <b>' + s.power + '</b> → <b class="eff">' + eff + '</b></span>');
+      }
       chips.push('<span class="sm-num">命中 <b>' + (s.accuracy == null ? (s.category === '变化' ? '—' : '必中') : s.accuracy) + '</b></span>');
       chips.push('<span class="sm-lv">Lv.' + s.learnLevel + '</span>');
 

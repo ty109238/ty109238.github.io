@@ -810,3 +810,19 @@ html.hide-studio .studio-section { display: none !important; }
   border-color: #d7c5ee;
   color: #6a4a92;
 }
+/* 技能：生效威力 */
+.skill-meta .sm-eff b.eff { color: var(--pink); font-size: 13px; }
+.skill-meta .sm-eff b:first-child { color: #8ea3b8; font-weight: 700; }
+
+/* 养成面板：性格对技能的影响 */
+.nature-effect {
+  margin: 6px 0 0;
+  padding: 7px 12px;
+  border-radius: 10px;
+  background: #f7f2ff;
+  border: 1px dashed #d7c5ee;
+  font-size: 12px;
+  color: #6a4a92;
+  line-height: 1.6;
+}
+.nature-effect:empty { display: none; }
