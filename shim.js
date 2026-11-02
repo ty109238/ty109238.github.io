@@ -1069,9 +1069,9 @@
     if (document.querySelector('.mobile-nav')) return;
     if (!DATA) return;
     var items = [
-      { k: 'fn-mainline', t: '首页', href: '/' },
+      { k: 'fn-home', t: '首页', href: '/' },
       { k: 'fn-dex', t: '图鉴', href: '/' },
-      { k: 'fn-team', t: '对战', href: '/battle.html' },
+      { k: 'fn-arena', t: '对战', href: '/battle.html' },
       { k: 'fn-bag', t: '收藏', href: '/favs.html' },
       { k: 'fn-explore', t: '搜索', act: 'search' }
     ];
@@ -1097,13 +1097,13 @@
     if (!DATA) return;
     if (document.getElementById('battleView')) return;
     var items = [
-      { k: 'fn-mainline', t: '回到首页', href: '/' },
+      { k: 'fn-home', t: '回到首页', href: '/' },
       { k: 'fn-quest', t: '公告', act: 'notice' },
       { k: 'fn-explore', t: '搜索灵宠', act: 'search' },
       { k: 'fn-research', t: '属性克制', href: '/types.html' },
       { k: 'fn-guild', t: '家族图鉴', href: '/family.html' },
-      { k: 'fn-evo-stone', t: '孵化手册', href: '/eggs.html' },
-      { k: 'fn-team', t: '战斗模拟', href: '/battle.html' },
+      { k: 'fn-egg', t: '孵化手册', href: '/eggs.html' },
+      { k: 'fn-arena', t: '战斗模拟', href: '/battle.html' },
       { k: 'fn-bag', t: '我的收藏', href: '/favs.html' }
     ];
     var rail = document.createElement('nav');
@@ -1130,12 +1130,12 @@
     var anchor = document.querySelector('.catalog-section');
     if (!anchor || !anchor.parentElement) return;
     var items = [
-      { href: '/eggs.html', t: '孵化手册', d: '28 个家族的蛋形态', k: 'fn-evo-stone' },
-      { href: '/types.html', t: '属性克制', d: '十系完整对照表', k: 'fn-arena' },
+      { href: '/eggs.html', t: '孵化手册', d: '28 个家族的蛋形态', k: 'fn-egg' },
+      { href: '/types.html', t: '属性克制', d: '十系完整对照表', k: 'fn-research' },
       { href: '/family.html', t: '家族图鉴', d: '28 个家族总览', k: 'fn-guild' },
-      { href: '/battle.html', t: '战斗模拟', d: '六对六回合制对战', k: 'fn-team' },
+      { href: '/battle.html', t: '战斗模拟', d: '六对六回合制对战', k: 'fn-arena' },
       { href: '/favs.html', t: '我的收藏', d: '你标星过的灵宠', k: 'fn-bag' },
-      { href: '/studio.html', t: '工作室', d: '制作团队与手记', k: 'fn-shop' }
+      { href: '/studio.html', t: '工作室', d: '制作团队与手记', k: 'studio-logo' }
     ];
     var strip = document.createElement('nav');
     strip.className = 'site-links';
