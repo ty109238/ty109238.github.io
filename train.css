@@ -1130,3 +1130,31 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   display: block !important;
   background: none !important;
 }
+/* 去掉特性卡片的红底/蓝底（图标背后的底保持无） */
+.traits-list,
+.traits-list .trait-entry,
+.trait-entry,
+.trait-entry > div,
+.trait-entry > span,
+.trait-entry h3,
+.trait-entry p,
+.trait-entry small {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+.trait-entry {
+  border: 0 !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 6px 0 !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+.trait-entry::before,
+.trait-entry::after {
+  display: none !important;
+  content: none !important;
+}
+.traits-list { display: grid !important; gap: 10px !important; }
