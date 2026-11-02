@@ -1312,9 +1312,11 @@
       { href: '/family.html', t: '家族图鉴', d: '28 个家族总览', k: 'ui-family' },
       { href: '/battle.html', t: '战斗模拟', d: '六对六回合制对战', k: 'fn-arena' },
       { href: '/skills.html', t: '技能池', d: '全站 600+ 招式', k: 'ui-skillpool' },
-      { href: '/favs.html', t: '我的收藏', d: '你标星过的灵宠', k: 'fn-bag' },
-      { href: '/studio.html', t: '工作室', d: '制作团队与手记', k: 'studio-logo' }
+      { href: '/favs.html', t: '我的收藏', d: '你标星过的灵宠', k: 'fn-bag' }
     ];
+    if (!currentCreatureId()) {
+      items.push({ href: '/studio.html', t: '工作室', d: '制作团队与手记', k: 'studio-logo' });
+    }
     var strip = document.createElement('nav');
     strip.className = 'site-links';
     strip.innerHTML = items.map(function (x) {
