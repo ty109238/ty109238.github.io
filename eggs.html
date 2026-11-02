@@ -57,14 +57,28 @@
             html += '<section class="fam" style="--element-color:' + (COLORS[el] || '#b9c6d4') + ';--element-soft:' + (SOFT[el] || '#f7fbff') + '">';
             html += '<div class="fam-head"><h3>' + fam + '</h3><span>' + list.length + ' 只 · ' + el + '系</span></div>';
             if (intro) html += '<p class="fam-intro">' + intro + '</p>';
-            html += '<div class="eggs">';
+            // 同一条进化线共用一阶的蛋：按蛋分组，一张蛋卡列出共用的灵宠
+            var groups = {};
+            var order = [];
             list.forEach(function (c) {
-              var img = c.eggKey && data.images[c.eggKey] ? '<img src="' + data.images[c.eggKey] + '" alt="' + c.name + ' 蛋形态" loading="lazy">'
+              var k = c.eggKey || ('__none_' + c.id);
+              if (!groups[k]) { groups[k] = []; order.push(k); }
+              groups[k].push(c);
+            });
+            html += '<div class="eggs">';
+            order.forEach(function (k) {
+              var members = groups[k];
+              var first = members[0];
+              var img = data.images[k] ? '<img src="' + data.images[k] + '" alt="' + first.name + ' 蛋形态" loading="lazy">'
                 : '<div class="ph">待补充配图</div>';
-              var note = c.eggNote || '';
-              html += '<a class="egg" href="/creature/' + c.id + '" style="text-decoration:none;color:inherit">' +
-                img + '<b>' + c.name + '</b><small>No.' + String(c.dexNo).padStart(3, '0') + ' · ' + c.stage + '</small>' +
-                (note ? '<p class="note">' + note + '</p>' : '') + '</a>';
+              var names = members.map(function (m) {
+                return '<a class="egg-link" href="/creature/' + m.id + '">' + m.name + '<em>' + m.stage + '</em></a>';
+              }).join('');
+              var note = (members.length > 1 ? '二三阶共用这枚蛋 · ' : '') + (members[0].eggNote || '');
+              html += '<div class="egg">' + img +
+                '<b>' + first.name + (members.length > 1 ? ' 等 ' + members.length + ' 只' : '') + '</b>' +
+                '<div class="egg-members">' + names + '</div>' +
+                (note ? '<p class="note">' + note + '</p>' : '') + '</div>';
             });
             html += '</div></section>';
           });
