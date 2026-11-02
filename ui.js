@@ -175,7 +175,7 @@
     fav.type = 'button';
     fav.className = 'nav-link nav-btn';
     fav.setAttribute('data-role', 'fav');
-    fav.innerHTML = '<img class="ui-ico" src="/media/ui/fn-bag.webp" alt=""><span>收藏</span>';
+    fav.innerHTML = '<img class="ui-ico" src="/media/ui/ui-fav.webp" alt=""><span>收藏</span>';
     fav.addEventListener('click', function () { location.href = '/favs.html'; });
 
     var gear = document.createElement('button');

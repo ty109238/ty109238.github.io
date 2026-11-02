@@ -1043,3 +1043,19 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
 .skill-tip b { display: block; font-size: 13.5px; color: #262722; margin-bottom: 2px; }
 .skill-tip .tip-meta { font-size: 10.5px; color: #7b8ea1; margin-bottom: 5px; }
 .skill-tip p { margin: 0; }
+/* ---------- 新补充 UI：板块图标 ---------- */
+.record-heading h2 .sec-ico,
+.record-heading .sec-ico {
+  width: 34px; height: 34px;
+  object-fit: contain;
+  vertical-align: -8px;
+  margin-right: 10px;
+}
+.sm-role { display: none; }
+.slot-ico {
+  width: 22px; height: 22px;
+  object-fit: contain;
+  vertical-align: -6px;
+  margin-right: 2px;
+}
+.skill-meta .slot-ico { opacity: .95; }

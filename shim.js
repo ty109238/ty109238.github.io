@@ -1020,6 +1020,58 @@
     }
   }
 
+  /* ---------- 板块标题图标 ---------- */
+  var SEC_ICONS = {
+    '蛋形态': 'ui-hatchcond',
+    '孵化条件': 'ui-hatchcond',
+    '种族值': 'ui-radar',
+    '相遇与出战': 'ui-catch',
+    '技能手册': null
+  };
+  var ELEM_ICON = { 火: 'fire', 水: 'water', 草: 'grass', 冰: 'ice', 土: 'rock', 钢: 'steel', 风: 'wind', 光: 'light', 暗: 'dark', 雷: 'thunder' };
+
+  function syncHeaderIcons() {
+    var head = document.querySelector('header') || document.body;
+    var links = head.querySelectorAll('a');
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      if (a.querySelector('.ui-ico')) continue;
+      var t = a.textContent.replace(/\s/g, '');
+      if (t.indexOf('作者入口') === 0) {
+        var img = document.createElement('img');
+        img.className = 'ui-ico';
+        img.src = '/media/ui/ui-author.webp';
+        img.alt = '';
+        a.insertBefore(img, a.firstChild);
+      }
+    }
+  }
+
+  function syncSectionIcons() {
+    var id = currentCreatureId();
+    if (!id || !DATA) return;
+    var c = null;
+    for (var i = 0; i < DATA.creatures.length; i++) if (DATA.creatures[i].id === id) { c = DATA.creatures[i]; break; }
+    if (!c) return;
+    var heads = document.querySelectorAll('.record-heading');
+    for (var h = 0; h < heads.length; h++) {
+      var el = heads[h];
+      if (el.querySelector('.sec-ico')) continue;
+      var titleEl = el.querySelector('h2');
+      if (!titleEl) continue;
+      var title = titleEl.textContent.trim();
+      var icon = null;
+      if (title.indexOf('被动特性') >= 0) icon = 'trait-' + (ELEM_ICON[c.element] || 'fire');
+      else if (SEC_ICONS[title]) icon = SEC_ICONS[title];
+      if (!icon) continue;
+      var img = document.createElement('img');
+      img.className = 'sec-ico';
+      img.src = '/media/ui/' + icon + '.webp';
+      img.alt = '';
+      titleEl.parentNode.insertBefore(img, titleEl);
+    }
+  }
+
   /* ---------- 详情页：右侧目录 ---------- */
   function syncToc() {
     var id = currentCreatureId();
@@ -1072,7 +1124,7 @@
       { k: 'fn-home', t: '首页', href: '/' },
       { k: 'fn-dex', t: '图鉴', href: '/' },
       { k: 'fn-arena', t: '对战', href: '/battle.html' },
-      { k: 'fn-bag', t: '收藏', href: '/favs.html' },
+      { k: 'ui-fav', t: '收藏', href: '/favs.html' },
       { k: 'fn-explore', t: '搜索', act: 'search' }
     ];
     var nav = document.createElement('nav');
@@ -1101,10 +1153,10 @@
       { k: 'fn-quest', t: '公告', act: 'notice' },
       { k: 'fn-explore', t: '搜索灵宠', act: 'search' },
       { k: 'fn-research', t: '属性克制', href: '/types.html' },
-      { k: 'fn-guild', t: '家族图鉴', href: '/family.html' },
-      { k: 'fn-egg', t: '孵化手册', href: '/eggs.html' },
+      { k: 'ui-family', t: '家族图鉴', href: '/family.html' },
+      { k: 'ui-hatchbook', t: '孵化手册', href: '/eggs.html' },
       { k: 'fn-arena', t: '战斗模拟', href: '/battle.html' },
-      { k: 'fn-bag', t: '我的收藏', href: '/favs.html' }
+      { k: 'ui-fav', t: '我的收藏', href: '/favs.html' }
     ];
     var rail = document.createElement('nav');
     rail.className = 'side-rail';
@@ -1130,9 +1182,9 @@
     var anchor = document.querySelector('.catalog-section');
     if (!anchor || !anchor.parentElement) return;
     var items = [
-      { href: '/eggs.html', t: '孵化手册', d: '28 个家族的蛋形态', k: 'fn-egg' },
+      { href: '/eggs.html', t: '孵化手册', d: '28 个家族的蛋形态', k: 'ui-hatchbook' },
       { href: '/types.html', t: '属性克制', d: '十系完整对照表', k: 'fn-research' },
-      { href: '/family.html', t: '家族图鉴', d: '28 个家族总览', k: 'fn-guild' },
+      { href: '/family.html', t: '家族图鉴', d: '28 个家族总览', k: 'ui-family' },
       { href: '/battle.html', t: '战斗模拟', d: '六对六回合制对战', k: 'fn-arena' },
       { href: '/favs.html', t: '我的收藏', d: '你标星过的灵宠', k: 'fn-bag' },
       { href: '/studio.html', t: '工作室', d: '制作团队与手记', k: 'studio-logo' }
@@ -1520,7 +1572,7 @@
       var chips = [];
       chips.push('<span class="sm-type"><img src="' + typeIco + '" alt="" width="16" height="16">' + s.type + '系</span>');
       chips.push('<span class="sm-cat sm-' + (s.category === '物理' ? 'phys' : s.category === '特殊' ? 'spec' : 'stat') + '">' + s.category + '</span>');
-      if (s.role) chips.push('<span class="sm-role">' + s.role + '</span>');
+      chips.push('<img class="slot-ico" src="/media/ui/slot-' + Math.min(4, i + 1) + '.webp" alt="" title="' + (s.role || ('技能 ' + (i + 1))) + '">');
       chips.push('<span class="sm-num">威力 <b>' + (s.power == null ? '—' : s.power) + '</b></span>');
       chips.push('<span class="sm-num">命中 <b>' + (s.accuracy == null ? (s.category === '变化' ? '—' : '必中') : s.accuracy) + '</b></span>');
       chips.push('<span class="sm-lv">Lv.' + s.learnLevel + '</span>');
@@ -1556,7 +1608,7 @@
       clearTimeout(timer);
       timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); }, 300);
     }).observe(root, { childList: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncMobileNav(); syncToc(); tickBranch(); }, 2500);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncMobileNav(); syncToc(); syncSectionIcons(); syncHeaderIcons(); tickBranch(); }, 2500);
   }
 
   window.__dexOpenNotice = openNotice;
