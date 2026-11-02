@@ -12,10 +12,7 @@
     风: '/media/ui/elem-wind.webp',
     光: '/media/ui/elem-light.webp',
     雷: '/media/ui/elem-thunder.webp',
-    暗: '/media/ui/elem-dark.webp',
-    雷: 'data:image/svg+xml;utf8,' + encodeURIComponent(
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M37 3 13 36h13l-3 25 24-34H34l3-24Z" fill="#f6c94a" stroke="#3a2a12" stroke-width="4.5" stroke-linejoin="round"/></svg>'
-    )
+    暗: '/media/ui/elem-dark.webp'
   };
 
   function iconImg(el, cls) {
