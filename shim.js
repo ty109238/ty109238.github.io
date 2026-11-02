@@ -1430,6 +1430,8 @@
   function syncSkillMeta(c) {
     var sec = document.querySelector('.skills-section');
     if (!sec || !c) return;
+    if (sec.getAttribute('data-skill-for') === String(c.id) && sec.querySelector('.skill-meta')) return;
+    sec.setAttribute('data-skill-for', String(c.id));
     var entries = sec.querySelectorAll('.skill-entry');
     var arr = (DATA.skills && DATA.skills[c.id]) || [];
     for (var i = 0; i < entries.length; i++) {
@@ -1464,9 +1466,12 @@
     }
   }
 
+  var lastBranchId = null;
   function tickBranch() {
     var id = currentCreatureId();
     if (!id || !DATA) return;
+    if (id === lastBranchId && document.querySelector('.train-section')) return;
+    lastBranchId = id;
     for (var i = 0; i < DATA.creatures.length; i++) {
       if (DATA.creatures[i].id === id) { syncBranch(DATA.creatures[i]); syncFromTag(DATA.creatures[i]); syncSkillMeta(DATA.creatures[i]); return; }
     }
@@ -1478,9 +1483,9 @@
     var timer = null;
     new MutationObserver(function () {
       clearTimeout(timer);
-      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); }, 120);
-    }).observe(root, { childList: true, subtree: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); tickBranch(); }, 1200);
+      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); }, 300);
+    }).observe(root, { childList: true });
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); tickBranch(); }, 2500);
   }
 
   window.__dexOpenNotice = openNotice;
