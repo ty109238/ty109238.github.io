@@ -851,3 +851,50 @@ html.hide-studio .studio-section { display: none !important; }
 .site-link-t b { font-size: 13px !important; }
 .site-link-t small { font-size: 10.5px !important; }
 .ui-ico { width: 24px !important; height: 24px !important; }
+/* ---------- 侧边功能栏 ---------- */
+.side-rail {
+  position: fixed;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2147480000;
+  display: grid;
+  gap: 6px;
+  padding: 8px;
+  border: 2px solid var(--ink);
+  border-radius: 18px;
+  background: #fffffff2;
+  backdrop-filter: blur(6px);
+  box-shadow: 5px 6px 0 rgba(38, 39, 34, 0.12);
+}
+.rail-btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.rail-btn img { width: 40px; height: 40px; object-fit: contain; display: block; }
+.rail-btn:hover { background: #fff6d8; transform: translateX(-2px); }
+.rail-btn span {
+  position: absolute;
+  right: 56px;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 800;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+.rail-btn:hover span { opacity: 1; }
+html.hide-notice .rail-btn[data-act="notice"] { display: none; }
+@media (max-width: 1180px) { .side-rail { display: none; } }

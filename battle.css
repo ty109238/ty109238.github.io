@@ -178,3 +178,8 @@ a { color: inherit; }
   color: #55677b;
 }
 .weather-badge b { color: var(--ink); font-size: 13.5px; }
+/* 按钮小图标 */
+.btn-ico { width: 20px; height: 20px; object-fit: contain; vertical-align: -5px; margin-right: 6px; }
+.mini .btn-ico { width: 16px; height: 16px; vertical-align: -3px; margin-right: 3px; }
+.skill-btn .sk-ico { float: left; width: 18px; height: 18px; margin: 1px 6px 0 0; }
+.switch-btn .sw-ico { width: 15px; height: 15px; vertical-align: -3px; margin-right: 4px; }

@@ -1020,6 +1020,38 @@
     }
   }
 
+  /* ---------- 侧边功能栏 ---------- */
+  function syncSideRail() {
+    if (document.querySelector('.side-rail')) return;
+    if (!DATA) return;
+    if (document.getElementById('battleView')) return;
+    var items = [
+      { k: 'fn-mainline', t: '回到首页', href: '/' },
+      { k: 'fn-quest', t: '公告', act: 'notice' },
+      { k: 'fn-explore', t: '搜索灵宠', act: 'search' },
+      { k: 'fn-research', t: '属性克制', href: '/types.html' },
+      { k: 'fn-guild', t: '家族图鉴', href: '/family.html' },
+      { k: 'fn-evo-stone', t: '孵化手册', href: '/eggs.html' },
+      { k: 'fn-team', t: '战斗模拟', href: '/battle.html' },
+      { k: 'fn-bag', t: '我的收藏', href: '/favs.html' }
+    ];
+    var rail = document.createElement('nav');
+    rail.className = 'side-rail';
+    rail.innerHTML = items.map(function (x) {
+      return '<a class="rail-btn" data-act="' + (x.act || '') + '" href="' + (x.href || '#') + '" title="' + x.t + '">' +
+        '<img src="/media/ui/' + x.k + '.webp" alt="' + x.t + '">' +
+        '<span>' + x.t + '</span></a>';
+    }).join('');
+    document.body.appendChild(rail);
+    rail.addEventListener('click', function (e) {
+      var a = e.target.closest('.rail-btn');
+      if (!a) return;
+      var act = a.getAttribute('data-act');
+      if (act === 'notice') { e.preventDefault(); if (window.__dexOpenNotice) window.__dexOpenNotice(); }
+      if (act === 'search') { e.preventDefault(); if (window.__dexOpenSearch) window.__dexOpenSearch(); }
+    });
+  }
+
   /* ---------- 首页：站内导航 ---------- */
   function syncNavStrip() {
     if (!DATA || document.querySelector('.site-links')) return;
@@ -1446,9 +1478,9 @@
     var timer = null;
     new MutationObserver(function () {
       clearTimeout(timer);
-      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); }, 120);
+      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); }, 120);
     }).observe(root, { childList: true, subtree: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); tickBranch(); }, 1200);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); tickBranch(); }, 1200);
   }
 
   window.__dexOpenNotice = openNotice;

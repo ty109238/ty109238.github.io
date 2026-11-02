@@ -430,7 +430,7 @@
     bar.innerHTML = '';
     mm.skills.forEach(function (s, i) {
       var btn = el('button', 'skill-btn');
-      btn.innerHTML = '<span class="pp">PP ' + s.ppNow + '/' + s.ppMax + '</span><b>' + s.name + '</b>' +
+      btn.innerHTML = '<img class="sk-ico" src="/media/ui/fn-skillbook.webp" alt=""><span class="pp">PP ' + s.ppNow + '/' + s.ppMax + '</span><b>' + s.name + '</b>' +
         '<small>' + s.type + '系 · ' + skillCat(s) + ' · ' + (s.power ? '威力 ' + s.power : '变化') +
         (s.accuracy ? ' · 命中 ' + s.accuracy : '') + '</small>';
       btn.disabled = s.ppNow <= 0 || b.busy || b.awaitingSwitch;
@@ -442,7 +442,7 @@
     sw.innerHTML = '';
     b.my.forEach(function (m, i) {
       if (i === b.myActive) return;
-      var btn = el('button', 'switch-btn', m.name + (m.fainted ? '（倒下）' : ' · ' + m.hp + '/' + m.maxHp));
+      var btn = el('button', 'switch-btn', '<img class="sw-ico" src="/media/ui/fn-team.webp" alt="">' + m.name + (m.fainted ? '（倒下）' : ' · ' + m.hp + '/' + m.maxHp));
       btn.disabled = m.fainted || b.busy;
       btn.addEventListener('click', function () { switchTo('my', i, true); });
       sw.appendChild(btn);
