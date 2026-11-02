@@ -1008,6 +1008,30 @@
     }
   }
 
+  /* ---------- 首页：站内导航 ---------- */
+  function syncNavStrip() {
+    if (!DATA || document.querySelector('.site-links')) return;
+    if (currentCreatureId()) return;
+    var anchor = document.querySelector('.catalog-section');
+    if (!anchor || !anchor.parentElement) return;
+    var items = [
+      { href: '/eggs.html', t: '孵化手册', d: '28 个家族的蛋形态', k: '蛋' },
+      { href: '/types.html', t: '属性克制', d: '十系完整对照表', k: '克' },
+      { href: '/family.html', t: '家族图鉴', d: '28 个家族总览', k: '族' },
+      { href: '/favs.html', t: '我的收藏', d: '你标星过的灵宠', k: '藏' },
+      { href: '/studio.html', t: '工作室', d: '制作团队与手记', k: '橘' }
+    ];
+    var strip = document.createElement('nav');
+    strip.className = 'site-links';
+    strip.innerHTML = items.map(function (x) {
+      return '<a class="site-link" href="' + x.href + '">' +
+        '<span class="site-link-k">' + x.k + '</span>' +
+        '<span class="site-link-t"><b>' + x.t + '</b><small>' + x.d + '</small></span>' +
+        '<span class="site-link-arrow">→</span></a>';
+    }).join('');
+    anchor.parentElement.insertBefore(strip, anchor);
+  }
+
   /* ---------- 首页：工作室 ---------- */
   function buildStudioSection() {
     var s = DATA.studio || { name: '谭熠的橘子工作室', members: [{ role: '主策划', name: '谭熠' }, { role: '角色审核建模', name: '吴静秋' }] };
@@ -1314,11 +1338,64 @@
     else sec.insertBefore(tag, sec.firstChild);
   }
 
+  /* ---------- 技能：属性 / 分类 / 威力 / 命中 / 学习等级 / 状态图标 ---------- */
+  var STATUS_KEYWORDS = [
+    ['燃烧', 'burn'], ['灼烧', 'burn'], ['中毒', 'poison'], ['冰冻', 'freeze'], ['冻结', 'freeze'],
+    ['流血', 'bleed'], ['闪避', 'dodge'], ['暴击', 'crit'], ['回复生命', 'heal'], ['回复', 'heal'],
+    ['护盾', 'shield'], ['能量', 'energy']
+  ];
+
+  function statusIcons(desc) {
+    var out = [];
+    for (var i = 0; i < STATUS_KEYWORDS.length; i++) {
+      var k = STATUS_KEYWORDS[i];
+      if (desc.indexOf(k[0]) >= 0 && out.indexOf(k[1]) < 0) out.push(k[1]);
+      if (out.length >= 2) break;
+    }
+    return out;
+  }
+
+  function syncSkillMeta(c) {
+    var sec = document.querySelector('.skills-section');
+    if (!sec || !c) return;
+    var entries = sec.querySelectorAll('.skill-entry');
+    var arr = (DATA.skills && DATA.skills[c.id]) || [];
+    for (var i = 0; i < entries.length; i++) {
+      var entry = entries[i];
+      var s = arr[i];
+      if (!s) continue;
+      var old = entry.querySelector('.skill-meta');
+      if (old) old.remove();
+
+      var meta = document.createElement('div');
+      meta.className = 'skill-meta';
+      var BOLT_ICO = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M37 3 13 36h13l-3 25 24-34H34l3-24Z" fill="#f6c94a" stroke="#3a2a12" stroke-width="4.5" stroke-linejoin="round"/></svg>');
+      var ICON_MAP = { 火: 'fire', 水: 'water', 草: 'grass', 冰: 'ice', 土: 'rock', 钢: 'steel', 风: 'wind', 光: 'light', 暗: 'dark' };
+      var typeIco = s.type === '雷' ? BOLT_ICO : ('/media/ui/elem-' + (ICON_MAP[s.type] || 'fire') + '.webp');
+      var chips = [];
+      chips.push('<span class="sm-type"><img src="' + typeIco + '" alt="" width="16" height="16">' + s.type + '系</span>');
+      chips.push('<span class="sm-cat sm-' + (s.category === '物理' ? 'phys' : s.category === '特殊' ? 'spec' : 'stat') + '">' + s.category + '</span>');
+      chips.push('<span class="sm-num">威力 <b>' + (s.power == null ? '—' : s.power) + '</b></span>');
+      chips.push('<span class="sm-num">命中 <b>' + (s.accuracy == null ? (s.category === '变化' ? '—' : '必中') : s.accuracy) + '</b></span>');
+      chips.push('<span class="sm-lv">Lv.' + s.learnLevel + '</span>');
+
+      var st = statusIcons(s.description || '');
+      var stHtml = st.map(function (k) {
+        return '<img class="sm-status" src="/media/ui/status/' + k + '.webp" alt="" width="18" height="18" title="' + k + '">';
+      }).join('');
+
+      meta.innerHTML = chips.join('') + stHtml;
+      var p = entry.querySelector('p');
+      if (p && p.nextSibling) entry.insertBefore(meta, p.nextSibling);
+      else entry.appendChild(meta);
+    }
+  }
+
   function tickBranch() {
     var id = currentCreatureId();
     if (!id || !DATA) return;
     for (var i = 0; i < DATA.creatures.length; i++) {
-      if (DATA.creatures[i].id === id) { syncBranch(DATA.creatures[i]); syncFromTag(DATA.creatures[i]); return; }
+      if (DATA.creatures[i].id === id) { syncBranch(DATA.creatures[i]); syncFromTag(DATA.creatures[i]); syncSkillMeta(DATA.creatures[i]); return; }
     }
   }
 
@@ -1328,9 +1405,9 @@
     var timer = null;
     new MutationObserver(function () {
       clearTimeout(timer);
-      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); }, 120);
+      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); }, 120);
     }).observe(root, { childList: true, subtree: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); tickBranch(); }, 1200);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); tickBranch(); }, 1200);
   }
 
   window.__dexOpenNotice = openNotice;

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#2a2520" />
+    <meta name="description" content="咻噗·奥灵宠图鉴 · 十系属性克制一览：谁克制谁、谁收效甚微。" />
+    <title>属性克制 · 咻噗-奥灵宠图鉴</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="stylesheet" href="/codex.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="back" href="/">← 返回图鉴</a>
+      <h1>属性克制</h1>
+      <span class="crumb">十系 · 完整对照表</span>
+    </header>
+
+    <main class="wrap">
+      <p class="lead">
+        用某一系的技能打对方时，伤害会按这张表调整：<b>2×</b> 表示效果出众，<b>0.5×</b> 表示收效甚微，空白表示常规 1×。
+        表格按「攻击方 → 防守方」阅读，行是出手的属性，列是被打的属性。
+      </p>
+
+      <div class="head">
+        <p>TYPE CHART</p>
+        <h2>完整克制表</h2>
+        <span id="chartCount"></span>
+      </div>
+      <div class="chart"><table class="cw" id="chart"></table></div>
+
+      <div class="head">
+        <p>PER TYPE</p>
+        <h2>逐系速查</h2>
+        <span>出手时看这里</span>
+      </div>
+      <div class="elem-cards" id="cards"></div>
+    </main>
+
+    <script>
+      (function () {
+        var ICON = { 钢: 'steel', 水: 'water', 火: 'fire', 草: 'grass', 土: 'rock', 风: 'wind', 冰: 'ice', 光: 'light', 暗: 'dark' };
+        var BOLT = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M37 3 13 36h13l-3 25 24-34H34l3-24Z" fill="#f6c94a" stroke="#3a2a12" stroke-width="4.5" stroke-linejoin="round"/></svg>');
+        var CHART = {
+          钢: { strong: ['冰', '光'], weak: ['火', '土'] },
+          水: { strong: ['火', '土'], weak: ['草', '雷'] },
+          火: { strong: ['草', '冰', '钢'], weak: ['水', '土'] },
+          草: { strong: ['水', '土'], weak: ['火', '冰', '风'] },
+          土: { strong: ['火', '雷', '钢'], weak: ['水', '草', '冰'] },
+          风: { strong: ['草', '土'], weak: ['雷', '冰', '钢'] },
+          雷: { strong: ['水', '风'], weak: ['土', '草'] },
+          冰: { strong: ['草', '风', '土'], weak: ['火', '钢'] },
+          光: { strong: ['暗'], weak: ['钢'] },
+          暗: { strong: ['光'], weak: ['光', '钢'] }
+        };
+        var ORDER = ['钢', '水', '火', '草', '土', '风', '雷', '冰', '光', '暗'];
+        var COLOR = { 钢: '#718398', 水: '#2388df', 火: '#f06445', 草: '#4c9d68', 土: '#a8754d', 风: '#32a0a2', 雷: '#d3a213', 冰: '#65b9df', 光: '#e6ad35', 暗: '#795694' };
+
+        function icon(t) {
+          return t === '雷' ? BOLT : '/media/ui/elem-' + (ICON[t] || 'fire') + '.webp';
+        }
+
+        function buildChart() {
+          var t = document.getElementById('chart');
+          var rows = [];
+          rows.push('<tr><th></th>' + ORDER.map(function (d) {
+            return '<th style="color:' + COLOR[d] + '"><img src="' + icon(d) + '" alt="">' + d + '</th>';
+          }).join('') + '</tr>');
+
+          ORDER.forEach(function (atk) {
+            var cells = ORDER.map(function (def) {
+              var s = CHART[atk] || { strong: [], weak: [] };
+              if (s.strong.indexOf(def) >= 0) return '<td class="up">2×</td>';
+              if (s.weak.indexOf(def) >= 0) return '<td class="down">0.5×</td>';
+              if (def === atk) return '<td class="same">1×</td>';
+              return '<td>1×</td>';
+            }).join('');
+            rows.push('<tr><th class="rowhead" style="color:' + COLOR[atk] + '"><img src="' + icon(atk) + '" alt="">' + atk + '</th>' + cells + '</tr>');
+          });
+
+          t.innerHTML = rows.join('');
+          document.getElementById('chartCount').textContent = ORDER.length + ' 系 × ' + ORDER.length + ' 系';
+        }
+
+        function buildCards() {
+          var html = ORDER.map(function (e) {
+            var s = CHART[e];
+            var strong = s.strong.length ? s.strong.map(function (x) { return x + '系'; }).join(' · ') : '—';
+            var weak = s.weak.length ? s.weak.map(function (x) { return x + '系'; }).join(' · ') : '—';
+            return '<div class="elem-card"><h3><img src="' + icon(e) + '" alt="">' + e + '系</h3>' +
+              '<p><b>效果出众 2×</b>：' + strong + '</p>' +
+              '<p><b>收效甚微 0.5×</b>：' + weak + '</p></div>';
+          }).join('');
+          document.getElementById('cards').innerHTML = html;
+        }
+
+        buildChart();
+        buildCards();
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+/* 属性克制表 + 家族图鉴 */
+:root {
+  --ink:#262722; --pink:#dd2590; --blue:#1570ef; --soft:#f5faff; --line:#e2ebf4;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: #fbfdff; color: var(--ink);
+  font-family: "PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.top {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; gap: 14px;
+  padding: 13px 22px; background: #fffffff2;
+  border-bottom: 2px solid var(--ink); backdrop-filter: blur(6px);
+}
+.top a.back {
+  padding: 8px 16px; border: 2px solid var(--ink); border-radius: 999px;
+  background: #fff; text-decoration: none; font-size: 13px; font-weight: 800;
+}
+.top a.back:hover { background: #ffeb85; }
+.top h1 { margin: 0; font-size: 19px; }
+.top .crumb { font-size: 12.5px; color: #7b8ea1; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 26px 22px 80px; }
+.head { display: flex; align-items: baseline; gap: 12px; border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin: 30px 0 18px; }
+.head p { margin: 0; font-size: 10.5px; font-weight: 900; letter-spacing: .24em; color: var(--pink); }
+.head h2 { margin: 0; font-size: 24px; letter-spacing: -.02em; }
+.head span { margin-left: auto; font-size: 12px; color: #7b8ea1; }
+.lead { font-size: 13.5px; line-height: 1.95; color: #55677b; margin: 0 0 8px; }
+
+/* 克制表 */
+.chart { overflow-x: auto; padding-bottom: 8px; }
+table.cw { border-collapse: separate; border-spacing: 4px; }
+table.cw th { font-size: 11.5px; font-weight: 800; padding: 4px 6px; white-space: nowrap; }
+table.cw th img { width: 16px; height: 16px; vertical-align: -3px; margin-right: 2px; }
+table.cw td {
+  width: 46px; height: 34px; text-align: center; border-radius: 8px;
+  font-size: 12px; font-weight: 900; border: 1px solid var(--line); background: #fff;
+}
+table.cw td.up { background: #e9f7ec; color: #1f7a3d; border-color: #b6e0c2; }
+table.cw td.down { background: #fdecea; color: #a4331f; border-color: #f3c1b8; }
+table.cw td.same { background: #f4f7fa; color: #9aa9b8; }
+table.cw th.rowhead { text-align: right; }
+
+/* 属性小结 */
+.elem-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+.elem-card {
+  border: 2px solid var(--ink); border-radius: 14px; background: #fff;
+  padding: 14px 16px; box-shadow: 3px 4px 0 rgba(38,39,34,.08);
+}
+.elem-card h3 { margin: 0 0 8px; font-size: 16px; display: flex; align-items: center; gap: 6px; }
+.elem-card h3 img { width: 20px; height: 20px; object-fit: contain; }
+.elem-card p { margin: 4px 0; font-size: 12.5px; color: #55677b; }
+.elem-card b { color: var(--ink); }
+
+/* 家族 */
+.fam-list { display: grid; gap: 14px; }
+.fam {
+  border: 2px solid var(--ink); border-radius: 16px; background: #fff;
+  padding: 16px 18px 18px; box-shadow: 4px 5px 0 rgba(38,39,34,.08);
+}
+.fam-head { display: flex; align-items: baseline; gap: 10px; border-bottom: 2px solid var(--ink); padding-bottom: 9px; }
+.fam-head h3 { margin: 0; font-size: 19px; }
+.fam-head span { font-size: 11.5px; color: #7b8ea1; }
+.fam-intro { margin: 10px 0 12px; font-size: 13px; line-height: 1.8; color: #55677b; }
+.fam-members { display: flex; gap: 10px; flex-wrap: wrap; }
+.fam-card {
+  width: 108px; padding: 6px; border: 2px solid var(--ink); border-radius: 12px;
+  background: var(--soft); text-align: center; text-decoration: none; color: var(--ink);
+  transition: transform .15s ease;
+}
+.fam-card:hover { transform: translateY(-3px); }
+.fam-card img { width: 100%; height: 76px; object-fit: contain; }
+.fam-card b { display: block; font-size: 12.5px; margin-top: 3px; }
+.fam-card small { font-size: 10px; color: #7b8ea1; }
+.fam-foot { margin-top: 10px; font-size: 11.5px; color: #8ea3b8; }
+.empty { padding: 60px; text-align: center; color: #8ea3b8; }

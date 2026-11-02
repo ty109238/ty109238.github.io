@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#2a2520" />
+    <meta name="description" content="咻噗·奥灵宠图鉴 · 家族图鉴：28 个灵宠家族的全部成员与进化关系。" />
+    <title>家族图鉴 · 咻噗-奥灵宠图鉴</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="stylesheet" href="/codex.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="back" href="/">← 返回图鉴</a>
+      <h1>家族图鉴</h1>
+      <span class="crumb" id="crumb">全部家族</span>
+    </header>
+
+    <main class="wrap">
+      <p class="lead">
+        灵宠按「家族」归类：同一个家族共享一套被动特性、一段世界观，多数还有一条完整的进化线。
+        下面每一张卡都列出一个家族的全部成员，点任意一只能进入它的档案。
+      </p>
+
+      <div class="head">
+        <p>FAMILIES</p>
+        <h2 id="title">全部家族</h2>
+        <span id="count"></span>
+      </div>
+      <div class="fam-list" id="list"><div class="empty">加载中…</div></div>
+    </main>
+
+    <script>
+      (function () {
+        var params = new URLSearchParams(location.search);
+        var focus = params.get('f');
+
+        function el(id) { return document.getElementById(id); }
+
+        fetch('/data/content.json?t=' + Date.now(), { cache: 'no-store' })
+          .then(function (r) { return r.json(); })
+          .then(render)
+          .catch(function (e) {
+            el('list').innerHTML = '<div class="empty">加载失败：' + e.message + '</div>';
+          });
+
+        function render(data) {
+          var byFam = {};
+          (data.creatures || []).forEach(function (c) {
+            var k = c.family || '未分组';
+            (byFam[k] = byFam[k] || []).push(c);
+          });
+
+          var fams = Object.keys(byFam).sort(function (a, b) {
+            return Math.min.apply(null, byFam[a].map(function (x) { return x.dexNo; })) -
+              Math.min.apply(null, byFam[b].map(function (x) { return x.dexNo; }));
+          });
+          if (focus && byFam[focus]) fams = [focus];
+
+          el('count').textContent = fams.length + ' 个家族';
+          el('title').textContent = focus || '全部家族';
+          el('crumb').textContent = focus ? focus : '全部家族';
+
+          el('list').innerHTML = fams.map(function (fam) {
+            var list = byFam[fam].slice().sort(function (a, b) { return a.dexNo - b.dexNo; });
+            var intro = (data.familyNotes && data.familyNotes[fam]) || '';
+            var stages = list.map(function (x) { return x.stage; }).filter(function (v, i, a) { return a.indexOf(v) === i; });
+            var members = list.map(function (c) {
+              var src = c.imageKey && data.images[c.imageKey] ? data.images[c.imageKey] : '';
+              return '<a class="fam-card" href="/creature/' + c.id + '">' +
+                (src ? '<img src="' + src + '" alt="' + c.name + '" loading="lazy">' : '') +
+                '<b>' + c.name + '</b><small>No.' + String(c.dexNo).padStart(3, '0') + ' · ' + c.stage + '</small></a>';
+            }).join('');
+
+            var traits = (data.traits && data.traits[String(list[0].id)]) || [];
+            var tnames = traits.map(function (t) { return t.name; }).join(' · ');
+
+            return '<section class="fam">' +
+              '<div class="fam-head"><h3>' + fam + '</h3><span>' + list.length + ' 只 · ' +
+              (list[0].element) + '系 · ' + stages.join(' / ') + '</span></div>' +
+              (intro ? '<p class="fam-intro">' + intro + '</p>' : '') +
+              '<div class="fam-members">' + members + '</div>' +
+              (tnames ? '<p class="fam-foot">家族被动：' + tnames + '</p>' : '') +
+              '</section>';
+          }).join('');
+        }
+      })();
+    </script>
+  </body>
+</html>
