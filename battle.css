@@ -315,3 +315,28 @@ a { color: inherit; }
 /* 未解锁技能 */
 .sk.locked { opacity: .55; border-style: dashed; cursor: not-allowed; }
 .sk.locked b::after { content: " 🔒"; font-size: 11px; }
+/* 技能书掉落弹窗 */
+.book-drop {
+  position: fixed; inset: 0; z-index: 2147483600;
+  display: grid; place-items: center;
+  background: rgba(14,23,38,.55);
+  animation: bdFade .25s ease-out;
+}
+.bd-card {
+  width: min(88vw, 330px);
+  padding: 26px 22px 22px;
+  border: 3px solid var(--ink, #262722);
+  border-radius: 20px;
+  background: linear-gradient(160deg, #fffdf3, #ffeec2);
+  text-align: center;
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
+  animation: bdPop .45s cubic-bezier(.2,1.4,.4,1);
+}
+.bd-kicker { font-size: 11px; font-weight: 900; letter-spacing: .18em; color: #b3157a; }
+.bd-ico { font-size: 52px; line-height: 1; margin: 10px 0 6px; animation: bdSpin 1.2s ease-out; }
+.bd-name { font-size: 19px; font-weight: 900; color: #262722; }
+.bd-owner { font-size: 12px; color: #7b8ea1; margin-top: 4px; }
+.bd-tip { font-size: 11px; color: #9aa9b8; margin-top: 12px; }
+@keyframes bdFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes bdPop { 0% { transform: scale(.7) translateY(20px); opacity: 0; } 100% { transform: scale(1) translateY(0); opacity: 1; } }
+@keyframes bdSpin { 0% { transform: rotate(-25deg) scale(.6); } 60% { transform: rotate(10deg) scale(1.25); } 100% { transform: rotate(0) scale(1); } }

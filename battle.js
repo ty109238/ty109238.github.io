@@ -86,6 +86,25 @@
     try { localStorage.setItem('dex:books', JSON.stringify([].slice.call(set))); } catch (e) {}
   }
 
+  function showBookDrop(book, bonus) {
+    if (!book) return;
+    var old = document.querySelector('.book-drop');
+    if (old) old.remove();
+    var box = document.createElement('div');
+    box.className = 'book-drop';
+    box.innerHTML =
+      '<div class="bd-card">' +
+      '<div class="bd-kicker">' + (bonus ? '连胜奖励' : '战斗奖励') + '</div>' +
+      '<div class="bd-ico">📖</div>' +
+      '<div class="bd-name">《' + book.name + '》</div>' +
+      '<div class="bd-owner">' + book.cname + ' 的专属技能书</div>' +
+      '<div class="bd-tip">已放入技能池，请在战斗配置中选用</div>' +
+      '</div>';
+    document.body.appendChild(box);
+    box.addEventListener('click', function () { box.remove(); });
+    setTimeout(function () { if (box.parentNode) box.remove(); }, 2600);
+  }
+
   function awardBook() {
     var have = bookSet();
     var pool = allBookSkills().filter(function (x) { return !have.has(x.name); });
@@ -152,10 +171,17 @@
     return null;
   }
 
+  function proficiency(cid) {
+    var m = usageMap();
+    var n = m[String(cid)] || 0;
+    return { n: n, mult: 1 + Math.min(n, 20) * 0.005 };
+  }
+
   function computeStats(cfg) {
     var c = cfg.c;
     var L = cfg.level;
-    var mult = (1 + (cfg.star - 1) * 0.03) * (1 + (cfg.stage - 1) * 0.05) * (TALENT_SKILL[cfg.talent] || 1);
+    var prof = proficiency(c.id).mult;
+    var mult = (1 + (cfg.star - 1) * 0.03) * (1 + (cfg.stage - 1) * 0.05) * (TALENT_SKILL[cfg.talent] || 1) * prof;
     var nat = natureOf(cfg.nature);
     var out = {};
     ['hp', 'attack', 'defense', 'spAttack', 'spDefense', 'speed'].forEach(function (k) {
@@ -164,7 +190,7 @@
       if (k === 'hp') {
         v = Math.floor(((2 * base + 31) * L) / 100) + L + 10 + Math.floor((cfg.evs.hp || 0) / 4);
       } else {
-        v = Math.floor(((2 * base + 31) * L) / 100 + 5) + Math.floor((cfg.evs[k] || 0) / 4);
+        v = Math.floor((((2 * base + 31) * L) / 100 + 5) * prof) + Math.floor((cfg.evs[k] || 0) / 4);
         v = Math.floor(v * mult);
         if (nat && nat.up === k) v = Math.floor(v * 1.1);
         if (nat && nat.down === k) v = Math.floor(v * 0.9);
@@ -617,7 +643,8 @@
     return '<img src="' + src + '" alt="">' +
       '<h4>' + m.name + '</h4>' +
       '<div class="tags">Lv.' + m.cfg.level + ' · ' + m.element + '系 · ' + m.cfg.nature +
-      (m.effects && m.effects.text ? ' · ' + m.effects.text : '') + '</div>' +
+      (m.effects && m.effects.text ? ' · ' + m.effects.text : '') +
+      (proficiency(m.cfg.c.id).n ? ' · 熟练 ' + proficiency(m.cfg.c.id).n : '') + '</div>' +
       '<div class="hp-wrap"><div class="hp-line"><span>HP</span><span>' + m.hp + ' / ' + m.maxHp + '</span></div>' +
       '<div class="hp-bar' + (pct < 30 ? ' low' : '') + '"><i style="width:' + pct + '%"></i></div></div>' +
       '<div class="st-line">' + st + buffs + '</div>';
@@ -1451,10 +1478,10 @@
     saveRecord(rec);
     if (win) {
       var got = awardBook();
-      if (got) logLine('获得技能书《' + got.name + '》（' + got.cname + '）', 'turn');
+      if (got) { logLine('获得技能书《' + got.name + '》（' + got.cname + '）', 'turn'); showBookDrop(got, false); }
       if (rec.streak > 0 && rec.streak % 3 === 0) {
         var bonus = awardBook();
-        if (bonus) logLine('连胜 ' + rec.streak + ' 场奖励：技能书《' + bonus.name + '》', 'turn');
+        if (bonus) { logLine('连胜 ' + rec.streak + ' 场奖励：技能书《' + bonus.name + '》', 'turn'); showBookDrop(bonus, true); }
       }
     }
 

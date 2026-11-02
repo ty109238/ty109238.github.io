@@ -20,7 +20,12 @@
         <h2>收藏夹</h2>
         <span id="count"></span>
       </div>
-      <div class="grid" id="grid"></div>
+      <section class="shelf">
+      <h2>我的技能书</h2>
+      <p class="shelf-sub" id="shelfSub">还没有收集到技能书</p>
+      <div class="shelf-grid" id="shelfGrid"></div>
+    </section>
+    <div class="grid" id="grid"></div>
     </main>
     <script>
       (function () {
@@ -76,5 +81,20 @@
           });
       })();
     </script>
-  </body>
+  <script>
+(function(){
+  try {
+    var books = JSON.parse(localStorage.getItem('dex:books') || '[]');
+    var sub = document.getElementById('shelfSub');
+    var grid = document.getElementById('shelfGrid');
+    if (sub) sub.textContent = books.length ? ('已收集 ' + books.length + ' / 366 本') : '还没有收集到技能书，去战斗里赢几场吧';
+    if (grid && books.length) {
+      grid.innerHTML = books.map(function (n) {
+        return '<span class="book-chip">📖 《' + n + '》</span>';
+      }).join('');
+    }
+  } catch (e) {}
+})();
+</script>
+</body>
 </html>
