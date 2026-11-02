@@ -109,6 +109,8 @@
       var id = Number(a.getAttribute('href').split('/').pop());
       a.setAttribute('data-fav-btn', '1');
       a.classList.toggle('is-fav', list.indexOf(id) >= 0);
+      var descEl = a.querySelector('.creature-card-copy p');
+      if (descEl && !a.getAttribute('data-desc')) a.setAttribute('data-desc', descEl.textContent.trim());
       var el = cardElement(a);
       if (el) {
         a.style.setProperty('--element-color', COLORS[el] || '#1570ef');
@@ -258,7 +260,18 @@
   }
 
   /* ---------- 循环增强 ---------- */
+  function fadeInImages() {
+    document.querySelectorAll('.creature-art img, .portrait-frame img, .egg-frame img, .hero-portrait img').forEach(function (img) {
+      if (img.getAttribute('data-fade') === '1') return;
+      img.setAttribute('data-fade', '1');
+      if (img.complete && img.naturalWidth) { img.classList.add('img-ready'); return; }
+      img.classList.add('img-loading');
+      img.addEventListener('load', function () { img.classList.remove('img-loading'); img.classList.add('img-ready'); });
+    });
+  }
+
   function tick() {
+    fadeInImages();
     decorateChips();
     decorateCards();
     highlightWheel();

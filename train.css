@@ -938,3 +938,71 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   contain-intrinsic-size: auto 520px;
 }
 .page-toc ~ * .detail-page > section { content-visibility: visible; }
+/* ---------- 首页 hero 再压 15% ---------- */
+.hero { padding: clamp(26px, 3vw, 44px) clamp(20px, 5.5vw, 88px) 40px !important; }
+.hero h1 { font-size: clamp(38px, 4.2vw, 66px) !important; }
+.hero-visual { min-height: 350px !important; }
+.hero-intro { margin: 12px 0 14px !important; }
+
+/* ---------- 卡片描述：悬停显示完整 ---------- */
+.creature-card { position: relative; }
+.creature-card:hover::after {
+  content: attr(data-desc);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 6px);
+  z-index: 20;
+  padding: 10px 12px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: #fff;
+  color: #3d4e61;
+  font-size: 12px;
+  line-height: 1.75;
+  box-shadow: 0 10px 24px rgba(38, 39, 34, 0.18);
+  pointer-events: none;
+}
+.creature-card-copy p { -webkit-line-clamp: 2 !important; }
+
+/* ---------- 骨架屏 / 图片淡入 ---------- */
+.creature-art, .portrait-frame, .egg-frame, .hero-portrait {
+  background: linear-gradient(100deg, #eef4fa 30%, #f9fcff 48%, #eef4fa 66%);
+  background-size: 220% 100%;
+  animation: skeleton 1.5s ease-in-out infinite;
+}
+@keyframes skeleton { 0% { background-position: 120% 0; } 100% { background-position: -20% 0; } }
+.img-loading { opacity: 0; }
+.img-ready { opacity: 1; transition: opacity .28s ease; }
+.creature-art img.img-ready, .portrait-frame img.img-ready { opacity: 1; }
+
+/* 图片加载完就停止骨架动画 */
+.creature-art:has(img.img-ready), .portrait-frame:has(img.img-ready),
+.egg-frame:has(img.img-ready), .hero-portrait:has(img.img-ready) { animation: none; background: #fff; }
+
+/* ---------- 移动端底部导航 ---------- */
+.mobile-nav { display: none; }
+@media (max-width: 720px) {
+  .mobile-nav {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 2147482000;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    padding: 6px 6px calc(6px + env(safe-area-inset-bottom));
+    background: #fffffff5;
+    border-top: 2px solid var(--ink);
+    backdrop-filter: blur(8px);
+  }
+  .mnav-btn {
+    display: grid; place-items: center; gap: 1px;
+    padding: 4px 0;
+    text-decoration: none; color: #55677b;
+  }
+  .mnav-btn img { width: 30px; height: 30px; object-fit: contain; }
+  .mnav-btn span { font-size: 10px; font-weight: 800; }
+  .mnav-btn:active { background: #fff6d8; border-radius: 10px; }
+  body { padding-bottom: 68px; }
+  .side-rail { display: none !important; }
+}

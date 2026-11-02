@@ -1051,6 +1051,33 @@
     document.body.appendChild(toc);
   }
 
+  /* ---------- 移动端底部导航 ---------- */
+  function syncMobileNav() {
+    if (document.querySelector('.mobile-nav')) return;
+    if (!DATA) return;
+    var items = [
+      { k: 'fn-mainline', t: '首页', href: '/' },
+      { k: 'fn-dex', t: '图鉴', href: '/' },
+      { k: 'fn-team', t: '对战', href: '/battle.html' },
+      { k: 'fn-bag', t: '收藏', href: '/favs.html' },
+      { k: 'fn-explore', t: '搜索', act: 'search' }
+    ];
+    var nav = document.createElement('nav');
+    nav.className = 'mobile-nav';
+    nav.innerHTML = items.map(function (x) {
+      return '<a class="mnav-btn" data-act="' + (x.act || '') + '" href="' + (x.href || '#') + '">' +
+        '<img src="/media/ui/' + x.k + '.webp" alt=""><span>' + x.t + '</span></a>';
+    }).join('');
+    document.body.appendChild(nav);
+    nav.addEventListener('click', function (e) {
+      var a = e.target.closest('.mnav-btn');
+      if (a && a.getAttribute('data-act') === 'search') {
+        e.preventDefault();
+        if (window.__dexOpenSearch) window.__dexOpenSearch();
+      }
+    });
+  }
+
   /* ---------- 侧边功能栏 ---------- */
   function syncSideRail() {
     if (document.querySelector('.side-rail')) return;
@@ -1516,7 +1543,7 @@
       clearTimeout(timer);
       timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); }, 300);
     }).observe(root, { childList: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncToc(); tickBranch(); }, 2500);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncMobileNav(); syncToc(); tickBranch(); }, 2500);
   }
 
   window.__dexOpenNotice = openNotice;
