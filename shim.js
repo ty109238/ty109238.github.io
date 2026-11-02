@@ -1068,8 +1068,12 @@
       var nodes = [e].concat([].slice.call(e.querySelectorAll('div, span, h3, h4, p, small')));
       for (var k = 0; k < nodes.length; k++) {
         var nd = nodes[k];
-        if (nd.classList.contains('trait-emblem')) continue;
         nd.style.setProperty('background-image', 'none', 'important');
+        if (nd.classList.contains('trait-emblem')) {
+          nd.style.setProperty('background-color', 'transparent', 'important');
+          nd.style.setProperty('border', '0', 'important');
+          continue;
+        }
         nd.style.setProperty('background-color', '#ffffff', 'important');
         nd.style.setProperty('border', '0', 'important');
         nd.style.setProperty('box-shadow', 'none', 'important');
