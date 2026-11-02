@@ -384,6 +384,31 @@
     }
   }
 
+  /* 分支进化 */
+  function syncBranch(c) {
+    var sec = document.querySelector('.evolution-section');
+    if (!sec) return;
+    var old = sec.querySelector('.evo-branch');
+    if (!c || !c.branch || !c.branch.length) { if (old) old.remove(); return; }
+    if (old && old.getAttribute('data-branch-for') === String(c.id)) return;
+    if (old) old.remove();
+
+    var wrap = document.createElement('div');
+    wrap.className = 'evo-branch';
+    var cards = c.branch.map(function (b) {
+      var target = null;
+      for (var i = 0; i < DATA.creatures.length; i++) if (DATA.creatures[i].id === b.to) { target = DATA.creatures[i]; break; }
+      var src = target && target.imageKey ? (DATA.images[target.imageKey] || '') : '';
+      return '<a class="evo-branch-card" href="/creature/' + b.to + '">' +
+        (src ? '<img src="' + src + '" alt="' + b.name + '" width="64" height="64" loading="lazy">' : '') +
+        '<span class="evo-branch-info"><b>' + b.name + '</b><small>' + b.condition + '</small></span>' +
+        '</a>';
+    }).join('');
+    wrap.setAttribute('data-branch-for', String(c.id));
+    wrap.innerHTML = '<p class="evo-branch-title">分支进化 · 同一只，两种未来</p><div class="evo-branch-list">' + cards + '</div>';
+    sec.appendChild(wrap);
+  }
+
   function makeCollapsible() {
     var sec = document.querySelector('.element-section');
     if (!sec || sec.getAttribute('data-collapsed') === '1') return;
@@ -432,6 +457,7 @@
     decorateDetail(c);
     applyElementVars();
     syncTrain(c);
+    syncBranch(c);
     makeCollapsible();
     syncPetNav(c);
 
@@ -1266,6 +1292,14 @@
     img.src = DATA.images[c.imageKey] || '';
   }
 
+  function tickBranch() {
+    var id = currentCreatureId();
+    if (!id || !DATA) return;
+    for (var i = 0; i < DATA.creatures.length; i++) {
+      if (DATA.creatures[i].id === id) { syncBranch(DATA.creatures[i]); return; }
+    }
+  }
+
   function watchDetail() {
     var root = document.getElementById('root');
     if (!root) return;
@@ -1274,7 +1308,7 @@
       clearTimeout(timer);
       timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); }, 120);
     }).observe(root, { childList: true, subtree: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); }, 1200);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); tickBranch(); }, 1200);
   }
 
   window.__dexOpenNotice = openNotice;

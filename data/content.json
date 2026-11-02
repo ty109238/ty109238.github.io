@@ -2045,7 +2045,7 @@
       "imageKey": "creatures/59-冰芙蓉.png",
       "portraitKey": "uploads/20261030075220-lwu17.webp",
       "description": "冰壳已经长成层层花瓣，走动时会落下细碎的冰粉。它把根须扎在浮冰下面，靠吸食冰水里的矿物质慢慢长大。",
-      "evolutionCondition": "等级达到三十二级，并在雪原停留超过三十分钟。",
+      "evolutionCondition": "夏天进化为「盛放之花」，冬天进化为「高寒之花」。",
       "captureLocation": "浅蓝海湾 · 浮冰花园",
       "hatchCondition": "把蛋放在结冰的湖面上，让它在冰层里冻足五天。",
       "arenaRate": 6,
@@ -2066,7 +2066,21 @@
         "stage": 2,
         "nature": "温顺"
       },
-      "eggKey": "eggs/58.webp"
+      "eggKey": "eggs/58.webp",
+      "branch": [
+        {
+          "to": 103180,
+          "name": "盛放之花",
+          "condition": "夏天进化",
+          "icon": "☀"
+        },
+        {
+          "to": 103179,
+          "name": "高寒之花",
+          "condition": "冬天进化",
+          "icon": "❄"
+        }
+      ]
     },
     {
       "id": 103179,
@@ -2080,7 +2094,7 @@
       "imageKey": "creatures/60-高寒之花.png",
       "portraitKey": "uploads/20261030075226-zs08q.webp",
       "description": "只有在极寒冰原上才会开成这样。整株花被冻在半透明的冰柱里，看起来像一尊雕像，可它的花蕊一直在缓慢转动，替观察者看着四周。",
-      "evolutionCondition": "冰芙蓉在冰原地形下使用「寒蕊绽放」累计十次。",
+      "evolutionCondition": "冰芙蓉在冬天进化而来。",
       "captureLocation": "浅蓝海湾 · 极北冰原",
       "hatchCondition": "需要在零下二十度的环境中孵化，且全程不能见到阳光。",
       "arenaRate": 2,
@@ -2115,7 +2129,7 @@
       "imageKey": "creatures/61-盛放之花.png",
       "portraitKey": "uploads/20261030075232-9yy9s.webp",
       "description": "同一株花，被带到温暖湿润的雨林之后，会开成完全不同的样子。花瓣变得柔软宽大，能兜住一整夜的雨水，第二天再慢慢分给周围的小草。",
-      "evolutionCondition": "冰芙蓉在雨林地形下使用「寒蕊绽放」累计十次。",
+      "evolutionCondition": "冰芙蓉在夏天进化而来。",
       "captureLocation": "雨林深处 · 树冠花海",
       "hatchCondition": "需要在湿度八成以上的环境中孵化，并每天浇水一次。",
       "arenaRate": 2,
@@ -5365,14 +5379,14 @@
       {
         "slot": 1,
         "family": "霜华花族",
-        "name": "霜心",
-        "description": "冰系技能的消耗降低；但受到火系攻击时伤害提高。"
+        "name": "花期感应",
+        "description": "天气为晴或雪时，回合结束时回复少量体力。"
       },
       {
         "slot": 2,
         "family": "霜华花族",
-        "name": "花期感应",
-        "description": "天气为晴或雪时，回合结束时回复少量体力。"
+        "name": "能量聚集",
+        "description": "使用草系技能之后，下一次冰系技能威力增加 50%。"
       }
     ],
     "103181": [
@@ -5477,56 +5491,56 @@
       {
         "slot": 1,
         "family": "齿轮工坊族",
-        "name": "上弦",
-        "description": "每回合速度小幅提升，最多叠加三层。"
+        "name": "狙击",
+        "description": "暴击率 +15%。"
       },
       {
         "slot": 2,
         "family": "齿轮工坊族",
-        "name": "零件回收",
-        "description": "倒下时为一名同伴提供一层护盾。"
+        "name": "零件组合",
+        "description": "倒下时，给下一个同伴提供全属性 +1。"
       }
     ],
     "103189": [
       {
         "slot": 1,
         "family": "齿轮工坊族",
-        "name": "上弦",
-        "description": "每回合速度小幅提升，最多叠加三层。"
+        "name": "堡垒",
+        "description": "上场时特防、物防各 +1，最多触发两次。"
       },
       {
         "slot": 2,
         "family": "齿轮工坊族",
-        "name": "零件回收",
-        "description": "倒下时为一名同伴提供一层护盾。"
+        "name": "零件爆破",
+        "description": "倒下时，给敌方造成自身血量十分之一的直接伤害。"
       }
     ],
     "103190": [
       {
         "slot": 1,
         "family": "齿轮工坊族",
-        "name": "上弦",
-        "description": "每回合速度小幅提升，最多叠加三层。"
+        "name": "狙击",
+        "description": "暴击率 +15%。"
       },
       {
         "slot": 2,
         "family": "齿轮工坊族",
-        "name": "零件回收",
-        "description": "倒下时为一名同伴提供一层护盾。"
+        "name": "零件组合",
+        "description": "倒下时，给下一个同伴提供全属性 +1。"
       }
     ],
     "103191": [
       {
         "slot": 1,
         "family": "齿轮工坊族",
-        "name": "上弦",
-        "description": "每回合速度小幅提升，最多叠加三层。"
+        "name": "堡垒",
+        "description": "上场时特防、物防各 +1，最多触发两次。"
       },
       {
         "slot": 2,
         "family": "齿轮工坊族",
-        "name": "零件回收",
-        "description": "倒下时为一名同伴提供一层护盾。"
+        "name": "零件爆破",
+        "description": "倒下时，给敌方造成自身血量十分之一的直接伤害。"
       }
     ],
     "103192": [
@@ -5553,8 +5567,8 @@
       {
         "slot": 2,
         "family": "浮空蟹族",
-        "name": "潮汐共鸣",
-        "description": "与其他浮空蟹族同伴同场时，全队特防提升。"
+        "name": "潮汐守望",
+        "description": "队伍只剩下自己时，全属性 +1。"
       }
     ]
   },
@@ -5839,8 +5853,7 @@
     ],
     "103178": [
       103177,
-      103178,
-      103179
+      103178
     ],
     "103179": [
       103177,
