@@ -2115,7 +2115,13 @@
         "stage": 3,
         "nature": "温顺"
       },
-      "eggKey": "eggs/58.webp"
+      "eggKey": "eggs/58.webp",
+      "from": {
+        "id": 103178,
+        "name": "冰芙蓉",
+        "condition": "冬天",
+        "dexNo": 59
+      }
     },
     {
       "id": 103180,
@@ -2150,7 +2156,13 @@
         "stage": 3,
         "nature": "稳重"
       },
-      "eggKey": "eggs/58.webp"
+      "eggKey": "eggs/58.webp",
+      "from": {
+        "id": 103178,
+        "name": "冰芙蓉",
+        "condition": "夏天",
+        "dexNo": 59
+      }
     },
     {
       "id": 103181,
@@ -2442,7 +2454,13 @@
         "stage": 2,
         "nature": "淘气"
       },
-      "eggKey": "eggs/68.webp"
+      "eggKey": "eggs/68.webp",
+      "from": {
+        "id": 103187,
+        "name": "乒乒",
+        "condition": "防御 > 攻击",
+        "dexNo": 68
+      }
     },
     {
       "id": 103189,
@@ -2477,7 +2495,13 @@
         "stage": 2,
         "nature": "固执"
       },
-      "eggKey": "eggs/68.webp"
+      "eggKey": "eggs/68.webp",
+      "from": {
+        "id": 103187,
+        "name": "乒乒",
+        "condition": "攻击 > 防御",
+        "dexNo": 68
+      }
     },
     {
       "id": 103190,

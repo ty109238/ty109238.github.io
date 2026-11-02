@@ -704,3 +704,30 @@ html.hide-studio .studio-section { display: none !important; }
 .evo-branch-info { display: grid; gap: 2px; }
 .evo-branch-info b { font-size: 15px; }
 .evo-branch-info small { font-size: 11.5px; color: #7b8ea1; }
+/* ---------- 分支来源标签 ---------- */
+.evo-from {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 14px;
+  padding: 7px 14px;
+  border: 2px dashed var(--element-color, #1570ef);
+  border-radius: 999px;
+  background: var(--element-soft, #f7fbff);
+  font-size: 12.5px;
+  color: #4a5c70;
+  text-decoration: none;
+  transition: transform 0.14s ease, border-style 0.14s ease;
+}
+.evo-from:hover { border-style: solid; transform: translateY(-2px); }
+.evo-from b { color: var(--ink); font-size: 13px; }
+.evo-from-cap {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--element-color, #1570ef);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+.evo-from-arrow { font-weight: 900; color: var(--element-color, #1570ef); }

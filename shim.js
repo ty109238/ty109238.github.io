@@ -1292,11 +1292,33 @@
     img.src = DATA.images[c.imageKey] || '';
   }
 
+  /* 分支来源标签：由 XX 分化而来 */
+  function syncFromTag(c) {
+    var sec = document.querySelector('.evolution-section');
+    if (!sec) return;
+    var old = sec.querySelector('.evo-from');
+    if (!c || !c.from) { if (old) old.remove(); return; }
+    if (old && old.getAttribute('data-from-for') === String(c.id)) return;
+    if (old) old.remove();
+    var f = c.from;
+    var tag = document.createElement('a');
+    tag.className = 'evo-from';
+    tag.setAttribute('data-from-for', String(c.id));
+    tag.href = '/creature/' + f.id;
+    tag.innerHTML = '<span class="evo-from-cap">分支进化</span>' +
+      '由 <b>No.' + String(f.dexNo).padStart(3, '0') + ' ' + f.name + '</b>' +
+      (f.condition ? '（' + f.condition + '）' : '') + ' 分化而来' +
+      '<span class="evo-from-arrow">→</span>';
+    var head = sec.querySelector('.record-heading');
+    if (head && head.nextSibling) sec.insertBefore(tag, head.nextSibling);
+    else sec.insertBefore(tag, sec.firstChild);
+  }
+
   function tickBranch() {
     var id = currentCreatureId();
     if (!id || !DATA) return;
     for (var i = 0; i < DATA.creatures.length; i++) {
-      if (DATA.creatures[i].id === id) { syncBranch(DATA.creatures[i]); return; }
+      if (DATA.creatures[i].id === id) { syncBranch(DATA.creatures[i]); syncFromTag(DATA.creatures[i]); return; }
     }
   }
 
