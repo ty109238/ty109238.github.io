@@ -35,7 +35,8 @@
         "star": 2,
         "stage": 1,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/01.webp"
     },
     {
       "id": 2,
@@ -69,7 +70,8 @@
         "star": 4,
         "stage": 2,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/01.webp"
     },
     {
       "id": 3,
@@ -103,7 +105,8 @@
         "star": 6,
         "stage": 3,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/01.webp"
     },
     {
       "id": 4,
@@ -137,7 +140,8 @@
         "star": 2,
         "stage": 1,
         "nature": "固执"
-      }
+      },
+      "eggKey": "eggs/04.webp"
     },
     {
       "id": 5,
@@ -171,7 +175,8 @@
         "star": 4,
         "stage": 2,
         "nature": "固执"
-      }
+      },
+      "eggKey": "eggs/04.webp"
     },
     {
       "id": 6,
@@ -205,7 +210,8 @@
         "star": 6,
         "stage": 3,
         "nature": "固执"
-      }
+      },
+      "eggKey": "eggs/04.webp"
     },
     {
       "id": 7,
@@ -239,7 +245,8 @@
         "star": 2,
         "stage": 1,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/07.webp"
     },
     {
       "id": 8,
@@ -273,7 +280,8 @@
         "star": 4,
         "stage": 2,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/07.webp"
     },
     {
       "id": 9,
@@ -307,7 +315,8 @@
         "star": 6,
         "stage": 3,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/07.webp"
     },
     {
       "id": 60001,
@@ -341,7 +350,8 @@
         "star": 2,
         "stage": 1,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/10.webp"
     },
     {
       "id": 60002,
@@ -375,7 +385,8 @@
         "star": 4,
         "stage": 2,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/10.webp"
     },
     {
       "id": 60003,
@@ -409,7 +420,8 @@
         "star": 6,
         "stage": 3,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/10.webp"
     },
     {
       "id": 60004,
@@ -443,7 +455,8 @@
         "star": 2,
         "stage": 1,
         "nature": "固执"
-      }
+      },
+      "eggKey": "eggs/13.webp"
     },
     {
       "id": 60005,
@@ -477,7 +490,8 @@
         "star": 4,
         "stage": 2,
         "nature": "孤僻"
-      }
+      },
+      "eggKey": "eggs/13.webp"
     },
     {
       "id": 60006,
@@ -511,7 +525,8 @@
         "star": 6,
         "stage": 3,
         "nature": "孤僻"
-      }
+      },
+      "eggKey": "eggs/13.webp"
     },
     {
       "id": 60007,
@@ -545,7 +560,8 @@
         "star": 2,
         "stage": 1,
         "nature": "大胆"
-      }
+      },
+      "eggKey": "eggs/16.webp"
     },
     {
       "id": 60008,
@@ -579,7 +595,8 @@
         "star": 4,
         "stage": 2,
         "nature": "大胆"
-      }
+      },
+      "eggKey": "eggs/16.webp"
     },
     {
       "id": 60009,
@@ -613,7 +630,8 @@
         "star": 6,
         "stage": 3,
         "nature": "大胆"
-      }
+      },
+      "eggKey": "eggs/16.webp"
     },
     {
       "id": 60010,
@@ -647,7 +665,8 @@
         "star": 2,
         "stage": 1,
         "nature": "大胆"
-      }
+      },
+      "eggKey": "eggs/19.webp"
     },
     {
       "id": 60011,
@@ -681,7 +700,8 @@
         "star": 4,
         "stage": 2,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/19.webp"
     },
     {
       "id": 60012,
@@ -715,7 +735,8 @@
         "star": 6,
         "stage": 3,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/19.webp"
     },
     {
       "id": 60013,
@@ -749,7 +770,8 @@
         "star": 2,
         "stage": 1,
         "nature": "大胆"
-      }
+      },
+      "eggKey": "eggs/22.webp"
     },
     {
       "id": 60014,
@@ -783,7 +805,8 @@
         "star": 4,
         "stage": 2,
         "nature": "大胆"
-      }
+      },
+      "eggKey": "eggs/22.webp"
     },
     {
       "id": 60015,
@@ -817,7 +840,8 @@
         "star": 6,
         "stage": 3,
         "nature": "大胆"
-      }
+      },
+      "eggKey": "eggs/22.webp"
     },
     {
       "id": 60016,
@@ -851,7 +875,8 @@
         "star": 2,
         "stage": 1,
         "nature": "淘气"
-      }
+      },
+      "eggKey": "eggs/25.webp"
     },
     {
       "id": 60017,
@@ -885,7 +910,8 @@
         "star": 4,
         "stage": 2,
         "nature": "淘气"
-      }
+      },
+      "eggKey": "eggs/25.webp"
     },
     {
       "id": 60018,
@@ -919,7 +945,8 @@
         "star": 6,
         "stage": 3,
         "nature": "淘气"
-      }
+      },
+      "eggKey": "eggs/25.webp"
     },
     {
       "id": 60019,
@@ -953,7 +980,8 @@
         "star": 2,
         "stage": 1,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/28.webp"
     },
     {
       "id": 60020,
@@ -987,7 +1015,8 @@
         "star": 4,
         "stage": 2,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/28.webp"
     },
     {
       "id": 60021,
@@ -1021,7 +1050,8 @@
         "star": 6,
         "stage": 3,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/28.webp"
     },
     {
       "id": 60022,
@@ -1055,7 +1085,8 @@
         "star": 2,
         "stage": 1,
         "nature": "急躁"
-      }
+      },
+      "eggKey": "eggs/31.webp"
     },
     {
       "id": 60023,
@@ -1089,7 +1120,8 @@
         "star": 4,
         "stage": 2,
         "nature": "急躁"
-      }
+      },
+      "eggKey": "eggs/31.webp"
     },
     {
       "id": 60024,
@@ -1123,7 +1155,8 @@
         "star": 6,
         "stage": 3,
         "nature": "急躁"
-      }
+      },
+      "eggKey": "eggs/31.webp"
     },
     {
       "id": 60025,
@@ -1157,7 +1190,8 @@
         "star": 2,
         "stage": 1,
         "nature": "温顺"
-      }
+      },
+      "eggKey": "eggs/34.webp"
     },
     {
       "id": 60026,
@@ -1191,7 +1225,8 @@
         "star": 4,
         "stage": 2,
         "nature": "温顺"
-      }
+      },
+      "eggKey": "eggs/34.webp"
     },
     {
       "id": 60027,
@@ -1225,7 +1260,8 @@
         "star": 6,
         "stage": 3,
         "nature": "温顺"
-      }
+      },
+      "eggKey": "eggs/34.webp"
     },
     {
       "id": 60028,
@@ -1259,7 +1295,8 @@
         "star": 2,
         "stage": 1,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/37.webp"
     },
     {
       "id": 60029,
@@ -1293,7 +1330,8 @@
         "star": 4,
         "stage": 2,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/37.webp"
     },
     {
       "id": 60030,
@@ -1327,7 +1365,8 @@
         "star": 6,
         "stage": 3,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/37.webp"
     },
     {
       "id": 60031,
@@ -1361,7 +1400,8 @@
         "star": 2,
         "stage": 1,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/40.webp"
     },
     {
       "id": 60032,
@@ -1395,7 +1435,8 @@
         "star": 4,
         "stage": 2,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/40.webp"
     },
     {
       "id": 60033,
@@ -1429,7 +1470,8 @@
         "star": 6,
         "stage": 3,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/40.webp"
     },
     {
       "id": 60034,
@@ -1463,7 +1505,8 @@
         "star": 2,
         "stage": 1,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/43.webp"
     },
     {
       "id": 60035,
@@ -1497,7 +1540,8 @@
         "star": 4,
         "stage": 2,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/43.webp"
     },
     {
       "id": 60036,
@@ -1531,7 +1575,8 @@
         "star": 6,
         "stage": 3,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/43.webp"
     },
     {
       "id": 60037,
@@ -1565,7 +1610,8 @@
         "star": 2,
         "stage": 1,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/46.webp"
     },
     {
       "id": 60038,
@@ -1599,7 +1645,8 @@
         "star": 4,
         "stage": 2,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/46.webp"
     },
     {
       "id": 60039,
@@ -1633,7 +1680,8 @@
         "star": 6,
         "stage": 3,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/46.webp"
     },
     {
       "id": 60040,
@@ -1667,7 +1715,8 @@
         "star": 2,
         "stage": 1,
         "nature": "固执"
-      }
+      },
+      "eggKey": "eggs/49.webp"
     },
     {
       "id": 60041,
@@ -1701,7 +1750,8 @@
         "star": 2,
         "stage": 1,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/50.webp"
     },
     {
       "id": 60042,
@@ -1735,7 +1785,8 @@
         "star": 2,
         "stage": 1,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/51.webp"
     },
     {
       "id": 103171,
@@ -1769,7 +1820,8 @@
         "star": 2,
         "stage": 1,
         "nature": "温顺"
-      }
+      },
+      "eggKey": "eggs/52.webp"
     },
     {
       "id": 103172,
@@ -1803,7 +1855,8 @@
         "star": 2,
         "stage": 1,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/53.webp"
     },
     {
       "id": 103173,
@@ -1837,7 +1890,8 @@
         "star": 2,
         "stage": 1,
         "nature": "淘气"
-      }
+      },
+      "eggKey": "eggs/54.webp"
     },
     {
       "id": 103174,
@@ -1871,7 +1925,8 @@
         "star": 2,
         "stage": 1,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/55.webp"
     },
     {
       "id": 103175,
@@ -1905,7 +1960,8 @@
         "star": 4,
         "stage": 2,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/55.webp"
     },
     {
       "id": 103176,
@@ -1939,7 +1995,8 @@
         "star": 6,
         "stage": 3,
         "nature": "保守"
-      }
+      },
+      "eggKey": "eggs/55.webp"
     },
     {
       "id": 103177,
@@ -1973,7 +2030,8 @@
         "star": 2,
         "stage": 1,
         "nature": "温顺"
-      }
+      },
+      "eggKey": "eggs/58.webp"
     },
     {
       "id": 103178,
@@ -2007,7 +2065,8 @@
         "star": 4,
         "stage": 2,
         "nature": "温顺"
-      }
+      },
+      "eggKey": "eggs/58.webp"
     },
     {
       "id": 103179,
@@ -2041,7 +2100,8 @@
         "star": 6,
         "stage": 3,
         "nature": "温顺"
-      }
+      },
+      "eggKey": "eggs/58.webp"
     },
     {
       "id": 103180,
@@ -2075,7 +2135,8 @@
         "star": 6,
         "stage": 3,
         "nature": "稳重"
-      }
+      },
+      "eggKey": "eggs/58.webp"
     },
     {
       "id": 103181,
@@ -2109,7 +2170,8 @@
         "star": 2,
         "stage": 1,
         "nature": "急躁"
-      }
+      },
+      "eggKey": "eggs/62.webp"
     },
     {
       "id": 103182,
@@ -2143,7 +2205,8 @@
         "star": 4,
         "stage": 2,
         "nature": "急躁"
-      }
+      },
+      "eggKey": "eggs/62.webp"
     },
     {
       "id": 103183,
@@ -2177,7 +2240,8 @@
         "star": 6,
         "stage": 3,
         "nature": "孤僻"
-      }
+      },
+      "eggKey": "eggs/62.webp"
     },
     {
       "id": 103184,
@@ -2211,7 +2275,8 @@
         "star": 2,
         "stage": 1,
         "nature": "固执"
-      }
+      },
+      "eggKey": "eggs/65.webp"
     },
     {
       "id": 103185,
@@ -2245,7 +2310,8 @@
         "star": 4,
         "stage": 2,
         "nature": "固执"
-      }
+      },
+      "eggKey": "eggs/65.webp"
     },
     {
       "id": 103186,
@@ -2279,7 +2345,8 @@
         "star": 6,
         "stage": 3,
         "nature": "固执"
-      }
+      },
+      "eggKey": "eggs/65.webp"
     },
     {
       "id": 103187,
@@ -2313,7 +2380,8 @@
         "star": 2,
         "stage": 1,
         "nature": "天真"
-      }
+      },
+      "eggKey": "eggs/68.webp"
     },
     {
       "id": 103188,
@@ -2347,7 +2415,8 @@
         "star": 4,
         "stage": 2,
         "nature": "淘气"
-      }
+      },
+      "eggKey": "eggs/68.webp"
     },
     {
       "id": 103189,
@@ -2381,7 +2450,8 @@
         "star": 4,
         "stage": 2,
         "nature": "固执"
-      }
+      },
+      "eggKey": "eggs/68.webp"
     },
     {
       "id": 103190,
@@ -2415,7 +2485,8 @@
         "star": 6,
         "stage": 3,
         "nature": "淘气"
-      }
+      },
+      "eggKey": "eggs/68.webp"
     },
     {
       "id": 103191,
@@ -2449,7 +2520,8 @@
         "star": 6,
         "stage": 3,
         "nature": "固执"
-      }
+      },
+      "eggKey": "eggs/68.webp"
     },
     {
       "id": 103192,
@@ -2483,7 +2555,8 @@
         "star": 2,
         "stage": 1,
         "nature": "大胆"
-      }
+      },
+      "eggKey": "eggs/73.webp"
     },
     {
       "id": 103193,
@@ -2517,7 +2590,8 @@
         "star": 2,
         "stage": 1,
         "nature": "固执"
-      }
+      },
+      "eggKey": "eggs/74.webp"
     }
   ],
   "skills": {
@@ -6058,7 +6132,36 @@
     "uploads/20261030080443-wg0yq.jpg": "/media/uploads/20261030080443-wg0yq.jpg",
     "uploads/20261030080448-8hzbv.jpg": "/media/uploads/20261030080448-8hzbv.jpg",
     "uploads/20261030080455-9xfsf.jpg": "/media/uploads/20261030080455-9xfsf.jpg",
-    "uploads/20261030080503-cba4q.jpg": "/media/uploads/20261030080503-cba4q.jpg"
+    "uploads/20261030080503-cba4q.jpg": "/media/uploads/20261030080503-cba4q.jpg",
+    "eggs/01.webp": "/media/eggs/01.webp",
+    "eggs/04.webp": "/media/eggs/04.webp",
+    "eggs/07.webp": "/media/eggs/07.webp",
+    "eggs/10.webp": "/media/eggs/10.webp",
+    "eggs/13.webp": "/media/eggs/13.webp",
+    "eggs/16.webp": "/media/eggs/16.webp",
+    "eggs/19.webp": "/media/eggs/19.webp",
+    "eggs/22.webp": "/media/eggs/22.webp",
+    "eggs/25.webp": "/media/eggs/25.webp",
+    "eggs/28.webp": "/media/eggs/28.webp",
+    "eggs/31.webp": "/media/eggs/31.webp",
+    "eggs/34.webp": "/media/eggs/34.webp",
+    "eggs/37.webp": "/media/eggs/37.webp",
+    "eggs/40.webp": "/media/eggs/40.webp",
+    "eggs/43.webp": "/media/eggs/43.webp",
+    "eggs/46.webp": "/media/eggs/46.webp",
+    "eggs/49.webp": "/media/eggs/49.webp",
+    "eggs/50.webp": "/media/eggs/50.webp",
+    "eggs/51.webp": "/media/eggs/51.webp",
+    "eggs/52.webp": "/media/eggs/52.webp",
+    "eggs/53.webp": "/media/eggs/53.webp",
+    "eggs/54.webp": "/media/eggs/54.webp",
+    "eggs/55.webp": "/media/eggs/55.webp",
+    "eggs/58.webp": "/media/eggs/58.webp",
+    "eggs/62.webp": "/media/eggs/62.webp",
+    "eggs/65.webp": "/media/eggs/65.webp",
+    "eggs/68.webp": "/media/eggs/68.webp",
+    "eggs/73.webp": "/media/eggs/73.webp",
+    "eggs/74.webp": "/media/eggs/74.webp"
   },
   "studio": {
     "name": "谭熠的橘子工作室",
