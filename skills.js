@@ -14,6 +14,11 @@
     try { localStorage.setItem('dex:books', JSON.stringify([].slice.call(set))); } catch (e) {}
   }
   var owned = loadBooks();
+  function usageMap() {
+    try { return JSON.parse(localStorage.getItem('dex:usage') || '{}'); } catch (e) { return {}; }
+  }
+  function saveUsage(m) { try { localStorage.setItem('dex:usage', JSON.stringify(m)); } catch (e) {} }
+  function saveOwned(set) { try { localStorage.setItem('dex:books', JSON.stringify([].slice.call(set))); } catch (e) {} }
 
   function $(id) { return document.getElementById(id); }
 
@@ -78,6 +83,43 @@
       b.addEventListener('click', function () { onPick(v); });
       host.appendChild(b);
     });
+  }
+
+  function renderUsagePanel() {
+    var host = document.getElementById('usagePanel');
+    if (!host) return;
+    var m = usageMap();
+    var rows = DATA.creatures.map(function (c) {
+      var n = m[String(c.id)] || 0;
+      return '<div class="usage-row"><span class="u-name">No.' + String(c.dexNo).padStart(3, '0') + ' ' + c.name +
+        '</span><span class="u-count' + (n >= 10 ? ' full' : '') + '">' + n + ' / 10</span>' +
+        '<button class="u-btn" data-id="' + c.id + '" data-d="1">+1</button>' +
+        '<button class="u-btn" data-id="' + c.id + '" data-d="5">+5</button>' +
+        '<button class="u-btn" data-id="' + c.id + '" data-d="-1">-1</button></div>';
+    }).join('');
+    host.innerHTML = '<div class="usage-list">' + rows + '</div>';
+    host.querySelectorAll('.u-btn').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var m2 = usageMap();
+        var id = b.getAttribute('data-id');
+        var d = parseInt(b.getAttribute('data-d'), 10);
+        m2[id] = Math.max(0, (m2[id] || 0) + d);
+        saveUsage(m2);
+        if (m2[id] >= 10) unlockExclusive(id);
+        renderUsagePanel();
+        renderGrid();
+      });
+    });
+  }
+
+  function unlockExclusive(id) {
+    var arr = DATA.skills[String(id)] || [];
+    var n = 0;
+    arr.forEach(function (sk) {
+      if ((sk.exclusive || (sk.power || 0) >= 95) && !owned.has(sk.name)) { owned.add(sk.name); n++; }
+    });
+    if (n) saveOwned(owned);
+    return n;
   }
 
   function renderFilters() {
@@ -149,6 +191,7 @@
         DATA = d;
         build();
         renderFilters();
+        renderUsagePanel();
         renderGrid();
         $('q').addEventListener('input', function (e) { state.q = e.target.value; renderGrid(); });
         $('sort').addEventListener('change', function (e) { state.sort = e.target.value; renderGrid(); });

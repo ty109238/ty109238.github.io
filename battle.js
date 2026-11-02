@@ -72,6 +72,59 @@
     try { return new Set(JSON.parse(localStorage.getItem('dex:books') || '[]')); }
     catch (e) { return new Set(); }
   }
+  function allBookSkills() {
+    var out = [];
+    DATA.creatures.forEach(function (c) {
+      (DATA.skills[String(c.id)] || []).forEach(function (sk) {
+        if (needsBook(sk)) out.push({ name: sk.name, cid: c.id, cname: c.name, dexNo: c.dexNo });
+      });
+    });
+    return out;
+  }
+
+  function saveBookSet(set) {
+    try { localStorage.setItem('dex:books', JSON.stringify([].slice.call(set))); } catch (e) {}
+  }
+
+  function awardBook() {
+    var have = bookSet();
+    var pool = allBookSkills().filter(function (x) { return !have.has(x.name); });
+    if (!pool.length) return null;
+    var pickOne = pool[Math.floor(Math.random() * pool.length)];
+    have.add(pickOne.name);
+    saveBookSet(have);
+    return pickOne;
+  }
+
+  function usageMap() {
+    try { return JSON.parse(localStorage.getItem('dex:usage') || '{}'); } catch (e) { return {}; }
+  }
+  function saveUsage(m) {
+    try { localStorage.setItem('dex:usage', JSON.stringify(m)); } catch (e) {}
+  }
+
+  function bumpUsage(team) {
+    var m = usageMap();
+    var unlocked = [];
+    team.forEach(function (cfg) {
+      if (!cfg) return;
+      var key = String(cfg.c.id);
+      m[key] = (m[key] || 0) + 1;
+      if (m[key] >= 10) {
+        var have = bookSet();
+        (DATA.skills[key] || []).forEach(function (sk) {
+          if (needsBook(sk) && !have.has(sk.name)) {
+            have.add(sk.name);
+            unlocked.push(sk.name);
+          }
+        });
+        saveBookSet(have);
+      }
+    });
+    saveUsage(m);
+    return unlocked;
+  }
+
   function needsBook(s) {
     return !!(s && (s.exclusive || (s.power || 0) >= 95));
   }
@@ -472,6 +525,7 @@
   }
 
   function startBattle() {
+    bumpUsage(state.my);
     if (!state.my.every(Boolean) || !state.enemy.every(Boolean)) return;
     state.battle = {
       my: state.my.map(function (cfg, i) { return makeMon(cfg, 'my', i); }),
@@ -1087,6 +1141,7 @@
   }
 
   function startDoubles() {
+    bumpUsage(state.my);
     var b = {
       mode: 'double',
       my: state.my.map(function (cfg, i) { return makeMon(cfg, 'my', i); }),
@@ -1394,6 +1449,14 @@
     rec.recent = (rec.recent || []).slice(-4);
     rec.recent.push({ w: win ? 1 : 0, t: b.turn, we: b.weather, at: Date.now() });
     saveRecord(rec);
+    if (win) {
+      var got = awardBook();
+      if (got) logLine('获得技能书《' + got.name + '》（' + got.cname + '）', 'turn');
+      if (rec.streak > 0 && rec.streak % 3 === 0) {
+        var bonus = awardBook();
+        if (bonus) logLine('连胜 ' + rec.streak + ' 场奖励：技能书《' + bonus.name + '》', 'turn');
+      }
+    }
 
     document.getElementById('dblView').classList.add('hidden');
     document.getElementById('resultView').classList.remove('hidden');

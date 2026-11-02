@@ -85,3 +85,16 @@ body {
 .sk-book:hover { background: #ffd6e8; }
 .sk-book.got { background: #e9f7ec; color: #1f7a3d; border-color: #b6e0c2; }
 .sk-card:has(.sk-book:not(.got)) { opacity: .92; }
+/* 图鉴关联面板 */
+.usage-box {
+  background: #fff; border: 2px solid var(--ink); border-radius: 16px;
+  padding: 12px 16px; margin-bottom: 18px;
+}
+.usage-box summary { cursor: pointer; font-size: 13px; font-weight: 900; }
+.usage-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 6px 14px; margin-top: 12px; max-height: 320px; overflow: auto; }
+.usage-row { display: flex; align-items: center; gap: 6px; font-size: 11.5px; }
+.u-name { flex: 1; color: #55677b; }
+.u-count { font-weight: 900; color: #9aa9b8; min-width: 44px; text-align: right; }
+.u-count.full { color: #1f7a3d; }
+.u-btn { padding: 2px 8px; border: 1px solid var(--line); border-radius: 999px; background: #fff; font: inherit; font-size: 11px; cursor: pointer; }
+.u-btn:hover { border-color: var(--ink); background: #fff6d8; }
