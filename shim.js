@@ -1035,6 +1035,19 @@
     var toc = document.createElement('nav');
     toc.className = 'page-toc';
     toc.setAttribute('data-sig', sig);
+    var collapsed = localStorage.getItem('dex:toc') === '0';
+    if (collapsed) toc.classList.add('collapsed');
+    var btn = document.createElement('button');
+    btn.className = 'toc-toggle';
+    btn.type = 'button';
+    btn.innerHTML = '<span class="toc-ico">☰</span><span class="toc-txt">目录</span>';
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toc.classList.toggle('collapsed');
+      localStorage.setItem('dex:toc', toc.classList.contains('collapsed') ? '0' : '1');
+    });
+    toc.appendChild(btn);
     secs.forEach(function (el, i) {
       var h = el.querySelector(':scope > .record-heading h2');
       if (!h) return;

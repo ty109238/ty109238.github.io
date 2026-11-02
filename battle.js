@@ -213,11 +213,14 @@
 
   function defaultCfg(c) {
     var st = { '一阶': 1, '二阶': 2, '三阶': 3 }[c.stage] || 1;
-    var evs = { hp: 0, attack: 0, defense: 0, spAttack: 0, spDefense: 0, speed: 0 };
+    var skills = DATA.skills[String(c.id)].slice(0, 4);
+    var main = skills[0] && skills[0].category === '物理' ? 'attack' : 'spAttack';
+    var evs = { hp: 6, attack: 0, defense: 0, spAttack: 0, spDefense: 0, speed: 252 };
+    evs[main] = 252;
     return {
-      c: c, level: 30, star: Math.min(9, st * 2), talent: Math.min(8, st + 2),
+      c: c, level: 40, star: Math.min(9, st * 2), talent: Math.min(8, st + 2),
       stage: st, nature: '坦率', evs: evs,
-      skills: DATA.skills[String(c.id)].slice(0, 4),
+      skills: skills,
       pool: buildPool(c)
     };
   }
@@ -365,16 +368,7 @@
     for (var i = 0; i < 6; i++) {
       var c = pool.splice(Math.floor(Math.random() * pool.length), 1)[0];
       var cfg = defaultCfg(c);
-      cfg.level = 40;
       cfg.nature = pick(['保守', '固执', '胆小', '大胆', '沉着', '开朗']);
-      var keys = ['hp', 'attack', 'defense', 'spAttack', 'spDefense', 'speed'];
-      var main = cfg.skills[0] && cfg.skills[0].category === '物理' ? 'attack' : 'spAttack';
-      cfg.evs = { hp: 252, attack: 0, defense: 0, spAttack: 0, spDefense: 4, speed: 252 };
-      cfg.evs[main] = 252;
-      cfg.evs = { hp: 4, attack: 0, defense: 0, spAttack: 0, spDefense: 0, speed: 0 };
-      cfg.evs[main] = 252;
-      cfg.evs.speed = 252;
-      cfg.evs.hp = 6;
       state[side][i] = cfg;
     }
     renderSlots();
@@ -464,6 +458,7 @@
     var showSkills = anyPP ? mm.skills : [STRUGGLE];
     mm.skills.forEach(function (s, i) {
       var btn = el('button', 'skill-btn');
+      bindSkillTip(btn, s);
       btn.innerHTML = '<img class="sk-ico" src="/media/ui/fn-skillbook.webp" alt=""><span class="pp">PP ' + s.ppNow + '/' + s.ppMax + '</span><b>' + s.name + '</b>' +
         '<small>' + s.type + '系 · ' + skillCat(s) + ' · ' + (s.power ? '威力 ' + s.power : '变化') +
         (s.accuracy ? ' · 命中 ' + s.accuracy : '') + '</small>';
@@ -881,6 +876,33 @@
 
   var STRUGGLE = { name: '挣扎', type: '无', category: '物理', power: 40, accuracy: null, pp: 0, ppNow: 99, ppMax: 99, description: '无技能可用时的全力一撞，自身也会受到少量反伤。', learnLevel: 0 };
 
+  function bindSkillTip(btn, skill) {
+    var timer = null;
+    var tip = null;
+    function show() {
+      hide();
+      tip = document.createElement('div');
+      tip.className = 'skill-tip';
+      tip.innerHTML = '<b>' + skill.name + '</b>' +
+        '<div class="tip-meta">' + skill.type + '系 · ' + skillCat(skill) + ' · ' +
+        (skill.power ? '威力 ' + skill.power : '变化') +
+        (skill.accuracy ? ' · 命中 ' + skill.accuracy : '') + ' · PP ' + skill.pp + '</div>' +
+        '<p>' + (skill.description || '') + '</p>';
+      document.body.appendChild(tip);
+      var r = btn.getBoundingClientRect();
+      var top = r.bottom + 8;
+      if (top + 120 > window.innerHeight) top = r.top - 8 - tip.offsetHeight;
+      tip.style.left = Math.min(window.innerWidth - 300, Math.max(8, r.left)) + 'px';
+      tip.style.top = Math.max(8, top) + 'px';
+    }
+    function hide() { if (tip) { tip.remove(); tip = null; } }
+    btn.addEventListener('pointerdown', function () { timer = setTimeout(show, 350); });
+    ['pointerup', 'pointerleave', 'pointercancel', 'click'].forEach(function (ev) {
+      btn.addEventListener(ev, function () { clearTimeout(timer); setTimeout(hide, 1200); });
+    });
+    btn.addEventListener('contextmenu', function (e) { e.preventDefault(); show(); });
+  }
+
   function chooseAiSkill(attacker, defender) {
     var level = (state.battle && state.battle.ai) || 'normal';
     var usable = attacker.skills.filter(function (s) { return s.ppNow > 0; });
@@ -1054,6 +1076,7 @@
       skRow.appendChild(pbtn);
       m.skills.forEach(function (s, i) {
         var btn = el('button', 'skill-btn' + (dbl.pick[slot] === i ? ' picked' : ''));
+        bindSkillTip(btn, s);
         var isChange = s.category === '变化';
         var spread = /范围|全体|领域/.test(s.description || '');
         var tgt = isChange ? (dbl.ally[slot] ? '友' : '自') : (spread ? 'A+B' : (dbl.target[slot] === 0 ? 'A' : 'B'));

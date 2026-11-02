@@ -263,3 +263,22 @@ a { color: inherit; }
 .swap-btn { background:#f7fbff !important; }
 .swap-btn b { color:#1570ef; }
 .dbl-row { grid-template-columns: 100px minmax(0,1fr) 86px !important; }
+
+/* 技能介绍气泡（对战页） */
+.skill-tip {
+  position: fixed;
+  z-index: 9999;
+  width: 280px;
+  padding: 10px 12px;
+  border: 2px solid #262722;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(38, 39, 34, .22);
+  font-size: 12px;
+  line-height: 1.7;
+  color: #3d4e61;
+  pointer-events: none;
+}
+.skill-tip b { display: block; font-size: 13.5px; color: #262722; margin-bottom: 2px; }
+.skill-tip .tip-meta { font-size: 10.5px; color: #7b8ea1; margin-bottom: 5px; }
+.skill-tip p { margin: 0; }
