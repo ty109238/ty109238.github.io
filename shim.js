@@ -1069,9 +1069,8 @@
       for (var k = 0; k < nodes.length; k++) {
         var nd = nodes[k];
         if (nd.classList.contains('trait-emblem')) continue;
-        nd.style.setProperty('background', 'none', 'important');
         nd.style.setProperty('background-image', 'none', 'important');
-        nd.style.setProperty('background-color', 'transparent', 'important');
+        nd.style.setProperty('background-color', '#ffffff', 'important');
         nd.style.setProperty('border', '0', 'important');
         nd.style.setProperty('box-shadow', 'none', 'important');
         nd.style.setProperty('border-radius', '0', 'important');

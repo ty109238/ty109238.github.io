@@ -1158,3 +1158,12 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   content: none !important;
 }
 .traits-list { display: grid !important; gap: 10px !important; }
+/* 特性卡：纯白底 + 抠干净的徽章 */
+.traits-list .trait-entry,
+.trait-entry {
+  background: #fff !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.trait-emblem { background: transparent !important; }
