@@ -1059,6 +1059,16 @@
     return img;
   }
 
+  function frameTraitSection() {
+    var secs = document.querySelectorAll('.detail-page > section');
+    for (var i = 0; i < secs.length; i++) {
+      var h = secs[i].querySelector('.record-heading h2');
+      if (h && h.textContent.indexOf('被动特性') >= 0) {
+        if (!secs[i].classList.contains('trait-sec')) secs[i].classList.add('trait-sec');
+      }
+    }
+  }
+
   function killTraitBg() {
     var entries = document.querySelectorAll('.traits-list .trait-entry');
     for (var i = 0; i < entries.length; i++) {
@@ -1120,7 +1130,7 @@
     var t = null;
     entryObs = new MutationObserver(function () {
       clearTimeout(t);
-      t = setTimeout(function () { syncEntryIcons(); killTraitBg(); }, 80);
+      t = setTimeout(function () { syncEntryIcons(); frameTraitSection(); killTraitBg(); }, 80);
     });
     entryObs.observe(root, { childList: true, subtree: true });
   }
@@ -1687,7 +1697,7 @@
       clearTimeout(timer);
       timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); }, 300);
     }).observe(root, { childList: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncMobileNav(); syncToc(); syncSectionIcons(); syncEntryIcons(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncMobileNav(); syncToc(); syncSectionIcons(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
   }
 
   window.__dexOpenNotice = openNotice;

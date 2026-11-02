@@ -1167,3 +1167,14 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   box-shadow: none !important;
 }
 .trait-emblem { background: transparent !important; }
+/* 「被动特性」整段加方框 */
+.detail-page > section.trait-sec {
+  border: 3px solid #262722 !important;
+  border-radius: 20px !important;
+  background: #fff !important;
+  padding: 22px 24px 24px !important;
+  box-shadow: 5px 6px 0 rgba(38, 39, 34, 0.1) !important;
+  margin-bottom: 18px !important;
+}
+.trait-sec .record-heading { margin-bottom: 14px !important; }
+.trait-sec .traits-list { padding: 4px 2px !important; }
