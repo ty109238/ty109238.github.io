@@ -1070,8 +1070,7 @@
     var emblems = document.querySelectorAll('.trait-emblem');
     for (var t = 0; t < emblems.length; t++) {
       var em = emblems[t];
-      if (em.getAttribute('data-ico') === '1') continue;
-      em.setAttribute('data-ico', '1');
+      if (em.querySelector('img.entry-ico')) continue;
       em.innerHTML = '';
       em.appendChild(makeEntryIcon(elementIconOf(c), 'entry-ico trait-ico'));
     }
@@ -1079,20 +1078,27 @@
     // 捕捉地点 → 捕捉条件图标
     var pin = document.querySelector('.field-note:not(.hatch) > svg');
     if (pin) {
-      var note = pin.parentNode;
-      if (!note.querySelector('.entry-ico')) {
-        note.replaceChild(makeEntryIcon('ui-catch', 'entry-ico note-ico'), pin);
-      }
+      pin.parentNode.replaceChild(makeEntryIcon('ui-catch', 'entry-ico note-ico'), pin);
     }
 
     // 孵化条件 → 蛋/沙漏图标
     var egg = document.querySelector('.field-note.hatch > svg');
     if (egg) {
-      var note2 = egg.parentNode;
-      if (!note2.querySelector('.entry-ico')) {
-        note2.replaceChild(makeEntryIcon('ui-hatchcond', 'entry-ico note-ico'), egg);
-      }
+      egg.parentNode.replaceChild(makeEntryIcon('ui-hatchcond', 'entry-ico note-ico'), egg);
     }
+  }
+
+  var entryObs = null;
+  function watchEntries() {
+    if (entryObs) return;
+    var root = document.querySelector('.detail-page');
+    if (!root) return;
+    var t = null;
+    entryObs = new MutationObserver(function () {
+      clearTimeout(t);
+      t = setTimeout(function () { syncEntryIcons(); }, 80);
+    });
+    entryObs.observe(root, { childList: true, subtree: true });
   }
 
   function syncSectionIcons() {
@@ -1657,7 +1663,7 @@
       clearTimeout(timer);
       timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); }, 300);
     }).observe(root, { childList: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncMobileNav(); syncToc(); syncSectionIcons(); syncEntryIcons(); syncHeaderIcons(); tickBranch(); }, 2500);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncMobileNav(); syncToc(); syncSectionIcons(); syncEntryIcons(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
   }
 
   window.__dexOpenNotice = openNotice;
