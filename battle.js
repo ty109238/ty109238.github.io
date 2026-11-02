@@ -611,7 +611,12 @@
 
     var r = calcDamage(user, foe, s);
     var dmg = Math.max(1, Math.floor(r.dmg * (dmgMult || 1)));
-    if (foe.protecting) { dmg = Math.max(1, Math.floor(dmg * 0.4)); }
+    if (foe.protecting) {
+      dmg = Math.max(1, Math.floor(dmg * 0.4));
+      var counter = Math.max(1, Math.floor(foe.maxHp / 16));
+      user.hp = Math.max(0, user.hp - counter);
+      logLine(foe.name + ' 保护反击，' + user.name + ' 受到 <span class="dmg">' + counter + '</span> 点反伤。');
+    }
     if (foe.shield > 0) {
       var absorbed = Math.min(foe.shield, dmg);
       foe.shield -= absorbed;
@@ -908,6 +913,7 @@
     var b = state.battle;
     var payload = {
       v: 1, at: new Date().toISOString(), ai: b.ai, weather: b.weather,
+      mode: b.mode || 'single',
       winner: b.winner ? 'my' : 'enemy', turns: b.turn,
       my: b.my.map(function (m) { return { n: m.name, lv: m.cfg.level, star: m.cfg.star, tal: m.cfg.talent, st: m.cfg.stage, na: m.cfg.nature }; }),
       en: b.en.map(function (m) { return { n: m.name, lv: m.cfg.level, star: m.cfg.star, tal: m.cfg.talent, st: m.cfg.stage, na: m.cfg.nature }; }),
@@ -942,6 +948,7 @@
     host.classList.remove('hidden');
     document.getElementById('step').textContent = '回放 · ' + (data.winner === 'my' ? '我方胜利' : '敌方胜利');
     document.getElementById('replayHead').textContent =
+      (data.mode === 'double' ? '【双打】 ' : '【单打】 ') +
       '我方：' + data.my.map(function (x) { return x.n; }).join('、') +
       '　｜　敌方：' + data.en.map(function (x) { return x.n; }).join('、') +
       '　｜　' + data.turns + ' 回合 · 天气 ' + data.weather;
@@ -1065,6 +1072,18 @@
         });
         skRow.appendChild(btn);
       });
+      var swp = el('button', 'skill-btn swap-btn', '<b>⇄ 换位</b><small>与前排交换位置</small>');
+      swp.disabled = b.busy || b.swapped;
+      swp.addEventListener('click', function () {
+        if (b.swapped) return;
+        var t0 = b.mySlots[0], t1 = b.mySlots[1];
+        b.mySlots[0] = t1; b.mySlots[1] = t0;
+        b.swapped = true;
+        dbl.pick = [null, null];
+        logLine('我方调整站位：前排 ' + dblMon('my', 0).name + '，后排 ' + dblMon('my', 1).name + '。');
+        renderDoubles();
+      });
+      row.appendChild(swp);
       row.appendChild(skRow);
       host.appendChild(row);
     });
@@ -1115,11 +1134,28 @@
       }
       acts.push({ side: 'my', slot: slot, mon: m, skill: s, target: dbl.target[slot], ally: dbl.ally[slot] && s.category === '变化' });
     });
+    var myAliveSlots = [0, 1].filter(function (t) { var m = dblMon('my', t); return m && !m.fainted; });
+    var focus = -1;
+    if (b.ai === 'hard' && myAliveSlots.length === 2) {
+      var weakest = myAliveSlots.slice().sort(function (x, y) { return dblMon('my', x).hp - dblMon('my', y).hp; })[0];
+      var total = 0;
+      b.enSlots.forEach(function (_, slot2) {
+        var em = dblMon('enemy', slot2);
+        if (!em || em.fainted) return;
+        total += expectedDamage(em, dblMon('my', weakest));
+      });
+      if (total >= dblMon('my', weakest).hp * 0.9) focus = weakest;
+    }
+    var splitIdx = 0;
     b.enSlots.forEach(function (_, slot) {
       var m = dblMon('enemy', slot);
       if (!m || m.fainted) return;
       var s = chooseAiSkill(m, dblMon('my', 0) || m);
-      acts.push({ side: 'enemy', slot: slot, mon: m, skill: s, target: Math.random() < 0.5 ? 0 : 1 });
+      var tg;
+      if (focus >= 0) tg = focus;
+      else if (b.ai === 'hard' && myAliveSlots.length === 2) { tg = myAliveSlots[splitIdx % 2]; splitIdx++; }
+      else tg = Math.random() < 0.5 ? 0 : 1;
+      acts.push({ side: 'enemy', slot: slot, mon: m, skill: s, target: tg });
     });
 
     acts.sort(function (a, c) {
@@ -1135,10 +1171,16 @@
       if (b.over) return;
       if (a.mon.fainted) return;
       if (a.protect) {
-        if (a.mon.protectUsed) { logLine(a.mon.name + ' 连续保护失败。'); return; }
-        a.mon.protecting = true;
-        a.mon.protectUsed = true;
-        logLine('<b>' + a.mon.name + '</b> 进入保护状态。');
+        var streak = a.mon.protectStreak || 0;
+        var rate = streak === 0 ? 1 : streak === 1 ? 0.5 : 0.25;
+        if (Math.random() <= rate) {
+          a.mon.protecting = true;
+          a.mon.protectStreak = streak + 1;
+          logLine('<b>' + a.mon.name + '</b> 进入保护状态。');
+        } else {
+          a.mon.protectStreak = 0;
+          logLine('<b>' + a.mon.name + '</b> 的保护失败了。');
+        }
         return;
       }
       var foeSide = a.side === 'my' ? 'enemy' : 'my';
@@ -1173,8 +1215,12 @@
 
     endOfTurn(b.my); endOfTurn(b.en);
     dblCheckFaint();
-    b.my.concat(b.en).forEach(function (m) { m.protecting = false; });
-    b.my.forEach(function (m) { if (!m.protecting) m.protectUsed = false; });
+    b.swapped = false;
+    b.my.concat(b.en).forEach(function (m) {
+      if (!m.protecting) m.protectStreak = 0;
+      m.protecting = false;
+      m.protectUsed = false;
+    });
     b.turn++;
     b.busy = false;
     dbl.pick = [null, null];
