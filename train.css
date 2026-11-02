@@ -804,3 +804,9 @@ html.hide-studio .studio-section { display: none !important; }
   .site-link { padding: 10px 12px; gap: 8px; }
   .site-link-t small { display: none; }
 }
+/* 技能角色标签 */
+.skill-meta .sm-role {
+  background: #f3ecfb;
+  border-color: #d7c5ee;
+  color: #6a4a92;
+}

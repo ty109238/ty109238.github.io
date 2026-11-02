@@ -1375,6 +1375,7 @@
       var chips = [];
       chips.push('<span class="sm-type"><img src="' + typeIco + '" alt="" width="16" height="16">' + s.type + '系</span>');
       chips.push('<span class="sm-cat sm-' + (s.category === '物理' ? 'phys' : s.category === '特殊' ? 'spec' : 'stat') + '">' + s.category + '</span>');
+      if (s.role) chips.push('<span class="sm-role">' + s.role + '</span>');
       chips.push('<span class="sm-num">威力 <b>' + (s.power == null ? '—' : s.power) + '</b></span>');
       chips.push('<span class="sm-num">命中 <b>' + (s.accuracy == null ? (s.category === '变化' ? '—' : '必中') : s.accuracy) + '</b></span>');
       chips.push('<span class="sm-lv">Lv.' + s.learnLevel + '</span>');

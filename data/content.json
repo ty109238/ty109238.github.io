@@ -2649,26 +2649,28 @@
       {
         "slot": 1,
         "name": "火星轻碰",
-        "pp": 25,
+        "pp": 30,
         "description": "弹出一枚小火星，造成火系特攻伤害。",
         "type": "火",
         "category": "特殊",
-        "power": 80,
-        "accuracy": 93,
+        "power": 41,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "暖焰守护",
-        "pp": 15,
+        "pp": 25,
         "description": "以暖焰包裹自身，短时提升特防。",
         "type": "火",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -2680,7 +2682,8 @@
         "power": null,
         "accuracy": null,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -2688,37 +2691,40 @@
         "pp": 10,
         "description": "生命较低时，释放更强的火焰冲击。",
         "type": "火",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 98,
+        "category": "物理",
+        "power": 77,
+        "accuracy": 90,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "2": [
       {
         "slot": 1,
         "name": "烈焰回旋",
-        "pp": 15,
+        "pp": 30,
         "description": "挥舞环形火舌，对周围对手造成伤害。",
         "type": "火",
-        "category": "特殊",
-        "power": 70,
-        "accuracy": 99,
+        "category": "物理",
+        "power": 43,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "燃心",
-        "pp": 10,
+        "pp": 20,
         "description": "点燃元素核心，提升下一次特攻。",
         "type": "火",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 97,
+        "power": 69,
+        "accuracy": 95,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
@@ -2726,49 +2732,53 @@
         "pp": 15,
         "description": "化作流光撞击对手，兼具速度与冲击。",
         "type": "火",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 95,
+        "category": "物理",
+        "power": 57,
+        "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "余烬复燃",
-        "pp": 5,
+        "pp": 15,
         "description": "受到致命伤害时保留少量生命，每场一次。",
         "type": "火",
-        "category": "特殊",
-        "power": 40,
-        "accuracy": 93,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "3": [
       {
         "slot": 1,
         "name": "熔冠审判",
-        "pp": 10,
+        "pp": 35,
         "description": "凝聚火冠能量，释放高威力熔岩光束。",
         "type": "火",
-        "category": "特殊",
-        "power": 75,
-        "accuracy": 94,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 2,
         "name": "赤金火域",
-        "pp": 10,
+        "pp": 20,
         "description": "展开火域，持续强化友方火系技能。",
         "type": "火",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 92,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -2776,11 +2786,12 @@
         "pp": 15,
         "description": "以流焰护体，减轻伤害并灼烧近身对手。",
         "type": "火",
-        "category": "特殊",
-        "power": 70,
-        "accuracy": 90,
+        "category": "物理",
+        "power": 65,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -2789,148 +2800,160 @@
         "description": "消耗剩余能量发动终结一击，之后特攻下降。",
         "type": "火",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 99,
+        "power": 110,
+        "accuracy": 85,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "4": [
       {
         "slot": 1,
         "name": "水方冲拳",
-        "pp": 20,
+        "pp": 30,
         "description": "带动水立方挥拳，造成水系物攻伤害。",
         "type": "水",
         "category": "物理",
-        "power": 80,
-        "accuracy": 85,
+        "power": 42,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "泡泡屏障",
-        "pp": 15,
+        "pp": 25,
         "description": "生成泡泡屏障，提升自身物防。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "探险脚步",
-        "pp": 20,
+        "pp": 15,
         "description": "灵巧逼近对手，提高下一次攻击命中。",
         "type": "水",
-        "category": "特殊",
-        "power": 75,
-        "accuracy": 96,
+        "category": "物理",
+        "power": 45,
+        "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "尾鳍拍击",
-        "pp": 15,
+        "pp": 10,
         "description": "转身用尾鳍重击，偶尔令对手退缩。",
         "type": "水",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 94,
+        "category": "物理",
+        "power": 78,
+        "accuracy": 90,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "5": [
       {
         "slot": 1,
         "name": "逐浪连拳",
-        "pp": 15,
+        "pp": 30,
         "description": "踏着浪势连续出拳，最多命中三次。",
         "type": "水",
-        "category": "特殊",
+        "category": "物理",
         "power": 45,
-        "accuracy": 95,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "冒险直觉",
-        "pp": 10,
+        "pp": 25,
         "description": "洞察对手动作，提升闪避与暴击。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "围巾束缚",
-        "pp": 15,
+        "pp": 20,
         "description": "用浸水围巾限制对手，降低其速度。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "破浪头槌",
-        "pp": 10,
+        "pp": 15,
         "description": "蓄势后猛冲，对防御中的对手同样有效。",
         "type": "水",
-        "category": "特殊",
-        "power": 70,
-        "accuracy": 100,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "6": [
       {
         "slot": 1,
         "name": "潮冠重拳",
-        "pp": 10,
+        "pp": 30,
         "description": "汇聚潮汐于巨拳，造成极高水系物攻伤害。",
         "type": "水",
         "category": "物理",
-        "power": 75,
-        "accuracy": 87,
+        "power": 50,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "羽骑士誓约",
-        "pp": 5,
+        "pp": 15,
         "description": "替一名同伴承受攻击，并提升自身物防。",
         "type": "水",
         "category": "物理",
-        "power": 80,
-        "accuracy": 100,
+        "power": 88,
+        "accuracy": 95,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "静潮架势",
-        "pp": 10,
+        "pp": 20,
         "description": "进入防守反击姿态，受击后立刻还击。",
         "type": "水",
-        "category": "特殊",
-        "power": 70,
-        "accuracy": 97,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -2938,49 +2961,53 @@
         "pp": 5,
         "description": "跃起后携浪潮坠击，对全体对手造成冲击。",
         "type": "水",
-        "category": "特殊",
-        "power": 90,
-        "accuracy": 95,
+        "category": "物理",
+        "power": 108,
+        "accuracy": 85,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "7": [
       {
         "slot": 1,
         "name": "蕉籽点射",
-        "pp": 25,
+        "pp": 30,
         "description": "连续发射蕉籽，造成草系特攻伤害。",
         "type": "草",
         "category": "特殊",
-        "power": 55,
-        "accuracy": 96,
+        "power": 43,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "果皮掩体",
-        "pp": 15,
+        "pp": 25,
         "description": "躲进果皮，提升物防与特防。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "青藤缠绕",
-        "pp": 15,
+        "pp": 20,
         "description": "催生藤蔓，降低对手速度。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -2989,48 +3016,52 @@
         "description": "释放果香，吸引对手注意并降低其物攻。",
         "type": "草",
         "category": "物理",
-        "power": 80,
-        "accuracy": 87,
+        "power": 74,
+        "accuracy": 90,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "8": [
       {
         "slot": 1,
         "name": "蕉叶连射",
-        "pp": 15,
+        "pp": 30,
         "description": "以叶片为弓连续射出种弹。",
         "type": "草",
-        "category": "特殊",
-        "power": 45,
-        "accuracy": 91,
+        "category": "物理",
+        "power": 46,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "叶脉感知",
-        "pp": 10,
+        "pp": 25,
         "description": "读取周围叶脉，提升命中与闪避。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "绿荫回复",
-        "pp": 10,
+        "pp": 20,
         "description": "借绿荫恢复生命，晴天效果增强。",
         "type": "草",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 98,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -3038,49 +3069,53 @@
         "pp": 15,
         "description": "让花苞在对手脚下绽放，限制其行动。",
         "type": "草",
-        "category": "特殊",
-        "power": 70,
-        "accuracy": 96,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "9": [
       {
         "slot": 1,
         "name": "万籽星雨",
-        "pp": 10,
+        "pp": 30,
         "description": "唤来密集种弹，对全体对手造成草系伤害。",
         "type": "草",
         "category": "特殊",
-        "power": 90,
-        "accuracy": 97,
+        "power": 48,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "蕉林国度",
-        "pp": 5,
+        "pp": 20,
         "description": "展开蕉林领域，持续恢复友方并强化草系技能。",
         "type": "草",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 95,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "翠影换位",
-        "pp": 10,
+        "pp": 15,
         "description": "与叶影交换位置，躲避下一次攻击。",
         "type": "草",
-        "category": "特殊",
-        "power": 70,
-        "accuracy": 93,
+        "category": "物理",
+        "power": 67,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -3089,86 +3124,93 @@
         "description": "种下枯荣之种，吸收伤害后绽放并回复生命。",
         "type": "草",
         "category": "物理",
-        "power": 75,
-        "accuracy": 89,
+        "power": 110,
+        "accuracy": 85,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60001": [
       {
         "slot": 1,
         "name": "嫩叶音波",
-        "pp": 25,
+        "pp": 30,
         "description": "唱出带叶香的音波，造成草系特攻伤害。",
         "type": "草",
         "category": "特殊",
-        "power": 80,
-        "accuracy": 99,
+        "power": 42,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "小叶鼓掌",
-        "pp": 20,
+        "pp": 25,
         "description": "有节奏地拍动叶片，提升自身与相邻同伴的速度。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "清香抚慰",
-        "pp": 15,
+        "pp": 20,
         "description": "释放清香，回复一名同伴少量生命。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "种荚守护",
-        "pp": 10,
+        "pp": 15,
         "description": "种下守护种荚，为一名同伴抵挡部分伤害。",
         "type": "草",
-        "category": "物理",
-        "power": 80,
-        "accuracy": 93,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60002": [
       {
         "slot": 1,
         "name": "叶浪合唱",
-        "pp": 20,
+        "pp": 30,
         "description": "掀起层层叶浪，对全体对手造成草系伤害。",
         "type": "草",
         "category": "特殊",
-        "power": 85,
-        "accuracy": 94,
+        "power": 45,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "洋洋鼓舞",
-        "pp": 15,
+        "pp": 20,
         "description": "唱出明亮旋律，提升全队特攻。",
         "type": "草",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 92,
+        "power": 70,
+        "accuracy": 95,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
@@ -3176,37 +3218,40 @@
         "pp": 15,
         "description": "摇响花苞，造成伤害并有概率令对手瞌睡。",
         "type": "草",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 90,
+        "category": "物理",
+        "power": 58,
+        "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "绿荫疗愈",
-        "pp": 10,
+        "pp": 15,
         "description": "展开绿荫，持续回复全队生命。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60003": [
       {
         "slot": 1,
         "name": "花翼圣歌",
-        "pp": 10,
+        "pp": 30,
         "description": "以花翼唱响圣歌，对全体对手造成强力草系伤害。",
         "type": "草",
         "category": "特殊",
-        "power": 115,
+        "power": 50,
         "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
@@ -3214,23 +3259,25 @@
         "pp": 15,
         "description": "射出轻柔叶羽，命中后为生命最低的同伴回复生命。",
         "type": "草",
-        "category": "变化",
-        "power": null,
-        "accuracy": null,
+        "category": "物理",
+        "power": 88,
+        "accuracy": 95,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "繁花祝福",
-        "pp": 5,
+        "pp": 20,
         "description": "令繁花在队伍中绽放，大量回复并解除负面状态。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -3238,99 +3285,107 @@
         "pp": 10,
         "description": "张开绿翼，为全队生成吸收伤害的叶绿护盾。",
         "type": "草",
-        "category": "物理",
-        "power": 75,
-        "accuracy": 95,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60004": [
       {
         "slot": 1,
         "name": "节拍摆拳",
-        "pp": 25,
+        "pp": 30,
         "description": "踩着鼓点挥出摆拳，造成草系物攻伤害。",
         "type": "草",
         "category": "物理",
-        "power": 80,
-        "accuracy": 97,
+        "power": 43,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "耳机调频",
-        "pp": 20,
+        "pp": 25,
         "description": "调整耳机捕捉对手节奏，提升命中。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "音波拍掌",
-        "pp": 15,
+        "pp": 20,
         "description": "拍出带音波的双掌，有概率令对手退缩。",
         "type": "草",
-        "category": "特殊",
-        "power": 75,
-        "accuracy": 91,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "藤蔓舞步",
-        "pp": 15,
+        "pp": 10,
         "description": "踏着藤蔓移动，提升速度并强化下一次近战攻击。",
         "type": "草",
         "category": "物理",
-        "power": 80,
-        "accuracy": 88,
+        "power": 74,
+        "accuracy": 90,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60005": [
       {
         "slot": 1,
         "name": "电子连击",
-        "pp": 15,
+        "pp": 30,
         "description": "按计算好的节奏连续出拳，最多命中三次。",
         "type": "草",
-        "category": "特殊",
-        "power": 45,
-        "accuracy": 90,
+        "category": "物理",
+        "power": 46,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "扫描目镜",
-        "pp": 10,
+        "pp": 25,
         "description": "扫描对手动作，降低其闪避并提升自身暴击。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "程序藤鞭",
-        "pp": 15,
+        "pp": 20,
         "description": "操纵藤蔓按轨迹抽击，准确命中远处对手。",
         "type": "草",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 97,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -3339,48 +3394,52 @@
         "description": "释放低频冲击，对周围对手造成伤害并降低速度。",
         "type": "草",
         "category": "物理",
-        "power": 70,
-        "accuracy": 97,
+        "power": 92,
+        "accuracy": 90,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60006": [
       {
         "slot": 1,
         "name": "全频重拳",
-        "pp": 10,
+        "pp": 30,
         "description": "将全部节拍汇入重拳，造成极高草系物攻伤害。",
         "type": "草",
         "category": "物理",
-        "power": 75,
-        "accuracy": 99,
+        "power": 48,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "代码森林",
-        "pp": 5,
+        "pp": 20,
         "description": "展开自然演算领域，持续强化全队命中与草系技能。",
         "type": "草",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 94,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "节拍超频",
-        "pp": 10,
+        "pp": 15,
         "description": "短暂超频节奏，提升物攻与速度。",
         "type": "草",
         "category": "物理",
-        "power": 70,
-        "accuracy": 93,
+        "power": 67,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -3388,25 +3447,27 @@
         "pp": 5,
         "description": "发动终结演出的音爆重击，对全体对手造成冲击。",
         "type": "草",
-        "category": "特殊",
-        "power": 90,
-        "accuracy": 90,
+        "category": "物理",
+        "power": 110,
+        "accuracy": 85,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60007": [
       {
         "slot": 1,
         "name": "冰壳撞击",
-        "pp": 25,
+        "pp": 30,
         "description": "推着冰壳撞向对手，造成冰系物攻伤害。",
         "type": "冰",
         "category": "物理",
-        "power": 80,
-        "accuracy": 92,
+        "power": 39,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
@@ -3415,310 +3476,335 @@
         "description": "团成雪球滚动，提升速度并躲避下一次远程攻击。",
         "type": "冰",
         "category": "物理",
-        "power": 70,
-        "accuracy": 89,
+        "power": 57,
+        "accuracy": 95,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "寒气凝甲",
-        "pp": 15,
+        "pp": 20,
         "description": "让寒气在冰壳表面凝结，提升物防。",
         "type": "冰",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "小小冰息",
-        "pp": 20,
+        "pp": 10,
         "description": "呼出细小冰息，造成冰系特攻伤害。",
         "type": "冰",
         "category": "特殊",
-        "power": 80,
-        "accuracy": 96,
+        "power": 75,
+        "accuracy": 90,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60008": [
       {
         "slot": 1,
         "name": "雪人重拳",
-        "pp": 15,
+        "pp": 30,
         "description": "挥动厚实雪拳，造成冰系物攻伤害。",
         "type": "冰",
         "category": "物理",
-        "power": 70,
-        "accuracy": 85,
+        "power": 47,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "萝卜鼻瞄准",
-        "pp": 15,
+        "pp": 25,
         "description": "用胡萝卜鼻锁定目标，提升全队命中。",
         "type": "冰",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "小雪人援护",
-        "pp": 10,
+        "pp": 20,
         "description": "派出小雪人替同伴承伤，并回复少量生命。",
         "type": "冰",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "冰霜壁垒",
-        "pp": 10,
+        "pp": 15,
         "description": "筑起冰墙，显著提升自身物防与特防。",
         "type": "冰",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60009": [
       {
         "slot": 1,
         "name": "极寒臂锤",
-        "pp": 10,
+        "pp": 30,
         "description": "以巨大雪臂砸下冰晶重锤，造成高威力伤害。",
         "type": "冰",
-        "category": "特殊",
-        "power": 105,
-        "accuracy": 92,
+        "category": "物理",
+        "power": 50,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "雪原巨壁",
-        "pp": 5,
+        "pp": 20,
         "description": "展开守护全队的雪墙，大幅提升双防。",
         "type": "冰",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "冰晶震地",
-        "pp": 10,
+        "pp": 15,
         "description": "重踏地面，掀起冰晶冲击全体对手。",
         "type": "冰",
-        "category": "特殊",
-        "power": 85,
-        "accuracy": 99,
+        "category": "物理",
+        "power": 68,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "胡萝卜号令",
-        "pp": 5,
+        "pp": 10,
         "description": "召来雪人伙伴共同防守，并持续恢复生命。",
         "type": "冰",
-        "category": "特殊",
-        "power": 75,
-        "accuracy": 97,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60010": [
       {
         "slot": 1,
         "name": "咖啡香雾",
-        "pp": 25,
+        "pp": 30,
         "description": "喷出浓香雾气，造成土系特攻伤害。",
         "type": "土",
         "category": "特殊",
-        "power": 80,
-        "accuracy": 98,
+        "power": 40,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "硬壳杯守",
-        "pp": 20,
+        "pp": 25,
         "description": "缩进纸杯硬壳，提升物防。",
         "type": "土",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "豆芽触手",
-        "pp": 15,
+        "pp": 20,
         "description": "伸出嫩芽缠住对手，降低其速度。",
         "type": "土",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "提神香气",
-        "pp": 10,
+        "pp": 15,
         "description": "驱散同伴疲惫，回复生命并解除瞌睡。",
         "type": "土",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60011": [
       {
         "slot": 1,
         "name": "蚁群咖啡弹",
-        "pp": 15,
+        "pp": 30,
         "description": "让蚁群连续抛出咖啡砂弹，造成多次伤害。",
         "type": "土",
-        "category": "特殊",
-        "power": 45,
-        "accuracy": 93,
+        "category": "物理",
+        "power": 48,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "土堡搬运",
-        "pp": 15,
+        "pp": 25,
         "description": "筑起小型土堡，提升全队物防。",
         "type": "土",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "香醇支援",
-        "pp": 10,
+        "pp": 15,
         "description": "把香醇补给送给同伴，回复生命并提升特攻。",
         "type": "土",
         "category": "特殊",
-        "power": 80,
+        "power": 53,
         "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "沙穴埋伏",
-        "pp": 20,
+        "pp": 10,
         "description": "藏入沙穴躲避攻击，下回合提升闪避。",
         "type": "土",
         "category": "物理",
-        "power": 70,
-        "accuracy": 87,
+        "power": 89,
+        "accuracy": 90,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60012": [
       {
         "slot": 1,
         "name": "蚁后香薰",
-        "pp": 10,
+        "pp": 35,
         "description": "释放王室香薰，持续回复全队并提升特防。",
         "type": "土",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 2,
         "name": "砂土王座",
-        "pp": 5,
+        "pp": 20,
         "description": "升起砂土王座，大幅强化自身双防与辅助效果。",
         "type": "土",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 97,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "百蚁豆炮",
-        "pp": 10,
+        "pp": 15,
         "description": "指挥蚁群齐射咖啡砂弹，攻击全体对手。",
         "type": "土",
-        "category": "特殊",
-        "power": 85,
-        "accuracy": 95,
+        "category": "物理",
+        "power": 64,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "肥沃领地",
-        "pp": 5,
+        "pp": 10,
         "description": "改造脚下土地，使全队每回合回复生命。",
         "type": "土",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60013": [
       {
         "slot": 1,
         "name": "瓶身撞击",
-        "pp": 25,
+        "pp": 30,
         "description": "用坚硬木瓶撞击对手，造成草系物攻伤害。",
         "type": "草",
         "category": "物理",
-        "power": 80,
-        "accuracy": 98,
+        "power": 38,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "木呆硬撑",
-        "pp": 20,
+        "pp": 25,
         "description": "站稳脚步准备承伤，提升物防。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -3726,11 +3812,12 @@
         "pp": 15,
         "description": "喷出黏稠蜜雾，降低对手速度。",
         "type": "草",
-        "category": "变化",
-        "power": null,
-        "accuracy": null,
+        "category": "物理",
+        "power": 47,
+        "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -3742,33 +3829,36 @@
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60014": [
       {
         "slot": 1,
         "name": "叶刃瓶拳",
-        "pp": 15,
+        "pp": 30,
         "description": "以叶片包裹瓶拳击出，造成强力草系伤害。",
         "type": "草",
         "category": "特殊",
-        "power": 110,
+        "power": 44,
         "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "蜜瓶格挡",
-        "pp": 10,
+        "pp": 20,
         "description": "进入格挡姿态，受击后挥动藤臂反击。",
         "type": "草",
-        "category": "特殊",
-        "power": 75,
-        "accuracy": 98,
+        "category": "物理",
+        "power": 72,
+        "accuracy": 95,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
@@ -3776,111 +3866,120 @@
         "pp": 15,
         "description": "挥动藤臂横扫，对周围对手造成伤害。",
         "type": "草",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 96,
+        "category": "物理",
+        "power": 55,
+        "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "花冠扎根",
-        "pp": 10,
+        "pp": 15,
         "description": "扎根吸收养分，回复生命并提升物防。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60015": [
       {
         "slot": 1,
         "name": "古瓶镇压",
-        "pp": 10,
+        "pp": 30,
         "description": "以古瓶与藤臂全力镇压，造成高威力物攻伤害。",
         "type": "草",
         "category": "物理",
-        "power": 115,
+        "power": 52,
         "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "蜜香长寿",
-        "pp": 5,
+        "pp": 20,
         "description": "分享陈年甘蜜，大量回复全队生命。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "盘根守卫",
-        "pp": 5,
+        "pp": 15,
         "description": "令盘根连接全队，分担伤害并提升双防。",
         "type": "草",
         "category": "物理",
-        "power": 70,
-        "accuracy": 94,
+        "power": 65,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "百花叶掌",
-        "pp": 10,
+        "pp": 5,
         "description": "挥动繁茂叶掌，造成范围伤害并回复自身。",
         "type": "草",
         "category": "物理",
-        "power": 90,
-        "accuracy": 91,
+        "power": 113,
+        "accuracy": 85,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60016": [
       {
         "slot": 1,
         "name": "铁块撞头",
-        "pp": 25,
+        "pp": 30,
         "description": "用坚硬额头撞击对手，造成钢系物攻伤害。",
         "type": "钢",
         "category": "物理",
-        "power": 80,
-        "accuracy": 93,
+        "power": 40,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "锅炉硬撑",
-        "pp": 20,
+        "pp": 25,
         "description": "压低身体稳住炉脚，提升物防。",
         "type": "钢",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "铆钉飞弹",
-        "pp": 20,
+        "pp": 15,
         "description": "射出一枚安全钝头铆钉，造成远程物攻伤害。",
         "type": "钢",
         "category": "物理",
-        "power": 75,
-        "accuracy": 87,
+        "power": 48,
+        "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -3888,37 +3987,40 @@
         "pp": 15,
         "description": "释放洁净蒸汽，解除自身一个负面状态。",
         "type": "钢",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 95,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60017": [
       {
         "slot": 1,
         "name": "熔炉重拳",
-        "pp": 15,
+        "pp": 30,
         "description": "挥动炽热铁臂重拳，造成钢系物攻伤害。",
         "type": "钢",
         "category": "物理",
-        "power": 70,
-        "accuracy": 86,
+        "power": 45,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "炉门闭锁",
-        "pp": 10,
+        "pp": 25,
         "description": "关闭炉门进入防御，显著提升双防。",
         "type": "钢",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -3926,11 +4028,12 @@
         "pp": 15,
         "description": "从炉口喷出高压热流，造成范围伤害。",
         "type": "钢",
-        "category": "特殊",
-        "power": 95,
-        "accuracy": 92,
+        "category": "物理",
+        "power": 56,
+        "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -3939,48 +4042,52 @@
         "description": "锻打手臂使其更坚固，提升物攻与物防。",
         "type": "钢",
         "category": "物理",
-        "power": 70,
-        "accuracy": 93,
+        "power": 88,
+        "accuracy": 90,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60018": [
       {
         "slot": 1,
         "name": "长官重锤",
-        "pp": 10,
+        "pp": 30,
         "description": "以长官巨臂全力锤击，造成极高钢系伤害。",
         "type": "钢",
         "category": "特殊",
-        "power": 115,
-        "accuracy": 91,
+        "power": 53,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "钢铁防线",
-        "pp": 5,
+        "pp": 15,
         "description": "呼叫工坊防线，为全队提供钢壁与伤害分担。",
         "type": "钢",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 100,
+        "category": "物理",
+        "power": 86,
+        "accuracy": 95,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "炉心过载",
-        "pp": 5,
+        "pp": 15,
         "description": "短时释放炉心极限，强化物攻与物防但下回合速度下降。",
         "type": "钢",
         "category": "物理",
-        "power": 70,
-        "accuracy": 89,
+        "power": 63,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -3988,25 +4095,27 @@
         "pp": 5,
         "description": "汇聚全部炉压完成重击，对防御中的对手额外有效。",
         "type": "钢",
-        "category": "特殊",
-        "power": 75,
-        "accuracy": 96,
+        "category": "物理",
+        "power": 109,
+        "accuracy": 85,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60019": [
       {
         "slot": 1,
         "name": "暗影扑抱",
-        "pp": 25,
+        "pp": 30,
         "description": "带着暗影扑向对手，造成暗系物攻伤害。",
         "type": "暗",
         "category": "物理",
-        "power": 80,
-        "accuracy": 88,
+        "power": 41,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
@@ -4015,10 +4124,11 @@
         "description": "喷出一团紫色咒火，造成暗系特攻伤害。",
         "type": "暗",
         "category": "特殊",
-        "power": 70,
+        "power": 53,
         "accuracy": 95,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
@@ -4027,10 +4137,11 @@
         "description": "用胡须留下咒印，降低对手特攻。",
         "type": "暗",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 93,
+        "power": 44,
+        "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -4042,121 +4153,131 @@
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60020": [
       {
         "slot": 1,
         "name": "紫焰爪",
-        "pp": 15,
+        "pp": 30,
         "description": "以利爪带出紫色咒焰，造成物攻与特攻混合伤害。",
         "type": "暗",
-        "category": "特殊",
-        "power": 70,
-        "accuracy": 92,
+        "category": "物理",
+        "power": 43,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "暗火连尾",
-        "pp": 15,
+        "pp": 20,
         "description": "甩出两道追踪暗火，连续攻击对手。",
         "type": "暗",
-        "category": "特殊",
-        "power": 50,
-        "accuracy": 90,
+        "category": "物理",
+        "power": 69,
+        "accuracy": 95,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "咒焰标记",
-        "pp": 10,
+        "pp": 15,
         "description": "标记对手，使其受到的暗系伤害提高。",
         "type": "暗",
         "category": "特殊",
-        "power": 80,
-        "accuracy": 99,
+        "power": 57,
+        "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "夜幕潜行",
-        "pp": 10,
+        "pp": 15,
         "description": "融入夜幕，提升闪避与下一次技能暴击率。",
         "type": "暗",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60021": [
       {
         "slot": 1,
         "name": "翼影坠击",
-        "pp": 10,
+        "pp": 30,
         "description": "从高空携暗翼坠击，造成高威力暗系伤害。",
         "type": "暗",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 98,
+        "power": 49,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "紫焰风暴",
-        "pp": 10,
+        "pp": 15,
         "description": "扇动紫焰风暴，对全体对手造成特攻伤害。",
         "type": "暗",
         "category": "特殊",
-        "power": 95,
-        "accuracy": 96,
+        "power": 87,
+        "accuracy": 95,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "暗夜咒域",
-        "pp": 5,
+        "pp": 20,
         "description": "展开咒域，持续削弱对手回复与暗系抗性。",
         "type": "暗",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "胖豹回旋",
-        "pp": 15,
+        "pp": 5,
         "description": "灵活旋转暗翼冲撞对手，随后提升自身闪避。",
         "type": "暗",
-        "category": "变化",
-        "power": null,
-        "accuracy": null,
+        "category": "物理",
+        "power": 110,
+        "accuracy": 85,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60022": [
       {
         "slot": 1,
         "name": "礼帽冲击",
-        "pp": 20,
+        "pp": 30,
         "description": "压低礼帽迎风冲刺，造成风系物攻伤害。",
         "type": "风",
         "category": "物理",
-        "power": 80,
-        "accuracy": 99,
+        "power": 42,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
@@ -4168,45 +4289,49 @@
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "绅士啄击",
-        "pp": 25,
+        "pp": 15,
         "description": "以干脆利落的啄击攻击对手。",
         "type": "风",
-        "category": "特殊",
-        "power": 75,
+        "category": "物理",
+        "power": 45,
         "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "风度闪避",
-        "pp": 15,
+        "pp": 10,
         "description": "优雅侧身闪过攻击，提升闪避。",
         "type": "风",
         "category": "物理",
-        "power": 80,
+        "power": 78,
         "accuracy": 90,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60023": [
       {
         "slot": 1,
         "name": "旋风滑步",
-        "pp": 15,
+        "pp": 30,
         "description": "踏着旋风连续滑步撞击，最多命中两次。",
         "type": "风",
-        "category": "特殊",
+        "category": "物理",
         "power": 45,
-        "accuracy": 99,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
@@ -4215,10 +4340,11 @@
         "description": "从领结两侧放出风刃，造成风系特攻伤害。",
         "type": "风",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 97,
+        "power": 70,
+        "accuracy": 95,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
@@ -4227,10 +4353,11 @@
         "description": "以白翼完成优雅连击，提升后续攻击速度。",
         "type": "风",
         "category": "物理",
-        "power": 80,
-        "accuracy": 86,
+        "power": 58,
+        "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -4239,98 +4366,106 @@
         "description": "向对手致意并发起挑战，使其优先攻击自己并降低命中。",
         "type": "风",
         "category": "物理",
-        "power": 70,
-        "accuracy": 99,
+        "power": 91,
+        "accuracy": 90,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60024": [
       {
         "slot": 1,
         "name": "礼帽风暴",
-        "pp": 10,
+        "pp": 30,
         "description": "旋起礼帽引导风暴，对全体对手造成伤害。",
         "type": "风",
-        "category": "特殊",
-        "power": 90,
-        "accuracy": 94,
+        "category": "物理",
+        "power": 50,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "极速轮舞",
-        "pp": 10,
+        "pp": 15,
         "description": "以高速轮舞连续攻击，并在结束后提升速度。",
         "type": "风",
         "category": "物理",
-        "power": 55,
-        "accuracy": 98,
+        "power": 88,
+        "accuracy": 95,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "绅士终步",
-        "pp": 5,
+        "pp": 15,
         "description": "完成精准终步，以极高威力冲击单个对手。",
         "type": "风",
-        "category": "特殊",
-        "power": 70,
-        "accuracy": 90,
+        "category": "物理",
+        "power": 66,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "风场护航",
-        "pp": 5,
+        "pp": 10,
         "description": "展开护航风场，提升全队速度与闪避。",
         "type": "风",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60025": [
       {
         "slot": 1,
         "name": "暗茧撞击",
-        "pp": 25,
+        "pp": 30,
         "description": "用坚硬蛹壳撞击对手，造成暗系物攻伤害。",
         "type": "暗",
         "category": "物理",
-        "power": 80,
-        "accuracy": 94,
+        "power": 43,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "蛹壳固守",
-        "pp": 20,
+        "pp": 25,
         "description": "收紧蛹壳进入守势，提升物防。",
         "type": "暗",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "影子粉尘",
-        "pp": 20,
+        "pp": 15,
         "description": "洒出暗影粉尘，造成特攻伤害并降低命中。",
         "type": "暗",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 96,
+        "power": 43,
+        "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -4342,33 +4477,36 @@
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60026": [
       {
         "slot": 1,
         "name": "落岩拳",
-        "pp": 15,
+        "pp": 30,
         "description": "挥出附带碎岩的重拳，造成暗系物攻伤害。",
         "type": "暗",
         "category": "物理",
-        "power": 70,
-        "accuracy": 87,
+        "power": 46,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "岩垒屏障",
-        "pp": 10,
+        "pp": 25,
         "description": "竖起岩垒屏障，大幅提升自身双防。",
         "type": "暗",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -4377,60 +4515,65 @@
         "description": "从地面升起暗晶尖刺，造成特攻伤害。",
         "type": "暗",
         "category": "特殊",
-        "power": 80,
-        "accuracy": 91,
+        "power": 54,
+        "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "不动扎根",
-        "pp": 10,
+        "pp": 15,
         "description": "将身体固定于地脉，持续回复并免疫击退。",
         "type": "暗",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60027": [
       {
         "slot": 1,
         "name": "覆甲碎击",
-        "pp": 10,
+        "pp": 30,
         "description": "以覆甲巨拳击碎防线，造成高威力暗系伤害。",
         "type": "暗",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 90,
+        "power": 48,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "黑岩城塞",
-        "pp": 5,
+        "pp": 15,
         "description": "展开城塞阵型，分担全队伤害并提升双防。",
         "type": "暗",
         "category": "物理",
-        "power": 80,
-        "accuracy": 93,
+        "power": 84,
+        "accuracy": 95,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "熔缝震爆",
-        "pp": 10,
+        "pp": 15,
         "description": "引爆甲缝能量，对周围对手造成冲击。",
         "type": "暗",
-        "category": "特殊",
-        "power": 70,
-        "accuracy": 97,
+        "category": "物理",
+        "power": 67,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -4438,25 +4581,27 @@
         "pp": 5,
         "description": "进入山岳架势，受到攻击后必定反击一次。",
         "type": "暗",
-        "category": "特殊",
-        "power": 75,
-        "accuracy": 95,
+        "category": "物理",
+        "power": 110,
+        "accuracy": 85,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60028": [
       {
         "slot": 1,
         "name": "四叶籽弹",
-        "pp": 25,
+        "pp": 30,
         "description": "发射带四叶纹的种弹，造成草系特攻伤害。",
         "type": "草",
         "category": "特殊",
-        "power": 80,
-        "accuracy": 96,
+        "power": 39,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
@@ -4464,73 +4609,79 @@
         "pp": 20,
         "description": "快速抖动叶片，连续射出两枚种弹。",
         "type": "草",
-        "category": "特殊",
-        "power": 45,
-        "accuracy": 94,
+        "category": "物理",
+        "power": 57,
+        "accuracy": 95,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "幸运摇叶",
-        "pp": 15,
+        "pp": 20,
         "description": "摇动四叶草，提升自身闪避与暴击。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "苔香治愈",
-        "pp": 10,
+        "pp": 15,
         "description": "释放苔藓清香，回复一名同伴生命。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60029": [
       {
         "slot": 1,
         "name": "三叶镖雨",
-        "pp": 15,
+        "pp": 30,
         "description": "投出回旋叶镖，从多个方向攻击对手。",
         "type": "草",
-        "category": "特殊",
-        "power": 70,
-        "accuracy": 91,
+        "category": "物理",
+        "power": 47,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "幸运扑击",
-        "pp": 15,
+        "pp": 20,
         "description": "踏着叶影扑击，造成物攻伤害并提升闪避。",
         "type": "草",
         "category": "物理",
-        "power": 75,
+        "power": 70,
         "accuracy": 95,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "四叶预感",
-        "pp": 10,
+        "pp": 20,
         "description": "预判气流与对手动作，提升暴击与命中。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -4538,75 +4689,81 @@
         "pp": 10,
         "description": "留下苔影替身，躲避下一次直接攻击。",
         "type": "草",
-        "category": "特殊",
-        "power": 70,
-        "accuracy": 96,
+        "category": "物理",
+        "power": 93,
+        "accuracy": 90,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60030": [
       {
         "slot": 1,
         "name": "四叶星芒",
-        "pp": 10,
+        "pp": 30,
         "description": "射出四叶形星芒，造成高威力草系特攻伤害。",
         "type": "草",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 97,
+        "power": 50,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "幸运花雨",
-        "pp": 5,
+        "pp": 15,
         "description": "令幸运花雨覆盖全场，攻击对手并祝福全队。",
         "type": "草",
-        "category": "特殊",
-        "power": 80,
+        "category": "物理",
+        "power": 85,
         "accuracy": 95,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "万花喵射",
-        "pp": 10,
+        "pp": 20,
         "description": "同时催动多重叶片，连续射击全体对手。",
         "type": "草",
-        "category": "特殊",
-        "power": 85,
-        "accuracy": 93,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "永恒四叶",
-        "pp": 5,
+        "pp": 10,
         "description": "留下永恒四叶祝福，抵挡一次致命伤害。",
         "type": "草",
-        "category": "物理",
-        "power": 75,
-        "accuracy": 98,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60031": [
       {
         "slot": 1,
         "name": "电羽气流",
-        "pp": 25,
+        "pp": 30,
         "description": "扇出带电气流，造成雷系特攻伤害。",
         "type": "雷",
         "category": "特殊",
-        "power": 80,
-        "accuracy": 92,
+        "power": 40,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
@@ -4614,61 +4771,66 @@
         "pp": 20,
         "description": "启动喷气背包，提升自身速度与闪避。",
         "type": "雷",
-        "category": "变化",
-        "power": null,
-        "accuracy": null,
+        "category": "物理",
+        "power": 58,
+        "accuracy": 95,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "风向标",
-        "pp": 15,
+        "pp": 20,
         "description": "转动风向标修正航路，提升全队命中。",
         "type": "雷",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "旅行补给",
-        "pp": 10,
+        "pp": 15,
         "description": "分发旅行补给，回复一名同伴生命并解除疲惫。",
         "type": "雷",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60032": [
       {
         "slot": 1,
         "name": "顺风电喙",
-        "pp": 15,
+        "pp": 30,
         "description": "借着顺风以电喙冲击对手，造成雷系伤害。",
         "type": "雷",
         "category": "特殊",
-        "power": 70,
-        "accuracy": 98,
+        "power": 48,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "气流导航",
-        "pp": 10,
+        "pp": 25,
         "description": "为全队规划气流航线，提升速度与闪避。",
         "type": "雷",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -4676,61 +4838,66 @@
         "pp": 15,
         "description": "释放旅行包中的压缩风，造成范围伤害。",
         "type": "雷",
-        "category": "特殊",
-        "power": 95,
-        "accuracy": 94,
+        "category": "物理",
+        "power": 53,
+        "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "云端休整",
-        "pp": 10,
+        "pp": 15,
         "description": "召来柔软云层，持续回复全队生命。",
         "type": "雷",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60033": [
       {
         "slot": 1,
         "name": "风压雷炮",
-        "pp": 10,
+        "pp": 30,
         "description": "将风压与雷电压缩后发射，造成高威力特攻伤害。",
         "type": "雷",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 93,
+        "power": 51,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "旋翼天穹",
-        "pp": 5,
+        "pp": 20,
         "description": "启动旋翼领域，持续强化全队速度与雷系技能。",
         "type": "雷",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 91,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "高压护航",
-        "pp": 10,
+        "pp": 20,
         "description": "以高压气流护住全队，生成可吸收伤害的护盾。",
         "type": "雷",
-        "category": "物理",
-        "power": 70,
-        "accuracy": 96,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -4738,25 +4905,27 @@
         "pp": 5,
         "description": "完成终航俯冲，对全体对手造成风雷冲击。",
         "type": "雷",
-        "category": "特殊",
-        "power": 90,
-        "accuracy": 98,
+        "category": "物理",
+        "power": 112,
+        "accuracy": 85,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60034": [
       {
         "slot": 1,
         "name": "电壳冲击",
-        "pp": 25,
+        "pp": 30,
         "description": "带着带电硬壳冲撞对手，造成雷系物攻伤害。",
         "type": "雷",
         "category": "物理",
-        "power": 80,
-        "accuracy": 95,
+        "power": 38,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
@@ -4765,60 +4934,65 @@
         "description": "为雷角蓄积电荷，提升下一次特攻。",
         "type": "雷",
         "category": "特殊",
-        "power": 70,
-        "accuracy": 97,
+        "power": 54,
+        "accuracy": 95,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "硬壳守势",
-        "pp": 15,
+        "pp": 20,
         "description": "收起足肢以硬壳防守，提升物防。",
         "type": "雷",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "静电跳跃",
-        "pp": 20,
+        "pp": 15,
         "description": "借静电轻轻跃起，提升速度与闪避。",
         "type": "雷",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60035": [
       {
         "slot": 1,
         "name": "甲虫雷钳",
-        "pp": 15,
+        "pp": 30,
         "description": "用带电前足夹击对手，造成雷系物攻伤害。",
         "type": "雷",
         "category": "物理",
-        "power": 70,
-        "accuracy": 88,
+        "power": 44,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "雷光甲壳",
-        "pp": 10,
+        "pp": 25,
         "description": "让雷光流过甲壳，提升物防与特防。",
         "type": "雷",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -4827,60 +5001,65 @@
         "description": "从双角释放交叉电弧，造成雷系特攻伤害。",
         "type": "雷",
         "category": "特殊",
-        "power": 80,
-        "accuracy": 90,
+        "power": 55,
+        "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "电流跳跃",
-        "pp": 10,
+        "pp": 15,
         "description": "沿电流高速移动，提升速度并强化下一击。",
         "type": "雷",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60036": [
       {
         "slot": 1,
         "name": "霹雳角炮",
-        "pp": 10,
+        "pp": 30,
         "description": "从长角发射霹雳光束，造成高威力雷系伤害。",
         "type": "雷",
         "category": "特殊",
-        "power": 75,
+        "power": 52,
         "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "万伏甲阵",
-        "pp": 5,
+        "pp": 20,
         "description": "展开甲阵保护全队，并强化雷系技能。",
         "type": "雷",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 98,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "雷翅连闪",
-        "pp": 10,
+        "pp": 15,
         "description": "振翅化作雷光连续攻击，随后提升闪避。",
         "type": "雷",
         "category": "物理",
-        "power": 45,
-        "accuracy": 91,
+        "power": 65,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -4889,86 +5068,93 @@
         "description": "以虫鸣引发雷鸣共振，对全体对手造成伤害并降低特防。",
         "type": "雷",
         "category": "物理",
-        "power": 90,
-        "accuracy": 88,
+        "power": 113,
+        "accuracy": 85,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "60037": [
       {
         "slot": 1,
         "name": "王冠水泡",
-        "pp": 25,
+        "pp": 30,
         "description": "发射带王冠纹的水泡，造成水系特攻伤害。",
         "type": "水",
         "category": "特殊",
-        "power": 80,
-        "accuracy": 95,
+        "power": 40,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "海鳍祈愿",
-        "pp": 15,
+        "pp": 25,
         "description": "轻轻摆动海鳍祈愿，回复一名同伴生命。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "洋流摆尾",
-        "pp": 20,
+        "pp": 15,
         "description": "摆动尾鳍掀起小洋流，造成伤害并降低速度。",
         "type": "水",
         "category": "物理",
-        "power": 75,
+        "power": 48,
         "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "小小王室",
-        "pp": 10,
+        "pp": 15,
         "description": "鼓起王室勇气，为自身与相邻同伴生成水膜护盾。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60038": [
       {
         "slot": 1,
         "name": "王子潮刃",
-        "pp": 15,
+        "pp": 30,
         "description": "挥出优雅潮刃，造成水系特攻伤害。",
         "type": "水",
         "category": "特殊",
-        "power": 70,
-        "accuracy": 90,
+        "power": 45,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "蓝晶冠冕",
-        "pp": 10,
+        "pp": 20,
         "description": "点亮蓝晶王冠，提升特攻与特防。",
         "type": "水",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 99,
+        "power": 73,
+        "accuracy": 95,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
@@ -4977,86 +5163,93 @@
         "description": "跳起海流圆舞，对周围对手造成伤害并回复自身。",
         "type": "水",
         "category": "物理",
-        "power": 80,
-        "accuracy": 93,
+        "power": 56,
+        "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "王室甘霖",
-        "pp": 10,
+        "pp": 15,
         "description": "降下清澈甘霖，回复全队并解除一个负面状态。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60039": [
       {
         "slot": 1,
         "name": "洋流王令",
-        "pp": 10,
+        "pp": 30,
         "description": "号令洋流汇成巨浪，造成高威力水系特攻伤害。",
         "type": "水",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 96,
+        "power": 53,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "海翼潮鸣",
-        "pp": 10,
+        "pp": 15,
         "description": "扇动海翼发出潮鸣，攻击全体对手并回复全队。",
         "type": "水",
         "category": "物理",
-        "power": 95,
-        "accuracy": 89,
+        "power": 86,
+        "accuracy": 95,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "碧蓝王域",
-        "pp": 5,
+        "pp": 20,
         "description": "展开碧蓝王域，持续强化全队水系技能与回复效果。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "万流加冕",
-        "pp": 5,
+        "pp": 10,
         "description": "汇聚万流完成加冕，生成强大护盾并净化全队。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60040": [
       {
         "slot": 1,
         "name": "冰爪连击",
-        "pp": 25,
+        "pp": 30,
         "description": "以覆冰利爪连续攻击两次，造成冰系物攻伤害。",
         "type": "冰",
         "category": "物理",
-        "power": 55,
-        "accuracy": 85,
+        "power": 41,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
@@ -5064,23 +5257,25 @@
         "pp": 20,
         "description": "化作雪影迅速突进，优先出手并提升暴击。",
         "type": "冰",
-        "category": "变化",
-        "power": null,
-        "accuracy": null,
+        "category": "物理",
+        "power": 53,
+        "accuracy": 95,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "快快助威",
-        "pp": 15,
+        "pp": 20,
         "description": "轻快地踏脚助威，提升自身与相邻同伴速度。",
         "type": "冰",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -5092,33 +5287,36 @@
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60041": [
       {
         "slot": 1,
         "name": "风羽慢箭",
-        "pp": 25,
+        "pp": 30,
         "description": "从容射出风羽，造成风系特攻伤害且容易命中。",
         "type": "风",
         "category": "特殊",
-        "power": 70,
-        "accuracy": 97,
+        "power": 38,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "从容瞄准",
-        "pp": 20,
+        "pp": 25,
         "description": "静下心观察目标，提升命中与暴击。",
         "type": "风",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -5126,37 +5324,40 @@
         "pp": 15,
         "description": "甩尾释放旋风弹，对远处对手造成伤害。",
         "type": "风",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 93,
+        "category": "物理",
+        "power": 47,
+        "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "慢慢结界",
-        "pp": 10,
+        "pp": 15,
         "description": "展开缓和风结界，降低对手速度并提升自身闪避。",
         "type": "风",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "60042": [
       {
         "slot": 1,
         "name": "冰晶噗射",
-        "pp": 25,
+        "pp": 30,
         "description": "嘟嘴射出冰晶，造成冰系特攻伤害。",
         "type": "冰",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 92,
+        "power": 39,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
@@ -5165,10 +5366,11 @@
         "description": "伸长脖颈吹出冰息，造成范围伤害并降低速度。",
         "type": "冰",
         "category": "物理",
-        "power": 95,
-        "accuracy": 100,
+        "power": 57,
+        "accuracy": 95,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
@@ -5176,87 +5378,94 @@
         "pp": 15,
         "description": "张开晶翼散射冰羽，对全体对手造成伤害。",
         "type": "冰",
-        "category": "特殊",
-        "power": 85,
-        "accuracy": 99,
+        "category": "物理",
+        "power": 45,
+        "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "噗噗护羽",
-        "pp": 10,
+        "pp": 15,
         "description": "用晶羽包裹自身，提升特防并回复少量生命。",
         "type": "冰",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103171": [
       {
         "slot": 1,
         "name": "橡果脉冲",
-        "pp": 25,
+        "pp": 30,
         "description": "释放橡果能源包中的脉冲，造成钢系特攻伤害。",
         "type": "钢",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 91,
+        "power": 40,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "齿轮鼓舞",
-        "pp": 20,
+        "pp": 25,
         "description": "播放轻快的齿轮节拍，提升全队速度与命中。",
         "type": "钢",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "铁皮护翼",
-        "pp": 15,
+        "pp": 20,
         "description": "展开机械护翼，为一名同伴抵挡部分伤害。",
         "type": "钢",
-        "category": "物理",
-        "power": 70,
-        "accuracy": 94,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "咻咻修理",
-        "pp": 10,
+        "pp": 15,
         "description": "发送修理纳米群，回复一名同伴生命并解除一个负面状态。",
         "type": "钢",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103172": [
       {
         "slot": 1,
         "name": "露滴水炮",
-        "pp": 25,
+        "pp": 30,
         "description": "凝聚清露发射水炮，造成水系特攻伤害。",
         "type": "水",
         "category": "特殊",
-        "power": 80,
-        "accuracy": 97,
+        "power": 40,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
@@ -5265,60 +5474,65 @@
         "description": "唤起环形水流，对周围对手造成伤害并提升自身特防。",
         "type": "水",
         "category": "物理",
-        "power": 70,
-        "accuracy": 90,
+        "power": 58,
+        "accuracy": 95,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
         "name": "涟漪净化",
-        "pp": 15,
+        "pp": 20,
         "description": "以清澈涟漪洗涤同伴，解除一个负面状态并回复少量生命。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "莹泡守护",
-        "pp": 10,
+        "pp": 15,
         "description": "吹出晶莹水泡包裹全队，生成可吸收伤害的水膜护盾。",
         "type": "水",
-        "category": "物理",
-        "power": 80,
-        "accuracy": 100,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103173": [
       {
         "slot": 1,
         "name": "岩肩撞击",
-        "pp": 25,
+        "pp": 30,
         "description": "用厚重岩肩撞向对手，造成土系物攻伤害。",
         "type": "土",
         "category": "物理",
-        "power": 70,
-        "accuracy": 86,
+        "power": 43,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "墩墩固守",
-        "pp": 20,
+        "pp": 25,
         "description": "压低重心进入守势，大幅提升物防并免疫击退。",
         "type": "土",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -5327,10 +5541,11 @@
         "description": "挥动覆岩熊掌重击，造成伤害并有概率降低对手速度。",
         "type": "土",
         "category": "物理",
-        "power": 80,
-        "accuracy": 96,
+        "power": 43,
+        "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -5339,24 +5554,26 @@
         "description": "连接脚下地脉，为自身与相邻同伴分担伤害并持续回复。",
         "type": "土",
         "category": "物理",
-        "power": 70,
-        "accuracy": 93,
+        "power": 74,
+        "accuracy": 90,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "103174": [
       {
         "slot": 1,
         "name": "火星泡泡",
-        "pp": 25,
+        "pp": 30,
         "description": "吐出一串带火星的气泡，造成火系特攻伤害。",
         "type": "火",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 98,
+        "power": 41,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
@@ -5365,10 +5582,11 @@
         "description": "用烧硬的珊瑚王冠顶撞对手，造成物攻伤害并少量提升物防。",
         "type": "火",
         "category": "物理",
-        "power": 50,
-        "accuracy": 92,
+        "power": 53,
+        "accuracy": 95,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
@@ -5376,11 +5594,12 @@
         "pp": 15,
         "description": "借水流的推力横冲直撞，提升自身速度。",
         "type": "火",
-        "category": "变化",
-        "power": null,
-        "accuracy": null,
+        "category": "物理",
+        "power": 44,
+        "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -5388,25 +5607,27 @@
         "pp": 10,
         "description": "喷出滚烫的水汽，造成范围伤害并有概率灼烧。",
         "type": "火",
-        "category": "特殊",
-        "power": 90,
-        "accuracy": 92,
+        "category": "物理",
+        "power": 77,
+        "accuracy": 90,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "103175": [
       {
         "slot": 1,
         "name": "焰轮冲刺",
-        "pp": 15,
+        "pp": 30,
         "description": "把尾鳍点着当轮子撞向对手，造成火系物攻伤害。",
         "type": "火",
         "category": "物理",
-        "power": 80,
-        "accuracy": 88,
+        "power": 43,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
@@ -5414,11 +5635,12 @@
         "pp": 20,
         "description": "喷出大片蒸汽，提升自身闪避。",
         "type": "火",
-        "category": "变化",
-        "power": null,
-        "accuracy": null,
+        "category": "物理",
+        "power": 69,
+        "accuracy": 95,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
@@ -5427,10 +5649,11 @@
         "description": "掀起热浪拍打，造成特攻伤害并降低对手速度。",
         "type": "火",
         "category": "特殊",
-        "power": 75,
+        "power": 57,
         "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -5438,87 +5661,94 @@
         "pp": 10,
         "description": "在地面留下熔岩轨迹，对手换上场时受到少量伤害。",
         "type": "火",
-        "category": "特殊",
-        "power": 50,
-        "accuracy": 98,
+        "category": "物理",
+        "power": 90,
+        "accuracy": 90,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "103176": [
       {
         "slot": 1,
         "name": "王冠焰柱",
-        "pp": 10,
+        "pp": 30,
         "description": "从王冠喷出火柱，造成高威力火系特攻伤害。",
         "type": "火",
         "category": "特殊",
-        "power": 70,
-        "accuracy": 99,
+        "power": 49,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "地热领域",
-        "pp": 5,
+        "pp": 20,
         "description": "展开地热领域，持续强化全队火系技能。",
         "type": "火",
-        "category": "特殊",
-        "power": 75,
-        "accuracy": 97,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "老鳞回响",
-        "pp": 10,
+        "pp": 15,
         "description": "用硬化的老鳞弹开攻击，提升物防并反弹少量伤害。",
         "type": "火",
         "category": "物理",
-        "power": 50,
-        "accuracy": 91,
+        "power": 65,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "温泉安眠",
-        "pp": 5,
+        "pp": 10,
         "description": "让温泉蒸汽包裹全队，回复体力并解除灼烧。",
         "type": "火",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103177": [
       {
         "slot": 1,
         "name": "冰棱刺",
-        "pp": 25,
+        "pp": 30,
         "description": "射出细小的冰棱，造成冰系特攻伤害。",
         "type": "冰",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 94,
+        "power": 42,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "花种护壳",
-        "pp": 20,
+        "pp": 25,
         "description": "收拢花瓣形成冰壳，提升特防。",
         "type": "冰",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -5526,11 +5756,12 @@
         "pp": 15,
         "description": "喷出霜雾，降低对手速度。",
         "type": "冰",
-        "category": "变化",
-        "power": null,
-        "accuracy": null,
+        "category": "物理",
+        "power": 45,
+        "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -5542,33 +5773,36 @@
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103178": [
       {
         "slot": 1,
         "name": "冰瓣飞散",
-        "pp": 15,
+        "pp": 30,
         "description": "抖落冰瓣射向对手，造成范围冰系伤害。",
         "type": "冰",
         "category": "特殊",
-        "power": 95,
+        "power": 45,
         "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "寒蕊绽放",
-        "pp": 10,
+        "pp": 25,
         "description": "绽开花蕊，提升全队冰系技能威力。",
         "type": "冰",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -5580,95 +5814,103 @@
         "power": null,
         "accuracy": null,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "冻土扎根",
-        "pp": 10,
+        "pp": 15,
         "description": "就地扎根，回复体力并免疫击退。",
         "type": "冰",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103179": [
       {
         "slot": 1,
         "name": "极寒花冠",
-        "pp": 10,
+        "pp": 30,
         "description": "凝聚冰原寒气，造成高威力冰系特攻伤害。",
         "type": "冰",
         "category": "特殊",
-        "power": 70,
-        "accuracy": 95,
+        "power": 50,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "永冻花瓣",
-        "pp": 5,
+        "pp": 20,
         "description": "展开永冻花瓣，为全队附上冰甲。",
         "type": "冰",
-        "category": "特殊",
-        "power": 75,
-        "accuracy": 93,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "冰柱穿刺",
-        "pp": 10,
+        "pp": 15,
         "description": "从地面升起冰柱，造成物攻伤害并有概率冻结。",
         "type": "冰",
         "category": "物理",
-        "power": 80,
-        "accuracy": 86,
+        "power": 66,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "高寒绽放",
-        "pp": 5,
+        "pp": 10,
         "description": "在极寒中绽放，回复全队体力并提升冰系威力。",
         "type": "冰",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103180": [
       {
         "slot": 1,
         "name": "雨林绽放",
-        "pp": 10,
+        "pp": 30,
         "description": "借雨林的湿气绽放，造成高威力草系特攻伤害。",
         "type": "草",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 90,
+        "power": 53,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "花蜜陷阱",
-        "pp": 15,
+        "pp": 20,
         "description": "洒下花蜜，降低对手命中并回复自身。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -5677,36 +5919,39 @@
         "description": "用柔软的花瓣缠住对手，造成伤害并降低速度。",
         "type": "草",
         "category": "物理",
-        "power": 70,
-        "accuracy": 95,
+        "power": 63,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "四季轮转",
-        "pp": 5,
+        "pp": 10,
         "description": "切换花期，回复全队体力并清除灼烧。",
         "type": "草",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103181": [
       {
         "slot": 1,
         "name": "烫水弹",
-        "pp": 25,
+        "pp": 30,
         "description": "射出一小团滚水，造成水系特攻伤害。",
         "type": "水",
         "category": "特殊",
-        "power": 80,
-        "accuracy": 96,
+        "power": 41,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
@@ -5715,10 +5960,11 @@
         "description": "用烧红的螯钳夹击，造成物攻伤害并少量灼烧。",
         "type": "水",
         "category": "物理",
-        "power": 40,
-        "accuracy": 91,
+        "power": 53,
+        "accuracy": 95,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
@@ -5730,45 +5976,49 @@
         "power": null,
         "accuracy": null,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "泡影掩护",
-        "pp": 15,
+        "pp": 10,
         "description": "吐出大量气泡，提升闪避。",
         "type": "水",
-        "category": "变化",
-        "power": null,
-        "accuracy": null,
+        "category": "物理",
+        "power": 77,
+        "accuracy": 90,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "103182": [
       {
         "slot": 1,
         "name": "激流螯击",
-        "pp": 15,
+        "pp": 30,
         "description": "借水流加速螯击，造成水系物攻伤害。",
         "type": "水",
         "category": "物理",
-        "power": 70,
-        "accuracy": 87,
+        "power": 43,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "蒸汽突进",
-        "pp": 10,
+        "pp": 20,
         "description": "化作一道蒸汽突进，提升速度并附加灼烧。",
         "type": "水",
-        "category": "变化",
-        "power": null,
-        "accuracy": null,
+        "category": "物理",
+        "power": 69,
+        "accuracy": 95,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "主力"
       },
       {
         "slot": 3,
@@ -5776,111 +6026,120 @@
         "pp": 15,
         "description": "搅出沸水漩涡，造成范围伤害。",
         "type": "水",
-        "category": "特殊",
-        "power": 95,
-        "accuracy": 98,
+        "category": "物理",
+        "power": 57,
+        "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "甲壳回温",
-        "pp": 10,
+        "pp": 15,
         "description": "让甲壳吸收热量，回复体力并提升物防。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103183": [
       {
         "slot": 1,
         "name": "炎魔重钳",
-        "pp": 10,
+        "pp": 30,
         "description": "挥下烧红的巨钳，造成高威力物攻伤害。",
         "type": "水",
         "category": "物理",
-        "power": 75,
-        "accuracy": 96,
+        "power": 49,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "沸海领域",
-        "pp": 5,
+        "pp": 20,
         "description": "展开沸海领域，让全队水系技能附带灼烧。",
         "type": "水",
-        "category": "特殊",
-        "power": 80,
-        "accuracy": 95,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "赤壳冲撞",
-        "pp": 10,
+        "pp": 15,
         "description": "用赤红甲壳冲撞，造成伤害并降低对手物防。",
         "type": "水",
         "category": "物理",
-        "power": 70,
-        "accuracy": 90,
+        "power": 65,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "地热回响",
-        "pp": 5,
+        "pp": 10,
         "description": "引动地热，回复全队体力并清除异常状态。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103184": [
       {
         "slot": 1,
         "name": "砂石弹",
-        "pp": 25,
+        "pp": 30,
         "description": "吐出混着砂的石块，造成土系物攻伤害。",
         "type": "土",
         "category": "物理",
-        "power": 80,
-        "accuracy": 89,
+        "power": 42,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "挖洞潜行",
-        "pp": 20,
+        "pp": 25,
         "description": "钻进地下移动，提升闪避。",
         "type": "土",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "嚼碎",
-        "pp": 20,
+        "pp": 15,
         "description": "用坚硬的牙齿啃咬，造成物攻伤害。",
         "type": "土",
         "category": "物理",
-        "power": 75,
-        "accuracy": 99,
+        "power": 45,
+        "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -5892,45 +6151,49 @@
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103185": [
       {
         "slot": 1,
         "name": "矿脉尾扫",
-        "pp": 15,
+        "pp": 30,
         "description": "用覆满砂石的尾巴横扫，造成范围土系伤害。",
         "type": "土",
         "category": "特殊",
-        "power": 85,
-        "accuracy": 98,
+        "power": 45,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "碎石铠甲",
-        "pp": 15,
+        "pp": 25,
         "description": "强化背部石甲，提升物防与特防。",
         "type": "土",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "地刺",
-        "pp": 20,
+        "pp": 15,
         "description": "从地下刺出石锥，造成物攻伤害。",
         "type": "土",
         "category": "物理",
-        "power": 80,
-        "accuracy": 92,
+        "power": 58,
+        "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -5939,98 +6202,106 @@
         "description": "贴着地面冲锋，提升速度并造成伤害。",
         "type": "土",
         "category": "物理",
-        "power": 70,
-        "accuracy": 89,
+        "power": 91,
+        "accuracy": 90,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "终结"
       }
     ],
     "103186": [
       {
         "slot": 1,
         "name": "矿脉崩击",
-        "pp": 10,
+        "pp": 30,
         "description": "砸下整条矿脉的重量，造成高威力土系物攻伤害。",
         "type": "土",
         "category": "物理",
-        "power": 75,
-        "accuracy": 91,
+        "power": 50,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "隧道突袭",
-        "pp": 10,
+        "pp": 20,
         "description": "钻入地下从背后突袭，提升暴击率。",
         "type": "土",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "砂金护壁",
-        "pp": 5,
+        "pp": 20,
         "description": "用砂金筑起护壁，为全队抵挡一次伤害。",
         "type": "土",
-        "category": "物理",
-        "power": 70,
-        "accuracy": 85,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "矿层回响",
-        "pp": 5,
+        "pp": 10,
         "description": "震响地下矿层，降低全体对手速度。",
         "type": "土",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103187": [
       {
         "slot": 1,
         "name": "弹跳撞击",
-        "pp": 25,
+        "pp": 30,
         "description": "像弹簧一样弹出去撞击，造成钢系物攻伤害。",
         "type": "钢",
         "category": "物理",
-        "power": 80,
+        "power": 43,
         "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "上弦",
-        "pp": 20,
+        "pp": 25,
         "description": "给自己上紧发条，提升速度。",
         "type": "钢",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "齿轮飞刃",
-        "pp": 20,
+        "pp": 15,
         "description": "甩出小齿轮旋刃，造成特攻伤害。",
         "type": "钢",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 95,
+        "power": 43,
+        "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
@@ -6042,83 +6313,90 @@
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103188": [
       {
         "slot": 1,
         "name": "塔身重压",
-        "pp": 15,
+        "pp": 30,
         "description": "用整个塔身压下来，造成钢系物攻伤害。",
         "type": "钢",
         "category": "物理",
-        "power": 70,
-        "accuracy": 93,
+        "power": 46,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "叠层加固",
-        "pp": 15,
+        "pp": 25,
         "description": "再叠一层结构，提升物防与特防。",
         "type": "钢",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "塔顶光束",
-        "pp": 10,
+        "pp": 15,
         "description": "从塔尖射出光束，造成特攻伤害。",
         "type": "钢",
         "category": "特殊",
-        "power": 80,
-        "accuracy": 90,
+        "power": 54,
+        "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "地基稳固",
-        "pp": 10,
+        "pp": 15,
         "description": "把地基钉进地面，免疫击退并回复体力。",
         "type": "钢",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103189": [
       {
         "slot": 1,
         "name": "铲刃斩",
-        "pp": 15,
+        "pp": 30,
         "description": "用铲刃劈砍，造成钢系物攻伤害。",
         "type": "钢",
         "category": "物理",
-        "power": 75,
-        "accuracy": 86,
+        "power": 43,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "掘进",
-        "pp": 20,
+        "pp": 25,
         "description": "高速掘进，提升速度并降低对手物防。",
         "type": "钢",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 12,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -6126,99 +6404,107 @@
         "pp": 15,
         "description": "把挖出的碎石抛出，造成范围伤害。",
         "type": "钢",
-        "category": "特殊",
-        "power": 85,
-        "accuracy": 96,
+        "category": "物理",
+        "power": 57,
+        "accuracy": 100,
         "learnLevel": 20,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "铁铲格挡",
-        "pp": 10,
+        "pp": 15,
         "description": "用铲面格挡，提升物防。",
         "type": "钢",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 28,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103190": [
       {
         "slot": 1,
         "name": "塔层碾压",
-        "pp": 10,
+        "pp": 30,
         "description": "整座塔层压下来，造成高威力物攻伤害。",
         "type": "钢",
         "category": "物理",
-        "power": 80,
-        "accuracy": 95,
+        "power": 49,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "齿轮壁垒",
-        "pp": 5,
+        "pp": 20,
         "description": "展开齿轮壁垒，为全队抵挡伤害。",
         "type": "钢",
-        "category": "物理",
-        "power": 70,
-        "accuracy": 92,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "塔光扫射",
-        "pp": 10,
+        "pp": 15,
         "description": "塔顶光束横扫全场，造成特攻伤害。",
         "type": "钢",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 91,
+        "power": 65,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "永动塔心",
-        "pp": 5,
+        "pp": 10,
         "description": "启动永动核心，每回合为全队回复体力。",
         "type": "钢",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103191": [
       {
         "slot": 1,
         "name": "双铲回旋",
-        "pp": 10,
+        "pp": 30,
         "description": "双铲高速回旋，造成高威力物攻伤害。",
         "type": "钢",
         "category": "物理",
-        "power": 70,
-        "accuracy": 88,
+        "power": 52,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "掘穿",
-        "pp": 10,
+        "pp": 20,
         "description": "一击掘穿对手防线，大幅降低其物防。",
         "type": "钢",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 16,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -6226,99 +6512,107 @@
         "pp": 15,
         "description": "卷起碎石风暴，造成范围伤害。",
         "type": "钢",
-        "category": "特殊",
-        "power": 95,
-        "accuracy": 97,
+        "category": "物理",
+        "power": 65,
+        "accuracy": 100,
         "learnLevel": 26,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "坑道突进",
-        "pp": 5,
+        "pp": 10,
         "description": "从坑道中突进，优先出手并获得护盾。",
         "type": "钢",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 36,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103192": [
       {
         "slot": 1,
         "name": "气泡炮",
-        "pp": 25,
+        "pp": 30,
         "description": "压缩气泡射出去，造成水系特攻伤害。",
         "type": "水",
         "category": "特殊",
-        "power": 75,
-        "accuracy": 96,
+        "power": 40,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "群体护盾",
-        "pp": 15,
+        "pp": 25,
         "description": "同伴聚拢成盾，提升全队物防。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
         "name": "潮汐推力",
-        "pp": 15,
+        "pp": 20,
         "description": "借潮水推着自己移动，提升速度。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "浮囊充气",
-        "pp": 10,
+        "pp": 15,
         "description": "给浮囊充气，为一名同伴抵挡一次伤害。",
         "type": "水",
-        "category": "物理",
-        "power": 75,
-        "accuracy": 88,
+        "category": "变化",
+        "power": null,
+        "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ],
     "103193": [
       {
         "slot": 1,
         "name": "巨螯夹击",
-        "pp": 20,
+        "pp": 30,
         "description": "用大螯夹碎对手护甲，造成物攻伤害。",
         "type": "水",
         "category": "物理",
-        "power": 80,
-        "accuracy": 90,
+        "power": 40,
+        "accuracy": 100,
         "learnLevel": 1,
-        "note": ""
+        "note": "",
+        "role": "起手"
       },
       {
         "slot": 2,
         "name": "甲壳硬化",
-        "pp": 15,
+        "pp": 25,
         "description": "把甲壳里的盐分压实，提升物防。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 8,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 3,
@@ -6326,23 +6620,25 @@
         "pp": 15,
         "description": "带起碎浪冲撞，造成范围伤害。",
         "type": "水",
-        "category": "特殊",
-        "power": 90,
-        "accuracy": 98,
+        "category": "物理",
+        "power": 46,
+        "accuracy": 100,
         "learnLevel": 15,
-        "note": ""
+        "note": "",
+        "role": "战术"
       },
       {
         "slot": 4,
         "name": "独自守望",
-        "pp": 10,
+        "pp": 15,
         "description": "独自警戒，提升自身命中与暴击。",
         "type": "水",
         "category": "变化",
         "power": null,
         "accuracy": null,
         "learnLevel": 22,
-        "note": ""
+        "note": "",
+        "role": "战术"
       }
     ]
   },
