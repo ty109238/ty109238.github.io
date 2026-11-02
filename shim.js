@@ -858,7 +858,7 @@
       var effLine = sec.querySelector('[data-k="natureEffect"]');
       if (effLine) {
         if (natObj && natObj.up && NATURE_SKILL[natObj.up]) {
-          effLine.textContent = '✦ ' + nat + '：' + NATURE_SKILL[natObj.up].label;
+          effLine.textContent = '✦ ' + nat + '：' + NATURE_SKILL[natObj.up].label + '（已计入技能威力）';
         } else if (natObj && natObj.special) {
           effLine.textContent = '✦ ' + nat + '：' + natObj.special + '（不影响技能威力）';
         } else {
