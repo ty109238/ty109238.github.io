@@ -1059,3 +1059,24 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   margin-right: 2px;
 }
 .skill-meta .slot-ico { opacity: .95; }
+/* ---------- 条目级图标 ---------- */
+.trait-emblem {
+  display: grid !important;
+  place-items: center;
+  overflow: hidden;
+}
+.trait-emblem .trait-ico {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+  display: block;
+}
+.field-note > .note-ico {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  margin-top: -2px;
+}
+.field-note.hatch > .note-ico { width: 52px; height: 52px; }

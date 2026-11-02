@@ -1025,7 +1025,6 @@
     '蛋形态': 'ui-hatchcond',
     '孵化条件': 'ui-hatchcond',
     '种族值': 'ui-radar',
-    '相遇与出战': 'ui-catch',
     '技能手册': null
   };
   var ELEM_ICON = { 火: 'fire', 水: 'water', 草: 'grass', 冰: 'ice', 土: 'rock', 钢: 'steel', 风: 'wind', 光: 'light', 暗: 'dark', 雷: 'thunder' };
@@ -1043,6 +1042,55 @@
         img.src = '/media/ui/ui-author.webp';
         img.alt = '';
         a.insertBefore(img, a.firstChild);
+      }
+    }
+  }
+
+  function elementIconOf(c) {
+    var ELEM_ICON = { 火: 'fire', 水: 'water', 草: 'grass', 冰: 'ice', 土: 'rock', 钢: 'steel', 风: 'wind', 光: 'light', 暗: 'dark', 雷: 'thunder' };
+    return 'trait-' + (ELEM_ICON[c.element] || 'fire');
+  }
+
+  function makeEntryIcon(src, cls) {
+    var img = document.createElement('img');
+    img.className = cls || 'entry-ico';
+    img.src = '/media/ui/' + src + '.webp';
+    img.alt = '';
+    return img;
+  }
+
+  function syncEntryIcons() {
+    var id = currentCreatureId();
+    if (!id || !DATA) return;
+    var c = null;
+    for (var i = 0; i < DATA.creatures.length; i++) if (DATA.creatures[i].id === id) { c = DATA.creatures[i]; break; }
+    if (!c) return;
+
+    // 被动特性：每个特性左侧换成对应属性徽章
+    var emblems = document.querySelectorAll('.trait-emblem');
+    for (var t = 0; t < emblems.length; t++) {
+      var em = emblems[t];
+      if (em.getAttribute('data-ico') === '1') continue;
+      em.setAttribute('data-ico', '1');
+      em.innerHTML = '';
+      em.appendChild(makeEntryIcon(elementIconOf(c), 'entry-ico trait-ico'));
+    }
+
+    // 捕捉地点 → 捕捉条件图标
+    var pin = document.querySelector('.field-note:not(.hatch) > svg');
+    if (pin) {
+      var note = pin.parentNode;
+      if (!note.querySelector('.entry-ico')) {
+        note.replaceChild(makeEntryIcon('ui-catch', 'entry-ico note-ico'), pin);
+      }
+    }
+
+    // 孵化条件 → 蛋/沙漏图标
+    var egg = document.querySelector('.field-note.hatch > svg');
+    if (egg) {
+      var note2 = egg.parentNode;
+      if (!note2.querySelector('.entry-ico')) {
+        note2.replaceChild(makeEntryIcon('ui-hatchcond', 'entry-ico note-ico'), egg);
       }
     }
   }
@@ -1608,7 +1656,7 @@
       clearTimeout(timer);
       timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); }, 300);
     }).observe(root, { childList: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncMobileNav(); syncToc(); syncSectionIcons(); syncHeaderIcons(); tickBranch(); }, 2500);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncMobileNav(); syncToc(); syncSectionIcons(); syncEntryIcons(); syncHeaderIcons(); tickBranch(); }, 2500);
   }
 
   window.__dexOpenNotice = openNotice;
