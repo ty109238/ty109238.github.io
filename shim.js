@@ -252,7 +252,7 @@
   function buildEggSection(c) {
     var imgPath = c.eggKey ? (DATA.images[c.eggKey] || '') : '';
     var frame = imgPath
-      ? '<div class="egg-frame"><img src="' + imgPath + '" alt="' + c.name + ' 蛋形态" loading="lazy"></div>'
+      ? '<div class="egg-frame"><img src="' + imgPath + '" alt="' + c.name + ' 蛋形态" width="220" height="220" loading="lazy" decoding="async"></div>'
       : '<div class="egg-frame"><div class="egg-empty">待补充配图<br>（在编辑台「蛋形态」处上传）</div></div>';
     var note = c.eggNote || EGG_NOTES[c.family] || '孵化前它只是一枚安静的蛋，外壳上已经能看出这一族的纹路。';
     var chips = [];
@@ -293,7 +293,7 @@
       var s = sibs[k];
       var src = s.imageKey ? (DATA.images[s.imageKey] || '') : '';
       html += '<a class="family-card" href="/creature/' + s.id + '">' +
-        (src ? '<img src="' + src + '" alt="' + s.name + '" loading="lazy">' : '') +
+        (src ? '<img src="' + src + '" alt="' + s.name + '" width="132" height="96" loading="lazy" decoding="async">' : '') +
         '<b>' + s.name + '</b><small>No.' + String(s.dexNo).padStart(3, '0') + ' · ' + s.stage + '</small></a>';
     }
     html += '</div>';
@@ -607,7 +607,7 @@
       var src = s.imageKey ? (DATA.images[s.imageKey] || '') : '';
       var sub = String(s.captureLocation || '').split('·')[1] || '';
       html += '<a class="family-card" href="/creature/' + s.id + '">' +
-        (src ? '<img src="' + src + '" alt="' + s.name + '" loading="lazy">' : '') +
+        (src ? '<img src="' + src + '" alt="' + s.name + '" width="132" height="96" loading="lazy" decoding="async">' : '') +
         '<b>' + s.name + '</b><small>No.' + String(s.dexNo).padStart(3, '0') + ' · ' + sub + '</small></a>';
     }
     html += '</div>';
@@ -636,7 +636,7 @@
       var src = c.imageKey ? (DATA.images[c.imageKey] || '') : '';
       html += '<a class="recent-card" href="/creature/' + c.id + '">' +
         '<span class="recent-new">NEW</span>' +
-        (src ? '<img src="' + src + '" alt="' + c.name + '" loading="lazy">' : '') +
+        (src ? '<img src="' + src + '" alt="' + c.name + '" width="116" height="82" loading="lazy" decoding="async">' : '') +
         '<b>' + c.name + '</b><small>No.' + String(c.dexNo).padStart(3, '0') + ' · ' + c.stage + '</small></a>';
     });
     html += '</div>';
@@ -903,7 +903,7 @@
       var cls = rank <= 3 ? ' is-top rank-' + rank : '';
       html += '<a class="rank-row' + cls + '" href="/creature/' + c.id + '">' +
         '<span class="rank-no">' + rank + '</span>' +
-        (src ? '<img src="' + src + '" alt="' + c.name + '" loading="lazy">' : '') +
+        (src ? '<img src="' + src + '" alt="' + c.name + '" width="116" height="82" loading="lazy" decoding="async">' : '') +
         '<span class="rank-name"><b>' + c.name + '</b><small>No.' + String(c.dexNo).padStart(3, '0') + ' · ' + c.stage + ' · ' + c.family + '</small></span>' +
         '<span class="rank-tags">Lv.' + row.st.level + ' · ' + TALENTS[row.st.talent] + ' · ' + row.st.star + '★ · ' + row.st.stage + '阶 · ' + row.st.nature + '</span>' +
         '<span class="rank-power">' + row.p.toLocaleString('en-US') + '</span>' +

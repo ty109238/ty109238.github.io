@@ -657,3 +657,16 @@ html.hide-studio .studio-section { display: none !important; }
   color: #8ea3b8;
 }
 .studio-mini-collapse:hover { color: var(--pink); border-color: var(--pink); }
+/* 预留空间，减少手机端布局跳动 */
+.portrait-section .portrait-frame {
+  aspect-ratio: 1 / 1 !important;
+  display: grid !important;
+  place-items: center;
+  height: auto !important;
+}
+.portrait-section .portrait-frame img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+.egg-frame, .studio-logo, .studio-mini-logo, .recent-card img, .family-card img, .gcard img, .rank-row img { contain: layout paint; }
