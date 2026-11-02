@@ -393,6 +393,38 @@
     logLine('天气变成了 <b>' + next + '</b>（' + WEATHERS[next].desc + '）', 'turn');
   }
 
+  function saveTeam() {
+    try {
+      var slim = state.my.map(function (c) {
+        return c ? { id: c.c.id, level: c.level, star: c.star, talent: c.talent, stage: c.stage, nature: c.nature, evs: c.evs, skills: c.skills.map(function (x) { return x.name; }) } : null;
+      });
+      localStorage.setItem('dex:team', JSON.stringify(slim));
+    } catch (e) {}
+  }
+
+  function loadTeam() {
+    try {
+      var slim = JSON.parse(localStorage.getItem('dex:team') || 'null');
+      if (!slim) return false;
+      var ok = false;
+      slim.forEach(function (x, i) {
+        if (!x) return;
+        var c = DATA.creatures.filter(function (y) { return y.id === x.id; })[0];
+        if (!c) return;
+        var cfg = defaultCfg(c);
+        cfg.level = x.level; cfg.star = x.star; cfg.talent = x.talent; cfg.stage = x.stage;
+        cfg.nature = x.nature; cfg.evs = x.evs || cfg.evs;
+        if (x.skills && x.skills.length) {
+          var picked = cfg.pool.filter(function (s) { return x.skills.indexOf(s.name) >= 0; }).slice(0, 4);
+          if (picked.length === 4) cfg.skills = picked;
+        }
+        state.my[i] = cfg;
+        ok = true;
+      });
+      return ok;
+    } catch (e) { return false; }
+  }
+
   function startBattle() {
     if (!state.my.every(Boolean) || !state.enemy.every(Boolean)) return;
     state.battle = {
@@ -428,6 +460,8 @@
 
     var bar = skillBar;
     bar.innerHTML = '';
+    var anyPP = mm.skills.some(function (s) { return s.ppNow > 0; });
+    var showSkills = anyPP ? mm.skills : [STRUGGLE];
     mm.skills.forEach(function (s, i) {
       var btn = el('button', 'skill-btn');
       btn.innerHTML = '<img class="sk-ico" src="/media/ui/fn-skillbook.webp" alt=""><span class="pp">PP ' + s.ppNow + '/' + s.ppMax + '</span><b>' + s.name + '</b>' +
@@ -437,6 +471,12 @@
       btn.addEventListener('click', function () { playerAct(i); });
       bar.appendChild(btn);
     });
+    if (!anyPP) {
+      var sb = el('button', 'skill-btn', '<b>挣扎</b><small>无技能可用 · 威力 40 · 自身反伤</small>');
+      sb.addEventListener('click', function () { playerAct(-1); });
+      bar.innerHTML = '';
+      bar.appendChild(sb);
+    }
 
     var sw = $('switchBar');
     sw.innerHTML = '';
@@ -667,13 +707,33 @@
   }
 
   function loadRecord() {
-    try { return JSON.parse(localStorage.getItem('dex:battle') || 'null') || { games: 0, wins: 0, streak: 0, best: 0 }; }
-    catch (e) { return { games: 0, wins: 0, streak: 0, best: 0 }; }
+    try { return JSON.parse(localStorage.getItem('dex:battle') || 'null') || { games: 0, wins: 0, streak: 0, best: 0, recent: [] }; }
+    catch (e) { return { games: 0, wins: 0, streak: 0, best: 0, recent: [] }; }
   }
   function saveRecord(r) {
     try { localStorage.setItem('dex:battle', JSON.stringify(r)); } catch (e) {}
     var box = document.getElementById('recordLine');
-    if (box) box.innerHTML = '战绩：<b>' + r.games + '</b> 场 · 胜 <b>' + r.wins + '</b> · 连胜 <b>' + r.streak + '</b>（最高 ' + r.best + '）';
+    if (box) {
+      var hist = (r.recent || []).slice(-5).map(function (x) {
+        return '<span class="recent-game ' + (x.w ? 'win' : 'lose') + '">' + (x.w ? '胜' : '负') + ' · ' + x.t + '回合</span>';
+      }).join('');
+      box.innerHTML = '战绩：<b>' + r.games + '</b> 场 · 胜 <b>' + r.wins + '</b> · 连胜 <b>' + r.streak + '</b>（最高 ' + r.best + '）' +
+        (hist ? '<span class="recent-games">' + hist + '</span>' : '');
+    }
+  }
+
+  function finishDraw() {
+    var b = state.battle;
+    b.over = true;
+    b.winner = null;
+    battleView.classList.add('hidden');
+    resultView.classList.remove('hidden');
+    step.textContent = '对战结束';
+    resultTitle.innerHTML = '<span style="color:#8ea3b8">平局</span>';
+    resultSub.textContent = '双方都撑过了 100 回合 · 共 ' + b.turn + ' 回合';
+    b.replayCode = buildReplayCode();
+    var rv = document.getElementById('replayBox');
+    if (rv) { rv.value = b.replayCode; document.getElementById('replayArea').classList.remove('hidden'); }
   }
 
   function finish(win) {
@@ -681,6 +741,8 @@
     rec.games++;
     if (win) { rec.wins++; rec.streak++; if (rec.streak > rec.best) rec.best = rec.streak; }
     else { rec.streak = 0; }
+    rec.recent = (rec.recent || []).slice(-4);
+    rec.recent.push({ w: win ? 1 : 0, t: state.battle.turn, we: state.battle.weather, at: Date.now() });
     saveRecord(rec);
     var b = state.battle;
     b.over = true;
@@ -717,7 +779,7 @@
     if (b.busy || b.over || b.awaitingSwitch) return;
     b.busy = true;
     var me = b.my[b.myActive], foe = b.en[b.enActive];
-    var mySkill = me.skills[skillIdx];
+    var mySkill = skillIdx < 0 ? STRUGGLE : me.skills[skillIdx];
     var enemySkill = chooseAiSkill(foe, me);
     var aiSwitch = aiWantsSwitch(foe, me);
     if (aiSwitch >= 0) {
@@ -757,6 +819,7 @@
 
     b.turn++;
     b.busy = false;
+    if (b.turn > 100) { logLine('回合数达到上限，判定为平局。', 'turn'); return finishDraw(); }
     maybeWeather();
 
     if (aliveIdx(b.my).length === 0) return finish(false);
@@ -808,10 +871,12 @@
     return alt;
   }
 
+  var STRUGGLE = { name: '挣扎', type: '无', category: '物理', power: 40, accuracy: null, pp: 0, ppNow: 99, ppMax: 99, description: '无技能可用时的全力一撞，自身也会受到少量反伤。', learnLevel: 0 };
+
   function chooseAiSkill(attacker, defender) {
     var level = (state.battle && state.battle.ai) || 'normal';
     var usable = attacker.skills.filter(function (s) { return s.ppNow > 0; });
-    if (!usable.length) return attacker.skills[0];
+    if (!usable.length) return STRUGGLE;
     if (level === 'easy') return pick(usable);
     var best = null, bestScore = -1;
     attacker.skills.forEach(function (s) {
@@ -895,6 +960,7 @@
         DATA = d;
         renderSlots();
         saveRecord(loadRecord());
+        if (loadTeam()) { renderSlots(); }
         $('mboxCancel').addEventListener('click', function () { $('modal').hidden = true; });
         $('mboxOk').addEventListener('click', function () {
           var e = state.editing;
@@ -914,8 +980,10 @@
           state.enemy = new Array(6).fill(null);
           renderSlots();
         });
-        $('startBattle').addEventListener('click', startBattle);
+        $('startBattle').addEventListener('click', function () { saveTeam(); startBattle(); });
         $('giveUp').addEventListener('click', function () {
+          if (!confirm('确定认输并返回组队吗？本局不算胜利。')) return;
+          state.battle = null;
           state.battle = null;
           $('battleView').classList.add('hidden');
           $('buildView').classList.remove('hidden');

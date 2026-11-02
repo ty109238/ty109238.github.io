@@ -183,3 +183,8 @@ a { color: inherit; }
 .mini .btn-ico { width: 16px; height: 16px; vertical-align: -3px; margin-right: 3px; }
 .skill-btn .sk-ico { float: left; width: 18px; height: 18px; margin: 1px 6px 0 0; }
 .switch-btn .sw-ico { width: 15px; height: 15px; vertical-align: -3px; margin-right: 4px; }
+/* 战绩历史小标 */
+.recent-games { margin-left: 10px; display: inline-flex; gap: 6px; flex-wrap: wrap; }
+.recent-game { font-size: 10.5px; padding: 1px 8px; border-radius: 999px; border: 1px solid #dbe6f0; color: #7b8ea1; }
+.recent-game.win { background: #e9f7ec; border-color: #b6e0c2; color: #1f7a3d; }
+.recent-game.lose { background: #fdecea; border-color: #f3c1b8; color: #a4331f; }
