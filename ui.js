@@ -36,6 +36,8 @@
       if (n.getAttribute('data-elem-ico') === '1') continue;
       if (n.closest('svg')) continue;
       if (n.children.length > 1) continue;
+      if (n.querySelector('img')) continue;
+      if (n.classList.contains('sm-type')) continue;
       var t = (n.textContent || '').trim();
       var m = reg.exec(t);
       if (!m) continue;
