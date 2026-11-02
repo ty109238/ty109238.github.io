@@ -270,7 +270,28 @@
     });
   }
 
+  function imageHints() {
+    var hero = document.querySelectorAll('.hero-visual img, .hero-portrait img');
+    for (var i = 0; i < hero.length; i++) {
+      hero[i].setAttribute('fetchpriority', 'high');
+      hero[i].setAttribute('decoding', 'sync');
+    }
+    var cards = document.querySelectorAll('a.creature-card img');
+    for (var k = 0; k < cards.length; k++) {
+      if (cards[k].getAttribute('data-hint') === '1') continue;
+      cards[k].setAttribute('data-hint', '1');
+      cards[k].setAttribute('decoding', 'async');
+      if (k >= 12) {
+        cards[k].setAttribute('loading', 'lazy');
+      } else {
+        cards[k].setAttribute('loading', 'eager');
+        cards[k].setAttribute('fetchpriority', 'high');
+      }
+    }
+  }
+
   function tick() {
+    imageHints();
     fadeInImages();
     decorateChips();
     decorateCards();
