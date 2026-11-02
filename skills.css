@@ -98,3 +98,31 @@ body {
 .u-count.full { color: #1f7a3d; }
 .u-btn { padding: 2px 8px; border: 1px solid var(--line); border-radius: 999px; background: #fff; font: inherit; font-size: 11px; cursor: pointer; }
 .u-btn:hover { border-color: var(--ink); background: #fff6d8; }
+
+/* 技能书图鉴 */
+.sp-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+.sp-tab {
+  padding: 9px 22px; border: 2px solid var(--ink); border-radius: 999px;
+  background: #fff; font: inherit; font-size: 13px; font-weight: 900; cursor: pointer;
+}
+.sp-tab.on { background: var(--yellow); }
+.book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.book-group {
+  background: #fff; border: 2px solid var(--ink); border-radius: 14px;
+  padding: 10px 12px; box-shadow: 3px 4px 0 rgba(38,39,34,.06);
+}
+.book-group header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.book-group b { font-size: 13px; }
+.bg-count { font-size: 11px; font-weight: 900; color: #9aa9b8; }
+.bg-count.full { color: #1f7a3d; }
+.bg-items { display: flex; flex-wrap: wrap; gap: 6px; }
+.bg-book {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  width: 74px; padding: 6px 4px; border: 2px dashed var(--line); border-radius: 10px;
+  background: #f7fafd; font: inherit; cursor: pointer;
+}
+.bg-book.has { border-style: solid; border-color: #e6c35a; background: #fff9e6; }
+.bg-ico { font-size: 18px; line-height: 1; filter: grayscale(1); opacity: .55; }
+.bg-book.has .bg-ico { filter: none; opacity: 1; }
+.bg-name { font-size: 9.5px; color: #9aa9b8; text-align: center; line-height: 1.3; }
+.bg-book.has .bg-name { color: #6b5314; font-weight: 800; }

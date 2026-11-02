@@ -108,6 +108,22 @@
         if (m2[id] >= 10) unlockExclusive(id);
         renderUsagePanel();
         renderGrid();
+        renderBookShelf();
+        document.getElementById('tabList').addEventListener('click', function () {
+          document.getElementById('tabList').classList.add('on');
+          document.getElementById('tabBooks').classList.remove('on');
+          document.querySelector('.sp-filters').hidden = false;
+          document.getElementById('grid').hidden = false;
+          document.getElementById('bookView').hidden = true;
+        });
+        document.getElementById('tabBooks').addEventListener('click', function () {
+          document.getElementById('tabBooks').classList.add('on');
+          document.getElementById('tabList').classList.remove('on');
+          document.querySelector('.sp-filters').hidden = true;
+          document.getElementById('grid').hidden = true;
+          document.getElementById('bookView').hidden = false;
+          renderBookShelf();
+        });
       });
     });
   }
@@ -184,6 +200,37 @@
     $('empty').hidden = out.length > 0;
   }
 
+  function renderBookShelf() {
+    var host = document.getElementById('bookGrid');
+    if (!host || !DATA) return;
+    var html = DATA.creatures.map(function (c) {
+      var books = (DATA.skills[String(c.id)] || []).filter(function (s) { return s.exclusive || (s.power || 0) >= 95; });
+      if (!books.length) return '';
+      var got = books.filter(function (b) { return owned.has(b.name); }).length;
+      return '<section class="book-group">' +
+        '<header><b>No.' + String(c.dexNo).padStart(3, '0') + ' ' + c.name + '</b>' +
+        '<span class="bg-count' + (got === books.length ? ' full' : '') + '">' + got + '/' + books.length + '</span></header>' +
+        '<div class="bg-items">' +
+        books.map(function (b) {
+          var has = owned.has(b.name);
+          return '<button class="bg-book' + (has ? ' has' : '') + '" data-name="' + b.name + '">' +
+            '<span class="bg-ico">' + (has ? '📖' : '❔') + '</span>' +
+            '<span class="bg-name">' + (has ? b.name : '未获得') + '</span>' +
+            '</button>';
+        }).join('') + '</div></section>';
+    }).join('');
+    host.innerHTML = html;
+    host.querySelectorAll('.bg-book').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var nm = btn.getAttribute('data-name');
+        if (owned.has(nm)) owned.delete(nm); else owned.add(nm);
+        saveOwned(owned);
+        renderBookShelf();
+        renderGrid();
+      });
+    });
+  }
+
   function boot() {
     fetch('/data/content.json?t=' + Date.now(), { cache: 'no-store' })
       .then(function (r) { return r.json(); })
@@ -193,6 +240,22 @@
         renderFilters();
         renderUsagePanel();
         renderGrid();
+        renderBookShelf();
+        document.getElementById('tabList').addEventListener('click', function () {
+          document.getElementById('tabList').classList.add('on');
+          document.getElementById('tabBooks').classList.remove('on');
+          document.querySelector('.sp-filters').hidden = false;
+          document.getElementById('grid').hidden = false;
+          document.getElementById('bookView').hidden = true;
+        });
+        document.getElementById('tabBooks').addEventListener('click', function () {
+          document.getElementById('tabBooks').classList.add('on');
+          document.getElementById('tabList').classList.remove('on');
+          document.querySelector('.sp-filters').hidden = true;
+          document.getElementById('grid').hidden = true;
+          document.getElementById('bookView').hidden = false;
+          renderBookShelf();
+        });
         $('q').addEventListener('input', function (e) { state.q = e.target.value; renderGrid(); });
         $('sort').addEventListener('change', function (e) { state.sort = e.target.value; renderGrid(); });
       })
