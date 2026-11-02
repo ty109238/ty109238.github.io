@@ -312,3 +312,6 @@ a { color: inherit; }
   70% { transform: translateX(-3px); }
 }
 .skill-btn:active { transform: scale(.97); }
+/* 未解锁技能 */
+.sk.locked { opacity: .55; border-style: dashed; cursor: not-allowed; }
+.sk.locked b::after { content: " 🔒"; font-size: 11px; }

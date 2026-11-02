@@ -68,6 +68,17 @@
     return w[{ 火: 'fire', 水: 'water', 冰: 'ice', 风: 'wind' }[type]] || 1;
   }
 
+  function bookSet() {
+    try { return new Set(JSON.parse(localStorage.getItem('dex:books') || '[]')); }
+    catch (e) { return new Set(); }
+  }
+  function needsBook(s) {
+    return !!(s && (s.exclusive || (s.power || 0) >= 95));
+  }
+  function allowedSkill(s) {
+    return !needsBook(s) || bookSet().has(s.name);
+  }
+
   function skillCat(s) {
     if (s.category === '物理') return '物攻';
     if (s.category === '特殊') return '魔攻';
@@ -217,8 +228,12 @@
     var all = (DATA.skills[String(c.id)] || []).slice();
     var shared = all.filter(function (x) { return !x.exclusive; });
     var own = all.filter(function (x) { return x.exclusive; });
-    var skills = shared.slice(0, 2).concat(own.slice(0, 2));
-    if (skills.length < 4) skills = all.slice(0, 4);
+    var skills = shared.filter(allowedSkill).slice(0, 4);
+    if (skills.length < 4) {
+      all.filter(allowedSkill).forEach(function (x) {
+        if (skills.length < 4 && skills.indexOf(x) < 0) skills.push(x);
+      });
+    }
     var main = skills[0] && skills[0].category === '物理' ? 'attack' : 'spAttack';
     var evs = { hp: 6, attack: 0, defense: 0, spAttack: 0, spDefense: 0, speed: 252 };
     evs[main] = 252;
@@ -363,11 +378,17 @@
     var skWrap = el('div', 'skill-pick');
     cfg.pool.forEach(function (s) {
       var on = cfg.skills.some(function (x) { return x.name === s.name; });
-      var card = el('div', 'sk' + (on ? ' on' : ''),
+      var locked = !allowedSkill(s);
+      var card = el('div', 'sk' + (on ? ' on' : '') + (locked ? ' locked' : ''),
         '<b>' + s.name + '</b>' +
         '<small><span class="tag">' + s.type + '系</span><span class="tag">' + skillCat(s) + '</span>' +
-        (s.power ? '威力 ' + s.power : '变化') + ' · ' + (s.accuracy ? '命中 ' + s.accuracy : '—') + '</small>');
+        (s.power ? '威力 ' + s.power : '变化') + ' · ' + (s.accuracy ? '命中 ' + s.accuracy : '—') +
+        (locked ? ' · 🔒 需技能书' : '') + '</small>');
       card.addEventListener('click', function () {
+        if (locked && !on) {
+          alert('需要《技能书 · ' + s.name + '》才能学习。\n到「技能池」页面把它标记为已获得。');
+          return;
+        }
         var i = cfg.skills.findIndex(function (x) { return x.name === s.name; });
         if (i >= 0) { cfg.skills.splice(i, 1); }
         else if (cfg.skills.length < 4) { cfg.skills.push(s); }
@@ -436,6 +457,18 @@
       });
       return ok;
     } catch (e) { return false; }
+  }
+
+  function sanitizeTeam() {
+    state.my.concat(state.enemy).forEach(function (cfg) {
+      if (!cfg) return;
+      var keep = cfg.skills.filter(allowedSkill);
+      if (!keep.length) {
+        var fb = (cfg.pool || []).filter(allowedSkill).slice(0, 4);
+        keep = fb;
+      }
+      cfg.skills = keep;
+    });
   }
 
   function startBattle() {
@@ -1409,6 +1442,7 @@
           renderSlots();
         });
         $('startBattle').addEventListener('click', function () {
+          sanitizeTeam();
           saveTeam();
           if (dbl.on) startDoubles(); else startBattle();
         });
