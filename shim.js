@@ -1695,8 +1695,8 @@
       var meta = document.createElement('div');
       meta.className = 'skill-meta';
       var BOLT_ICO = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M37 3 13 36h13l-3 25 24-34H34l3-24Z" fill="#f6c94a" stroke="#3a2a12" stroke-width="4.5" stroke-linejoin="round"/></svg>');
-      var ICON_MAP = { 火: 'fire', 水: 'water', 草: 'grass', 冰: 'ice', 土: 'rock', 钢: 'steel', 风: 'wind', 光: 'light', 暗: 'dark' };
-      var typeIco = s.type === '雷' ? BOLT_ICO : ('/media/ui/elem-' + (ICON_MAP[s.type] || 'fire') + '.webp');
+      var ICON_MAP = { 火: 'fire', 水: 'water', 草: 'grass', 冰: 'ice', 土: 'rock', 钢: 'steel', 风: 'wind', 光: 'light', 暗: 'dark', 雷: 'thunder' };
+      var typeIco = '/media/ui/elem-' + (ICON_MAP[s.type] || (s.type === '雷' ? 'thunder' : 'fire')) + '.webp';
       var chips = [];
       chips.push('<span class="sm-type"><img src="' + typeIco + '" alt="" width="16" height="16">' + s.type + '系</span>');
       chips.push('<span class="sm-cat sm-' + (s.category === '物理' ? 'phys' : s.category === '特殊' ? 'spec' : 'stat') + '">' + s.category + '</span>');
