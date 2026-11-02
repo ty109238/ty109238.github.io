@@ -152,7 +152,7 @@
       var svg = a.querySelector('svg');
       var img = document.createElement('img');
       img.className = 'ui-ico';
-      img.src = '/media/ui/ui-dex.webp';
+      img.src = '/media/ui/fn-dex.webp';
       img.alt = '';
       img.setAttribute('aria-hidden', 'true');
       if (svg) svg.replaceWith(img); else a.insertBefore(img, a.firstChild);
@@ -162,7 +162,7 @@
     notice.type = 'button';
     notice.className = 'nav-link nav-btn';
     notice.setAttribute('data-role', 'notice');
-    notice.innerHTML = '<img class="ui-ico" src="/media/ui/ui-notice.webp" alt=""><span>公告</span>';
+    notice.innerHTML = '<img class="ui-ico" src="/media/ui/fn-quest.webp" alt=""><span>公告</span>';
     notice.addEventListener('click', function () {
       if (window.__dexOpenNotice) { window.__dexOpenNotice(); return; }
       var t = document.querySelector('.recent-section') || document.querySelector('.catalog-section');
@@ -173,21 +173,21 @@
     fav.type = 'button';
     fav.className = 'nav-link nav-btn';
     fav.setAttribute('data-role', 'fav');
-    fav.innerHTML = '<img class="ui-ico" src="/media/ui/ui-fav.webp" alt=""><span>收藏</span>';
+    fav.innerHTML = '<img class="ui-ico" src="/media/ui/fn-bag.webp" alt=""><span>收藏</span>';
     fav.addEventListener('click', function () { location.href = '/favs.html'; });
 
     var gear = document.createElement('button');
     gear.type = 'button';
     gear.className = 'nav-link nav-btn';
     gear.setAttribute('data-role', 'settings');
-    gear.innerHTML = '<img class="ui-ico" src="/media/ui/ui-settings.webp" alt=""><span>设置</span>';
+    gear.innerHTML = '<img class="ui-ico" src="/media/ui/fn-settings.webp" alt=""><span>设置</span>';
     gear.addEventListener('click', openSettings);
 
     var search = document.createElement('button');
     search.type = 'button';
     search.className = 'nav-link nav-btn';
     search.setAttribute('data-role', 'search');
-    search.innerHTML = '<span class="nav-search-ico">⌕</span><span>搜索</span>';
+    search.innerHTML = '<img class="ui-ico" src="/media/ui/fn-explore.webp" alt=""><span>搜索</span>';
     search.addEventListener('click', function () { if (window.__dexOpenSearch) window.__dexOpenSearch(); });
 
     // 逐项补齐，React 重渲染后也能自动补回来
