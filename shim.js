@@ -858,7 +858,7 @@
       var effLine = sec.querySelector('[data-k="natureEffect"]');
       if (effLine) {
         if (natObj && natObj.up && NATURE_SKILL[natObj.up]) {
-          effLine.textContent = '✦ ' + nat + '：' + NATURE_SKILL[natObj.up].label + '（已计入技能威力）';
+          effLine.textContent = '✦ ' + nat + '：' + NATURE_SKILL[natObj.up].label;
         } else if (natObj && natObj.special) {
           effLine.textContent = '✦ ' + nat + '：' + natObj.special + '（不影响技能威力）';
         } else {
@@ -1416,18 +1416,7 @@
       chips.push('<span class="sm-type"><img src="' + typeIco + '" alt="" width="16" height="16">' + s.type + '系</span>');
       chips.push('<span class="sm-cat sm-' + (s.category === '物理' ? 'phys' : s.category === '特殊' ? 'spec' : 'stat') + '">' + s.category + '</span>');
       if (s.role) chips.push('<span class="sm-role">' + s.role + '</span>');
-      if (s.power == null) {
-        chips.push('<span class="sm-num">威力 <b>—</b></span>');
-      } else {
-        var stNow = loadTrain(c.id, c);
-        var nb = natureSkillBonus(stNow.nature, s.category);
-        var tb = trainSkillMult(stNow);
-        var eff = Math.round(s.power * nb.mult * tb.mult);
-        var tip = '基础 ' + s.power + '｜性格 ' + stNow.nature + ' ×' + nb.mult.toFixed(2) +
-          '｜等级 ×' + tb.lvl.toFixed(2) + '｜星级 ×' + tb.star.toFixed(2) +
-          '｜阶段 ×' + tb.stage.toFixed(2) + '｜天赋 ×' + tb.talent.toFixed(2);
-        chips.push('<span class="sm-num sm-eff" title="' + tip + '">威力 <b>' + s.power + '</b> → <b class="eff">' + eff + '</b></span>');
-      }
+      chips.push('<span class="sm-num">威力 <b>' + (s.power == null ? '—' : s.power) + '</b></span>');
       chips.push('<span class="sm-num">命中 <b>' + (s.accuracy == null ? (s.category === '变化' ? '—' : '必中') : s.accuracy) + '</b></span>');
       chips.push('<span class="sm-lv">Lv.' + s.learnLevel + '</span>');
 

@@ -121,6 +121,35 @@
     return Math.round(s.power * m);
   }
 
+  /* 特性 → 战斗效果（按描述关键词解析） */
+  function parseTrait(cid) {
+    var arr = (DATA.traits && DATA.traits[String(cid)]) || [];
+    var txt = arr.map(function (t) { return (t.name || '') + '：' + (t.description || ''); }).join(' ');
+    var e = { reduce: {}, boost: {}, crit: 0, heal: 0, shield: 0, speedUp: 0, onFaint: null, immune: [], text: arr.map(function (t) { return t.name; }).join(' · ') };
+    if (!txt) return e;
+
+    var mRed = /受到(\S{1,2})系攻击时伤害降低/.exec(txt);
+    if (mRed) e.reduce[mRed[1]] = 0.8;
+    if (/火系攻击时伤害提高/.test(txt)) e.reduce['火'] = (e.reduce['火'] || 1) * 1.15;
+
+    var mBoost = /(\S{1,2})系技能威力(?:提升|增加|提高)/.exec(txt);
+    if (mBoost) e.boost[mBoost[1]] = 1.15;
+
+    if (/暴击率/.test(txt)) e.crit += 0.15;
+    if (/回合结束时回复|每回合.*回复|每回合回血/.test(txt)) e.heal = 1 / 16;
+    if (/护盾/.test(txt)) e.shield = 0.2;
+    if (/速度(?:小幅)?提升|提高速度/.test(txt)) e.speedUp = 0.1;
+    if (/不会陷入睡眠/.test(txt)) e.immune.push('睡眠');
+    if (/免疫击退|免疫.*状态/.test(txt)) e.immune.push('击退');
+    if (/倒下时/.test(txt)) {
+      if (/同伴.*全属性|全属性 \+1|全属性\+1/.test(txt)) e.onFaint = { type: 'buffAlly' };
+      else if (/敌方.*伤害|造成.*伤害/.test(txt)) e.onFaint = { type: 'burst' };
+      else if (/护盾/.test(txt)) e.onFaint = { type: 'shieldAlly' };
+    }
+    if (/队伍只剩下自己/.test(txt)) e.lastStand = true;
+    return e;
+  }
+
   function makeMon(cfg, side, idx) {
     var st = computeStats(cfg);
     return {
@@ -130,6 +159,7 @@
       stats: st,
       skills: cfg.skills.map(function (s) { return Object.assign({}, s, { ppMax: s.pp || 20, ppNow: s.pp || 20 }); }),
       buffs: { attack: 0, defense: 0, spAttack: 0, spDefense: 0, speed: 0 },
+      effects: parseTrait(cfg.c.id),
       status: {},
       shield: 0,
       fainted: false
@@ -480,8 +510,11 @@
     var tm = typeMult(s.type, defender.element);
     var stab = s.type === attacker.element ? 1.1 : 1;
     var wm = weatherMult((state.battle && state.battle.weather) || '晴朗', s.type);
-    var crit = Math.random() < 0.0625;
-    var dmg = base * tm * stab * wm * (crit ? 1.5 : 1) * rnd(0.85, 1);
+    var tb1 = (attacker.effects && attacker.effects.boost[s.type]) || 1;
+    var tb2 = (defender.effects && defender.effects.reduce[s.type]) || 1;
+    var critChance = 0.0625 + ((attacker.effects && attacker.effects.crit) || 0);
+    var crit = Math.random() < critChance;
+    var dmg = base * tm * stab * wm * tb1 * tb2 * (crit ? 1.5 : 1) * rnd(0.85, 1);
     return { dmg: Math.max(1, Math.floor(dmg)), type: tm, crit: crit };
   }
 
@@ -564,6 +597,11 @@
         m.hp = Math.max(0, m.hp - tick);
         logLine(m.name + ' 受到状态伤害 <span class="dmg">' + tick + '</span>。');
       }
+      if (m.effects && m.effects.heal > 0 && m.hp > 0 && m.hp < m.maxHp) {
+        var hl = Math.max(1, Math.floor(m.maxHp * m.effects.heal));
+        m.hp = Math.min(m.maxHp, m.hp + hl);
+        logLine(m.name + ' 的特性回复了 <span class="eff">' + hl + '</span> 点体力。');
+      }
     });
   }
 
@@ -577,9 +615,32 @@
         m.fainted = true;
         out = true;
         logLine('<b>' + m.name + '</b> 倒下了。', 'turn');
+        if (m.effects && m.effects.onFaint) applyFaintTrait(m, side);
       }
     });
     return out;
+  }
+
+  function applyFaintTrait(mon, side) {
+    var b = state.battle;
+    var allies = side === 'my' ? b.my : b.en;
+    var foes = side === 'my' ? b.en : b.my;
+    var t = mon.effects.onFaint;
+    var living = allies.filter(function (x) { return !x.fainted; });
+    if (t.type === 'buffAlly' && living[0]) {
+      ['attack', 'defense', 'spAttack', 'spDefense', 'speed'].forEach(function (k) { living[0].buffs[k] = clamp(living[0].buffs[k] + 1, -3, 3); });
+      logLine(mon.name + ' 的特性为 ' + living[0].name + ' 提供了全属性 +1。');
+    } else if (t.type === 'burst') {
+      var foe = foes.filter(function (x) { return !x.fainted; })[0];
+      if (foe) {
+        var dmg = Math.floor(mon.maxHp / 10);
+        foe.hp = Math.max(0, foe.hp - dmg);
+        logLine(mon.name + ' 的特性对 ' + foe.name + ' 造成 <span class="dmg">' + dmg + '</span> 点伤害。');
+      }
+    } else if (t.type === 'shieldAlly' && living[0]) {
+      living[0].shield += Math.floor(mon.maxHp * 0.2);
+      logLine(mon.name + ' 的特性为 ' + living[0].name + ' 提供了护盾。');
+    }
   }
 
   function afterFaint() {
@@ -605,7 +666,22 @@
     renderBattle();
   }
 
+  function loadRecord() {
+    try { return JSON.parse(localStorage.getItem('dex:battle') || 'null') || { games: 0, wins: 0, streak: 0, best: 0 }; }
+    catch (e) { return { games: 0, wins: 0, streak: 0, best: 0 }; }
+  }
+  function saveRecord(r) {
+    try { localStorage.setItem('dex:battle', JSON.stringify(r)); } catch (e) {}
+    var box = document.getElementById('recordLine');
+    if (box) box.innerHTML = '战绩：<b>' + r.games + '</b> 场 · 胜 <b>' + r.wins + '</b> · 连胜 <b>' + r.streak + '</b>（最高 ' + r.best + '）';
+  }
+
   function finish(win) {
+    var rec = loadRecord();
+    rec.games++;
+    if (win) { rec.wins++; rec.streak++; if (rec.streak > rec.best) rec.best = rec.streak; }
+    else { rec.streak = 0; }
+    saveRecord(rec);
     var b = state.battle;
     b.over = true;
     b.winner = win;
@@ -643,6 +719,12 @@
     var me = b.my[b.myActive], foe = b.en[b.enActive];
     var mySkill = me.skills[skillIdx];
     var enemySkill = chooseAiSkill(foe, me);
+    var aiSwitch = aiWantsSwitch(foe, me);
+    if (aiSwitch >= 0) {
+      logLine('敌方换上 <b>' + b.en[aiSwitch].name + '</b>（AI 判断换人更有利）。', 'turn');
+      b.enActive = aiSwitch;
+      foe = b.en[b.enActive];
+    }
 
     var mySpeed = eff(me, 'speed') * (me.frozenSkip ? 1 : 1);
     var foeSpeed = eff(foe, 'speed');
@@ -652,6 +734,7 @@
     if (myPri !== foePri) order = myPri > foePri ? [['my', mySkill], ['enemy', enemySkill]] : [['enemy', enemySkill], ['my', mySkill]];
     else order = mySpeed >= foeSpeed ? [['my', mySkill], ['enemy', enemySkill]] : [['enemy', enemySkill], ['my', mySkill]];
     if (myPri > 0 || foePri > 0) logLine('（先制招式抢先出手）');
+    if (aiSwitch >= 0) order = order.filter(function (x) { return x[0] !== 'enemy'; });
     logLine('—— 第 ' + b.turn + ' 回合 ——', 'turn');
 
     for (var i = 0; i < order.length; i++) {
@@ -699,6 +782,30 @@
     if (aliveIdx(b.en).length === 0) return finish(true);
     if (b.my[b.myActive].fainted || b.en[b.enActive].fainted) afterFaint();
     else renderBattle();
+  }
+
+  function expectedDamage(attacker, defender) {
+    var best = 0;
+    attacker.skills.forEach(function (s) {
+      if (s.ppNow <= 0 || s.category === '变化' || !s.power) return;
+      var r = calcDamage(attacker, defender, s);
+      if (r.dmg > best) best = r.dmg;
+    });
+    return best;
+  }
+
+  function aiWantsSwitch(ai, foe) {
+    var b = state.battle;
+    if (!b || b.ai !== 'hard') return -1;
+    var best = expectedDamage(ai, foe);
+    if (best > foe.maxHp * 0.22) return -1;
+    var alt = -1, altScore = best;
+    b.en.forEach(function (m, i) {
+      if (i === b.enActive || m.fainted) return;
+      var d = expectedDamage(m, foe);
+      if (d > altScore) { altScore = d; alt = i; }
+    });
+    return alt;
   }
 
   function chooseAiSkill(attacker, defender) {
@@ -787,6 +894,7 @@
       .then(function (d) {
         DATA = d;
         renderSlots();
+        saveRecord(loadRecord());
         $('mboxCancel').addEventListener('click', function () { $('modal').hidden = true; });
         $('mboxOk').addEventListener('click', function () {
           var e = state.editing;
