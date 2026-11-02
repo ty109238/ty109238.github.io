@@ -282,3 +282,33 @@ a { color: inherit; }
 .skill-tip b { display: block; font-size: 13.5px; color: #262722; margin-bottom: 2px; }
 .skill-tip .tip-meta { font-size: 10.5px; color: #7b8ea1; margin-bottom: 5px; }
 .skill-tip p { margin: 0; }
+/* 命中反馈：飘伤害数字 + 抖动 */
+.active-mon, .dbl-card { position: relative; }
+.dmg-float {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  transform: translateX(-50%);
+  font-size: 26px;
+  font-weight: 900;
+  color: #e5484d;
+  text-shadow: 0 2px 0 #fff, 0 0 10px rgba(255,255,255,.9);
+  pointer-events: none;
+  animation: dmgUp .9s ease-out forwards;
+  z-index: 5;
+}
+.dmg-float.crit { font-size: 34px; color: #d81b60; }
+.dmg-float.heal { color: #2f9e5f; }
+@keyframes dmgUp {
+  0% { opacity: 0; transform: translate(-50%, 10px) scale(.7); }
+  25% { opacity: 1; transform: translate(-50%, -6px) scale(1.15); }
+  100% { opacity: 0; transform: translate(-50%, -42px) scale(1); }
+}
+.hit-shake { animation: hitShake .32s ease-in-out; }
+@keyframes hitShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  45% { transform: translateX(5px); }
+  70% { transform: translateX(-3px); }
+}
+.skill-btn:active { transform: scale(.97); }

@@ -2697,6 +2697,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "小火烬突袭斩",
+        "type": "火",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "小火烬刺击域",
+        "type": "火",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "小火熔刺击环",
+        "type": "火",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "小火焰刺击锁",
+        "type": "火",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "小火熔回旋锁",
+        "type": "火",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "2": [
@@ -2751,6 +2811,66 @@
         "learnLevel": 29,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "烈焰烬潮涌锁",
+        "type": "火",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "烈焰焰鸣动域",
+        "type": "火",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "烈焰焰连击锁",
+        "type": "火",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 95,
+        "pp": 20,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "烈焰熔刺击锁",
+        "type": "火",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "烈焰烬回旋炮",
+        "type": "火",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "3": [
@@ -2805,6 +2925,66 @@
         "learnLevel": 36,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "熔岩焰突进雨",
+        "type": "火",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "熔岩烬回旋斩",
+        "type": "火",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "熔岩烬突袭炮",
+        "type": "火",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 95,
+        "pp": 15,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "熔岩烬冲击炮",
+        "type": "火",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 90,
+        "pp": 25,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "熔岩焰回旋破",
+        "type": "火",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "4": [
@@ -2859,6 +3039,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "探险涌冲击裂",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "探险汐崩解环",
+        "type": "水",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "探险汐冲击炮",
+        "type": "水",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "探险涌潮涌环",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "探险涌鸣动锁",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "5": [
@@ -2913,6 +3153,66 @@
         "learnLevel": 27,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "冒险涌鸣动破",
+        "type": "水",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "冒险汐连击炮",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "冒险涌潮涌环",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "冒险潮鸣动环",
+        "type": "水",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "冒险潮突袭域",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "6": [
@@ -2967,6 +3267,66 @@
         "learnLevel": 34,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "鲨羽涌鸣动锁",
+        "type": "水",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "鲨羽潮鸣动锁",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "鲨羽涌连击斩",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "鲨羽汐鸣动锁",
+        "type": "水",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "鲨羽涌回旋炮",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "7": [
@@ -3021,6 +3381,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "香蕉藤崩解裂",
+        "type": "草",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "香蕉藤突进歌",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "香蕉芽潮涌雨",
+        "type": "草",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 90,
+        "pp": 10,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "香蕉藤突袭锁",
+        "type": "草",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "香蕉藤刺击域",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "8": [
@@ -3075,6 +3495,66 @@
         "learnLevel": 28,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "芭蕉芽崩解歌",
+        "type": "草",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "芭蕉芽鸣动环",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "芭蕉藤鸣动破",
+        "type": "草",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "芭蕉蕊刺击破",
+        "type": "草",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "芭蕉藤突袭环",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "9": [
@@ -3129,6 +3609,66 @@
         "learnLevel": 35,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "聚蕉蕊爆发炮",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "聚蕉蕊鸣动环",
+        "type": "草",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "聚蕉蕊刺击斩",
+        "type": "草",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "聚蕉蕊连击之击",
+        "type": "草",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "聚蕉藤突袭歌",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60001": [
@@ -3183,6 +3723,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "菜菜蕊回旋域",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "菜菜藤突袭歌",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "菜菜蕊鸣动环",
+        "type": "草",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "菜菜藤回旋之击",
+        "type": "草",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "菜菜藤连击歌",
+        "type": "草",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 90,
+        "pp": 10,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60002": [
@@ -3237,6 +3837,66 @@
         "learnLevel": 28,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "叶洋藤连击雨",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "叶洋芽冲击斩",
+        "type": "草",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "叶洋藤崩解域",
+        "type": "草",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "叶洋蕊潮涌斩",
+        "type": "草",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "叶洋蕊潮涌环",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60003": [
@@ -3291,6 +3951,66 @@
         "learnLevel": 36,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "绿翼芽鸣动锁",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "绿翼藤突进锁",
+        "type": "草",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "绿翼蕊爆发破",
+        "type": "草",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "绿翼芽连击斩",
+        "type": "草",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "绿翼蕊鸣动雨",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60004": [
@@ -3345,6 +4065,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "音乐藤突进斩",
+        "type": "草",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "音乐蕊鸣动炮",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "音乐蕊崩解裂",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "音乐芽爆发锁",
+        "type": "草",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "音乐藤潮涌域",
+        "type": "草",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60005": [
@@ -3399,6 +4179,66 @@
         "learnLevel": 27,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "科技蕊刺击斩",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "科技芽刺击锁",
+        "type": "草",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 90,
+        "pp": 25,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "科技蕊突袭破",
+        "type": "草",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "科技蕊冲击裂",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "科技藤鸣动歌",
+        "type": "草",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60006": [
@@ -3453,6 +4293,66 @@
         "learnLevel": 35,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "程序蕊崩解歌",
+        "type": "草",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "程序蕊刺击之击",
+        "type": "草",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "程序芽刺击歌",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "程序芽潮涌锁",
+        "type": "草",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "程序芽崩解环",
+        "type": "草",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60007": [
@@ -3507,6 +4407,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "小雪冰潮涌环",
+        "type": "冰",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "小雪霜连击歌",
+        "type": "冰",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 95,
+        "pp": 20,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "小雪凛爆发裂",
+        "type": "冰",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "小雪凛回旋之击",
+        "type": "冰",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "小雪冰崩解破",
+        "type": "冰",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60008": [
@@ -3561,6 +4521,66 @@
         "learnLevel": 27,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "雪雪凛鸣动环",
+        "type": "冰",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雪雪霜连击环",
+        "type": "冰",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雪雪霜突袭环",
+        "type": "冰",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雪雪冰鸣动环",
+        "type": "冰",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雪雪凛鸣动域",
+        "type": "冰",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 95,
+        "pp": 15,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60009": [
@@ -3615,6 +4635,66 @@
         "learnLevel": 35,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "雪巨凛突袭歌",
+        "type": "冰",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雪巨冰爆发歌",
+        "type": "冰",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雪巨凛突袭锁",
+        "type": "冰",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雪巨凛突袭裂",
+        "type": "冰",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雪巨霜崩解域",
+        "type": "冰",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60010": [
@@ -3669,6 +4749,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "咖啡壤回旋域",
+        "type": "土",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咖啡岩刺击域",
+        "type": "土",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咖啡壤冲击锁",
+        "type": "土",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 95,
+        "pp": 15,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咖啡岩突进域",
+        "type": "土",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咖啡壤冲击歌",
+        "type": "土",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60011": [
@@ -3723,6 +4863,66 @@
         "learnLevel": 28,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "咖啡壤突袭域",
+        "type": "土",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咖啡砂刺击歌",
+        "type": "土",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咖啡壤回旋锁",
+        "type": "土",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咖啡岩回旋歌",
+        "type": "土",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 95,
+        "pp": 15,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咖啡岩冲击破",
+        "type": "土",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 95,
+        "pp": 15,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60012": [
@@ -3777,6 +4977,66 @@
         "learnLevel": 36,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "咖啡砂刺击环",
+        "type": "土",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 90,
+        "pp": 10,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咖啡壤鸣动裂",
+        "type": "土",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 90,
+        "pp": 25,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咖啡砂回旋炮",
+        "type": "土",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咖啡壤冲击之击",
+        "type": "土",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咖啡壤冲击破",
+        "type": "土",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60013": [
@@ -3831,6 +5091,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "木呆藤崩解雨",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "木呆芽鸣动炮",
+        "type": "草",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "木呆芽爆发域",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "木呆藤崩解破",
+        "type": "草",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "木呆蕊刺击锁",
+        "type": "草",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60014": [
@@ -3885,6 +5205,66 @@
         "learnLevel": 27,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "瓶草蕊突进裂",
+        "type": "草",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "瓶草藤崩解斩",
+        "type": "草",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 95,
+        "pp": 15,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "瓶草芽突袭裂",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "瓶草蕊鸣动锁",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "瓶草蕊爆发环",
+        "type": "草",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60015": [
@@ -3939,6 +5319,66 @@
         "learnLevel": 35,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "蜜瓶蕊鸣动环",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "蜜瓶蕊刺击炮",
+        "type": "草",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "蜜瓶芽连击域",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "蜜瓶蕊回旋裂",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "蜜瓶芽连击歌",
+        "type": "草",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60016": [
@@ -3993,6 +5433,66 @@
         "learnLevel": 21,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "铁铁刃回旋锁",
+        "type": "钢",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "铁铁铸突进歌",
+        "type": "钢",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "铁铁刃回旋之击",
+        "type": "钢",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 90,
+        "pp": 10,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "铁铁铁冲击破",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "铁铁刃突袭破",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60017": [
@@ -4047,6 +5547,66 @@
         "learnLevel": 27,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "熔熔铸连击雨",
+        "type": "钢",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "熔熔铁突进破",
+        "type": "钢",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "熔熔刃回旋雨",
+        "type": "钢",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "熔熔铁回旋锁",
+        "type": "钢",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "熔熔铸突袭裂",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60018": [
@@ -4101,6 +5661,66 @@
         "learnLevel": 35,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "熔炉铸突进炮",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "熔炉铁回旋环",
+        "type": "钢",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "熔炉铸鸣动斩",
+        "type": "钢",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "熔炉铁爆发雨",
+        "type": "钢",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "熔炉刃爆发之击",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60019": [
@@ -4155,6 +5775,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "抱抱影突进雨",
+        "type": "暗",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 90,
+        "pp": 10,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "抱抱蚀冲击歌",
+        "type": "暗",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "抱抱蚀突进环",
+        "type": "暗",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "抱抱蚀回旋裂",
+        "type": "暗",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "抱抱夜刺击炮",
+        "type": "暗",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60020": [
@@ -4209,6 +5889,66 @@
         "learnLevel": 28,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "紫焰夜爆发裂",
+        "type": "暗",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "紫焰蚀突袭歌",
+        "type": "暗",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "紫焰夜回旋环",
+        "type": "暗",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "紫焰蚀爆发环",
+        "type": "暗",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "紫焰蚀突袭炮",
+        "type": "暗",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 95,
+        "pp": 20,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60021": [
@@ -4263,6 +6003,66 @@
         "learnLevel": 36,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "飞天蚀突袭炮",
+        "type": "暗",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "飞天夜崩解雨",
+        "type": "暗",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "飞天夜冲击雨",
+        "type": "暗",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "飞天蚀连击斩",
+        "type": "暗",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "飞天蚀回旋锁",
+        "type": "暗",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60022": [
@@ -4317,6 +6117,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "礼貌疾刺击炮",
+        "type": "风",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "礼貌飓刺击锁",
+        "type": "风",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "礼貌羽冲击之击",
+        "type": "风",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "礼貌疾突袭炮",
+        "type": "风",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 90,
+        "pp": 25,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "礼貌羽突进破",
+        "type": "风",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60023": [
@@ -4371,6 +6231,66 @@
         "learnLevel": 27,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "优雅羽连击炮",
+        "type": "风",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "优雅羽崩解环",
+        "type": "风",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "优雅疾突进雨",
+        "type": "风",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 95,
+        "pp": 15,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "优雅疾突袭斩",
+        "type": "风",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "优雅飓冲击斩",
+        "type": "风",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60024": [
@@ -4425,6 +6345,66 @@
         "learnLevel": 35,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "绅士羽潮涌环",
+        "type": "风",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "绅士飓鸣动域",
+        "type": "风",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "绅士飓崩解歌",
+        "type": "风",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "绅士疾连击斩",
+        "type": "风",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "绅士飓回旋炮",
+        "type": "风",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60025": [
@@ -4479,6 +6459,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "豆丁蚀爆发之击",
+        "type": "暗",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "豆丁蚀连击锁",
+        "type": "暗",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "豆丁蚀爆发炮",
+        "type": "暗",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "豆丁影潮涌裂",
+        "type": "暗",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 95,
+        "pp": 20,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "豆丁蚀崩解破",
+        "type": "暗",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60026": [
@@ -4533,6 +6573,66 @@
         "learnLevel": 27,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "岩垒影爆发裂",
+        "type": "暗",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "岩垒蚀突袭斩",
+        "type": "暗",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 95,
+        "pp": 15,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "岩垒夜突袭破",
+        "type": "暗",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "岩垒影鸣动域",
+        "type": "暗",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "岩垒夜崩解斩",
+        "type": "暗",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60027": [
@@ -4587,6 +6687,66 @@
         "learnLevel": 35,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "覆甲蚀回旋炮",
+        "type": "暗",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "覆甲夜潮涌歌",
+        "type": "暗",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "覆甲夜冲击歌",
+        "type": "暗",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "覆甲夜潮涌之击",
+        "type": "暗",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "覆甲蚀鸣动破",
+        "type": "暗",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60028": [
@@ -4641,6 +6801,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "喵喵蕊刺击雨",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "喵喵藤崩解环",
+        "type": "草",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "喵喵藤爆发炮",
+        "type": "草",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "喵喵藤鸣动域",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "喵喵蕊崩解炮",
+        "type": "草",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60029": [
@@ -4695,6 +6915,66 @@
         "learnLevel": 27,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "幸运藤连击雨",
+        "type": "草",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "幸运蕊爆发之击",
+        "type": "草",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 90,
+        "pp": 25,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "幸运蕊爆发歌",
+        "type": "草",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "幸运藤突进域",
+        "type": "草",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "幸运芽冲击雨",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60030": [
@@ -4749,6 +7029,66 @@
         "learnLevel": 35,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "四叶藤回旋锁",
+        "type": "草",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "四叶蕊爆发雨",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "四叶芽冲击斩",
+        "type": "草",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "四叶芽鸣动炮",
+        "type": "草",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 90,
+        "pp": 10,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "四叶芽突袭雨",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60031": [
@@ -4803,6 +7143,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "喷气霆连击雨",
+        "type": "雷",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "喷气闪崩解域",
+        "type": "雷",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "喷气雷潮涌歌",
+        "type": "雷",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "喷气闪刺击域",
+        "type": "雷",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "喷气雷潮涌之击",
+        "type": "雷",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60032": [
@@ -4857,6 +7257,66 @@
         "learnLevel": 27,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "顺风霆连击歌",
+        "type": "雷",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "顺风闪冲击环",
+        "type": "雷",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "顺风闪突进炮",
+        "type": "雷",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "顺风霆突袭雨",
+        "type": "雷",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "顺风闪鸣动域",
+        "type": "雷",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60033": [
@@ -4911,6 +7371,66 @@
         "learnLevel": 35,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "压力闪连击斩",
+        "type": "雷",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "压力雷潮涌锁",
+        "type": "雷",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "压力闪刺击之击",
+        "type": "雷",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "压力雷突进裂",
+        "type": "雷",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 90,
+        "pp": 25,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "压力霆冲击炮",
+        "type": "雷",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60034": [
@@ -4965,6 +7485,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "雷电雷鸣动破",
+        "type": "雷",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雷电雷冲击域",
+        "type": "雷",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雷电雷爆发雨",
+        "type": "雷",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雷电雷冲击锁",
+        "type": "雷",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雷电闪突袭锁",
+        "type": "雷",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60035": [
@@ -5019,6 +7599,66 @@
         "learnLevel": 28,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "雷甲雷突袭歌",
+        "type": "雷",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 95,
+        "pp": 15,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雷甲霆连击歌",
+        "type": "雷",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雷甲霆崩解破",
+        "type": "雷",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 90,
+        "pp": 10,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雷甲雷冲击雨",
+        "type": "雷",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 95,
+        "pp": 20,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "雷甲雷鸣动锁",
+        "type": "雷",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60036": [
@@ -5073,6 +7713,66 @@
         "learnLevel": 36,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "霹雳雷连击域",
+        "type": "雷",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 90,
+        "pp": 10,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "霹雳霆刺击裂",
+        "type": "雷",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "霹雳雷崩解裂",
+        "type": "雷",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "霹雳闪崩解歌",
+        "type": "雷",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "霹雳雷回旋炮",
+        "type": "雷",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 90,
+        "pp": 25,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60037": [
@@ -5127,6 +7827,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "海宝涌连击裂",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "海宝潮连击炮",
+        "type": "水",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "海宝涌潮涌斩",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "海宝汐突袭雨",
+        "type": "水",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "海宝涌鸣动域",
+        "type": "水",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 95,
+        "pp": 20,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60038": [
@@ -5181,6 +7941,66 @@
         "learnLevel": 27,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "水王涌回旋斩",
+        "type": "水",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "水王涌突进裂",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "水王涌回旋之击",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "水王潮突袭雨",
+        "type": "水",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 95,
+        "pp": 15,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "水王汐爆发锁",
+        "type": "水",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60039": [
@@ -5235,6 +8055,66 @@
         "learnLevel": 35,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "洋流潮突进环",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "洋流涌突袭破",
+        "type": "水",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "洋流涌突袭之击",
+        "type": "水",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "洋流涌鸣动裂",
+        "type": "水",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 90,
+        "pp": 25,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "洋流涌爆发环",
+        "type": "水",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60040": [
@@ -5289,6 +8169,66 @@
         "learnLevel": 21,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "快快冰回旋歌",
+        "type": "冰",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "快快霜突进破",
+        "type": "冰",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "快快霜鸣动之击",
+        "type": "冰",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "快快凛刺击域",
+        "type": "冰",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "快快凛突进破",
+        "type": "冰",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60041": [
@@ -5343,6 +8283,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "慢慢羽连击炮",
+        "type": "风",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "慢慢羽突进歌",
+        "type": "风",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "慢慢疾爆发裂",
+        "type": "风",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "慢慢飓突进域",
+        "type": "风",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "慢慢飓连击锁",
+        "type": "风",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "60042": [
@@ -5397,6 +8397,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "噗噗霜爆发锁",
+        "type": "冰",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "噗噗凛刺击斩",
+        "type": "冰",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 95,
+        "pp": 20,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "噗噗霜连击之击",
+        "type": "冰",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "噗噗凛爆发之击",
+        "type": "冰",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "噗噗霜刺击环",
+        "type": "冰",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 90,
+        "pp": 10,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103171": [
@@ -5451,6 +8511,66 @@
         "learnLevel": 21,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "咻咻铁连击斩",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咻咻刃连击歌",
+        "type": "钢",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咻咻刃鸣动裂",
+        "type": "钢",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咻咻刃鸣动域",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "咻咻铸连击之击",
+        "type": "钢",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 90,
+        "pp": 10,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103172": [
@@ -5505,6 +8625,66 @@
         "learnLevel": 21,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "露露汐鸣动环",
+        "type": "水",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "露露潮回旋之击",
+        "type": "水",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 90,
+        "pp": 10,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "露露涌冲击裂",
+        "type": "水",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "露露潮回旋斩",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "露露汐连击破",
+        "type": "水",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103173": [
@@ -5559,6 +8739,66 @@
         "learnLevel": 20,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "墩墩岩突袭锁",
+        "type": "土",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "墩墩岩回旋域",
+        "type": "土",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "墩墩壤连击破",
+        "type": "土",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "墩墩岩连击雨",
+        "type": "土",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "墩墩砂突进环",
+        "type": "土",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103174": [
@@ -5613,6 +8853,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "炎炎熔刺击破",
+        "type": "火",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "炎炎烬崩解环",
+        "type": "火",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "炎炎熔突进锁",
+        "type": "火",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 90,
+        "pp": 10,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "炎炎焰冲击之击",
+        "type": "火",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "炎炎焰突进斩",
+        "type": "火",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103175": [
@@ -5667,6 +8967,66 @@
         "learnLevel": 30,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "焰车熔鸣动锁",
+        "type": "火",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "焰车焰回旋雨",
+        "type": "火",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "焰车烬鸣动裂",
+        "type": "火",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "焰车熔爆发锁",
+        "type": "火",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 95,
+        "pp": 20,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "焰车熔刺击锁",
+        "type": "火",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103176": [
@@ -5721,6 +9081,66 @@
         "learnLevel": 37,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "老焰熔刺击之击",
+        "type": "火",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "老焰熔爆发斩",
+        "type": "火",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "老焰焰刺击斩",
+        "type": "火",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "老焰焰鸣动斩",
+        "type": "火",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "老焰焰爆发雨",
+        "type": "火",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103177": [
@@ -5775,6 +9195,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "冰冰霜潮涌斩",
+        "type": "冰",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "冰冰凛崩解歌",
+        "type": "冰",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "冰冰凛突袭破",
+        "type": "冰",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "冰冰冰崩解斩",
+        "type": "冰",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "冰冰冰冲击环",
+        "type": "冰",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103178": [
@@ -5829,6 +9309,66 @@
         "learnLevel": 29,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "冰芙霜鸣动雨",
+        "type": "冰",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "冰芙霜潮涌之击",
+        "type": "冰",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "冰芙冰连击域",
+        "type": "冰",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "冰芙霜回旋斩",
+        "type": "冰",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 95,
+        "pp": 20,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "冰芙冰崩解雨",
+        "type": "冰",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103179": [
@@ -5883,6 +9423,66 @@
         "learnLevel": 38,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "高寒冰突袭锁",
+        "type": "冰",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "高寒霜爆发锁",
+        "type": "冰",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "高寒霜突袭雨",
+        "type": "冰",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "高寒霜潮涌歌",
+        "type": "冰",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "高寒凛回旋之击",
+        "type": "冰",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103180": [
@@ -5937,6 +9537,66 @@
         "learnLevel": 38,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "盛放藤突进歌",
+        "type": "草",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "盛放芽回旋之击",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "盛放蕊突进域",
+        "type": "草",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 90,
+        "pp": 25,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "盛放蕊刺击锁",
+        "type": "草",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "盛放蕊突袭歌",
+        "type": "草",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103181": [
@@ -5991,6 +9651,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "小火潮鸣动雨",
+        "type": "水",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "小火潮突袭之击",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "小火涌冲击雨",
+        "type": "水",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 90,
+        "pp": 25,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "小火潮爆发环",
+        "type": "水",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 95,
+        "pp": 15,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "小火汐突袭裂",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103182": [
@@ -6045,6 +9765,66 @@
         "learnLevel": 29,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "激流潮爆发斩",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "激流涌崩解破",
+        "type": "水",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "激流潮冲击锁",
+        "type": "水",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 90,
+        "pp": 25,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "激流潮突进雨",
+        "type": "水",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 90,
+        "pp": 10,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "激流潮崩解雨",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103183": [
@@ -6099,6 +9879,66 @@
         "learnLevel": 36,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "炎魔汐连击域",
+        "type": "水",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "炎魔涌突袭锁",
+        "type": "水",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 95,
+        "pp": 20,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "炎魔潮连击破",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "炎魔汐爆发雨",
+        "type": "水",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "炎魔汐突进锁",
+        "type": "水",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103184": [
@@ -6153,6 +9993,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "黄小砂突进破",
+        "type": "土",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "黄小砂潮涌环",
+        "type": "土",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 90,
+        "pp": 10,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "黄小壤刺击歌",
+        "type": "土",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "黄小岩鸣动炮",
+        "type": "土",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "黄小岩崩解环",
+        "type": "土",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103185": [
@@ -6207,6 +10107,66 @@
         "learnLevel": 30,
         "note": "",
         "role": "终结"
+      },
+      {
+        "name": "黄矿砂鸣动锁",
+        "type": "土",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "先制：先制技能，优先出手。先制招式。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "黄矿砂崩解环",
+        "type": "土",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "黄矿砂爆发锁",
+        "type": "土",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "黄矿岩突进之击",
+        "type": "土",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "黄矿砂潮涌雨",
+        "type": "土",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103186": [
@@ -6261,6 +10221,66 @@
         "learnLevel": 38,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "黄矿岩突袭裂",
+        "type": "土",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "黄矿岩爆发歌",
+        "type": "土",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "黄矿壤突袭歌",
+        "type": "土",
+        "category": "特殊",
+        "power": 56,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "黄矿岩刺击炮",
+        "type": "土",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "黄矿壤刺击歌",
+        "type": "土",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103187": [
@@ -6315,6 +10335,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "乒乒刃突进环",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "乒乒铸潮涌斩",
+        "type": "钢",
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 90,
+        "pp": 25,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "乒乒刃连击歌",
+        "type": "钢",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "乒乒刃潮涌炮",
+        "type": "钢",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "乒乒刃崩解裂",
+        "type": "钢",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103188": [
@@ -6369,6 +10449,66 @@
         "learnLevel": 29,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "塔塔刃突袭锁",
+        "type": "钢",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "塔塔铁爆发斩",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "塔塔刃突袭炮",
+        "type": "钢",
+        "category": "物理",
+        "power": 58,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "塔塔铸回旋裂",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "塔塔铸爆发歌",
+        "type": "钢",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 90,
+        "pp": 25,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103189": [
@@ -6423,6 +10563,66 @@
         "learnLevel": 29,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "铲铲刃连击破",
+        "type": "钢",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "铲铲铸潮涌之击",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "铲铲铁潮涌歌",
+        "type": "钢",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "铲铲刃回旋锁",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "铲铲刃突袭域",
+        "type": "钢",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "单体魔攻：对单体造成伤害。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103190": [
@@ -6477,6 +10677,66 @@
         "learnLevel": 38,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "塔乒铁突进锁",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "塔乒刃爆发域",
+        "type": "钢",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "塔乒铸爆发歌",
+        "type": "钢",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "塔乒铸连击炮",
+        "type": "钢",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "单体物攻：对单体造成伤害。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "塔乒铸冲击裂",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103191": [
@@ -6531,6 +10791,66 @@
         "learnLevel": 37,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "铲乒铸爆发雨",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "铲乒铸冲击歌",
+        "type": "钢",
+        "category": "特殊",
+        "power": 74,
+        "accuracy": 90,
+        "pp": 25,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "铲乒刃潮涌雨",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "铲乒铸冲击环",
+        "type": "钢",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "铲乒铸突进雨",
+        "type": "钢",
+        "category": "物理",
+        "power": 76,
+        "accuracy": 90,
+        "pp": 15,
+        "description": "流血：命中后有概率使对手流血。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103192": [
@@ -6585,6 +10905,66 @@
         "learnLevel": 21,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "浮游潮爆发炮",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "护盾：为自身生成护盾，抵挡伤害。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "浮游涌潮涌炮",
+        "type": "水",
+        "category": "物理",
+        "power": 64,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "浮游汐潮涌锁",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "削弱：降低对手物防与速度。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "浮游汐连击雨",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "回复：回复自身生命。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "浮游汐冲击雨",
+        "type": "水",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 90,
+        "pp": 20,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ],
     "103193": [
@@ -6639,6 +11019,66 @@
         "learnLevel": 22,
         "note": "",
         "role": "战术"
+      },
+      {
+        "name": "浮游潮突进锁",
+        "type": "水",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "强化：提升自身攻击与速度。",
+        "learnLevel": 12,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "浮游潮刺击环",
+        "type": "水",
+        "category": "物理",
+        "power": 82,
+        "accuracy": 95,
+        "pp": 25,
+        "description": "中毒：命中后有概率使对手中毒，持续损失体力。",
+        "learnLevel": 18,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "浮游汐突袭裂",
+        "type": "水",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 95,
+        "pp": 15,
+        "description": "群攻：范围技能，命中场上全部对手。",
+        "learnLevel": 24,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "浮游潮突袭破",
+        "type": "水",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "冰冻：命中后有概率使对手冰冻，可能无法行动。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true
+      },
+      {
+        "name": "浮游潮连击环",
+        "type": "水",
+        "category": "特殊",
+        "power": 68,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "灼烧：命中后有概率使对手灼烧，每回合损失体力。",
+        "learnLevel": 36,
+        "role": null,
+        "exclusive": true
       }
     ]
   },

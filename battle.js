@@ -214,7 +214,11 @@
 
   function defaultCfg(c) {
     var st = { '一阶': 1, '二阶': 2, '三阶': 3 }[c.stage] || 1;
-    var skills = DATA.skills[String(c.id)].slice(0, 4);
+    var all = (DATA.skills[String(c.id)] || []).slice();
+    var shared = all.filter(function (x) { return !x.exclusive; });
+    var own = all.filter(function (x) { return x.exclusive; });
+    var skills = shared.slice(0, 2).concat(own.slice(0, 2));
+    if (skills.length < 4) skills = all.slice(0, 4);
     var main = skills[0] && skills[0].category === '物理' ? 'attack' : 'spAttack';
     var evs = { hp: 6, attack: 0, defense: 0, spAttack: 0, spDefense: 0, speed: 252 };
     evs[main] = 252;
@@ -497,6 +501,7 @@
       btn.addEventListener('click', function () { switchTo('my', i, true); });
       sw.appendChild(btn);
     });
+    flushFx();
   }
 
   function renderMiniRow(id, team, active) {
@@ -591,6 +596,39 @@
     if (/护盾|守护|抵挡/.test(d)) target.shield += Math.floor(mon.maxHp * 0.25);
   }
 
+  function spawnFx(mon, dmg, crit, heal) {
+    var b = state.battle;
+    if (!b || !mon) return;
+    (b._fx = b._fx || []).push({ side: mon.side, name: mon.name, dmg: dmg, crit: crit, heal: heal });
+  }
+
+  function flushFx() {
+    var b = state.battle;
+    if (!b || !b._fx || !b._fx.length) return;
+    var q = b._fx.slice();
+    b._fx = [];
+    q.forEach(function (x) {
+      var host = null;
+      if (b.mode === 'double') {
+        var cards = document.querySelectorAll('#dblEnemy .dbl-card, #dblMine .dbl-card');
+        for (var i = 0; i < cards.length; i++) {
+          var nm = cards[i].querySelector('b');
+          if (nm && nm.textContent.trim() === x.name) { host = cards[i]; break; }
+        }
+      } else {
+        host = document.querySelector(x.side === 'my' ? '#myActive' : '#enemyActive');
+      }
+      if (!host) return;
+      var f = document.createElement('span');
+      f.className = 'dmg-float' + (x.crit ? ' crit' : '') + (x.heal ? ' heal' : '');
+      f.textContent = (x.heal ? '+' : '-') + x.dmg;
+      host.appendChild(f);
+      setTimeout(function () { if (f.parentNode) f.remove(); }, 900);
+      host.classList.add('hit-shake');
+      setTimeout(function () { host.classList.remove('hit-shake'); }, 320);
+    });
+  }
+
   function useSkill(user, foe, s, dmgMult, opts) {
     opts = opts || {};
     if (s.ppNow <= 0) { logLine(user.name + ' 的技能没有 PP 了。'); return; }
@@ -603,6 +641,7 @@
       if (/回复|治疗/.test(d)) {
         var heal = Math.floor(tgtMon.maxHp * 0.28);
         tgtMon.hp = Math.min(tgtMon.maxHp, tgtMon.hp + heal);
+        spawnFx(tgtMon, heal, false, true);
         logLine(label + ' 回复了 <span class="eff">' + heal + '</span> 点生命。');
       } else {
         applyBuff(tgtMon, s);
@@ -635,6 +674,7 @@
       if (absorbed > 0) logLine('护盾吸收了 ' + absorbed + ' 点伤害。');
     }
     foe.hp = Math.max(0, foe.hp - dmg);
+    spawnFx(foe, dmg, r.crit, false);
 
     var extra = '';
     if (r.type === 2) extra = ' <span class="eff">效果出众！</span>';
@@ -694,6 +734,7 @@
       if (foe) {
         var dmg = Math.floor(mon.maxHp / 10);
         foe.hp = Math.max(0, foe.hp - dmg);
+    spawnFx(foe, dmg, r.crit, false);
         logLine(mon.name + ' 的特性对 ' + foe.name + ' 造成 <span class="dmg">' + dmg + '</span> 点伤害。');
       }
     } else if (t.type === 'shieldAlly' && living[0]) {
@@ -1138,6 +1179,7 @@
       btn.addEventListener('click', function () { dblSwitchIn(i); });
       sw.appendChild(btn);
     });
+    flushFx();
   }
 
   function dblSwitchIn(idx) {
