@@ -1059,6 +1059,27 @@
     return img;
   }
 
+  function killTraitBg() {
+    var entries = document.querySelectorAll('.traits-list .trait-entry');
+    for (var i = 0; i < entries.length; i++) {
+      var e = entries[i];
+      if (e.getAttribute('data-nobg') === '1') continue;
+      e.setAttribute('data-nobg', '1');
+      var nodes = [e].concat([].slice.call(e.querySelectorAll('div, span, h3, h4, p, small')));
+      for (var k = 0; k < nodes.length; k++) {
+        var nd = nodes[k];
+        if (nd.classList.contains('trait-emblem')) continue;
+        nd.style.setProperty('background', 'none', 'important');
+        nd.style.setProperty('background-image', 'none', 'important');
+        nd.style.setProperty('background-color', 'transparent', 'important');
+        nd.style.setProperty('border', '0', 'important');
+        nd.style.setProperty('box-shadow', 'none', 'important');
+        nd.style.setProperty('border-radius', '0', 'important');
+      }
+      e.style.setProperty('padding', '6px 0', 'important');
+    }
+  }
+
   function syncEntryIcons() {
     var id = currentCreatureId();
     if (!id || !DATA) return;
@@ -1096,7 +1117,7 @@
     var t = null;
     entryObs = new MutationObserver(function () {
       clearTimeout(t);
-      t = setTimeout(function () { syncEntryIcons(); }, 80);
+      t = setTimeout(function () { syncEntryIcons(); killTraitBg(); }, 80);
     });
     entryObs.observe(root, { childList: true, subtree: true });
   }
@@ -1663,7 +1684,7 @@
       clearTimeout(timer);
       timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); }, 300);
     }).observe(root, { childList: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncMobileNav(); syncToc(); syncSectionIcons(); syncEntryIcons(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncMobileNav(); syncToc(); syncSectionIcons(); syncEntryIcons(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
   }
 
   window.__dexOpenNotice = openNotice;

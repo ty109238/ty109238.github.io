@@ -122,8 +122,9 @@
   }
 
   /* 特性 → 战斗效果（按描述关键词解析） */
-  function parseTrait(cid) {
-    var arr = (DATA.traits && DATA.traits[String(cid)]) || [];
+  function parseTrait(cid, idx) {
+    var all = (DATA.traits && DATA.traits[String(cid)]) || [];
+    var arr = (typeof idx === 'number' && all[idx]) ? [all[idx]] : all;
     var txt = arr.map(function (t) { return (t.name || '') + '：' + (t.description || ''); }).join(' ');
     var e = { reduce: {}, boost: {}, crit: 0, heal: 0, shield: 0, speedUp: 0, onFaint: null, immune: [], text: arr.map(function (t) { return t.name; }).join(' · ') };
     if (!txt) return e;
@@ -159,7 +160,7 @@
       stats: st,
       skills: cfg.skills.map(function (s) { return Object.assign({}, s, { ppMax: s.pp || 20, ppNow: s.pp || 20 }); }),
       buffs: { attack: 0, defense: 0, spAttack: 0, spDefense: 0, speed: 0 },
-      effects: parseTrait(cfg.c.id),
+      effects: parseTrait(cfg.c.id, cfg.traitIdx || 0),
       status: {},
       shield: 0,
       fainted: false
@@ -220,6 +221,7 @@
     return {
       c: c, level: 40, star: Math.min(9, st * 2), talent: Math.min(8, st + 2),
       stage: st, nature: '坦率', evs: evs,
+      traitIdx: 0,
       skills: skills,
       pool: buildPool(c)
     };
@@ -293,6 +295,19 @@
     row.appendChild(field('天赋', TALENTS.map(function (t, i) { return { v: i, t: t }; }), cfg.talent, function (v) { cfg.talent = Number(v); }));
     row.appendChild(field('阶段', Array.from({ length: 6 }, function (_, i) { return { v: i + 1, t: (i + 1) + ' 阶' }; }), cfg.stage, function (v) { cfg.stage = Number(v); }));
     body.appendChild(row);
+
+    var trWrap = el('div', 'row2');
+    var traits = (DATA.traits && DATA.traits[String(cfg.c.id)]) || [];
+    if (traits.length) {
+      trWrap.appendChild(field('特性', traits.map(function (t, i) { return { v: i, t: t.name }; }), cfg.traitIdx || 0, function (v) {
+        cfg.traitIdx = Number(v);
+        var box = document.getElementById('traitDesc');
+        if (box) box.innerHTML = traits[Number(v)].description || '';
+      }));
+      var td = el('div', 'field', '<span>特性效果</span><div class="ev-left" id="traitDesc">' + (traits[cfg.traitIdx || 0].description || '') + '</div>');
+      trWrap.appendChild(td);
+    }
+    body.appendChild(trWrap);
 
     var natWrap = el('div', 'row2');
     natWrap.appendChild(field('性格', ['坦率'].concat(NATURES.map(function (n) { return n[0]; })).map(function (n) { return { v: n, t: n }; }), cfg.nature, function (v) { cfg.nature = v; }));
@@ -509,7 +524,8 @@
       .map(function (k) { return '<span class="chip">' + STAT_LABEL[k] + ' ' + (m.buffs[k] > 0 ? '+' : '') + m.buffs[k] + '</span>'; }).join('');
     return '<img src="' + src + '" alt="">' +
       '<h4>' + m.name + '</h4>' +
-      '<div class="tags">Lv.' + m.cfg.level + ' · ' + m.element + '系 · ' + m.cfg.nature + '</div>' +
+      '<div class="tags">Lv.' + m.cfg.level + ' · ' + m.element + '系 · ' + m.cfg.nature +
+      (m.effects && m.effects.text ? ' · ' + m.effects.text : '') + '</div>' +
       '<div class="hp-wrap"><div class="hp-line"><span>HP</span><span>' + m.hp + ' / ' + m.maxHp + '</span></div>' +
       '<div class="hp-bar' + (pct < 30 ? ' low' : '') + '"><i style="width:' + pct + '%"></i></div></div>' +
       '<div class="st-line">' + st + buffs + '</div>';
@@ -1043,7 +1059,8 @@
     return '<div class="dbl-card' + (m.fainted ? ' dead' : '') + '">' +
       '<span class="dbl-tag">' + tag + '</span>' +
       '<img src="' + src + '" alt="">' +
-      '<b>' + m.name + '</b><small>Lv.' + m.cfg.level + ' · ' + m.element + '系</small>' +
+      '<b>' + m.name + '</b><small>Lv.' + m.cfg.level + ' · ' + m.element + '系' +
+      (m.effects && m.effects.text ? ' · ' + m.effects.text : '') + '</small>' +
       '<div class="hp-bar' + (pct < 30 ? ' low' : '') + '"><i style="width:' + pct + '%"></i></div>' +
       '<div class="dbl-hp">' + m.hp + ' / ' + m.maxHp + '</div>' +
       '<div class="st-line">' + st + buffs + '</div></div>';
