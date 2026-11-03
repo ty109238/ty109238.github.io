@@ -1197,3 +1197,14 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
 .sm-prio { font-size: 10px; font-weight: 900; padding: 1px 7px; border-radius: 999px; }
 .sm-prio.up { background: #e6f7ec; color: #1f7a3d; border: 1px solid #b6e0c2; }
 .sm-prio.down { background: #fdecea; color: #a4331f; border: 1px solid #f3c1b8; }
+/* 新手引导 */
+.onboard { position: fixed; inset: 0; z-index: 2147483500; display: grid; place-items: center; background: rgba(14,23,38,.62); }
+.ob-card { width: min(92vw, 420px); background: #fff; border: 3px solid var(--ink); border-radius: 20px; padding: 26px 24px 20px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,.35); animation: bdPop .4s cubic-bezier(.2,1.4,.4,1); }
+.ob-ico { font-size: 44px; line-height: 1; margin-bottom: 8px; }
+.ob-card h3 { margin: 0 0 8px; font-size: 19px; }
+.ob-card p { margin: 0; font-size: 13.5px; line-height: 1.85; color: #55677b; }
+.ob-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; }
+.ob-dots { display: flex; gap: 5px; }
+.ob-dots i { width: 7px; height: 7px; border-radius: 50%; background: #dbe6f0; }
+.ob-dots i.on { background: var(--pink); }
+.ob-next { padding: 9px 22px; border: 2px solid var(--ink); border-radius: 999px; background: var(--yellow); font: inherit; font-size: 13.5px; font-weight: 900; cursor: pointer; }

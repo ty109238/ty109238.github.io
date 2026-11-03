@@ -697,7 +697,10 @@
     var tb2 = (defender.effects && defender.effects.reduce[s.type]) || 1;
     var critChance = 0.0625 + ((attacker.effects && attacker.effects.crit) || 0);
     var crit = Math.random() < critChance;
-    var fm = fieldMult(s.type, s);
+    var fm = fieldMult(s.type, s, {
+      poisoned: !!defender.status['中毒'],
+      para: !!defender.status['麻痹']
+    });
     var dmg = base * tm * stab * wm * fm * tb1 * tb2 * (crit ? 1.5 : 1) * rnd(0.85, 1);
     return { dmg: Math.max(1, Math.floor(dmg)), type: tm, crit: crit };
   }
@@ -1047,6 +1050,12 @@
       if (user.fainted) continue;
       if (user.status['麻痹'] && Math.random() < 0.25) {
         logLine(user.name + ' 被麻痹了，无法行动。');
+        var b0env = currentEnv();
+        if (b0env && b0env.paraBacklash) {
+          var bl = Math.max(1, Math.floor(user.maxHp * b0env.paraBacklash));
+          user.hp = Math.max(0, user.hp - bl);
+          logLine('电网反噬，' + user.name + ' 受到 ' + bl + ' 点伤害。');
+        }
         continue;
       }
       if (user.status['冰冻'] && Math.random() < 0.3) {
@@ -1219,7 +1228,7 @@
     if (!b || !b.weather || !b.terrain) return null;
     return ENVS[b.weather + '|' + b.terrain] || null;
   }
-  function fieldMult(type, skill) {
+  function fieldMult(type, skill, foe) {
     var b = fieldOf();
     if (!b) return 1;
     var m = 1;
@@ -1231,6 +1240,8 @@
     if (t && t.mult && t.el === type) m *= t.mult;
     var e = currentEnv();
     if (e && e.type === type) m *= e.mult;
+    if (e && e.darkVsPoison && type === '暗' && arguments[2] && arguments[2].poisoned) m *= e.darkVsPoison;
+    if (e && e.steelVsPara && type === '钢' && arguments[2] && arguments[2].para) m *= e.steelVsPara;
     if (e && e.slowBoost && skill && skill.category === '物理') m *= e.slowBoost;
     if (e && e.steelVsPara && type === '钢') m *= 1;
     return m;
@@ -1277,6 +1288,7 @@
     team.forEach(function (m) {
       if (m.fainted) return;
       var regen = (w.regen || 0) + (t.regen || 0) + (e && e.regen || 0);
+      if (e && e.lightRegenX2 && m.element === '光') regen *= 2;
       if (regen > 0) {
         var hl = Math.max(1, Math.floor(m.maxHp * regen));
         m.hp = Math.min(m.maxHp, m.hp + hl);

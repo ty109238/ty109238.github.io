@@ -1240,6 +1240,41 @@
     document.body.appendChild(toc);
   }
 
+  /* ---------- 新手引导 ---------- */
+  function maybeOnboard() {
+    if (localStorage.getItem('dex:onboard') === '1') return;
+    if (document.querySelector('.onboard')) return;
+    if (currentCreatureId()) return;
+    var steps = [
+      ['👋', '欢迎来到奥灵宠图鉴', '这里收录了 74 只灵宠、666 个技能、12 种天气与 17 种环境组合。'],
+      ['📖', '技能书是门槛', '每只灵宠有 5 个专属技能，需要「技能书」才能在战斗里使用。赢一场随机得 1 本，连胜 3 场再得 1 本。'],
+      ['⚔️', '熟练度会成长', '同一只灵宠出战 10 次解锁它的全部专属技能书；出战 20 次后属性额外 +10%。'],
+      ['🌦', '天气 / 场地 / 环境', '防御技会改变天气（5 回合），专属技会改变场地（8 回合）。两者组合会形成 17 种环境，效果更强。']
+    ];
+    var box = document.createElement('div');
+    box.className = 'onboard';
+    var idx = 0;
+    function draw() {
+      var st = steps[idx];
+      box.innerHTML =
+        '<div class="ob-card">' +
+        '<div class="ob-ico">' + st[0] + '</div>' +
+        '<h3>' + st[1] + '</h3>' +
+        '<p>' + st[2] + '</p>' +
+        '<div class="ob-foot"><span class="ob-dots">' + steps.map(function (_, i) {
+          return '<i class="' + (i === idx ? 'on' : '') + '"></i>';
+        }).join('') + '</span>' +
+        '<button class="ob-next" type="button">' + (idx === steps.length - 1 ? '开始探索' : '下一步') + '</button>' +
+        '</div></div>';
+      box.querySelector('.ob-next').addEventListener('click', function () {
+        if (idx < steps.length - 1) { idx++; draw(); }
+        else { localStorage.setItem('dex:onboard', '1'); box.remove(); }
+      });
+    }
+    draw();
+    document.body.appendChild(box);
+  }
+
   /* ---------- 移动端底部导航 ---------- */
   function syncMobileNav() {
     if (document.querySelector('.mobile-nav')) return;
@@ -1283,6 +1318,7 @@
       { k: 'ui-skillpool', t: '技能池', href: '/skills.html' },
       { k: 'trait-thunder', t: '状态图鉴', href: '/status.html' },
       { k: 'ui-envbook', t: '环境图鉴', href: '/env.html' },
+      { k: 'fn-btn-normal', t: '进度存档', href: '/save.html' },
       { k: 'ui-fav', t: '我的收藏', href: '/favs.html' }
     ];
     var rail = document.createElement('nav');
@@ -1316,6 +1352,7 @@
       { href: '/skills.html', t: '技能池', d: '全站 600+ 招式', k: 'ui-skillpool' },
       { href: '/status.html', t: '状态图鉴', d: '中毒/灼烧/先手…', k: 'trait-thunder' },
       { href: '/env.html', t: '环境图鉴', d: '12 天气 · 10 场地 · 17 环境', k: 'ui-envbook' },
+      { href: '/save.html', t: '进度存档', d: '导出/导入你的进度', k: 'fn-btn-normal' },
       { href: '/favs.html', t: '我的收藏', d: '你标星过的灵宠', k: 'fn-bag' }
     ];
     if (!currentCreatureId()) {

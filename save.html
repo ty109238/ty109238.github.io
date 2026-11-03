@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#2a2520" />
+    <title>进度存档 · 咻噗-奥灵宠图鉴</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="stylesheet" href="/save.css" />
+  </head>
+  <body>
+    <header class="sv-top">
+      <a class="sv-back" href="/">← 返回图鉴</a>
+      <h1>进度存档</h1>
+      <span class="sv-note" id="stat"></span>
+    </header>
+    <main class="sv-wrap">
+      <section class="sv-card">
+        <h2>导出</h2>
+        <p class="sv-desc">把队伍、技能书、熟练度、战绩打包成一段文本。换设备时粘贴导入即可恢复。</p>
+        <textarea id="out" readonly placeholder="点下面按钮生成存档码"></textarea>
+        <div class="sv-actions">
+          <button class="sv-btn primary" id="gen">生成存档码</button>
+          <button class="sv-btn" id="copy">复制</button>
+          <button class="sv-btn" id="dl">下载 JSON</button>
+        </div>
+      </section>
+
+      <section class="sv-card">
+        <h2>导入</h2>
+        <p class="sv-desc">粘贴别人给的存档码，或选择之前下载的 JSON 文件。</p>
+        <textarea id="in" placeholder="粘贴存档码…"></textarea>
+        <div class="sv-actions">
+          <button class="sv-btn primary" id="imp">导入并覆盖</button>
+          <input type="file" id="file" accept=".json,application/json" hidden />
+          <button class="sv-btn" id="pick">选择 JSON 文件</button>
+          <button class="sv-btn danger" id="reset">清空全部进度</button>
+        </div>
+      </section>
+    </main>
+    <script src="/save.js"></script>
+  </body>
+</html>
