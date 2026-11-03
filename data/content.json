@@ -2655,7 +2655,7 @@
       "imageKey": "creatures/75-光系幻小狐.png",
       "portraitKey": "action-portraits/75-幻小狐.webp",
       "description": "栖息在晨雾与落日交界处的小狐狸。尾巴尖会随光线聚成一小团暖色的幻影，它常用这点光替同伴照路，却不太明白自己也在发光。",
-      "evolutionCondition": "达到 18 级，并在傍晚时段带着它走完一段路后进化为「桃花狐」。",
+      "evolutionCondition": "达到 18 级后进化为「桃花狐」。",
       "captureLocation": "雾光谷 · 晨昏交界",
       "hatchCondition": "把灵宠蛋放在向阳的窗台，让它在日出时第一次见到光。",
       "arenaRate": 12,
@@ -2676,14 +2676,7 @@
         "stage": 1,
         "nature": "保守"
       },
-      "eggKey": "eggs/28.webp",
-      "branch": [
-        {
-          "to": 103195,
-          "name": "桃花狐",
-          "condition": "18 级 · 傍晚同行"
-        }
-      ]
+      "eggKey": "eggs/75.webp"
     },
     {
       "id": 103195,
@@ -2697,7 +2690,7 @@
       "imageKey": "creatures/76-光系桃花狐.png",
       "portraitKey": "action-portraits/76-桃花狐.webp",
       "description": "尾后长出一枝永不凋落的桃花，花瓣会随心情开合。它把光织成薄纱披在同伴身上，自己走过的路则留下一串淡粉色的光渍。",
-      "evolutionCondition": "达到 34 级，并在桃花盛开的季节带着它穿过雾光谷后进化为「九尾幻狐」。",
+      "evolutionCondition": "达到 34 级后进化为「九尾幻狐」。",
       "captureLocation": "雾光谷 · 桃林深处",
       "hatchCondition": "需要让蛋在花树下晒满三个清晨的日光。",
       "arenaRate": 18,
@@ -2718,20 +2711,7 @@
         "stage": 2,
         "nature": "保守"
       },
-      "eggKey": "eggs/29.webp",
-      "from": {
-        "id": 103194,
-        "name": "幻小狐",
-        "dexNo": 75,
-        "condition": "18 级 · 傍晚同行"
-      },
-      "branch": [
-        {
-          "to": 103196,
-          "name": "九尾幻狐",
-          "condition": "34 级 · 桃林穿行"
-        }
-      ]
+      "eggKey": "eggs/75.webp"
     },
     {
       "id": 103196,
@@ -2766,13 +2746,7 @@
         "stage": 3,
         "nature": "保守"
       },
-      "eggKey": "eggs/30.webp",
-      "from": {
-        "id": 103195,
-        "name": "桃花狐",
-        "dexNo": 76,
-        "condition": "34 级 · 桃林穿行"
-      }
+      "eggKey": "eggs/75.webp"
     }
   ],
   "skills": {
@@ -18885,7 +18859,8 @@
     "creatures/76-光系桃花狐.png": "/media/creatures/76.webp",
     "action-portraits/76-桃花狐.webp": "/media/portraits/76.webp",
     "creatures/77-光系九尾幻狐.png": "/media/creatures/77.webp",
-    "action-portraits/77-九尾幻狐.webp": "/media/portraits/77.webp"
+    "action-portraits/77-九尾幻狐.webp": "/media/portraits/77.webp",
+    "eggs/75.webp": "/media/eggs/75.webp"
   },
   "studio": {
     "name": "谭熠的橘子工作室",
