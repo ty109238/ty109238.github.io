@@ -1063,6 +1063,30 @@
     return img;
   }
 
+  function killEvoBg() {
+    var nodes = document.querySelectorAll('.evolution-member, .evolution-member *');
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (el.tagName === 'IMG') { el.style.setProperty('background', 'transparent', 'important'); continue; }
+      if (el.getAttribute('data-evobg') === '1') continue;
+      el.setAttribute('data-evobg', '1');
+      el.style.setProperty('background', 'transparent', 'important');
+      el.style.setProperty('background-image', 'none', 'important');
+      el.style.setProperty('box-shadow', 'none', 'important');
+    }
+    var members = document.querySelectorAll('.evolution-member');
+    for (var k = 0; k < members.length; k++) {
+      var m = members[k];
+      if (m.classList.contains('is-current')) {
+        m.style.setProperty('outline', '3px solid #dd2590', 'important');
+        m.style.setProperty('outline-offset', '3px', 'important');
+        m.style.setProperty('border-radius', '14px', 'important');
+      } else {
+        m.style.setProperty('border', '0', 'important');
+      }
+    }
+  }
+
   function killEggBg() {
     var frames = document.querySelectorAll('.egg-frame, .egg-frame *');
     for (var i = 0; i < frames.length; i++) {
@@ -1151,7 +1175,7 @@
     var t = null;
     entryObs = new MutationObserver(function () {
       clearTimeout(t);
-      t = setTimeout(function () { syncSkillCollapse(); syncEntryIcons(); killEggBg(); frameTraitSection(); killTraitBg(); }, 80);
+      t = setTimeout(function () { syncSkillCollapse(); syncEntryIcons(); killEggBg(); killEvoBg(); frameTraitSection(); killTraitBg(); }, 80);
     });
     entryObs.observe(root, { childList: true, subtree: true });
   }
