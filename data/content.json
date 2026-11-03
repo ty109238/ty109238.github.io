@@ -2733,11 +2733,16 @@
         "power": 52,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 52。（先手+1：必定先手）",
+        "description": "基础威力 52。（先手+1：必定先手）并使场地变为「沙丘」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
-        "fx": [],
+        "fx": [
+          {
+            "k": "terrain",
+            "name": "沙丘"
+          }
+        ],
         "prio": 1
       },
       {
@@ -2916,7 +2921,7 @@
         "power": 62,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 62；命中后 30% 使敌方灼烧。",
+        "description": "基础威力 62；命中后 30% 使敌方灼烧。并使场地变为「沙丘」。",
         "learnLevel": 10,
         "role": null,
         "exclusive": true,
@@ -2925,6 +2930,10 @@
             "k": "dmg",
             "status": "灼烧",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "沙丘"
           }
         ],
         "prio": 0
@@ -3101,7 +3110,7 @@
         "power": 78,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 78；命中后 30% 使敌方灼烧。",
+        "description": "基础威力 78；命中后 30% 使敌方灼烧。并使场地变为「沙丘」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -3110,6 +3119,10 @@
             "k": "dmg",
             "status": "灼烧",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "沙丘"
           }
         ],
         "prio": 0
@@ -3218,7 +3231,7 @@
         "slot": 2,
         "name": "泡泡屏障",
         "pp": 25,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。召唤「小雨」天气。",
         "type": "水",
         "category": "变化",
         "power": null,
@@ -3234,6 +3247,10 @@
               "weather": "下雨",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "小雨"
           }
         ],
         "prio": 0
@@ -3287,7 +3304,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 20,
-        "description": "自身特防+1。（变化技能，不造成伤害）",
+        "description": "自身特防+1。（变化技能，不造成伤害）并使场地变为「断桥」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -3297,6 +3314,10 @@
             "who": "self",
             "stat": "spDefense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "断桥"
           }
         ],
         "prio": 0
@@ -3363,7 +3384,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 15,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。召唤「小雨」天气。",
         "learnLevel": 18,
         "role": null,
         "exclusive": true,
@@ -3375,6 +3396,10 @@
               "weather": "下雨",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "小雨"
           }
         ],
         "prio": 0
@@ -3400,7 +3425,7 @@
         "slot": 2,
         "name": "冒险直觉",
         "pp": 25,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。召唤「小雨」天气。",
         "type": "水",
         "category": "变化",
         "power": null,
@@ -3416,6 +3441,10 @@
               "weather": "下雨",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "小雨"
           }
         ],
         "prio": 0
@@ -3469,7 +3498,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 15,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「断桥」。",
         "learnLevel": 14,
         "role": null,
         "exclusive": true,
@@ -3477,6 +3506,10 @@
           {
             "k": "heal",
             "pct": 0.28
+          },
+          {
+            "k": "terrain",
+            "name": "断桥"
           }
         ],
         "prio": 0
@@ -3612,7 +3645,7 @@
         "slot": 3,
         "name": "静潮架势",
         "pp": 20,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。召唤「小雨」天气。",
         "type": "水",
         "category": "变化",
         "power": null,
@@ -3628,6 +3661,10 @@
               "weather": "下雨",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "小雨"
           }
         ],
         "prio": 0
@@ -3660,7 +3697,7 @@
         "power": 92,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 92；自身特防+1。（先手-1：必定后手）",
+        "description": "基础威力 92；自身特防+1。（先手-1：必定后手）并使场地变为「断桥」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -3670,6 +3707,10 @@
             "who": "self",
             "stat": "spDefense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "断桥"
           }
         ],
         "prio": -1
@@ -3681,7 +3722,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 10,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。召唤「小雨」天气。",
         "learnLevel": 18,
         "role": null,
         "exclusive": true,
@@ -3693,6 +3734,10 @@
               "weather": "下雨",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "小雨"
           }
         ],
         "prio": 0
@@ -3777,7 +3822,7 @@
         "slot": 2,
         "name": "果皮掩体",
         "pp": 25,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「花粉风」天气。",
         "type": "草",
         "category": "变化",
         "power": null,
@@ -3793,6 +3838,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 0
@@ -3841,7 +3890,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 18,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「花田」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -3849,6 +3898,10 @@
           {
             "k": "heal",
             "pct": 0.28
+          },
+          {
+            "k": "terrain",
+            "name": "花田"
           }
         ],
         "prio": 0
@@ -4018,11 +4071,16 @@
         "power": 84,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 84。",
+        "description": "基础威力 84。并使场地变为「花田」。",
         "learnLevel": 32,
         "role": null,
         "exclusive": true,
-        "fx": [],
+        "fx": [
+          {
+            "k": "terrain",
+            "name": "花田"
+          }
+        ],
         "prio": 0
       },
       {
@@ -4193,7 +4251,7 @@
         "power": 86,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 86；命中后敌方物防-1。",
+        "description": "基础威力 86；命中后敌方物防-1。并使场地变为「花田」。",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
@@ -4203,6 +4261,10 @@
             "who": "foe",
             "stat": "defense",
             "stage": -1
+          },
+          {
+            "k": "terrain",
+            "name": "花田"
           }
         ],
         "prio": 0
@@ -4253,7 +4315,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 15,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。（先手+1：必定先手）",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。（先手+1：必定先手）召唤「花粉风」天气。",
         "learnLevel": 22,
         "role": null,
         "exclusive": true,
@@ -4265,6 +4327,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 1
@@ -4362,7 +4428,7 @@
         "slot": 4,
         "name": "种荚守护",
         "pp": 15,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「花粉风」天气。",
         "type": "草",
         "category": "变化",
         "power": null,
@@ -4378,6 +4444,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 0
@@ -4389,7 +4459,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 15,
-        "description": "自身物防+1。（变化技能，不造成伤害）",
+        "description": "自身物防+1。（变化技能，不造成伤害）并使场地变为「花田」。",
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
@@ -4399,6 +4469,10 @@
             "who": "self",
             "stat": "defense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "花田"
           }
         ],
         "prio": 0
@@ -4469,7 +4543,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 15,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。（先手+1：必定先手）",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。（先手+1：必定先手）召唤「花粉风」天气。",
         "learnLevel": 22,
         "role": null,
         "exclusive": true,
@@ -4481,6 +4555,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 1
@@ -4573,7 +4651,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 15,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「花粉风」天气。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -4585,6 +4663,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 0
@@ -4596,7 +4678,7 @@
         "power": 58,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 58；自身物防+1。",
+        "description": "基础威力 58；自身物防+1。并使场地变为「花田」。",
         "learnLevel": 16,
         "role": null,
         "exclusive": true,
@@ -4606,6 +4688,10 @@
             "who": "self",
             "stat": "defense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "花田"
           }
         ],
         "prio": 0
@@ -4749,7 +4835,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 10,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「花粉风」天气。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -4761,6 +4847,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 0
@@ -4772,7 +4862,7 @@
         "power": 88,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 88；自身物防+1。（先手-1：必定后手）",
+        "description": "基础威力 88；自身物防+1。（先手-1：必定后手）并使场地变为「花田」。",
         "learnLevel": 18,
         "role": null,
         "exclusive": true,
@@ -4782,6 +4872,10 @@
             "who": "self",
             "stat": "defense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "花田"
           }
         ],
         "prio": -1
@@ -4834,7 +4928,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 10,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「花粉风」天气。",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
@@ -4846,6 +4940,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 0
@@ -4944,7 +5042,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后敌方物防-1。（先手+1：必定先手）",
+        "description": "基础威力 52；命中后敌方物防-1。（先手+1：必定先手）并使场地变为「花田」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -4954,6 +5052,10 @@
             "who": "foe",
             "stat": "defense",
             "stage": -1
+          },
+          {
+            "k": "terrain",
+            "name": "花田"
           }
         ],
         "prio": 1
@@ -5070,7 +5172,7 @@
         "slot": 2,
         "name": "扫描目镜",
         "pp": 25,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「花粉风」天气。",
         "type": "草",
         "category": "变化",
         "power": null,
@@ -5086,6 +5188,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 0
@@ -5094,7 +5200,7 @@
         "slot": 3,
         "name": "程序藤鞭",
         "pp": 20,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「花粉风」天气。",
         "type": "草",
         "category": "变化",
         "power": null,
@@ -5110,6 +5216,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 0
@@ -5136,7 +5246,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 16,
-        "description": "敌方速度-1。（变化技能，不造成伤害）",
+        "description": "敌方速度-1。（变化技能，不造成伤害）并使场地变为「花田」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -5146,6 +5256,10 @@
             "who": "foe",
             "stat": "speed",
             "stage": -1
+          },
+          {
+            "k": "terrain",
+            "name": "花田"
           }
         ],
         "prio": 0
@@ -5260,7 +5374,7 @@
         "slot": 2,
         "name": "代码森林",
         "pp": 20,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「花粉风」天气。",
         "type": "草",
         "category": "变化",
         "power": null,
@@ -5276,6 +5390,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 0
@@ -5331,7 +5449,7 @@
         "power": 92,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 92；命中后 25% 使敌方中毒。（先手-1：必定后手）",
+        "description": "基础威力 92；命中后 25% 使敌方中毒。（先手-1：必定后手）并使场地变为「花田」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -5340,6 +5458,10 @@
             "k": "dmg",
             "status": "中毒",
             "chance": 0.25
+          },
+          {
+            "k": "terrain",
+            "name": "花田"
           }
         ],
         "prio": -1
@@ -5456,7 +5578,7 @@
         "slot": 3,
         "name": "寒气凝甲",
         "pp": 20,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「暴雪」天气。",
         "type": "冰",
         "category": "变化",
         "power": null,
@@ -5472,6 +5594,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "暴雪"
           }
         ],
         "prio": 0
@@ -5504,7 +5630,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 18,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「冰面」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -5512,6 +5638,10 @@
           {
             "k": "heal",
             "pct": 0.28
+          },
+          {
+            "k": "terrain",
+            "name": "冰面"
           }
         ],
         "prio": 0
@@ -5565,7 +5695,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 16,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「暴雪」天气。",
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
@@ -5577,6 +5707,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "暴雪"
           }
         ],
         "prio": 0
@@ -5690,7 +5824,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 16,
-        "description": "敌方物攻-1。（变化技能，不造成伤害）",
+        "description": "敌方物攻-1。（变化技能，不造成伤害）并使场地变为「冰面」。",
         "learnLevel": 10,
         "role": null,
         "exclusive": true,
@@ -5700,6 +5834,10 @@
             "who": "foe",
             "stat": "attack",
             "stage": -1
+          },
+          {
+            "k": "terrain",
+            "name": "冰面"
           }
         ],
         "prio": 0
@@ -5880,7 +6018,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 12,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）（先手-1：必定后手）",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）（先手-1：必定后手）并使场地变为「冰面」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -5888,6 +6026,10 @@
           {
             "k": "heal",
             "pct": 0.28
+          },
+          {
+            "k": "terrain",
+            "name": "冰面"
           }
         ],
         "prio": -1
@@ -6063,7 +6205,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 18,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「晴朗」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「晴朗」，持续 5 回合。召唤「沙暴」天气。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -6075,6 +6217,10 @@
               "weather": "晴朗",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "沙暴"
           }
         ],
         "prio": 0
@@ -6086,11 +6232,16 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50。（先手+1：必定先手）",
+        "description": "基础威力 50。（先手+1：必定先手）并使场地变为「山路」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
-        "fx": [],
+        "fx": [
+          {
+            "k": "terrain",
+            "name": "山路"
+          }
+        ],
         "prio": 1
       },
       {
@@ -6121,7 +6272,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 16,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「晴朗」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「晴朗」，持续 5 回合。召唤「沙暴」天气。",
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
@@ -6133,6 +6284,10 @@
               "weather": "晴朗",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "沙暴"
           }
         ],
         "prio": 0
@@ -6253,7 +6408,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 16,
-        "description": "自身物防+1。（变化技能，不造成伤害）",
+        "description": "自身物防+1。（变化技能，不造成伤害）并使场地变为「山路」。",
         "learnLevel": 10,
         "role": null,
         "exclusive": true,
@@ -6263,6 +6418,10 @@
             "who": "self",
             "stat": "defense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "山路"
           }
         ],
         "prio": 0
@@ -6356,7 +6515,7 @@
         "slot": 1,
         "name": "蚁后香薰",
         "pp": 35,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「晴朗」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「晴朗」，持续 5 回合。召唤「沙暴」天气。",
         "type": "土",
         "category": "变化",
         "power": null,
@@ -6372,6 +6531,10 @@
               "weather": "晴朗",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "沙暴"
           }
         ],
         "prio": 0
@@ -6449,7 +6612,7 @@
         "power": 78,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 78；命中后 30% 使敌方中毒。",
+        "description": "基础威力 78；命中后 30% 使敌方中毒。并使场地变为「山路」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -6458,6 +6621,10 @@
             "k": "dmg",
             "status": "中毒",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "山路"
           }
         ],
         "prio": 0
@@ -6638,7 +6805,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 18,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「花粉风」天气。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -6650,6 +6817,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 0
@@ -6661,7 +6832,7 @@
         "power": 46,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 46；命中后敌方物防-1。（先手+1：必定先手）",
+        "description": "基础威力 46；命中后敌方物防-1。（先手+1：必定先手）并使场地变为「花田」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -6671,6 +6842,10 @@
             "who": "foe",
             "stat": "defense",
             "stage": -1
+          },
+          {
+            "k": "terrain",
+            "name": "花田"
           }
         ],
         "prio": 1
@@ -6816,7 +6991,7 @@
         "power": 62,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 62；自身物防+1。",
+        "description": "基础威力 62；自身物防+1。并使场地变为「花田」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -6826,6 +7001,10 @@
             "who": "self",
             "stat": "defense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "花田"
           }
         ],
         "prio": 0
@@ -6879,7 +7058,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 14,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「花粉风」天气。",
         "learnLevel": 24,
         "role": null,
         "exclusive": true,
@@ -6891,6 +7070,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 0
@@ -7005,7 +7188,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 14,
-        "description": "自身物防+1。（变化技能，不造成伤害）",
+        "description": "自身物防+1。（变化技能，不造成伤害）并使场地变为「花田」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -7015,6 +7198,10 @@
             "who": "self",
             "stat": "defense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "花田"
           }
         ],
         "prio": 0
@@ -7180,7 +7367,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后 30% 使敌方流血。（先手+1：必定先手）",
+        "description": "基础威力 52；命中后 30% 使敌方流血。（先手+1：必定先手）并使场地变为「修废场」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -7189,6 +7376,10 @@
             "k": "dmg",
             "status": "流血",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "修废场"
           }
         ],
         "prio": 1
@@ -7366,7 +7557,7 @@
         "power": 66,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 66；命中后 30% 使敌方流血。",
+        "description": "基础威力 66；命中后 30% 使敌方流血。并使场地变为「修废场」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -7375,6 +7566,10 @@
             "k": "dmg",
             "status": "流血",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "修废场"
           }
         ],
         "prio": 0
@@ -7550,7 +7745,7 @@
         "power": 78,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 78；命中后 30% 使敌方流血。",
+        "description": "基础威力 78；命中后 30% 使敌方流血。并使场地变为「修废场」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -7559,6 +7754,10 @@
             "k": "dmg",
             "status": "流血",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "修废场"
           }
         ],
         "prio": 0
@@ -7734,7 +7933,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；自身速度+1。（先手+1：必定先手）",
+        "description": "基础威力 50；自身速度+1。（先手+1：必定先手）并使场地变为「垃圾堆」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -7744,6 +7943,10 @@
             "who": "self",
             "stat": "speed",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "垃圾堆"
           }
         ],
         "prio": 1
@@ -7913,7 +8116,7 @@
         "power": 62,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 62；自身速度+1。",
+        "description": "基础威力 62；自身速度+1。并使场地变为「垃圾堆」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -7923,6 +8126,10 @@
             "who": "self",
             "stat": "speed",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "垃圾堆"
           }
         ],
         "prio": 0
@@ -8085,7 +8292,7 @@
         "power": 80,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 80；自身速度+1。",
+        "description": "基础威力 80；自身速度+1。并使场地变为「垃圾堆」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -8095,6 +8302,10 @@
             "who": "self",
             "stat": "speed",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "垃圾堆"
           }
         ],
         "prio": 0
@@ -8257,7 +8468,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 6,
-        "description": "自身速度+2。（变化技能，不造成伤害）",
+        "description": "自身速度+2。（变化技能，不造成伤害）并使场地变为「林梢」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -8267,6 +8478,10 @@
             "who": "self",
             "stat": "speed",
             "stage": 2
+          },
+          {
+            "k": "terrain",
+            "name": "林梢"
           }
         ],
         "prio": 0
@@ -8443,7 +8658,7 @@
         "power": 62,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 62；命中后 30% 使敌方减速。",
+        "description": "基础威力 62；命中后 30% 使敌方减速。并使场地变为「林梢」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -8452,6 +8667,10 @@
             "k": "dmg",
             "status": "减速",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "林梢"
           }
         ],
         "prio": 0
@@ -8463,7 +8682,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 6,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。召唤「狂风」天气。",
         "learnLevel": 16,
         "role": null,
         "exclusive": true,
@@ -8475,6 +8694,10 @@
               "weather": "下雨",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "狂风"
           }
         ],
         "prio": 0
@@ -8627,7 +8850,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 14,
-        "description": "自身速度+2。（变化技能，不造成伤害）",
+        "description": "自身速度+2。（变化技能，不造成伤害）并使场地变为「林梢」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -8637,6 +8860,10 @@
             "who": "self",
             "stat": "speed",
             "stage": 2
+          },
+          {
+            "k": "terrain",
+            "name": "林梢"
           }
         ],
         "prio": 0
@@ -8805,7 +9032,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 16,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「垃圾堆」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -8813,6 +9040,10 @@
           {
             "k": "heal",
             "pct": 0.28
+          },
+          {
+            "k": "terrain",
+            "name": "垃圾堆"
           }
         ],
         "prio": 0
@@ -8987,7 +9218,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 14,
-        "description": "自身速度+1。（变化技能，不造成伤害）",
+        "description": "自身速度+1。（变化技能，不造成伤害）并使场地变为「垃圾堆」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -8997,6 +9228,10 @@
             "who": "self",
             "stat": "speed",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "垃圾堆"
           }
         ],
         "prio": 0
@@ -9068,7 +9303,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 12,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「夜幕」天气。",
         "learnLevel": 30,
         "role": null,
         "exclusive": true,
@@ -9080,6 +9315,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "夜幕"
           }
         ],
         "prio": 0
@@ -9179,7 +9418,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 12,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「垃圾堆」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -9187,6 +9426,10 @@
           {
             "k": "heal",
             "pct": 0.28
+          },
+          {
+            "k": "terrain",
+            "name": "垃圾堆"
           }
         ],
         "prio": 0
@@ -9361,7 +9604,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后 30% 使敌方中毒。（先手+1：必定先手）",
+        "description": "基础威力 52；命中后 30% 使敌方中毒。（先手+1：必定先手）并使场地变为「花田」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -9370,6 +9613,10 @@
             "k": "dmg",
             "status": "中毒",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "花田"
           }
         ],
         "prio": 1
@@ -9497,7 +9744,7 @@
         "slot": 3,
         "name": "四叶预感",
         "pp": 20,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「花粉风」天气。",
         "type": "草",
         "category": "变化",
         "power": null,
@@ -9513,6 +9760,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 0
@@ -9546,11 +9797,16 @@
         "power": 64,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 64。",
+        "description": "基础威力 64。并使场地变为「花田」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
-        "fx": [],
+        "fx": [
+          {
+            "k": "terrain",
+            "name": "花田"
+          }
+        ],
         "prio": 0
       },
       {
@@ -9678,7 +9934,7 @@
         "slot": 3,
         "name": "万花喵射",
         "pp": 20,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「花粉风」天气。",
         "type": "草",
         "category": "变化",
         "power": null,
@@ -9694,6 +9950,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 0
@@ -9727,7 +9987,7 @@
         "power": 78,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 78；自身物防+1。",
+        "description": "基础威力 78；自身物防+1。并使场地变为「花田」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -9737,6 +9997,10 @@
             "who": "self",
             "stat": "defense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "花田"
           }
         ],
         "prio": 0
@@ -9910,7 +10174,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后 30% 使敌方麻痹。（先手+1：必定先手）",
+        "description": "基础威力 52；命中后 30% 使敌方麻痹。（先手+1：必定先手）并使场地变为「电网」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -9919,6 +10183,10 @@
             "k": "dmg",
             "status": "麻痹",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "电网"
           }
         ],
         "prio": 1
@@ -10098,7 +10366,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 16,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「电网」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -10106,6 +10374,10 @@
           {
             "k": "heal",
             "pct": 0.28
+          },
+          {
+            "k": "terrain",
+            "name": "电网"
           }
         ],
         "prio": 0
@@ -10282,7 +10554,7 @@
         "power": 80,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 80；自身速度+1。",
+        "description": "基础威力 80；自身速度+1。并使场地变为「电网」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -10292,6 +10564,10 @@
             "who": "self",
             "stat": "speed",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "电网"
           }
         ],
         "prio": 0
@@ -10303,7 +10579,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 12,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。召唤「雷雨」天气。",
         "learnLevel": 18,
         "role": null,
         "exclusive": true,
@@ -10315,6 +10591,10 @@
               "weather": "下雨",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "雷雨"
           }
         ],
         "prio": 0
@@ -10468,7 +10748,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；自身速度+1。（先手+1：必定先手）",
+        "description": "基础威力 50；自身速度+1。（先手+1：必定先手）并使场地变为「电网」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -10478,6 +10758,10 @@
             "who": "self",
             "stat": "speed",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "电网"
           }
         ],
         "prio": 1
@@ -10586,7 +10870,7 @@
         "slot": 2,
         "name": "雷光甲壳",
         "pp": 25,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。召唤「雷雨」天气。",
         "type": "雷",
         "category": "变化",
         "power": null,
@@ -10602,6 +10886,10 @@
               "weather": "下雨",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "雷雨"
           }
         ],
         "prio": 0
@@ -10656,7 +10944,7 @@
         "power": 62,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 62；命中后 30% 使敌方麻痹。",
+        "description": "基础威力 62；命中后 30% 使敌方麻痹。并使场地变为「电网」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -10665,6 +10953,10 @@
             "k": "dmg",
             "status": "麻痹",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "电网"
           }
         ],
         "prio": 0
@@ -10676,7 +10968,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 14,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。召唤「雷雨」天气。",
         "learnLevel": 16,
         "role": null,
         "exclusive": true,
@@ -10688,6 +10980,10 @@
               "weather": "下雨",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "雷雨"
           }
         ],
         "prio": 0
@@ -10840,7 +11136,7 @@
         "power": 82,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 82；命中后 25% 使敌方麻痹。",
+        "description": "基础威力 82；命中后 25% 使敌方麻痹。并使场地变为「电网」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -10849,6 +11145,10 @@
             "k": "dmg",
             "status": "麻痹",
             "chance": 0.25
+          },
+          {
+            "k": "terrain",
+            "name": "电网"
           }
         ],
         "prio": 0
@@ -10991,7 +11291,7 @@
         "slot": 4,
         "name": "小小王室",
         "pp": 15,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。召唤「小雨」天气。",
         "type": "水",
         "category": "变化",
         "power": null,
@@ -11007,6 +11307,10 @@
               "weather": "下雨",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "小雨"
           }
         ],
         "prio": 0
@@ -11018,7 +11322,7 @@
         "power": 48,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 48；命中后敌方特防-1。（先手+1：必定先手）",
+        "description": "基础威力 48；命中后敌方特防-1。（先手+1：必定先手）并使场地变为「断桥」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -11028,6 +11332,10 @@
             "who": "foe",
             "stat": "spDefense",
             "stage": -1
+          },
+          {
+            "k": "terrain",
+            "name": "断桥"
           }
         ],
         "prio": 1
@@ -11211,7 +11519,7 @@
         "power": 62,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 62；命中后 30% 使敌方潮湿。",
+        "description": "基础威力 62；命中后 30% 使敌方潮湿。并使场地变为「断桥」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -11220,6 +11528,10 @@
             "k": "dmg",
             "status": "潮湿",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "断桥"
           }
         ],
         "prio": 0
@@ -11401,7 +11713,7 @@
         "power": 80,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 80；自身特防+1。",
+        "description": "基础威力 80；自身特防+1。并使场地变为「断桥」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -11411,6 +11723,10 @@
             "who": "self",
             "stat": "spDefense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "断桥"
           }
         ],
         "prio": 0
@@ -11542,7 +11858,7 @@
         "slot": 3,
         "name": "快快助威",
         "pp": 20,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。（先手+1：必定先手）",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。（先手+1：必定先手）召唤「暴雪」天气。",
         "type": "冰",
         "category": "变化",
         "power": null,
@@ -11558,6 +11874,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "暴雪"
           }
         ],
         "prio": 1
@@ -11566,7 +11886,7 @@
         "slot": 4,
         "name": "绒毛冰甲",
         "pp": 15,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「暴雪」天气。",
         "type": "冰",
         "category": "变化",
         "power": null,
@@ -11582,6 +11902,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "暴雪"
           }
         ],
         "prio": 0
@@ -11593,7 +11917,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；命中后敌方物防-1。（先手+1：必定先手）",
+        "description": "基础威力 50；命中后敌方物防-1。（先手+1：必定先手）并使场地变为「冰面」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -11603,6 +11927,10 @@
             "who": "foe",
             "stat": "defense",
             "stage": -1
+          },
+          {
+            "k": "terrain",
+            "name": "冰面"
           }
         ],
         "prio": 1
@@ -11781,7 +12109,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 18,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「林梢」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -11789,6 +12117,10 @@
           {
             "k": "heal",
             "pct": 0.28
+          },
+          {
+            "k": "terrain",
+            "name": "林梢"
           }
         ],
         "prio": 0
@@ -11821,7 +12153,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 16,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。召唤「狂风」天气。",
         "learnLevel": 16,
         "role": null,
         "exclusive": true,
@@ -11833,6 +12165,10 @@
               "weather": "下雨",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "狂风"
           }
         ],
         "prio": 0
@@ -11965,7 +12301,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；自身物防+1。（先手+1：必定先手）",
+        "description": "基础威力 52；自身物防+1。（先手+1：必定先手）并使场地变为「冰面」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -11975,6 +12311,10 @@
             "who": "self",
             "stat": "defense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "冰面"
           }
         ],
         "prio": 1
@@ -12157,7 +12497,7 @@
         "power": 54,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 54；命中后敌方物防-1。（先手+1：必定先手）",
+        "description": "基础威力 54；命中后敌方物防-1。（先手+1：必定先手）并使场地变为「修废场」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -12167,6 +12507,10 @@
             "who": "foe",
             "stat": "defense",
             "stage": -1
+          },
+          {
+            "k": "terrain",
+            "name": "修废场"
           }
         ],
         "prio": 1
@@ -12341,7 +12685,7 @@
         "power": 46,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 46；命中后 30% 使敌方潮湿。（先手+1：必定先手）",
+        "description": "基础威力 46；命中后 30% 使敌方潮湿。（先手+1：必定先手）并使场地变为「断桥」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -12350,6 +12694,10 @@
             "k": "dmg",
             "status": "潮湿",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "断桥"
           }
         ],
         "prio": 1
@@ -12525,7 +12873,7 @@
         "power": 54,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 54；命中后敌方物防-1。（先手+1：必定先手）",
+        "description": "基础威力 54；命中后敌方物防-1。（先手+1：必定先手）并使场地变为「山路」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -12535,6 +12883,10 @@
             "who": "foe",
             "stat": "defense",
             "stage": -1
+          },
+          {
+            "k": "terrain",
+            "name": "山路"
           }
         ],
         "prio": 1
@@ -12691,7 +13043,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后 30% 使敌方灼烧。（先手+1：必定先手）",
+        "description": "基础威力 52；命中后 30% 使敌方灼烧。（先手+1：必定先手）并使场地变为「沙丘」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -12700,6 +13052,10 @@
             "k": "dmg",
             "status": "灼烧",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "沙丘"
           }
         ],
         "prio": 1
@@ -12873,7 +13229,7 @@
         "power": 60,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 60；命中后 30% 使敌方灼烧。",
+        "description": "基础威力 60；命中后 30% 使敌方灼烧。并使场地变为「沙丘」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -12882,6 +13238,10 @@
             "k": "dmg",
             "status": "灼烧",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "沙丘"
           }
         ],
         "prio": 0
@@ -13014,7 +13374,7 @@
         "slot": 4,
         "name": "温泉安眠",
         "pp": 10,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「晴朗」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「晴朗」，持续 5 回合。召唤「骄阳」天气。",
         "type": "火",
         "category": "变化",
         "power": null,
@@ -13030,6 +13390,10 @@
               "weather": "晴朗",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "骄阳"
           }
         ],
         "prio": 0
@@ -13041,7 +13405,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 14,
-        "description": "自身特攻+1。（变化技能，不造成伤害）",
+        "description": "自身特攻+1。（变化技能，不造成伤害）并使场地变为「沙丘」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -13051,6 +13415,10 @@
             "who": "self",
             "stat": "spAttack",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "沙丘"
           }
         ],
         "prio": 0
@@ -13218,7 +13586,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 18,
-        "description": "自身物防+1。（变化技能，不造成伤害）",
+        "description": "自身物防+1。（变化技能，不造成伤害）并使场地变为「冰面」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -13228,6 +13596,10 @@
             "who": "self",
             "stat": "defense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "冰面"
           }
         ],
         "prio": 0
@@ -13408,7 +13780,7 @@
         "power": 60,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 60；命中后敌方物防-1。",
+        "description": "基础威力 60；命中后敌方物防-1。并使场地变为「冰面」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -13418,6 +13790,10 @@
             "who": "foe",
             "stat": "defense",
             "stage": -1
+          },
+          {
+            "k": "terrain",
+            "name": "冰面"
           }
         ],
         "prio": 0
@@ -13592,7 +13968,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 14,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「冰面」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -13600,6 +13976,10 @@
           {
             "k": "heal",
             "pct": 0.28
+          },
+          {
+            "k": "terrain",
+            "name": "冰面"
           }
         ],
         "prio": 0
@@ -13782,7 +14162,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 14,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。召唤「花粉风」天气。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -13794,6 +14174,10 @@
               "weather": "下雪",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "花粉风"
           }
         ],
         "prio": 0
@@ -13805,7 +14189,7 @@
         "power": 78,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 78；自身物防+1。",
+        "description": "基础威力 78；自身物防+1。并使场地变为「花田」。",
         "learnLevel": 18,
         "role": null,
         "exclusive": true,
@@ -13815,6 +14199,10 @@
             "who": "self",
             "stat": "defense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "花田"
           }
         ],
         "prio": 0
@@ -13969,7 +14357,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后 30% 使敌方潮湿。（先手+1：必定先手）",
+        "description": "基础威力 52；命中后 30% 使敌方潮湿。（先手+1：必定先手）并使场地变为「断桥」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -13978,6 +14366,10 @@
             "k": "dmg",
             "status": "潮湿",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "断桥"
           }
         ],
         "prio": 1
@@ -14122,7 +14514,7 @@
         "slot": 4,
         "name": "甲壳回温",
         "pp": 15,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雨」，持续 5 回合。召唤「小雨」天气。",
         "type": "水",
         "category": "变化",
         "power": null,
@@ -14138,6 +14530,10 @@
               "weather": "下雨",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "小雨"
           }
         ],
         "prio": 0
@@ -14149,11 +14545,16 @@
         "power": 64,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 64。",
+        "description": "基础威力 64。并使场地变为「断桥」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
-        "fx": [],
+        "fx": [
+          {
+            "k": "terrain",
+            "name": "断桥"
+          }
+        ],
         "prio": 0
       },
       {
@@ -14328,7 +14729,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 12,
-        "description": "自身特防+1。（变化技能，不造成伤害）",
+        "description": "自身特防+1。（变化技能，不造成伤害）并使场地变为「断桥」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -14338,6 +14739,10 @@
             "who": "self",
             "stat": "spDefense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "断桥"
           }
         ],
         "prio": 0
@@ -14507,7 +14912,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；自身物防+1。（先手+1：必定先手）",
+        "description": "基础威力 50；自身物防+1。（先手+1：必定先手）并使场地变为「山路」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -14517,6 +14922,10 @@
             "who": "self",
             "stat": "defense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "山路"
           }
         ],
         "prio": 1
@@ -14684,7 +15093,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 16,
-        "description": "敌方物防-1。（变化技能，不造成伤害）",
+        "description": "敌方物防-1。（变化技能，不造成伤害）并使场地变为「山路」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -14694,6 +15103,10 @@
             "who": "foe",
             "stat": "defense",
             "stage": -1
+          },
+          {
+            "k": "terrain",
+            "name": "山路"
           }
         ],
         "prio": 0
@@ -14866,7 +15279,7 @@
         "power": 74,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 74；命中后敌方物防-1。",
+        "description": "基础威力 74；命中后敌方物防-1。并使场地变为「山路」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -14876,6 +15289,10 @@
             "who": "foe",
             "stat": "defense",
             "stage": -1
+          },
+          {
+            "k": "terrain",
+            "name": "山路"
           }
         ],
         "prio": 0
@@ -15044,7 +15461,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；命中后 30% 使敌方流血。（先手+1：必定先手）",
+        "description": "基础威力 50；命中后 30% 使敌方流血。（先手+1：必定先手）并使场地变为「修废场」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -15053,6 +15470,10 @@
             "k": "dmg",
             "status": "流血",
             "chance": 0.3
+          },
+          {
+            "k": "terrain",
+            "name": "修废场"
           }
         ],
         "prio": 1
@@ -15233,7 +15654,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 14,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「晴朗」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「晴朗」，持续 5 回合。召唤「铁尘」天气。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -15245,6 +15666,10 @@
               "weather": "晴朗",
               "turns": 5
             }
+          },
+          {
+            "k": "weather",
+            "name": "铁尘"
           }
         ],
         "prio": 0
@@ -15256,7 +15681,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 12,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「修废场」。",
         "learnLevel": 16,
         "role": null,
         "exclusive": true,
@@ -15264,6 +15689,10 @@
           {
             "k": "heal",
             "pct": 0.28
+          },
+          {
+            "k": "terrain",
+            "name": "修废场"
           }
         ],
         "prio": 0
@@ -15419,11 +15848,16 @@
         "power": 64,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 64。",
+        "description": "基础威力 64。并使场地变为「修废场」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
-        "fx": [],
+        "fx": [
+          {
+            "k": "terrain",
+            "name": "修废场"
+          }
+        ],
         "prio": 0
       },
       {
@@ -15600,7 +16034,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 12,
-        "description": "敌方特防-1。（变化技能，不造成伤害）",
+        "description": "敌方特防-1。（变化技能，不造成伤害）并使场地变为「修废场」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -15610,6 +16044,10 @@
             "who": "foe",
             "stat": "spDefense",
             "stage": -1
+          },
+          {
+            "k": "terrain",
+            "name": "修废场"
           }
         ],
         "prio": 0
@@ -15792,7 +16230,7 @@
         "power": 76,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 76；自身物防+1。",
+        "description": "基础威力 76；自身物防+1。并使场地变为「修废场」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -15802,6 +16240,10 @@
             "who": "self",
             "stat": "defense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "修废场"
           }
         ],
         "prio": 0
@@ -15974,11 +16416,16 @@
         "power": 60,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 60。",
+        "description": "基础威力 60。并使场地变为「断桥」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
-        "fx": [],
+        "fx": [
+          {
+            "k": "terrain",
+            "name": "断桥"
+          }
+        ],
         "prio": 0
       },
       {
@@ -16151,7 +16598,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 14,
-        "description": "自身特防+1。（变化技能，不造成伤害）",
+        "description": "自身特防+1。（变化技能，不造成伤害）并使场地变为「断桥」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -16161,6 +16608,10 @@
             "who": "self",
             "stat": "spDefense",
             "stage": 1
+          },
+          {
+            "k": "terrain",
+            "name": "断桥"
           }
         ],
         "prio": 0

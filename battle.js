@@ -267,6 +267,7 @@
 
   function eff(mon, key) {
     var v = mon.stats[key] * buffMult(mon.buffs[key]);
+    if (key === 'speed') v *= fieldSpeed();
     if (key === 'speed') {
       if (mon.status['麻痹']) v *= 0.5;
       if (mon.status['潮湿']) v *= 0.85;
@@ -568,7 +569,7 @@
       myActive: 0, enActive: 0,
       turn: 1, log: [], over: false, busy: false,
       awaitingSwitch: false,
-      weather: '晴朗',
+      weather: null, weatherTurns: 0, terrain: null, terrainTurns: 0,
       ai: (document.getElementById('aiLevel') && document.getElementById('aiLevel').value) || 'normal'
     };
     $('buildView').classList.add('hidden');
@@ -577,7 +578,7 @@
     $('step').textContent = '第 2 步 · 战斗';
     renderBattle();
     logLine('对战开始！', 'turn');
-    logLine('当前天气：<b>' + b0().weather + '</b>（' + WEATHERS[b0().weather].desc + '）');
+    if (b0().weather) logLine('当前天气：<b>' + b0().weather + '</b>');
     logLine('我方首发 ' + state.battle.my[0].name + '，敌方首发 ' + state.battle.en[0].name + '。');
   }
 
@@ -591,7 +592,10 @@
     $('myActive').innerHTML = monCardHtml(mm);
 
     var wb = document.getElementById('weatherBadge');
-    if (wb) wb.innerHTML = '天气 <b>' + b.weather + '</b> · ' + WEATHERS[b.weather].desc;
+    if (wb) {
+      var wdef = WEATHERS[b.weather];
+      wb.innerHTML = b.weather ? ('天气 <b>' + b.weather + '</b> · ' + (wdef && wdef.desc ? wdef.desc : '')) : '天气 无';
+    }
 
     var bar = skillBar;
     bar.innerHTML = '';
@@ -693,7 +697,8 @@
     var tb2 = (defender.effects && defender.effects.reduce[s.type]) || 1;
     var critChance = 0.0625 + ((attacker.effects && attacker.effects.crit) || 0);
     var crit = Math.random() < critChance;
-    var dmg = base * tm * stab * wm * tb1 * tb2 * (crit ? 1.5 : 1) * rnd(0.85, 1);
+    var fm = fieldMult(s.type, s);
+    var dmg = base * tm * stab * wm * fm * tb1 * tb2 * (crit ? 1.5 : 1) * rnd(0.85, 1);
     return { dmg: Math.max(1, Math.floor(dmg)), type: tm, crit: crit };
   }
 
@@ -774,6 +779,10 @@
       } else if (f.k === 'shield') {
         user.shield += Math.floor(user.maxHp * (f.pct || 0.25));
         logLine(user.name + ' 获得了护盾。');
+      } else if (f.k === 'weather') {
+        setWeather(f.name);
+      } else if (f.k === 'terrain') {
+        setTerrain(f.name);
       } else if (f.k === 'guard') {
         user.protecting = true;
         user.guardRider = f.rider || null;
@@ -812,7 +821,7 @@
       return;
     }
 
-    if (s.accuracy && Math.random() * 100 > s.accuracy) {
+    if (s.accuracy && Math.random() * 100 > s.accuracy * fieldAcc()) {
       logLine(label + ' 但是没有命中。');
       return;
     }
@@ -1050,12 +1059,14 @@
 
     endOfTurn(b.my);
     endOfTurn(b.en);
+    fieldEndOfTurn(b.my);
+    fieldEndOfTurn(b.en);
     checkFaint();
 
     b.turn++;
     b.busy = false;
     if (b.turn > 100) { logLine('回合数达到上限，判定为平局。', 'turn'); return finishDraw(); }
-    maybeWeather();
+    tickField();
 
     if (aliveIdx(b.my).length === 0) return finish(false);
     if (aliveIdx(b.en).length === 0) return finish(true);
@@ -1134,6 +1145,167 @@
     });
     btn.addEventListener('contextmenu', function (e) { e.preventDefault(); show(); });
   }
+
+
+  /* ================= 天气 / 场地 / 环境 ================= */
+  var WX = {
+    '骄阳': { el: '火', mult: 1.2, weak: '冰', weakMult: 0.8 },
+    '小雨': { el: '水', mult: 1.1, weak: '火', weakMult: 0.9 },
+    '倾盆大雨': { el: '水', mult: 1.25, weak: '火', weakMult: 0.75 },
+    '雾霾': { el: '风', mult: 1.0, acc: 0.85 },
+    '暴雪': { el: '冰', mult: 1.2, speed: 0.9 },
+    '沙暴': { el: '土', mult: 1.15, chip: 1 / 16 },
+    '铁尘': { el: '钢', mult: 1.15, acc: 0.9 },
+    '狂风': { el: '风', mult: 1.2, prio: 1.1 },
+    '雷雨': { el: '雷', mult: 1.2, wet: 1.2 },
+    '晴空': { el: '光', mult: 1.2, weak: '暗', weakMult: 0.8 },
+    '夜幕': { el: '暗', mult: 1.2, weak: '光', weakMult: 0.8, acc: 0.95 },
+    '花粉风': { el: '草', mult: 1.1, regen: 1 / 16 }
+  };
+  var TR = {
+    '山路': { el: '土', onHitHeal: 0.05 },
+    '断桥': { el: '钢', firstHitReduce: 0.1 },
+    '修废场': { el: '钢', shieldBonus: 1.5 },
+    '垃圾堆': { el: '草', poisonChance: 0.2 },
+    '花田': { el: '草', regen: 1 / 16 },
+    '冰面': { el: '冰', speed: 1.1, acc: -0.05 },
+    '林梢': { el: '风', prioBoost: 1.2 },
+    '电网': { el: '雷', paraBonus: 0.15 },
+    '沙丘': { el: '土', speed: 0.9, mult: 1.1 },
+    '圣坛': { el: '光', changeBonus: 1.3 }
+  };
+  var ENVS = {
+    '小雨|山路': { name: '林中小路', type: '草', mult: 1.1, healOnHit: 0.2 },
+    '倾盆大雨|断桥': { name: '暴雨断桥', type: '水', mult: 1.15, slowBoost: 1.25 },
+    '骄阳|圣坛': { name: '骄阳圣坛', type: '火', changeBonus: 1.5, burnChange: true },
+    '雾霾|修废场': { name: '尘雾修废场', shieldBonus: 1.7, acc: 0.85 },
+    '暴雪|冰面': { name: '雪埋冰面', type: '冰', mult: 1.15, speed: 1.1, acc: -0.1 },
+    '沙暴|沙丘': { name: '沙暴沙丘', type: '土', mult: 1.25, chip: 1 / 16 },
+    '铁尘|电网': { name: '铁雨电网', paraBonus: 0.25, steelVsPara: 1.2 },
+    '狂风|林梢': { name: '狂风林梢', prioBoost: 1.4 },
+    '雷雨|断桥': { name: '雷暴断桥', type: '雷', mult: 1.3, wet: 1.2 },
+    '晴空|花田': { name: '晴空花田', regen: 1 / 8, lightRegenX2: true },
+    '夜幕|垃圾堆': { name: '夜幕垃圾堆', poisonChance: 0.2, darkVsPoison: 1.25 },
+    '花粉风|花田': { name: '花粉风花田', type: '草', mult: 1.25, regen: 1 / 6 },
+    '小雨|垃圾堆': { name: '沼泽', speed: 0.85, chip: 1 / 16 },
+    '骄阳|沙丘': { name: '灼沙', type: '火', mult: 1.2, chip: 1 / 20 },
+    '雷雨|电网': { name: '超载电网', paraBonus: 0.3, paraBacklash: 1 / 12 },
+    '暴雪|山路': { name: '雪封山路', type: '冰', mult: 1.25, healOnHit: 0.1 },
+    '晴空|圣坛': { name: '晴空圣坛', type: '光', mult: 1.3, changeBonus: 1.4 }
+  };
+
+  function fieldOf() {
+    var b = state.battle;
+    return b && b.mode === 'double' ? dbl.b : b;
+  }
+  function setWeather(name) {
+    var b = fieldOf();
+    if (!b || !WX[name]) return;
+    b.weather = name;
+    b.weatherTurns = 5;
+    logLine('天气变为「<b>' + name + '</b>」（5 回合）', 'turn');
+    renderField();
+  }
+  function setTerrain(name) {
+    var b = fieldOf();
+    if (!b || !TR[name]) return;
+    b.terrain = name;
+    b.terrainTurns = 8;
+    logLine('场地变为「<b>' + name + '</b>」（8 回合）', 'turn');
+    renderField();
+  }
+  function currentEnv() {
+    var b = fieldOf();
+    if (!b || !b.weather || !b.terrain) return null;
+    return ENVS[b.weather + '|' + b.terrain] || null;
+  }
+  function fieldMult(type, skill) {
+    var b = fieldOf();
+    if (!b) return 1;
+    var m = 1;
+    var w = WX[b.weather];
+    if (w && w.el === type) m *= w.mult;
+    if (w && w.weak === type) m *= w.weakMult;
+    var t = TR[b.terrain];
+    if (t && t.el === type) m *= 1.1;
+    if (t && t.mult && t.el === type) m *= t.mult;
+    var e = currentEnv();
+    if (e && e.type === type) m *= e.mult;
+    if (e && e.slowBoost && skill && skill.category === '物理') m *= e.slowBoost;
+    if (e && e.steelVsPara && type === '钢') m *= 1;
+    return m;
+  }
+  function fieldAcc() {
+    var b = fieldOf();
+    if (!b) return 1;
+    var a = 1, w = WX[b.weather], t = TR[b.terrain], e = currentEnv();
+    if (w && w.acc) a *= w.acc;
+    if (t && t.acc) a *= (1 + t.acc);
+    if (e && e.acc) a *= e.acc;
+    return a;
+  }
+  function fieldSpeed() {
+    var b = fieldOf();
+    if (!b) return 1;
+    var m = 1, w = WX[b.weather], t = TR[b.terrain], e = currentEnv();
+    if (w && w.speed) m *= w.speed;
+    if (t && t.speed) m *= t.speed;
+    if (e && e.speed) m *= e.speed;
+    return m;
+  }
+  function tickField() {
+    var b = fieldOf();
+    if (!b) return;
+    if (b.weatherTurns > 0) {
+      b.weatherTurns--;
+      if (b.weatherTurns === 0) { logLine('天气恢复正常。'); b.weather = null; }
+    }
+    if (b.terrainTurns > 0) {
+      b.terrainTurns--;
+      if (b.terrainTurns === 0) { logLine('场地效果消失。'); b.terrain = null; }
+    }
+    var e = currentEnv();
+    if (e) logLine('环境形成：<b>' + e.name + '</b>', 'turn');
+    renderField();
+  }
+  function fieldEndOfTurn(team) {
+    var b = fieldOf();
+    if (!b) return;
+    var e = currentEnv();
+    var w = WX[b.weather] || {};
+    var t = TR[b.terrain] || {};
+    team.forEach(function (m) {
+      if (m.fainted) return;
+      var regen = (w.regen || 0) + (t.regen || 0) + (e && e.regen || 0);
+      if (regen > 0) {
+        var hl = Math.max(1, Math.floor(m.maxHp * regen));
+        m.hp = Math.min(m.maxHp, m.hp + hl);
+      }
+      var chip = w.chip || (e && e.chip) || 0;
+      if (chip > 0 && !(m.element === '土' || m.element === '钢')) {
+        m.hp = Math.max(0, m.hp - Math.max(1, Math.floor(m.maxHp * chip)));
+      }
+    });
+    if (t.poisonChance && Math.random() < t.poisonChance) {
+      team.forEach(function (m) { if (!m.fainted) m.status['中毒'] = 3; });
+    }
+  }
+  function renderField() {
+    var b = fieldOf();
+    if (!b) return;
+    var host = document.getElementById('fieldBar');
+    if (!host) return;
+    var e = currentEnv();
+    var parts = [];
+    if (b.weather) parts.push('天气 <b>' + b.weather + '</b>（' + (b.weatherTurns || 0) + '）');
+    else parts.push('天气 无');
+    if (b.terrain) parts.push('场地 <b>' + b.terrain + '</b>（' + (b.terrainTurns || 0) + '）');
+    else parts.push('场地 无');
+    if (e) parts.push('环境 <b class="env">' + e.name + '</b>');
+    host.innerHTML = parts.join('　·　');
+  }
+
+  /* ================= 接入完成 ================= */
 
   function chooseAiSkill(attacker, defender) {
     var level = (state.battle && state.battle.ai) || 'normal';
@@ -1236,7 +1408,7 @@
       en: state.enemy.map(function (cfg, i) { return makeMon(cfg, 'enemy', i); }),
       mySlots: [0, 1], enSlots: [0, 1],
       turn: 1, log: [], over: false, busy: false, awaiting: false,
-      weather: '晴朗', winner: null,
+      weather: null, weatherTurns: 0, terrain: null, terrainTurns: 0, winner: null,
       ai: (document.getElementById('aiLevel') && document.getElementById('aiLevel').value) || 'normal'
     };
     dbl.b = b;
@@ -1249,7 +1421,7 @@
     document.getElementById('step').textContent = '第 2 步 · 双打 · 第 1 回合';
     logLine('双打对战开始！', 'turn');
     logLine('我方 ' + b.my[0].name + ' + ' + b.my[1].name + '　VS　' + b.en[0].name + ' + ' + b.en[1].name);
-    logLine('天气：<b>' + b.weather + '</b>（' + WEATHERS[b.weather].desc + '）');
+    if (b.weather) logLine('天气：<b>' + b.weather + '</b>');
     renderDoubles();
   }
 
@@ -1289,7 +1461,10 @@
     document.getElementById('dblEnemy').innerHTML = dblCard(dblMon('enemy', 0), '敌A · 前排') + dblCard(dblMon('enemy', 1), '敌B · 后排');
     document.getElementById('dblMine').innerHTML = dblCard(dblMon('my', 0), '我A · 前排') + dblCard(dblMon('my', 1), '我B · 后排');
     var wb = document.getElementById('dblWeather');
-    if (wb) wb.innerHTML = '天气 <b>' + b.weather + '</b> · ' + WEATHERS[b.weather].desc;
+    if (wb) {
+      var wdef = WEATHERS[b.weather];
+      wb.innerHTML = b.weather ? ('天气 <b>' + b.weather + '</b> · ' + (wdef && wdef.desc ? wdef.desc : '')) : '天气 无';
+    }
     document.getElementById('step').textContent = '第 2 步 · 双打 · 第 ' + b.turn + ' 回合';
 
     var host = document.getElementById('dblActions');
@@ -1473,6 +1648,7 @@
     });
 
     endOfTurn(b.my); endOfTurn(b.en);
+    fieldEndOfTurn(b.my); fieldEndOfTurn(b.en);
     dblCheckFaint();
     b.swapped = false;
     b.my.concat(b.en).forEach(function (m) {
