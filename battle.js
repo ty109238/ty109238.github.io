@@ -263,7 +263,13 @@
   }
 
   function eff(mon, key) {
-    return Math.floor(mon.stats[key] * buffMult(mon.buffs[key]));
+    var v = mon.stats[key] * buffMult(mon.buffs[key]);
+    if (key === 'speed') {
+      if (mon.status['麻痹']) v *= 0.5;
+      if (mon.status['潮湿']) v *= 0.85;
+      if (mon.status['减速']) v *= 0.8;
+    }
+    return Math.floor(v);
   }
 
   /* ---------------- 建队 ---------------- */
@@ -743,6 +749,37 @@
     });
   }
 
+  var STAT_CN2 = { hp: '生命', attack: '物攻', defense: '物防', spAttack: '特攻', spDefense: '特防', speed: '速度' };
+
+  function applyFx(user, foe, s) {
+    if (!s.fx || !s.fx.length) return;
+    s.fx.forEach(function (f) {
+      if (f.k === 'stat') {
+        var who = f.who === 'self' ? user : foe;
+        who.buffs[f.stat] = clamp((who.buffs[f.stat] || 0) + f.stage, -3, 3);
+        logLine((f.who === 'self' ? user.name : foe.name) + ' 的' + STAT_CN2[f.stat] +
+          (f.stage > 0 ? ' +' : ' ') + f.stage + '。');
+      } else if (f.k === 'dmg') {
+        if (Math.random() < (f.chance || 0.3)) {
+          foe.status[f.status] = 3;
+          logLine('<b>' + foe.name + '</b> 陷入「' + f.status + '」。');
+        }
+      } else if (f.k === 'heal') {
+        var hl = Math.floor(user.maxHp * (f.pct || 0.28));
+        user.hp = Math.min(user.maxHp, user.hp + hl);
+        logLine(user.name + ' 回复了 <span class="eff">' + hl + '</span> 点生命。');
+      } else if (f.k === 'shield') {
+        user.shield += Math.floor(user.maxHp * (f.pct || 0.25));
+        logLine(user.name + ' 获得了护盾。');
+      } else if (f.k === 'guard') {
+        user.protecting = true;
+        user.guardRider = f.rider || null;
+        user._guardReduce = f.reduce || 0.6;
+        logLine(user.name + ' 进入防御姿态（减伤 ' + Math.round((1 - (f.reduce || 0.6)) * 100) + '%）。');
+      }
+    });
+  }
+
   function useSkill(user, foe, s, dmgMult, opts) {
     opts = opts || {};
     if (s.ppNow <= 0) { logLine(user.name + ' 的技能没有 PP 了。'); return; }
@@ -750,6 +787,10 @@
     var label = '<b>' + user.name + '</b> 使用 <b>' + s.name + '</b>。';
 
     if (s.category === '变化') {
+      applyFx(user, foe, s);
+      return;
+    }
+    if (false) {
       var d = s.description || '';
       var tgtMon = opts.ally ? foe : user;
       if (/回复|治疗/.test(d)) {
@@ -776,7 +817,12 @@
     var r = calcDamage(user, foe, s);
     var dmg = Math.max(1, Math.floor(r.dmg * (dmgMult || 1)));
     if (foe.protecting) {
-      dmg = Math.max(1, Math.floor(dmg * 0.4));
+      dmg = Math.max(1, Math.floor(dmg * (1 - (foe._guardReduce || 0.6))));
+      if (foe.guardRider && foe.guardRider.weather && state.battle) {
+        state.battle.weather = foe.guardRider.weather;
+        logLine('天气变为「<b>' + foe.guardRider.weather + '</b>」，持续 ' + (foe.guardRider.turns || 5) + ' 回合。', 'turn');
+        foe.guardRider = null;
+      }
       var counter = Math.max(1, Math.floor(foe.maxHp / 16));
       user.hp = Math.max(0, user.hp - counter);
       logLine(foe.name + ' 保护反击，' + user.name + ' 受到 <span class="dmg">' + counter + '</span> 点反伤。');
@@ -795,7 +841,7 @@
     else if (r.type === 0.5) extra = ' <span class="weak">收效甚微…</span>';
     if (r.crit) extra += ' <span class="crit">会心一击！</span>';
     logLine(label + ' 造成 <span class="dmg">' + dmg + '</span> 点伤害。' + extra);
-    if (dmg > 0) applyStatus(foe, s);
+    if (dmg > 0) applyFx(user, foe, s);
   }
 
   function endOfTurn(team) {
@@ -806,6 +852,9 @@
       if (m.status['中毒']) { tick += Math.floor(m.maxHp / 12); m.status['中毒']--; if (m.status['中毒'] <= 0) delete m.status['中毒']; }
       if (m.status['流血']) { tick += Math.floor(m.maxHp / 16); m.status['流血']--; if (m.status['流血'] <= 0) delete m.status['流血']; }
       if (m.status['冰冻']) { m.status['冰冻']--; if (m.status['冰冻'] <= 0) delete m.status['冰冻']; }
+      ['麻痹', '潮湿', '减速'].forEach(function (k) {
+        if (m.status[k]) { m.status[k]--; if (m.status[k] <= 0) delete m.status[k]; }
+      });
       if (tick > 0) {
         m.hp = Math.max(0, m.hp - tick);
         logLine(m.name + ' 受到状态伤害 <span class="dmg">' + tick + '</span>。');
@@ -979,6 +1028,10 @@
       var user = who === 'my' ? b.my[b.myActive] : b.en[b.enActive];
       var target = who === 'my' ? b.en[b.enActive] : b.my[b.myActive];
       if (user.fainted) continue;
+      if (user.status['麻痹'] && Math.random() < 0.25) {
+        logLine(user.name + ' 被麻痹了，无法行动。');
+        continue;
+      }
       if (user.status['冰冻'] && Math.random() < 0.3) {
         logLine(user.name + ' 被冻住了，无法行动。');
         continue;
@@ -1398,6 +1451,7 @@
         useSkill(a.mon, allyMon, a.skill, 1, { ally: true });
         return;
       }
+      if (a.mon.status['麻痹'] && Math.random() < 0.25) { logLine(a.mon.name + ' 被麻痹了，无法行动。'); return; }
       if (a.mon.status['冰冻'] && Math.random() < 0.3) { logLine(a.mon.name + ' 被冻住了。'); return; }
       var spread = /范围|全体|领域/.test(a.skill.description || '');
       if (spread) {
