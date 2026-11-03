@@ -1163,7 +1163,7 @@
     '花粉风': { el: '草', mult: 1.1, regen: 1 / 16 }
   };
   var TR = {
-    '山路': { el: '土', onHitHeal: 0.05 },
+    '山路': { el: '水', onHitHeal: 0.05 },
     '断桥': { el: '钢', firstHitReduce: 0.1 },
     '修废场': { el: '火', shieldBonus: 1.5 },
     '垃圾堆': { el: '暗', poisonChance: 0.2 },

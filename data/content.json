@@ -3304,7 +3304,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 20,
-        "description": "自身特防+1。（变化技能，不造成伤害）并使场地变为「断桥」。",
+        "description": "自身特防+1。（变化技能，不造成伤害）并使场地变为「山路」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -3317,7 +3317,7 @@
           },
           {
             "k": "terrain",
-            "name": "断桥"
+            "name": "山路"
           }
         ],
         "prio": 0
@@ -3498,7 +3498,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 15,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「断桥」。",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「山路」。",
         "learnLevel": 14,
         "role": null,
         "exclusive": true,
@@ -3509,7 +3509,7 @@
           },
           {
             "k": "terrain",
-            "name": "断桥"
+            "name": "山路"
           }
         ],
         "prio": 0
@@ -3697,7 +3697,7 @@
         "power": 92,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 92；自身特防+1。（先手-1：必定后手）并使场地变为「断桥」。",
+        "description": "基础威力 92；自身特防+1。（先手-1：必定后手）并使场地变为「山路」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -3710,7 +3710,7 @@
           },
           {
             "k": "terrain",
-            "name": "断桥"
+            "name": "山路"
           }
         ],
         "prio": -1
@@ -6232,14 +6232,14 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50。（先手+1：必定先手）并使场地变为「山路」。",
+        "description": "基础威力 50。（先手+1：必定先手）并使场地变为「沙丘」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
         "fx": [
           {
             "k": "terrain",
-            "name": "山路"
+            "name": "沙丘"
           }
         ],
         "prio": 1
@@ -6408,7 +6408,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 16,
-        "description": "自身物防+1。（变化技能，不造成伤害）并使场地变为「山路」。",
+        "description": "自身物防+1。（变化技能，不造成伤害）并使场地变为「沙丘」。",
         "learnLevel": 10,
         "role": null,
         "exclusive": true,
@@ -6421,7 +6421,7 @@
           },
           {
             "k": "terrain",
-            "name": "山路"
+            "name": "沙丘"
           }
         ],
         "prio": 0
@@ -6612,7 +6612,7 @@
         "power": 78,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 78；命中后 30% 使敌方中毒。并使场地变为「山路」。",
+        "description": "基础威力 78；命中后 30% 使敌方中毒。并使场地变为「沙丘」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -6624,7 +6624,7 @@
           },
           {
             "k": "terrain",
-            "name": "山路"
+            "name": "沙丘"
           }
         ],
         "prio": 0
@@ -7367,7 +7367,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后 30% 使敌方流血。（先手+1：必定先手）并使场地变为「沙丘」。",
+        "description": "基础威力 52；命中后 30% 使敌方流血。（先手+1：必定先手）并使场地变为「断桥」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -7379,7 +7379,7 @@
           },
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "断桥"
           }
         ],
         "prio": 1
@@ -7557,7 +7557,7 @@
         "power": 66,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 66；命中后 30% 使敌方流血。并使场地变为「沙丘」。",
+        "description": "基础威力 66；命中后 30% 使敌方流血。并使场地变为「断桥」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -7569,7 +7569,7 @@
           },
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "断桥"
           }
         ],
         "prio": 0
@@ -7745,7 +7745,7 @@
         "power": 78,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 78；命中后 30% 使敌方流血。并使场地变为「沙丘」。",
+        "description": "基础威力 78；命中后 30% 使敌方流血。并使场地变为「断桥」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -7757,7 +7757,7 @@
           },
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "断桥"
           }
         ],
         "prio": 0
@@ -11322,7 +11322,7 @@
         "power": 48,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 48；命中后敌方特防-1。（先手+1：必定先手）并使场地变为「断桥」。",
+        "description": "基础威力 48；命中后敌方特防-1。（先手+1：必定先手）并使场地变为「山路」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -11335,7 +11335,7 @@
           },
           {
             "k": "terrain",
-            "name": "断桥"
+            "name": "山路"
           }
         ],
         "prio": 1
@@ -11519,7 +11519,7 @@
         "power": 62,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 62；命中后 30% 使敌方潮湿。并使场地变为「断桥」。",
+        "description": "基础威力 62；命中后 30% 使敌方潮湿。并使场地变为「山路」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -11531,7 +11531,7 @@
           },
           {
             "k": "terrain",
-            "name": "断桥"
+            "name": "山路"
           }
         ],
         "prio": 0
@@ -11713,7 +11713,7 @@
         "power": 80,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 80；自身特防+1。并使场地变为「断桥」。",
+        "description": "基础威力 80；自身特防+1。并使场地变为「山路」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -11726,7 +11726,7 @@
           },
           {
             "k": "terrain",
-            "name": "断桥"
+            "name": "山路"
           }
         ],
         "prio": 0
@@ -12497,7 +12497,7 @@
         "power": 54,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 54；命中后敌方物防-1。（先手+1：必定先手）并使场地变为「沙丘」。",
+        "description": "基础威力 54；命中后敌方物防-1。（先手+1：必定先手）并使场地变为「断桥」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -12510,7 +12510,7 @@
           },
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "断桥"
           }
         ],
         "prio": 1
@@ -12685,7 +12685,7 @@
         "power": 46,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 46；命中后 30% 使敌方潮湿。（先手+1：必定先手）并使场地变为「断桥」。",
+        "description": "基础威力 46；命中后 30% 使敌方潮湿。（先手+1：必定先手）并使场地变为「山路」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -12697,7 +12697,7 @@
           },
           {
             "k": "terrain",
-            "name": "断桥"
+            "name": "山路"
           }
         ],
         "prio": 1
@@ -12873,7 +12873,7 @@
         "power": 54,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 54；命中后敌方物防-1。（先手+1：必定先手）并使场地变为「山路」。",
+        "description": "基础威力 54；命中后敌方物防-1。（先手+1：必定先手）并使场地变为「沙丘」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -12886,7 +12886,7 @@
           },
           {
             "k": "terrain",
-            "name": "山路"
+            "name": "沙丘"
           }
         ],
         "prio": 1
@@ -14357,7 +14357,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后 30% 使敌方潮湿。（先手+1：必定先手）并使场地变为「断桥」。",
+        "description": "基础威力 52；命中后 30% 使敌方潮湿。（先手+1：必定先手）并使场地变为「山路」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -14369,7 +14369,7 @@
           },
           {
             "k": "terrain",
-            "name": "断桥"
+            "name": "山路"
           }
         ],
         "prio": 1
@@ -14545,14 +14545,14 @@
         "power": 64,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 64。并使场地变为「断桥」。",
+        "description": "基础威力 64。并使场地变为「山路」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
         "fx": [
           {
             "k": "terrain",
-            "name": "断桥"
+            "name": "山路"
           }
         ],
         "prio": 0
@@ -14729,7 +14729,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 12,
-        "description": "自身特防+1。（变化技能，不造成伤害）并使场地变为「断桥」。",
+        "description": "自身特防+1。（变化技能，不造成伤害）并使场地变为「山路」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -14742,7 +14742,7 @@
           },
           {
             "k": "terrain",
-            "name": "断桥"
+            "name": "山路"
           }
         ],
         "prio": 0
@@ -14912,7 +14912,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；自身物防+1。（先手+1：必定先手）并使场地变为「山路」。",
+        "description": "基础威力 50；自身物防+1。（先手+1：必定先手）并使场地变为「沙丘」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -14925,7 +14925,7 @@
           },
           {
             "k": "terrain",
-            "name": "山路"
+            "name": "沙丘"
           }
         ],
         "prio": 1
@@ -15093,7 +15093,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 16,
-        "description": "敌方物防-1。（变化技能，不造成伤害）并使场地变为「山路」。",
+        "description": "敌方物防-1。（变化技能，不造成伤害）并使场地变为「沙丘」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -15106,7 +15106,7 @@
           },
           {
             "k": "terrain",
-            "name": "山路"
+            "name": "沙丘"
           }
         ],
         "prio": 0
@@ -15279,7 +15279,7 @@
         "power": 74,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 74；命中后敌方物防-1。并使场地变为「山路」。",
+        "description": "基础威力 74；命中后敌方物防-1。并使场地变为「沙丘」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -15292,7 +15292,7 @@
           },
           {
             "k": "terrain",
-            "name": "山路"
+            "name": "沙丘"
           }
         ],
         "prio": 0
@@ -15461,7 +15461,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；命中后 30% 使敌方流血。（先手+1：必定先手）并使场地变为「沙丘」。",
+        "description": "基础威力 50；命中后 30% 使敌方流血。（先手+1：必定先手）并使场地变为「断桥」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -15473,7 +15473,7 @@
           },
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "断桥"
           }
         ],
         "prio": 1
@@ -15681,7 +15681,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 12,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「沙丘」。",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「断桥」。",
         "learnLevel": 16,
         "role": null,
         "exclusive": true,
@@ -15692,7 +15692,7 @@
           },
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "断桥"
           }
         ],
         "prio": 0
@@ -15848,14 +15848,14 @@
         "power": 64,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 64。并使场地变为「沙丘」。",
+        "description": "基础威力 64。并使场地变为「断桥」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
         "fx": [
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "断桥"
           }
         ],
         "prio": 0
@@ -16034,7 +16034,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 12,
-        "description": "敌方特防-1。（变化技能，不造成伤害）并使场地变为「沙丘」。",
+        "description": "敌方特防-1。（变化技能，不造成伤害）并使场地变为「断桥」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -16047,7 +16047,7 @@
           },
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "断桥"
           }
         ],
         "prio": 0
@@ -16230,7 +16230,7 @@
         "power": 76,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 76；自身物防+1。并使场地变为「沙丘」。",
+        "description": "基础威力 76；自身物防+1。并使场地变为「断桥」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -16243,7 +16243,7 @@
           },
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "断桥"
           }
         ],
         "prio": 0
@@ -16416,14 +16416,14 @@
         "power": 60,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 60。并使场地变为「断桥」。",
+        "description": "基础威力 60。并使场地变为「山路」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
         "fx": [
           {
             "k": "terrain",
-            "name": "断桥"
+            "name": "山路"
           }
         ],
         "prio": 0
@@ -16598,7 +16598,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 14,
-        "description": "自身特防+1。（变化技能，不造成伤害）并使场地变为「断桥」。",
+        "description": "自身特防+1。（变化技能，不造成伤害）并使场地变为「山路」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -16611,7 +16611,7 @@
           },
           {
             "k": "terrain",
-            "name": "断桥"
+            "name": "山路"
           }
         ],
         "prio": 0

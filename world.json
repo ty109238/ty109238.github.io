@@ -116,7 +116,7 @@
   "terrains": [
     {
       "name": "山路",
-      "element": "土",
+      "element": "水",
       "effect": "土系技能命中后，使用者回复自身 5% 生命。"
     },
     {
