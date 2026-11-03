@@ -32,6 +32,7 @@
     DATA.statuses.forEach(function (s) {
       grid.appendChild(card({
         name: s.name,
+        icon: 'status-' + (s.name === '灼烧' ? 'burn' : s.name === '中毒' ? 'poison' : s.name === '冰冻' ? 'freeze' : 'guard') + '.webp',
         tag: s.kind === 'debuff' ? '负面' : '增益',
         tone: s.kind === 'debuff' ? 'bad' : 'good',
         effect: s.effect,
@@ -51,7 +52,7 @@
     DATA.weathers.forEach(function (w) {
       grid.appendChild(card({
         name: w.name,
-        icon: 'elem-' + (ELEM_ICON[w.element] || 'fire') + '.webp',
+        icon: w.icon ? w.icon + '.webp' : 'elem-' + (ELEM_ICON[w.element] || 'fire') + '.webp',
         tag: w.element + '系',
         tone: 'weather',
         effect: w.effect,
@@ -63,7 +64,7 @@
     DATA.terrains.forEach(function (t) {
       grid.appendChild(card({
         name: t.name,
-        icon: 'elem-' + (ELEM_ICON[t.element] || 'fire') + '.webp',
+        icon: t.icon ? t.icon + '.webp' : 'elem-' + (ELEM_ICON[t.element] || 'fire') + '.webp',
         tag: t.element + '系',
         tone: 'terrain',
         effect: t.effect,
@@ -75,7 +76,8 @@
     DATA.environments.forEach(function (e) {
       var c = el('article', 'w-card env');
       c.innerHTML =
-        '<div class="w-head"><h3>' + e.name + '</h3><span class="w-tag env-tag">环境</span></div>' +
+        '<div class="w-head">' + (e.icon ? '<img src="/media/ui/' + e.icon + '.webp" alt="">' : '') +
+        '<h3>' + e.name + '</h3><span class="w-tag env-tag">环境</span></div>' +
         '<div class="w-combo"><span class="c-weather">' + e.weather + '</span><b>＋</b><span class="c-terrain">' + e.terrain + '</span></div>' +
         '<p class="w-effect">' + e.effect + '</p>';
       grid.appendChild(c);
