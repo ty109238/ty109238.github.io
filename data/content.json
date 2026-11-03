@@ -2733,14 +2733,14 @@
         "power": 52,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 52。（先手+1：必定先手）并使场地变为「沙丘」。",
+        "description": "基础威力 52。（先手+1：必定先手）并使场地变为「修废场」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
         "fx": [
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "修废场"
           }
         ],
         "prio": 1
@@ -2921,7 +2921,7 @@
         "power": 62,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 62；命中后 30% 使敌方灼烧。并使场地变为「沙丘」。",
+        "description": "基础威力 62；命中后 30% 使敌方灼烧。并使场地变为「修废场」。",
         "learnLevel": 10,
         "role": null,
         "exclusive": true,
@@ -2933,7 +2933,7 @@
           },
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "修废场"
           }
         ],
         "prio": 0
@@ -3110,7 +3110,7 @@
         "power": 78,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 78；命中后 30% 使敌方灼烧。并使场地变为「沙丘」。",
+        "description": "基础威力 78；命中后 30% 使敌方灼烧。并使场地变为「修废场」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -3122,7 +3122,7 @@
           },
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "修废场"
           }
         ],
         "prio": 0
@@ -7367,7 +7367,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后 30% 使敌方流血。（先手+1：必定先手）并使场地变为「修废场」。",
+        "description": "基础威力 52；命中后 30% 使敌方流血。（先手+1：必定先手）并使场地变为「沙丘」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -7379,7 +7379,7 @@
           },
           {
             "k": "terrain",
-            "name": "修废场"
+            "name": "沙丘"
           }
         ],
         "prio": 1
@@ -7557,7 +7557,7 @@
         "power": 66,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 66；命中后 30% 使敌方流血。并使场地变为「修废场」。",
+        "description": "基础威力 66；命中后 30% 使敌方流血。并使场地变为「沙丘」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -7569,7 +7569,7 @@
           },
           {
             "k": "terrain",
-            "name": "修废场"
+            "name": "沙丘"
           }
         ],
         "prio": 0
@@ -7745,7 +7745,7 @@
         "power": 78,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 78；命中后 30% 使敌方流血。并使场地变为「修废场」。",
+        "description": "基础威力 78；命中后 30% 使敌方流血。并使场地变为「沙丘」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -7757,7 +7757,7 @@
           },
           {
             "k": "terrain",
-            "name": "修废场"
+            "name": "沙丘"
           }
         ],
         "prio": 0
@@ -12497,7 +12497,7 @@
         "power": 54,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 54；命中后敌方物防-1。（先手+1：必定先手）并使场地变为「修废场」。",
+        "description": "基础威力 54；命中后敌方物防-1。（先手+1：必定先手）并使场地变为「沙丘」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -12510,7 +12510,7 @@
           },
           {
             "k": "terrain",
-            "name": "修废场"
+            "name": "沙丘"
           }
         ],
         "prio": 1
@@ -13043,7 +13043,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后 30% 使敌方灼烧。（先手+1：必定先手）并使场地变为「沙丘」。",
+        "description": "基础威力 52；命中后 30% 使敌方灼烧。（先手+1：必定先手）并使场地变为「修废场」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -13055,7 +13055,7 @@
           },
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "修废场"
           }
         ],
         "prio": 1
@@ -13229,7 +13229,7 @@
         "power": 60,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 60；命中后 30% 使敌方灼烧。并使场地变为「沙丘」。",
+        "description": "基础威力 60；命中后 30% 使敌方灼烧。并使场地变为「修废场」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -13241,7 +13241,7 @@
           },
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "修废场"
           }
         ],
         "prio": 0
@@ -13405,7 +13405,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 14,
-        "description": "自身特攻+1。（变化技能，不造成伤害）并使场地变为「沙丘」。",
+        "description": "自身特攻+1。（变化技能，不造成伤害）并使场地变为「修废场」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -13418,7 +13418,7 @@
           },
           {
             "k": "terrain",
-            "name": "沙丘"
+            "name": "修废场"
           }
         ],
         "prio": 0
@@ -15461,7 +15461,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；命中后 30% 使敌方流血。（先手+1：必定先手）并使场地变为「修废场」。",
+        "description": "基础威力 50；命中后 30% 使敌方流血。（先手+1：必定先手）并使场地变为「沙丘」。",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -15473,7 +15473,7 @@
           },
           {
             "k": "terrain",
-            "name": "修废场"
+            "name": "沙丘"
           }
         ],
         "prio": 1
@@ -15681,7 +15681,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 12,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「修废场」。",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）并使场地变为「沙丘」。",
         "learnLevel": 16,
         "role": null,
         "exclusive": true,
@@ -15692,7 +15692,7 @@
           },
           {
             "k": "terrain",
-            "name": "修废场"
+            "name": "沙丘"
           }
         ],
         "prio": 0
@@ -15848,14 +15848,14 @@
         "power": 64,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 64。并使场地变为「修废场」。",
+        "description": "基础威力 64。并使场地变为「沙丘」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
         "fx": [
           {
             "k": "terrain",
-            "name": "修废场"
+            "name": "沙丘"
           }
         ],
         "prio": 0
@@ -16034,7 +16034,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 12,
-        "description": "敌方特防-1。（变化技能，不造成伤害）并使场地变为「修废场」。",
+        "description": "敌方特防-1。（变化技能，不造成伤害）并使场地变为「沙丘」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -16047,7 +16047,7 @@
           },
           {
             "k": "terrain",
-            "name": "修废场"
+            "name": "沙丘"
           }
         ],
         "prio": 0
@@ -16230,7 +16230,7 @@
         "power": 76,
         "accuracy": 100,
         "pp": 10,
-        "description": "基础威力 76；自身物防+1。并使场地变为「修废场」。",
+        "description": "基础威力 76；自身物防+1。并使场地变为「沙丘」。",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -16243,7 +16243,7 @@
           },
           {
             "k": "terrain",
-            "name": "修废场"
+            "name": "沙丘"
           }
         ],
         "prio": 0

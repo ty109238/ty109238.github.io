@@ -1165,8 +1165,8 @@
   var TR = {
     '山路': { el: '土', onHitHeal: 0.05 },
     '断桥': { el: '钢', firstHitReduce: 0.1 },
-    '修废场': { el: '钢', shieldBonus: 1.5 },
-    '垃圾堆': { el: '草', poisonChance: 0.2 },
+    '修废场': { el: '火', shieldBonus: 1.5 },
+    '垃圾堆': { el: '暗', poisonChance: 0.2 },
     '花田': { el: '草', regen: 1 / 16 },
     '冰面': { el: '冰', speed: 1.1, acc: -0.05 },
     '林梢': { el: '风', prioBoost: 1.2 },
