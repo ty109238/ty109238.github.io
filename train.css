@@ -1208,3 +1208,25 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
 .ob-dots i { width: 7px; height: 7px; border-radius: 50%; background: #dbe6f0; }
 .ob-dots i.on { background: var(--pink); }
 .ob-next { padding: 9px 22px; border: 2px solid var(--ink); border-radius: 999px; background: var(--yellow); font: inherit; font-size: 13.5px; font-weight: 900; cursor: pointer; }
+/* 蛋形态：去掉棋子格/白底，让蛋直接浮在页面上 */
+.egg-frame,
+.egg-frame::before,
+.egg-frame::after {
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.egg-card,
+.egg-section {
+  background: transparent !important;
+}
+.egg-frame {
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+}
+.egg-frame img {
+  background: transparent !important;
+  filter: drop-shadow(0 10px 24px rgba(221, 37, 144, 0.18));
+}
