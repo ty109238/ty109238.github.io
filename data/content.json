@@ -2642,6 +2642,137 @@
         "nature": "固执"
       },
       "eggKey": "eggs/74.webp"
+    },
+    {
+      "id": 103194,
+      "dexNo": 75,
+      "name": "幻小狐",
+      "element": "光",
+      "stage": "一阶",
+      "form": "普通",
+      "species": "神秘",
+      "family": "幻狐族",
+      "imageKey": "creatures/75-光系幻小狐.png",
+      "portraitKey": "action-portraits/75-幻小狐.webp",
+      "description": "栖息在晨雾与落日交界处的小狐狸。尾巴尖会随光线聚成一小团暖色的幻影，它常用这点光替同伴照路，却不太明白自己也在发光。",
+      "evolutionCondition": "达到 18 级，并在傍晚时段带着它走完一段路后进化为「桃花狐」。",
+      "captureLocation": "雾光谷 · 晨昏交界",
+      "hatchCondition": "把灵宠蛋放在向阳的窗台，让它在日出时第一次见到光。",
+      "arenaRate": 12,
+      "exploreRate": 22,
+      "hp": 44,
+      "speed": 56,
+      "spAttack": 52,
+      "spDefense": 46,
+      "attack": 40,
+      "defense": 38,
+      "createdAt": "2026-11-03T05:00:00.000Z",
+      "updatedAt": "2026-11-03T05:00:00.000Z",
+      "note": "被夸奖时尾巴会亮成一颗小灯笼，然后立刻装作没听见。",
+      "official": {
+        "level": 20,
+        "talent": 3,
+        "star": 2,
+        "stage": 1,
+        "nature": "保守"
+      },
+      "eggKey": "eggs/28.webp",
+      "branch": [
+        {
+          "to": 103195,
+          "name": "桃花狐",
+          "condition": "18 级 · 傍晚同行"
+        }
+      ]
+    },
+    {
+      "id": 103195,
+      "dexNo": 76,
+      "name": "桃花狐",
+      "element": "光",
+      "stage": "二阶",
+      "form": "普通",
+      "species": "神秘",
+      "family": "幻狐族",
+      "imageKey": "creatures/76-光系桃花狐.png",
+      "portraitKey": "action-portraits/76-桃花狐.webp",
+      "description": "尾后长出一枝永不凋落的桃花，花瓣会随心情开合。它把光织成薄纱披在同伴身上，自己走过的路则留下一串淡粉色的光渍。",
+      "evolutionCondition": "达到 34 级，并在桃花盛开的季节带着它穿过雾光谷后进化为「九尾幻狐」。",
+      "captureLocation": "雾光谷 · 桃林深处",
+      "hatchCondition": "需要让蛋在花树下晒满三个清晨的日光。",
+      "arenaRate": 18,
+      "exploreRate": 28,
+      "hp": 56,
+      "speed": 68,
+      "spAttack": 64,
+      "spDefense": 58,
+      "attack": 48,
+      "defense": 50,
+      "createdAt": "2026-11-03T05:00:00.000Z",
+      "updatedAt": "2026-11-03T05:00:00.000Z",
+      "note": "桃花开的次数，据说等于它真正信任过的人。",
+      "official": {
+        "level": 35,
+        "talent": 5,
+        "star": 4,
+        "stage": 2,
+        "nature": "保守"
+      },
+      "eggKey": "eggs/29.webp",
+      "from": {
+        "id": 103194,
+        "name": "幻小狐",
+        "dexNo": 75,
+        "condition": "18 级 · 傍晚同行"
+      },
+      "branch": [
+        {
+          "to": 103196,
+          "name": "九尾幻狐",
+          "condition": "34 级 · 桃林穿行"
+        }
+      ]
+    },
+    {
+      "id": 103196,
+      "dexNo": 77,
+      "name": "九尾幻狐",
+      "element": "光",
+      "stage": "三阶",
+      "form": "普通",
+      "species": "神秘",
+      "family": "幻狐族",
+      "imageKey": "creatures/77-光系九尾幻狐.png",
+      "portraitKey": "action-portraits/77-九尾幻狐.webp",
+      "description": "九条尾巴各自映出一段不同的记忆，全部展开时会把周围变成一片没有影子的光域。它很少开口，但据说每一次摇尾都在回应某个人的愿望。",
+      "evolutionCondition": "最终形态，无法再进化。",
+      "captureLocation": "雾光谷 · 无影之庭",
+      "hatchCondition": "传说中从未被孵化过——只在某个人的愿望里出现过。",
+      "arenaRate": 26,
+      "exploreRate": 34,
+      "hp": 68,
+      "speed": 76,
+      "spAttack": 78,
+      "spDefense": 72,
+      "attack": 62,
+      "defense": 60,
+      "createdAt": "2026-11-03T05:00:00.000Z",
+      "updatedAt": "2026-11-03T05:00:00.000Z",
+      "note": "九尾展开的那一瞬，整个雾光谷会安静下来。",
+      "official": {
+        "level": 50,
+        "talent": 6,
+        "star": 6,
+        "stage": 3,
+        "nature": "保守"
+      },
+      "eggKey": "eggs/30.webp",
+      "from": {
+        "id": 103195,
+        "name": "桃花狐",
+        "dexNo": 76,
+        "condition": "34 级 · 桃林穿行"
+      }
     }
   ],
   "skills": {
@@ -16691,6 +16822,339 @@
         "fx": [],
         "prio": -1
       }
+    ],
+    "103194": [
+      {
+        "name": "幻光碰触",
+        "type": "光",
+        "category": "特殊",
+        "power": 44,
+        "accuracy": 100,
+        "pp": 25,
+        "description": "尾尖的暖光轻轻碰一下，对单体造成伤害。",
+        "learnLevel": 1,
+        "role": "起手"
+      },
+      {
+        "name": "照路微光",
+        "type": "光",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "替同伴照亮脚下的路，自身特攻+1。",
+        "learnLevel": 6,
+        "role": "主力"
+      },
+      {
+        "name": "晨雾隐身",
+        "type": "光",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 18,
+        "description": "钻进晨雾里，获得相当于 25% 生命的护盾。",
+        "learnLevel": 13,
+        "role": "战术"
+      },
+      {
+        "name": "小狐鸣叫",
+        "type": "光",
+        "category": "特殊",
+        "power": 72,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "尖锐的鸣叫震动空气，基础威力 72；命中后 30% 使敌方灼烧。",
+        "learnLevel": 20,
+        "role": "终结"
+      },
+      {
+        "name": "暮色微光",
+        "type": "光",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "把最后的日光收进尾巴，自身速度+1。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      },
+      {
+        "name": "灯笼尾焰",
+        "type": "光",
+        "category": "特殊",
+        "power": 60,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "尾巴亮成小灯笼，基础威力 60；命中后 30% 使敌方灼烧。",
+        "learnLevel": 34,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      },
+      {
+        "name": "躲进雾里",
+        "type": "光",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 14,
+        "description": "躲进晨雾，回复自身生命。",
+        "learnLevel": 38,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      },
+      {
+        "name": "第一次发光",
+        "type": "光",
+        "category": "特殊",
+        "power": 54,
+        "accuracy": 100,
+        "pp": 18,
+        "description": "它第一次主动发光，基础威力 54；自身特攻+1。",
+        "learnLevel": 42,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      },
+      {
+        "name": "替同伴照路",
+        "type": "光",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 12,
+        "description": "把光分给同伴，敌方速度-1。",
+        "learnLevel": 46,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      }
+    ],
+    "103195": [
+      {
+        "name": "桃枝拂过",
+        "type": "光",
+        "category": "特殊",
+        "power": 58,
+        "accuracy": 100,
+        "pp": 20,
+        "description": "桃枝扫过带起一阵粉色光粉，对单体造成伤害。",
+        "learnLevel": 1,
+        "role": "起手"
+      },
+      {
+        "name": "花瓣轻纱",
+        "type": "光",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 18,
+        "description": "把光织成薄纱披在同伴身上，敌方速度-1。",
+        "learnLevel": 8,
+        "role": "主力"
+      },
+      {
+        "name": "桃花结界",
+        "type": "光",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 16,
+        "description": "花瓣围成一圈，抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「晴空」，持续 5 回合。",
+        "learnLevel": 17,
+        "role": "战术"
+      },
+      {
+        "name": "落英纷飞",
+        "type": "光",
+        "category": "特殊",
+        "power": 88,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "成片桃花炸开，基础威力 88；命中后 30% 使敌方灼烧。",
+        "learnLevel": 26,
+        "role": "终结"
+      },
+      {
+        "name": "桃花开合",
+        "type": "光",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 14,
+        "description": "花瓣随心情开合，自身特防+1。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      },
+      {
+        "name": "粉色光渍",
+        "type": "光",
+        "category": "特殊",
+        "power": 66,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "走过的地方留下光渍，基础威力 66；命中后 30% 使敌方灼烧。",
+        "learnLevel": 34,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      },
+      {
+        "name": "信任之瓣",
+        "type": "光",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 12,
+        "description": "每一瓣都记着一次信任，回复自身生命。",
+        "learnLevel": 38,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      },
+      {
+        "name": "桃林小径",
+        "type": "光",
+        "category": "特殊",
+        "power": 78,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "踩着桃林小径冲刺，使场地变为「圣坛」。",
+        "learnLevel": 42,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      },
+      {
+        "name": "开满一树",
+        "type": "光",
+        "category": "特殊",
+        "power": 92,
+        "accuracy": 90,
+        "pp": 5,
+        "description": "整树桃花同时绽开，基础威力 92；自身特攻+1。",
+        "learnLevel": 46,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      }
+    ],
+    "103196": [
+      {
+        "name": "九尾扇动",
+        "type": "光",
+        "category": "特殊",
+        "power": 72,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "九条尾巴同时扇动，基础威力 72；自身速度+1。",
+        "learnLevel": 1,
+        "role": "起手"
+      },
+      {
+        "name": "记忆回影",
+        "type": "光",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 12,
+        "description": "翻出对手的一段记忆，敌方特防-1。",
+        "learnLevel": 10,
+        "role": "主力"
+      },
+      {
+        "name": "无影光域",
+        "type": "光",
+        "category": "特殊",
+        "power": 96,
+        "accuracy": 95,
+        "pp": 10,
+        "description": "展开没有影子的光域，对全部对手造成伤害。",
+        "learnLevel": 22,
+        "role": "战术"
+      },
+      {
+        "name": "愿望之尾",
+        "type": "光",
+        "category": "特殊",
+        "power": 108,
+        "accuracy": 90,
+        "pp": 5,
+        "description": "为某个愿望而挥出的最后一击，基础威力 108；命中后自身特攻+1。",
+        "learnLevel": 32,
+        "role": "终结"
+      },
+      {
+        "name": "九尾记忆",
+        "type": "光",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "九条尾巴各映出一段记忆，自身全能力+1。",
+        "learnLevel": 30,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      },
+      {
+        "name": "无影之庭",
+        "type": "光",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "张开无影之庭，抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「晴空」，持续 5 回合。",
+        "learnLevel": 34,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      },
+      {
+        "name": "摇尾回应",
+        "type": "光",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 12,
+        "description": "每一次摇尾都在回应某个愿望，回复自身生命。",
+        "learnLevel": 38,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      },
+      {
+        "name": "光域展开",
+        "type": "光",
+        "category": "特殊",
+        "power": 102,
+        "accuracy": 95,
+        "pp": 8,
+        "description": "光域完全展开，对全部对手造成伤害；使场地变为「圣坛」。",
+        "learnLevel": 42,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      },
+      {
+        "name": "第九尾",
+        "type": "光",
+        "category": "特殊",
+        "power": 116,
+        "accuracy": 90,
+        "pp": 5,
+        "description": "第九条尾巴落下的瞬间，基础威力 116；命中后 30% 使敌方灼烧。",
+        "learnLevel": 46,
+        "role": null,
+        "exclusive": true,
+        "prio": 0
+      }
     ]
   },
   "traits": {
@@ -17729,6 +18193,36 @@
         "name": "潮汐守望",
         "description": "队伍只剩下自己时，全属性 +1。"
       }
+    ],
+    "103194": [
+      {
+        "name": "晨昏之光",
+        "description": "在晨雾与落日时出场，自身速度提升；光系技能威力提高 10%。"
+      },
+      {
+        "name": "替同伴照路",
+        "description": "队友倒下时，自身特攻 +1 并回复 10% 生命。"
+      }
+    ],
+    "103195": [
+      {
+        "name": "桃花不落",
+        "description": "每回合结束时回复 1/16 生命；光系技能威力提高 15%。"
+      },
+      {
+        "name": "薄纱结界",
+        "description": "首次受到致命伤害时，保留 1 点生命并获得护盾。"
+      }
+    ],
+    "103196": [
+      {
+        "name": "无影之庭",
+        "description": "受到攻击时，若天气为「晴空」，伤害降低 20%。"
+      },
+      {
+        "name": "愿望回应",
+        "description": "队伍只剩下自己时，全能力 +1。"
+      }
     ]
   },
   "evolution": {
@@ -18385,7 +18879,13 @@
     "uploads/20261030075334-26igp.webp": "/media/uploads/20261030075334-26igp.webp",
     "uploads/20261030075325-wxd6l.webp": "/media/uploads/20261030075325-wxd6l.webp",
     "uploads/20261030075340-wlt11.webp": "/media/uploads/20261030075340-wlt11.webp",
-    "uploads/20261030075347-bpwod.webp": "/media/uploads/20261030075347-bpwod.webp"
+    "uploads/20261030075347-bpwod.webp": "/media/uploads/20261030075347-bpwod.webp",
+    "creatures/75-光系幻小狐.png": "/media/creatures/75.webp",
+    "action-portraits/75-幻小狐.webp": "/media/portraits/75.webp",
+    "creatures/76-光系桃花狐.png": "/media/creatures/76.webp",
+    "action-portraits/76-桃花狐.webp": "/media/portraits/76.webp",
+    "creatures/77-光系九尾幻狐.png": "/media/creatures/77.webp",
+    "action-portraits/77-九尾幻狐.webp": "/media/portraits/77.webp"
   },
   "studio": {
     "name": "谭熠的橘子工作室",
@@ -18495,7 +18995,8 @@
     "霜华花族": "同一株花，冰原和雨林会长成两种模样。",
     "风系慢慢": "慢，但从不出错。",
     "风系绅士鹅": "礼帽、领结、轮滑鞋，风里最讲礼数的那一位。",
-    "齿轮工坊族": "会自己上弦的机械精灵，靠结构解决问题。"
+    "齿轮工坊族": "会自己上弦的机械精灵，靠结构解决问题。",
+    "幻狐族": "雾光谷的守光者。三只都以「光」为食，也以人的愿望为食。"
   },
   "lastPublished": {
     "at": "2026-10-30T09:14:25.000Z",
