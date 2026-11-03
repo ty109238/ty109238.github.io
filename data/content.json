@@ -2650,7 +2650,7 @@
         "slot": 1,
         "name": "火星轻碰",
         "pp": 30,
-        "description": "基础威力 41；命中后 30% 使敌方灼烧。",
+        "description": "基础威力 41；命中后 30% 使敌方灼烧。（先手+1：必定先手）",
         "type": "火",
         "category": "特殊",
         "power": 41,
@@ -2664,7 +2664,8 @@
             "status": "灼烧",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -2685,13 +2686,14 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "烬光闪烁",
         "pp": 20,
-        "description": "自身特攻+1。（变化技能，不造成伤害）",
+        "description": "自身特攻+1。（变化技能，不造成伤害）（先手+1：必定先手）",
         "type": "火",
         "category": "变化",
         "power": null,
@@ -2706,7 +2708,8 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -2720,7 +2723,8 @@
         "learnLevel": 22,
         "note": "",
         "role": "终结",
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "尾焰绕环",
@@ -2729,11 +2733,12 @@
         "power": 52,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 52。",
+        "description": "基础威力 52。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "name": "怯生火苗",
@@ -2742,7 +2747,7 @@
         "power": 46,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 46；命中后 30% 使敌方灼烧。",
+        "description": "基础威力 46；命中后 30% 使敌方灼烧。（先手+1：必定先手）",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -2752,7 +2757,8 @@
             "status": "灼烧",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "环抱取暖",
@@ -2772,7 +2778,8 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "第一道防线",
@@ -2790,7 +2797,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "余烬不熄",
@@ -2810,7 +2818,8 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "2": [
@@ -2818,7 +2827,7 @@
         "slot": 1,
         "name": "烈焰回旋",
         "pp": 30,
-        "description": "基础威力 43；命中后 30% 使敌方灼烧。",
+        "description": "基础威力 43；命中后 30% 使敌方灼烧。（先手+1：必定先手）",
         "type": "火",
         "category": "物理",
         "power": 43,
@@ -2832,7 +2841,8 @@
             "status": "灼烧",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -2853,13 +2863,14 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "熔流冲刺",
         "pp": 15,
-        "description": "基础威力 57；命中后 30% 使敌方灼烧。",
+        "description": "基础威力 57；命中后 30% 使敌方灼烧。（先手+1：必定先手）",
         "type": "火",
         "category": "物理",
         "power": 57,
@@ -2873,7 +2884,8 @@
             "status": "灼烧",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -2894,7 +2906,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "漂浮火舌",
@@ -2913,7 +2926,8 @@
             "status": "灼烧",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "驱寒之焰",
@@ -2933,7 +2947,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "烤热警告",
@@ -2946,7 +2961,8 @@
         "learnLevel": 18,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "凝实火核",
@@ -2966,7 +2982,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "复燃之焰",
@@ -2985,7 +3002,8 @@
             "status": "灼烧",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "3": [
@@ -3008,7 +3026,8 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 2,
@@ -3029,7 +3048,8 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -3049,13 +3069,14 @@
             "status": "灼烧",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
         "name": "伊芙的怒火",
         "pp": 5,
-        "description": "基础威力 110；命中后敌方特攻-1。",
+        "description": "基础威力 110；命中后敌方特攻-1。（先手-1：必定后手）",
         "type": "火",
         "category": "特殊",
         "power": 110,
@@ -3070,7 +3091,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "赤金领域",
@@ -3089,7 +3111,8 @@
             "status": "灼烧",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "火冠映心",
@@ -3109,7 +3132,8 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "冠冕裁决",
@@ -3118,7 +3142,7 @@
         "power": 96,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 96；命中后 25% 使敌方灼烧。",
+        "description": "基础威力 96；命中后 25% 使敌方灼烧。（先手-1：必定后手）",
         "learnLevel": 22,
         "role": null,
         "exclusive": true,
@@ -3128,7 +3152,8 @@
             "status": "灼烧",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "不灼之环",
@@ -3148,7 +3173,8 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "熔岩王座",
@@ -3157,11 +3183,12 @@
         "power": 88,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 88。",
+        "description": "基础威力 88。（先手-1：必定后手）",
         "learnLevel": 36,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": -1
       }
     ],
     "4": [
@@ -3169,7 +3196,7 @@
         "slot": 1,
         "name": "水方冲拳",
         "pp": 30,
-        "description": "基础威力 42；命中后敌方特防-1。",
+        "description": "基础威力 42；命中后敌方特防-1。（先手+1：必定先手）",
         "type": "水",
         "category": "物理",
         "power": 42,
@@ -3184,7 +3211,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -3207,13 +3235,14 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "探险脚步",
         "pp": 15,
-        "description": "基础威力 45；命中后 30% 使敌方潮湿。",
+        "description": "基础威力 45；命中后 30% 使敌方潮湿。（先手+1：必定先手）",
         "type": "水",
         "category": "物理",
         "power": 45,
@@ -3227,7 +3256,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -3247,7 +3277,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "护目镜扫视",
@@ -3267,7 +3298,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "挺身而出",
@@ -3276,11 +3308,12 @@
         "power": 48,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 48。",
+        "description": "基础威力 48。（先手+1：必定先手）",
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "name": "水立方爆泡",
@@ -3299,7 +3332,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "灵息冲击",
@@ -3308,7 +3342,7 @@
         "power": 55,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 55；命中后敌方特防-1。",
+        "description": "基础威力 55；命中后敌方特防-1。（先手+1：必定先手）",
         "learnLevel": 14,
         "role": null,
         "exclusive": true,
@@ -3319,7 +3353,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "护体光壁",
@@ -3341,7 +3376,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "5": [
@@ -3349,7 +3385,7 @@
         "slot": 1,
         "name": "逐浪连拳",
         "pp": 30,
-        "description": "基础威力 45。",
+        "description": "基础威力 45。（先手+1：必定先手）",
         "type": "水",
         "category": "物理",
         "power": 45,
@@ -3357,7 +3393,8 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -3380,7 +3417,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -3399,7 +3437,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -3420,7 +3459,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "手绘地图",
@@ -3438,7 +3478,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "托付后背",
@@ -3456,7 +3497,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "灵息冲击",
@@ -3465,7 +3507,7 @@
         "power": 55,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 55；命中后 30% 使敌方潮湿。",
+        "description": "基础威力 55；命中后 30% 使敌方潮湿。（先手+1：必定先手）",
         "learnLevel": 14,
         "role": null,
         "exclusive": true,
@@ -3475,7 +3517,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "护体光壁",
@@ -3495,7 +3538,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "疾风步",
@@ -3504,7 +3548,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 15,
-        "description": "自身特防+1。（变化技能，不造成伤害）",
+        "description": "自身特防+1。（变化技能，不造成伤害）（先手+1：必定先手）",
         "learnLevel": 22,
         "role": null,
         "exclusive": true,
@@ -3515,7 +3559,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       }
     ],
     "6": [
@@ -3523,7 +3568,7 @@
         "slot": 1,
         "name": "潮冠重拳",
         "pp": 30,
-        "description": "基础威力 50；命中后敌方特防-1。",
+        "description": "基础威力 50；命中后敌方特防-1。（先手+1：必定先手）",
         "type": "水",
         "category": "物理",
         "power": 50,
@@ -3538,13 +3583,14 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
         "name": "羽骑士誓约",
         "pp": 15,
-        "description": "基础威力 88；自身特防+1。",
+        "description": "基础威力 88；自身特防+1。（先手-1：必定后手）",
         "type": "水",
         "category": "物理",
         "power": 88,
@@ -3559,7 +3605,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "slot": 3,
@@ -3582,13 +3629,14 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
         "name": "沧海落星",
         "pp": 5,
-        "description": "基础威力 108；命中后 25% 使敌方潮湿。",
+        "description": "基础威力 108；命中后 25% 使敌方潮湿。（先手-1：必定后手）",
         "type": "水",
         "category": "物理",
         "power": 108,
@@ -3602,7 +3650,8 @@
             "status": "潮湿",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "崩潮重拳",
@@ -3611,7 +3660,7 @@
         "power": 92,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 92；自身特防+1。",
+        "description": "基础威力 92；自身特防+1。（先手-1：必定后手）",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -3622,7 +3671,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "誓约之羽",
@@ -3644,7 +3694,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "静潮之心",
@@ -3662,7 +3713,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "落星冲潮",
@@ -3681,7 +3733,8 @@
             "status": "潮湿",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "崩岸一击",
@@ -3690,11 +3743,12 @@
         "power": 104,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 104。",
+        "description": "基础威力 104。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": -1
       }
     ],
     "7": [
@@ -3702,7 +3756,7 @@
         "slot": 1,
         "name": "蕉籽点射",
         "pp": 30,
-        "description": "基础威力 43；命中后 30% 使敌方中毒。",
+        "description": "基础威力 43；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "type": "草",
         "category": "特殊",
         "power": 43,
@@ -3716,7 +3770,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -3739,7 +3794,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -3760,7 +3816,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -3774,7 +3831,8 @@
         "learnLevel": 22,
         "note": "",
         "role": "终结",
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "果皮小屋",
@@ -3792,7 +3850,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "藤蔓反扑",
@@ -3812,7 +3871,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "轻飘籽弹",
@@ -3821,11 +3881,12 @@
         "power": 44,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 44。",
+        "description": "基础威力 44。（先手+1：必定先手）",
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "name": "落地成藤",
@@ -3845,7 +3906,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "灵息冲击",
@@ -3854,11 +3916,12 @@
         "power": 55,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 55。",
+        "description": "基础威力 55。（先手+1：必定先手）",
         "learnLevel": 14,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 1
       }
     ],
     "8": [
@@ -3866,7 +3929,7 @@
         "slot": 1,
         "name": "蕉叶连射",
         "pp": 30,
-        "description": "基础威力 46；自身物防+1。",
+        "description": "基础威力 46；自身物防+1。（先手+1：必定先手）",
         "type": "草",
         "category": "物理",
         "power": 46,
@@ -3881,7 +3944,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -3902,7 +3966,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -3921,7 +3986,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -3942,7 +4008,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "精准一籽",
@@ -3955,7 +4022,8 @@
         "learnLevel": 32,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "灵息冲击",
@@ -3964,11 +4032,12 @@
         "power": 55,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 55。",
+        "description": "基础威力 55。（先手+1：必定先手）",
         "learnLevel": 14,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "name": "护体光壁",
@@ -3986,7 +4055,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "疾风步",
@@ -3995,7 +4065,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 15,
-        "description": "敌方速度-1。（变化技能，不造成伤害）",
+        "description": "敌方速度-1。（变化技能，不造成伤害）（先手+1：必定先手）",
         "learnLevel": 22,
         "role": null,
         "exclusive": true,
@@ -4006,7 +4076,8 @@
             "stat": "speed",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "回气调息",
@@ -4024,7 +4095,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "9": [
@@ -4032,7 +4104,7 @@
         "slot": 1,
         "name": "万籽星雨",
         "pp": 30,
-        "description": "基础威力 48；自身物防+1。",
+        "description": "基础威力 48；自身物防+1。（先手+1：必定先手）",
         "type": "草",
         "category": "特殊",
         "power": 48,
@@ -4047,7 +4119,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -4068,7 +4141,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -4088,13 +4162,14 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
         "name": "枯荣之种",
         "pp": 5,
-        "description": "基础威力 110；命中后 25% 使敌方中毒。",
+        "description": "基础威力 110；命中后 25% 使敌方中毒。（先手-1：必定后手）",
         "type": "草",
         "category": "物理",
         "power": 110,
@@ -4108,7 +4183,8 @@
             "status": "中毒",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "止纷之叶",
@@ -4128,7 +4204,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "灵息冲击",
@@ -4137,7 +4214,7 @@
         "power": 55,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 55；命中后 30% 使敌方中毒。",
+        "description": "基础威力 55；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "learnLevel": 14,
         "role": null,
         "exclusive": true,
@@ -4147,7 +4224,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "护体光壁",
@@ -4165,7 +4243,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "疾风步",
@@ -4174,7 +4253,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 15,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。（先手+1：必定先手）",
         "learnLevel": 22,
         "role": null,
         "exclusive": true,
@@ -4187,7 +4266,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "回气调息",
@@ -4207,7 +4287,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60001": [
@@ -4215,7 +4296,7 @@
         "slot": 1,
         "name": "嫩叶音波",
         "pp": 30,
-        "description": "基础威力 42；命中后敌方物防-1。",
+        "description": "基础威力 42；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "草",
         "category": "特殊",
         "power": 42,
@@ -4230,7 +4311,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -4251,7 +4333,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -4272,7 +4355,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -4295,7 +4379,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "叶脉指引",
@@ -4315,7 +4400,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "回家之歌",
@@ -4333,7 +4419,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "灵息冲击",
@@ -4342,7 +4429,7 @@
         "power": 55,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 55；命中后敌方物防-1。",
+        "description": "基础威力 55；命中后敌方物防-1。（先手+1：必定先手）",
         "learnLevel": 14,
         "role": null,
         "exclusive": true,
@@ -4353,7 +4440,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "护体光壁",
@@ -4371,7 +4459,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "疾风步",
@@ -4380,7 +4469,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 15,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。（先手+1：必定先手）",
         "learnLevel": 22,
         "role": null,
         "exclusive": true,
@@ -4393,7 +4482,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 1
       }
     ],
     "60002": [
@@ -4401,7 +4491,7 @@
         "slot": 1,
         "name": "叶浪合唱",
         "pp": 30,
-        "description": "基础威力 45；命中后 30% 使敌方中毒。",
+        "description": "基础威力 45；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "type": "草",
         "category": "特殊",
         "power": 45,
@@ -4415,7 +4505,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -4435,7 +4526,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -4449,7 +4541,8 @@
         "learnLevel": 20,
         "note": "",
         "role": "战术",
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -4470,7 +4563,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "领唱起拍",
@@ -4492,7 +4586,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "林梢合唱",
@@ -4512,7 +4607,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "轻快步子",
@@ -4521,7 +4617,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 15,
-        "description": "自身物防+1。（变化技能，不造成伤害）",
+        "description": "自身物防+1。（变化技能，不造成伤害）（先手+1：必定先手）",
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
@@ -4532,7 +4628,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "铃铛安眠",
@@ -4552,7 +4649,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "安抚整片林地",
@@ -4565,7 +4663,8 @@
         "learnLevel": 32,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       }
     ],
     "60003": [
@@ -4573,7 +4672,7 @@
         "slot": 1,
         "name": "花翼圣歌",
         "pp": 30,
-        "description": "基础威力 50。",
+        "description": "基础威力 50。（先手+1：必定先手）",
         "type": "草",
         "category": "特殊",
         "power": 50,
@@ -4581,13 +4680,14 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
         "name": "天使叶羽",
         "pp": 15,
-        "description": "基础威力 88。",
+        "description": "基础威力 88。（先手-1：必定后手）",
         "type": "草",
         "category": "物理",
         "power": 88,
@@ -4595,7 +4695,8 @@
         "learnLevel": 16,
         "note": "",
         "role": "主力",
-        "fx": []
+        "fx": [],
+        "prio": -1
       },
       {
         "slot": 3,
@@ -4616,7 +4717,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -4637,7 +4739,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "花冠绽放",
@@ -4659,7 +4762,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "绿翼俯冲",
@@ -4668,7 +4772,7 @@
         "power": 88,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 88；自身物防+1。",
+        "description": "基础威力 88；自身物防+1。（先手-1：必定后手）",
         "learnLevel": 18,
         "role": null,
         "exclusive": true,
@@ -4679,7 +4783,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "嫩芽庇护",
@@ -4699,7 +4804,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "林地巡视",
@@ -4718,7 +4824,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "守护者之礼",
@@ -4740,7 +4847,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60004": [
@@ -4748,7 +4856,7 @@
         "slot": 1,
         "name": "节拍摆拳",
         "pp": 30,
-        "description": "基础威力 43；命中后 30% 使敌方中毒。",
+        "description": "基础威力 43；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "type": "草",
         "category": "物理",
         "power": 43,
@@ -4762,7 +4870,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -4781,7 +4890,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -4802,7 +4912,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -4823,7 +4934,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "卡点直拳",
@@ -4832,7 +4944,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后敌方物防-1。",
+        "description": "基础威力 52；命中后敌方物防-1。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -4843,7 +4955,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "耳机降噪",
@@ -4863,7 +4976,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "藤蔓清路",
@@ -4883,7 +4997,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "节拍重音",
@@ -4903,7 +5018,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "悄悄伴奏",
@@ -4923,7 +5039,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60005": [
@@ -4931,7 +5048,7 @@
         "slot": 1,
         "name": "电子连击",
         "pp": 30,
-        "description": "基础威力 46；自身物防+1。",
+        "description": "基础威力 46；自身物防+1。（先手+1：必定先手）",
         "type": "草",
         "category": "物理",
         "power": 46,
@@ -4946,7 +5063,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -4969,7 +5087,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -4992,13 +5111,14 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
         "name": "低音震荡",
         "pp": 10,
-        "description": "基础威力 92。",
+        "description": "基础威力 92。（先手-1：必定后手）",
         "type": "草",
         "category": "物理",
         "power": 92,
@@ -5006,7 +5126,8 @@
         "learnLevel": 27,
         "note": "",
         "role": "终结",
-        "fx": []
+        "fx": [],
+        "prio": -1
       },
       {
         "name": "目镜扫描",
@@ -5026,7 +5147,8 @@
             "stat": "speed",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "叶晶脉冲",
@@ -5046,7 +5168,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "节奏解析",
@@ -5066,7 +5189,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "藤鞭编程",
@@ -5086,7 +5210,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "毫秒差",
@@ -5105,7 +5230,8 @@
             "status": "中毒",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60006": [
@@ -5113,7 +5239,7 @@
         "slot": 1,
         "name": "全频重拳",
         "pp": 30,
-        "description": "基础威力 48；命中后 30% 使敌方中毒。",
+        "description": "基础威力 48；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "type": "草",
         "category": "物理",
         "power": 48,
@@ -5127,7 +5253,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -5150,7 +5277,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -5171,13 +5299,14 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
         "name": "终演音爆",
         "pp": 5,
-        "description": "基础威力 110；命中后敌方物防-1。",
+        "description": "基础威力 110；命中后敌方物防-1。（先手-1：必定后手）",
         "type": "草",
         "category": "物理",
         "power": 110,
@@ -5192,7 +5321,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "全频压制",
@@ -5201,7 +5331,7 @@
         "power": 92,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 92；命中后 25% 使敌方中毒。",
+        "description": "基础威力 92；命中后 25% 使敌方中毒。（先手-1：必定后手）",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -5211,7 +5341,8 @@
             "status": "中毒",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "算法雨林",
@@ -5224,7 +5355,8 @@
         "learnLevel": 18,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "超频节拍",
@@ -5244,7 +5376,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "风叶心跳",
@@ -5264,7 +5397,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "终章音爆",
@@ -5273,11 +5407,12 @@
         "power": 98,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 98。",
+        "description": "基础威力 98。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": -1
       }
     ],
     "60007": [
@@ -5285,7 +5420,7 @@
         "slot": 1,
         "name": "冰壳撞击",
         "pp": 30,
-        "description": "基础威力 39；命中后 30% 使敌方冰冻。",
+        "description": "基础威力 39；命中后 30% 使敌方冰冻。（先手+1：必定先手）",
         "type": "冰",
         "category": "物理",
         "power": 39,
@@ -5299,7 +5434,8 @@
             "status": "冰冻",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -5313,7 +5449,8 @@
         "learnLevel": 8,
         "note": "",
         "role": "主力",
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -5336,7 +5473,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -5356,7 +5494,8 @@
             "status": "冰冻",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "冰壳护身",
@@ -5374,7 +5513,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "薄霜足迹",
@@ -5383,7 +5523,7 @@
         "power": 48,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 48；命中后敌方物防-1。",
+        "description": "基础威力 48；命中后敌方物防-1。（先手+1：必定先手）",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -5394,7 +5534,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "挡风小盾",
@@ -5414,7 +5555,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "暖身雪球",
@@ -5436,7 +5578,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "迎风一撞",
@@ -5445,11 +5588,12 @@
         "power": 54,
         "accuracy": 95,
         "pp": 15,
-        "description": "基础威力 54。",
+        "description": "基础威力 54。（先手+1：必定先手）",
         "learnLevel": 26,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 1
       }
     ],
     "60008": [
@@ -5457,7 +5601,7 @@
         "slot": 1,
         "name": "雪人重拳",
         "pp": 30,
-        "description": "基础威力 47；自身物防+1。",
+        "description": "基础威力 47；自身物防+1。（先手+1：必定先手）",
         "type": "冰",
         "category": "物理",
         "power": 47,
@@ -5472,7 +5616,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -5491,7 +5636,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -5512,7 +5658,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -5533,7 +5680,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "小雪人巡逻",
@@ -5553,7 +5701,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "雪墙推挤",
@@ -5572,7 +5721,8 @@
             "status": "冰冻",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "树枝横扫",
@@ -5591,7 +5741,8 @@
             "status": "冰冻",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "微笑雪墙",
@@ -5611,7 +5762,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "稳稳站住",
@@ -5629,7 +5781,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60009": [
@@ -5637,7 +5790,7 @@
         "slot": 1,
         "name": "极寒臂锤",
         "pp": 30,
-        "description": "基础威力 50；命中后敌方物防-1。",
+        "description": "基础威力 50；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "冰",
         "category": "物理",
         "power": 50,
@@ -5652,7 +5805,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -5673,7 +5827,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -5693,7 +5848,8 @@
             "status": "冰冻",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -5714,7 +5870,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "雪崩双壁",
@@ -5723,7 +5880,7 @@
         "power": null,
         "accuracy": 100,
         "pp": 12,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）（先手-1：必定后手）",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -5732,7 +5889,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "鹿角顶撞",
@@ -5741,7 +5899,7 @@
         "power": 90,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 90；命中后 25% 使敌方冰冻。",
+        "description": "基础威力 90；命中后 25% 使敌方冰冻。（先手-1：必定后手）",
         "learnLevel": 18,
         "role": null,
         "exclusive": true,
@@ -5751,7 +5909,8 @@
             "status": "冰冻",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "雪原复苏",
@@ -5769,7 +5928,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "掌心温暖",
@@ -5789,7 +5949,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "冰晶裂地",
@@ -5798,7 +5959,7 @@
         "power": 96,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 96；命中后敌方物防-1。",
+        "description": "基础威力 96；命中后敌方物防-1。（先手-1：必定后手）",
         "learnLevel": 32,
         "role": null,
         "exclusive": true,
@@ -5809,7 +5970,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": -1
       }
     ],
     "60010": [
@@ -5817,7 +5979,7 @@
         "slot": 1,
         "name": "咖啡香雾",
         "pp": 30,
-        "description": "基础威力 40。",
+        "description": "基础威力 40。（先手+1：必定先手）",
         "type": "土",
         "category": "特殊",
         "power": 40,
@@ -5825,7 +5987,8 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -5846,7 +6009,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -5867,7 +6031,8 @@
             "stat": "speed",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -5888,7 +6053,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "提神香雾",
@@ -5910,7 +6076,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "纸杯翻滚",
@@ -5919,11 +6086,12 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50。",
+        "description": "基础威力 50。（先手+1：必定先手）",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "name": "嫩芽摇摆",
@@ -5943,7 +6111,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "硬壳小盾",
@@ -5965,7 +6134,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "一缕焦香",
@@ -5985,7 +6155,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60011": [
@@ -5993,7 +6164,7 @@
         "slot": 1,
         "name": "蚁群咖啡弹",
         "pp": 30,
-        "description": "基础威力 48；命中后 30% 使敌方中毒。",
+        "description": "基础威力 48；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "type": "土",
         "category": "物理",
         "power": 48,
@@ -6007,7 +6178,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -6028,13 +6200,14 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "香醇支援",
         "pp": 15,
-        "description": "基础威力 53；命中后 30% 使敌方中毒。",
+        "description": "基础威力 53；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "type": "土",
         "category": "特殊",
         "power": 53,
@@ -6048,13 +6221,14 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
         "name": "沙穴埋伏",
         "pp": 10,
-        "description": "基础威力 89；命中后敌方物防-1。",
+        "description": "基础威力 89；命中后敌方物防-1。（先手-1：必定后手）",
         "type": "土",
         "category": "物理",
         "power": 89,
@@ -6069,7 +6243,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "蚁群搬运",
@@ -6089,7 +6264,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "香醇砂弹",
@@ -6108,7 +6284,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "绒毛托举",
@@ -6128,7 +6305,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "小丘压顶",
@@ -6148,7 +6326,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "沙穴突袭",
@@ -6157,7 +6336,7 @@
         "power": 68,
         "accuracy": 95,
         "pp": 15,
-        "description": "基础威力 68；命中后敌方物防-1。",
+        "description": "基础威力 68；命中后敌方物防-1。（先手+1：必定先手）",
         "learnLevel": 30,
         "role": null,
         "exclusive": true,
@@ -6168,7 +6347,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       }
     ],
     "60012": [
@@ -6193,13 +6373,14 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 2,
         "name": "砂土王座",
         "pp": 20,
-        "description": "敌方特防-1。（变化技能，不造成伤害）",
+        "description": "敌方特防-1。（变化技能，不造成伤害）（先手-1：必定后手）",
         "type": "土",
         "category": "变化",
         "power": null,
@@ -6214,7 +6395,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "slot": 3,
@@ -6235,7 +6417,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -6256,7 +6439,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "咖啡沙丘",
@@ -6275,7 +6459,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "沉静蚁后",
@@ -6295,7 +6480,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "山形巢穴",
@@ -6315,7 +6501,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "肥沃砂土",
@@ -6333,7 +6520,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "重整土地",
@@ -6342,7 +6530,7 @@
         "power": 88,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 88；命中后 25% 使敌方中毒。",
+        "description": "基础威力 88；命中后 25% 使敌方中毒。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
@@ -6352,7 +6540,8 @@
             "status": "中毒",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       }
     ],
     "60013": [
@@ -6360,7 +6549,7 @@
         "slot": 1,
         "name": "瓶身撞击",
         "pp": 30,
-        "description": "基础威力 38；命中后 30% 使敌方中毒。",
+        "description": "基础威力 38；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "type": "草",
         "category": "物理",
         "power": 38,
@@ -6374,7 +6563,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -6395,13 +6585,14 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "花蜜黏雾",
         "pp": 15,
-        "description": "基础威力 47；命中后 30% 使敌方中毒。",
+        "description": "基础威力 47；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "type": "草",
         "category": "物理",
         "power": 47,
@@ -6415,7 +6606,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -6436,7 +6628,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "呆立不动",
@@ -6458,7 +6651,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "晃一晃",
@@ -6467,7 +6661,7 @@
         "power": 46,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 46；命中后敌方物防-1。",
+        "description": "基础威力 46；命中后敌方物防-1。（先手+1：必定先手）",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -6478,7 +6672,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "瓶口花灵",
@@ -6487,7 +6682,7 @@
         "power": 48,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 48；自身物防+1。",
+        "description": "基础威力 48；自身物防+1。（先手+1：必定先手）",
         "learnLevel": 16,
         "role": null,
         "exclusive": true,
@@ -6498,7 +6693,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "木瓶硬壳",
@@ -6516,7 +6712,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "观察世界",
@@ -6534,7 +6731,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60014": [
@@ -6542,7 +6740,7 @@
         "slot": 1,
         "name": "叶刃瓶拳",
         "pp": 30,
-        "description": "基础威力 44。",
+        "description": "基础威力 44。（先手+1：必定先手）",
         "type": "草",
         "category": "特殊",
         "power": 44,
@@ -6550,7 +6748,8 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -6570,13 +6769,14 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "藤臂横扫",
         "pp": 15,
-        "description": "基础威力 55。",
+        "description": "基础威力 55。（先手+1：必定先手）",
         "type": "草",
         "category": "物理",
         "power": 55,
@@ -6584,7 +6784,8 @@
         "learnLevel": 19,
         "note": "",
         "role": "战术",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -6605,7 +6806,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "藤臂一甩",
@@ -6625,7 +6827,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "宽叶盾檐",
@@ -6645,7 +6848,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "直率一撞",
@@ -6665,7 +6869,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "藤臂缠住",
@@ -6687,7 +6892,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "叶刃回斩",
@@ -6706,7 +6912,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60015": [
@@ -6714,7 +6921,7 @@
         "slot": 1,
         "name": "古瓶镇压",
         "pp": 30,
-        "description": "基础威力 52；自身物防+1。",
+        "description": "基础威力 52；自身物防+1。（先手+1：必定先手）",
         "type": "草",
         "category": "物理",
         "power": 52,
@@ -6729,7 +6936,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -6750,7 +6958,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -6764,13 +6973,14 @@
         "learnLevel": 25,
         "note": "",
         "role": "战术",
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "slot": 4,
         "name": "百花叶掌",
         "pp": 5,
-        "description": "基础威力 113；命中后敌方物防-1。",
+        "description": "基础威力 113；命中后敌方物防-1。（先手-1：必定后手）",
         "type": "草",
         "category": "物理",
         "power": 113,
@@ -6785,7 +6995,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "甘蜜入梦",
@@ -6805,7 +7016,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "古老蜜瓶",
@@ -6825,7 +7037,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "林地长者",
@@ -6844,7 +7057,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "让种子安睡",
@@ -6862,7 +7076,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "漫长岁月",
@@ -6871,7 +7086,7 @@
         "power": 94,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 94；命中后 25% 使敌方中毒。",
+        "description": "基础威力 94；命中后 25% 使敌方中毒。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
@@ -6881,7 +7096,8 @@
             "status": "中毒",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       }
     ],
     "60016": [
@@ -6889,7 +7105,7 @@
         "slot": 1,
         "name": "铁块撞头",
         "pp": 30,
-        "description": "基础威力 40。",
+        "description": "基础威力 40。（先手+1：必定先手）",
         "type": "钢",
         "category": "物理",
         "power": 40,
@@ -6897,7 +7113,8 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -6918,13 +7135,14 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "铆钉飞弹",
         "pp": 15,
-        "description": "基础威力 48。",
+        "description": "基础威力 48。（先手+1：必定先手）",
         "type": "钢",
         "category": "物理",
         "power": 48,
@@ -6932,7 +7150,8 @@
         "learnLevel": 14,
         "note": "",
         "role": "战术",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -6951,7 +7170,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "炉火一急",
@@ -6960,7 +7180,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后 30% 使敌方流血。",
+        "description": "基础威力 52；命中后 30% 使敌方流血。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -6970,7 +7190,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "方头方脑",
@@ -6990,7 +7211,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "皱巴巴的炉心",
@@ -7010,7 +7232,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "小锅炉一撞",
@@ -7019,7 +7242,7 @@
         "power": 48,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 48；命中后 30% 使敌方流血。",
+        "description": "基础威力 48；命中后 30% 使敌方流血。（先手+1：必定先手）",
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
@@ -7029,7 +7252,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "还没熟",
@@ -7049,7 +7273,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60017": [
@@ -7057,7 +7282,7 @@
         "slot": 1,
         "name": "熔炉重拳",
         "pp": 30,
-        "description": "基础威力 45；命中后敌方物防-1。",
+        "description": "基础威力 45；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "钢",
         "category": "物理",
         "power": 45,
@@ -7072,7 +7297,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -7093,7 +7319,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -7114,13 +7341,14 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
         "name": "铁臂锻打",
         "pp": 10,
-        "description": "基础威力 88。",
+        "description": "基础威力 88。（先手-1：必定后手）",
         "type": "钢",
         "category": "物理",
         "power": 88,
@@ -7128,7 +7356,8 @@
         "learnLevel": 27,
         "note": "",
         "role": "终结",
-        "fx": []
+        "fx": [],
+        "prio": -1
       },
       {
         "name": "橙色铁臂",
@@ -7147,7 +7376,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "锤炼炉心",
@@ -7167,7 +7397,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "敲打",
@@ -7180,7 +7411,8 @@
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "炉体厚重",
@@ -7200,7 +7432,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "锻成一件",
@@ -7219,7 +7452,8 @@
             "status": "流血",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60018": [
@@ -7227,7 +7461,7 @@
         "slot": 1,
         "name": "长官重锤",
         "pp": 30,
-        "description": "基础威力 53；命中后 30% 使敌方流血。",
+        "description": "基础威力 53；命中后 30% 使敌方流血。（先手-1：必定后手）",
         "type": "钢",
         "category": "特殊",
         "power": 53,
@@ -7241,7 +7475,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "slot": 2,
@@ -7262,7 +7497,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -7282,13 +7518,14 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
         "name": "万吨锻压",
         "pp": 5,
-        "description": "基础威力 109；自身物防+1。",
+        "description": "基础威力 109；自身物防+1。（先手-1：必定后手）",
         "type": "钢",
         "category": "物理",
         "power": 109,
@@ -7303,7 +7540,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "白色蒸汽",
@@ -7322,7 +7560,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "关键时刻",
@@ -7342,7 +7581,8 @@
             "stat": "speed",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "百锻车间",
@@ -7362,7 +7602,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "每件都要过手",
@@ -7371,7 +7612,7 @@
         "power": 88,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 88；命中后 25% 使敌方流血。",
+        "description": "基础威力 88；命中后 25% 使敌方流血。（先手-1：必定后手）",
         "learnLevel": 30,
         "role": null,
         "exclusive": true,
@@ -7381,7 +7622,8 @@
             "status": "流血",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "长官的落锤",
@@ -7390,7 +7632,7 @@
         "power": 100,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 100；命中后 25% 使敌方流血。",
+        "description": "基础威力 100；命中后 25% 使敌方流血。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
@@ -7400,7 +7642,8 @@
             "status": "流血",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       }
     ],
     "60019": [
@@ -7408,7 +7651,7 @@
         "slot": 1,
         "name": "暗影扑抱",
         "pp": 30,
-        "description": "基础威力 41；命中后 30% 使敌方流血。",
+        "description": "基础威力 41；命中后 30% 使敌方流血。（先手+1：必定先手）",
         "type": "暗",
         "category": "物理",
         "power": 41,
@@ -7422,13 +7665,14 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
         "name": "紫火喷嚏",
         "pp": 20,
-        "description": "基础威力 53。",
+        "description": "基础威力 53。（先手+1：必定先手）",
         "type": "暗",
         "category": "特殊",
         "power": 53,
@@ -7436,13 +7680,14 @@
         "learnLevel": 8,
         "note": "",
         "role": "主力",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 3,
         "name": "诅咒胡须",
         "pp": 15,
-        "description": "基础威力 44；命中后敌方物防-1。",
+        "description": "基础威力 44；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "暗",
         "category": "特殊",
         "power": 44,
@@ -7457,7 +7702,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -7478,7 +7724,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "索要拥抱",
@@ -7487,7 +7734,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；自身速度+1。",
+        "description": "基础威力 50；自身速度+1。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -7498,7 +7745,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "凶凶的表情",
@@ -7518,7 +7766,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "圆滚滚",
@@ -7538,7 +7787,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "胡须间的紫电",
@@ -7547,11 +7797,12 @@
         "power": 48,
         "accuracy": 95,
         "pp": 15,
-        "description": "基础威力 48。",
+        "description": "基础威力 48。（先手+1：必定先手）",
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "name": "抱一下",
@@ -7569,7 +7820,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60020": [
@@ -7577,7 +7829,7 @@
         "slot": 1,
         "name": "紫焰爪",
         "pp": 30,
-        "description": "基础威力 43；命中后敌方物防-1。",
+        "description": "基础威力 43；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "暗",
         "category": "物理",
         "power": 43,
@@ -7592,7 +7844,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -7606,7 +7859,8 @@
         "learnLevel": 12,
         "note": "",
         "role": "主力",
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -7627,7 +7881,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -7648,7 +7903,8 @@
             "stat": "speed",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "咒纹",
@@ -7668,7 +7924,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "修长矫健",
@@ -7688,7 +7945,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "紫焰描画",
@@ -7701,7 +7959,8 @@
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "被揉耳朵",
@@ -7721,7 +7980,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "复杂咒式",
@@ -7734,7 +7994,8 @@
         "learnLevel": 30,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       }
     ],
     "60021": [
@@ -7742,7 +8003,7 @@
         "slot": 1,
         "name": "翼影坠击",
         "pp": 30,
-        "description": "基础威力 49；命中后 30% 使敌方流血。",
+        "description": "基础威力 49；命中后 30% 使敌方流血。（先手+1：必定先手）",
         "type": "暗",
         "category": "特殊",
         "power": 49,
@@ -7756,7 +8017,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -7770,7 +8032,8 @@
         "learnLevel": 16,
         "note": "",
         "role": "主力",
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -7791,13 +8054,14 @@
             "stat": "speed",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
         "name": "胖豹回旋",
         "pp": 5,
-        "description": "基础威力 110；命中后 25% 使敌方流血。",
+        "description": "基础威力 110；命中后 25% 使敌方流血。（先手-1：必定后手）",
         "type": "暗",
         "category": "物理",
         "power": 110,
@@ -7811,7 +8075,8 @@
             "status": "流血",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "巨大暗翼",
@@ -7831,7 +8096,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "圆润体态",
@@ -7851,7 +8117,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "安静如夜",
@@ -7869,7 +8136,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "空中咒术师",
@@ -7889,7 +8157,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "收翼坠落",
@@ -7898,11 +8167,12 @@
         "power": 96,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 96。",
+        "description": "基础威力 96。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": -1
       }
     ],
     "60022": [
@@ -7910,7 +8180,7 @@
         "slot": 1,
         "name": "礼帽冲击",
         "pp": 30,
-        "description": "基础威力 42。",
+        "description": "基础威力 42。（先手+1：必定先手）",
         "type": "风",
         "category": "物理",
         "power": 42,
@@ -7918,13 +8188,14 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
         "name": "轮滑冲刺",
         "pp": 25,
-        "description": "自身速度+2。（变化技能，不造成伤害）",
+        "description": "自身速度+2。（变化技能，不造成伤害）（先手+1：必定先手）",
         "type": "风",
         "category": "变化",
         "power": null,
@@ -7939,13 +8210,14 @@
             "stat": "speed",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 3,
         "name": "绅士啄击",
         "pp": 15,
-        "description": "基础威力 45。",
+        "description": "基础威力 45。（先手+1：必定先手）",
         "type": "风",
         "category": "物理",
         "power": 45,
@@ -7953,13 +8225,14 @@
         "learnLevel": 15,
         "note": "",
         "role": "战术",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 4,
         "name": "风度闪避",
         "pp": 10,
-        "description": "基础威力 78；自身速度+1。",
+        "description": "基础威力 78；自身速度+1。（先手+1：必定先手）",
         "type": "风",
         "category": "物理",
         "power": 78,
@@ -7974,7 +8247,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "认真点头",
@@ -7994,7 +8268,8 @@
             "stat": "speed",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "高礼帽",
@@ -8014,7 +8289,8 @@
             "stat": "speed",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "轮滑小将",
@@ -8023,11 +8299,12 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50。",
+        "description": "基础威力 50。（先手+1：必定先手）",
         "learnLevel": 16,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "name": "速度训练",
@@ -8047,7 +8324,8 @@
             "stat": "speed",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "领带一甩",
@@ -8066,7 +8344,8 @@
             "status": "减速",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60023": [
@@ -8074,7 +8353,7 @@
         "slot": 1,
         "name": "旋风滑步",
         "pp": 30,
-        "description": "基础威力 45；命中后敌方物防-1。",
+        "description": "基础威力 45；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "风",
         "category": "物理",
         "power": 45,
@@ -8089,7 +8368,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -8109,7 +8389,8 @@
             "status": "减速",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -8130,13 +8411,14 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
         "name": "优雅挑衅",
         "pp": 10,
-        "description": "基础威力 91；命中后敌方物防-1。",
+        "description": "基础威力 91；命中后敌方物防-1。（先手-1：必定后手）",
         "type": "风",
         "category": "物理",
         "power": 91,
@@ -8151,7 +8433,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "精心编排",
@@ -8170,7 +8453,8 @@
             "status": "减速",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "金色轮带",
@@ -8192,7 +8476,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "滑行转身",
@@ -8211,7 +8496,8 @@
             "status": "减速",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "合身礼服",
@@ -8229,7 +8515,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "风度",
@@ -8248,7 +8535,8 @@
             "status": "减速",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60024": [
@@ -8256,7 +8544,7 @@
         "slot": 1,
         "name": "礼帽风暴",
         "pp": 30,
-        "description": "基础威力 50。",
+        "description": "基础威力 50。（先手+1：必定先手）",
         "type": "风",
         "category": "物理",
         "power": 50,
@@ -8264,13 +8552,14 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
         "name": "极速轮舞",
         "pp": 15,
-        "description": "基础威力 88；命中后 25% 使敌方减速。",
+        "description": "基础威力 88；命中后 25% 使敌方减速。（先手-1：必定后手）",
         "type": "风",
         "category": "物理",
         "power": 88,
@@ -8284,13 +8573,14 @@
             "status": "减速",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "slot": 3,
         "name": "绅士终步",
         "pp": 15,
-        "description": "基础威力 66；命中后敌方物防-1。",
+        "description": "基础威力 66；命中后敌方物防-1。（先手-1：必定后手）",
         "type": "风",
         "category": "物理",
         "power": 66,
@@ -8305,7 +8595,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "slot": 4,
@@ -8326,7 +8617,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "单片镜",
@@ -8346,7 +8638,8 @@
             "stat": "speed",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "捕捉气流",
@@ -8359,7 +8652,8 @@
         "learnLevel": 18,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "竞速冠军",
@@ -8378,7 +8672,8 @@
             "status": "减速",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "最有风度",
@@ -8398,7 +8693,8 @@
             "stat": "speed",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "风帽大道",
@@ -8407,11 +8703,12 @@
         "power": 98,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 98。",
+        "description": "基础威力 98。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": -1
       }
     ],
     "60025": [
@@ -8419,7 +8716,7 @@
         "slot": 1,
         "name": "暗茧撞击",
         "pp": 30,
-        "description": "基础威力 43；命中后 30% 使敌方流血。",
+        "description": "基础威力 43；命中后 30% 使敌方流血。（先手+1：必定先手）",
         "type": "暗",
         "category": "物理",
         "power": 43,
@@ -8433,7 +8730,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -8454,13 +8752,14 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "影子粉尘",
         "pp": 15,
-        "description": "基础威力 43；命中后 30% 使敌方流血。",
+        "description": "基础威力 43；命中后 30% 使敌方流血。（先手+1：必定先手）",
         "type": "暗",
         "category": "特殊",
         "power": 43,
@@ -8474,7 +8773,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -8495,7 +8795,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "黑色蛹壳",
@@ -8513,7 +8814,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "红结立起",
@@ -8531,7 +8833,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "不爱移动",
@@ -8551,7 +8854,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "藏在壳里",
@@ -8560,7 +8864,7 @@
         "power": 46,
         "accuracy": 95,
         "pp": 15,
-        "description": "基础威力 46；自身速度+1。",
+        "description": "基础威力 46；自身速度+1。（先手+1：必定先手）",
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
@@ -8571,7 +8875,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "警觉",
@@ -8590,7 +8895,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60026": [
@@ -8598,7 +8904,7 @@
         "slot": 1,
         "name": "落岩拳",
         "pp": 30,
-        "description": "基础威力 46。",
+        "description": "基础威力 46。（先手+1：必定先手）",
         "type": "暗",
         "category": "物理",
         "power": 46,
@@ -8606,7 +8912,8 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -8627,13 +8934,14 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "暗晶突刺",
         "pp": 15,
-        "description": "基础威力 54；命中后 30% 使敌方流血。",
+        "description": "基础威力 54；命中后 30% 使敌方流血。（先手+1：必定先手）",
         "type": "暗",
         "category": "特殊",
         "power": 54,
@@ -8647,7 +8955,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -8668,7 +8977,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "层层黑岩",
@@ -8688,7 +8998,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "短小四肢",
@@ -8708,7 +9019,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "岩缝红光",
@@ -8727,7 +9039,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "稳稳支撑",
@@ -8745,7 +9058,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "缓慢呼吸",
@@ -8767,7 +9081,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60027": [
@@ -8775,7 +9090,7 @@
         "slot": 1,
         "name": "覆甲碎击",
         "pp": 30,
-        "description": "基础威力 48；自身速度+1。",
+        "description": "基础威力 48；自身速度+1。（先手+1：必定先手）",
         "type": "暗",
         "category": "特殊",
         "power": 48,
@@ -8790,7 +9105,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -8811,7 +9127,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -8831,13 +9148,14 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
         "name": "山岳架势",
         "pp": 5,
-        "description": "基础威力 110；命中后 25% 使敌方流血。",
+        "description": "基础威力 110；命中后 25% 使敌方流血。（先手-1：必定后手）",
         "type": "暗",
         "category": "物理",
         "power": 110,
@@ -8851,7 +9169,8 @@
             "status": "流血",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "熔纹黑甲",
@@ -8869,7 +9188,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "移动城塞",
@@ -8887,7 +9207,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "巨拳山崩",
@@ -8896,7 +9217,7 @@
         "power": 92,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 92；自身速度+1。",
+        "description": "基础威力 92；自身速度+1。（先手-1：必定后手）",
         "learnLevel": 24,
         "role": null,
         "exclusive": true,
@@ -8907,7 +9228,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "蹲坐不动",
@@ -8927,7 +9249,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "城塞推进",
@@ -8936,7 +9259,7 @@
         "power": 104,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 104；命中后 25% 使敌方流血。",
+        "description": "基础威力 104；命中后 25% 使敌方流血。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
@@ -8946,7 +9269,8 @@
             "status": "流血",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       }
     ],
     "60028": [
@@ -8954,7 +9278,7 @@
         "slot": 1,
         "name": "四叶籽弹",
         "pp": 30,
-        "description": "基础威力 39；命中后 30% 使敌方中毒。",
+        "description": "基础威力 39；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "type": "草",
         "category": "特殊",
         "power": 39,
@@ -8968,7 +9292,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -8982,7 +9307,8 @@
         "learnLevel": 8,
         "note": "",
         "role": "主力",
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -9003,7 +9329,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -9024,7 +9351,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "圆籽弹",
@@ -9033,7 +9361,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后 30% 使敌方中毒。",
+        "description": "基础威力 52；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -9043,7 +9371,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "眯眼装睡",
@@ -9063,7 +9392,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "叶丛埋伏",
@@ -9082,7 +9412,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "种弹连撒",
@@ -9091,7 +9422,7 @@
         "power": 46,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 46；命中后 30% 使敌方中毒。",
+        "description": "基础威力 46；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
@@ -9101,7 +9432,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "藏好的那几颗",
@@ -9114,7 +9446,8 @@
         "learnLevel": 26,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       }
     ],
     "60029": [
@@ -9122,7 +9455,7 @@
         "slot": 1,
         "name": "三叶镖雨",
         "pp": 30,
-        "description": "基础威力 47；命中后 30% 使敌方中毒。",
+        "description": "基础威力 47；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "type": "草",
         "category": "物理",
         "power": 47,
@@ -9136,7 +9469,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -9156,7 +9490,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -9179,13 +9514,14 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
         "name": "苔影替身",
         "pp": 10,
-        "description": "基础威力 93；命中后敌方物防-1。",
+        "description": "基础威力 93；命中后敌方物防-1。（先手-1：必定后手）",
         "type": "草",
         "category": "物理",
         "power": 93,
@@ -9200,7 +9536,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "四叶回旋",
@@ -9213,7 +9550,8 @@
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "叶耳轻抖",
@@ -9233,7 +9571,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "幸运一掷",
@@ -9252,7 +9591,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "叶爪灵巧",
@@ -9272,7 +9612,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "万分之一",
@@ -9292,7 +9633,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60030": [
@@ -9300,7 +9642,7 @@
         "slot": 1,
         "name": "四叶星芒",
         "pp": 30,
-        "description": "基础威力 50。",
+        "description": "基础威力 50。（先手+1：必定先手）",
         "type": "草",
         "category": "特殊",
         "power": 50,
@@ -9308,7 +9650,8 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -9328,7 +9671,8 @@
             "status": "中毒",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -9351,7 +9695,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -9372,7 +9717,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "苔原弧线",
@@ -9392,7 +9738,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "闭眼瞄准",
@@ -9412,7 +9759,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "四叶花茎",
@@ -9430,7 +9778,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "最美妙的落点",
@@ -9439,7 +9788,7 @@
         "power": 92,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 92；命中后敌方物防-1。",
+        "description": "基础威力 92；命中后敌方物防-1。（先手-1：必定后手）",
         "learnLevel": 30,
         "role": null,
         "exclusive": true,
@@ -9450,7 +9799,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "贤者之掷",
@@ -9459,7 +9809,7 @@
         "power": 100,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 100；命中后 25% 使敌方中毒。",
+        "description": "基础威力 100；命中后 25% 使敌方中毒。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
@@ -9469,7 +9819,8 @@
             "status": "中毒",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       }
     ],
     "60031": [
@@ -9477,7 +9828,7 @@
         "slot": 1,
         "name": "电羽气流",
         "pp": 30,
-        "description": "基础威力 40。",
+        "description": "基础威力 40。（先手+1：必定先手）",
         "type": "雷",
         "category": "特殊",
         "power": 40,
@@ -9485,7 +9836,8 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -9506,7 +9858,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -9527,7 +9880,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -9546,7 +9900,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "箭头头冠",
@@ -9555,7 +9910,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后 30% 使敌方麻痹。",
+        "description": "基础威力 52；命中后 30% 使敌方麻痹。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -9565,7 +9920,8 @@
             "status": "麻痹",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "短促信标",
@@ -9574,7 +9930,7 @@
         "power": 48,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 48；命中后 30% 使敌方麻痹。",
+        "description": "基础威力 48；命中后 30% 使敌方麻痹。（先手+1：必定先手）",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -9584,7 +9940,8 @@
             "status": "麻痹",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "喷气小跳",
@@ -9604,7 +9961,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "信使冲刺",
@@ -9613,7 +9971,7 @@
         "power": 46,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 46；命中后 30% 使敌方麻痹。",
+        "description": "基础威力 46；命中后 30% 使敌方麻痹。（先手+1：必定先手）",
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
@@ -9623,7 +9981,8 @@
             "status": "麻痹",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "下一站",
@@ -9642,7 +10001,8 @@
             "status": "麻痹",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60032": [
@@ -9650,7 +10010,7 @@
         "slot": 1,
         "name": "顺风电喙",
         "pp": 30,
-        "description": "基础威力 48；命中后 30% 使敌方麻痹。",
+        "description": "基础威力 48；命中后 30% 使敌方麻痹。（先手+1：必定先手）",
         "type": "雷",
         "category": "特殊",
         "power": 48,
@@ -9664,7 +10024,8 @@
             "status": "麻痹",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -9685,13 +10046,14 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "风袋冲击",
         "pp": 15,
-        "description": "基础威力 53；命中后敌方物防-1。",
+        "description": "基础威力 53；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "雷",
         "category": "物理",
         "power": 53,
@@ -9706,7 +10068,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -9725,7 +10088,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "风向标读天",
@@ -9743,7 +10107,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "集合信号",
@@ -9763,7 +10128,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "高空引路",
@@ -9782,7 +10148,8 @@
             "status": "麻痹",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "红蓝头冠",
@@ -9802,7 +10169,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "顺风冲刺",
@@ -9811,7 +10179,7 @@
         "power": 78,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 78；命中后敌方物防-1。",
+        "description": "基础威力 78；命中后敌方物防-1。（先手+1：必定先手）",
         "learnLevel": 30,
         "role": null,
         "exclusive": true,
@@ -9822,7 +10190,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       }
     ],
     "60033": [
@@ -9830,7 +10199,7 @@
         "slot": 1,
         "name": "风压雷炮",
         "pp": 30,
-        "description": "基础威力 51。",
+        "description": "基础威力 51。（先手+1：必定先手）",
         "type": "雷",
         "category": "特殊",
         "power": 51,
@@ -9838,7 +10207,8 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -9859,7 +10229,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -9880,13 +10251,14 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
         "name": "旅行终航",
         "pp": 5,
-        "description": "基础威力 112；命中后 25% 使敌方麻痹。",
+        "description": "基础威力 112；命中后 25% 使敌方麻痹。（先手-1：必定后手）",
         "type": "雷",
         "category": "物理",
         "power": 112,
@@ -9900,7 +10272,8 @@
             "status": "麻痹",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "风压分流",
@@ -9920,7 +10293,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "旋翼风塔",
@@ -9942,7 +10316,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "首席航空官",
@@ -9962,7 +10337,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "高压一束",
@@ -9971,7 +10347,7 @@
         "power": 92,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 92；命中后 25% 使敌方麻痹。",
+        "description": "基础威力 92；命中后 25% 使敌方麻痹。（先手-1：必定后手）",
         "learnLevel": 30,
         "role": null,
         "exclusive": true,
@@ -9981,7 +10357,8 @@
             "status": "麻痹",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "安全气流",
@@ -9999,7 +10376,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60034": [
@@ -10007,7 +10385,7 @@
         "slot": 1,
         "name": "电壳冲击",
         "pp": 30,
-        "description": "基础威力 38。",
+        "description": "基础威力 38。（先手+1：必定先手）",
         "type": "雷",
         "category": "物理",
         "power": 38,
@@ -10015,13 +10393,14 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
         "name": "雷角蓄能",
         "pp": 20,
-        "description": "基础威力 54；命中后 30% 使敌方麻痹。",
+        "description": "基础威力 54；命中后 30% 使敌方麻痹。（先手+1：必定先手）",
         "type": "雷",
         "category": "特殊",
         "power": 54,
@@ -10035,7 +10414,8 @@
             "status": "麻痹",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 3,
@@ -10056,7 +10436,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -10077,7 +10458,8 @@
             "stat": "speed",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "雷角噼啪",
@@ -10086,7 +10468,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；自身速度+1。",
+        "description": "基础威力 50；自身速度+1。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -10097,7 +10479,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "细小电光",
@@ -10106,7 +10489,7 @@
         "power": 46,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 46；自身速度+1。",
+        "description": "基础威力 46；自身速度+1。（先手+1：必定先手）",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -10117,7 +10500,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "硬壳缩身",
@@ -10137,7 +10521,8 @@
             "stat": "speed",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "藏好的电",
@@ -10157,7 +10542,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "兴奋放电",
@@ -10170,7 +10556,8 @@
         "learnLevel": 26,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       }
     ],
     "60035": [
@@ -10178,7 +10565,7 @@
         "slot": 1,
         "name": "甲虫雷钳",
         "pp": 30,
-        "description": "基础威力 44；命中后 30% 使敌方麻痹。",
+        "description": "基础威力 44；命中后 30% 使敌方麻痹。（先手+1：必定先手）",
         "type": "雷",
         "category": "物理",
         "power": 44,
@@ -10192,7 +10579,8 @@
             "status": "麻痹",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -10215,13 +10603,14 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "双角放电",
         "pp": 15,
-        "description": "基础威力 55；命中后 30% 使敌方麻痹。",
+        "description": "基础威力 55；命中后 30% 使敌方麻痹。（先手+1：必定先手）",
         "type": "雷",
         "category": "特殊",
         "power": 55,
@@ -10235,7 +10624,8 @@
             "status": "麻痹",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -10256,7 +10646,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "云层抓电",
@@ -10275,7 +10666,8 @@
             "status": "麻痹",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "硬壳护住",
@@ -10297,7 +10689,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "足尖引雷",
@@ -10316,7 +10709,8 @@
             "status": "麻痹",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "甲壳冲撞",
@@ -10329,7 +10723,8 @@
         "learnLevel": 24,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "替同伴挡下",
@@ -10349,7 +10744,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60036": [
@@ -10357,7 +10753,7 @@
         "slot": 1,
         "name": "霹雳角炮",
         "pp": 30,
-        "description": "基础威力 52；命中后敌方物防-1。",
+        "description": "基础威力 52；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "雷",
         "category": "特殊",
         "power": 52,
@@ -10372,7 +10768,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -10391,13 +10788,14 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "雷翅连闪",
         "pp": 15,
-        "description": "基础威力 65；命中后 30% 使敌方麻痹。",
+        "description": "基础威力 65；命中后 30% 使敌方麻痹。（先手+1：必定先手）",
         "type": "雷",
         "category": "物理",
         "power": 65,
@@ -10411,13 +10809,14 @@
             "status": "麻痹",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
         "name": "虫鸣雷鸣",
         "pp": 5,
-        "description": "基础威力 113；命中后 25% 使敌方麻痹。",
+        "description": "基础威力 113；命中后 25% 使敌方麻痹。（先手-1：必定后手）",
         "type": "雷",
         "category": "物理",
         "power": 113,
@@ -10431,7 +10830,8 @@
             "status": "麻痹",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "小型雷暴",
@@ -10450,7 +10850,8 @@
             "status": "麻痹",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "长角引雷",
@@ -10459,7 +10860,7 @@
         "power": 90,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 90；命中后 25% 使敌方麻痹。",
+        "description": "基础威力 90；命中后 25% 使敌方麻痹。（先手-1：必定后手）",
         "learnLevel": 18,
         "role": null,
         "exclusive": true,
@@ -10469,7 +10870,8 @@
             "status": "麻痹",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "云端坐镇",
@@ -10489,7 +10891,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "深色甲壳",
@@ -10507,7 +10910,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "霹雳落雷",
@@ -10516,11 +10920,12 @@
         "power": 102,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 102。",
+        "description": "基础威力 102。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": -1
       }
     ],
     "60037": [
@@ -10528,7 +10933,7 @@
         "slot": 1,
         "name": "王冠水泡",
         "pp": 30,
-        "description": "基础威力 40。",
+        "description": "基础威力 40。（先手+1：必定先手）",
         "type": "水",
         "category": "特殊",
         "power": 40,
@@ -10536,7 +10941,8 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -10557,13 +10963,14 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "洋流摆尾",
         "pp": 15,
-        "description": "基础威力 48；命中后 30% 使敌方潮湿。",
+        "description": "基础威力 48；命中后 30% 使敌方潮湿。（先手+1：必定先手）",
         "type": "水",
         "category": "物理",
         "power": 48,
@@ -10577,7 +10984,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -10600,7 +11008,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "一串水泡",
@@ -10609,7 +11018,7 @@
         "power": 48,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 48；命中后敌方特防-1。",
+        "description": "基础威力 48；命中后敌方特防-1。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -10620,7 +11029,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "小小王冠",
@@ -10640,7 +11050,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "晶亮泡泡",
@@ -10649,7 +11060,7 @@
         "power": 52,
         "accuracy": 95,
         "pp": 15,
-        "description": "基础威力 52；命中后 30% 使敌方潮湿。",
+        "description": "基础威力 52；命中后 30% 使敌方潮湿。（先手+1：必定先手）",
         "learnLevel": 16,
         "role": null,
         "exclusive": true,
@@ -10659,7 +11070,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "泡泡护身",
@@ -10679,7 +11091,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "还不懂王冠",
@@ -10699,7 +11112,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60038": [
@@ -10707,7 +11121,7 @@
         "slot": 1,
         "name": "王子潮刃",
         "pp": 30,
-        "description": "基础威力 45；命中后敌方特防-1。",
+        "description": "基础威力 45；命中后敌方特防-1。（先手+1：必定先手）",
         "type": "水",
         "category": "特殊",
         "power": 45,
@@ -10722,7 +11136,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -10742,7 +11157,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -10763,7 +11179,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -10784,7 +11201,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "海流圆舞·贰",
@@ -10803,7 +11221,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "蓝晶王冠",
@@ -10823,7 +11242,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "温和的出手",
@@ -10843,7 +11263,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "映出情绪",
@@ -10861,7 +11282,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "少年王子的礼",
@@ -10880,7 +11302,8 @@
             "status": "潮湿",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60039": [
@@ -10888,7 +11311,7 @@
         "slot": 1,
         "name": "洋流王令",
         "pp": 30,
-        "description": "基础威力 53；命中后 30% 使敌方潮湿。",
+        "description": "基础威力 53；命中后 30% 使敌方潮湿。（先手+1：必定先手）",
         "type": "水",
         "category": "特殊",
         "power": 53,
@@ -10902,7 +11325,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -10923,7 +11347,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -10944,7 +11369,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -10965,7 +11391,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "海翼舒展",
@@ -10985,7 +11412,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "万流统御",
@@ -11005,7 +11433,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "听见潮汐",
@@ -11025,7 +11454,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "不以王令",
@@ -11045,7 +11475,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "温柔的一击",
@@ -11054,11 +11485,12 @@
         "power": 96,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 96。",
+        "description": "基础威力 96。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": -1
       }
     ],
     "60040": [
@@ -11066,7 +11498,7 @@
         "slot": 1,
         "name": "冰爪连击",
         "pp": 30,
-        "description": "基础威力 41；命中后敌方物防-1。",
+        "description": "基础威力 41；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "冰",
         "category": "物理",
         "power": 41,
@@ -11081,13 +11513,14 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
         "name": "雪影突击",
         "pp": 20,
-        "description": "基础威力 53；命中后敌方物防-1。",
+        "description": "基础威力 53；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "冰",
         "category": "物理",
         "power": 53,
@@ -11102,13 +11535,14 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 3,
         "name": "快快助威",
         "pp": 20,
-        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。",
+        "description": "抵挡下一次攻击（减伤 60%）；若成功抵挡，天气变为「下雪」，持续 5 回合。（先手+1：必定先手）",
         "type": "冰",
         "category": "变化",
         "power": null,
@@ -11125,7 +11559,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -11148,7 +11583,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "第一个冲出",
@@ -11157,7 +11593,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；命中后敌方物防-1。",
+        "description": "基础威力 50；命中后敌方物防-1。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -11168,7 +11604,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "藏住冰晶",
@@ -11188,7 +11625,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "出爪快",
@@ -11197,7 +11635,7 @@
         "power": 56,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 56；命中后 30% 使敌方冰冻。",
+        "description": "基础威力 56；命中后 30% 使敌方冰冻。（先手+1：必定先手）",
         "learnLevel": 16,
         "role": null,
         "exclusive": true,
@@ -11207,7 +11645,8 @@
             "status": "冰冻",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "雪地转身",
@@ -11225,7 +11664,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "快得看不清",
@@ -11234,7 +11674,7 @@
         "power": 76,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 76；命中后 30% 使敌方冰冻。",
+        "description": "基础威力 76；命中后 30% 使敌方冰冻。（先手+1：必定先手）",
         "learnLevel": 26,
         "role": null,
         "exclusive": true,
@@ -11244,7 +11684,8 @@
             "status": "冰冻",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       }
     ],
     "60041": [
@@ -11252,7 +11693,7 @@
         "slot": 1,
         "name": "风羽慢箭",
         "pp": 30,
-        "description": "基础威力 38；自身速度+1。",
+        "description": "基础威力 38；自身速度+1。（先手+1：必定先手）",
         "type": "风",
         "category": "特殊",
         "power": 38,
@@ -11267,7 +11708,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -11288,13 +11730,14 @@
             "stat": "speed",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "旋风尾射",
         "pp": 15,
-        "description": "基础威力 47；命中后 30% 使敌方减速。",
+        "description": "基础威力 47；命中后 30% 使敌方减速。（先手+1：必定先手）",
         "type": "风",
         "category": "物理",
         "power": 47,
@@ -11308,7 +11751,8 @@
             "status": "减速",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -11327,7 +11771,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "观察风向",
@@ -11345,7 +11790,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "橙色绒毛",
@@ -11354,7 +11800,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；自身速度+1。",
+        "description": "基础威力 50；自身速度+1。（先手+1：必定先手）",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -11365,7 +11811,8 @@
             "stat": "speed",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "不慌不忙",
@@ -11387,7 +11834,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "最轻的呼啸",
@@ -11406,7 +11854,8 @@
             "status": "减速",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "瞄准很久的那一击",
@@ -11425,7 +11874,8 @@
             "status": "减速",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "60042": [
@@ -11433,7 +11883,7 @@
         "slot": 1,
         "name": "冰晶噗射",
         "pp": 30,
-        "description": "基础威力 39；命中后 30% 使敌方冰冻。",
+        "description": "基础威力 39；命中后 30% 使敌方冰冻。（先手+1：必定先手）",
         "type": "冰",
         "category": "特殊",
         "power": 39,
@@ -11447,7 +11897,8 @@
             "status": "冰冻",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -11467,13 +11918,14 @@
             "status": "冰冻",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "晶翼散射",
         "pp": 15,
-        "description": "基础威力 45。",
+        "description": "基础威力 45。（先手+1：必定先手）",
         "type": "冰",
         "category": "物理",
         "power": 45,
@@ -11481,7 +11933,8 @@
         "learnLevel": 15,
         "note": "",
         "role": "战术",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -11502,7 +11955,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "晶蓝翅膀",
@@ -11511,7 +11965,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；自身物防+1。",
+        "description": "基础威力 52；自身物防+1。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -11522,7 +11976,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "认真嘟嘴",
@@ -11542,7 +11997,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "噗噗两声",
@@ -11551,7 +12007,7 @@
         "power": 46,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 46；命中后 30% 使敌方冰冻。",
+        "description": "基础威力 46；命中后 30% 使敌方冰冻。（先手+1：必定先手）",
         "learnLevel": 16,
         "role": null,
         "exclusive": true,
@@ -11561,7 +12017,8 @@
             "status": "冰冻",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "冰晶齐射",
@@ -11581,7 +12038,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "吹灭一整个夏天",
@@ -11601,7 +12059,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "103171": [
@@ -11609,7 +12068,7 @@
         "slot": 1,
         "name": "橡果脉冲",
         "pp": 30,
-        "description": "基础威力 40；命中后敌方物防-1。",
+        "description": "基础威力 40；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "钢",
         "category": "特殊",
         "power": 40,
@@ -11624,7 +12083,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -11645,7 +12105,8 @@
             "stat": "speed",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -11666,7 +12127,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -11685,7 +12147,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "橡果能源包",
@@ -11694,7 +12157,7 @@
         "power": 54,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 54；命中后敌方物防-1。",
+        "description": "基础威力 54；命中后敌方物防-1。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -11705,7 +12168,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "协作程序",
@@ -11725,7 +12189,8 @@
             "stat": "defense",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "温柔的助手",
@@ -11745,7 +12210,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "咻地一下",
@@ -11764,7 +12230,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "满负荷输出",
@@ -11777,7 +12244,8 @@
         "learnLevel": 28,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       }
     ],
     "103172": [
@@ -11785,7 +12253,7 @@
         "slot": 1,
         "name": "露滴水炮",
         "pp": 30,
-        "description": "基础威力 40；命中后 30% 使敌方潮湿。",
+        "description": "基础威力 40；命中后 30% 使敌方潮湿。（先手+1：必定先手）",
         "type": "水",
         "category": "特殊",
         "power": 40,
@@ -11799,7 +12267,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -11820,7 +12289,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -11839,7 +12309,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -11860,7 +12331,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "第一滴蓝露",
@@ -11869,7 +12341,7 @@
         "power": 46,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 46；命中后 30% 使敌方潮湿。",
+        "description": "基础威力 46；命中后 30% 使敌方潮湿。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -11879,7 +12351,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "伞状身体",
@@ -11899,7 +12372,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "随潮汐晃",
@@ -11919,7 +12393,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "晨露收集",
@@ -11939,7 +12414,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "把露水还回去",
@@ -11958,7 +12434,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "103173": [
@@ -11966,7 +12443,7 @@
         "slot": 1,
         "name": "岩肩撞击",
         "pp": 30,
-        "description": "基础威力 43；命中后 30% 使敌方中毒。",
+        "description": "基础威力 43；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "type": "土",
         "category": "物理",
         "power": 43,
@@ -11980,7 +12457,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -12001,13 +12479,14 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "碎石熊掌",
         "pp": 15,
-        "description": "基础威力 43。",
+        "description": "基础威力 43。（先手+1：必定先手）",
         "type": "土",
         "category": "物理",
         "power": 43,
@@ -12015,7 +12494,8 @@
         "learnLevel": 13,
         "note": "",
         "role": "战术",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -12035,7 +12515,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "岩甲一坐",
@@ -12044,7 +12525,7 @@
         "power": 54,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 54；命中后敌方物防-1。",
+        "description": "基础威力 54；命中后敌方物防-1。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -12055,7 +12536,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "圆滚滚小山",
@@ -12075,7 +12557,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "看似委屈",
@@ -12095,7 +12578,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "岩石滚压",
@@ -12108,7 +12592,8 @@
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "山一样站起来",
@@ -12121,7 +12606,8 @@
         "learnLevel": 28,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       }
     ],
     "103174": [
@@ -12129,7 +12615,7 @@
         "slot": 1,
         "name": "火星泡泡",
         "pp": 30,
-        "description": "基础威力 41；命中后敌方特攻-1。",
+        "description": "基础威力 41；命中后敌方特攻-1。（先手+1：必定先手）",
         "type": "火",
         "category": "特殊",
         "power": 41,
@@ -12144,13 +12630,14 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
         "name": "王冠撞击",
         "pp": 20,
-        "description": "基础威力 53。",
+        "description": "基础威力 53。（先手+1：必定先手）",
         "type": "火",
         "category": "物理",
         "power": 53,
@@ -12158,13 +12645,14 @@
         "learnLevel": 9,
         "note": "",
         "role": "主力",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 3,
         "name": "温泉冲刺",
         "pp": 15,
-        "description": "基础威力 44。",
+        "description": "基础威力 44。（先手+1：必定先手）",
         "type": "火",
         "category": "物理",
         "power": 44,
@@ -12172,7 +12660,8 @@
         "learnLevel": 16,
         "note": "",
         "role": "战术",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -12192,7 +12681,8 @@
             "status": "灼烧",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "珊瑚王冠",
@@ -12201,7 +12691,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后 30% 使敌方灼烧。",
+        "description": "基础威力 52；命中后 30% 使敌方灼烧。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -12211,7 +12701,8 @@
             "status": "灼烧",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "漂在暖流",
@@ -12231,7 +12722,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "紧张鼓鳃",
@@ -12249,7 +12741,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "烧硬的珊瑚",
@@ -12269,7 +12762,8 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "暖流爆发",
@@ -12282,7 +12776,8 @@
         "learnLevel": 28,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       }
     ],
     "103175": [
@@ -12290,7 +12785,7 @@
         "slot": 1,
         "name": "焰轮冲刺",
         "pp": 30,
-        "description": "基础威力 43；命中后 30% 使敌方灼烧。",
+        "description": "基础威力 43；命中后 30% 使敌方灼烧。（先手+1：必定先手）",
         "type": "火",
         "category": "物理",
         "power": 43,
@@ -12304,7 +12799,8 @@
             "status": "灼烧",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -12324,7 +12820,8 @@
             "status": "灼烧",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -12345,13 +12842,14 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
         "name": "熔道标记",
         "pp": 10,
-        "description": "基础威力 90；命中后 25% 使敌方灼烧。",
+        "description": "基础威力 90；命中后 25% 使敌方灼烧。（先手-1：必定后手）",
         "type": "火",
         "category": "物理",
         "power": 90,
@@ -12365,7 +12863,8 @@
             "status": "灼烧",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "尾鳍当轮",
@@ -12384,7 +12883,8 @@
             "status": "灼烧",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "贴水滑行",
@@ -12404,7 +12904,8 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "滚烫岩石线",
@@ -12417,7 +12918,8 @@
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "车轮急转",
@@ -12437,7 +12939,8 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "全速冲线",
@@ -12450,7 +12953,8 @@
         "learnLevel": 30,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       }
     ],
     "103176": [
@@ -12458,7 +12962,7 @@
         "slot": 1,
         "name": "王冠焰柱",
         "pp": 30,
-        "description": "基础威力 49。",
+        "description": "基础威力 49。（先手+1：必定先手）",
         "type": "火",
         "category": "特殊",
         "power": 49,
@@ -12466,7 +12970,8 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -12487,7 +12992,8 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -12501,7 +13007,8 @@
         "learnLevel": 27,
         "note": "",
         "role": "战术",
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -12524,7 +13031,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "烤成硬壳的鳞",
@@ -12544,7 +13052,8 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "岩层老鱼",
@@ -12564,7 +13073,8 @@
             "stat": "spAttack",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "不再追逐",
@@ -12584,7 +13094,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "硬壳一拍",
@@ -12593,7 +13104,7 @@
         "power": 90,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 90；命中后 25% 使敌方灼烧。",
+        "description": "基础威力 90；命中后 25% 使敌方灼烧。（先手-1：必定后手）",
         "learnLevel": 30,
         "role": null,
         "exclusive": true,
@@ -12603,7 +13114,8 @@
             "status": "灼烧",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "安静地守着",
@@ -12612,11 +13124,12 @@
         "power": 98,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 98。",
+        "description": "基础威力 98。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": -1
       }
     ],
     "103177": [
@@ -12624,7 +13137,7 @@
         "slot": 1,
         "name": "冰棱刺",
         "pp": 30,
-        "description": "基础威力 42；命中后 30% 使敌方冰冻。",
+        "description": "基础威力 42；命中后 30% 使敌方冰冻。（先手+1：必定先手）",
         "type": "冰",
         "category": "特殊",
         "power": 42,
@@ -12638,7 +13151,8 @@
             "status": "冰冻",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -12659,13 +13173,14 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "低温霜雾",
         "pp": 15,
-        "description": "基础威力 45。",
+        "description": "基础威力 45。（先手+1：必定先手）",
         "type": "冰",
         "category": "物理",
         "power": 45,
@@ -12673,7 +13188,8 @@
         "learnLevel": 15,
         "note": "",
         "role": "战术",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -12692,7 +13208,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "厚冰壳",
@@ -12712,7 +13229,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "头顶小花",
@@ -12730,7 +13248,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "花种一撞",
@@ -12739,7 +13258,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；命中后 30% 使敌方冰冻。",
+        "description": "基础威力 50；命中后 30% 使敌方冰冻。（先手+1：必定先手）",
         "learnLevel": 16,
         "role": null,
         "exclusive": true,
@@ -12749,7 +13268,8 @@
             "status": "冰冻",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "冰缝发芽",
@@ -12758,7 +13278,7 @@
         "power": 48,
         "accuracy": 95,
         "pp": 15,
-        "description": "基础威力 48；自身物防+1。",
+        "description": "基础威力 48；自身物防+1。（先手+1：必定先手）",
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
@@ -12769,7 +13289,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "判断冷暖",
@@ -12789,7 +13310,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "103178": [
@@ -12797,7 +13319,7 @@
         "slot": 1,
         "name": "冰瓣飞散",
         "pp": 30,
-        "description": "基础威力 45；自身物防+1。",
+        "description": "基础威力 45；自身物防+1。（先手+1：必定先手）",
         "type": "冰",
         "category": "特殊",
         "power": 45,
@@ -12812,7 +13334,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -12833,7 +13356,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -12852,7 +13376,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -12873,7 +13398,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "层层花瓣",
@@ -12893,7 +13419,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "细碎冰粉",
@@ -12902,7 +13429,7 @@
         "power": 54,
         "accuracy": 100,
         "pp": 15,
-        "description": "基础威力 54；命中后 30% 使敌方冰冻。",
+        "description": "基础威力 54；命中后 30% 使敌方冰冻。（先手+1：必定先手）",
         "learnLevel": 16,
         "role": null,
         "exclusive": true,
@@ -12912,7 +13439,8 @@
             "status": "冰冻",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "扎在浮冰下",
@@ -12930,7 +13458,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "冰粉迷雾",
@@ -12950,7 +13479,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "芙蓉初绽",
@@ -12963,7 +13493,8 @@
         "learnLevel": 30,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       }
     ],
     "103179": [
@@ -12971,7 +13502,7 @@
         "slot": 1,
         "name": "极寒花冠",
         "pp": 30,
-        "description": "基础威力 50；自身物防+1。",
+        "description": "基础威力 50；自身物防+1。（先手+1：必定先手）",
         "type": "冰",
         "category": "特殊",
         "power": 50,
@@ -12986,7 +13517,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -13007,13 +13539,14 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "冰柱穿刺",
         "pp": 15,
-        "description": "基础威力 66；命中后 30% 使敌方冰冻。",
+        "description": "基础威力 66；命中后 30% 使敌方冰冻。（先手+1：必定先手）",
         "type": "冰",
         "category": "物理",
         "power": 66,
@@ -13027,7 +13560,8 @@
             "status": "冰冻",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -13048,7 +13582,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "半透明冰柱",
@@ -13066,7 +13601,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "极寒绽放",
@@ -13085,7 +13621,8 @@
             "status": "冰冻",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "冻在花开的一刻",
@@ -13105,7 +13642,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "冰原唯一的花",
@@ -13114,7 +13652,7 @@
         "power": 92,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 92；命中后 25% 使敌方冰冻。",
+        "description": "基础威力 92；命中后 25% 使敌方冰冻。（先手-1：必定后手）",
         "learnLevel": 30,
         "role": null,
         "exclusive": true,
@@ -13124,7 +13662,8 @@
             "status": "冰冻",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "零下绽放",
@@ -13133,7 +13672,7 @@
         "power": 100,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 100；命中后敌方物防-1。",
+        "description": "基础威力 100；命中后敌方物防-1。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
@@ -13144,7 +13683,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": -1
       }
     ],
     "103180": [
@@ -13152,7 +13692,7 @@
         "slot": 1,
         "name": "雨林绽放",
         "pp": 30,
-        "description": "基础威力 53；命中后敌方物防-1。",
+        "description": "基础威力 53；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "草",
         "category": "特殊",
         "power": 53,
@@ -13167,7 +13707,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -13188,7 +13729,8 @@
             "stat": "speed",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -13208,7 +13750,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -13229,7 +13772,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "柔软的花瓣",
@@ -13251,7 +13795,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "雨林的气息",
@@ -13271,7 +13816,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "同一株花",
@@ -13291,7 +13837,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "花瓣舒展",
@@ -13300,7 +13847,7 @@
         "power": 88,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 88；命中后 25% 使敌方中毒。",
+        "description": "基础威力 88；命中后 25% 使敌方中毒。（先手-1：必定后手）",
         "learnLevel": 30,
         "role": null,
         "exclusive": true,
@@ -13310,7 +13857,8 @@
             "status": "中毒",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "全然盛放",
@@ -13319,7 +13867,7 @@
         "power": 98,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 98；自身物防+1。",
+        "description": "基础威力 98；自身物防+1。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
@@ -13330,7 +13878,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": -1
       }
     ],
     "103181": [
@@ -13338,7 +13887,7 @@
         "slot": 1,
         "name": "烫水弹",
         "pp": 30,
-        "description": "基础威力 41；命中后 30% 使敌方潮湿。",
+        "description": "基础威力 41；命中后 30% 使敌方潮湿。（先手+1：必定先手）",
         "type": "水",
         "category": "特殊",
         "power": 41,
@@ -13352,13 +13901,14 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
         "name": "火钳夹击",
         "pp": 20,
-        "description": "基础威力 53。",
+        "description": "基础威力 53。（先手+1：必定先手）",
         "type": "水",
         "category": "物理",
         "power": 53,
@@ -13366,7 +13916,8 @@
         "learnLevel": 10,
         "note": "",
         "role": "主力",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 3,
@@ -13387,7 +13938,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -13407,7 +13959,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "半水半火的尾扇",
@@ -13416,7 +13969,7 @@
         "power": 52,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 52；命中后 30% 使敌方潮湿。",
+        "description": "基础威力 52；命中后 30% 使敌方潮湿。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -13426,7 +13979,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "螯钳一夹",
@@ -13435,7 +13989,7 @@
         "power": 46,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 46；命中后敌方特防-1。",
+        "description": "基础威力 46；命中后敌方特防-1。（先手+1：必定先手）",
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
@@ -13446,7 +14000,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "热泉边长大",
@@ -13466,7 +14021,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "交界处的小虾",
@@ -13486,7 +14042,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "尾扇一拍",
@@ -13499,7 +14056,8 @@
         "learnLevel": 26,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       }
     ],
     "103182": [
@@ -13507,7 +14065,7 @@
         "slot": 1,
         "name": "激流螯击",
         "pp": 30,
-        "description": "基础威力 43。",
+        "description": "基础威力 43。（先手+1：必定先手）",
         "type": "水",
         "category": "物理",
         "power": 43,
@@ -13515,7 +14073,8 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -13535,7 +14094,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -13555,7 +14115,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -13578,7 +14139,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "追着喷口跑",
@@ -13591,7 +14153,8 @@
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "白浪一道",
@@ -13610,7 +14173,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "热泉蒸汽",
@@ -13630,7 +14194,8 @@
             "stat": "speed",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "螯钳横扫",
@@ -13649,7 +14214,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "逆流而上",
@@ -13669,7 +14235,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "103183": [
@@ -13677,7 +14244,7 @@
         "slot": 1,
         "name": "炎魔重钳",
         "pp": 30,
-        "description": "基础威力 49；自身特防+1。",
+        "description": "基础威力 49；自身特防+1。（先手+1：必定先手）",
         "type": "水",
         "category": "物理",
         "power": 49,
@@ -13692,7 +14259,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -13713,7 +14281,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -13727,7 +14296,8 @@
         "learnLevel": 26,
         "note": "",
         "role": "战术",
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -13748,7 +14318,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "烧透的赤壳",
@@ -13768,7 +14339,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "地热裂口",
@@ -13787,7 +14359,8 @@
             "status": "潮湿",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "守在深处",
@@ -13807,7 +14380,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "赤壳钳击",
@@ -13816,11 +14390,12 @@
         "power": 94,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 94。",
+        "description": "基础威力 94。（先手-1：必定后手）",
         "learnLevel": 30,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": -1
       },
       {
         "name": "地热喷发",
@@ -13829,7 +14404,7 @@
         "power": 104,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 104；命中后 25% 使敌方潮湿。",
+        "description": "基础威力 104；命中后 25% 使敌方潮湿。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
@@ -13839,7 +14414,8 @@
             "status": "潮湿",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       }
     ],
     "103184": [
@@ -13847,7 +14423,7 @@
         "slot": 1,
         "name": "砂石弹",
         "pp": 30,
-        "description": "基础威力 42；命中后敌方物防-1。",
+        "description": "基础威力 42；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "土",
         "category": "物理",
         "power": 42,
@@ -13862,7 +14438,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -13883,13 +14460,14 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "嚼碎",
         "pp": 15,
-        "description": "基础威力 45。",
+        "description": "基础威力 45。（先手+1：必定先手）",
         "type": "土",
         "category": "物理",
         "power": 45,
@@ -13897,7 +14475,8 @@
         "learnLevel": 17,
         "note": "",
         "role": "战术",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -13918,7 +14497,8 @@
             "stat": "spAttack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "矿洞滚出来",
@@ -13927,7 +14507,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；自身物防+1。",
+        "description": "基础威力 50；自身物防+1。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -13938,7 +14518,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "亮晶晶的东西",
@@ -13958,7 +14539,8 @@
             "stat": "speed",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "背上的砂石",
@@ -13978,7 +14560,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "砂石甩尾",
@@ -13991,7 +14574,8 @@
         "learnLevel": 20,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "刨开一层岩",
@@ -14010,7 +14594,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "103185": [
@@ -14018,7 +14603,7 @@
         "slot": 1,
         "name": "矿脉尾扫",
         "pp": 30,
-        "description": "基础威力 45；命中后敌方物防-1。",
+        "description": "基础威力 45；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "土",
         "category": "特殊",
         "power": 45,
@@ -14033,7 +14618,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -14052,13 +14638,14 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "地刺",
         "pp": 15,
-        "description": "基础威力 58；命中后 30% 使敌方中毒。",
+        "description": "基础威力 58；命中后 30% 使敌方中毒。（先手+1：必定先手）",
         "type": "土",
         "category": "物理",
         "power": 58,
@@ -14072,13 +14659,14 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
         "name": "掘地冲锋",
         "pp": 10,
-        "description": "基础威力 91。",
+        "description": "基础威力 91。（先手-1：必定后手）",
         "type": "土",
         "category": "物理",
         "power": 91,
@@ -14086,7 +14674,8 @@
         "learnLevel": 30,
         "note": "",
         "role": "终结",
-        "fx": []
+        "fx": [],
+        "prio": -1
       },
       {
         "name": "薄薄一层铠甲",
@@ -14106,7 +14695,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "矿道巡逻",
@@ -14125,7 +14715,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "挡路的人",
@@ -14145,7 +14736,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "砂石护体",
@@ -14165,7 +14757,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "压实的砂层",
@@ -14184,7 +14777,8 @@
             "status": "中毒",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "103186": [
@@ -14192,7 +14786,7 @@
         "slot": 1,
         "name": "矿脉崩击",
         "pp": 30,
-        "description": "基础威力 50。",
+        "description": "基础威力 50。（先手-1：必定后手）",
         "type": "土",
         "category": "物理",
         "power": 50,
@@ -14200,13 +14794,14 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": -1
       },
       {
         "slot": 2,
         "name": "隧道突袭",
         "pp": 20,
-        "description": "回复自身 28% 生命。（变化技能，不造成伤害）",
+        "description": "回复自身 28% 生命。（变化技能，不造成伤害）（先手+1：必定先手）",
         "type": "土",
         "category": "变化",
         "power": null,
@@ -14219,7 +14814,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 3,
@@ -14240,7 +14836,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -14259,7 +14856,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "小小矿车",
@@ -14279,7 +14877,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "层层矿层",
@@ -14299,7 +14898,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "又直又稳",
@@ -14317,7 +14917,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "隧道尽头",
@@ -14330,7 +14931,8 @@
         "learnLevel": 26,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "矿车全速",
@@ -14339,11 +14941,12 @@
         "power": 92,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 92。",
+        "description": "基础威力 92。（先手-1：必定后手）",
         "learnLevel": 34,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": -1
       }
     ],
     "103187": [
@@ -14351,7 +14954,7 @@
         "slot": 1,
         "name": "弹跳撞击",
         "pp": 30,
-        "description": "基础威力 43；命中后敌方物防-1。",
+        "description": "基础威力 43；命中后敌方物防-1。（先手+1：必定先手）",
         "type": "钢",
         "category": "物理",
         "power": 43,
@@ -14366,7 +14969,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -14387,13 +14991,14 @@
             "stat": "defense",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "齿轮飞刃",
         "pp": 15,
-        "description": "基础威力 43；命中后 30% 使敌方流血。",
+        "description": "基础威力 43；命中后 30% 使敌方流血。（先手+1：必定先手）",
         "type": "钢",
         "category": "特殊",
         "power": 43,
@@ -14407,7 +15012,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -14428,7 +15034,8 @@
             "stat": "defense",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "到处弹",
@@ -14437,7 +15044,7 @@
         "power": 50,
         "accuracy": 100,
         "pp": 20,
-        "description": "基础威力 50；命中后 30% 使敌方流血。",
+        "description": "基础威力 50；命中后 30% 使敌方流血。（先手+1：必定先手）",
         "learnLevel": 8,
         "role": null,
         "exclusive": true,
@@ -14447,7 +15054,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "name": "原地打转",
@@ -14467,7 +15075,8 @@
             "stat": "speed",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "齿轮咬合",
@@ -14486,7 +15095,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "攥紧一点",
@@ -14506,7 +15116,8 @@
             "stat": "defense",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "「铮」的一声",
@@ -14526,7 +15137,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "103188": [
@@ -14534,7 +15146,7 @@
         "slot": 1,
         "name": "塔身重压",
         "pp": 30,
-        "description": "基础威力 46；命中后 30% 使敌方流血。",
+        "description": "基础威力 46；命中后 30% 使敌方流血。（先手+1：必定先手）",
         "type": "钢",
         "category": "物理",
         "power": 46,
@@ -14548,7 +15160,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -14567,13 +15180,14 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "塔顶光束",
         "pp": 15,
-        "description": "基础威力 54；命中后 30% 使敌方流血。",
+        "description": "基础威力 54；命中后 30% 使敌方流血。（先手+1：必定先手）",
         "type": "钢",
         "category": "特殊",
         "power": 54,
@@ -14587,7 +15201,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -14608,7 +15223,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "向上堆叠",
@@ -14630,7 +15246,8 @@
               "turns": 5
             }
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "越高越稳",
@@ -14648,7 +15265,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "塔尖的灯",
@@ -14668,7 +15286,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "垒成小塔",
@@ -14687,7 +15306,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "塔顶压落",
@@ -14706,7 +15326,8 @@
             "status": "流血",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "103189": [
@@ -14714,7 +15335,7 @@
         "slot": 1,
         "name": "铲刃斩",
         "pp": 30,
-        "description": "基础威力 43。",
+        "description": "基础威力 43。（先手+1：必定先手）",
         "type": "钢",
         "category": "物理",
         "power": 43,
@@ -14722,7 +15343,8 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -14743,7 +15365,8 @@
             "stat": "defense",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -14764,7 +15387,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -14785,7 +15409,8 @@
             "stat": "defense",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "折成一把铲",
@@ -14798,7 +15423,8 @@
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "向外挖掘",
@@ -14818,7 +15444,8 @@
             "stat": "defense",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "最硬的岩层",
@@ -14838,7 +15465,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "铲刃挑起",
@@ -14851,7 +15479,8 @@
         "learnLevel": 24,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "开凿到底",
@@ -14871,7 +15500,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "103190": [
@@ -14879,7 +15509,7 @@
         "slot": 1,
         "name": "塔层碾压",
         "pp": 30,
-        "description": "基础威力 49；自身物防+1。",
+        "description": "基础威力 49；自身物防+1。（先手+1：必定先手）",
         "type": "钢",
         "category": "物理",
         "power": 49,
@@ -14894,7 +15524,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -14915,7 +15546,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -14936,7 +15568,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -14957,7 +15590,8 @@
             "stat": "defense",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "三层结构",
@@ -14977,7 +15611,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "中间那层在转",
@@ -14997,7 +15632,8 @@
             "stat": "defense",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "塔顶守望",
@@ -15017,7 +15653,8 @@
             "stat": "defense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "装置全开",
@@ -15026,7 +15663,7 @@
         "power": 88,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 88；命中后 25% 使敌方流血。",
+        "description": "基础威力 88；命中后 25% 使敌方流血。（先手-1：必定后手）",
         "learnLevel": 30,
         "role": null,
         "exclusive": true,
@@ -15036,7 +15673,8 @@
             "status": "流血",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "高塔坠落",
@@ -15045,7 +15683,7 @@
         "power": 100,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 100；命中后 25% 使敌方流血。",
+        "description": "基础威力 100；命中后 25% 使敌方流血。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
@@ -15055,7 +15693,8 @@
             "status": "流血",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       }
     ],
     "103191": [
@@ -15063,7 +15702,7 @@
         "slot": 1,
         "name": "双铲回旋",
         "pp": 30,
-        "description": "基础威力 52；命中后 30% 使敌方流血。",
+        "description": "基础威力 52；命中后 30% 使敌方流血。（先手+1：必定先手）",
         "type": "钢",
         "category": "物理",
         "power": 52,
@@ -15077,7 +15716,8 @@
             "status": "流血",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -15098,7 +15738,8 @@
             "stat": "defense",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -15119,7 +15760,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -15140,7 +15782,8 @@
             "stat": "defense",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "首尾相接",
@@ -15160,7 +15803,8 @@
             "stat": "defense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "掘进",
@@ -15180,7 +15824,8 @@
             "stat": "defense",
             "stage": 2
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "自己塌回去",
@@ -15198,7 +15843,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "铲刃连斩",
@@ -15217,7 +15863,8 @@
             "status": "流血",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "掘穿一切",
@@ -15226,7 +15873,7 @@
         "power": 98,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 98；命中后 25% 使敌方流血。",
+        "description": "基础威力 98；命中后 25% 使敌方流血。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
@@ -15236,7 +15883,8 @@
             "status": "流血",
             "chance": 0.25
           }
-        ]
+        ],
+        "prio": -1
       }
     ],
     "103192": [
@@ -15244,7 +15892,7 @@
         "slot": 1,
         "name": "气泡炮",
         "pp": 30,
-        "description": "基础威力 40。",
+        "description": "基础威力 40。（先手+1：必定先手）",
         "type": "水",
         "category": "特殊",
         "power": 40,
@@ -15252,7 +15900,8 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -15273,7 +15922,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
@@ -15294,7 +15944,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 4,
@@ -15313,7 +15964,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "一片小岛",
@@ -15326,7 +15978,8 @@
         "learnLevel": 12,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": 0
       },
       {
         "name": "把气泡聚起来",
@@ -15346,7 +15999,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "一大群",
@@ -15365,7 +16019,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "海面漂移",
@@ -15385,7 +16040,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "整片浮起来",
@@ -15405,7 +16061,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       }
     ],
     "103193": [
@@ -15413,7 +16070,7 @@
         "slot": 1,
         "name": "巨螯夹击",
         "pp": 30,
-        "description": "基础威力 40。",
+        "description": "基础威力 40。（先手+1：必定先手）",
         "type": "水",
         "category": "物理",
         "power": 40,
@@ -15421,7 +16078,8 @@
         "learnLevel": 1,
         "note": "",
         "role": "起手",
-        "fx": []
+        "fx": [],
+        "prio": 1
       },
       {
         "slot": 2,
@@ -15442,13 +16100,14 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "slot": 3,
         "name": "海蚀冲击",
         "pp": 15,
-        "description": "基础威力 46；命中后 30% 使敌方潮湿。",
+        "description": "基础威力 46；命中后 30% 使敌方潮湿。（先手+1：必定先手）",
         "type": "水",
         "category": "物理",
         "power": 46,
@@ -15462,7 +16121,8 @@
             "status": "潮湿",
             "chance": 0.3
           }
-        ]
+        ],
+        "prio": 1
       },
       {
         "slot": 4,
@@ -15481,7 +16141,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "厚甲",
@@ -15501,7 +16162,8 @@
             "stat": "spDefense",
             "stage": 1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "巨螯夹碎",
@@ -15510,7 +16172,7 @@
         "power": 88,
         "accuracy": 95,
         "pp": 10,
-        "description": "基础威力 88；命中后敌方特防-1。",
+        "description": "基础威力 88；命中后敌方特防-1。（先手-1：必定后手）",
         "learnLevel": 18,
         "role": null,
         "exclusive": true,
@@ -15521,7 +16183,8 @@
             "stat": "spDefense",
             "stage": -1
           }
-        ]
+        ],
+        "prio": -1
       },
       {
         "name": "不再需要气泡",
@@ -15539,7 +16202,8 @@
             "k": "heal",
             "pct": 0.28
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "离群之后",
@@ -15559,7 +16223,8 @@
             "stat": "attack",
             "stage": -1
           }
-        ]
+        ],
+        "prio": 0
       },
       {
         "name": "独自守海",
@@ -15568,11 +16233,12 @@
         "power": 96,
         "accuracy": 90,
         "pp": 5,
-        "description": "基础威力 96。",
+        "description": "基础威力 96。（先手-1：必定后手）",
         "learnLevel": 38,
         "role": null,
         "exclusive": true,
-        "fx": []
+        "fx": [],
+        "prio": -1
       }
     ]
   },

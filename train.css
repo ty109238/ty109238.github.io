@@ -1193,3 +1193,7 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
 }
 .skill-fold:hover { background: #ffeb85; }
 .record-heading { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+/* 先手标记 */
+.sm-prio { font-size: 10px; font-weight: 900; padding: 1px 7px; border-radius: 999px; }
+.sm-prio.up { background: #e6f7ec; color: #1f7a3d; border: 1px solid #b6e0c2; }
+.sm-prio.down { background: #fdecea; color: #a4331f; border: 1px solid #f3c1b8; }

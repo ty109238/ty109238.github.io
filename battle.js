@@ -56,7 +56,10 @@
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
 
   function skillPriority(s) {
+    if (typeof s.prio === 'number') return s.prio;
     var d = s.description || '';
+    if (/先手\+1/.test(d)) return 1;
+    if (/先手-1/.test(d)) return -1;
     if (PRIORITY_WORDS.test(d)) return 1;
     if (SLOW_WORDS.test(d)) return -1;
     return 0;
@@ -1018,7 +1021,12 @@
     var order;
     if (myPri !== foePri) order = myPri > foePri ? [['my', mySkill], ['enemy', enemySkill]] : [['enemy', enemySkill], ['my', mySkill]];
     else order = mySpeed >= foeSpeed ? [['my', mySkill], ['enemy', enemySkill]] : [['enemy', enemySkill], ['my', mySkill]];
-    if (myPri > 0 || foePri > 0) logLine('（先制招式抢先出手）');
+    if (myPri !== 0 || foePri !== 0) {
+      if (myPri > foePri) logLine('（先手 +' + myPri + ' 抢在对手之前出手）');
+      else if (myPri < foePri) logLine('（对手先手 +' + foePri + ' 抢先）');
+      else if (myPri > 0) logLine('（双方先手相同，比速度）');
+      else logLine('（双方先手 -1，必定后手）');
+    }
     if (aiSwitch >= 0) order = order.filter(function (x) { return x[0] !== 'enemy'; });
     logLine('—— 第 ' + b.turn + ' 回合 ——', 'turn');
 
