@@ -1063,6 +1063,23 @@
     return img;
   }
 
+  function killEggBg() {
+    var frames = document.querySelectorAll('.egg-frame, .egg-frame *');
+    for (var i = 0; i < frames.length; i++) {
+      var el = frames[i];
+      if (el.tagName === 'IMG') {
+        el.style.setProperty('background', 'transparent', 'important');
+        continue;
+      }
+      if (el.getAttribute('data-nobg') === '1') continue;
+      el.setAttribute('data-nobg', '1');
+      el.style.setProperty('background', 'transparent', 'important');
+      el.style.setProperty('background-image', 'none', 'important');
+      el.style.setProperty('border', '0', 'important');
+      el.style.setProperty('box-shadow', 'none', 'important');
+    }
+  }
+
   function frameTraitSection() {
     var secs = document.querySelectorAll('.detail-page > section');
     for (var i = 0; i < secs.length; i++) {
@@ -1134,7 +1151,7 @@
     var t = null;
     entryObs = new MutationObserver(function () {
       clearTimeout(t);
-      t = setTimeout(function () { syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); }, 80);
+      t = setTimeout(function () { syncSkillCollapse(); syncEntryIcons(); killEggBg(); frameTraitSection(); killTraitBg(); }, 80);
     });
     entryObs.observe(root, { childList: true, subtree: true });
   }
