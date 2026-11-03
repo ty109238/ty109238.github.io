@@ -30,3 +30,14 @@ body { margin:0; background:#f4f7fa; color:var(--ink); font-family:"PingFang SC"
 .c-weather, .c-terrain { padding:2px 9px; border-radius:999px; background:#f3f7fb; color:#55677b; font-weight:800; }
 .w-combo b { color:#b3157a; }
 @media (max-width:720px) { .w-grid { grid-template-columns:1fr; } }
+
+/* 天气/场地/环境图标：统一白底圆角 */
+.w-head img {
+  width: 44px !important; height: 44px !important;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid #e8eef5;
+  border-radius: 10px;
+  padding: 2px;
+}
+.w-logo { width: 40px; height: 40px; object-fit: contain; }
