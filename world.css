@@ -41,3 +41,7 @@ body { margin:0; background:#f4f7fa; color:var(--ink); font-family:"PingFang SC"
   padding: 2px;
 }
 .w-logo { width: 40px; height: 40px; object-fit: contain; }
+
+.w-value, .w-rule { margin: 6px 0 0; font-size: 11.5px; line-height: 1.7; color: #55677b; }
+.w-value b { color: #b3157a; }
+.w-rule b { color: #15529e; }

@@ -21,21 +21,26 @@
       '</div>';
     c.innerHTML = head +
       (opts.sub ? '<div class="w-sub">' + opts.sub + '</div>' : '') +
-      '<p class="w-effect">' + opts.effect + '</p>';
+      '<p class="w-effect">' + opts.effect + '</p>' +
+      (opts.value ? '<p class="w-value"><b>数值</b> ' + opts.value + '</p>' : '') +
+      (opts.rule ? '<p class="w-rule"><b>交互</b> ' + opts.rule + '</p>' : '');
     return c;
   }
 
   function renderStatus() {
     document.getElementById('intro').textContent =
-      '战斗中会出现的全部状态。负面状态每回合结算，持续回合数到期后自动解除。';
+      '战斗中会出现的全部 ' + DATA.statuses.length + ' 种状态：17 种图标全部配备数值说明与交互规则。负面状态每回合结算，持续回合数到期后自动解除。';
     var grid = document.getElementById('grid');
     DATA.statuses.forEach(function (s) {
       grid.appendChild(card({
         name: s.name,
-        icon: 'status-' + (s.name === '灼烧' ? 'burn' : s.name === '中毒' ? 'poison' : s.name === '冰冻' ? 'freeze' : 'guard') + '.webp',
+        icon: (s.icon || 'status-guard') + '.webp',
         tag: s.kind === 'debuff' ? '负面' : '增益',
         tone: s.kind === 'debuff' ? 'bad' : 'good',
         effect: s.effect,
+        value: s.value,
+        rule: s.rule,
+        sub: s.summary,
       }));
     });
     document.getElementById('count').textContent = '共 ' + DATA.statuses.length + ' 种状态';
