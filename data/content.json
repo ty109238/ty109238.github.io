@@ -2838,7 +2838,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方灼烧。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -2858,7 +2858,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方灼烧。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -2878,7 +2878,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -2898,7 +2898,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方灼烧。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -2918,7 +2918,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方灼烧。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -2939,7 +2939,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -3037,7 +3037,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方灼烧。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -3057,7 +3057,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方灼烧。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3077,7 +3077,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3097,7 +3097,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方灼烧。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -3117,7 +3117,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方灼烧。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3138,7 +3138,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -3236,7 +3236,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方灼烧。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -3256,7 +3256,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方灼烧。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3276,7 +3276,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3296,7 +3296,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方灼烧。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -3316,7 +3316,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方灼烧。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3337,7 +3337,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -3435,7 +3435,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方潮湿。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -3455,7 +3455,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方潮湿。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3475,7 +3475,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3495,7 +3495,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方潮湿。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -3515,7 +3515,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方潮湿。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3536,7 +3536,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -3634,7 +3634,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方潮湿。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -3654,7 +3654,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方潮湿。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3674,7 +3674,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3694,7 +3694,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方潮湿。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -3714,7 +3714,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方潮湿。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3735,7 +3735,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -3833,7 +3833,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方潮湿。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -3853,7 +3853,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方潮湿。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3873,7 +3873,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3893,7 +3893,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方潮湿。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -3913,7 +3913,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方潮湿。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -3934,7 +3934,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -4032,7 +4032,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -4052,7 +4052,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4072,7 +4072,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4092,7 +4092,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -4112,7 +4112,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4133,7 +4133,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -4231,7 +4231,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -4251,7 +4251,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4271,7 +4271,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4291,7 +4291,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -4311,7 +4311,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4332,7 +4332,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -4430,7 +4430,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -4450,7 +4450,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4470,7 +4470,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4490,7 +4490,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -4510,7 +4510,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4531,7 +4531,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -4629,7 +4629,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -4649,7 +4649,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4669,7 +4669,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4689,7 +4689,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -4709,7 +4709,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4730,7 +4730,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -4828,7 +4828,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -4848,7 +4848,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4868,7 +4868,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4888,7 +4888,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -4908,7 +4908,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -4929,7 +4929,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -5027,7 +5027,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -5047,7 +5047,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5067,7 +5067,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5087,7 +5087,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -5107,7 +5107,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5128,7 +5128,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -5226,7 +5226,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -5246,7 +5246,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5266,7 +5266,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5286,7 +5286,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -5306,7 +5306,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5327,7 +5327,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -5425,7 +5425,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -5445,7 +5445,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5465,7 +5465,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5485,7 +5485,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -5505,7 +5505,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5526,7 +5526,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -5624,7 +5624,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -5644,7 +5644,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5664,7 +5664,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5684,7 +5684,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -5704,7 +5704,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5725,7 +5725,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -5823,7 +5823,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方冰冻。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -5843,7 +5843,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方冰冻。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5863,7 +5863,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5883,7 +5883,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方冰冻。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -5903,7 +5903,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方冰冻。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -5924,7 +5924,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -6022,7 +6022,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方冰冻。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -6042,7 +6042,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方冰冻。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6062,7 +6062,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6082,7 +6082,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方冰冻。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -6102,7 +6102,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方冰冻。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6123,7 +6123,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -6221,7 +6221,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方冰冻。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -6241,7 +6241,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方冰冻。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6261,7 +6261,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6281,7 +6281,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方冰冻。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -6301,7 +6301,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方冰冻。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6322,7 +6322,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -6420,7 +6420,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方荆棘。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -6440,7 +6440,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方荆棘。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6460,7 +6460,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6480,7 +6480,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方荆棘。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -6500,7 +6500,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方荆棘。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6521,7 +6521,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -6619,7 +6619,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方荆棘。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -6639,7 +6639,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方荆棘。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6659,7 +6659,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6679,7 +6679,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方荆棘。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -6699,7 +6699,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方荆棘。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6720,7 +6720,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -6818,7 +6818,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方荆棘。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -6838,7 +6838,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方荆棘。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6858,7 +6858,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6878,7 +6878,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方荆棘。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -6898,7 +6898,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方荆棘。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -6919,7 +6919,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -7017,7 +7017,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -7037,7 +7037,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7057,7 +7057,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7077,7 +7077,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -7097,7 +7097,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7118,7 +7118,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -7216,7 +7216,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -7236,7 +7236,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7256,7 +7256,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7276,7 +7276,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -7296,7 +7296,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7317,7 +7317,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -7415,7 +7415,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -7435,7 +7435,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7455,7 +7455,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7475,7 +7475,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -7495,7 +7495,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7516,7 +7516,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -7614,7 +7614,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方流血。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -7634,7 +7634,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方流血。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7654,7 +7654,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7674,7 +7674,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方流血。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -7694,7 +7694,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方流血。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7715,7 +7715,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -7813,7 +7813,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方流血。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -7833,7 +7833,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方流血。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7853,7 +7853,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7873,7 +7873,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方流血。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -7893,7 +7893,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方流血。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -7914,7 +7914,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -8012,7 +8012,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方流血。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -8032,7 +8032,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方流血。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8052,7 +8052,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8072,7 +8072,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方流血。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -8092,7 +8092,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方流血。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8113,7 +8113,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -8211,7 +8211,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方诅咒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -8231,7 +8231,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方诅咒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8251,7 +8251,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8271,7 +8271,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方诅咒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -8291,7 +8291,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方诅咒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8312,7 +8312,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -8410,7 +8410,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方诅咒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -8430,7 +8430,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方诅咒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8450,7 +8450,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8470,7 +8470,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方诅咒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -8490,7 +8490,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方诅咒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8511,7 +8511,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -8609,7 +8609,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方诅咒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -8629,7 +8629,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方诅咒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8649,7 +8649,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8669,7 +8669,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方诅咒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -8689,7 +8689,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方诅咒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8710,7 +8710,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -8808,7 +8808,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方盲目。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -8828,7 +8828,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方盲目。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8848,7 +8848,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8868,7 +8868,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方盲目。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -8888,7 +8888,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方盲目。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -8909,7 +8909,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -9007,7 +9007,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方盲目。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -9027,7 +9027,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方盲目。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9047,7 +9047,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9067,7 +9067,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方盲目。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -9087,7 +9087,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方盲目。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9108,7 +9108,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -9206,7 +9206,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方盲目。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -9226,7 +9226,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方盲目。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9246,7 +9246,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9266,7 +9266,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方盲目。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -9286,7 +9286,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方盲目。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9307,7 +9307,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -9405,7 +9405,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方诅咒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -9425,7 +9425,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方诅咒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9445,7 +9445,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9465,7 +9465,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方诅咒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -9485,7 +9485,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方诅咒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9506,7 +9506,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -9604,7 +9604,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方诅咒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -9624,7 +9624,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方诅咒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9644,7 +9644,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9664,7 +9664,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方诅咒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -9684,7 +9684,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方诅咒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9705,7 +9705,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -9803,7 +9803,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方诅咒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -9823,7 +9823,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方诅咒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9843,7 +9843,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9863,7 +9863,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方诅咒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -9883,7 +9883,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方诅咒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -9904,7 +9904,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -10002,7 +10002,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -10022,7 +10022,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10042,7 +10042,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10062,7 +10062,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -10082,7 +10082,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10103,7 +10103,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -10201,7 +10201,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -10221,7 +10221,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10241,7 +10241,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10261,7 +10261,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -10281,7 +10281,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10302,7 +10302,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -10400,7 +10400,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -10420,7 +10420,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10440,7 +10440,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10460,7 +10460,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -10480,7 +10480,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10501,7 +10501,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -10599,7 +10599,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方麻痹。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -10619,7 +10619,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方麻痹。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10639,7 +10639,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10659,7 +10659,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方麻痹。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -10679,7 +10679,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方麻痹。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10700,7 +10700,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -10798,7 +10798,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方麻痹。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -10818,7 +10818,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方麻痹。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10838,7 +10838,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10858,7 +10858,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方麻痹。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -10878,7 +10878,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方麻痹。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -10899,7 +10899,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -10997,7 +10997,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方麻痹。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -11017,7 +11017,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方麻痹。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11037,7 +11037,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11057,7 +11057,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方麻痹。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -11077,7 +11077,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方麻痹。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11098,7 +11098,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -11196,7 +11196,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方麻痹。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -11216,7 +11216,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方麻痹。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11236,7 +11236,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11256,7 +11256,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方麻痹。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -11276,7 +11276,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方麻痹。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11297,7 +11297,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -11395,7 +11395,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方麻痹。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -11415,7 +11415,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方麻痹。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11435,7 +11435,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11455,7 +11455,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方麻痹。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -11475,7 +11475,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方麻痹。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11496,7 +11496,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -11594,7 +11594,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方麻痹。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -11614,7 +11614,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方麻痹。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11634,7 +11634,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11654,7 +11654,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方麻痹。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -11674,7 +11674,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方麻痹。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11695,7 +11695,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -11793,7 +11793,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方潮湿。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -11813,7 +11813,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方潮湿。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11833,7 +11833,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11853,7 +11853,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方潮湿。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -11873,7 +11873,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方潮湿。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -11894,7 +11894,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -11992,7 +11992,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方潮湿。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -12012,7 +12012,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方潮湿。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12032,7 +12032,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12052,7 +12052,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方潮湿。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -12072,7 +12072,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方潮湿。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12093,7 +12093,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -12191,7 +12191,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方潮湿。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -12211,7 +12211,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方潮湿。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12231,7 +12231,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12251,7 +12251,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方潮湿。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -12271,7 +12271,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方潮湿。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12292,7 +12292,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -12390,7 +12390,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方冰冻。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -12410,7 +12410,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方冰冻。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12430,7 +12430,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12450,7 +12450,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方冰冻。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -12470,7 +12470,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方冰冻。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12491,7 +12491,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -12589,7 +12589,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方盲目。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -12609,7 +12609,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方盲目。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12629,7 +12629,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12649,7 +12649,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方盲目。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -12669,7 +12669,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方盲目。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12690,7 +12690,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -12788,7 +12788,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方冰冻。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -12808,7 +12808,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方冰冻。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12828,7 +12828,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12848,7 +12848,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方冰冻。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -12868,7 +12868,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方冰冻。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -12889,7 +12889,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -12987,7 +12987,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方流血。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -13007,7 +13007,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方流血。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13027,7 +13027,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13047,7 +13047,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方流血。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -13067,7 +13067,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方流血。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13088,7 +13088,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -13186,7 +13186,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方潮湿。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -13206,7 +13206,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方潮湿。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13226,7 +13226,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13246,7 +13246,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方潮湿。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -13266,7 +13266,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方潮湿。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13287,7 +13287,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -13385,7 +13385,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方荆棘。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -13405,7 +13405,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方荆棘。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13425,7 +13425,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13445,7 +13445,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方荆棘。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -13465,7 +13465,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方荆棘。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13486,7 +13486,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -13584,7 +13584,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方灼烧。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -13604,7 +13604,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方灼烧。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13624,7 +13624,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13644,7 +13644,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方灼烧。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -13664,7 +13664,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方灼烧。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13685,7 +13685,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -13783,7 +13783,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方灼烧。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -13803,7 +13803,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方灼烧。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13823,7 +13823,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13843,7 +13843,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方灼烧。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -13863,7 +13863,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方灼烧。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -13884,7 +13884,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -13982,7 +13982,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方灼烧。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -14002,7 +14002,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方灼烧。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14022,7 +14022,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14042,7 +14042,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方灼烧。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -14062,7 +14062,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方灼烧。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14083,7 +14083,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -14181,7 +14181,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方冰冻。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -14201,7 +14201,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方冰冻。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14221,7 +14221,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14241,7 +14241,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方冰冻。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -14261,7 +14261,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方冰冻。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14282,7 +14282,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -14380,7 +14380,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方冰冻。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -14400,7 +14400,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方冰冻。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14420,7 +14420,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14440,7 +14440,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方冰冻。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -14460,7 +14460,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方冰冻。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14481,7 +14481,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -14579,7 +14579,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方冰冻。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -14599,7 +14599,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方冰冻。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14619,7 +14619,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14639,7 +14639,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方冰冻。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -14659,7 +14659,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方冰冻。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14680,7 +14680,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -14778,7 +14778,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方中毒。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -14798,7 +14798,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方中毒。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14818,7 +14818,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14838,7 +14838,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方中毒。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -14858,7 +14858,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方中毒。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -14879,7 +14879,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -14977,7 +14977,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方潮湿。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -14997,7 +14997,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方潮湿。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15017,7 +15017,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15037,7 +15037,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方潮湿。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -15057,7 +15057,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方潮湿。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15078,7 +15078,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -15176,7 +15176,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方潮湿。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -15196,7 +15196,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方潮湿。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15216,7 +15216,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15236,7 +15236,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方潮湿。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -15256,7 +15256,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方潮湿。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15277,7 +15277,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -15375,7 +15375,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方潮湿。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -15395,7 +15395,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方潮湿。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15415,7 +15415,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15435,7 +15435,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方潮湿。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -15455,7 +15455,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方潮湿。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15476,7 +15476,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -15574,7 +15574,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方荆棘。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -15594,7 +15594,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方荆棘。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15614,7 +15614,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15634,7 +15634,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方荆棘。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -15654,7 +15654,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方荆棘。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15675,7 +15675,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -15773,7 +15773,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方荆棘。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -15793,7 +15793,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方荆棘。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15813,7 +15813,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15833,7 +15833,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方荆棘。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -15853,7 +15853,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方荆棘。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -15874,7 +15874,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -15972,7 +15972,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方荆棘。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -15992,7 +15992,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方荆棘。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16012,7 +16012,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16032,7 +16032,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方荆棘。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -16052,7 +16052,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方荆棘。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16073,7 +16073,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -16171,7 +16171,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方流血。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -16191,7 +16191,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方流血。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16211,7 +16211,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16231,7 +16231,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方流血。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -16251,7 +16251,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方流血。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16272,7 +16272,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -16370,7 +16370,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方流血。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -16390,7 +16390,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方流血。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16410,7 +16410,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16430,7 +16430,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方流血。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -16450,7 +16450,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方流血。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16471,7 +16471,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -16569,7 +16569,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方流血。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -16589,7 +16589,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方流血。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16609,7 +16609,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16629,7 +16629,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方流血。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -16649,7 +16649,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方流血。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16670,7 +16670,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -16768,7 +16768,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方流血。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -16788,7 +16788,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方流血。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16808,7 +16808,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16828,7 +16828,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方流血。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -16848,7 +16848,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方流血。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -16869,7 +16869,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -16967,7 +16967,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方流血。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -16987,7 +16987,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方流血。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17007,7 +17007,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17027,7 +17027,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方流血。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -17047,7 +17047,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方流血。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17068,7 +17068,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -17166,7 +17166,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方潮湿。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -17186,7 +17186,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方潮湿。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17206,7 +17206,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17226,7 +17226,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方潮湿。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -17246,7 +17246,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方潮湿。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17267,7 +17267,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -17365,7 +17365,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方潮湿。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -17385,7 +17385,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方潮湿。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17405,7 +17405,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17425,7 +17425,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方潮湿。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -17445,7 +17445,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方潮湿。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17466,7 +17466,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -17564,7 +17564,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 45，命中后 20% 使敌方恢复。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -17584,7 +17584,7 @@
         "description": "凝出属性纹路的一击，基础威力 62；命中后 35% 使敌方恢复。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17604,7 +17604,7 @@
         "description": "掀起整片属性余波，基础威力 50，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17624,7 +17624,7 @@
         "description": "全力一击，基础威力 101，必定后手（先手-1）；命中后 25% 使敌方恢复。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -17644,7 +17644,7 @@
         "description": "连续三段打击，每段威力 33，命中后每段 10% 使敌方恢复。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17665,7 +17665,7 @@
         "description": "必定暴击的一击，基础威力 72；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -17763,7 +17763,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 49，命中后 20% 使敌方恢复。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -17783,7 +17783,7 @@
         "description": "凝出属性纹路的一击，基础威力 68；命中后 35% 使敌方恢复。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17803,7 +17803,7 @@
         "description": "掀起整片属性余波，基础威力 55，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17823,7 +17823,7 @@
         "description": "全力一击，基础威力 112，必定后手（先手-1）；命中后 25% 使敌方恢复。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -17843,7 +17843,7 @@
         "description": "连续三段打击，每段威力 36，命中后每段 10% 使敌方恢复。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -17864,7 +17864,7 @@
         "description": "必定暴击的一击，基础威力 80；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
@@ -17962,7 +17962,7 @@
         "description": "抢先出手的一击（先手+1），基础威力 52，命中后 20% 使敌方恢复。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 1,
         "fx": [
           {
@@ -17982,7 +17982,7 @@
         "description": "凝出属性纹路的一击，基础威力 72；命中后 35% 使敌方恢复。",
         "learnLevel": 8,
         "role": "主力",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -18002,7 +18002,7 @@
         "description": "掀起整片属性余波，基础威力 58，命中全部对手。",
         "learnLevel": 15,
         "role": "范围",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -18022,7 +18022,7 @@
         "description": "全力一击，基础威力 118，必定后手（先手-1）；命中后 25% 使敌方恢复。",
         "learnLevel": 22,
         "role": "终结",
-        "exclusive": true,
+        "exclusive": false,
         "prio": -1,
         "fx": [
           {
@@ -18042,7 +18042,7 @@
         "description": "连续三段打击，每段威力 38，命中后每段 10% 使敌方恢复。",
         "learnLevel": 28,
         "role": "连击",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [
           {
@@ -18063,7 +18063,7 @@
         "description": "必定暴击的一击，基础威力 84；出手后自身损失最大生命 12%。",
         "learnLevel": 34,
         "role": "爆发",
-        "exclusive": true,
+        "exclusive": false,
         "prio": 0,
         "fx": [],
         "crit": true,
