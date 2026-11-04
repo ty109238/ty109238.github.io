@@ -1155,8 +1155,10 @@
   var STRUGGLE = { name: '挣扎', type: '无', category: '物理', power: 40, accuracy: null, pp: 0, ppNow: 99, ppMax: 99, description: '无技能可用时的全力一撞，自身也会受到少量反伤。', learnLevel: 0 };
 
   function bindSkillTip(btn, skill) {
-    var timer = null;
     var tip = null;
+    var hoverTimer = null;
+    var pressTimer = null;
+
     function show() {
       hide();
       tip = document.createElement('div');
@@ -1164,186 +1166,40 @@
       tip.innerHTML = '<b>' + skill.name + '</b>' +
         '<div class="tip-meta">' + skill.type + '系 · ' + skillCat(skill) + ' · ' +
         (skill.power ? '威力 ' + skill.power : '变化') +
-        (skill.accuracy ? ' · 命中 ' + skill.accuracy : '') + ' · PP ' + skill.pp + '</div>' +
+        (skill.accuracy ? ' · 命中 ' + skill.accuracy : '') +
+        ' · PP ' + skill.pp + (skill.prio ? ' · 先手' + (skill.prio > 0 ? '+' : '') + skill.prio : '') + '</div>' +
         '<p>' + (skill.description || '') + '</p>';
       document.body.appendChild(tip);
       var r = btn.getBoundingClientRect();
       var top = r.bottom + 8;
-      if (top + 120 > window.innerHeight) top = r.top - 8 - tip.offsetHeight;
-      tip.style.left = Math.min(window.innerWidth - 300, Math.max(8, r.left)) + 'px';
+      if (top + tip.offsetHeight > window.innerHeight) top = r.top - tip.offsetHeight - 8;
       tip.style.top = Math.max(8, top) + 'px';
+      tip.style.left = Math.min(window.innerWidth - tip.offsetWidth - 10, Math.max(8, r.left)) + 'px';
     }
     function hide() { if (tip) { tip.remove(); tip = null; } }
-    btn.addEventListener('pointerdown', function () { timer = setTimeout(show, 350); });
-    ['pointerup', 'pointerleave', 'pointercancel', 'click'].forEach(function (ev) {
-      btn.addEventListener(ev, function () { clearTimeout(timer); setTimeout(hide, 1200); });
+
+    // 鼠标悬浮即显示（120ms 防抖，避免快速划过闪烁）
+    btn.addEventListener('mouseenter', function () {
+      clearTimeout(hoverTimer);
+      hoverTimer = setTimeout(show, 120);
     });
+    btn.addEventListener('mouseleave', function () {
+      clearTimeout(hoverTimer);
+      hide();
+    });
+
+    // 触屏：长按显示
+    btn.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'mouse') return;
+      pressTimer = setTimeout(show, 300);
+    });
+    ['pointerup', 'pointerleave', 'pointercancel'].forEach(function (ev) {
+      btn.addEventListener(ev, function () { clearTimeout(pressTimer); setTimeout(hide, 900); });
+    });
+
+    // 右键也显示
     btn.addEventListener('contextmenu', function (e) { e.preventDefault(); show(); });
   }
-
-
-  /* ================= 天气 / 场地 / 环境 ================= */
-  var WX = {
-    '骄阳': { el: '火', mult: 1.2, weak: '冰', weakMult: 0.8 },
-    '小雨': { el: '水', mult: 1.1, weak: '火', weakMult: 0.9 },
-    '倾盆大雨': { el: '水', mult: 1.25, weak: '火', weakMult: 0.75 },
-    '雾霾': { el: '风', mult: 1.0, acc: 0.85 },
-    '暴雪': { el: '冰', mult: 1.2, speed: 0.9 },
-    '沙暴': { el: '土', mult: 1.15, chip: 1 / 16 },
-    '铁尘': { el: '钢', mult: 1.15, acc: 0.9 },
-    '狂风': { el: '风', mult: 1.2, prio: 1.1 },
-    '雷雨': { el: '雷', mult: 1.2, wet: 1.2 },
-    '晴空': { el: '光', mult: 1.2, weak: '暗', weakMult: 0.8 },
-    '夜幕': { el: '暗', mult: 1.2, weak: '光', weakMult: 0.8, acc: 0.95 },
-    '花粉风': { el: '草', mult: 1.1, regen: 1 / 16 }
-  };
-  var TR = {
-    '山路': { el: '水', onHitHeal: 0.05 },
-    '断桥': { el: '钢', firstHitReduce: 0.1 },
-    '修废场': { el: '火', shieldBonus: 1.5 },
-    '垃圾堆': { el: '暗', poisonChance: 0.2 },
-    '花田': { el: '草', regen: 1 / 16 },
-    '冰面': { el: '冰', speed: 1.1, acc: -0.05 },
-    '林梢': { el: '风', prioBoost: 1.2 },
-    '电网': { el: '雷', paraBonus: 0.15 },
-    '沙丘': { el: '土', speed: 0.9, mult: 1.1 },
-    '圣坛': { el: '光', changeBonus: 1.3 }
-  };
-  var ENVS = {
-    '小雨|山路': { name: '林中小路', type: '草', mult: 1.1, healOnHit: 0.2 },
-    '倾盆大雨|断桥': { name: '暴雨断桥', type: '水', mult: 1.15, slowBoost: 1.25 },
-    '骄阳|圣坛': { name: '骄阳圣坛', type: '火', changeBonus: 1.5, burnChange: true },
-    '雾霾|修废场': { name: '尘雾修废场', shieldBonus: 1.7, acc: 0.85 },
-    '暴雪|冰面': { name: '雪埋冰面', type: '冰', mult: 1.15, speed: 1.1, acc: -0.1 },
-    '沙暴|沙丘': { name: '沙暴沙丘', type: '土', mult: 1.25, chip: 1 / 16 },
-    '铁尘|电网': { name: '铁雨电网', paraBonus: 0.25, steelVsPara: 1.2 },
-    '狂风|林梢': { name: '狂风林梢', prioBoost: 1.4 },
-    '雷雨|断桥': { name: '雷暴断桥', type: '雷', mult: 1.3, wet: 1.2 },
-    '晴空|花田': { name: '晴空花田', regen: 1 / 8, lightRegenX2: true },
-    '夜幕|垃圾堆': { name: '夜幕垃圾堆', poisonChance: 0.2, darkVsPoison: 1.25 },
-    '花粉风|花田': { name: '花粉风花田', type: '草', mult: 1.25, regen: 1 / 6 },
-    '小雨|垃圾堆': { name: '沼泽', speed: 0.85, chip: 1 / 16 },
-    '骄阳|沙丘': { name: '灼沙', type: '火', mult: 1.2, chip: 1 / 20 },
-    '雷雨|电网': { name: '超载电网', paraBonus: 0.3, paraBacklash: 1 / 12 },
-    '暴雪|山路': { name: '雪封山路', type: '冰', mult: 1.25, healOnHit: 0.1 },
-    '晴空|圣坛': { name: '晴空圣坛', type: '光', mult: 1.3, changeBonus: 1.4 }
-  };
-
-  function fieldOf() {
-    var b = state.battle;
-    return b && b.mode === 'double' ? dbl.b : b;
-  }
-  function setWeather(name) {
-    var b = fieldOf();
-    if (!b || !WX[name]) return;
-    b.weather = name;
-    b.weatherTurns = 5;
-    logLine('天气变为「<b>' + name + '</b>」（5 回合）', 'turn');
-    renderField();
-  }
-  function setTerrain(name) {
-    var b = fieldOf();
-    if (!b || !TR[name]) return;
-    b.terrain = name;
-    b.terrainTurns = 8;
-    logLine('场地变为「<b>' + name + '</b>」（8 回合）', 'turn');
-    renderField();
-  }
-  function currentEnv() {
-    var b = fieldOf();
-    if (!b || !b.weather || !b.terrain) return null;
-    return ENVS[b.weather + '|' + b.terrain] || null;
-  }
-  function fieldMult(type, skill, foe) {
-    var b = fieldOf();
-    if (!b) return 1;
-    var m = 1;
-    var w = WX[b.weather];
-    if (w && w.el === type) m *= w.mult;
-    if (w && w.weak === type) m *= w.weakMult;
-    var t = TR[b.terrain];
-    if (t && t.el === type) m *= 1.1;
-    if (t && t.mult && t.el === type) m *= t.mult;
-    var e = currentEnv();
-    if (e && e.type === type) m *= e.mult;
-    if (e && e.darkVsPoison && type === '暗' && arguments[2] && arguments[2].poisoned) m *= e.darkVsPoison;
-    if (e && e.steelVsPara && type === '钢' && arguments[2] && arguments[2].para) m *= e.steelVsPara;
-    if (e && e.slowBoost && skill && skill.category === '物理') m *= e.slowBoost;
-    if (e && e.steelVsPara && type === '钢') m *= 1;
-    return m;
-  }
-  function fieldAcc() {
-    var b = fieldOf();
-    if (!b) return 1;
-    var a = 1, w = WX[b.weather], t = TR[b.terrain], e = currentEnv();
-    if (w && w.acc) a *= w.acc;
-    if (t && t.acc) a *= (1 + t.acc);
-    if (e && e.acc) a *= e.acc;
-    return a;
-  }
-  function fieldSpeed() {
-    var b = fieldOf();
-    if (!b) return 1;
-    var m = 1, w = WX[b.weather], t = TR[b.terrain], e = currentEnv();
-    if (w && w.speed) m *= w.speed;
-    if (t && t.speed) m *= t.speed;
-    if (e && e.speed) m *= e.speed;
-    return m;
-  }
-  function tickField() {
-    var b = fieldOf();
-    if (!b) return;
-    if (b.weatherTurns > 0) {
-      b.weatherTurns--;
-      if (b.weatherTurns === 0) { logLine('天气恢复正常。'); b.weather = null; }
-    }
-    if (b.terrainTurns > 0) {
-      b.terrainTurns--;
-      if (b.terrainTurns === 0) { logLine('场地效果消失。'); b.terrain = null; }
-    }
-    var e = currentEnv();
-    if (e) logLine('环境形成：<b>' + e.name + '</b>', 'turn');
-    renderField();
-  }
-  function fieldEndOfTurn(team) {
-    var b = fieldOf();
-    if (!b) return;
-    var e = currentEnv();
-    var w = WX[b.weather] || {};
-    var t = TR[b.terrain] || {};
-    team.forEach(function (m) {
-      if (m.fainted) return;
-      var regen = (w.regen || 0) + (t.regen || 0) + (e && e.regen || 0);
-      if (e && e.lightRegenX2 && m.element === '光') regen *= 2;
-      if (regen > 0) {
-        var hl = Math.max(1, Math.floor(m.maxHp * regen));
-        m.hp = Math.min(m.maxHp, m.hp + hl);
-      }
-      var chip = w.chip || (e && e.chip) || 0;
-      if (chip > 0 && !(m.element === '土' || m.element === '钢')) {
-        m.hp = Math.max(0, m.hp - Math.max(1, Math.floor(m.maxHp * chip)));
-      }
-    });
-    if (t.poisonChance && Math.random() < t.poisonChance) {
-      team.forEach(function (m) { if (!m.fainted) m.status['中毒'] = 3; });
-    }
-  }
-  function renderField() {
-    var b = fieldOf();
-    if (!b) return;
-    var host = document.getElementById('fieldBar');
-    if (!host) return;
-    var e = currentEnv();
-    var parts = [];
-    if (b.weather) parts.push('天气 <b>' + b.weather + '</b>（' + (b.weatherTurns || 0) + '）');
-    else parts.push('天气 无');
-    if (b.terrain) parts.push('场地 <b>' + b.terrain + '</b>（' + (b.terrainTurns || 0) + '）');
-    else parts.push('场地 无');
-    if (e) parts.push('环境 <b class="env">' + e.name + '</b>');
-    host.innerHTML = parts.join('　·　');
-  }
-
-  /* ================= 接入完成 ================= */
 
   function chooseAiSkill(attacker, defender) {
     var level = (state.battle && state.battle.ai) || 'normal';
