@@ -1049,6 +1049,56 @@
     applyCatalogForm();
   }
 
+  function rainbowUrlOfDex(dex) {
+    if (!DATA) return null;
+    for (var i = 0; i < DATA.creatures.length; i++) {
+      var c = DATA.creatures[i];
+      if (c.dexNo === dex && c.rainbowKey) return DATA.images[c.rainbowKey] || null;
+    }
+    return null;
+  }
+
+  function applyDetailForm() {
+    var c = currentCreature();
+    if (!c || !DATA) return;
+    var on = localStorage.getItem('dex:catalogForm') === 'rainbow';
+
+    function swap(img, url) {
+      if (!img || !url) return;
+      if (!img.getAttribute('data-src-normal')) img.setAttribute('data-src-normal', img.src);
+      img.src = url;
+    }
+    function restore(img) {
+      var n = img.getAttribute('data-src-normal');
+      if (n) { img.src = n; img.removeAttribute('data-src-normal'); }
+    }
+
+    // 当前灵宠：场景写真 + 大头像 + 蛋以外的主图
+    var own = c.rainbowKey ? (DATA.images[c.rainbowKey] || null) : null;
+    if (own) {
+      var ports = document.querySelectorAll('.portrait-frame img, .detail-copy img, .hero-portrait img');
+      for (var i = 0; i < ports.length; i++) on ? swap(ports[i], own) : restore(ports[i]);
+    }
+
+    // 进化链 / 同族伙伴：按卡片里的链接判断是哪只
+    var links = document.querySelectorAll('a[href*="/creature/"]');
+    for (var k = 0; k < links.length; k++) {
+      var m = /\/(\d+)(?:$|[?#])/.exec(links[k].getAttribute('href') || '');
+      if (!m) continue;
+      var url = rainbowUrlOfDex(parseInt(m[1], 10));
+      if (!url) continue;
+      var imgs = links[k].querySelectorAll('img');
+      for (var j = 0; j < imgs.length; j++) on ? swap(imgs[j], url) : restore(imgs[j]);
+    }
+  }
+
+  function currentCreature() {
+    var id = currentCreatureId();
+    if (!id || !DATA) return null;
+    for (var i = 0; i < DATA.creatures.length; i++) if (DATA.creatures[i].id === id) return DATA.creatures[i];
+    return null;
+  }
+
   function applyCatalogForm() {
     var on = localStorage.getItem('dex:catalogForm') === 'rainbow';
     var cards = document.querySelectorAll('a.creature-card');
@@ -1926,9 +1976,9 @@
     var timer = null;
     new MutationObserver(function () {
       clearTimeout(timer);
-      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncFormFilter(); }, 300);
+      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncFormFilter(); applyDetailForm(); }, 300);
     }).observe(root, { childList: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncFormFilter(); syncSideRail(); syncMobileNav(); syncFormFilter(); syncToc(); syncSectionIcons(); syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncFormFilter(); syncSideRail(); syncMobileNav(); syncFormFilter(); applyDetailForm(); syncToc(); syncSectionIcons(); syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
   }
 
   window.__dexOpenNotice = openNotice;
