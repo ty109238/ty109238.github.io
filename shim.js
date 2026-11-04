@@ -1926,9 +1926,9 @@
     var timer = null;
     new MutationObserver(function () {
       clearTimeout(timer);
-      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); }, 300);
+      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncFormFilter(); }, 300);
     }).observe(root, { childList: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncMobileNav(); syncToc(); syncSectionIcons(); syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncFormFilter(); syncSideRail(); syncMobileNav(); syncFormFilter(); syncToc(); syncSectionIcons(); syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
   }
 
   window.__dexOpenNotice = openNotice;
