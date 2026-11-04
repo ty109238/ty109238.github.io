@@ -1063,6 +1063,59 @@
     return img;
   }
 
+  function currentCreature() {
+    var id = currentCreatureId();
+    if (!id || !DATA) return null;
+    for (var i = 0; i < DATA.creatures.length; i++) if (DATA.creatures[i].id === id) return DATA.creatures[i];
+    return null;
+  }
+
+  function applyForm(form) {
+    var c = currentCreature();
+    if (!c) return;
+    var rb = c.rainbowKey ? (DATA.images[c.rainbowKey] || '') : '';
+    if (!rb) return;
+    var normalRe = /\/media\/(creatures|portraits)\//;
+    var imgs = document.querySelectorAll('.portrait-frame img, .detail-copy img, .evolution-member img, img[src*="/media/creatures/"], img[src*="/media/rainbow/"]');
+    for (var i = 0; i < imgs.length; i++) {
+      var img = imgs[i];
+      if (form === 'rainbow') {
+        if (!img.getAttribute('data-src-normal')) img.setAttribute('data-src-normal', img.src);
+        img.src = rb;
+      } else {
+        var n = img.getAttribute('data-src-normal');
+        if (n) { img.src = n; img.removeAttribute('data-src-normal'); }
+      }
+    }
+    var btns = document.querySelectorAll('.form-btn');
+    for (var k = 0; k < btns.length; k++) btns[k].classList.toggle('on', btns[k].getAttribute('data-form') === form);
+  }
+
+  function syncFormToggle() {
+    var c = currentCreature();
+    if (!c || !c.rainbowKey) return;
+    if (document.querySelector('.form-switch')) {
+      applyForm(localStorage.getItem('dex:form') === 'rainbow' ? 'rainbow' : 'normal');
+      return;
+    }
+    var head = document.querySelector('.record-heading');
+    if (!head) return;
+    var box = document.createElement('div');
+    box.className = 'form-switch';
+    box.innerHTML =
+      '<button type="button" class="form-btn" data-form="normal">普通形态</button>' +
+      '<button type="button" class="form-btn rainbow" data-form="rainbow">彩虹形态</button>';
+    box.addEventListener('click', function (e) {
+      var b = e.target.closest('.form-btn');
+      if (!b) return;
+      var f = b.getAttribute('data-form');
+      localStorage.setItem('dex:form', f === 'rainbow' ? 'rainbow' : 'normal');
+      applyForm(f);
+    });
+    head.appendChild(box);
+    applyForm(localStorage.getItem('dex:form') === 'rainbow' ? 'rainbow' : 'normal');
+  }
+
   function killEvoBg() {
     var nodes = document.querySelectorAll('.evolution-member, .evolution-member *');
     for (var i = 0; i < nodes.length; i++) {
@@ -1175,7 +1228,7 @@
     var t = null;
     entryObs = new MutationObserver(function () {
       clearTimeout(t);
-      t = setTimeout(function () { syncSkillCollapse(); syncEntryIcons(); killEggBg(); killEvoBg(); frameTraitSection(); killTraitBg(); }, 80);
+      t = setTimeout(function () { syncSkillCollapse(); syncEntryIcons(); killEggBg(); killEvoBg(); syncFormToggle(); frameTraitSection(); killTraitBg(); }, 80);
     });
     entryObs.observe(root, { childList: true, subtree: true });
   }

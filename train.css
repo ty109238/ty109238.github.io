@@ -1230,3 +1230,8 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   background: transparent !important;
   filter: drop-shadow(0 10px 24px rgba(221, 37, 144, 0.18));
 }
+/* 形态切换 */
+.form-switch { display: flex; gap: 6px; margin-left: auto; }
+.form-btn { padding: 6px 14px; border: 2px solid var(--line); border-radius: 999px; background: #fff; font: inherit; font-size: 12px; font-weight: 800; color: #55677b; cursor: pointer; }
+.form-btn.on { border-color: var(--ink); background: var(--yellow); color: var(--ink); }
+.form-btn.rainbow.on { background: linear-gradient(90deg, #ffd6e8, #d9ecff, #fff6c9); border-color: var(--pink); color: #b3157a; }

@@ -36,7 +36,8 @@
         "stage": 1,
         "nature": "保守"
       },
-      "eggKey": "eggs/01.webp"
+      "eggKey": "eggs/01.webp",
+      "rainbowKey": "rainbow/01.webp"
     },
     {
       "id": 2,
@@ -71,7 +72,8 @@
         "stage": 2,
         "nature": "保守"
       },
-      "eggKey": "eggs/01.webp"
+      "eggKey": "eggs/01.webp",
+      "rainbowKey": "rainbow/02.webp"
     },
     {
       "id": 3,
@@ -106,7 +108,8 @@
         "stage": 3,
         "nature": "保守"
       },
-      "eggKey": "eggs/01.webp"
+      "eggKey": "eggs/01.webp",
+      "rainbowKey": "rainbow/03.webp"
     },
     {
       "id": 4,
@@ -141,7 +144,8 @@
         "stage": 1,
         "nature": "固执"
       },
-      "eggKey": "eggs/04.webp"
+      "eggKey": "eggs/04.webp",
+      "rainbowKey": "rainbow/04.webp"
     },
     {
       "id": 5,
@@ -176,7 +180,8 @@
         "stage": 2,
         "nature": "固执"
       },
-      "eggKey": "eggs/04.webp"
+      "eggKey": "eggs/04.webp",
+      "rainbowKey": "rainbow/05.webp"
     },
     {
       "id": 6,
@@ -211,7 +216,8 @@
         "stage": 3,
         "nature": "固执"
       },
-      "eggKey": "eggs/04.webp"
+      "eggKey": "eggs/04.webp",
+      "rainbowKey": "rainbow/06.webp"
     },
     {
       "id": 7,
@@ -246,7 +252,8 @@
         "stage": 1,
         "nature": "保守"
       },
-      "eggKey": "eggs/07.webp"
+      "eggKey": "eggs/07.webp",
+      "rainbowKey": "rainbow/07.webp"
     },
     {
       "id": 8,
@@ -281,7 +288,8 @@
         "stage": 2,
         "nature": "保守"
       },
-      "eggKey": "eggs/07.webp"
+      "eggKey": "eggs/07.webp",
+      "rainbowKey": "rainbow/08.webp"
     },
     {
       "id": 9,
@@ -316,7 +324,8 @@
         "stage": 3,
         "nature": "保守"
       },
-      "eggKey": "eggs/07.webp"
+      "eggKey": "eggs/07.webp",
+      "rainbowKey": "rainbow/09.webp"
     },
     {
       "id": 60001,
@@ -351,7 +360,8 @@
         "stage": 1,
         "nature": "保守"
       },
-      "eggKey": "eggs/10.webp"
+      "eggKey": "eggs/10.webp",
+      "rainbowKey": "rainbow/10.webp"
     },
     {
       "id": 60002,
@@ -386,7 +396,8 @@
         "stage": 2,
         "nature": "保守"
       },
-      "eggKey": "eggs/10.webp"
+      "eggKey": "eggs/10.webp",
+      "rainbowKey": "rainbow/11.webp"
     },
     {
       "id": 60003,
@@ -421,7 +432,8 @@
         "stage": 3,
         "nature": "保守"
       },
-      "eggKey": "eggs/10.webp"
+      "eggKey": "eggs/10.webp",
+      "rainbowKey": "rainbow/12.webp"
     },
     {
       "id": 60004,
@@ -456,7 +468,8 @@
         "stage": 1,
         "nature": "固执"
       },
-      "eggKey": "eggs/13.webp"
+      "eggKey": "eggs/13.webp",
+      "rainbowKey": "rainbow/13.webp"
     },
     {
       "id": 60005,
@@ -491,7 +504,8 @@
         "stage": 2,
         "nature": "孤僻"
       },
-      "eggKey": "eggs/13.webp"
+      "eggKey": "eggs/13.webp",
+      "rainbowKey": "rainbow/14.webp"
     },
     {
       "id": 60006,
@@ -526,7 +540,8 @@
         "stage": 3,
         "nature": "孤僻"
       },
-      "eggKey": "eggs/13.webp"
+      "eggKey": "eggs/13.webp",
+      "rainbowKey": "rainbow/15.webp"
     },
     {
       "id": 60007,
@@ -561,7 +576,8 @@
         "stage": 1,
         "nature": "大胆"
       },
-      "eggKey": "eggs/16.webp"
+      "eggKey": "eggs/16.webp",
+      "rainbowKey": "rainbow/16.webp"
     },
     {
       "id": 60008,
@@ -596,7 +612,8 @@
         "stage": 2,
         "nature": "大胆"
       },
-      "eggKey": "eggs/16.webp"
+      "eggKey": "eggs/16.webp",
+      "rainbowKey": "rainbow/17.webp"
     },
     {
       "id": 60009,
@@ -631,7 +648,8 @@
         "stage": 3,
         "nature": "大胆"
       },
-      "eggKey": "eggs/16.webp"
+      "eggKey": "eggs/16.webp",
+      "rainbowKey": "rainbow/18.webp"
     },
     {
       "id": 60010,
@@ -666,7 +684,8 @@
         "stage": 1,
         "nature": "大胆"
       },
-      "eggKey": "eggs/19.webp"
+      "eggKey": "eggs/19.webp",
+      "rainbowKey": "rainbow/19.webp"
     },
     {
       "id": 60011,
@@ -701,7 +720,8 @@
         "stage": 2,
         "nature": "保守"
       },
-      "eggKey": "eggs/19.webp"
+      "eggKey": "eggs/19.webp",
+      "rainbowKey": "rainbow/20.webp"
     },
     {
       "id": 60012,
@@ -736,7 +756,8 @@
         "stage": 3,
         "nature": "保守"
       },
-      "eggKey": "eggs/19.webp"
+      "eggKey": "eggs/19.webp",
+      "rainbowKey": "rainbow/21.webp"
     },
     {
       "id": 60013,
@@ -771,7 +792,8 @@
         "stage": 1,
         "nature": "大胆"
       },
-      "eggKey": "eggs/22.webp"
+      "eggKey": "eggs/22.webp",
+      "rainbowKey": "rainbow/22.webp"
     },
     {
       "id": 60014,
@@ -806,7 +828,8 @@
         "stage": 2,
         "nature": "大胆"
       },
-      "eggKey": "eggs/22.webp"
+      "eggKey": "eggs/22.webp",
+      "rainbowKey": "rainbow/23.webp"
     },
     {
       "id": 60015,
@@ -841,7 +864,8 @@
         "stage": 3,
         "nature": "大胆"
       },
-      "eggKey": "eggs/22.webp"
+      "eggKey": "eggs/22.webp",
+      "rainbowKey": "rainbow/24.webp"
     },
     {
       "id": 60016,
@@ -876,7 +900,8 @@
         "stage": 1,
         "nature": "淘气"
       },
-      "eggKey": "eggs/25.webp"
+      "eggKey": "eggs/25.webp",
+      "rainbowKey": "rainbow/25.webp"
     },
     {
       "id": 60017,
@@ -911,7 +936,8 @@
         "stage": 2,
         "nature": "淘气"
       },
-      "eggKey": "eggs/25.webp"
+      "eggKey": "eggs/25.webp",
+      "rainbowKey": "rainbow/26.webp"
     },
     {
       "id": 60018,
@@ -946,7 +972,8 @@
         "stage": 3,
         "nature": "淘气"
       },
-      "eggKey": "eggs/25.webp"
+      "eggKey": "eggs/25.webp",
+      "rainbowKey": "rainbow/27.webp"
     },
     {
       "id": 60019,
@@ -981,7 +1008,8 @@
         "stage": 1,
         "nature": "保守"
       },
-      "eggKey": "eggs/28.webp"
+      "eggKey": "eggs/28.webp",
+      "rainbowKey": "rainbow/28.webp"
     },
     {
       "id": 60020,
@@ -1016,7 +1044,8 @@
         "stage": 2,
         "nature": "保守"
       },
-      "eggKey": "eggs/28.webp"
+      "eggKey": "eggs/28.webp",
+      "rainbowKey": "rainbow/29.webp"
     },
     {
       "id": 60021,
@@ -1051,7 +1080,8 @@
         "stage": 3,
         "nature": "保守"
       },
-      "eggKey": "eggs/28.webp"
+      "eggKey": "eggs/28.webp",
+      "rainbowKey": "rainbow/30.webp"
     },
     {
       "id": 60022,
@@ -1086,7 +1116,8 @@
         "stage": 1,
         "nature": "急躁"
       },
-      "eggKey": "eggs/31.webp"
+      "eggKey": "eggs/31.webp",
+      "rainbowKey": "rainbow/31.webp"
     },
     {
       "id": 60023,
@@ -1121,7 +1152,8 @@
         "stage": 2,
         "nature": "急躁"
       },
-      "eggKey": "eggs/31.webp"
+      "eggKey": "eggs/31.webp",
+      "rainbowKey": "rainbow/32.webp"
     },
     {
       "id": 60024,
@@ -1156,7 +1188,8 @@
         "stage": 3,
         "nature": "急躁"
       },
-      "eggKey": "eggs/31.webp"
+      "eggKey": "eggs/31.webp",
+      "rainbowKey": "rainbow/33.webp"
     },
     {
       "id": 60025,
@@ -1191,7 +1224,8 @@
         "stage": 1,
         "nature": "温顺"
       },
-      "eggKey": "eggs/34.webp"
+      "eggKey": "eggs/34.webp",
+      "rainbowKey": "rainbow/34.webp"
     },
     {
       "id": 60026,
@@ -1226,7 +1260,8 @@
         "stage": 2,
         "nature": "温顺"
       },
-      "eggKey": "eggs/34.webp"
+      "eggKey": "eggs/34.webp",
+      "rainbowKey": "rainbow/35.webp"
     },
     {
       "id": 60027,
@@ -1261,7 +1296,8 @@
         "stage": 3,
         "nature": "温顺"
       },
-      "eggKey": "eggs/34.webp"
+      "eggKey": "eggs/34.webp",
+      "rainbowKey": "rainbow/36.webp"
     },
     {
       "id": 60028,
@@ -1296,7 +1332,8 @@
         "stage": 1,
         "nature": "保守"
       },
-      "eggKey": "eggs/37.webp"
+      "eggKey": "eggs/37.webp",
+      "rainbowKey": "rainbow/37.webp"
     },
     {
       "id": 60029,
@@ -1331,7 +1368,8 @@
         "stage": 2,
         "nature": "保守"
       },
-      "eggKey": "eggs/37.webp"
+      "eggKey": "eggs/37.webp",
+      "rainbowKey": "rainbow/38.webp"
     },
     {
       "id": 60030,
@@ -1366,7 +1404,8 @@
         "stage": 3,
         "nature": "保守"
       },
-      "eggKey": "eggs/37.webp"
+      "eggKey": "eggs/37.webp",
+      "rainbowKey": "rainbow/39.webp"
     },
     {
       "id": 60031,
@@ -1401,7 +1440,8 @@
         "stage": 1,
         "nature": "保守"
       },
-      "eggKey": "eggs/40.webp"
+      "eggKey": "eggs/40.webp",
+      "rainbowKey": "rainbow/40.webp"
     },
     {
       "id": 60032,
@@ -1436,7 +1476,8 @@
         "stage": 2,
         "nature": "保守"
       },
-      "eggKey": "eggs/40.webp"
+      "eggKey": "eggs/40.webp",
+      "rainbowKey": "rainbow/41.webp"
     },
     {
       "id": 60033,
@@ -1471,7 +1512,8 @@
         "stage": 3,
         "nature": "保守"
       },
-      "eggKey": "eggs/40.webp"
+      "eggKey": "eggs/40.webp",
+      "rainbowKey": "rainbow/42.webp"
     },
     {
       "id": 60034,
@@ -1506,7 +1548,8 @@
         "stage": 1,
         "nature": "保守"
       },
-      "eggKey": "eggs/43.webp"
+      "eggKey": "eggs/43.webp",
+      "rainbowKey": "rainbow/43.webp"
     },
     {
       "id": 60035,
@@ -1541,7 +1584,8 @@
         "stage": 2,
         "nature": "保守"
       },
-      "eggKey": "eggs/43.webp"
+      "eggKey": "eggs/43.webp",
+      "rainbowKey": "rainbow/44.webp"
     },
     {
       "id": 60036,
@@ -1576,7 +1620,8 @@
         "stage": 3,
         "nature": "保守"
       },
-      "eggKey": "eggs/43.webp"
+      "eggKey": "eggs/43.webp",
+      "rainbowKey": "rainbow/45.webp"
     },
     {
       "id": 60037,
@@ -1611,7 +1656,8 @@
         "stage": 1,
         "nature": "保守"
       },
-      "eggKey": "eggs/46.webp"
+      "eggKey": "eggs/46.webp",
+      "rainbowKey": "rainbow/46.webp"
     },
     {
       "id": 60038,
@@ -1646,7 +1692,8 @@
         "stage": 2,
         "nature": "保守"
       },
-      "eggKey": "eggs/46.webp"
+      "eggKey": "eggs/46.webp",
+      "rainbowKey": "rainbow/47.webp"
     },
     {
       "id": 60039,
@@ -1681,7 +1728,8 @@
         "stage": 3,
         "nature": "保守"
       },
-      "eggKey": "eggs/46.webp"
+      "eggKey": "eggs/46.webp",
+      "rainbowKey": "rainbow/48.webp"
     },
     {
       "id": 60040,
@@ -1716,7 +1764,8 @@
         "stage": 1,
         "nature": "固执"
       },
-      "eggKey": "eggs/49.webp"
+      "eggKey": "eggs/49.webp",
+      "rainbowKey": "rainbow/49.webp"
     },
     {
       "id": 60041,
@@ -1751,7 +1800,8 @@
         "stage": 1,
         "nature": "保守"
       },
-      "eggKey": "eggs/50.webp"
+      "eggKey": "eggs/50.webp",
+      "rainbowKey": "rainbow/50.webp"
     },
     {
       "id": 60042,
@@ -1786,7 +1836,8 @@
         "stage": 1,
         "nature": "保守"
       },
-      "eggKey": "eggs/51.webp"
+      "eggKey": "eggs/51.webp",
+      "rainbowKey": "rainbow/51.webp"
     },
     {
       "id": 103171,
@@ -1821,7 +1872,8 @@
         "stage": 1,
         "nature": "温顺"
       },
-      "eggKey": "eggs/52.webp"
+      "eggKey": "eggs/52.webp",
+      "rainbowKey": "rainbow/52.webp"
     },
     {
       "id": 103172,
@@ -1856,7 +1908,8 @@
         "stage": 1,
         "nature": "保守"
       },
-      "eggKey": "eggs/53.webp"
+      "eggKey": "eggs/53.webp",
+      "rainbowKey": "rainbow/53.webp"
     },
     {
       "id": 103173,
@@ -1891,7 +1944,8 @@
         "stage": 1,
         "nature": "淘气"
       },
-      "eggKey": "eggs/54.webp"
+      "eggKey": "eggs/54.webp",
+      "rainbowKey": "rainbow/54.webp"
     },
     {
       "id": 103174,
@@ -1926,7 +1980,8 @@
         "stage": 1,
         "nature": "保守"
       },
-      "eggKey": "eggs/55.webp"
+      "eggKey": "eggs/55.webp",
+      "rainbowKey": "rainbow/55.webp"
     },
     {
       "id": 103175,
@@ -1961,7 +2016,8 @@
         "stage": 2,
         "nature": "保守"
       },
-      "eggKey": "eggs/55.webp"
+      "eggKey": "eggs/55.webp",
+      "rainbowKey": "rainbow/56.webp"
     },
     {
       "id": 103176,
@@ -1996,7 +2052,8 @@
         "stage": 3,
         "nature": "保守"
       },
-      "eggKey": "eggs/55.webp"
+      "eggKey": "eggs/55.webp",
+      "rainbowKey": "rainbow/57.webp"
     },
     {
       "id": 103177,
@@ -2031,7 +2088,8 @@
         "stage": 1,
         "nature": "温顺"
       },
-      "eggKey": "eggs/58.webp"
+      "eggKey": "eggs/58.webp",
+      "rainbowKey": "rainbow/58.webp"
     },
     {
       "id": 103178,
@@ -2080,7 +2138,8 @@
           "condition": "冬天进化",
           "icon": "❄"
         }
-      ]
+      ],
+      "rainbowKey": "rainbow/59.webp"
     },
     {
       "id": 103179,
@@ -2121,7 +2180,8 @@
         "name": "冰芙蓉",
         "condition": "冬天",
         "dexNo": 59
-      }
+      },
+      "rainbowKey": "rainbow/60.webp"
     },
     {
       "id": 103180,
@@ -2162,7 +2222,8 @@
         "name": "冰芙蓉",
         "condition": "夏天",
         "dexNo": 59
-      }
+      },
+      "rainbowKey": "rainbow/61.webp"
     },
     {
       "id": 103181,
@@ -2197,7 +2258,8 @@
         "stage": 1,
         "nature": "急躁"
       },
-      "eggKey": "eggs/62.webp"
+      "eggKey": "eggs/62.webp",
+      "rainbowKey": "rainbow/62.webp"
     },
     {
       "id": 103182,
@@ -2232,7 +2294,8 @@
         "stage": 2,
         "nature": "急躁"
       },
-      "eggKey": "eggs/62.webp"
+      "eggKey": "eggs/62.webp",
+      "rainbowKey": "rainbow/63.webp"
     },
     {
       "id": 103183,
@@ -2267,7 +2330,8 @@
         "stage": 3,
         "nature": "孤僻"
       },
-      "eggKey": "eggs/62.webp"
+      "eggKey": "eggs/62.webp",
+      "rainbowKey": "rainbow/64.webp"
     },
     {
       "id": 103184,
@@ -2302,7 +2366,8 @@
         "stage": 1,
         "nature": "固执"
       },
-      "eggKey": "eggs/65.webp"
+      "eggKey": "eggs/65.webp",
+      "rainbowKey": "rainbow/65.webp"
     },
     {
       "id": 103185,
@@ -2337,7 +2402,8 @@
         "stage": 2,
         "nature": "固执"
       },
-      "eggKey": "eggs/65.webp"
+      "eggKey": "eggs/65.webp",
+      "rainbowKey": "rainbow/66.webp"
     },
     {
       "id": 103186,
@@ -2372,7 +2438,8 @@
         "stage": 3,
         "nature": "固执"
       },
-      "eggKey": "eggs/65.webp"
+      "eggKey": "eggs/65.webp",
+      "rainbowKey": "rainbow/67.webp"
     },
     {
       "id": 103187,
@@ -2419,7 +2486,8 @@
           "name": "铲铲",
           "condition": "22 级 · 攻击 > 防御"
         }
-      ]
+      ],
+      "rainbowKey": "rainbow/68.webp"
     },
     {
       "id": 103188,
@@ -2460,7 +2528,8 @@
         "name": "乒乒",
         "condition": "防御 > 攻击",
         "dexNo": 68
-      }
+      },
+      "rainbowKey": "rainbow/69.webp"
     },
     {
       "id": 103189,
@@ -2501,7 +2570,8 @@
         "name": "乒乒",
         "condition": "攻击 > 防御",
         "dexNo": 68
-      }
+      },
+      "rainbowKey": "rainbow/70.webp"
     },
     {
       "id": 103190,
@@ -2536,7 +2606,8 @@
         "stage": 3,
         "nature": "淘气"
       },
-      "eggKey": "eggs/68.webp"
+      "eggKey": "eggs/68.webp",
+      "rainbowKey": "rainbow/71.webp"
     },
     {
       "id": 103191,
@@ -2571,7 +2642,8 @@
         "stage": 3,
         "nature": "固执"
       },
-      "eggKey": "eggs/68.webp"
+      "eggKey": "eggs/68.webp",
+      "rainbowKey": "rainbow/72.webp"
     },
     {
       "id": 103192,
@@ -2606,7 +2678,8 @@
         "stage": 1,
         "nature": "大胆"
       },
-      "eggKey": "eggs/73.webp"
+      "eggKey": "eggs/73.webp",
+      "rainbowKey": "rainbow/73.webp"
     },
     {
       "id": 103193,
@@ -2641,7 +2714,8 @@
         "stage": 1,
         "nature": "固执"
       },
-      "eggKey": "eggs/74.webp"
+      "eggKey": "eggs/74.webp",
+      "rainbowKey": "rainbow/74.webp"
     },
     {
       "id": 103194,
@@ -2676,7 +2750,8 @@
         "stage": 1,
         "nature": "保守"
       },
-      "eggKey": "eggs/75.webp"
+      "eggKey": "eggs/75.webp",
+      "rainbowKey": "rainbow/75.webp"
     },
     {
       "id": 103195,
@@ -2711,7 +2786,8 @@
         "stage": 2,
         "nature": "保守"
       },
-      "eggKey": "eggs/75.webp"
+      "eggKey": "eggs/75.webp",
+      "rainbowKey": "rainbow/76.webp"
     },
     {
       "id": 103196,
@@ -2746,7 +2822,8 @@
         "stage": 3,
         "nature": "保守"
       },
-      "eggKey": "eggs/75.webp"
+      "eggKey": "eggs/75.webp",
+      "rainbowKey": "rainbow/77.webp"
     }
   ],
   "skills": {
@@ -18875,7 +18952,84 @@
     "action-portraits/76-桃花狐.webp": "/media/portraits/76.webp",
     "creatures/77-光系九尾幻狐.png": "/media/creatures/77.webp",
     "action-portraits/77-九尾幻狐.webp": "/media/portraits/77.webp",
-    "eggs/75.webp": "/media/eggs/75.webp"
+    "eggs/75.webp": "/media/eggs/75.webp",
+    "rainbow/01.webp": "/media/rainbow/01.webp",
+    "rainbow/02.webp": "/media/rainbow/02.webp",
+    "rainbow/03.webp": "/media/rainbow/03.webp",
+    "rainbow/04.webp": "/media/rainbow/04.webp",
+    "rainbow/05.webp": "/media/rainbow/05.webp",
+    "rainbow/06.webp": "/media/rainbow/06.webp",
+    "rainbow/07.webp": "/media/rainbow/07.webp",
+    "rainbow/08.webp": "/media/rainbow/08.webp",
+    "rainbow/09.webp": "/media/rainbow/09.webp",
+    "rainbow/10.webp": "/media/rainbow/10.webp",
+    "rainbow/11.webp": "/media/rainbow/11.webp",
+    "rainbow/12.webp": "/media/rainbow/12.webp",
+    "rainbow/13.webp": "/media/rainbow/13.webp",
+    "rainbow/14.webp": "/media/rainbow/14.webp",
+    "rainbow/15.webp": "/media/rainbow/15.webp",
+    "rainbow/16.webp": "/media/rainbow/16.webp",
+    "rainbow/17.webp": "/media/rainbow/17.webp",
+    "rainbow/18.webp": "/media/rainbow/18.webp",
+    "rainbow/19.webp": "/media/rainbow/19.webp",
+    "rainbow/20.webp": "/media/rainbow/20.webp",
+    "rainbow/21.webp": "/media/rainbow/21.webp",
+    "rainbow/22.webp": "/media/rainbow/22.webp",
+    "rainbow/23.webp": "/media/rainbow/23.webp",
+    "rainbow/24.webp": "/media/rainbow/24.webp",
+    "rainbow/25.webp": "/media/rainbow/25.webp",
+    "rainbow/26.webp": "/media/rainbow/26.webp",
+    "rainbow/27.webp": "/media/rainbow/27.webp",
+    "rainbow/28.webp": "/media/rainbow/28.webp",
+    "rainbow/29.webp": "/media/rainbow/29.webp",
+    "rainbow/30.webp": "/media/rainbow/30.webp",
+    "rainbow/31.webp": "/media/rainbow/31.webp",
+    "rainbow/32.webp": "/media/rainbow/32.webp",
+    "rainbow/33.webp": "/media/rainbow/33.webp",
+    "rainbow/34.webp": "/media/rainbow/34.webp",
+    "rainbow/35.webp": "/media/rainbow/35.webp",
+    "rainbow/36.webp": "/media/rainbow/36.webp",
+    "rainbow/37.webp": "/media/rainbow/37.webp",
+    "rainbow/38.webp": "/media/rainbow/38.webp",
+    "rainbow/39.webp": "/media/rainbow/39.webp",
+    "rainbow/40.webp": "/media/rainbow/40.webp",
+    "rainbow/41.webp": "/media/rainbow/41.webp",
+    "rainbow/42.webp": "/media/rainbow/42.webp",
+    "rainbow/43.webp": "/media/rainbow/43.webp",
+    "rainbow/44.webp": "/media/rainbow/44.webp",
+    "rainbow/45.webp": "/media/rainbow/45.webp",
+    "rainbow/46.webp": "/media/rainbow/46.webp",
+    "rainbow/47.webp": "/media/rainbow/47.webp",
+    "rainbow/48.webp": "/media/rainbow/48.webp",
+    "rainbow/49.webp": "/media/rainbow/49.webp",
+    "rainbow/50.webp": "/media/rainbow/50.webp",
+    "rainbow/51.webp": "/media/rainbow/51.webp",
+    "rainbow/52.webp": "/media/rainbow/52.webp",
+    "rainbow/53.webp": "/media/rainbow/53.webp",
+    "rainbow/54.webp": "/media/rainbow/54.webp",
+    "rainbow/55.webp": "/media/rainbow/55.webp",
+    "rainbow/56.webp": "/media/rainbow/56.webp",
+    "rainbow/57.webp": "/media/rainbow/57.webp",
+    "rainbow/58.webp": "/media/rainbow/58.webp",
+    "rainbow/59.webp": "/media/rainbow/59.webp",
+    "rainbow/60.webp": "/media/rainbow/60.webp",
+    "rainbow/61.webp": "/media/rainbow/61.webp",
+    "rainbow/62.webp": "/media/rainbow/62.webp",
+    "rainbow/63.webp": "/media/rainbow/63.webp",
+    "rainbow/64.webp": "/media/rainbow/64.webp",
+    "rainbow/65.webp": "/media/rainbow/65.webp",
+    "rainbow/66.webp": "/media/rainbow/66.webp",
+    "rainbow/67.webp": "/media/rainbow/67.webp",
+    "rainbow/68.webp": "/media/rainbow/68.webp",
+    "rainbow/69.webp": "/media/rainbow/69.webp",
+    "rainbow/70.webp": "/media/rainbow/70.webp",
+    "rainbow/71.webp": "/media/rainbow/71.webp",
+    "rainbow/72.webp": "/media/rainbow/72.webp",
+    "rainbow/73.webp": "/media/rainbow/73.webp",
+    "rainbow/74.webp": "/media/rainbow/74.webp",
+    "rainbow/75.webp": "/media/rainbow/75.webp",
+    "rainbow/76.webp": "/media/rainbow/76.webp",
+    "rainbow/77.webp": "/media/rainbow/77.webp"
   },
   "studio": {
     "name": "谭熠的橘子工作室",
