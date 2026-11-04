@@ -721,7 +721,7 @@
     var wm = weatherMult((state.battle && state.battle.weather) || '晴朗', s.type);
     var tb1 = (attacker.effects && attacker.effects.boost[s.type]) || 1;
     var tb2 = (defender.effects && defender.effects.reduce[s.type]) || 1;
-    var critChance = 0.0625 + ((attacker.effects && attacker.effects.crit) || 0);
+    var critChance = (s.crit ? 1 : 0.0625) + ((attacker.effects && attacker.effects.crit) || 0);
     var crit = Math.random() < critChance;
     var fm = fieldMult(s.type, s, {
       poisoned: !!defender.status['中毒'],
@@ -855,8 +855,10 @@
       return;
     }
 
+    var hits = Math.max(1, s.hits || 1);
     var r = calcDamage(user, foe, s);
-    var dmg = Math.max(1, Math.floor(r.dmg * (dmgMult || 1)));
+    var per = Math.max(1, Math.floor(r.dmg * (dmgMult || 1)));
+    var dmg = per * hits;
     if (foe.protecting) {
       dmg = Math.max(1, Math.floor(dmg * (1 - (foe._guardReduce || 0.6))));
       if (foe.guardRider && foe.guardRider.weather && state.battle) {
@@ -881,7 +883,13 @@
     if (r.type === 2) extra = ' <span class="eff">效果出众！</span>';
     else if (r.type === 0.5) extra = ' <span class="weak">收效甚微…</span>';
     if (r.crit) extra += ' <span class="crit">会心一击！</span>';
-    logLine(label + ' 造成 <span class="dmg">' + dmg + '</span> 点伤害。' + extra);
+    if (hits > 1) logLine(label + ' 连续命中 <b>' + hits + '</b> 次，合计 <span class="dmg">' + dmg + '</span> 点伤害。' + extra);
+    else logLine(label + ' 造成 <span class="dmg">' + dmg + '</span> 点伤害。' + extra);
+    if (s.recoil) {
+      var rec = Math.max(1, Math.floor(user.maxHp * s.recoil));
+      user.hp = Math.max(0, user.hp - rec);
+      logLine(user.name + ' 反噬自身 <span class="dmg">' + rec + '</span> 点生命。');
+    }
     if (dmg > 0) applyFx(user, foe, s);
   }
 
