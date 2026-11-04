@@ -1049,11 +1049,11 @@
     applyCatalogForm();
   }
 
-  function rainbowUrlOfDex(dex) {
+  function rainbowUrlOf(n) {
     if (!DATA) return null;
     for (var i = 0; i < DATA.creatures.length; i++) {
       var c = DATA.creatures[i];
-      if (c.dexNo === dex && c.rainbowKey) return DATA.images[c.rainbowKey] || null;
+      if ((c.id === n || c.dexNo === n) && c.rainbowKey) return DATA.images[c.rainbowKey] || null;
     }
     return null;
   }
@@ -1073,11 +1073,16 @@
       if (n) { img.src = n; img.removeAttribute('data-src-normal'); }
     }
 
-    // 当前灵宠：场景写真 + 大头像 + 蛋以外的主图
+    // 当前灵宠：所有立绘/写真图（按 src 路径识别，兼容任意容器）
     var own = c.rainbowKey ? (DATA.images[c.rainbowKey] || null) : null;
     if (own) {
-      var ports = document.querySelectorAll('.portrait-frame img, .detail-copy img, .hero-portrait img');
-      for (var i = 0; i < ports.length; i++) on ? swap(ports[i], own) : restore(ports[i]);
+      var all = document.querySelectorAll('img');
+      for (var i = 0; i < all.length; i++) {
+        var src = all[i].getAttribute('src') || all[i].getAttribute('data-src-normal') || '';
+        if (/\/media\/(portraits|creatures)\//.test(src)) {
+          on ? swap(all[i], own) : restore(all[i]);
+        }
+      }
     }
 
     // 进化链 / 同族伙伴：按卡片里的链接判断是哪只
@@ -1085,7 +1090,7 @@
     for (var k = 0; k < links.length; k++) {
       var m = /\/(\d+)(?:$|[?#])/.exec(links[k].getAttribute('href') || '');
       if (!m) continue;
-      var url = rainbowUrlOfDex(parseInt(m[1], 10));
+      var url = rainbowUrlOf(parseInt(m[1], 10));
       if (!url) continue;
       var imgs = links[k].querySelectorAll('img');
       for (var j = 0; j < imgs.length; j++) on ? swap(imgs[j], url) : restore(imgs[j]);
