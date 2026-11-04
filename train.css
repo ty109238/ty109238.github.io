@@ -1248,4 +1248,4 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
 
 /* 技能编号图标 */
 .skill-top .skill-no { display: inline-flex; align-items: center; }
-.skill-top .skill-no img { width: 26px; height: 28px; object-fit: contain; }
+.skill-top .skill-no img { width: 30px; height: 30px; object-fit: contain; display: block; }

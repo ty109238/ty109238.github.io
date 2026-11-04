@@ -1354,6 +1354,15 @@
       span.setAttribute('data-slot', String(n));
       span.classList.add('skill-no');
       span.innerHTML = '<img src="/media/ui/slot-' + n + '.webp" alt="' + n + '">';
+      span.style.setProperty('background', 'transparent', 'important');
+      span.style.setProperty('background-image', 'none', 'important');
+      span.style.setProperty('border', '0', 'important');
+      span.style.setProperty('box-shadow', 'none', 'important');
+      span.style.setProperty('width', '30px', 'important');
+      span.style.setProperty('height', '30px', 'important');
+      span.style.setProperty('display', 'inline-flex', 'important');
+      span.style.setProperty('align-items', 'center', 'important');
+      span.style.setProperty('justify-content', 'center', 'important');
     }
   }
 
