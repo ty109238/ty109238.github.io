@@ -1115,10 +1115,8 @@
       if (!img || !m) continue;
       if (!img.getAttribute('data-src-normal')) img.setAttribute('data-src-normal', img.src);
       if (on) {
-        var dex = parseInt(m[1], 10);
-        var c = null;
-        for (var k = 0; k < DATA.creatures.length; k++) if (DATA.creatures[k].dexNo === dex) { c = DATA.creatures[k]; break; }
-        if (c && c.rainbowKey && DATA.images[c.rainbowKey]) img.src = DATA.images[c.rainbowKey];
+        var url = rainbowUrlOf(parseInt(m[1], 10));
+        if (url) img.src = url;
       }
     }
     if (!on) {
