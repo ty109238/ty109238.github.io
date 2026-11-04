@@ -77,6 +77,13 @@
     { id: 'nightmare', name: '魇化', mult: { hp: 0.95, attack: 1.15, defense: 0.95, spAttack: 1.15, spDefense: 0.95, speed: 1.05 } },
     { id: 'rainbow', name: '彩虹', mult: { hp: 1.08, attack: 1.08, defense: 1.08, spAttack: 1.08, spDefense: 1.08, speed: 1.08 } }
   ];
+  function artOf(cfg) {
+    if (cfg && cfg.form === 'rainbow' && cfg.c.rainbowKey && DATA.images[cfg.c.rainbowKey]) {
+      return DATA.images[cfg.c.rainbowKey];
+    }
+    return DATA.images[cfg.c.imageKey] || '';
+  }
+
   function formOf(id) {
     for (var i = 0; i < FORMS.length; i++) if (FORMS[i].id === id) return FORMS[i];
     return FORMS[0];
@@ -299,7 +306,7 @@
         var slot = el('div', 'slot' + (cfg ? ' filled' : ''));
         if (cfg) {
           n++;
-          var src = DATA.images[cfg.c.imageKey] || '';
+          var src = artOf(cfg);
           slot.setAttribute('data-i', i);
           slot.innerHTML = '<span class="x" data-x="' + i + '">×</span>' +
             (src ? '<img src="' + src + '" alt="">' : '') +
@@ -537,7 +544,7 @@
   function saveTeam() {
     try {
       var slim = state.my.map(function (c) {
-        return c ? { id: c.c.id, level: c.level, star: c.star, talent: c.talent, stage: c.stage, nature: c.nature, evs: c.evs, skills: c.skills.map(function (x) { return x.name; }) } : null;
+        return c ? { id: c.c.id, form: c.form || 'normal', level: c.level, star: c.star, talent: c.talent, stage: c.stage, nature: c.nature, evs: c.evs, skills: c.skills.map(function (x) { return x.name; }) } : null;
       });
       localStorage.setItem('dex:team', JSON.stringify(slim));
     } catch (e) {}
@@ -553,6 +560,7 @@
         var c = DATA.creatures.filter(function (y) { return y.id === x.id; })[0];
         if (!c) return;
         var cfg = defaultCfg(c);
+        cfg.form = x.form || 'normal';
         cfg.level = x.level; cfg.star = x.star; cfg.talent = x.talent; cfg.stage = x.stage;
         cfg.nature = x.nature; cfg.evs = x.evs || cfg.evs;
         if (x.skills && x.skills.length) {
@@ -653,7 +661,7 @@
     host.innerHTML = '';
     team.forEach(function (m, i) {
       var card = el('div', 'mini-card' + (m.fainted ? ' dead' : '') + (i === active ? ' active' : ''));
-      var src = DATA.images[m.cfg.c.imageKey] || '';
+      var src = artOf(m.cfg);
       var pct = Math.max(0, (m.hp / m.maxHp) * 100);
       card.innerHTML = (src ? '<img src="' + src + '" alt="">' : '') +
         '<div class="hpbar"><i style="width:' + pct + '%"></i></div>';
@@ -663,9 +671,7 @@
 
   function monCardHtml(m) {
     if (!m) return '';
-    var src = (m.cfg.form === 'rainbow' && m.cfg.c.rainbowKey && DATA.images[m.cfg.c.rainbowKey])
-      ? DATA.images[m.cfg.c.rainbowKey]
-      : (DATA.images[m.cfg.c.imageKey] || '');
+    var src = artOf(m.cfg);
     var pct = Math.max(0, (m.hp / m.maxHp) * 100);
     var st = Object.keys(m.status).map(function (k) {
       return '<span class="chip bad">' + k + (m.status[k] > 0 ? ' ' + m.status[k] : '') + '</span>';
@@ -1471,7 +1477,7 @@
 
   function dblCard(m, tag) {
     if (!m) return '<div class="dbl-card empty">—</div>';
-    var src = DATA.images[m.cfg.c.imageKey] || '';
+    var src = artOf(m.cfg);
     var pct = Math.max(0, (m.hp / m.maxHp) * 100);
     var st = Object.keys(m.status).map(function (k) { return '<span class="chip bad">' + k + '</span>'; }).join('');
     if (m.shield > 0) st += '<span class="chip good">盾 ' + m.shield + '</span>';
