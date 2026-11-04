@@ -71,6 +71,17 @@
     return w[{ 火: 'fire', 水: 'water', 冰: 'ice', 风: 'wind' }[type]] || 1;
   }
 
+  var FORMS = [
+    { id: 'normal', name: '普通', mult: { hp: 1, attack: 1, defense: 1, spAttack: 1, spDefense: 1, speed: 1 } },
+    { id: 'lord', name: '领主', mult: { hp: 1.15, attack: 1.05, defense: 1.15, spAttack: 1.0, spDefense: 1.1, speed: 0.95 } },
+    { id: 'nightmare', name: '魇化', mult: { hp: 0.95, attack: 1.15, defense: 0.95, spAttack: 1.15, spDefense: 0.95, speed: 1.05 } },
+    { id: 'rainbow', name: '彩虹', mult: { hp: 1.08, attack: 1.08, defense: 1.08, spAttack: 1.08, spDefense: 1.08, speed: 1.08 } }
+  ];
+  function formOf(id) {
+    for (var i = 0; i < FORMS.length; i++) if (FORMS[i].id === id) return FORMS[i];
+    return FORMS[0];
+  }
+
   function bookSet() {
     try { return new Set(JSON.parse(localStorage.getItem('dex:books') || '[]')); }
     catch (e) { return new Set(); }
@@ -184,6 +195,7 @@
     var c = cfg.c;
     var L = cfg.level;
     var prof = proficiency(c.id).mult;
+    var fmult = formOf(cfg.form || 'normal').mult;
     var mult = (1 + (cfg.star - 1) * 0.03) * (1 + (cfg.stage - 1) * 0.05) * (TALENT_SKILL[cfg.talent] || 1) * prof;
     var nat = natureOf(cfg.nature);
     var out = {};
@@ -191,10 +203,11 @@
       var base = c[k] || 0;
       var v;
       if (k === 'hp') {
-        v = Math.floor(((2 * base + 31) * L) / 100) + L + 10 + Math.floor((cfg.evs.hp || 0) / 4);
+        v = Math.floor((((2 * base + 31) * L) / 100) + L + 10) + Math.floor((cfg.evs.hp || 0) / 4);
+        v = Math.floor(v * (fmult.hp || 1));
       } else {
         v = Math.floor((((2 * base + 31) * L) / 100 + 5) * prof) + Math.floor((cfg.evs[k] || 0) / 4);
-        v = Math.floor(v * mult);
+        v = Math.floor(v * mult * (fmult[k] || 1));
         if (nat && nat.up === k) v = Math.floor(v * 1.1);
         if (nat && nat.down === k) v = Math.floor(v * 0.9);
       }
@@ -291,7 +304,7 @@
           slot.innerHTML = '<span class="x" data-x="' + i + '">×</span>' +
             (src ? '<img src="' + src + '" alt="">' : '') +
             '<b>' + cfg.c.name + '</b>' +
-            '<small>Lv.' + cfg.level + ' · ' + cfg.star + '★ · ' + cfg.stage + '阶</small>';
+            '<small>Lv.' + cfg.level + ' · ' + cfg.star + '★ · ' + formOf(cfg.form || 'normal').name + '</small>';
           slot.addEventListener('click', function (e) {
             if (e.target.getAttribute('data-x') != null) {
               state[side][i] = null;
@@ -330,6 +343,7 @@
       c: c, level: 40, star: Math.min(9, st * 2), talent: Math.min(8, st + 2),
       stage: st, nature: '坦率', evs: evs,
       traitIdx: 0,
+      form: 'normal',
       skills: skills,
       pool: buildPool(c)
     };
@@ -403,6 +417,10 @@
     row.appendChild(field('天赋', TALENTS.map(function (t, i) { return { v: i, t: t }; }), cfg.talent, function (v) { cfg.talent = Number(v); }));
     row.appendChild(field('阶段', Array.from({ length: 6 }, function (_, i) { return { v: i + 1, t: (i + 1) + ' 阶' }; }), cfg.stage, function (v) { cfg.stage = Number(v); }));
     body.appendChild(row);
+
+    var fmWrap = el('div', 'row2');
+    fmWrap.appendChild(field('形态', FORMS.map(function (f) { return { v: f.id, t: f.name }; }), cfg.form || 'normal', function (v) { cfg.form = v; }));
+    body.appendChild(fmWrap);
 
     var trWrap = el('div', 'row2');
     var traits = (DATA.traits && DATA.traits[String(cfg.c.id)]) || [];
@@ -645,7 +663,9 @@
 
   function monCardHtml(m) {
     if (!m) return '';
-    var src = DATA.images[m.cfg.c.imageKey] || '';
+    var src = (m.cfg.form === 'rainbow' && m.cfg.c.rainbowKey && DATA.images[m.cfg.c.rainbowKey])
+      ? DATA.images[m.cfg.c.rainbowKey]
+      : (DATA.images[m.cfg.c.imageKey] || '');
     var pct = Math.max(0, (m.hp / m.maxHp) * 100);
     var st = Object.keys(m.status).map(function (k) {
       return '<span class="chip bad">' + k + (m.status[k] > 0 ? ' ' + m.status[k] : '') + '</span>';

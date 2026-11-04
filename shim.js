@@ -1020,6 +1020,66 @@
     }
   }
 
+  /* ---------- 首页：彩虹形态筛选 ---------- */
+  function syncFormFilter() {
+    if (!DATA) return;
+    var groups = document.querySelectorAll('.filter-group, .filter-block, .sidebar-group');
+    var target = null;
+    for (var i = 0; i < groups.length; i++) {
+      if (/形态/.test(groups[i].textContent || '')) { target = groups[i]; break; }
+    }
+    if (!target) {
+      var labels = document.querySelectorAll('h3, h4, p, span, strong');
+      for (var j = 0; j < labels.length; j++) {
+        if ((labels[j].textContent || '').trim() === '形态') { target = labels[j].parentElement; break; }
+      }
+    }
+    if (!target) return;
+    if (target.querySelector('[data-form="rainbow"]')) return;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'rainbow-chip';
+    btn.setAttribute('data-form', 'rainbow');
+    btn.textContent = '彩虹';
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var on = btn.classList.toggle('on');
+      localStorage.setItem('dex:catalogForm', on ? 'rainbow' : 'normal');
+      applyCatalogForm();
+    });
+    target.appendChild(btn);
+    if (localStorage.getItem('dex:catalogForm') === 'rainbow') btn.classList.add('on');
+    applyCatalogForm();
+  }
+
+  function applyCatalogForm() {
+    var on = localStorage.getItem('dex:catalogForm') === 'rainbow';
+    var cards = document.querySelectorAll('a.creature-card');
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      var img = card.querySelector('.creature-art img, img');
+      var link = card.getAttribute('href') || '';
+      var m = /\/(\d+)$/.exec(link);
+      if (!img || !m) continue;
+      if (!img.getAttribute('data-src-normal')) img.setAttribute('data-src-normal', img.src);
+      if (on) {
+        var dex = parseInt(m[1], 10);
+        var c = null;
+        for (var k = 0; k < DATA.creatures.length; k++) if (DATA.creatures[k].dexNo === dex) { c = DATA.creatures[k]; break; }
+        if (c && c.rainbowKey && DATA.images[c.rainbowKey]) img.src = DATA.images[c.rainbowKey];
+      }
+    }
+    if (!on) {
+      var cards2 = document.querySelectorAll('a.creature-card img');
+      for (var n = 0; n < cards2.length; n++) {
+        var s0 = cards2[n].getAttribute('data-src-normal');
+        if (s0) { cards2[n].src = s0; cards2[n].removeAttribute('data-src-normal'); }
+      }
+    }
+  }
+
   /* ---------- 板块标题图标 ---------- */
   var SEC_ICONS = {
     '蛋形态': 'ui-hatchcond',
@@ -1228,7 +1288,7 @@
     var t = null;
     entryObs = new MutationObserver(function () {
       clearTimeout(t);
-      t = setTimeout(function () { syncSkillCollapse(); syncEntryIcons(); killEggBg(); killEvoBg(); syncFormToggle(); frameTraitSection(); killTraitBg(); }, 80);
+      t = setTimeout(function () { syncSkillCollapse(); syncEntryIcons(); killEggBg(); killEvoBg(); frameTraitSection(); killTraitBg(); }, 80);
     });
     entryObs.observe(root, { childList: true, subtree: true });
   }
