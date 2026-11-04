@@ -1959,7 +1959,7 @@
       var chips = [];
       chips.push('<span class="sm-type"><img src="' + typeIco + '" alt="" width="16" height="16">' + s.type + '系</span>');
       chips.push('<span class="sm-cat sm-' + (s.category === '物理' ? 'phys' : s.category === '特殊' ? 'spec' : 'stat') + '">' + s.category + '</span>');
-      chips.push('<img class="slot-ico" src="/media/ui/slot-' + Math.min(4, i + 1) + '.webp" alt="" title="' + (s.role || ('技能 ' + (i + 1))) + '">');
+
       chips.push('<span class="sm-num">威力 <b>' + (s.power == null ? '—' : s.power) + '</b></span>');
       if (s.prio === 1) chips.push('<span class="sm-prio up">先手+1</span>');
       if (s.prio === -1) chips.push('<span class="sm-prio down">先手-1</span>');
