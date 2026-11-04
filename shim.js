@@ -1394,7 +1394,7 @@
       { href: '/status.html', t: '状态图鉴', d: '17 种状态说明', k: 'ui-statusbook' },
       { href: '/env.html', t: '环境图鉴', d: '12 天气 · 10 场地 · 17 环境', k: 'ui-envbook' },
       { href: '/save.html', t: '进度存档', d: '导出/导入你的进度', k: 'fn-btn-normal' },
-      { href: '/favs.html', t: '我的收藏', d: '你标星过的灵宠', k: 'fn-bag' }
+      { href: '/favs.html', t: '我的收藏', d: '你标星过的灵宠', k: 'ui-fav' }
     ];
     if (!currentCreatureId()) {
       items.push({ href: '/studio.html', t: '工作室', d: '制作团队与手记', k: 'studio-logo' });
