@@ -1357,7 +1357,7 @@
       { k: 'ui-hatchbook', t: '孵化手册', href: '/eggs.html' },
       { k: 'fn-arena', t: '战斗模拟', href: '/battle.html' },
       { k: 'ui-skillpool', t: '技能池', href: '/skills.html' },
-      { k: 'trait-thunder', t: '状态图鉴', href: '/status.html' },
+      { k: 'ui-statusbook', t: '状态图鉴', href: '/status.html' },
       { k: 'ui-envbook', t: '环境图鉴', href: '/env.html' },
       { k: 'fn-btn-normal', t: '进度存档', href: '/save.html' },
       { k: 'ui-fav', t: '我的收藏', href: '/favs.html' }
@@ -1391,7 +1391,7 @@
       { href: '/family.html', t: '家族图鉴', d: '28 个家族总览', k: 'ui-family' },
       { href: '/battle.html', t: '战斗模拟', d: '六对六回合制对战', k: 'fn-arena' },
       { href: '/skills.html', t: '技能池', d: '全站 600+ 招式', k: 'ui-skillpool' },
-      { href: '/status.html', t: '状态图鉴', d: '中毒/灼烧/先手…', k: 'trait-thunder' },
+      { href: '/status.html', t: '状态图鉴', d: '17 种状态说明', k: 'ui-statusbook' },
       { href: '/env.html', t: '环境图鉴', d: '12 天气 · 10 场地 · 17 环境', k: 'ui-envbook' },
       { href: '/save.html', t: '进度存档', d: '导出/导入你的进度', k: 'fn-btn-normal' },
       { href: '/favs.html', t: '我的收藏', d: '你标星过的灵宠', k: 'fn-bag' }
