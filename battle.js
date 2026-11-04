@@ -211,6 +211,7 @@
       var v;
       if (k === 'hp') {
         v = Math.floor((((2 * base + 31) * L) / 100) + L + 10) + Math.floor((cfg.evs.hp || 0) / 4);
+        v = Math.floor(v * 1.15);
         v = Math.floor(v * (fmult.hp || 1));
       } else {
         v = Math.floor((((2 * base + 31) * L) / 100 + 5) * prof) + Math.floor((cfg.evs[k] || 0) / 4);
@@ -727,7 +728,7 @@
       poisoned: !!defender.status['中毒'],
       para: !!defender.status['麻痹']
     });
-    var dmg = base * tm * stab * wm * fm * tb1 * tb2 * (crit ? 1.5 : 1) * rnd(0.85, 1);
+    var dmg = base * tm * stab * wm * fm * tb1 * tb2 * (crit ? 1.35 : 1) * rnd(0.9, 1);
     return { dmg: Math.max(1, Math.floor(dmg)), type: tm, crit: crit };
   }
 
