@@ -1023,16 +1023,11 @@
   /* ---------- 首页：彩虹形态筛选 ---------- */
   function syncFormFilter() {
     if (!DATA) return;
-    var groups = document.querySelectorAll('.filter-group, .filter-block, .sidebar-group');
     var target = null;
+    var groups = document.querySelectorAll('fieldset.filter-group');
     for (var i = 0; i < groups.length; i++) {
-      if (/形态/.test(groups[i].textContent || '')) { target = groups[i]; break; }
-    }
-    if (!target) {
-      var labels = document.querySelectorAll('h3, h4, p, span, strong');
-      for (var j = 0; j < labels.length; j++) {
-        if ((labels[j].textContent || '').trim() === '形态') { target = labels[j].parentElement; break; }
-      }
+      var lg = groups[i].querySelector('legend');
+      if (lg && (lg.textContent || '').trim() === '形态') { target = groups[i].querySelector('.filter-options') || groups[i]; break; }
     }
     if (!target) return;
     if (target.querySelector('[data-form="rainbow"]')) return;
