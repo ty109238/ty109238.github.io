@@ -1342,20 +1342,18 @@
   }
 
   function syncSkillNumbers() {
-    var circled = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨'];
     var entries = document.querySelectorAll('.skill-entry');
     for (var i = 0; i < entries.length; i++) {
       var top = entries[i].querySelector('.skill-top');
       if (!top) continue;
       var span = top.querySelector('span');
       if (!span) continue;
-      var idx = i;
-      var want = circled[idx] || String(idx + 1);
-      if (span.textContent.trim() !== want) {
-        span.textContent = want;
-        span.classList.add('skill-no');
-        span.setAttribute('data-no', String(idx + 1));
-      }
+      var n = i + 1;
+      if (n > 9) continue;
+      if (span.getAttribute('data-slot') === String(n)) continue;
+      span.setAttribute('data-slot', String(n));
+      span.classList.add('skill-no');
+      span.innerHTML = '<img src="/media/ui/slot-' + n + '.webp" alt="' + n + '">';
     }
   }
 

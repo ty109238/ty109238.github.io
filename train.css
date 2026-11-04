@@ -1245,3 +1245,7 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   background: linear-gradient(90deg, #ffd6e8, #d9ecff, #fff6c9);
   border-color: var(--pink); color: #b3157a;
 }
+
+/* 技能编号图标 */
+.skill-top .skill-no { display: inline-flex; align-items: center; }
+.skill-top .skill-no img { width: 26px; height: 28px; object-fit: contain; }
