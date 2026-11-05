@@ -1034,11 +1034,11 @@
     var allBtns = target.querySelectorAll('button');
     for (var bi = 0; bi < allBtns.length; bi++) {
       var txt = (allBtns[bi].textContent || '').trim();
-      if ((txt === '魇化' || txt === '彩虹') && !allBtns[bi].hasAttribute('data-form')) {
+      if ((txt === '魇化' || txt === '彩虹' || txt === '异色') && !allBtns[bi].hasAttribute('data-form')) {
         allBtns[bi].remove();
       }
     }
-    ['rainbow', 'nightmare'].forEach(function (kind) {
+    ['rainbow', 'nightmare', 'shiny'].forEach(function (kind) {
       var els = target.querySelectorAll('[data-form="' + kind + '"]');
       for (var i = 1; i < els.length; i++) els[i].remove();
     });
@@ -1070,13 +1070,14 @@
 
     bindChipDelegate();
     makeChip('rainbow', '彩虹', 'rainbow-chip');
+    makeChip('shiny', '异色', 'shiny-chip');
     makeChip('nightmare', '魇化', 'nightmare-chip');
     applyCatalogForm();
   }
 
   function formUrlOf(n, kind) {
     if (!DATA) return null;
-    var keyName = kind === 'nightmare' ? 'nightmareKey' : 'rainbowKey';
+    var keyName = kind === 'nightmare' ? 'nightmareKey' : (kind === 'shiny' ? 'shinyKey' : 'rainbowKey');
     for (var i = 0; i < DATA.creatures.length; i++) {
       var c = DATA.creatures[i];
       if ((c.id === n || c.dexNo === n) && c[keyName]) return DATA.images[c[keyName]] || null;
@@ -1090,7 +1091,7 @@
     var c = currentCreature();
     if (!c || !DATA) return;
     var mode2 = localStorage.getItem('dex:catalogForm') || 'normal';
-    var on = mode2 === 'rainbow' || mode2 === 'nightmare';
+    var on = mode2 === 'rainbow' || mode2 === 'nightmare' || mode2 === 'shiny';
 
     function swap(img, url) {
       if (!img || !url) return;
@@ -1103,7 +1104,7 @@
     }
 
     // 当前灵宠：所有立绘/写真图（按 src 路径识别，兼容任意容器）
-    var ownKey = mode2 === 'nightmare' ? c.nightmareKey : c.rainbowKey;
+    var ownKey = mode2 === 'nightmare' ? c.nightmareKey : (mode2 === 'shiny' ? c.shinyKey : c.rainbowKey);
     var own = ownKey ? (DATA.images[ownKey] || null) : null;
     if (own) {
       var all = document.querySelectorAll('img');
@@ -1143,7 +1144,7 @@
       var b = e.target && e.target.closest ? e.target.closest('button[data-form]') : null;
       if (!b) return;
       var kind = b.getAttribute('data-form');
-      if (kind !== 'rainbow' && kind !== 'nightmare') return;
+      if (kind !== 'rainbow' && kind !== 'nightmare' && kind !== 'shiny') return;
       e.preventDefault();
       e.stopPropagation();
       var on = b.classList.toggle('on');
@@ -1160,7 +1161,7 @@
 
   function applyCatalogForm() {
     var mode = localStorage.getItem('dex:catalogForm') || 'normal';
-    var on = mode === 'rainbow' || mode === 'nightmare';
+    var on = mode === 'rainbow' || mode === 'nightmare' || mode === 'shiny';
     var cards = document.querySelectorAll('a.creature-card');
     for (var i = 0; i < cards.length; i++) {
       var card = cards[i];

@@ -75,6 +75,7 @@
     { id: 'normal', name: '普通', mult: { hp: 1, attack: 1, defense: 1, spAttack: 1, spDefense: 1, speed: 1 } },
     { id: 'lord', name: '领主', mult: { hp: 1.15, attack: 1.05, defense: 1.15, spAttack: 1.0, spDefense: 1.1, speed: 0.95 } },
     { id: 'nightmare', name: '魇化', mult: { hp: 0.95, attack: 1.15, defense: 0.95, spAttack: 1.15, spDefense: 0.95, speed: 1.05 } },
+    { id: 'shiny', name: '异色', mult: { hp: 1.05, attack: 1.05, defense: 1.05, spAttack: 1.05, spDefense: 1.05, speed: 1.05 } },
     { id: 'rainbow', name: '彩虹', mult: { hp: 1.08, attack: 1.08, defense: 1.08, spAttack: 1.08, spDefense: 1.08, speed: 1.08 } }
   ];
   function artOf(cfg) {
@@ -83,6 +84,9 @@
     }
     if (cfg && cfg.form === 'nightmare' && cfg.c.nightmareKey && DATA.images[cfg.c.nightmareKey]) {
       return DATA.images[cfg.c.nightmareKey];
+    }
+    if (cfg && cfg.form === 'shiny' && cfg.c.shinyKey && DATA.images[cfg.c.shinyKey]) {
+      return DATA.images[cfg.c.shinyKey];
     }
     return DATA.images[cfg.c.imageKey] || '';
   }
