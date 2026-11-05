@@ -1391,6 +1391,102 @@
       if (h && h.textContent.indexOf('技能手册') >= 0) { sec = secs[i]; break; }
     }
     if (!sec) return;
+    var btn = sec.querySelector('.skill-fold');
+    if (btn) btn.remove();   // 只显示专属技能，不再需要折叠
+  }
+
+  function syncEntryIcons() {
+    var id = currentCreatureId();
+    if (!id || !DATA) return;
+    var c = null;
+    for (var i = 0; i < DATA.creatures.length; i++) if (DATA.creatures[i].id === id) { c = DATA.creatures[i]; break; }
+    if (!c) return;
+
+    // 被动特性：每个特性左侧换成对应属性徽章
+    var emblems = document.querySelectorAll('.trait-emblem');
+    for (var t = 0; t < emblems.length; t++) {
+      var em = emblems[t];
+      if (em.querySelector('img.entry-ico')) continue;
+      em.innerHTML = '';
+      em.appendChild(makeEntryIcon(elementIconOf(c), 'entry-ico trait-ico'));
+    }
+
+    // 捕捉地点 → 捕捉条件图标
+    var pin = document.querySelector('.field-note:not(.hatch) > svg');
+    if (pin) {
+      pin.parentNode.replaceChild(makeEntryIcon('ui-catch', 'entry-ico note-ico'), pin);
+    }
+
+    // 孵化条件 → 蛋/沙漏图标
+    var egg = document.querySelector('.field-note.hatch > svg');
+    if (egg) {
+      egg.parentNode.replaceChild(makeEntryIcon('ui-hatchcond', 'entry-ico note-ico'), egg);
+    }
+  }
+
+  var entryObs = null;
+  function watchEntries() {
+    if (entryObs) return;
+    var root = document.querySelector('.detail-page');
+    if (!root) return;
+    var t = null;
+    entryObs = new MutationObserver(function () {
+      clearTimeout(t);
+      t = setTimeout(function () { syncSkillOwnOnly(); syncSkillNumbers(); syncSkillCollapse(); syncEntryIcons(); killEggBg(); killEvoBg(); frameTraitSection(); killTraitBg(); }, 80);
+    });
+    entryObs.observe(root, { childList: true, subtree: true });
+  }
+
+  function syncSkillOwnOnly() {
+    var c = currentCreature();
+    if (!c || !DATA || !DATA.skills) return;
+    var arr = DATA.skills[String(c.id)] || [];
+    var own = {};
+    for (var k = 0; k < arr.length; k++) if (arr[k].own) own[arr[k].name] = 1;
+    if (!Object.keys(own).length) return;
+    var entries = document.querySelectorAll('.skill-entry');
+    for (var i = 0; i < entries.length; i++) {
+      var h = entries[i].querySelector('h3');
+      var nm = h ? h.textContent.trim() : '';
+      var show = !!own[nm];
+      entries[i].style.display = show ? '' : 'none';
+      entries[i].setAttribute('data-own', show ? '1' : '0');
+    }
+  }
+
+  function syncSkillNumbers() {
+    var entries = document.querySelectorAll('.skill-entry');
+    for (var i = 0; i < entries.length; i++) {
+      var top = entries[i].querySelector('.skill-top');
+      if (!top) continue;
+      var span = top.querySelector('span');
+      if (!span) continue;
+      var n = i + 1;
+      if (n > 9) continue;
+      if (span.getAttribute('data-slot') === String(n)) continue;
+      span.setAttribute('data-slot', String(n));
+      span.classList.add('skill-no');
+      span.innerHTML = '<img src="/media/ui/slot-' + n + '.webp" alt="' + n + '">';
+      span.style.setProperty('background', 'transparent', 'important');
+      span.style.setProperty('background-image', 'none', 'important');
+      span.style.setProperty('border', '0', 'important');
+      span.style.setProperty('box-shadow', 'none', 'important');
+      span.style.setProperty('width', '30px', 'important');
+      span.style.setProperty('height', '30px', 'important');
+      span.style.setProperty('display', 'inline-flex', 'important');
+      span.style.setProperty('align-items', 'center', 'important');
+      span.style.setProperty('justify-content', 'center', 'important');
+    }
+  }
+
+  function syncSkillCollapse() {
+    var secs = document.querySelectorAll('.detail-page > section');
+    var sec = null;
+    for (var i = 0; i < secs.length; i++) {
+      var h = secs[i].querySelector('.record-heading h2');
+      if (h && h.textContent.indexOf('技能手册') >= 0) { sec = secs[i]; break; }
+    }
+    if (!sec) return;
     var entries = sec.querySelectorAll('.skill-entry');
     if (entries.length <= 4) return;
 
