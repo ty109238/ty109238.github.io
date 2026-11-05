@@ -1253,3 +1253,12 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
 /* 技能手册：所有条目一律显示（数据层已只保留专属） */
 .skills-section .skill-entry { display: block !important; }
 .skill-fold { display: none !important; }
+/* 魇化形态筛选 */
+.nightmare-chip {
+  padding: 5px 12px; border: 2px solid var(--line); border-radius: 999px;
+  background: #fff; font: inherit; font-size: 11.5px; font-weight: 800; color: #55677b; cursor: pointer;
+}
+.nightmare-chip.on {
+  background: linear-gradient(90deg, #e3d2ff, #b78cff);
+  border-color: #7a4bc4; color: #4b2a83;
+}

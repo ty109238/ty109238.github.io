@@ -37,7 +37,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/01.webp",
-      "rainbowKey": "rainbow/01.webp"
+      "rainbowKey": "rainbow/01.webp",
+      "nightmareKey": "nightmare/01.webp"
     },
     {
       "id": 2,
@@ -73,7 +74,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/01.webp",
-      "rainbowKey": "rainbow/02.webp"
+      "rainbowKey": "rainbow/02.webp",
+      "nightmareKey": "nightmare/02.webp"
     },
     {
       "id": 3,
@@ -109,7 +111,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/01.webp",
-      "rainbowKey": "rainbow/03.webp"
+      "rainbowKey": "rainbow/03.webp",
+      "nightmareKey": "nightmare/03.webp"
     },
     {
       "id": 4,
@@ -145,7 +148,8 @@
         "nature": "固执"
       },
       "eggKey": "eggs/04.webp",
-      "rainbowKey": "rainbow/04.webp"
+      "rainbowKey": "rainbow/04.webp",
+      "nightmareKey": "nightmare/04.webp"
     },
     {
       "id": 5,
@@ -181,7 +185,8 @@
         "nature": "固执"
       },
       "eggKey": "eggs/04.webp",
-      "rainbowKey": "rainbow/05.webp"
+      "rainbowKey": "rainbow/05.webp",
+      "nightmareKey": "nightmare/05.webp"
     },
     {
       "id": 6,
@@ -217,7 +222,8 @@
         "nature": "固执"
       },
       "eggKey": "eggs/04.webp",
-      "rainbowKey": "rainbow/06.webp"
+      "rainbowKey": "rainbow/06.webp",
+      "nightmareKey": "nightmare/06.webp"
     },
     {
       "id": 7,
@@ -253,7 +259,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/07.webp",
-      "rainbowKey": "rainbow/07.webp"
+      "rainbowKey": "rainbow/07.webp",
+      "nightmareKey": "nightmare/07.webp"
     },
     {
       "id": 8,
@@ -289,7 +296,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/07.webp",
-      "rainbowKey": "rainbow/08.webp"
+      "rainbowKey": "rainbow/08.webp",
+      "nightmareKey": "nightmare/08.webp"
     },
     {
       "id": 9,
@@ -325,7 +333,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/07.webp",
-      "rainbowKey": "rainbow/09.webp"
+      "rainbowKey": "rainbow/09.webp",
+      "nightmareKey": "nightmare/09.webp"
     },
     {
       "id": 60001,
@@ -361,7 +370,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/10.webp",
-      "rainbowKey": "rainbow/10.webp"
+      "rainbowKey": "rainbow/10.webp",
+      "nightmareKey": "nightmare/10.webp"
     },
     {
       "id": 60002,
@@ -397,7 +407,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/10.webp",
-      "rainbowKey": "rainbow/11.webp"
+      "rainbowKey": "rainbow/11.webp",
+      "nightmareKey": "nightmare/11.webp"
     },
     {
       "id": 60003,
@@ -433,7 +444,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/10.webp",
-      "rainbowKey": "rainbow/12.webp"
+      "rainbowKey": "rainbow/12.webp",
+      "nightmareKey": "nightmare/12.webp"
     },
     {
       "id": 60004,
@@ -469,7 +481,8 @@
         "nature": "固执"
       },
       "eggKey": "eggs/13.webp",
-      "rainbowKey": "rainbow/13.webp"
+      "rainbowKey": "rainbow/13.webp",
+      "nightmareKey": "nightmare/13.webp"
     },
     {
       "id": 60005,
@@ -505,7 +518,8 @@
         "nature": "孤僻"
       },
       "eggKey": "eggs/13.webp",
-      "rainbowKey": "rainbow/14.webp"
+      "rainbowKey": "rainbow/14.webp",
+      "nightmareKey": "nightmare/14.webp"
     },
     {
       "id": 60006,
@@ -541,7 +555,8 @@
         "nature": "孤僻"
       },
       "eggKey": "eggs/13.webp",
-      "rainbowKey": "rainbow/15.webp"
+      "rainbowKey": "rainbow/15.webp",
+      "nightmareKey": "nightmare/15.webp"
     },
     {
       "id": 60007,
@@ -577,7 +592,8 @@
         "nature": "大胆"
       },
       "eggKey": "eggs/16.webp",
-      "rainbowKey": "rainbow/16.webp"
+      "rainbowKey": "rainbow/16.webp",
+      "nightmareKey": "nightmare/16.webp"
     },
     {
       "id": 60008,
@@ -613,7 +629,8 @@
         "nature": "大胆"
       },
       "eggKey": "eggs/16.webp",
-      "rainbowKey": "rainbow/17.webp"
+      "rainbowKey": "rainbow/17.webp",
+      "nightmareKey": "nightmare/17.webp"
     },
     {
       "id": 60009,
@@ -649,7 +666,8 @@
         "nature": "大胆"
       },
       "eggKey": "eggs/16.webp",
-      "rainbowKey": "rainbow/18.webp"
+      "rainbowKey": "rainbow/18.webp",
+      "nightmareKey": "nightmare/18.webp"
     },
     {
       "id": 60010,
@@ -685,7 +703,8 @@
         "nature": "大胆"
       },
       "eggKey": "eggs/19.webp",
-      "rainbowKey": "rainbow/19.webp"
+      "rainbowKey": "rainbow/19.webp",
+      "nightmareKey": "nightmare/19.webp"
     },
     {
       "id": 60011,
@@ -721,7 +740,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/19.webp",
-      "rainbowKey": "rainbow/20.webp"
+      "rainbowKey": "rainbow/20.webp",
+      "nightmareKey": "nightmare/20.webp"
     },
     {
       "id": 60012,
@@ -757,7 +777,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/19.webp",
-      "rainbowKey": "rainbow/21.webp"
+      "rainbowKey": "rainbow/21.webp",
+      "nightmareKey": "nightmare/21.webp"
     },
     {
       "id": 60013,
@@ -793,7 +814,8 @@
         "nature": "大胆"
       },
       "eggKey": "eggs/22.webp",
-      "rainbowKey": "rainbow/22.webp"
+      "rainbowKey": "rainbow/22.webp",
+      "nightmareKey": "nightmare/22.webp"
     },
     {
       "id": 60014,
@@ -829,7 +851,8 @@
         "nature": "大胆"
       },
       "eggKey": "eggs/22.webp",
-      "rainbowKey": "rainbow/23.webp"
+      "rainbowKey": "rainbow/23.webp",
+      "nightmareKey": "nightmare/23.webp"
     },
     {
       "id": 60015,
@@ -865,7 +888,8 @@
         "nature": "大胆"
       },
       "eggKey": "eggs/22.webp",
-      "rainbowKey": "rainbow/24.webp"
+      "rainbowKey": "rainbow/24.webp",
+      "nightmareKey": "nightmare/24.webp"
     },
     {
       "id": 60016,
@@ -901,7 +925,8 @@
         "nature": "淘气"
       },
       "eggKey": "eggs/25.webp",
-      "rainbowKey": "rainbow/25.webp"
+      "rainbowKey": "rainbow/25.webp",
+      "nightmareKey": "nightmare/25.webp"
     },
     {
       "id": 60017,
@@ -937,7 +962,8 @@
         "nature": "淘气"
       },
       "eggKey": "eggs/25.webp",
-      "rainbowKey": "rainbow/26.webp"
+      "rainbowKey": "rainbow/26.webp",
+      "nightmareKey": "nightmare/26.webp"
     },
     {
       "id": 60018,
@@ -973,7 +999,8 @@
         "nature": "淘气"
       },
       "eggKey": "eggs/25.webp",
-      "rainbowKey": "rainbow/27.webp"
+      "rainbowKey": "rainbow/27.webp",
+      "nightmareKey": "nightmare/27.webp"
     },
     {
       "id": 60019,
@@ -1009,7 +1036,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/28.webp",
-      "rainbowKey": "rainbow/28.webp"
+      "rainbowKey": "rainbow/28.webp",
+      "nightmareKey": "nightmare/28.webp"
     },
     {
       "id": 60020,
@@ -1045,7 +1073,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/28.webp",
-      "rainbowKey": "rainbow/29.webp"
+      "rainbowKey": "rainbow/29.webp",
+      "nightmareKey": "nightmare/29.webp"
     },
     {
       "id": 60021,
@@ -1081,7 +1110,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/28.webp",
-      "rainbowKey": "rainbow/30.webp"
+      "rainbowKey": "rainbow/30.webp",
+      "nightmareKey": "nightmare/30.webp"
     },
     {
       "id": 60022,
@@ -1117,7 +1147,8 @@
         "nature": "急躁"
       },
       "eggKey": "eggs/31.webp",
-      "rainbowKey": "rainbow/31.webp"
+      "rainbowKey": "rainbow/31.webp",
+      "nightmareKey": "nightmare/31.webp"
     },
     {
       "id": 60023,
@@ -1153,7 +1184,8 @@
         "nature": "急躁"
       },
       "eggKey": "eggs/31.webp",
-      "rainbowKey": "rainbow/32.webp"
+      "rainbowKey": "rainbow/32.webp",
+      "nightmareKey": "nightmare/32.webp"
     },
     {
       "id": 60024,
@@ -1189,7 +1221,8 @@
         "nature": "急躁"
       },
       "eggKey": "eggs/31.webp",
-      "rainbowKey": "rainbow/33.webp"
+      "rainbowKey": "rainbow/33.webp",
+      "nightmareKey": "nightmare/33.webp"
     },
     {
       "id": 60025,
@@ -1225,7 +1258,8 @@
         "nature": "温顺"
       },
       "eggKey": "eggs/34.webp",
-      "rainbowKey": "rainbow/34.webp"
+      "rainbowKey": "rainbow/34.webp",
+      "nightmareKey": "nightmare/34.webp"
     },
     {
       "id": 60026,
@@ -1261,7 +1295,8 @@
         "nature": "温顺"
       },
       "eggKey": "eggs/34.webp",
-      "rainbowKey": "rainbow/35.webp"
+      "rainbowKey": "rainbow/35.webp",
+      "nightmareKey": "nightmare/35.webp"
     },
     {
       "id": 60027,
@@ -1297,7 +1332,8 @@
         "nature": "温顺"
       },
       "eggKey": "eggs/34.webp",
-      "rainbowKey": "rainbow/36.webp"
+      "rainbowKey": "rainbow/36.webp",
+      "nightmareKey": "nightmare/36.webp"
     },
     {
       "id": 60028,
@@ -1333,7 +1369,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/37.webp",
-      "rainbowKey": "rainbow/37.webp"
+      "rainbowKey": "rainbow/37.webp",
+      "nightmareKey": "nightmare/37.webp"
     },
     {
       "id": 60029,
@@ -1369,7 +1406,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/37.webp",
-      "rainbowKey": "rainbow/38.webp"
+      "rainbowKey": "rainbow/38.webp",
+      "nightmareKey": "nightmare/38.webp"
     },
     {
       "id": 60030,
@@ -1405,7 +1443,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/37.webp",
-      "rainbowKey": "rainbow/39.webp"
+      "rainbowKey": "rainbow/39.webp",
+      "nightmareKey": "nightmare/39.webp"
     },
     {
       "id": 60031,
@@ -1441,7 +1480,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/40.webp",
-      "rainbowKey": "rainbow/40.webp"
+      "rainbowKey": "rainbow/40.webp",
+      "nightmareKey": "nightmare/40.webp"
     },
     {
       "id": 60032,
@@ -1477,7 +1517,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/40.webp",
-      "rainbowKey": "rainbow/41.webp"
+      "rainbowKey": "rainbow/41.webp",
+      "nightmareKey": "nightmare/41.webp"
     },
     {
       "id": 60033,
@@ -1513,7 +1554,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/40.webp",
-      "rainbowKey": "rainbow/42.webp"
+      "rainbowKey": "rainbow/42.webp",
+      "nightmareKey": "nightmare/42.webp"
     },
     {
       "id": 60034,
@@ -1549,7 +1591,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/43.webp",
-      "rainbowKey": "rainbow/43.webp"
+      "rainbowKey": "rainbow/43.webp",
+      "nightmareKey": "nightmare/43.webp"
     },
     {
       "id": 60035,
@@ -1585,7 +1628,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/43.webp",
-      "rainbowKey": "rainbow/44.webp"
+      "rainbowKey": "rainbow/44.webp",
+      "nightmareKey": "nightmare/44.webp"
     },
     {
       "id": 60036,
@@ -1621,7 +1665,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/43.webp",
-      "rainbowKey": "rainbow/45.webp"
+      "rainbowKey": "rainbow/45.webp",
+      "nightmareKey": "nightmare/45.webp"
     },
     {
       "id": 60037,
@@ -1657,7 +1702,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/46.webp",
-      "rainbowKey": "rainbow/46.webp"
+      "rainbowKey": "rainbow/46.webp",
+      "nightmareKey": "nightmare/46.webp"
     },
     {
       "id": 60038,
@@ -1693,7 +1739,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/46.webp",
-      "rainbowKey": "rainbow/47.webp"
+      "rainbowKey": "rainbow/47.webp",
+      "nightmareKey": "nightmare/47.webp"
     },
     {
       "id": 60039,
@@ -1729,7 +1776,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/46.webp",
-      "rainbowKey": "rainbow/48.webp"
+      "rainbowKey": "rainbow/48.webp",
+      "nightmareKey": "nightmare/48.webp"
     },
     {
       "id": 60040,
@@ -1765,7 +1813,8 @@
         "nature": "固执"
       },
       "eggKey": "eggs/49.webp",
-      "rainbowKey": "rainbow/49.webp"
+      "rainbowKey": "rainbow/49.webp",
+      "nightmareKey": "nightmare/49.webp"
     },
     {
       "id": 60041,
@@ -1801,7 +1850,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/50.webp",
-      "rainbowKey": "rainbow/50.webp"
+      "rainbowKey": "rainbow/50.webp",
+      "nightmareKey": "nightmare/50.webp"
     },
     {
       "id": 60042,
@@ -1837,7 +1887,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/51.webp",
-      "rainbowKey": "rainbow/51.webp"
+      "rainbowKey": "rainbow/51.webp",
+      "nightmareKey": "nightmare/51.webp"
     },
     {
       "id": 103171,
@@ -1873,7 +1924,8 @@
         "nature": "温顺"
       },
       "eggKey": "eggs/52.webp",
-      "rainbowKey": "rainbow/52.webp"
+      "rainbowKey": "rainbow/52.webp",
+      "nightmareKey": "nightmare/52.webp"
     },
     {
       "id": 103172,
@@ -1909,7 +1961,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/53.webp",
-      "rainbowKey": "rainbow/53.webp"
+      "rainbowKey": "rainbow/53.webp",
+      "nightmareKey": "nightmare/53.webp"
     },
     {
       "id": 103173,
@@ -1945,7 +1998,8 @@
         "nature": "淘气"
       },
       "eggKey": "eggs/54.webp",
-      "rainbowKey": "rainbow/54.webp"
+      "rainbowKey": "rainbow/54.webp",
+      "nightmareKey": "nightmare/54.webp"
     },
     {
       "id": 103174,
@@ -1981,7 +2035,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/55.webp",
-      "rainbowKey": "rainbow/55.webp"
+      "rainbowKey": "rainbow/55.webp",
+      "nightmareKey": "nightmare/55.webp"
     },
     {
       "id": 103175,
@@ -2017,7 +2072,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/55.webp",
-      "rainbowKey": "rainbow/56.webp"
+      "rainbowKey": "rainbow/56.webp",
+      "nightmareKey": "nightmare/56.webp"
     },
     {
       "id": 103176,
@@ -2053,7 +2109,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/55.webp",
-      "rainbowKey": "rainbow/57.webp"
+      "rainbowKey": "rainbow/57.webp",
+      "nightmareKey": "nightmare/57.webp"
     },
     {
       "id": 103177,
@@ -2089,7 +2146,8 @@
         "nature": "温顺"
       },
       "eggKey": "eggs/58.webp",
-      "rainbowKey": "rainbow/58.webp"
+      "rainbowKey": "rainbow/58.webp",
+      "nightmareKey": "nightmare/58.webp"
     },
     {
       "id": 103178,
@@ -2139,7 +2197,8 @@
           "icon": "❄"
         }
       ],
-      "rainbowKey": "rainbow/59.webp"
+      "rainbowKey": "rainbow/59.webp",
+      "nightmareKey": "nightmare/59.webp"
     },
     {
       "id": 103179,
@@ -2181,7 +2240,8 @@
         "condition": "冬天",
         "dexNo": 59
       },
-      "rainbowKey": "rainbow/60.webp"
+      "rainbowKey": "rainbow/60.webp",
+      "nightmareKey": "nightmare/60.webp"
     },
     {
       "id": 103180,
@@ -2223,7 +2283,8 @@
         "condition": "夏天",
         "dexNo": 59
       },
-      "rainbowKey": "rainbow/61.webp"
+      "rainbowKey": "rainbow/61.webp",
+      "nightmareKey": "nightmare/61.webp"
     },
     {
       "id": 103181,
@@ -2259,7 +2320,8 @@
         "nature": "急躁"
       },
       "eggKey": "eggs/62.webp",
-      "rainbowKey": "rainbow/62.webp"
+      "rainbowKey": "rainbow/62.webp",
+      "nightmareKey": "nightmare/62.webp"
     },
     {
       "id": 103182,
@@ -2295,7 +2357,8 @@
         "nature": "急躁"
       },
       "eggKey": "eggs/62.webp",
-      "rainbowKey": "rainbow/63.webp"
+      "rainbowKey": "rainbow/63.webp",
+      "nightmareKey": "nightmare/63.webp"
     },
     {
       "id": 103183,
@@ -2331,7 +2394,8 @@
         "nature": "孤僻"
       },
       "eggKey": "eggs/62.webp",
-      "rainbowKey": "rainbow/64.webp"
+      "rainbowKey": "rainbow/64.webp",
+      "nightmareKey": "nightmare/64.webp"
     },
     {
       "id": 103184,
@@ -2367,7 +2431,8 @@
         "nature": "固执"
       },
       "eggKey": "eggs/65.webp",
-      "rainbowKey": "rainbow/65.webp"
+      "rainbowKey": "rainbow/65.webp",
+      "nightmareKey": "nightmare/65.webp"
     },
     {
       "id": 103185,
@@ -2403,7 +2468,8 @@
         "nature": "固执"
       },
       "eggKey": "eggs/65.webp",
-      "rainbowKey": "rainbow/66.webp"
+      "rainbowKey": "rainbow/66.webp",
+      "nightmareKey": "nightmare/66.webp"
     },
     {
       "id": 103186,
@@ -2439,7 +2505,8 @@
         "nature": "固执"
       },
       "eggKey": "eggs/65.webp",
-      "rainbowKey": "rainbow/67.webp"
+      "rainbowKey": "rainbow/67.webp",
+      "nightmareKey": "nightmare/67.webp"
     },
     {
       "id": 103187,
@@ -2487,7 +2554,8 @@
           "condition": "22 级 · 攻击 > 防御"
         }
       ],
-      "rainbowKey": "rainbow/68.webp"
+      "rainbowKey": "rainbow/68.webp",
+      "nightmareKey": "nightmare/68.webp"
     },
     {
       "id": 103188,
@@ -2529,7 +2597,8 @@
         "condition": "防御 > 攻击",
         "dexNo": 68
       },
-      "rainbowKey": "rainbow/69.webp"
+      "rainbowKey": "rainbow/69.webp",
+      "nightmareKey": "nightmare/69.webp"
     },
     {
       "id": 103189,
@@ -2571,7 +2640,8 @@
         "condition": "攻击 > 防御",
         "dexNo": 68
       },
-      "rainbowKey": "rainbow/70.webp"
+      "rainbowKey": "rainbow/70.webp",
+      "nightmareKey": "nightmare/70.webp"
     },
     {
       "id": 103190,
@@ -2607,7 +2677,8 @@
         "nature": "淘气"
       },
       "eggKey": "eggs/68.webp",
-      "rainbowKey": "rainbow/71.webp"
+      "rainbowKey": "rainbow/71.webp",
+      "nightmareKey": "nightmare/71.webp"
     },
     {
       "id": 103191,
@@ -2643,7 +2714,8 @@
         "nature": "固执"
       },
       "eggKey": "eggs/68.webp",
-      "rainbowKey": "rainbow/72.webp"
+      "rainbowKey": "rainbow/72.webp",
+      "nightmareKey": "nightmare/72.webp"
     },
     {
       "id": 103192,
@@ -2679,7 +2751,8 @@
         "nature": "大胆"
       },
       "eggKey": "eggs/73.webp",
-      "rainbowKey": "rainbow/73.webp"
+      "rainbowKey": "rainbow/73.webp",
+      "nightmareKey": "nightmare/73.webp"
     },
     {
       "id": 103193,
@@ -2715,7 +2788,8 @@
         "nature": "固执"
       },
       "eggKey": "eggs/74.webp",
-      "rainbowKey": "rainbow/74.webp"
+      "rainbowKey": "rainbow/74.webp",
+      "nightmareKey": "nightmare/74.webp"
     },
     {
       "id": 103194,
@@ -2751,7 +2825,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/75.webp",
-      "rainbowKey": "rainbow/75.webp"
+      "rainbowKey": "rainbow/75.webp",
+      "nightmareKey": "nightmare/75.webp"
     },
     {
       "id": 103195,
@@ -2787,7 +2862,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/75.webp",
-      "rainbowKey": "rainbow/76.webp"
+      "rainbowKey": "rainbow/76.webp",
+      "nightmareKey": "nightmare/76.webp"
     },
     {
       "id": 103196,
@@ -2823,7 +2899,8 @@
         "nature": "保守"
       },
       "eggKey": "eggs/75.webp",
-      "rainbowKey": "rainbow/77.webp"
+      "rainbowKey": "rainbow/77.webp",
+      "nightmareKey": "nightmare/77.webp"
     }
   ],
   "skills": {
@@ -15294,7 +15371,84 @@
     "rainbow/74.webp": "/media/rainbow/74.webp",
     "rainbow/75.webp": "/media/rainbow/75.webp",
     "rainbow/76.webp": "/media/rainbow/76.webp",
-    "rainbow/77.webp": "/media/rainbow/77.webp"
+    "rainbow/77.webp": "/media/rainbow/77.webp",
+    "nightmare/01.webp": "/media/nightmare/01.webp",
+    "nightmare/02.webp": "/media/nightmare/02.webp",
+    "nightmare/03.webp": "/media/nightmare/03.webp",
+    "nightmare/04.webp": "/media/nightmare/04.webp",
+    "nightmare/05.webp": "/media/nightmare/05.webp",
+    "nightmare/06.webp": "/media/nightmare/06.webp",
+    "nightmare/07.webp": "/media/nightmare/07.webp",
+    "nightmare/08.webp": "/media/nightmare/08.webp",
+    "nightmare/09.webp": "/media/nightmare/09.webp",
+    "nightmare/10.webp": "/media/nightmare/10.webp",
+    "nightmare/11.webp": "/media/nightmare/11.webp",
+    "nightmare/12.webp": "/media/nightmare/12.webp",
+    "nightmare/13.webp": "/media/nightmare/13.webp",
+    "nightmare/14.webp": "/media/nightmare/14.webp",
+    "nightmare/15.webp": "/media/nightmare/15.webp",
+    "nightmare/16.webp": "/media/nightmare/16.webp",
+    "nightmare/17.webp": "/media/nightmare/17.webp",
+    "nightmare/18.webp": "/media/nightmare/18.webp",
+    "nightmare/19.webp": "/media/nightmare/19.webp",
+    "nightmare/20.webp": "/media/nightmare/20.webp",
+    "nightmare/21.webp": "/media/nightmare/21.webp",
+    "nightmare/22.webp": "/media/nightmare/22.webp",
+    "nightmare/23.webp": "/media/nightmare/23.webp",
+    "nightmare/24.webp": "/media/nightmare/24.webp",
+    "nightmare/25.webp": "/media/nightmare/25.webp",
+    "nightmare/26.webp": "/media/nightmare/26.webp",
+    "nightmare/27.webp": "/media/nightmare/27.webp",
+    "nightmare/28.webp": "/media/nightmare/28.webp",
+    "nightmare/29.webp": "/media/nightmare/29.webp",
+    "nightmare/30.webp": "/media/nightmare/30.webp",
+    "nightmare/31.webp": "/media/nightmare/31.webp",
+    "nightmare/32.webp": "/media/nightmare/32.webp",
+    "nightmare/33.webp": "/media/nightmare/33.webp",
+    "nightmare/34.webp": "/media/nightmare/34.webp",
+    "nightmare/35.webp": "/media/nightmare/35.webp",
+    "nightmare/36.webp": "/media/nightmare/36.webp",
+    "nightmare/37.webp": "/media/nightmare/37.webp",
+    "nightmare/38.webp": "/media/nightmare/38.webp",
+    "nightmare/39.webp": "/media/nightmare/39.webp",
+    "nightmare/40.webp": "/media/nightmare/40.webp",
+    "nightmare/41.webp": "/media/nightmare/41.webp",
+    "nightmare/42.webp": "/media/nightmare/42.webp",
+    "nightmare/43.webp": "/media/nightmare/43.webp",
+    "nightmare/44.webp": "/media/nightmare/44.webp",
+    "nightmare/45.webp": "/media/nightmare/45.webp",
+    "nightmare/46.webp": "/media/nightmare/46.webp",
+    "nightmare/47.webp": "/media/nightmare/47.webp",
+    "nightmare/48.webp": "/media/nightmare/48.webp",
+    "nightmare/49.webp": "/media/nightmare/49.webp",
+    "nightmare/50.webp": "/media/nightmare/50.webp",
+    "nightmare/51.webp": "/media/nightmare/51.webp",
+    "nightmare/52.webp": "/media/nightmare/52.webp",
+    "nightmare/53.webp": "/media/nightmare/53.webp",
+    "nightmare/54.webp": "/media/nightmare/54.webp",
+    "nightmare/55.webp": "/media/nightmare/55.webp",
+    "nightmare/56.webp": "/media/nightmare/56.webp",
+    "nightmare/57.webp": "/media/nightmare/57.webp",
+    "nightmare/58.webp": "/media/nightmare/58.webp",
+    "nightmare/59.webp": "/media/nightmare/59.webp",
+    "nightmare/60.webp": "/media/nightmare/60.webp",
+    "nightmare/61.webp": "/media/nightmare/61.webp",
+    "nightmare/62.webp": "/media/nightmare/62.webp",
+    "nightmare/63.webp": "/media/nightmare/63.webp",
+    "nightmare/64.webp": "/media/nightmare/64.webp",
+    "nightmare/65.webp": "/media/nightmare/65.webp",
+    "nightmare/66.webp": "/media/nightmare/66.webp",
+    "nightmare/67.webp": "/media/nightmare/67.webp",
+    "nightmare/68.webp": "/media/nightmare/68.webp",
+    "nightmare/69.webp": "/media/nightmare/69.webp",
+    "nightmare/70.webp": "/media/nightmare/70.webp",
+    "nightmare/71.webp": "/media/nightmare/71.webp",
+    "nightmare/72.webp": "/media/nightmare/72.webp",
+    "nightmare/73.webp": "/media/nightmare/73.webp",
+    "nightmare/74.webp": "/media/nightmare/74.webp",
+    "nightmare/75.webp": "/media/nightmare/75.webp",
+    "nightmare/76.webp": "/media/nightmare/76.webp",
+    "nightmare/77.webp": "/media/nightmare/77.webp"
   },
   "studio": {
     "name": "谭熠的橘子工作室",

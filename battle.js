@@ -81,6 +81,9 @@
     if (cfg && cfg.form === 'rainbow' && cfg.c.rainbowKey && DATA.images[cfg.c.rainbowKey]) {
       return DATA.images[cfg.c.rainbowKey];
     }
+    if (cfg && cfg.form === 'nightmare' && cfg.c.nightmareKey && DATA.images[cfg.c.nightmareKey]) {
+      return DATA.images[cfg.c.nightmareKey];
+    }
     return DATA.images[cfg.c.imageKey] || '';
   }
 

@@ -1032,6 +1032,27 @@
     if (!target) return;
     if (target.querySelector('[data-form="rainbow"]')) return;
 
+    var nbtn = document.createElement('button');
+    nbtn.type = 'button';
+    nbtn.className = 'nightmare-chip';
+    nbtn.setAttribute('data-form', 'nightmare');
+    nbtn.textContent = '魇化';
+    nbtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var on = nbtn.classList.toggle('on');
+      if (on) {
+        localStorage.setItem('dex:catalogForm', 'nightmare');
+        var r = target.querySelector('[data-form="rainbow"]');
+        if (r) r.classList.remove('on');
+      } else {
+        localStorage.setItem('dex:catalogForm', 'normal');
+      }
+      applyCatalogForm();
+    });
+    target.appendChild(nbtn);
+    if (localStorage.getItem('dex:catalogForm') === 'nightmare') nbtn.classList.add('on');
+
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'rainbow-chip';
@@ -1041,7 +1062,13 @@
       e.preventDefault();
       e.stopPropagation();
       var on = btn.classList.toggle('on');
-      localStorage.setItem('dex:catalogForm', on ? 'rainbow' : 'normal');
+      if (on) {
+        localStorage.setItem('dex:catalogForm', 'rainbow');
+        var nb = target.querySelector('[data-form="nightmare"]');
+        if (nb) nb.classList.remove('on');
+      } else {
+        localStorage.setItem('dex:catalogForm', 'normal');
+      }
       applyCatalogForm();
     });
     target.appendChild(btn);
@@ -1049,19 +1076,23 @@
     applyCatalogForm();
   }
 
-  function rainbowUrlOf(n) {
+  function formUrlOf(n, kind) {
     if (!DATA) return null;
+    var keyName = kind === 'nightmare' ? 'nightmareKey' : 'rainbowKey';
     for (var i = 0; i < DATA.creatures.length; i++) {
       var c = DATA.creatures[i];
-      if ((c.id === n || c.dexNo === n) && c.rainbowKey) return DATA.images[c.rainbowKey] || null;
+      if ((c.id === n || c.dexNo === n) && c[keyName]) return DATA.images[c[keyName]] || null;
     }
     return null;
   }
 
+  function rainbowUrlOf(n) { return formUrlOf(n, 'rainbow'); }
+
   function applyDetailForm() {
     var c = currentCreature();
     if (!c || !DATA) return;
-    var on = localStorage.getItem('dex:catalogForm') === 'rainbow';
+    var mode2 = localStorage.getItem('dex:catalogForm') || 'normal';
+    var on = mode2 === 'rainbow' || mode2 === 'nightmare';
 
     function swap(img, url) {
       if (!img || !url) return;
@@ -1074,7 +1105,8 @@
     }
 
     // 当前灵宠：所有立绘/写真图（按 src 路径识别，兼容任意容器）
-    var own = c.rainbowKey ? (DATA.images[c.rainbowKey] || null) : null;
+    var ownKey = mode2 === 'nightmare' ? c.nightmareKey : c.rainbowKey;
+    var own = ownKey ? (DATA.images[ownKey] || null) : null;
     if (own) {
       var all = document.querySelectorAll('img');
       for (var i = 0; i < all.length; i++) {
@@ -1090,7 +1122,7 @@
     for (var k = 0; k < links.length; k++) {
       var m = /\/(\d+)(?:$|[?#])/.exec(links[k].getAttribute('href') || '');
       if (!m) continue;
-      var url = rainbowUrlOf(parseInt(m[1], 10));
+      var url = formUrlOf(parseInt(m[1], 10), mode2);
       if (!url) continue;
       var imgs = links[k].querySelectorAll('img');
       for (var j = 0; j < imgs.length; j++) on ? swap(imgs[j], url) : restore(imgs[j]);
@@ -1105,7 +1137,8 @@
   }
 
   function applyCatalogForm() {
-    var on = localStorage.getItem('dex:catalogForm') === 'rainbow';
+    var mode = localStorage.getItem('dex:catalogForm') || 'normal';
+    var on = mode === 'rainbow' || mode === 'nightmare';
     var cards = document.querySelectorAll('a.creature-card');
     for (var i = 0; i < cards.length; i++) {
       var card = cards[i];
@@ -1115,7 +1148,7 @@
       if (!img || !m) continue;
       if (!img.getAttribute('data-src-normal')) img.setAttribute('data-src-normal', img.src);
       if (on) {
-        var url = rainbowUrlOf(parseInt(m[1], 10));
+        var url = formUrlOf(parseInt(m[1], 10), mode);
         if (url) img.src = url;
       }
     }
