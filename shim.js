@@ -1030,7 +1030,14 @@
       if (lg && (lg.textContent || '').trim() === '形态') { target = groups[i].querySelector('.filter-options') || groups[i]; break; }
     }
     if (!target) return;
-    // 每种形态只保留一个按钮
+    // 清理：1) 同名但非我们创建的按钮（React 数据驱动生成的空按钮） 2) 每种形态只留一个
+    var allBtns = target.querySelectorAll('button');
+    for (var bi = 0; bi < allBtns.length; bi++) {
+      var txt = (allBtns[bi].textContent || '').trim();
+      if ((txt === '魇化' || txt === '彩虹') && !allBtns[bi].hasAttribute('data-form')) {
+        allBtns[bi].remove();
+      }
+    }
     ['rainbow', 'nightmare'].forEach(function (kind) {
       var els = target.querySelectorAll('[data-form="' + kind + '"]');
       for (var i = 1; i < els.length; i++) els[i].remove();
@@ -1061,6 +1068,7 @@
       if (localStorage.getItem('dex:catalogForm') === kind) b.classList.add('on');
     }
 
+    bindChipDelegate();
     makeChip('rainbow', '彩虹', 'rainbow-chip');
     makeChip('nightmare', '魇化', 'nightmare-chip');
     applyCatalogForm();
@@ -1124,6 +1132,30 @@
     if (!id || !DATA) return null;
     for (var i = 0; i < DATA.creatures.length; i++) if (DATA.creatures[i].id === id) return DATA.creatures[i];
     return null;
+  }
+
+  var __chipBound = false;
+  function bindChipDelegate() {
+    if (__chipBound || !document.body) return;
+    __chipBound = true;
+    document.body.setAttribute('data-formchip-delegate', '1');
+    document.addEventListener('click', function (e) {
+      var b = e.target && e.target.closest ? e.target.closest('button[data-form]') : null;
+      if (!b) return;
+      var kind = b.getAttribute('data-form');
+      if (kind !== 'rainbow' && kind !== 'nightmare') return;
+      e.preventDefault();
+      e.stopPropagation();
+      var on = b.classList.toggle('on');
+      localStorage.setItem('dex:catalogForm', on ? kind : 'normal');
+      var grp = b.parentElement;
+      if (grp) {
+        grp.querySelectorAll('button[data-form]').forEach(function (o) {
+          if (o !== b) o.classList.remove('on');
+        });
+      }
+      applyCatalogForm();
+    }, true);
   }
 
   function applyCatalogForm() {
