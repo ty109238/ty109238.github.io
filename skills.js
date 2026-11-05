@@ -141,6 +141,7 @@
   }
 
   function unlockExclusive(id) {
+    if (!DATA || !DATA.skills) return 0;
     var arr = DATA.skills[String(id)] || [];
     var n = 0;
     arr.forEach(function (sk) {
@@ -221,6 +222,7 @@
   }
 
   function renderBookShelf() {
+    if (!DATA || !DATA.skills) return;   // 索引模式没有完整技能表，跳过
     var host = document.getElementById('bookGrid');
     if (!host || !CREATURES.length) return;
     var html = CREATURES.map(function (c) {
