@@ -1034,7 +1034,7 @@
     var allBtns = target.querySelectorAll('button');
     for (var bi = 0; bi < allBtns.length; bi++) {
       var txt = (allBtns[bi].textContent || '').trim();
-      if ((txt === '魇化' || txt === '彩虹' || txt === '异色') && !allBtns[bi].hasAttribute('data-form')) {
+      if ((txt === '魇化' || txt === '彩虹' || txt === '异色' || txt === '领主') && !allBtns[bi].hasAttribute('data-form')) {
         allBtns[bi].remove();
       }
     }
