@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  var CONTENT_URL = '/data/content.json';
+  var CONTENT_URL = '/data/content.json?d=102';
   var DATA = null;
   var loading = null;
   var source = 'remote';
