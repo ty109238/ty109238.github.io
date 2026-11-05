@@ -1030,7 +1030,10 @@
       if (lg && (lg.textContent || '').trim() === '形态') { target = groups[i].querySelector('.filter-options') || groups[i]; break; }
     }
     if (!target) return;
-    if (target.querySelector('[data-form="rainbow"]')) return;
+    // 先清理重复的形态按钮，只保留第一个
+    var exist = target.querySelectorAll('[data-form="rainbow"], [data-form="nightmare"]');
+    for (var d = 1; d < exist.length; d++) exist[d].remove();
+    if (exist.length >= 1) { applyCatalogForm(); return; }
 
     var nbtn = document.createElement('button');
     nbtn.type = 'button';
