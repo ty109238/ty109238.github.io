@@ -1116,6 +1116,15 @@
       }
     }
 
+    // 蛋图随形态切换
+    var eggKey = mode2 === 'rainbow' ? c.rainbowEggKey : (mode2 === 'nightmare' ? c.nightmareEggKey : (mode2 === 'shiny' ? c.shinyEggKey : null));
+    if (eggKey && DATA.images[eggKey]) {
+      var eggImgs = document.querySelectorAll('img[src*="/media/eggs/"]');
+      for (var ei = 0; ei < eggImgs.length; ei++) {
+        on ? swap(eggImgs[ei], DATA.images[eggKey]) : restore(eggImgs[ei]);
+      }
+    }
+
     // 进化链 / 同族伙伴：按卡片里的链接判断是哪只
     var links = document.querySelectorAll('a[href*="/creature/"]');
     for (var k = 0; k < links.length; k++) {

@@ -39,7 +39,10 @@
       "eggKey": "eggs/01.webp",
       "rainbowKey": "rainbow/01.webp",
       "nightmareKey": "nightmare/01.webp",
-      "shinyKey": "shiny/01.webp"
+      "shinyKey": "shiny/01.webp",
+      "rainbowEggKey": "rainbow-egg/01.webp",
+      "nightmareEggKey": "nightmare-egg/01.webp",
+      "shinyEggKey": "shiny-egg/01.webp"
     },
     {
       "id": 2,
@@ -153,7 +156,10 @@
       "eggKey": "eggs/04.webp",
       "rainbowKey": "rainbow/04.webp",
       "nightmareKey": "nightmare/04.webp",
-      "shinyKey": "shiny/04.webp"
+      "shinyKey": "shiny/04.webp",
+      "rainbowEggKey": "rainbow-egg/04.webp",
+      "nightmareEggKey": "nightmare-egg/04.webp",
+      "shinyEggKey": "shiny-egg/04.webp"
     },
     {
       "id": 5,
@@ -267,7 +273,10 @@
       "eggKey": "eggs/07.webp",
       "rainbowKey": "rainbow/07.webp",
       "nightmareKey": "nightmare/07.webp",
-      "shinyKey": "shiny/07.webp"
+      "shinyKey": "shiny/07.webp",
+      "rainbowEggKey": "rainbow-egg/07.webp",
+      "nightmareEggKey": "nightmare-egg/07.webp",
+      "shinyEggKey": "shiny-egg/07.webp"
     },
     {
       "id": 8,
@@ -381,7 +390,10 @@
       "eggKey": "eggs/10.webp",
       "rainbowKey": "rainbow/10.webp",
       "nightmareKey": "nightmare/10.webp",
-      "shinyKey": "shiny/10.webp"
+      "shinyKey": "shiny/10.webp",
+      "rainbowEggKey": "rainbow-egg/10.webp",
+      "nightmareEggKey": "nightmare-egg/10.webp",
+      "shinyEggKey": "shiny-egg/10.webp"
     },
     {
       "id": 60002,
@@ -495,7 +507,10 @@
       "eggKey": "eggs/13.webp",
       "rainbowKey": "rainbow/13.webp",
       "nightmareKey": "nightmare/13.webp",
-      "shinyKey": "shiny/13.webp"
+      "shinyKey": "shiny/13.webp",
+      "rainbowEggKey": "rainbow-egg/13.webp",
+      "nightmareEggKey": "nightmare-egg/13.webp",
+      "shinyEggKey": "shiny-egg/13.webp"
     },
     {
       "id": 60005,
@@ -609,7 +624,10 @@
       "eggKey": "eggs/16.webp",
       "rainbowKey": "rainbow/16.webp",
       "nightmareKey": "nightmare/16.webp",
-      "shinyKey": "shiny/16.webp"
+      "shinyKey": "shiny/16.webp",
+      "rainbowEggKey": "rainbow-egg/16.webp",
+      "nightmareEggKey": "nightmare-egg/16.webp",
+      "shinyEggKey": "shiny-egg/16.webp"
     },
     {
       "id": 60008,
@@ -723,7 +741,10 @@
       "eggKey": "eggs/19.webp",
       "rainbowKey": "rainbow/19.webp",
       "nightmareKey": "nightmare/19.webp",
-      "shinyKey": "shiny/19.webp"
+      "shinyKey": "shiny/19.webp",
+      "rainbowEggKey": "rainbow-egg/19.webp",
+      "nightmareEggKey": "nightmare-egg/19.webp",
+      "shinyEggKey": "shiny-egg/19.webp"
     },
     {
       "id": 60011,
@@ -837,7 +858,10 @@
       "eggKey": "eggs/22.webp",
       "rainbowKey": "rainbow/22.webp",
       "nightmareKey": "nightmare/22.webp",
-      "shinyKey": "shiny/22.webp"
+      "shinyKey": "shiny/22.webp",
+      "rainbowEggKey": "rainbow-egg/22.webp",
+      "nightmareEggKey": "nightmare-egg/22.webp",
+      "shinyEggKey": "shiny-egg/22.webp"
     },
     {
       "id": 60014,
@@ -951,7 +975,10 @@
       "eggKey": "eggs/25.webp",
       "rainbowKey": "rainbow/25.webp",
       "nightmareKey": "nightmare/25.webp",
-      "shinyKey": "shiny/25.webp"
+      "shinyKey": "shiny/25.webp",
+      "rainbowEggKey": "rainbow-egg/25.webp",
+      "nightmareEggKey": "nightmare-egg/25.webp",
+      "shinyEggKey": "shiny-egg/25.webp"
     },
     {
       "id": 60017,
@@ -1065,7 +1092,10 @@
       "eggKey": "eggs/28.webp",
       "rainbowKey": "rainbow/28.webp",
       "nightmareKey": "nightmare/28.webp",
-      "shinyKey": "shiny/28.webp"
+      "shinyKey": "shiny/28.webp",
+      "rainbowEggKey": "rainbow-egg/28.webp",
+      "nightmareEggKey": "nightmare-egg/28.webp",
+      "shinyEggKey": "shiny-egg/28.webp"
     },
     {
       "id": 60020,
@@ -1179,7 +1209,10 @@
       "eggKey": "eggs/31.webp",
       "rainbowKey": "rainbow/31.webp",
       "nightmareKey": "nightmare/31.webp",
-      "shinyKey": "shiny/31.webp"
+      "shinyKey": "shiny/31.webp",
+      "rainbowEggKey": "rainbow-egg/31.webp",
+      "nightmareEggKey": "nightmare-egg/31.webp",
+      "shinyEggKey": "shiny-egg/31.webp"
     },
     {
       "id": 60023,
@@ -1293,7 +1326,10 @@
       "eggKey": "eggs/34.webp",
       "rainbowKey": "rainbow/34.webp",
       "nightmareKey": "nightmare/34.webp",
-      "shinyKey": "shiny/34.webp"
+      "shinyKey": "shiny/34.webp",
+      "rainbowEggKey": "rainbow-egg/34.webp",
+      "nightmareEggKey": "nightmare-egg/34.webp",
+      "shinyEggKey": "shiny-egg/34.webp"
     },
     {
       "id": 60026,
@@ -1407,7 +1443,10 @@
       "eggKey": "eggs/37.webp",
       "rainbowKey": "rainbow/37.webp",
       "nightmareKey": "nightmare/37.webp",
-      "shinyKey": "shiny/37.webp"
+      "shinyKey": "shiny/37.webp",
+      "rainbowEggKey": "rainbow-egg/37.webp",
+      "nightmareEggKey": "nightmare-egg/37.webp",
+      "shinyEggKey": "shiny-egg/37.webp"
     },
     {
       "id": 60029,
@@ -1521,7 +1560,10 @@
       "eggKey": "eggs/40.webp",
       "rainbowKey": "rainbow/40.webp",
       "nightmareKey": "nightmare/40.webp",
-      "shinyKey": "shiny/40.webp"
+      "shinyKey": "shiny/40.webp",
+      "rainbowEggKey": "rainbow-egg/40.webp",
+      "nightmareEggKey": "nightmare-egg/40.webp",
+      "shinyEggKey": "shiny-egg/40.webp"
     },
     {
       "id": 60032,
@@ -1635,7 +1677,10 @@
       "eggKey": "eggs/43.webp",
       "rainbowKey": "rainbow/43.webp",
       "nightmareKey": "nightmare/43.webp",
-      "shinyKey": "shiny/43.webp"
+      "shinyKey": "shiny/43.webp",
+      "rainbowEggKey": "rainbow-egg/43.webp",
+      "nightmareEggKey": "nightmare-egg/43.webp",
+      "shinyEggKey": "shiny-egg/43.webp"
     },
     {
       "id": 60035,
@@ -1749,7 +1794,10 @@
       "eggKey": "eggs/46.webp",
       "rainbowKey": "rainbow/46.webp",
       "nightmareKey": "nightmare/46.webp",
-      "shinyKey": "shiny/46.webp"
+      "shinyKey": "shiny/46.webp",
+      "rainbowEggKey": "rainbow-egg/46.webp",
+      "nightmareEggKey": "nightmare-egg/46.webp",
+      "shinyEggKey": "shiny-egg/46.webp"
     },
     {
       "id": 60038,
@@ -1863,7 +1911,10 @@
       "eggKey": "eggs/49.webp",
       "rainbowKey": "rainbow/49.webp",
       "nightmareKey": "nightmare/49.webp",
-      "shinyKey": "shiny/49.webp"
+      "shinyKey": "shiny/49.webp",
+      "rainbowEggKey": "rainbow-egg/49.webp",
+      "nightmareEggKey": "nightmare-egg/49.webp",
+      "shinyEggKey": "shiny-egg/49.webp"
     },
     {
       "id": 60041,
@@ -1901,7 +1952,10 @@
       "eggKey": "eggs/50.webp",
       "rainbowKey": "rainbow/50.webp",
       "nightmareKey": "nightmare/50.webp",
-      "shinyKey": "shiny/50.webp"
+      "shinyKey": "shiny/50.webp",
+      "rainbowEggKey": "rainbow-egg/50.webp",
+      "nightmareEggKey": "nightmare-egg/50.webp",
+      "shinyEggKey": "shiny-egg/50.webp"
     },
     {
       "id": 60042,
@@ -1939,7 +1993,10 @@
       "eggKey": "eggs/51.webp",
       "rainbowKey": "rainbow/51.webp",
       "nightmareKey": "nightmare/51.webp",
-      "shinyKey": "shiny/51.webp"
+      "shinyKey": "shiny/51.webp",
+      "rainbowEggKey": "rainbow-egg/51.webp",
+      "nightmareEggKey": "nightmare-egg/51.webp",
+      "shinyEggKey": "shiny-egg/51.webp"
     },
     {
       "id": 103171,
@@ -1977,7 +2034,10 @@
       "eggKey": "eggs/52.webp",
       "rainbowKey": "rainbow/52.webp",
       "nightmareKey": "nightmare/52.webp",
-      "shinyKey": "shiny/52.webp"
+      "shinyKey": "shiny/52.webp",
+      "rainbowEggKey": "rainbow-egg/52.webp",
+      "nightmareEggKey": "nightmare-egg/52.webp",
+      "shinyEggKey": "shiny-egg/52.webp"
     },
     {
       "id": 103172,
@@ -2015,7 +2075,10 @@
       "eggKey": "eggs/53.webp",
       "rainbowKey": "rainbow/53.webp",
       "nightmareKey": "nightmare/53.webp",
-      "shinyKey": "shiny/53.webp"
+      "shinyKey": "shiny/53.webp",
+      "rainbowEggKey": "rainbow-egg/53.webp",
+      "nightmareEggKey": "nightmare-egg/53.webp",
+      "shinyEggKey": "shiny-egg/53.webp"
     },
     {
       "id": 103173,
@@ -2053,7 +2116,10 @@
       "eggKey": "eggs/54.webp",
       "rainbowKey": "rainbow/54.webp",
       "nightmareKey": "nightmare/54.webp",
-      "shinyKey": "shiny/54.webp"
+      "shinyKey": "shiny/54.webp",
+      "rainbowEggKey": "rainbow-egg/54.webp",
+      "nightmareEggKey": "nightmare-egg/54.webp",
+      "shinyEggKey": "shiny-egg/54.webp"
     },
     {
       "id": 103174,
@@ -2091,7 +2157,10 @@
       "eggKey": "eggs/55.webp",
       "rainbowKey": "rainbow/55.webp",
       "nightmareKey": "nightmare/55.webp",
-      "shinyKey": "shiny/55.webp"
+      "shinyKey": "shiny/55.webp",
+      "rainbowEggKey": "rainbow-egg/55.webp",
+      "nightmareEggKey": "nightmare-egg/55.webp",
+      "shinyEggKey": "shiny-egg/55.webp"
     },
     {
       "id": 103175,
@@ -2205,7 +2274,10 @@
       "eggKey": "eggs/58.webp",
       "rainbowKey": "rainbow/58.webp",
       "nightmareKey": "nightmare/58.webp",
-      "shinyKey": "shiny/58.webp"
+      "shinyKey": "shiny/58.webp",
+      "rainbowEggKey": "rainbow-egg/58.webp",
+      "nightmareEggKey": "nightmare-egg/58.webp",
+      "shinyEggKey": "shiny-egg/58.webp"
     },
     {
       "id": 103178,
@@ -2383,7 +2455,10 @@
       "eggKey": "eggs/62.webp",
       "rainbowKey": "rainbow/62.webp",
       "nightmareKey": "nightmare/62.webp",
-      "shinyKey": "shiny/62.webp"
+      "shinyKey": "shiny/62.webp",
+      "rainbowEggKey": "rainbow-egg/62.webp",
+      "nightmareEggKey": "nightmare-egg/62.webp",
+      "shinyEggKey": "shiny-egg/62.webp"
     },
     {
       "id": 103182,
@@ -2497,7 +2572,10 @@
       "eggKey": "eggs/65.webp",
       "rainbowKey": "rainbow/65.webp",
       "nightmareKey": "nightmare/65.webp",
-      "shinyKey": "shiny/65.webp"
+      "shinyKey": "shiny/65.webp",
+      "rainbowEggKey": "rainbow-egg/65.webp",
+      "nightmareEggKey": "nightmare-egg/65.webp",
+      "shinyEggKey": "shiny-egg/65.webp"
     },
     {
       "id": 103185,
@@ -2623,7 +2701,10 @@
       ],
       "rainbowKey": "rainbow/68.webp",
       "nightmareKey": "nightmare/68.webp",
-      "shinyKey": "shiny/68.webp"
+      "shinyKey": "shiny/68.webp",
+      "rainbowEggKey": "rainbow-egg/68.webp",
+      "nightmareEggKey": "nightmare-egg/68.webp",
+      "shinyEggKey": "shiny-egg/68.webp"
     },
     {
       "id": 103188,
@@ -2825,7 +2906,10 @@
       "eggKey": "eggs/73.webp",
       "rainbowKey": "rainbow/73.webp",
       "nightmareKey": "nightmare/73.webp",
-      "shinyKey": "shiny/73.webp"
+      "shinyKey": "shiny/73.webp",
+      "rainbowEggKey": "rainbow-egg/73.webp",
+      "nightmareEggKey": "nightmare-egg/73.webp",
+      "shinyEggKey": "shiny-egg/73.webp"
     },
     {
       "id": 103193,
@@ -2863,7 +2947,10 @@
       "eggKey": "eggs/74.webp",
       "rainbowKey": "rainbow/74.webp",
       "nightmareKey": "nightmare/74.webp",
-      "shinyKey": "shiny/74.webp"
+      "shinyKey": "shiny/74.webp",
+      "rainbowEggKey": "rainbow-egg/74.webp",
+      "nightmareEggKey": "nightmare-egg/74.webp",
+      "shinyEggKey": "shiny-egg/74.webp"
     },
     {
       "id": 103194,
@@ -2901,7 +2988,10 @@
       "eggKey": "eggs/75.webp",
       "rainbowKey": "rainbow/75.webp",
       "nightmareKey": "nightmare/75.webp",
-      "shinyKey": "shiny/75.webp"
+      "shinyKey": "shiny/75.webp",
+      "rainbowEggKey": "rainbow-egg/75.webp",
+      "nightmareEggKey": "nightmare-egg/75.webp",
+      "shinyEggKey": "shiny-egg/75.webp"
     },
     {
       "id": 103195,
@@ -15602,7 +15692,97 @@
     "shiny/74.webp": "/media/shiny/74.webp",
     "shiny/75.webp": "/media/shiny/75.webp",
     "shiny/76.webp": "/media/shiny/76.webp",
-    "shiny/77.webp": "/media/shiny/77.webp"
+    "shiny/77.webp": "/media/shiny/77.webp",
+    "rainbow-egg/01.webp": "/media/eggs-form/rainbow/01.webp",
+    "nightmare-egg/01.webp": "/media/eggs-form/nightmare/01.webp",
+    "shiny-egg/01.webp": "/media/eggs-form/shiny/01.webp",
+    "rainbow-egg/04.webp": "/media/eggs-form/rainbow/04.webp",
+    "nightmare-egg/04.webp": "/media/eggs-form/nightmare/04.webp",
+    "shiny-egg/04.webp": "/media/eggs-form/shiny/04.webp",
+    "rainbow-egg/07.webp": "/media/eggs-form/rainbow/07.webp",
+    "nightmare-egg/07.webp": "/media/eggs-form/nightmare/07.webp",
+    "shiny-egg/07.webp": "/media/eggs-form/shiny/07.webp",
+    "rainbow-egg/10.webp": "/media/eggs-form/rainbow/10.webp",
+    "nightmare-egg/10.webp": "/media/eggs-form/nightmare/10.webp",
+    "shiny-egg/10.webp": "/media/eggs-form/shiny/10.webp",
+    "rainbow-egg/13.webp": "/media/eggs-form/rainbow/13.webp",
+    "nightmare-egg/13.webp": "/media/eggs-form/nightmare/13.webp",
+    "shiny-egg/13.webp": "/media/eggs-form/shiny/13.webp",
+    "rainbow-egg/16.webp": "/media/eggs-form/rainbow/16.webp",
+    "nightmare-egg/16.webp": "/media/eggs-form/nightmare/16.webp",
+    "shiny-egg/16.webp": "/media/eggs-form/shiny/16.webp",
+    "rainbow-egg/19.webp": "/media/eggs-form/rainbow/19.webp",
+    "nightmare-egg/19.webp": "/media/eggs-form/nightmare/19.webp",
+    "shiny-egg/19.webp": "/media/eggs-form/shiny/19.webp",
+    "rainbow-egg/22.webp": "/media/eggs-form/rainbow/22.webp",
+    "nightmare-egg/22.webp": "/media/eggs-form/nightmare/22.webp",
+    "shiny-egg/22.webp": "/media/eggs-form/shiny/22.webp",
+    "rainbow-egg/25.webp": "/media/eggs-form/rainbow/25.webp",
+    "nightmare-egg/25.webp": "/media/eggs-form/nightmare/25.webp",
+    "shiny-egg/25.webp": "/media/eggs-form/shiny/25.webp",
+    "rainbow-egg/28.webp": "/media/eggs-form/rainbow/28.webp",
+    "nightmare-egg/28.webp": "/media/eggs-form/nightmare/28.webp",
+    "shiny-egg/28.webp": "/media/eggs-form/shiny/28.webp",
+    "rainbow-egg/31.webp": "/media/eggs-form/rainbow/31.webp",
+    "nightmare-egg/31.webp": "/media/eggs-form/nightmare/31.webp",
+    "shiny-egg/31.webp": "/media/eggs-form/shiny/31.webp",
+    "rainbow-egg/34.webp": "/media/eggs-form/rainbow/34.webp",
+    "nightmare-egg/34.webp": "/media/eggs-form/nightmare/34.webp",
+    "shiny-egg/34.webp": "/media/eggs-form/shiny/34.webp",
+    "rainbow-egg/37.webp": "/media/eggs-form/rainbow/37.webp",
+    "nightmare-egg/37.webp": "/media/eggs-form/nightmare/37.webp",
+    "shiny-egg/37.webp": "/media/eggs-form/shiny/37.webp",
+    "rainbow-egg/40.webp": "/media/eggs-form/rainbow/40.webp",
+    "nightmare-egg/40.webp": "/media/eggs-form/nightmare/40.webp",
+    "shiny-egg/40.webp": "/media/eggs-form/shiny/40.webp",
+    "rainbow-egg/43.webp": "/media/eggs-form/rainbow/43.webp",
+    "nightmare-egg/43.webp": "/media/eggs-form/nightmare/43.webp",
+    "shiny-egg/43.webp": "/media/eggs-form/shiny/43.webp",
+    "rainbow-egg/46.webp": "/media/eggs-form/rainbow/46.webp",
+    "nightmare-egg/46.webp": "/media/eggs-form/nightmare/46.webp",
+    "shiny-egg/46.webp": "/media/eggs-form/shiny/46.webp",
+    "rainbow-egg/49.webp": "/media/eggs-form/rainbow/49.webp",
+    "nightmare-egg/49.webp": "/media/eggs-form/nightmare/49.webp",
+    "shiny-egg/49.webp": "/media/eggs-form/shiny/49.webp",
+    "rainbow-egg/50.webp": "/media/eggs-form/rainbow/50.webp",
+    "nightmare-egg/50.webp": "/media/eggs-form/nightmare/50.webp",
+    "shiny-egg/50.webp": "/media/eggs-form/shiny/50.webp",
+    "rainbow-egg/51.webp": "/media/eggs-form/rainbow/51.webp",
+    "nightmare-egg/51.webp": "/media/eggs-form/nightmare/51.webp",
+    "shiny-egg/51.webp": "/media/eggs-form/shiny/51.webp",
+    "rainbow-egg/52.webp": "/media/eggs-form/rainbow/52.webp",
+    "nightmare-egg/52.webp": "/media/eggs-form/nightmare/52.webp",
+    "shiny-egg/52.webp": "/media/eggs-form/shiny/52.webp",
+    "rainbow-egg/53.webp": "/media/eggs-form/rainbow/53.webp",
+    "nightmare-egg/53.webp": "/media/eggs-form/nightmare/53.webp",
+    "shiny-egg/53.webp": "/media/eggs-form/shiny/53.webp",
+    "rainbow-egg/54.webp": "/media/eggs-form/rainbow/54.webp",
+    "nightmare-egg/54.webp": "/media/eggs-form/nightmare/54.webp",
+    "shiny-egg/54.webp": "/media/eggs-form/shiny/54.webp",
+    "rainbow-egg/55.webp": "/media/eggs-form/rainbow/55.webp",
+    "nightmare-egg/55.webp": "/media/eggs-form/nightmare/55.webp",
+    "shiny-egg/55.webp": "/media/eggs-form/shiny/55.webp",
+    "rainbow-egg/58.webp": "/media/eggs-form/rainbow/58.webp",
+    "nightmare-egg/58.webp": "/media/eggs-form/nightmare/58.webp",
+    "shiny-egg/58.webp": "/media/eggs-form/shiny/58.webp",
+    "rainbow-egg/62.webp": "/media/eggs-form/rainbow/62.webp",
+    "nightmare-egg/62.webp": "/media/eggs-form/nightmare/62.webp",
+    "shiny-egg/62.webp": "/media/eggs-form/shiny/62.webp",
+    "rainbow-egg/65.webp": "/media/eggs-form/rainbow/65.webp",
+    "nightmare-egg/65.webp": "/media/eggs-form/nightmare/65.webp",
+    "shiny-egg/65.webp": "/media/eggs-form/shiny/65.webp",
+    "rainbow-egg/68.webp": "/media/eggs-form/rainbow/68.webp",
+    "nightmare-egg/68.webp": "/media/eggs-form/nightmare/68.webp",
+    "shiny-egg/68.webp": "/media/eggs-form/shiny/68.webp",
+    "rainbow-egg/73.webp": "/media/eggs-form/rainbow/73.webp",
+    "nightmare-egg/73.webp": "/media/eggs-form/nightmare/73.webp",
+    "shiny-egg/73.webp": "/media/eggs-form/shiny/73.webp",
+    "rainbow-egg/74.webp": "/media/eggs-form/rainbow/74.webp",
+    "nightmare-egg/74.webp": "/media/eggs-form/nightmare/74.webp",
+    "shiny-egg/74.webp": "/media/eggs-form/shiny/74.webp",
+    "rainbow-egg/75.webp": "/media/eggs-form/rainbow/75.webp",
+    "nightmare-egg/75.webp": "/media/eggs-form/nightmare/75.webp",
+    "shiny-egg/75.webp": "/media/eggs-form/shiny/75.webp"
   },
   "studio": {
     "name": "谭熠的橘子工作室",
