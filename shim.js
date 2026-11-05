@@ -1336,9 +1336,22 @@
     var t = null;
     entryObs = new MutationObserver(function () {
       clearTimeout(t);
-      t = setTimeout(function () { syncSkillNumbers(); syncSkillCollapse(); syncEntryIcons(); killEggBg(); killEvoBg(); frameTraitSection(); killTraitBg(); }, 80);
+      t = setTimeout(function () { syncSkillOwnOnly(); syncSkillNumbers(); syncSkillCollapse(); syncEntryIcons(); killEggBg(); killEvoBg(); frameTraitSection(); killTraitBg(); }, 80);
     });
     entryObs.observe(root, { childList: true, subtree: true });
+  }
+
+  function syncSkillOwnOnly() {
+    var c = currentCreature();
+    if (!c || !DATA || !DATA.skills) return;
+    var arr = DATA.skills[String(c.id)] || [];
+    var n = { '一阶': 4, '二阶': 7, '三阶': 9 }[c.stage] || 4;
+    var start = Math.max(0, arr.length - n);
+    var entries = document.querySelectorAll('.skill-entry');
+    for (var i = 0; i < entries.length; i++) {
+      entries[i].style.display = i < start ? 'none' : '';
+      entries[i].setAttribute('data-own', i >= start ? '1' : '0');
+    }
   }
 
   function syncSkillNumbers() {
@@ -2006,7 +2019,7 @@
       clearTimeout(timer);
       timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncFormFilter(); applyDetailForm(); }, 300);
     }).observe(root, { childList: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncFormFilter(); syncSideRail(); syncMobileNav(); syncFormFilter(); applyDetailForm(); syncToc(); syncSkillNumbers(); syncSectionIcons(); syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncFormFilter(); syncSideRail(); syncMobileNav(); syncFormFilter(); applyDetailForm(); syncToc(); syncSkillOwnOnly(); syncSkillNumbers(); syncSectionIcons(); syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
   }
 
   window.__dexOpenNotice = openNotice;
