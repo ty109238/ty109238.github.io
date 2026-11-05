@@ -44,7 +44,7 @@
         name: s.n, type: s.t, cat: categoryOf({ category: s.c, description: s.d }),
         power: s.p, accuracy: s.a, pp: s.pp, desc: s.d,
         exclusive: s.x, book: needsBook({ exclusive: s.x, power: s.p }),
-        owner: s.o, owners: s.owners,
+        owner: s.o, owners: s.owners, ownerList: s.ownerList || [s.o],
       };
     });
     LIST.sort(function (a, b) { return b.power - a.power; });
@@ -98,6 +98,7 @@
   }
 
   function renderUsagePanel() {
+    return;
     var host = document.getElementById('usagePanel');
     if (!host) return;
     var m = usageMap();
@@ -118,7 +119,6 @@
         m2[id] = Math.max(0, (m2[id] || 0) + d);
         saveUsage(m2);
         if (m2[id] >= 10) unlockExclusive(id);
-        renderUsagePanel();
         renderGrid();
         renderBookShelf();
         document.getElementById('tabList').addEventListener('click', function () {
@@ -199,7 +199,8 @@
         '<span>PP ' + s.pp + '</span>' +
         '</div>' +
         '<p class="sk-desc">' + s.desc + '</p>' +
-        '<div class="sk-owner">' + (s.owners > 1 ? s.owner + ' 等 ' + s.owners + ' 只' : s.owner) +
+        '<div class="sk-owner">可学：' + (s.ownerList || [s.owner]).slice(0, 6).join('、') +
+        ((s.owners || 1) > 6 ? ' 等 ' + s.owners + ' 只' : '') +
         (s.exclusive ? ' · 专属' : '') + '</div>';
       frag.appendChild(card);
     });
@@ -282,7 +283,6 @@
         CREATURES = d.creatures || [];
         build();
         renderFilters();
-        renderUsagePanel();
         renderGrid();
         renderBookShelf();
         document.getElementById('tabList').addEventListener('click', function () {
