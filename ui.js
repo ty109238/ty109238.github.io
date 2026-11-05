@@ -390,13 +390,9 @@
     b.innerHTML = '<span>⬇</span> 安装 App';
     b.addEventListener('click', function () {
       if (deferred && typeof deferred.prompt === 'function') {
-        try {
-          deferred.prompt();
-          deferred = null;
-          return;
-        } catch (err) { /* 落到引导 */ }
+        try { deferred.prompt(); deferred = null; return; } catch (err) { /* 走说明页 */ }
       }
-      guide();
+      location.href = '/install.html';
     });
     document.body.appendChild(b);
     return b;
