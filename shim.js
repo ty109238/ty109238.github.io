@@ -1030,52 +1030,39 @@
       if (lg && (lg.textContent || '').trim() === '形态') { target = groups[i].querySelector('.filter-options') || groups[i]; break; }
     }
     if (!target) return;
-    // 先清理重复的形态按钮，只保留第一个
-    var exist = target.querySelectorAll('[data-form="rainbow"], [data-form="nightmare"]');
-    for (var d = 1; d < exist.length; d++) exist[d].remove();
-    if (exist.length >= 1) { applyCatalogForm(); return; }
-
-    var nbtn = document.createElement('button');
-    nbtn.type = 'button';
-    nbtn.className = 'nightmare-chip';
-    nbtn.setAttribute('data-form', 'nightmare');
-    nbtn.textContent = '魇化';
-    nbtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      var on = nbtn.classList.toggle('on');
-      if (on) {
-        localStorage.setItem('dex:catalogForm', 'nightmare');
-        var r = target.querySelector('[data-form="rainbow"]');
-        if (r) r.classList.remove('on');
-      } else {
-        localStorage.setItem('dex:catalogForm', 'normal');
-      }
-      applyCatalogForm();
+    // 每种形态只保留一个按钮
+    ['rainbow', 'nightmare'].forEach(function (kind) {
+      var els = target.querySelectorAll('[data-form="' + kind + '"]');
+      for (var i = 1; i < els.length; i++) els[i].remove();
     });
-    target.appendChild(nbtn);
-    if (localStorage.getItem('dex:catalogForm') === 'nightmare') nbtn.classList.add('on');
 
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'rainbow-chip';
-    btn.setAttribute('data-form', 'rainbow');
-    btn.textContent = '彩虹';
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      var on = btn.classList.toggle('on');
-      if (on) {
-        localStorage.setItem('dex:catalogForm', 'rainbow');
-        var nb = target.querySelector('[data-form="nightmare"]');
-        if (nb) nb.classList.remove('on');
-      } else {
-        localStorage.setItem('dex:catalogForm', 'normal');
-      }
-      applyCatalogForm();
-    });
-    target.appendChild(btn);
-    if (localStorage.getItem('dex:catalogForm') === 'rainbow') btn.classList.add('on');
+    function makeChip(kind, label, cls) {
+      if (target.querySelector('[data-form="' + kind + '"]')) return;
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = cls;
+      b.setAttribute('data-form', kind);
+      b.textContent = label;
+      b.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var on = b.classList.toggle('on');
+        if (on) {
+          localStorage.setItem('dex:catalogForm', kind);
+          target.querySelectorAll('[data-form]').forEach(function (o) {
+            if (o !== b) o.classList.remove('on');
+          });
+        } else {
+          localStorage.setItem('dex:catalogForm', 'normal');
+        }
+        applyCatalogForm();
+      });
+      target.appendChild(b);
+      if (localStorage.getItem('dex:catalogForm') === kind) b.classList.add('on');
+    }
+
+    makeChip('rainbow', '彩虹', 'rainbow-chip');
+    makeChip('nightmare', '魇化', 'nightmare-chip');
     applyCatalogForm();
   }
 
