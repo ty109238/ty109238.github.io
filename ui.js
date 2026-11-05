@@ -388,12 +388,13 @@
     b.type = 'button';
     b.className = 'pwa-install';
     b.innerHTML = '<span>⬇</span> 安装 App';
-    b.addEventListener('click', async function () {
-      if (deferred) {
-        deferred.prompt();
-        var res = await deferred.userChoice;
-        if (res && res.outcome === 'accepted') { b.remove(); deferred = null; return; }
-        deferred = null;
+    b.addEventListener('click', function () {
+      if (deferred && typeof deferred.prompt === 'function') {
+        try {
+          deferred.prompt();
+          deferred = null;
+          return;
+        } catch (err) { /* 落到引导 */ }
       }
       guide();
     });
