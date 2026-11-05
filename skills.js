@@ -4,7 +4,7 @@
 
   var DATA = null, LIST = [];
   var ELEM_ICON = { 火: 'fire', 水: 'water', 草: 'grass', 冰: 'ice', 土: 'rock', 钢: 'steel', 风: 'wind', 光: 'light', 暗: 'dark', 雷: 'thunder' };
-  var state = { cat: '全部', elem: '全部', book: '全部', q: '', sort: 'power' };
+  var state = { cat: '全部', elem: '全部', book: '全部', q: '', sort: 'power', page: 1 };
 
   function loadBooks() {
     try { return new Set(JSON.parse(localStorage.getItem('dex:books') || '[]')); }
@@ -39,6 +39,18 @@
   }
 
   function build() {
+    LIST = DATA.map(function (s) {
+      return {
+        name: s.n, type: s.t, cat: categoryOf({ category: s.c, description: s.d }),
+        power: s.p, accuracy: s.a, pp: s.pp, desc: s.d,
+        exclusive: s.x, book: needsBook({ exclusive: s.x, power: s.p }),
+        owner: s.o, owners: s.owners,
+      };
+    });
+    LIST.sort(function (a, b) { return b.power - a.power; });
+  }
+
+  function buildOld() {
     var owners = {};
     DATA.creatures.forEach(function (c) {
       var arr = DATA.skills[String(c.id)] || [];
@@ -142,9 +154,9 @@
     var cats = ['全部', '物攻', '特攻', '防御', '辅助'];
     var elems = ['全部', '火', '水', '草', '冰', '土', '钢', '风', '光', '暗', '雷'];
     var books = ['全部', '直接可用', '需技能书', '已获得', '未获得'];
-    chips($('fCat'), cats, state.cat, function (v) { state.cat = v; renderFilters(); renderGrid(); });
-    chips($('fElem'), elems, state.elem, function (v) { state.elem = v; renderFilters(); renderGrid(); });
-    chips($('fBook'), books, state.book, function (v) { state.book = v; renderFilters(); renderGrid(); });
+    chips($('fCat'), cats, state.cat, function (v) { state.cat = v; state.page = 1; renderFilters(); renderGrid(); });
+    chips($('fElem'), elems, state.elem, function (v) { state.elem = v; state.page = 1; renderFilters(); renderGrid(); });
+    chips($('fBook'), books, state.book, function (v) { state.book = v; state.page = 1; renderFilters(); renderGrid(); });
   }
 
   function renderGrid() {
@@ -163,10 +175,16 @@
     else if (state.sort === 'pp') out.sort(function (a, b) { return b.pp - a.pp; });
     else out.sort(function (a, b) { return b.power - a.power; });
 
+    var PAGE = 48;
+    var pages = Math.max(1, Math.ceil(out.length / PAGE));
+    if (state.page > pages) state.page = pages;
+    var start = (state.page - 1) * PAGE;
+    var pageItems = out.slice(start, start + PAGE);
+
     var grid = $('grid');
     grid.innerHTML = '';
     var frag = document.createDocumentFragment();
-    out.forEach(function (s) {
+    pageItems.forEach(function (s) {
       var card = document.createElement('article');
       card.className = 'sk-card';
       card.innerHTML =
@@ -231,8 +249,32 @@
     });
   }
 
+  function renderPager(pages) {
+    var host = document.getElementById('pager');
+    if (!host) return;
+    host.innerHTML = '';
+    if (pages <= 1) return;
+    function btn(label, page, disabled, active) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pg-btn' + (active ? ' on' : '');
+      b.textContent = label;
+      b.disabled = !!disabled;
+      b.addEventListener('click', function () { state.page = page; renderGrid(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      host.appendChild(b);
+    }
+    btn('上一页', Math.max(1, state.page - 1), state.page === 1, false);
+    var from = Math.max(1, state.page - 2), to = Math.min(pages, state.page + 2);
+    if (from > 1) btn('1', 1, false, state.page === 1);
+    if (from > 2) host.appendChild(Object.assign(document.createElement('span'), { className: 'pg-gap', textContent: '…' }));
+    for (var i = from; i <= to; i++) btn(String(i), i, false, i === state.page);
+    if (to < pages - 1) host.appendChild(Object.assign(document.createElement('span'), { className: 'pg-gap', textContent: '…' }));
+    if (to < pages) btn(String(pages), pages, false, state.page === pages);
+    btn('下一页', Math.min(pages, state.page + 1), state.page === pages, false);
+  }
+
   function boot() {
-    fetch('/data/content.json?t=' + Date.now(), { cache: 'no-store' })
+    fetch('/data/skills-index.json?t=' + Date.now(), { cache: 'no-store' })
       .then(function (r) { return r.json(); })
       .then(function (d) {
         DATA = d;
@@ -256,8 +298,8 @@
           document.getElementById('bookView').hidden = false;
           renderBookShelf();
         });
-        $('q').addEventListener('input', function (e) { state.q = e.target.value; renderGrid(); });
-        $('sort').addEventListener('change', function (e) { state.sort = e.target.value; renderGrid(); });
+        $('q').addEventListener('input', function (e) { state.q = e.target.value; state.page = 1; renderGrid(); });
+        $('sort').addEventListener('change', function (e) { state.sort = e.target.value; state.page = 1; renderGrid(); });
       })
       .catch(function (e) {
         document.querySelector('.sp-wrap').innerHTML = '<p style="color:#b3153f">加载失败：' + e.message + '</p>';
