@@ -1249,3 +1249,7 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
 /* 技能编号图标 */
 .skill-top .skill-no { display: inline-flex; align-items: center; }
 .skill-top .skill-no img { width: 30px; height: 30px; object-fit: contain; display: block; }
+
+/* 技能手册：所有条目一律显示（数据层已只保留专属） */
+.skills-section .skill-entry { display: block !important; }
+.skill-fold { display: none !important; }
