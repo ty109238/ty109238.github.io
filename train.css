@@ -1295,3 +1295,26 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   font: inherit; font-size: 12.5px; font-weight: 800; color: #55677b; cursor: pointer;
 }
 .egg-form-btn.on { background: var(--yellow); border-color: var(--ink); color: var(--ink); }
+
+/* PWA 安装按钮 / 更新提示 */
+.pwa-install {
+  position: fixed; right: 18px; bottom: 18px; z-index: 9000;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 18px; border: 0; border-radius: 999px; cursor: pointer;
+  background: linear-gradient(135deg, #ffcf4d, #ff9f1c); color: #3a2a08;
+  font: inherit; font-size: 13px; font-weight: 900;
+  box-shadow: 0 8px 22px rgba(0,0,0,.22);
+}
+.pwa-install span { font-size: 15px; }
+.pwa-toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px);
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 18px; border-radius: 14px; background: #2a2520; color: #fff8e6;
+  font: inherit; font-size: 13px; font-weight: 700; z-index: 9100;
+  opacity: 0; transition: .25s; box-shadow: 0 10px 28px rgba(0,0,0,.3);
+}
+.pwa-toast.show { opacity: 1; transform: translate(-50%, 0); }
+.pwa-toast button {
+  padding: 6px 14px; border: 0; border-radius: 9px; cursor: pointer;
+  background: #ffcf4d; color: #3a2a08; font: inherit; font-size: 12.5px; font-weight: 900;
+}

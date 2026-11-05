@@ -345,3 +345,78 @@
   setInterval(function () { tick(); syncTopBtn(); }, 1500);
   window.addEventListener('load', tick);
 })();
+
+
+/* ---------- PWA：安装 App + 新版提示 ---------- */
+(function () {
+  var deferred = null;
+
+  function ensureBtn() {
+    if (document.getElementById('pwaInstall')) return document.getElementById('pwaInstall');
+    var b = document.createElement('button');
+    b.id = 'pwaInstall';
+    b.type = 'button';
+    b.className = 'pwa-install';
+    b.innerHTML = '<span>⬇</span> 安装 App';
+    b.addEventListener('click', async function () {
+      if (!deferred) {
+        alert('当前浏览器不支持一键安装。\\n\\n电脑端请用 Chrome / Edge 打开本页，点地址栏右侧的「安装」图标；\\n手机端请用 Chrome / Safari 的「添加到主屏幕」。');
+        return;
+      }
+      deferred.prompt();
+      var res = await deferred.userChoice;
+      if (res && res.outcome === 'accepted') b.remove();
+      deferred = null;
+    });
+    document.body.appendChild(b);
+    return b;
+  }
+
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault();
+    deferred = e;
+    ensureBtn();
+  });
+
+  window.addEventListener('appinstalled', function () {
+    var b = document.getElementById('pwaInstall');
+    if (b) b.remove();
+  });
+
+  function toast(html, action) {
+    var t = document.createElement('div');
+    t.className = 'pwa-toast';
+    t.innerHTML = '<span>' + html + '</span>';
+    if (action) {
+      var a = document.createElement('button');
+      a.type = 'button';
+      a.textContent = action.text;
+      a.addEventListener('click', action.fn);
+      t.appendChild(a);
+    }
+    document.body.appendChild(t);
+    setTimeout(function () { t.classList.add('show'); }, 30);
+  }
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js', { scope: '/', updateViaCache: 'none' }).then(function (reg) {
+      reg.update();
+      setInterval(function () { reg.update(); }, 5 * 60 * 1000);
+      reg.addEventListener('updatefound', function () {
+        var nw = reg.installing;
+        if (!nw) return;
+        nw.addEventListener('statechange', function () {
+          if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+            toast('发现新版本', { text: '立即刷新', fn: function () { location.reload(); } });
+          }
+        });
+      });
+    }).catch(function () {});
+  }
+
+  // 独立窗口运行时隐藏安装按钮
+  if (window.matchMedia('(display-mode: standalone)').matches) {
+    var b = document.getElementById('pwaInstall');
+    if (b) b.remove();
+  }
+})();
