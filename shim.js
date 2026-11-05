@@ -2184,7 +2184,10 @@
       clearTimeout(timer);
       timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncFormFilter(); syncEggForm(); applyDetailForm(); }, 300);
     }).observe(root, { childList: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncFormFilter(); syncSideRail(); syncMobileNav(); syncFormFilter(); syncEggForm(); applyDetailForm(); syncToc(); syncSkillNumbers(); syncSectionIcons(); syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
+    var __eggTimer = setInterval(function () { try { syncEggForm(); } catch (e) {} }, 2000);
+  setTimeout(function () { try { syncEggForm(); } catch (e) {} }, 600);
+
+  setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncFormFilter(); syncSideRail(); syncMobileNav(); syncFormFilter(); syncEggForm(); applyDetailForm(); syncToc(); syncSkillNumbers(); syncSectionIcons(); syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
   }
 
   window.__dexOpenNotice = openNotice;
