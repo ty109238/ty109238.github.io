@@ -206,7 +206,8 @@
     grid.appendChild(frag);
     var bookTotal = LIST.filter(function (x) { return x.book; }).length;
     $('count').textContent = '共 ' + LIST.length + ' 个技能 · 当前 ' + out.length +
-      ' 个 · 技能书 ' + owned.size + '/' + bookTotal;
+      ' 个 · 第 ' + state.page + '/' + pages + ' 页 · 技能书 ' + owned.size + '/' + bookTotal;
+    renderPager(pages);
     grid.querySelectorAll('.sk-book').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var nm = btn.getAttribute('data-name');
