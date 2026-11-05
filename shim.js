@@ -1031,45 +1031,11 @@
       var src = img.getAttribute('src') || '';
       var m = /(\d+)\.webp/.exec(src);
       if (!m) continue;
-      var dex = String(parseInt(m[1], 10));
+      var dex = ('0' + parseInt(m[1], 10)).slice(-2);
       if (!img.getAttribute('data-egg-normal')) img.setAttribute('data-egg-normal', src);
-      if (on) {
-        var url = '/media/eggs-form/' + mode + '/' + ('0' + dex).slice(-2) + '.webp';
-        if (img.getAttribute('src') !== url) img.setAttribute('src', url);
-      } else {
-        var n = img.getAttribute('data-egg-normal');
-        if (n && img.getAttribute('src') !== n) img.setAttribute('src', n);
-      }
+      var want = on ? '/media/eggs-form/' + mode + '/' + dex + '.webp' : img.getAttribute('data-egg-normal');
+      if (want && img.getAttribute('src') !== want) img.setAttribute('src', want);
     }
-
-    // 蛋图鉴页顶部的形态切换条
-    if (!/^\/eggs/.test(location.pathname)) return;
-    var host = document.querySelector('.egg-grid') || document.querySelector('.egg-page') || document.querySelector('main');
-    if (!host || document.querySelector('.egg-form-bar')) {
-      var bar = document.querySelector('.egg-form-bar');
-      if (bar) bar.querySelectorAll('button').forEach(function (b) {
-        b.classList.toggle('on', b.getAttribute('data-eggkind') === mode);
-      });
-      return;
-    }
-    var wrap = document.createElement('div');
-    wrap.className = 'egg-form-bar';
-    [['normal', '普通'], ['shiny', '异色'], ['rainbow', '彩虹'], ['nightmare', '魇化']].forEach(function (pair) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.setAttribute('data-eggkind', pair[0]);
-      b.textContent = pair[1];
-      b.className = 'egg-form-btn' + (mode === pair[0] ? ' on' : '');
-      b.addEventListener('click', function () {
-        localStorage.setItem('dex:catalogForm', pair[0]);
-        wrap.querySelectorAll('button').forEach(function (o) { o.classList.remove('on'); });
-        b.classList.add('on');
-        syncEggForm();
-      });
-      wrap.appendChild(b);
-    });
-    try { host.prepend(wrap); } catch (e) { document.body.insertBefore(wrap, document.body.firstChild); }
-    console.log('[egg-form] bar created');
   }
 
   function syncFormFilter() {
