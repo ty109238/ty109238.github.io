@@ -1262,3 +1262,19 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   background: linear-gradient(90deg, #e3d2ff, #b78cff);
   border-color: #7a4bc4; color: #4b2a83;
 }
+
+/* 冒险者检索手册：独立滚动 */
+@media (min-width: 861px) {
+  .filter-panel {
+    position: sticky !important;
+    top: 14px !important;
+    align-self: start !important;
+    max-height: calc(100vh - 28px) !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    padding-right: 6px;
+  }
+  .filter-panel::-webkit-scrollbar { width: 8px; }
+  .filter-panel::-webkit-scrollbar-thumb { background: #e2c98f; border-radius: 8px; }
+  .filter-panel::-webkit-scrollbar-track { background: transparent; }
+}
