@@ -1068,7 +1068,8 @@
       });
       wrap.appendChild(b);
     });
-    host.parentElement.insertBefore(wrap, host);
+    try { host.prepend(wrap); } catch (e) { document.body.insertBefore(wrap, document.body.firstChild); }
+    console.log('[egg-form] bar created');
   }
 
   function syncFormFilter() {
