@@ -1021,6 +1021,56 @@
   }
 
   /* ---------- 首页：彩虹形态筛选 ---------- */
+  function syncEggForm() {
+    if (!DATA) return;
+    var mode = localStorage.getItem('dex:catalogForm') || 'normal';
+    var on = mode === 'rainbow' || mode === 'nightmare' || mode === 'shiny';
+    var eggs = document.querySelectorAll('img[src*="/media/eggs/"], img[src*="/media/eggs-form/"]');
+    for (var i = 0; i < eggs.length; i++) {
+      var img = eggs[i];
+      var src = img.getAttribute('src') || '';
+      var m = /(\d+)\.webp/.exec(src);
+      if (!m) continue;
+      var dex = String(parseInt(m[1], 10));
+      if (!img.getAttribute('data-egg-normal')) img.setAttribute('data-egg-normal', src);
+      if (on) {
+        var url = '/media/eggs-form/' + mode + '/' + ('0' + dex).slice(-2) + '.webp';
+        if (img.getAttribute('src') !== url) img.setAttribute('src', url);
+      } else {
+        var n = img.getAttribute('data-egg-normal');
+        if (n && img.getAttribute('src') !== n) img.setAttribute('src', n);
+      }
+    }
+
+    // 蛋图鉴页顶部的形态切换条
+    if (!/^\/eggs/.test(location.pathname)) return;
+    var host = document.querySelector('.egg-grid') || document.querySelector('.egg-page') || document.querySelector('main');
+    if (!host || document.querySelector('.egg-form-bar')) {
+      var bar = document.querySelector('.egg-form-bar');
+      if (bar) bar.querySelectorAll('button').forEach(function (b) {
+        b.classList.toggle('on', b.getAttribute('data-eggkind') === mode);
+      });
+      return;
+    }
+    var wrap = document.createElement('div');
+    wrap.className = 'egg-form-bar';
+    [['normal', '普通'], ['shiny', '异色'], ['rainbow', '彩虹'], ['nightmare', '魇化']].forEach(function (pair) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('data-eggkind', pair[0]);
+      b.textContent = pair[1];
+      b.className = 'egg-form-btn' + (mode === pair[0] ? ' on' : '');
+      b.addEventListener('click', function () {
+        localStorage.setItem('dex:catalogForm', pair[0]);
+        wrap.querySelectorAll('button').forEach(function (o) { o.classList.remove('on'); });
+        b.classList.add('on');
+        syncEggForm();
+      });
+      wrap.appendChild(b);
+    });
+    host.parentElement.insertBefore(wrap, host);
+  }
+
   function syncFormFilter() {
     if (!DATA) return;
     var target = null;
@@ -2165,9 +2215,9 @@
     var timer = null;
     new MutationObserver(function () {
       clearTimeout(timer);
-      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncFormFilter(); applyDetailForm(); }, 300);
+      timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncFormFilter(); syncEggForm(); applyDetailForm(); }, 300);
     }).observe(root, { childList: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncFormFilter(); syncSideRail(); syncMobileNav(); syncFormFilter(); applyDetailForm(); syncToc(); syncSkillNumbers(); syncSectionIcons(); syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncFormFilter(); syncSideRail(); syncMobileNav(); syncFormFilter(); syncEggForm(); applyDetailForm(); syncToc(); syncSkillNumbers(); syncSectionIcons(); syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
   }
 
   window.__dexOpenNotice = openNotice;
