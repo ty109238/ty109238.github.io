@@ -351,26 +351,57 @@
 (function () {
   var deferred = null;
 
+  function isIOS() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  }
+  function isAndroid() { return /Android/i.test(navigator.userAgent); }
+  function isStandalone() {
+    return window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  }
+
+  function guide() {
+    var box = document.createElement('div');
+    box.className = 'pwa-guide';
+    var steps = isIOS()
+      ? ['点击底部的「分享」按钮（方框 + 向上箭头）', '在菜单里找到「添加到主屏幕」', '点右上角「添加」，桌面就会出现图标']
+      : isAndroid()
+        ? ['点击右上角「⋮」菜单', '选择「安装应用」或「添加到主屏幕」', '确认后桌面就会出现图标']
+        : ['点击地址栏右侧的「安装」图标', '或按 Ctrl+Shift+A 打开安装', '确认后桌面就会出现图标'];
+    box.innerHTML = '<div class="pwa-guide-card"><h3>把「奥灵宠图鉴」装到桌面</h3><ol>' +
+      steps.map(function (x) { return '<li>' + x + '</li>'; }).join('') +
+      '</ol><p class="pwa-guide-tip">装好后是独立窗口，断网也能看，我这里更新会自动同步。</p>' +
+      '<button type="button" class="pwa-guide-ok">知道了</button></div>';
+    document.body.appendChild(box);
+    function close() { box.remove(); }
+    box.addEventListener('click', function (e) {
+      if (e.target === box || e.target.classList.contains('pwa-guide-ok')) close();
+    });
+  }
+
   function ensureBtn() {
-    if (document.getElementById('pwaInstall')) return document.getElementById('pwaInstall');
+    if (isStandalone()) return null;
+    var exist = document.getElementById('pwaInstall');
+    if (exist) return exist;
     var b = document.createElement('button');
     b.id = 'pwaInstall';
     b.type = 'button';
     b.className = 'pwa-install';
     b.innerHTML = '<span>⬇</span> 安装 App';
     b.addEventListener('click', async function () {
-      if (!deferred) {
-        alert('当前浏览器不支持一键安装。\\n\\n电脑端请用 Chrome / Edge 打开本页，点地址栏右侧的「安装」图标；\\n手机端请用 Chrome / Safari 的「添加到主屏幕」。');
-        return;
+      if (deferred) {
+        deferred.prompt();
+        var res = await deferred.userChoice;
+        if (res && res.outcome === 'accepted') { b.remove(); deferred = null; return; }
+        deferred = null;
       }
-      deferred.prompt();
-      var res = await deferred.userChoice;
-      if (res && res.outcome === 'accepted') b.remove();
-      deferred = null;
+      guide();
     });
     document.body.appendChild(b);
     return b;
   }
+
+  setTimeout(function () { ensureBtn(); }, 1200);
 
   window.addEventListener('beforeinstallprompt', function (e) {
     e.preventDefault();

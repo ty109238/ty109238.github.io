@@ -1,17 +1,63 @@
 {
-  "name": "咻噗-奥灵宠图鉴",
+  "name": "咻噗 · 奥灵宠图鉴",
   "short_name": "奥灵宠图鉴",
   "description": "咻噗-奥灵宠图鉴：查阅灵宠属性、阶段、形态、进化链、种族值与技能。",
   "lang": "zh-CN",
   "dir": "ltr",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
   "orientation": "portrait-primary",
-  "background_color": "#ffffff",
+  "background_color": "#fdf6e3",
   "theme_color": "#2a2520",
   "icons": [
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-64.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "技能池",
+      "url": "/skills"
+    },
+    {
+      "name": "我的收藏",
+      "url": "/favs"
+    },
+    {
+      "name": "战斗模拟",
+      "url": "/battle.html"
+    }
   ]
 }

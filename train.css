@@ -1318,3 +1318,21 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   padding: 6px 14px; border: 0; border-radius: 9px; cursor: pointer;
   background: #ffcf4d; color: #3a2a08; font: inherit; font-size: 12.5px; font-weight: 900;
 }
+
+/* PWA 安装引导 */
+.pwa-guide {
+  position: fixed; inset: 0; z-index: 9600; background: rgba(20,16,10,.55);
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.pwa-guide-card {
+  max-width: 340px; background: #fffdf6; border-radius: 18px; padding: 22px 20px 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.3); color: #2a2520;
+}
+.pwa-guide-card h3 { margin: 0 0 12px; font-size: 16px; font-weight: 900; }
+.pwa-guide-card ol { margin: 0; padding-left: 20px; font-size: 13px; line-height: 1.9; }
+.pwa-guide-tip { margin: 14px 0 16px; font-size: 12px; color: #7a6a55; line-height: 1.6; }
+.pwa-guide-ok {
+  width: 100%; padding: 11px; border: 0; border-radius: 12px; cursor: pointer;
+  background: linear-gradient(135deg, #ffcf4d, #ff9f1c); color: #3a2a08;
+  font: inherit; font-size: 13.5px; font-weight: 900;
+}
