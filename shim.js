@@ -2194,11 +2194,7 @@
   window.__dexOpenSearch = openSearch;
 
   /* ---------- 离线支持 ---------- */
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/sw.js?v=10', { scope: '/', updateViaCache: 'none' }).catch(function () {});
-    });
-  }
+  /* service worker 由 ui.js 统一注册（避免两次注册导致重复更新提示） */
 
   /* ---------- 有新内容时提示刷新 ---------- */
   function showUpdateBar() {
