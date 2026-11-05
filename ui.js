@@ -392,6 +392,7 @@
       if (deferred && typeof deferred.prompt === 'function') {
         try { deferred.prompt(); deferred = null; return; } catch (err) { /* 走说明页 */ }
       }
+      if (/Android/i.test(navigator.userAgent)) { location.href = '/download/aoling-dex.apk'; return; }
       location.href = '/install.html';
     });
     document.body.appendChild(b);
