@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var DATA = null, LIST = [];
+  var DATA = null, CREATURES = [], LIST = [];
   var ELEM_ICON = { 火: 'fire', 水: 'water', 草: 'grass', 冰: 'ice', 土: 'rock', 钢: 'steel', 风: 'wind', 光: 'light', 暗: 'dark', 雷: 'thunder' };
   var state = { cat: '全部', elem: '全部', book: '全部', q: '', sort: 'power', page: 1 };
 
@@ -52,7 +52,7 @@
 
   function buildOld() {
     var owners = {};
-    DATA.creatures.forEach(function (c) {
+    CREATURES.forEach(function (c) {
       var arr = DATA.skills[String(c.id)] || [];
       var seen = {};
       arr.forEach(function (s) {
@@ -101,7 +101,7 @@
     var host = document.getElementById('usagePanel');
     if (!host) return;
     var m = usageMap();
-    var rows = DATA.creatures.map(function (c) {
+    var rows = CREATURES.map(function (c) {
       var n = m[String(c.id)] || 0;
       return '<div class="usage-row"><span class="u-name">No.' + String(c.dexNo).padStart(3, '0') + ' ' + c.name +
         '</span><span class="u-count' + (n >= 10 ? ' full' : '') + '">' + n + ' / 10</span>' +
@@ -220,8 +220,8 @@
 
   function renderBookShelf() {
     var host = document.getElementById('bookGrid');
-    if (!host || !DATA) return;
-    var html = DATA.creatures.map(function (c) {
+    if (!host || !CREATURES.length) return;
+    var html = CREATURES.map(function (c) {
       var books = (DATA.skills[String(c.id)] || []).filter(function (s) { return s.exclusive || (s.power || 0) >= 95; });
       if (!books.length) return '';
       var got = books.filter(function (b) { return owned.has(b.name); }).length;
@@ -277,7 +277,8 @@
     fetch('/data/skills-index.json?t=' + Date.now(), { cache: 'no-store' })
       .then(function (r) { return r.json(); })
       .then(function (d) {
-        DATA = d;
+        DATA = d.skills || d;
+        CREATURES = d.creatures || [];
         build();
         renderFilters();
         renderUsagePanel();
