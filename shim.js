@@ -1336,33 +1336,9 @@
     var t = null;
     entryObs = new MutationObserver(function () {
       clearTimeout(t);
-      t = setTimeout(function () { syncSkillOwnOnly(); syncSkillNumbers(); syncSkillCollapse(); syncEntryIcons(); killEggBg(); killEvoBg(); frameTraitSection(); killTraitBg(); }, 80);
+      t = setTimeout(function () { syncSkillNumbers(); syncEntryIcons(); killEggBg(); killEvoBg(); frameTraitSection(); killTraitBg(); }, 80);
     });
     entryObs.observe(root, { childList: true, subtree: true });
-  }
-
-  function syncSkillOwnOnly() {
-    var c = currentCreature();
-    if (!c || !DATA || !DATA.skills) return;
-    var arr = DATA.skills[String(c.id)] || [];
-    var n = { '一阶': 4, '二阶': 7, '三阶': 9 }[c.stage] || 4;
-    // 直接取数组末尾 n 个的名字（不依赖 own 标记）
-    var ownNames = {};
-    arr.slice(-n).forEach(function (x) { ownNames[x.name] = 1; });
-    var entries = document.querySelectorAll('.skill-entry');
-    var shown = 0;
-    for (var i = 0; i < entries.length; i++) {
-      var h = entries[i].querySelector('h3');
-      var nm = h ? h.textContent.trim() : '';
-      var show = !!ownNames[nm];
-      entries[i].style.display = show ? '' : 'none';
-      if (show) shown++;
-    }
-    // 兜底：如果一个都没匹配上，退回按位置（末尾 n 个）
-    if (shown === 0) {
-      var start2 = Math.max(0, entries.length - n);
-      for (var j = 0; j < entries.length; j++) entries[j].style.display = j >= start2 ? '' : 'none';
-    }
   }
 
   function syncSkillNumbers() {
@@ -1439,7 +1415,7 @@
     var t = null;
     entryObs = new MutationObserver(function () {
       clearTimeout(t);
-      t = setTimeout(function () { syncSkillOwnOnly(); syncSkillNumbers(); syncSkillCollapse(); syncEntryIcons(); killEggBg(); killEvoBg(); frameTraitSection(); killTraitBg(); }, 80);
+      t = setTimeout(function () { syncSkillNumbers(); syncEntryIcons(); killEggBg(); killEvoBg(); frameTraitSection(); killTraitBg(); }, 80);
     });
     entryObs.observe(root, { childList: true, subtree: true });
   }
@@ -2126,7 +2102,7 @@
       clearTimeout(timer);
       timer = setTimeout(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncSideRail(); syncFormFilter(); applyDetailForm(); }, 300);
     }).observe(root, { childList: true });
-    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncFormFilter(); syncSideRail(); syncMobileNav(); syncFormFilter(); applyDetailForm(); syncToc(); syncSkillOwnOnly(); syncSkillNumbers(); syncSectionIcons(); syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
+    setInterval(function () { syncEggSection(); syncHome(); syncRecent(); syncStudio(); syncStudioMini(); syncNavStrip(); syncFormFilter(); syncSideRail(); syncMobileNav(); syncFormFilter(); applyDetailForm(); syncToc(); syncSkillNumbers(); syncSectionIcons(); syncSkillCollapse(); syncEntryIcons(); frameTraitSection(); killTraitBg(); watchEntries(); syncHeaderIcons(); tickBranch(); }, 2500);
   }
 
   window.__dexOpenNotice = openNotice;
