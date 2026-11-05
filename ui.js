@@ -383,7 +383,11 @@
     if (b) b.remove();
   });
 
+  var refreshing = false;
+
   function toast(html, action) {
+    var old = document.querySelector('.pwa-toast');
+    if (old) old.remove();
     var t = document.createElement('div');
     t.className = 'pwa-toast';
     t.innerHTML = '<span>' + html + '</span>';
@@ -396,23 +400,51 @@
     }
     document.body.appendChild(t);
     setTimeout(function () { t.classList.add('show'); }, 30);
+    return t;
+  }
+
+  function askUpdate(reg) {
+    if (refreshing) return;
+    if (Date.now() - Number(localStorage.getItem('dex:swRefreshedAt') || 0) < 10 * 60 * 1000) return;
+    if (document.querySelector('.pwa-toast')) return;
+    var t = toast('发现新版本', {
+      text: '立即刷新',
+      fn: function () {
+        refreshing = true;
+        localStorage.setItem('dex:swRefreshedAt', String(Date.now()));
+        if (t && t.parentNode) t.remove();
+        var w = reg.waiting;
+        if (w) {
+          w.postMessage({ type: 'SKIP_WAITING' });
+          setTimeout(function () { location.reload(); }, 400);
+        } else {
+          location.reload();
+        }
+      }
+    });
   }
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js', { scope: '/', updateViaCache: 'none' }).then(function (reg) {
-      reg.update();
+      // 只提示「等待中」的更新，避免刚装完就弹
+      if (reg.waiting && navigator.serviceWorker.controller) askUpdate(reg);
       setInterval(function () { reg.update(); }, 5 * 60 * 1000);
       reg.addEventListener('updatefound', function () {
         var nw = reg.installing;
         if (!nw) return;
         nw.addEventListener('statechange', function () {
-          if (nw.state === 'installed' && navigator.serviceWorker.controller) {
-            toast('发现新版本', { text: '立即刷新', fn: function () { location.reload(); } });
+          if (nw.state === 'installed' && navigator.serviceWorker.controller && reg.waiting) {
+            askUpdate(reg);
           }
         });
       });
     }).catch(function () {});
   }
+
+  // 新 SW 接管后自动刷新一次（用户点了「立即刷新」的情况下）
+  navigator.serviceWorker && navigator.serviceWorker.addEventListener('controllerchange', function () {
+    if (refreshing) location.reload();
+  });
 
   // 独立窗口运行时隐藏安装按钮
   if (window.matchMedia('(display-mode: standalone)').matches) {

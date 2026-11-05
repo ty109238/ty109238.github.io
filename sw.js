@@ -1,5 +1,5 @@
 /* 离线缓存：首次打开后，断网也能完整浏览 */
-const VERSION = 'vmw3efgd1';
+const VERSION = 'vmw3erjf7';
 const SHELL = 'dex-shell-' + VERSION;
 const IMG = 'dex-img-' + VERSION;
 
@@ -104,4 +104,9 @@ self.addEventListener('fetch', (event) => {
   if (url.pathname.startsWith('/media/') || url.pathname.startsWith('/assets/') || url.pathname === '/shim.js') {
     event.respondWith(cacheFirst(req, url.pathname.startsWith('/media/') ? IMG : SHELL));
   }
+});
+
+
+self.addEventListener('message', (e) => {
+  if (e.data && e.data.type === 'SKIP_WAITING') self.skipWaiting();
 });
