@@ -1345,12 +1345,16 @@
     var c = currentCreature();
     if (!c || !DATA || !DATA.skills) return;
     var arr = DATA.skills[String(c.id)] || [];
-    var n = { '一阶': 4, '二阶': 7, '三阶': 9 }[c.stage] || 4;
-    var start = Math.max(0, arr.length - n);
+    var own = {};
+    for (var k = 0; k < arr.length; k++) if (arr[k].own) own[arr[k].name] = 1;
+    if (!Object.keys(own).length) return;
     var entries = document.querySelectorAll('.skill-entry');
     for (var i = 0; i < entries.length; i++) {
-      entries[i].style.display = i < start ? 'none' : '';
-      entries[i].setAttribute('data-own', i >= start ? '1' : '0');
+      var h = entries[i].querySelector('h3');
+      var nm = h ? h.textContent.trim() : '';
+      var show = !!own[nm];
+      entries[i].style.display = show ? '' : 'none';
+      entries[i].setAttribute('data-own', show ? '1' : '0');
     }
   }
 
