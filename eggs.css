@@ -131,3 +131,51 @@ body {
   .egg-form-bar { position: sticky; top: 0; z-index: 50; }
   .egg-form-bar button { padding: 6px 12px !important; font-size: 12px !important; }
 }
+
+
+/* mobile v2 */
+@media (max-width: 640px) {
+  /* 形态切换条：顶部胶囊 */
+  .egg-form-bar {
+    display: flex !important;
+    gap: 8px !important;
+    padding: 10px 10px 6px !important;
+    background: #f7f7f7;
+    position: sticky; top: 0; z-index: 50;
+    margin: 0 -10px 10px !important;
+    overflow-x: auto;
+  }
+  .egg-form-bar button {
+    flex: 0 0 auto;
+    padding: 7px 16px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 999px !important;
+    background: #fff !important;
+    font-size: 13px !important; font-weight: 700 !important;
+    color: #444 !important;
+  }
+  .egg-form-bar button.on {
+    background: #ffe9a8 !important;
+    border-color: #e0b64a !important;
+    color: #6b4b00 !important;
+  }
+
+  /* 蛋卡片：两列，图片等比完整显示 */
+  .fam .eggs {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+  .fam .eggs .egg {
+    width: auto !important;
+    padding: 6px 6px 8px !important;
+    border-radius: 12px !important;
+  }
+  .fam .eggs .egg img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+  }
+  .fam { padding: 10px !important; }
+}
