@@ -348,3 +348,110 @@ a { color: inherit; }
 }
 .field-bar b { color: var(--ink); }
 .field-bar b.env { color: var(--pink); }
+
+/* ===== 对战界面：竞技场布局 ===== */
+#battleView {
+  display: flex !important;
+  flex-direction: column;
+  gap: 10px;
+  min-height: calc(100vh - 120px);
+}
+
+/* 顶部环境信息收成一条 */
+#battleView .weather-badge, #battleView .field-bar {
+  display: inline-flex !important;
+  align-self: center;
+  margin: 0 !important;
+}
+
+/* 竞技场：敌方左、我方右 */
+.battle-hud {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  grid-template-rows: auto 1fr !important;
+  gap: 10px 14px !important;
+  align-items: end !important;
+}
+.battle-hud > div:nth-child(1) { grid-column: 1 / -1; grid-row: 1; }
+.battle-hud > div:nth-child(2) { grid-column: 1; grid-row: 2; }   /* 敌方 */
+.battle-hud > div:nth-child(3) { grid-column: 2; grid-row: 2; }   /* 我方 */
+
+.battle-hud .active-mon {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+.battle-hud .active-mon .mon-card,
+.battle-hud .active-mon > div {
+  width: 100% !important;
+  padding: 10px !important;
+}
+.battle-hud .active-mon img {
+  max-height: 26vh !important;
+  width: auto !important;
+  max-width: 100% !important;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 血量条更醒目 */
+.battle-hud .hp-line, .battle-hud .hp-bar {
+  font-size: 12.5px !important;
+  font-weight: 800;
+}
+
+/* 战斗日志：收到左上角，可折叠 */
+#battleView .log {
+  order: -1;
+  max-height: 84px !important;
+  height: 84px !important;
+  overflow-y: auto;
+  font-size: 11.5px !important;
+  line-height: 1.6 !important;
+  border-radius: 12px !important;
+  padding: 8px 10px !important;
+  background: #f7f7f7 !important;
+  opacity: .96;
+}
+#battleView .log p { margin: 0 0 2px !important; }
+
+/* 技能栏：底部四格 */
+#battleView .actions {
+  position: sticky;
+  bottom: 0;
+  margin-top: auto;
+  padding: 8px 0 6px;
+  background: linear-gradient(to top, #fdf6e3 70%, rgba(253,246,227,0));
+}
+#battleView .skill-bar {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+}
+#battleView .skill-btn {
+  min-width: 0 !important;
+  padding: 10px 8px !important;
+  border-radius: 14px !important;
+  border: 2px solid var(--line) !important;
+  background: #fff !important;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  font-size: 12px !important; line-height: 1.25 !important;
+}
+#battleView .skill-btn b { font-size: 13px !important; font-weight: 900 !important; }
+#battleView .skill-btn small { font-size: 10.5px !important; opacity: .75; }
+
+/* 换人栏紧凑 */
+#battleView .switch-bar {
+  display: flex !important; gap: 6px !important; overflow-x: auto; padding-top: 6px;
+}
+#battleView .switch-bar button { flex: 0 0 auto; }
+
+@media (max-width: 640px) {
+  #battleView { gap: 8px; }
+  .battle-hud { gap: 8px 10px !important; }
+  .battle-hud .active-mon img { max-height: 20vh !important; }
+  #battleView .log { height: 64px !important; max-height: 64px !important; font-size: 11px !important; }
+  #battleView .skill-btn { padding: 8px 6px !important; }
+  #battleView .skill-btn b { font-size: 12px !important; }
+  #battleView .skill-btn small { font-size: 10px !important; }
+  #battleView .actions { padding-bottom: calc(8px + env(safe-area-inset-bottom)); }
+}
