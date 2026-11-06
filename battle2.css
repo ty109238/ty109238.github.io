@@ -1,0 +1,1123 @@
+/* 战斗模拟器 */
+:root {
+  --ink:#262722; --pink:#dd2590; --blue:#1570ef; --yellow:#ffeb85;
+  --soft:#f5faff; --line:#dbe6f0; --red:#e5484d; --green:#2f9e5f;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: #f4f7fa; color: var(--ink);
+  font-family: "PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button { font: inherit; cursor: pointer; }
+a { color: inherit; }
+.top {
+  position: sticky; top: 0; z-index: 30;
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 20px; background: #fffffff2;
+  border-bottom: 2px solid var(--ink); backdrop-filter: blur(6px);
+}
+.top a.back {
+  padding: 8px 15px; border: 2px solid var(--ink); border-radius: 999px;
+  background: #fff; text-decoration: none; font-size: 13px; font-weight: 800;
+}
+.top h1 { margin: 0; font-size: 18px; }
+.top .step { margin-left: auto; font-size: 12px; color: #7b8ea1; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 20px 18px 80px; }
+
+/* ---------- 建队 ---------- */
+.build-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.team-col {
+  background: #fff; border: 2px solid var(--ink); border-radius: 16px;
+  padding: 14px 16px 16px; box-shadow: 4px 5px 0 rgba(38,39,34,.08);
+}
+.team-col.enemy { background: #fffafb; }
+.team-head { display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--ink); padding-bottom: 9px; margin-bottom: 12px; }
+.team-head h2 { margin: 0; font-size: 17px; }
+.team-head .cnt { font-size: 11.5px; color: #7b8ea1; }
+.team-head .mini {
+  margin-left: auto; padding: 5px 12px; border: 2px solid var(--ink); border-radius: 999px;
+  background: #f7fbff; font-size: 11.5px; font-weight: 800;
+}
+.slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.slot {
+  position: relative; border: 2px dashed #c6d5e3; border-radius: 12px;
+  background: #fbfdff; min-height: 108px; padding: 6px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+}
+.slot.filled { border-style: solid; border-color: var(--ink); background: #fff; cursor: pointer; }
+.slot img { width: 56px; height: 56px; object-fit: contain; }
+.slot b { font-size: 12.5px; }
+.slot small { font-size: 10px; color: #7b8ea1; }
+.slot .empty-t { font-size: 12px; color: #9aa9b8; }
+.slot .x {
+  position: absolute; top: 4px; right: 4px; width: 20px; height: 20px; border-radius: 50%;
+  border: 1px solid #c6d5e3; background: #fff; font-size: 11px; line-height: 1;
+  display: grid; place-items: center; color: #9aa9b8;
+}
+.slot .x:hover { color: var(--red); border-color: var(--red); }
+.build-actions { display: flex; gap: 10px; margin-top: 18px; }
+.big-btn {
+  flex: 1; padding: 14px; border: 2px solid var(--ink); border-radius: 14px;
+  background: var(--yellow); font-size: 15px; font-weight: 900;
+  box-shadow: 4px 5px 0 rgba(38,39,34,.16);
+}
+.big-btn:disabled { background: #e9eef3; color: #9aa9b8; box-shadow: none; cursor: not-allowed; }
+.big-btn.ghost { background: #fff; }
+
+/* 配置弹窗 */
+.modal { position: fixed; inset: 0; z-index: 60; background: rgba(14,23,38,.6); display: grid; place-items: center; padding: 18px; }
+.modal[hidden] { display: none; }
+.mbox {
+  width: min(100%, 900px); max-height: 90vh; overflow: auto;
+  background: #fff; border: 2px solid var(--ink); border-radius: 18px; padding: 18px 20px 20px;
+}
+.mbox h3 { margin: 0 0 4px; font-size: 19px; }
+.mbox .sub { margin: 0 0 14px; font-size: 12.5px; color: #7b8ea1; }
+.pick-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; max-height: 210px; overflow: auto; padding: 4px; }
+.pick {
+  border: 2px solid var(--line); border-radius: 10px; background: #fff; padding: 4px; text-align: center; cursor: pointer;
+}
+.pick:hover { border-color: var(--ink); }
+.pick.on { border-color: var(--pink); background: #fff5fa; }
+.pick img { width: 44px; height: 44px; object-fit: contain; }
+.pick b { display: block; font-size: 11.5px; }
+.pick small { font-size: 9.5px; color: #7b8ea1; }
+.row2 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 12px 0; }
+.field { display: grid; gap: 4px; }
+.field span { font-size: 11px; font-weight: 800; color: #55677b; }
+.field select, .field input {
+  padding: 7px 9px; border: 2px solid var(--line); border-radius: 9px; font: inherit; font-size: 12.5px;
+}
+.ev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 14px; margin: 8px 0 4px; }
+.ev-row { display: grid; grid-template-columns: 42px 1fr 34px; align-items: center; gap: 6px; font-size: 11.5px; }
+.ev-row input { width: 100%; }
+.ev-left { font-size: 11.5px; color: #7b8ea1; }
+.ev-left b { color: var(--pink); }
+.skill-pick { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 8px; max-height: 200px; overflow: auto; }
+.sk {
+  border: 2px solid var(--line); border-radius: 10px; padding: 7px 9px; background: #fff; cursor: pointer; text-align: left;
+}
+.sk.on { border-color: var(--blue); background: #f2f8ff; }
+.sk b { font-size: 12.5px; }
+.sk small { display: block; font-size: 10.5px; color: #7b8ea1; }
+.sk .tag { font-size: 10px; padding: 1px 6px; border-radius: 999px; background: #eef4fa; margin-right: 4px; }
+
+/* ---------- 战斗 ---------- */
+.battle-hud { display: grid; grid-template-columns: 1fr 1.1fr 1fr; gap: 14px; align-items: start; }
+.side-team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.mini-card {
+  border: 2px solid var(--ink); border-radius: 10px; background: #fff; padding: 4px; text-align: center; position: relative;
+}
+.mini-card.dead { opacity: .38; filter: grayscale(1); }
+.mini-card.active { border-color: var(--pink); box-shadow: 0 0 0 2px #ffd6e8; }
+.mini-card img { width: 40px; height: 40px; object-fit: contain; }
+.mini-card .hpbar { height: 4px; border-radius: 99px; background: #e7eef5; overflow: hidden; margin-top: 3px; }
+.mini-card .hpbar i { display: block; height: 100%; background: var(--green); }
+.active-mon {
+  border: 2px solid var(--ink); border-radius: 14px; background: #fff; padding: 10px 12px;
+}
+.active-mon img { width: 96px; height: 96px; object-fit: contain; display: block; margin: 0 auto; }
+.active-mon h4 { margin: 4px 0 2px; font-size: 16px; text-align: center; }
+.active-mon .tags { text-align: center; font-size: 11px; color: #7b8ea1; }
+.hp-wrap { margin-top: 8px; }
+.hp-line { display: flex; justify-content: space-between; font-size: 11px; color: #55677b; }
+.hp-bar { height: 10px; border-radius: 99px; background: #e7eef5; overflow: hidden; margin-top: 3px; }
+.hp-bar i { display: block; height: 100%; background: linear-gradient(90deg,#63d68a,#2f9e5f); transition: width .25s ease; }
+.hp-bar.low i { background: linear-gradient(90deg,#ffb26b,#e5484d); }
+.st-line { margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { font-size: 10.5px; padding: 2px 8px; border-radius: 999px; background: #eef4fa; }
+.chip.bad { background: #ffe9e9; color: #b3352f; }
+.chip.good { background: #e9f7ec; color: #1f7a3d; }
+.log {
+  margin-top: 16px; background: #0e1726; color: #cfe0f2; border-radius: 14px; padding: 12px 14px;
+  height: 220px; overflow: auto; font-size: 12.5px; line-height: 1.8;
+}
+.log p { margin: 0 0 3px; }
+.log .dmg { color: #ffd66b; }
+.log .crit { color: #ff8fb8; font-weight: 800; }
+.log .eff { color: #8ef0a8; }
+.log .weak { color: #ffb3a8; }
+.log .turn { color: #7fa7d6; font-weight: 800; margin-top: 6px; }
+.actions { margin-top: 14px; }
+.skill-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.skill-btn {
+  border: 2px solid var(--ink); border-radius: 12px; background: #fff; padding: 10px; text-align: left;
+  box-shadow: 3px 4px 0 rgba(38,39,34,.1);
+}
+.skill-btn:disabled { opacity: .45; cursor: not-allowed; box-shadow: none; }
+.skill-btn b { display: block; font-size: 13.5px; }
+.skill-btn small { font-size: 10.5px; color: #7b8ea1; }
+.skill-btn .pp { float: right; font-size: 10.5px; color: var(--pink); font-weight: 800; }
+.switch-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
+.switch-btn { border: 2px solid var(--line); border-radius: 10px; background: #fff; padding: 7px; font-size: 11.5px; }
+.switch-btn:disabled { opacity: .4; }
+.result { text-align: center; padding: 40px 20px; }
+.result h2 { font-size: 34px; margin: 0 0 10px; }
+.result .win { color: var(--green); }
+.result .lose { color: var(--red); }
+.hidden { display: none !important; }
+
+@media (max-width: 900px) {
+  .build-grid { grid-template-columns: 1fr; }
+  .battle-hud { grid-template-columns: 1fr; }
+  .skill-bar { grid-template-columns: 1fr 1fr; }
+  .row2 { grid-template-columns: 1fr 1fr; }
+  .ev-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* 天气条 */
+.weather-badge {
+  margin-bottom: 10px;
+  padding: 9px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: linear-gradient(90deg, #fff8e6, #eef7ff);
+  font-size: 12.5px;
+  color: #55677b;
+}
+.weather-badge b { color: var(--ink); font-size: 13.5px; }
+/* 按钮小图标 */
+.btn-ico { width: 20px; height: 20px; object-fit: contain; vertical-align: -5px; margin-right: 6px; }
+.mini .btn-ico { width: 16px; height: 16px; vertical-align: -3px; margin-right: 3px; }
+.skill-btn .sk-ico { float: left; width: 18px; height: 18px; margin: 1px 6px 0 0; }
+.switch-btn .sw-ico { width: 15px; height: 15px; vertical-align: -3px; margin-right: 4px; }
+/* 战绩历史小标 */
+.recent-games { margin-left: 10px; display: inline-flex; gap: 6px; flex-wrap: wrap; }
+.recent-game { font-size: 10.5px; padding: 1px 8px; border-radius: 999px; border: 1px solid #dbe6f0; color: #7b8ea1; }
+.recent-game.win { background: #e9f7ec; border-color: #b6e0c2; color: #1f7a3d; }
+.recent-game.lose { background: #fdecea; border-color: #f3c1b8; color: #a4331f; }
+/* ---------- 模式切换 ---------- */
+.mode-row { display: flex; align-items: center; gap: 8px; margin: 14px 0 4px; flex-wrap: wrap; }
+.mode-title { font-size: 11.5px; font-weight: 800; color: #55677b; margin-right: 4px; }
+.mode-btn {
+  padding: 7px 16px; border: 2px solid var(--ink); border-radius: 999px;
+  background: #fff; font-size: 12.5px; font-weight: 800;
+}
+.mode-btn.on { background: var(--yellow); box-shadow: 3px 3px 0 rgba(38,39,34,.15); }
+.mode-now { font-size: 11.5px; color: #7b8ea1; margin-left: 4px; }
+
+/* ---------- 双打界面 ---------- */
+.dbl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 12px; }
+.dbl-side { border: 2px solid var(--ink); border-radius: 14px; background: #fff; padding: 10px 12px; }
+.dbl-side-title { font-size: 11.5px; font-weight: 900; color: #7b8ea1; letter-spacing: .12em; margin-bottom: 8px; }
+.dbl-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.dbl-card {
+  position: relative; border: 2px solid var(--ink); border-radius: 12px; background: #fbfdff;
+  padding: 8px; text-align: center;
+}
+.dbl-card.dead { opacity: .4; filter: grayscale(1); }
+.dbl-card.empty { display: grid; place-items: center; color: #c6d5e3; font-size: 20px; min-height: 120px; }
+.dbl-card img { width: 68px; height: 68px; object-fit: contain; display: block; margin: 0 auto; }
+.dbl-card b { display: block; font-size: 13px; margin-top: 2px; }
+.dbl-card small { font-size: 10px; color: #7b8ea1; }
+.dbl-tag {
+  position: absolute; top: 5px; left: 5px; padding: 1px 7px; border-radius: 999px;
+  background: var(--ink); color: #fff; font-size: 9.5px; font-weight: 900;
+}
+.dbl-card .hp-bar { height: 7px; }
+.dbl-hp { font-size: 10px; color: #7b8ea1; margin-top: 2px; }
+.dbl-actions { display: grid; gap: 10px; }
+.dbl-row {
+  display: grid; grid-template-columns: 108px minmax(0, 1fr); gap: 10px; align-items: center;
+  border: 2px solid var(--ink); border-radius: 12px; background: #fff; padding: 8px 10px;
+}
+.dbl-name { font-size: 12px; font-weight: 900; color: #55677b; }
+.dbl-skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.dbl-skills .skill-btn { padding: 7px 8px; }
+.dbl-skills .skill-btn.picked { border-color: var(--pink); background: #fff5fa; box-shadow: 0 0 0 2px #ffd6e8; }
+.skill-btn .tgt {
+  position: absolute; top: 6px; right: 8px; font-size: 9.5px; font-weight: 900;
+  padding: 1px 6px; border-radius: 999px; background: #ffeb85; color: #5b4708;
+}
+.dbl-skills .skill-btn { position: relative; }
+@media (max-width: 900px) {
+  .dbl-grid { grid-template-columns: 1fr; }
+  .dbl-row { grid-template-columns: 1fr; }
+  .dbl-skills { grid-template-columns: 1fr 1fr; }
+}
+/* 目标角标放右下，避免压住 PP */
+.skill-btn .tgt {
+  top: auto !important;
+  right: 6px !important;
+  bottom: 5px !important;
+  font-size: 9px !important;
+  padding: 0 5px !important;
+}
+.dbl-skills .skill-btn { padding-bottom: 18px !important; }
+/* 保护按钮 + 替补提示 */
+.protect-btn { background: #f3f8ff !important; }
+.protect-btn b { color: #1570ef; }
+.await-tip {
+  grid-column: 1 / -1; padding: 8px 12px; border-radius: 10px;
+  background: #fff5d6; border: 2px dashed #e0b84a; color: #7a5a00;
+  font-size: 12.5px; font-weight: 800;
+}
+.switch-btn.urge { border-color: var(--pink); background: #fff5fa; box-shadow: 0 0 0 2px #ffd6e8; }
+#dblConfirm:disabled { background: #e9eef3; color: #9aa9b8; box-shadow: none; }
+/* 一行放 5 个（保护 + 4 技能） */
+.dbl-skills { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
+@media (max-width: 1180px) { .dbl-skills { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; } }
+.dbl-skills .skill-btn b { font-size: 12.5px !important; }
+.swap-btn { background:#f7fbff !important; }
+.swap-btn b { color:#1570ef; }
+.dbl-row { grid-template-columns: 100px minmax(0,1fr) 86px !important; }
+
+/* 技能介绍气泡（对战页） */
+.skill-tip {
+  position: fixed;
+  z-index: 9999;
+  width: 280px;
+  padding: 10px 12px;
+  border: 2px solid #262722;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(38, 39, 34, .22);
+  font-size: 12px;
+  line-height: 1.7;
+  color: #3d4e61;
+  pointer-events: none;
+}
+.skill-tip b { display: block; font-size: 13.5px; color: #262722; margin-bottom: 2px; }
+.skill-tip .tip-meta { font-size: 10.5px; color: #7b8ea1; margin-bottom: 5px; }
+.skill-tip p { margin: 0; }
+/* 命中反馈：飘伤害数字 + 抖动 */
+.active-mon, .dbl-card { position: relative; }
+.dmg-float {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  transform: translateX(-50%);
+  font-size: 26px;
+  font-weight: 900;
+  color: #e5484d;
+  text-shadow: 0 2px 0 #fff, 0 0 10px rgba(255,255,255,.9);
+  pointer-events: none;
+  animation: dmgUp .9s ease-out forwards;
+  z-index: 5;
+}
+.dmg-float.crit { font-size: 34px; color: #d81b60; }
+.dmg-float.heal { color: #2f9e5f; }
+@keyframes dmgUp {
+  0% { opacity: 0; transform: translate(-50%, 10px) scale(.7); }
+  25% { opacity: 1; transform: translate(-50%, -6px) scale(1.15); }
+  100% { opacity: 0; transform: translate(-50%, -42px) scale(1); }
+}
+.hit-shake { animation: hitShake .32s ease-in-out; }
+@keyframes hitShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  45% { transform: translateX(5px); }
+  70% { transform: translateX(-3px); }
+}
+.skill-btn:active { transform: scale(.97); }
+/* 未解锁技能 */
+.sk.locked { opacity: .55; border-style: dashed; cursor: not-allowed; }
+.sk.locked b::after { content: " 🔒"; font-size: 11px; }
+/* 技能书掉落弹窗 */
+.book-drop {
+  position: fixed; inset: 0; z-index: 2147483600;
+  display: grid; place-items: center;
+  background: rgba(14,23,38,.55);
+  animation: bdFade .25s ease-out;
+}
+.bd-card {
+  width: min(88vw, 330px);
+  padding: 26px 22px 22px;
+  border: 3px solid var(--ink, #262722);
+  border-radius: 20px;
+  background: linear-gradient(160deg, #fffdf3, #ffeec2);
+  text-align: center;
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
+  animation: bdPop .45s cubic-bezier(.2,1.4,.4,1);
+}
+.bd-kicker { font-size: 11px; font-weight: 900; letter-spacing: .18em; color: #b3157a; }
+.bd-ico { font-size: 52px; line-height: 1; margin: 10px 0 6px; animation: bdSpin 1.2s ease-out; }
+.bd-name { font-size: 19px; font-weight: 900; color: #262722; }
+.bd-owner { font-size: 12px; color: #7b8ea1; margin-top: 4px; }
+.bd-tip { font-size: 11px; color: #9aa9b8; margin-top: 12px; }
+@keyframes bdFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes bdPop { 0% { transform: scale(.7) translateY(20px); opacity: 0; } 100% { transform: scale(1) translateY(0); opacity: 1; } }
+@keyframes bdSpin { 0% { transform: rotate(-25deg) scale(.6); } 60% { transform: rotate(10deg) scale(1.25); } 100% { transform: rotate(0) scale(1); } }
+/* 天气 / 场地 / 环境条 */
+.field-bar {
+  margin: 0 0 10px; padding: 8px 14px; border: 2px solid var(--ink);
+  border-radius: 12px; background: linear-gradient(90deg, #f2f9ff, #fff8e6);
+  font-size: 12.5px; color: #55677b;
+}
+.field-bar b { color: var(--ink); }
+.field-bar b.env { color: var(--pink); }
+
+/* ===== 对战界面：竞技场布局 ===== */
+#battleView {
+  display: flex !important;
+  flex-direction: column;
+  gap: 10px;
+  min-height: calc(100vh - 120px);
+}
+
+/* 顶部环境信息收成一条 */
+#battleView .weather-badge, #battleView .field-bar {
+  display: inline-flex !important;
+  align-self: center;
+  margin: 0 !important;
+}
+
+/* 竞技场：敌方左、我方右 */
+.battle-hud {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  grid-template-rows: auto 1fr !important;
+  gap: 10px 14px !important;
+  align-items: end !important;
+}
+.battle-hud > div:nth-child(1) { grid-column: 1 / -1; grid-row: 1; }
+.battle-hud > div:nth-child(2) { grid-column: 1; grid-row: 2; }   /* 敌方 */
+.battle-hud > div:nth-child(3) { grid-column: 2; grid-row: 2; }   /* 我方 */
+
+.battle-hud .active-mon {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+.battle-hud .active-mon .mon-card,
+.battle-hud .active-mon > div {
+  width: 100% !important;
+  padding: 10px !important;
+}
+.battle-hud .active-mon img {
+  max-height: 26vh !important;
+  width: auto !important;
+  max-width: 100% !important;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 血量条更醒目 */
+.battle-hud .hp-line, .battle-hud .hp-bar {
+  font-size: 12.5px !important;
+  font-weight: 800;
+}
+
+/* 战斗日志：收到左上角，可折叠 */
+#battleView .log {
+  order: -1;
+  max-height: 84px !important;
+  height: 84px !important;
+  overflow-y: auto;
+  font-size: 11.5px !important;
+  line-height: 1.6 !important;
+  border-radius: 12px !important;
+  padding: 8px 10px !important;
+  background: #f7f7f7 !important;
+  opacity: .96;
+}
+#battleView .log p { margin: 0 0 2px !important; }
+
+/* 技能栏：底部四格 */
+#battleView .actions {
+  position: sticky;
+  bottom: 0;
+  margin-top: auto;
+  padding: 8px 0 6px;
+  background: linear-gradient(to top, #fdf6e3 70%, rgba(253,246,227,0));
+}
+#battleView .skill-bar {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+}
+#battleView .skill-btn {
+  min-width: 0 !important;
+  padding: 10px 8px !important;
+  border-radius: 14px !important;
+  border: 2px solid var(--line) !important;
+  background: #fff !important;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  font-size: 12px !important; line-height: 1.25 !important;
+}
+#battleView .skill-btn b { font-size: 13px !important; font-weight: 900 !important; }
+#battleView .skill-btn small { font-size: 10.5px !important; opacity: .75; }
+
+/* 换人栏紧凑 */
+#battleView .switch-bar {
+  display: flex !important; gap: 6px !important; overflow-x: auto; padding-top: 6px;
+}
+#battleView .switch-bar button { flex: 0 0 auto; }
+
+@media (max-width: 640px) {
+  #battleView { gap: 8px; }
+  .battle-hud { gap: 8px 10px !important; }
+  .battle-hud .active-mon img { max-height: 20vh !important; }
+  #battleView .log { height: 64px !important; max-height: 64px !important; font-size: 11px !important; }
+  #battleView .skill-btn { padding: 8px 6px !important; }
+  #battleView .skill-btn b { font-size: 12px !important; }
+  #battleView .skill-btn small { font-size: 10px !important; }
+  #battleView .actions { padding-bottom: calc(8px + env(safe-area-inset-bottom)); }
+}
+
+
+/* ===== 战斗单屏布局（不滚动） ===== */
+body.in-battle { overflow: hidden !important; }
+body.in-battle .top { display: none !important; }
+body.in-battle .wrap { padding: 6px 10px 0 !important; max-width: 100% !important; }
+
+body.in-battle #battleView {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  height: calc(100dvh - 10px) !important;
+  min-height: 0 !important;
+  padding-bottom: calc(6px + env(safe-area-inset-bottom));
+  overflow: hidden;
+}
+
+/* 顶部一条：回合 + 环境 */
+body.in-battle #battleView .weather-badge,
+body.in-battle #battleView .field-bar {
+  flex: 0 0 auto;
+  align-self: center;
+  font-size: 11px !important;
+  padding: 2px 10px !important;
+  margin: 0 !important;
+}
+
+/* 日志：小窗，最多三行 */
+body.in-battle #battleView .log {
+  flex: 0 0 auto !important;
+  height: 62px !important;
+  max-height: 62px !important;
+  overflow-y: auto;
+  order: 0;
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+  padding: 6px 9px !important;
+  border-radius: 10px !important;
+  background: rgba(255,255,255,.72) !important;
+}
+
+/* 竞技场占满中间 */
+body.in-battle #battleView .battle-hud {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  gap: 6px 10px !important;
+  align-items: center !important;
+}
+body.in-battle .battle-hud > div:nth-child(1) { display: none; }  /* 队伍小条隐藏，省高度 */
+body.in-battle .battle-hud .active-mon {
+  height: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+body.in-battle .battle-hud .active-mon > div { padding: 8px !important; }
+body.in-battle .battle-hud .active-mon img {
+  max-height: min(30vh, 220px) !important;
+  max-width: 100% !important;
+  width: auto !important;
+}
+body.in-battle .battle-hud .active-mon .hp-line,
+body.in-battle .battle-hud .active-mon .hp-bar { font-size: 12px !important; }
+
+/* 底部：技能四格 + 换人条 */
+body.in-battle #battleView .actions {
+  flex: 0 0 auto !important;
+  position: static !important;
+  margin: 0 !important;
+  padding: 4px 0 0 !important;
+  background: transparent !important;
+}
+body.in-battle #battleView .skill-bar {
+  grid-template-columns: repeat(4, minmax(0,1fr)) !important;
+  gap: 6px !important;
+}
+body.in-battle #battleView .skill-btn {
+  padding: 8px 6px !important;
+  border-radius: 12px !important;
+}
+body.in-battle #battleView .skill-btn b { font-size: 12px !important; }
+body.in-battle #battleView .skill-btn small { font-size: 9.5px !important; }
+
+body.in-battle #battleView .switch-bar {
+  display: flex !important;
+  gap: 5px !important;
+  overflow-x: auto;
+  padding: 4px 0 0 !important;
+  max-height: 46px;
+}
+body.in-battle #battleView .switch-bar button { flex: 0 0 auto; padding: 4px 8px !important; font-size: 11px !important; }
+
+/* 认输按钮缩小并靠右 */
+body.in-battle #battleView .build-actions {
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  padding: 2px 0 0 !important;
+  display: flex;
+  justify-content: flex-end;
+}
+body.in-battle #battleView .build-actions .big-btn {
+  padding: 5px 12px !important;
+  font-size: 11.5px !important;
+  min-height: 0 !important;
+}
+body.in-battle #battleView .build-actions .big-btn img { width: 16px !important; height: 16px !important; }
+
+/* 战斗结果弹层允许滚动 */
+body.in-battle #battleView .result-card { max-height: 70dvh; overflow-y: auto; }
+
+
+/* ===== 回合徽章 + 队伍缩略 ===== */
+body.in-battle #roundBadge {
+  display: block !important;
+  flex: 0 0 auto;
+  align-self: center;
+  padding: 3px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2a2520, #4a4238);
+  color: #ffe9a8;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+
+/* 队伍缩略：一行小图标 */
+body.in-battle .battle-hud > div:nth-child(1) {
+  display: flex !important;
+  grid-column: 1 / -1;
+  justify-content: center;
+  gap: 6px;
+  min-height: 0;
+  margin-bottom: 2px;
+}
+body.in-battle .side-team {
+  display: flex !important;
+  gap: 4px !important;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+body.in-battle .mini-card {
+  width: 26px !important;
+  height: 26px !important;
+  min-width: 26px;
+  border-radius: 8px !important;
+  padding: 0 !important;
+  position: relative;
+  overflow: hidden;
+  background: #eee;
+  border: 1.5px solid transparent;
+}
+body.in-battle .mini-card.active { border-color: #f0a020; }
+body.in-battle .mini-card.dead { opacity: .35; filter: grayscale(1); }
+body.in-battle .mini-card img {
+  width: 100% !important; height: 100% !important;
+  object-fit: contain;
+  margin: 0 !important;
+}
+body.in-battle .mini-card .hpbar {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 3px; background: rgba(0,0,0,.18);
+}
+body.in-battle .mini-card .hpbar i { display: block; height: 100%; background: #43c463; }
+
+/* 顶部区域收紧 */
+body.in-battle #battleView > .round-badge + .weather-badge { margin-left: 6px !important; }
+
+
+/* ===== 对角竞技场 ===== */
+body.in-battle #battleView { position: relative; }
+
+/* 科技感背景（不影响文字） */
+body.in-battle #battleView::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(circle at 22% 28%, rgba(120,190,255,.28), transparent 42%),
+    radial-gradient(circle at 78% 72%, rgba(255,170,120,.26), transparent 42%),
+    linear-gradient(160deg, #0d1a2b 0%, #16324a 45%, #0b1725 100%);
+  border-radius: 18px;
+}
+body.in-battle #battleView::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+  border-radius: 18px;
+  mask-image: radial-gradient(circle at 50% 50%, #000 55%, transparent 90%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 55%, transparent 90%);
+}
+body.in-battle #battleView > * { position: relative; z-index: 1; }
+
+/* 顶部徽章改深色玻璃 */
+body.in-battle #roundBadge {
+  background: rgba(10, 24, 40, .78) !important;
+  border: 1px solid rgba(140,200,255,.45);
+  backdrop-filter: blur(6px);
+}
+body.in-battle #battleView .weather-badge,
+body.in-battle #battleView .field-bar {
+  background: rgba(10, 24, 40, .6) !important;
+  color: #cfe6ff !important;
+  border: 1px solid rgba(140,200,255,.3) !important;
+  border-radius: 999px;
+}
+
+/* 竞技场：敌左上 / 我右下 */
+body.in-battle .battle-hud {
+  position: relative !important;
+  display: block !important;
+  flex: 1 1 auto;
+  min-height: 58vh;
+}
+body.in-battle .battle-hud > div:nth-child(1) { /* 队伍缩略条 */
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  display: flex !important; gap: 10px; z-index: 3;
+}
+body.in-battle .battle-hud > div:nth-child(2) { /* 敌方：左上 */
+  position: absolute; left: 0%; top: 2%;
+  width: 54%; z-index: 2;
+}
+body.in-battle .battle-hud > div:nth-child(3) { /* 我方：右下 */
+  position: absolute; right: 0%; bottom: 0%;
+  width: 54%; z-index: 2;
+}
+
+body.in-battle .battle-hud .active-mon {
+  height: auto !important;
+  display: block !important;
+}
+body.in-battle .battle-hud .active-mon > div {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  display: flex; flex-direction: column; align-items: center;
+}
+body.in-battle .battle-hud .active-mon img {
+  max-height: 26vh !important;
+  max-width: 100% !important;
+  width: auto !important;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
+  animation: mon-idle 3.6s ease-in-out infinite;
+}
+body.in-battle .battle-hud > div:nth-child(3) .active-mon img { animation-delay: 1.1s; }
+
+@keyframes mon-idle {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.015); }
+}
+
+/* 信息卡：浮在灵宠上方 */
+body.in-battle .battle-hud .active-mon h4 {
+  color: #fff !important;
+  font-size: 14px !important;
+  margin: 0 0 2px !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,.6);
+}
+body.in-battle .battle-hud .active-mon .tags {
+  color: #bcd6f2 !important;
+  font-size: 10.5px !important;
+  text-align: center;
+}
+body.in-battle .battle-hud .active-mon .hp-wrap { width: 100%; margin-top: 4px; }
+body.in-battle .battle-hud .active-mon .hp-line {
+  color: #d8ecff !important;
+  font-size: 10.5px !important;
+}
+body.in-battle .battle-hud .active-mon .hp-bar {
+  height: 7px !important;
+  background: rgba(255,255,255,.18) !important;
+  border-radius: 999px;
+  overflow: hidden;
+}
+body.in-battle .battle-hud .active-mon .hp-bar i {
+  background: linear-gradient(90deg, #46d16b, #9be15d) !important;
+}
+body.in-battle .battle-hud .active-mon .hp-bar.low i {
+  background: linear-gradient(90deg, #ff6b5b, #ffb03a) !important;
+}
+
+/* 状态 / 增益：醒目胶囊，悬停展开全部 */
+body.in-battle .battle-hud .active-mon .st-line {
+  display: flex; flex-wrap: wrap; gap: 3px; justify-content: center;
+  max-height: 22px; overflow: hidden;
+  margin-top: 4px;
+  transition: max-height .2s;
+}
+body.in-battle .battle-hud .active-mon:hover .st-line { max-height: 160px; }
+body.in-battle .battle-hud .active-mon .chip {
+  font-size: 10px !important;
+  padding: 2px 7px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.14) !important;
+  color: #e8f3ff !important;
+  border: 1px solid rgba(255,255,255,.22) !important;
+}
+body.in-battle .battle-hud .active-mon .chip.bad {
+  background: rgba(255,90,90,.28) !important;
+  border-color: rgba(255,120,120,.6) !important;
+  color: #ffdede !important;
+}
+body.in-battle .battle-hud .active-mon .chip.good {
+  background: rgba(90,200,255,.24) !important;
+  border-color: rgba(120,210,255,.6) !important;
+  color: #dff2ff !important;
+}
+body.in-battle .battle-hud .active-mon .trait-line {
+  font-size: 10px; color: #ffd98a; text-align: center;
+  max-height: 0; overflow: hidden; transition: max-height .2s;
+}
+body.in-battle .battle-hud .active-mon:hover .trait-line { max-height: 40px; }
+
+/* 日志移到左下，半透明 */
+body.in-battle #battleView .log {
+  position: absolute !important;
+  left: 2%; bottom: 30%; width: 40%;
+  height: 74px !important; max-height: 74px !important;
+  background: rgba(8, 20, 34, .62) !important;
+  color: #cfe6ff !important;
+  border: 1px solid rgba(120,190,255,.25);
+  z-index: 3;
+}
+body.in-battle #battleView .log p { color: #cfe6ff !important; }
+body.in-battle #battleView .log .turn { color: #ffd98a !important; }
+
+/* 技能栏玻璃化 */
+body.in-battle #battleView .actions { position: relative; z-index: 4; }
+body.in-battle #battleView .skill-btn {
+  background: rgba(10, 26, 44, .82) !important;
+  border: 1px solid rgba(120,190,255,.4) !important;
+  color: #dff0ff !important;
+  backdrop-filter: blur(6px);
+}
+body.in-battle #battleView .skill-btn:hover {
+  border-color: #7fd0ff !important;
+  box-shadow: 0 0 0 2px rgba(120,200,255,.28);
+}
+body.in-battle #battleView .switch-bar button {
+  background: rgba(10, 26, 44, .7) !important;
+  color: #cfe6ff !important;
+  border: 1px solid rgba(120,190,255,.3) !important;
+}
+
+
+/* ===== 放大 + 属性面板 ===== */
+body.in-battle .battle-hud > div:nth-child(2),
+body.in-battle .battle-hud > div:nth-child(3) { width: 54% !important; }
+
+body.in-battle .battle-hud .active-mon img {
+  max-height: none !important;
+  height: 30vh !important;
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain;
+}
+@media (min-width: 641px) {
+  body.in-battle .battle-hud .active-mon img { height: 34vh !important; }
+}
+
+/* 状态胶囊配色 */
+body.in-battle .chip[data-status="中毒"] { background: rgba(150,80,220,.34) !important; border-color: rgba(180,120,255,.7) !important; }
+body.in-battle .chip[data-status="灼烧"] { background: rgba(255,110,40,.34) !important; border-color: rgba(255,150,90,.7) !important; }
+body.in-battle .chip[data-status="冰冻"] { background: rgba(90,190,255,.32) !important; border-color: rgba(150,220,255,.7) !important; }
+body.in-battle .chip[data-status="麻痹"] { background: rgba(250,210,60,.30) !important; border-color: rgba(255,230,120,.75) !important; color: #fff8d0 !important; }
+body.in-battle .chip[data-status="流血"] { background: rgba(220,50,70,.32) !important; border-color: rgba(255,110,130,.7) !important; }
+body.in-battle .chip[data-status="潮湿"] { background: rgba(70,150,230,.30) !important; border-color: rgba(130,190,255,.7) !important; }
+body.in-battle .chip[data-status="盲目"] { background: rgba(120,120,140,.34) !important; border-color: rgba(170,170,195,.7) !important; }
+body.in-battle .chip[data-status="诅咒"] { background: rgba(90,40,120,.42) !important; border-color: rgba(150,90,190,.75) !important; }
+body.in-battle .chip[data-status="嘲讽"] { background: rgba(230,90,150,.30) !important; border-color: rgba(255,140,190,.7) !important; }
+body.in-battle .chip[data-status="荆棘"] { background: rgba(60,150,90,.30) !important; border-color: rgba(110,200,140,.7) !important; }
+body.in-battle .chip[data-status="磁力"] { background: rgba(150,150,170,.30) !important; border-color: rgba(200,200,220,.7) !important; }
+
+/* 悬停属性面板 */
+body.in-battle .stat-pop {
+  position: absolute;
+  left: 50%; transform: translateX(-50%) translateY(6px);
+  bottom: calc(100% + 4px);
+  min-width: 132px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(6, 18, 30, .92);
+  border: 1px solid rgba(120,190,255,.45);
+  box-shadow: 0 10px 26px rgba(0,0,0,.45);
+  opacity: 0; pointer-events: none;
+  transition: opacity .16s, transform .16s;
+  z-index: 20;
+}
+body.in-battle .active-mon { position: relative; }
+body.in-battle .active-mon:hover .stat-pop {
+  opacity: 1; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+body.in-battle .sp-row {
+  display: flex; justify-content: space-between; gap: 10px;
+  font-size: 11px; line-height: 1.7; color: #bfd8f0;
+}
+body.in-battle .sp-row b { color: #fff; font-weight: 800; }
+body.in-battle .sp-row i { font-style: normal; font-size: 9.5px; padding-left: 4px; }
+body.in-battle .sp-row i.up { color: #7bffa8; }
+body.in-battle .sp-row i.down { color: #ff8f8f; }
+body.in-battle .sp-hp { border-top: 1px solid rgba(255,255,255,.12); margin-top: 3px; padding-top: 3px; }
+
+/* 释放技能时的属性闪光 */
+@keyframes skill-flash-fire { 0% { filter: drop-shadow(0 0 0 rgba(255,140,60,0)); } 40% { filter: drop-shadow(0 0 18px rgba(255,140,60,.95)); } 100% { filter: drop-shadow(0 0 0 rgba(255,140,60,0)); } }
+@keyframes skill-flash-water { 0% { filter: drop-shadow(0 0 0 rgba(80,170,255,0)); } 40% { filter: drop-shadow(0 0 18px rgba(80,170,255,.95)); } 100% { filter: drop-shadow(0 0 0 rgba(80,170,255,0)); } }
+@keyframes skill-flash-grass { 0% { filter: drop-shadow(0 0 0 rgba(110,210,90,0)); } 40% { filter: drop-shadow(0 0 18px rgba(110,210,90,.95)); } 100% { filter: drop-shadow(0 0 0 rgba(110,210,90,0)); } }
+@keyframes skill-flash-ice { 0% { filter: drop-shadow(0 0 0 rgba(130,220,255,0)); } 40% { filter: drop-shadow(0 0 18px rgba(130,220,255,.95)); } 100% { filter: drop-shadow(0 0 0 rgba(130,220,255,0)); } }
+@keyframes skill-flash-thunder { 0% { filter: drop-shadow(0 0 0 rgba(255,225,80,0)); } 40% { filter: drop-shadow(0 0 18px rgba(255,225,80,.95)); } 100% { filter: drop-shadow(0 0 0 rgba(255,225,80,0)); } }
+@keyframes skill-flash-dark { 0% { filter: drop-shadow(0 0 0 rgba(150,90,220,0)); } 40% { filter: drop-shadow(0 0 18px rgba(150,90,220,.95)); } 100% { filter: drop-shadow(0 0 0 rgba(150,90,220,0)); } }
+body.in-battle .active-mon.casting img { animation: skill-flash-fire .5s ease-out; }
+body.in-battle .active-mon.casting.e-water img { animation-name: skill-flash-water; }
+body.in-battle .active-mon.casting.e-grass img { animation-name: skill-flash-grass; }
+body.in-battle .active-mon.casting.e-ice img { animation-name: skill-flash-ice; }
+body.in-battle .active-mon.casting.e-thunder img { animation-name: skill-flash-thunder; }
+body.in-battle .active-mon.casting.e-dark img { animation-name: skill-flash-dark; }
+
+
+/* 特性提示 */
+body.in-battle .log .trait,
+body.in-battle .log p.trait { color: #ffd98a !important; }
+.trait-tag {
+  display: inline-block;
+  padding: 1px 6px;
+  margin-right: 4px;
+  border-radius: 5px;
+  background: rgba(255,200,80,.22);
+  border: 1px solid rgba(255,210,110,.55);
+  color: #ffdf9a;
+  font-size: 9.5px;
+  font-weight: 800;
+}
+
+/* 配置弹窗里的技能选择更醒目 */
+.skill-pick { display: grid !important; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 6px; max-height: 42vh; overflow-y: auto; }
+.skill-pick .sk-item { padding: 8px 10px !important; border-radius: 10px !important; font-size: 12px !important; }
+.skill-pick .sk-item.on { border-color: #e0a83a !important; background: #fff5dc !important; }
+
+
+/* ===== 技能特效层 ===== */
+.fx-layer {
+  position: absolute;
+  left: 50%; top: 46%;
+  width: 0; height: 0;
+  pointer-events: none;
+  z-index: 15;
+}
+.fx-layer[data-side="enemy"] { left: 30%; top: 32%; }
+.fx-layer[data-side="my"] { left: 70%; top: 66%; }
+
+/* 物理：三道斩击 */
+.fx-slash {
+  position: absolute;
+  width: 90px; height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, transparent, var(--c), transparent);
+  box-shadow: 0 0 14px var(--c);
+  transform-origin: center;
+  animation: fx-slash .38s ease-out forwards;
+  opacity: 0;
+}
+.fx-slash.s1 { transform: rotate(-28deg); animation-delay: 0s; }
+.fx-slash.s2 { transform: rotate(18deg) translateY(10px); animation-delay: .07s; }
+.fx-slash.s3 { transform: rotate(-6deg) translateY(-12px); animation-delay: .14s; }
+@keyframes fx-slash {
+  0% { opacity: 0; transform: translateX(-40px) scaleX(.3) rotate(-20deg); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(40px) scaleX(1.6) rotate(-20deg); }
+}
+
+/* 特殊：光环 + 粒子 */
+.fx-ring {
+  position: absolute;
+  left: -46px; top: -46px;
+  width: 92px; height: 92px;
+  border-radius: 50%;
+  border: 3px solid var(--c);
+  box-shadow: 0 0 22px var(--c), inset 0 0 18px var(--c);
+  animation: fx-ring .55s ease-out forwards;
+  opacity: 0;
+}
+.fx-ring.util { border-width: 2px; animation-duration: .7s; }
+@keyframes fx-ring {
+  0% { opacity: .9; transform: scale(.25); }
+  70% { opacity: .5; transform: scale(1.35); }
+  100% { opacity: 0; transform: scale(1.9); }
+}
+.fx-orb {
+  position: absolute;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 12px var(--c);
+  animation: fx-orb var(--t) ease-out forwards;
+  opacity: 0;
+}
+@keyframes fx-orb {
+  0% { opacity: 1; transform: rotate(var(--a)) translateX(8px) scale(.6); }
+  100% { opacity: 0; transform: rotate(var(--a)) translateX(var(--d)) scale(1.2); }
+}
+
+/* 变化技：光柱 */
+.fx-pillar {
+  position: absolute;
+  left: -18px; top: -170px;
+  width: 36px; height: 170px;
+  background: linear-gradient(to top, transparent, var(--c), transparent);
+  filter: blur(2px);
+  animation: fx-pillar .7s ease-out forwards;
+  opacity: 0;
+}
+@keyframes fx-pillar {
+  0% { opacity: 0; transform: scaleY(.2); }
+  40% { opacity: .9; transform: scaleY(1); }
+  100% { opacity: 0; transform: scaleY(1.1) translateY(-16px); }
+}
+
+
+/* ===== 灵宠卡去白底 + 技能卡三行 ===== */
+body.in-battle .active-mon,
+body.in-battle .active-mon > div,
+body.in-battle .active-mon > div > * {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+body.in-battle .active-mon > div {
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+/* 特性悬停说明 */
+body.in-battle .trait-tip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 6px);
+  transform: translateX(-50%) translateY(4px);
+  width: 190px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(6,18,30,.94);
+  border: 1px solid rgba(255,210,110,.5);
+  color: #ffe9b8;
+  font-size: 11px;
+  line-height: 1.6;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .16s, transform .16s;
+  z-index: 30;
+}
+body.in-battle .trait-line { cursor: help; }
+body.in-battle .trait-line:hover + .trait-tip,
+body.in-battle .trait-tip:hover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 技能卡：三行布局 */
+body.in-battle .skill-btn {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 3px !important;
+  padding: 7px 8px !important;
+}
+body.in-battle .sk-row1 {
+  display: flex; align-items: center; gap: 5px;
+}
+body.in-battle .sk-elem {
+  width: 22px !important; height: 22px !important;
+  object-fit: contain;
+  flex: 0 0 22px;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.5));
+}
+body.in-battle .sk-row1 b {
+  font-size: 12px !important; font-weight: 900;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+body.in-battle .sk-row2 {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 10px !important; color: #9fc4e8;
+}
+body.in-battle .sk-cat {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: rgba(120,190,255,.18);
+  border: 1px solid rgba(120,190,255,.35);
+  color: #cfe6ff;
+}
+body.in-battle .sk-pp { font-variant-numeric: tabular-nums; }
+body.in-battle .sk-row3 {
+  display: flex; justify-content: space-between;
+  font-size: 9.5px !important; color: #8fb2d0;
+}
+
+
+/* ===== 队伍竖排 + 伤害飘字 ===== */
+/* 敌方队伍：屏幕左侧竖排 */
+body.in-battle #enemyRow {
+  position: fixed !important;
+  left: 6px; top: 50%; transform: translateY(-50%);
+  display: flex !important; flex-direction: column !important; gap: 6px;
+  z-index: 40;
+}
+/* 我方队伍：屏幕右侧竖排 */
+body.in-battle #myRow {
+  position: fixed !important;
+  right: 6px; top: 50%; transform: translateY(-50%);
+  display: flex !important; flex-direction: column !important; gap: 6px;
+  margin: 0 !important;
+  z-index: 40;
+}
+body.in-battle #enemyRow .mini-card,
+body.in-battle #myRow .mini-card {
+  width: 44px !important; height: 44px !important;
+  border-radius: 10px !important;
+  border: 2px solid rgba(255,255,255,.25) !important;
+  background: rgba(10,26,44,.75) !important;
+}
+body.in-battle #enemyRow .mini-card.active,
+body.in-battle #myRow .mini-card.active { border-color: #ffca46 !important; }
+body.in-battle #enemyRow .mini-card.dead,
+body.in-battle #myRow .mini-card.dead { opacity: .3; filter: grayscale(1); }
+body.in-battle #enemyRow .mini-card .hpbar,
+body.in-battle #myRow .mini-card .hpbar { height: 4px !important; }
+
+/* 顶部队伍条不再参与布局 */
+body.in-battle .battle-hud > div:nth-child(1) { display: none !important; }
+
+/* 血条分段配色 */
+body.in-battle .hp-bar i { background: #43c463 !important; }
+body.in-battle .hp-bar.mid i { background: #f0c020 !important; }
+body.in-battle .hp-bar.lo i { background: #e8453c !important; }
+
+/* 伤害 / 暴击 / 闪避飘字 */
+.dmg-float {
+  position: absolute;
+  font-weight: 900;
+  font-size: 26px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,.8), 0 0 14px rgba(255,90,90,.7);
+  pointer-events: none;
+  z-index: 50;
+  animation: dmg-rise 1s ease-out forwards;
+}
+.dmg-float[data-side="enemy"] { left: 30%; top: 34%; }
+.dmg-float[data-side="my"] { left: 70%; top: 62%; }
+.dmg-float.crit { font-size: 34px; color: #ffd23d; }
+.dmg-float.miss { font-size: 20px; color: #9fd8ff; }
+@keyframes dmg-rise {
+  0% { opacity: 0; transform: translate(-50%, 10px) scale(.7); }
+  25% { opacity: 1; transform: translate(-50%, -6px) scale(1.15); }
+  60% { opacity: 1; transform: translate(-50%, -22px) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -44px) scale(.95); }
+}
+
+/* 技能卡两行 + 字号加大 */
+body.in-battle .skill-btn { padding: 8px 9px !important; gap: 4px !important; }
+body.in-battle .sk-row1 b { font-size: 13.5px !important; }
+body.in-battle .sk-elem { width: 24px !important; height: 24px !important; flex: 0 0 24px; }
+body.in-battle .sk-row2 { font-size: 11px !important; }
+body.in-battle .sk-mid { color: #b7d6f2; font-size: 10.5px; }
+body.in-battle .sk-cat { font-size: 10.5px; }
