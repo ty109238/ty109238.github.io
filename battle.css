@@ -669,19 +669,19 @@ body.in-battle .battle-hud {
   position: relative !important;
   display: block !important;
   flex: 1 1 auto;
-  min-height: 0;
+  min-height: 58vh;
 }
 body.in-battle .battle-hud > div:nth-child(1) { /* 队伍缩略条 */
   position: absolute; top: 0; left: 50%; transform: translateX(-50%);
   display: flex !important; gap: 10px; z-index: 3;
 }
 body.in-battle .battle-hud > div:nth-child(2) { /* 敌方：左上 */
-  position: absolute; left: 2%; top: 8%;
-  width: 46%; z-index: 2;
+  position: absolute; left: 0%; top: 2%;
+  width: 54%; z-index: 2;
 }
 body.in-battle .battle-hud > div:nth-child(3) { /* 我方：右下 */
-  position: absolute; right: 2%; bottom: 6%;
-  width: 46%; z-index: 2;
+  position: absolute; right: 0%; bottom: 0%;
+  width: 54%; z-index: 2;
 }
 
 body.in-battle .battle-hud .active-mon {
