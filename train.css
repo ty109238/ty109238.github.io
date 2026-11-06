@@ -1457,3 +1457,31 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   .skill-btn { font-size: 12px !important; padding: 8px !important; }
   .skill-bar { gap: 6px !important; }
 }
+
+
+/* ===== 移动端排版 v3（蛋图鉴等） ===== */
+@media (max-width: 640px) {
+  .fam { padding: 10px !important; }
+  .fam h2, .fam h3 { font-size: 14px !important; }
+  .fam .eggs {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .fam .eggs .egg {
+    width: auto !important; min-width: 0 !important;
+    height: auto !important;
+    padding: 6px !important;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .fam .eggs .egg img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: contain !important;
+    max-height: 120px !important;
+  }
+  .fam .eggs .egg span, .fam .eggs .egg small { font-size: 10.5px !important; line-height: 1.4 !important; }
+  .fam .eggs .egg strong { font-size: 12px !important; }
+}
