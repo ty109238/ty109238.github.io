@@ -801,3 +801,76 @@ body.in-battle #battleView .switch-bar button {
   color: #cfe6ff !important;
   border: 1px solid rgba(120,190,255,.3) !important;
 }
+
+
+/* ===== 放大 + 属性面板 ===== */
+body.in-battle .battle-hud > div:nth-child(2),
+body.in-battle .battle-hud > div:nth-child(3) { width: 54% !important; }
+
+body.in-battle .battle-hud .active-mon img {
+  max-height: none !important;
+  height: 30vh !important;
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain;
+}
+@media (min-width: 641px) {
+  body.in-battle .battle-hud .active-mon img { height: 34vh !important; }
+}
+
+/* 状态胶囊配色 */
+body.in-battle .chip[data-status="中毒"] { background: rgba(150,80,220,.34) !important; border-color: rgba(180,120,255,.7) !important; }
+body.in-battle .chip[data-status="灼烧"] { background: rgba(255,110,40,.34) !important; border-color: rgba(255,150,90,.7) !important; }
+body.in-battle .chip[data-status="冰冻"] { background: rgba(90,190,255,.32) !important; border-color: rgba(150,220,255,.7) !important; }
+body.in-battle .chip[data-status="麻痹"] { background: rgba(250,210,60,.30) !important; border-color: rgba(255,230,120,.75) !important; color: #fff8d0 !important; }
+body.in-battle .chip[data-status="流血"] { background: rgba(220,50,70,.32) !important; border-color: rgba(255,110,130,.7) !important; }
+body.in-battle .chip[data-status="潮湿"] { background: rgba(70,150,230,.30) !important; border-color: rgba(130,190,255,.7) !important; }
+body.in-battle .chip[data-status="盲目"] { background: rgba(120,120,140,.34) !important; border-color: rgba(170,170,195,.7) !important; }
+body.in-battle .chip[data-status="诅咒"] { background: rgba(90,40,120,.42) !important; border-color: rgba(150,90,190,.75) !important; }
+body.in-battle .chip[data-status="嘲讽"] { background: rgba(230,90,150,.30) !important; border-color: rgba(255,140,190,.7) !important; }
+body.in-battle .chip[data-status="荆棘"] { background: rgba(60,150,90,.30) !important; border-color: rgba(110,200,140,.7) !important; }
+body.in-battle .chip[data-status="磁力"] { background: rgba(150,150,170,.30) !important; border-color: rgba(200,200,220,.7) !important; }
+
+/* 悬停属性面板 */
+body.in-battle .stat-pop {
+  position: absolute;
+  left: 50%; transform: translateX(-50%) translateY(6px);
+  bottom: calc(100% + 4px);
+  min-width: 132px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(6, 18, 30, .92);
+  border: 1px solid rgba(120,190,255,.45);
+  box-shadow: 0 10px 26px rgba(0,0,0,.45);
+  opacity: 0; pointer-events: none;
+  transition: opacity .16s, transform .16s;
+  z-index: 20;
+}
+body.in-battle .active-mon { position: relative; }
+body.in-battle .active-mon:hover .stat-pop {
+  opacity: 1; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+body.in-battle .sp-row {
+  display: flex; justify-content: space-between; gap: 10px;
+  font-size: 11px; line-height: 1.7; color: #bfd8f0;
+}
+body.in-battle .sp-row b { color: #fff; font-weight: 800; }
+body.in-battle .sp-row i { font-style: normal; font-size: 9.5px; padding-left: 4px; }
+body.in-battle .sp-row i.up { color: #7bffa8; }
+body.in-battle .sp-row i.down { color: #ff8f8f; }
+body.in-battle .sp-hp { border-top: 1px solid rgba(255,255,255,.12); margin-top: 3px; padding-top: 3px; }
+
+/* 释放技能时的属性闪光 */
+@keyframes skill-flash-fire { 0% { filter: drop-shadow(0 0 0 rgba(255,140,60,0)); } 40% { filter: drop-shadow(0 0 18px rgba(255,140,60,.95)); } 100% { filter: drop-shadow(0 0 0 rgba(255,140,60,0)); } }
+@keyframes skill-flash-water { 0% { filter: drop-shadow(0 0 0 rgba(80,170,255,0)); } 40% { filter: drop-shadow(0 0 18px rgba(80,170,255,.95)); } 100% { filter: drop-shadow(0 0 0 rgba(80,170,255,0)); } }
+@keyframes skill-flash-grass { 0% { filter: drop-shadow(0 0 0 rgba(110,210,90,0)); } 40% { filter: drop-shadow(0 0 18px rgba(110,210,90,.95)); } 100% { filter: drop-shadow(0 0 0 rgba(110,210,90,0)); } }
+@keyframes skill-flash-ice { 0% { filter: drop-shadow(0 0 0 rgba(130,220,255,0)); } 40% { filter: drop-shadow(0 0 18px rgba(130,220,255,.95)); } 100% { filter: drop-shadow(0 0 0 rgba(130,220,255,0)); } }
+@keyframes skill-flash-thunder { 0% { filter: drop-shadow(0 0 0 rgba(255,225,80,0)); } 40% { filter: drop-shadow(0 0 18px rgba(255,225,80,.95)); } 100% { filter: drop-shadow(0 0 0 rgba(255,225,80,0)); } }
+@keyframes skill-flash-dark { 0% { filter: drop-shadow(0 0 0 rgba(150,90,220,0)); } 40% { filter: drop-shadow(0 0 18px rgba(150,90,220,.95)); } 100% { filter: drop-shadow(0 0 0 rgba(150,90,220,0)); } }
+body.in-battle .active-mon.casting img { animation: skill-flash-fire .5s ease-out; }
+body.in-battle .active-mon.casting.e-water img { animation-name: skill-flash-water; }
+body.in-battle .active-mon.casting.e-grass img { animation-name: skill-flash-grass; }
+body.in-battle .active-mon.casting.e-ice img { animation-name: skill-flash-ice; }
+body.in-battle .active-mon.casting.e-thunder img { animation-name: skill-flash-thunder; }
+body.in-battle .active-mon.casting.e-dark img { animation-name: skill-flash-dark; }
