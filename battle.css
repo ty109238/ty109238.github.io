@@ -564,3 +564,61 @@ body.in-battle #battleView .build-actions .big-btn img { width: 16px !important;
 
 /* 战斗结果弹层允许滚动 */
 body.in-battle #battleView .result-card { max-height: 70dvh; overflow-y: auto; }
+
+
+/* ===== 回合徽章 + 队伍缩略 ===== */
+body.in-battle #roundBadge {
+  display: block !important;
+  flex: 0 0 auto;
+  align-self: center;
+  padding: 3px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2a2520, #4a4238);
+  color: #ffe9a8;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+
+/* 队伍缩略：一行小图标 */
+body.in-battle .battle-hud > div:nth-child(1) {
+  display: flex !important;
+  grid-column: 1 / -1;
+  justify-content: center;
+  gap: 6px;
+  min-height: 0;
+  margin-bottom: 2px;
+}
+body.in-battle .side-team {
+  display: flex !important;
+  gap: 4px !important;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+body.in-battle .mini-card {
+  width: 26px !important;
+  height: 26px !important;
+  min-width: 26px;
+  border-radius: 8px !important;
+  padding: 0 !important;
+  position: relative;
+  overflow: hidden;
+  background: #eee;
+  border: 1.5px solid transparent;
+}
+body.in-battle .mini-card.active { border-color: #f0a020; }
+body.in-battle .mini-card.dead { opacity: .35; filter: grayscale(1); }
+body.in-battle .mini-card img {
+  width: 100% !important; height: 100% !important;
+  object-fit: contain;
+  margin: 0 !important;
+}
+body.in-battle .mini-card .hpbar {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 3px; background: rgba(0,0,0,.18);
+}
+body.in-battle .mini-card .hpbar i { display: block; height: 100%; background: #43c463; }
+
+/* 顶部区域收紧 */
+body.in-battle #battleView > .round-badge + .weather-badge { margin-left: 6px !important; }
