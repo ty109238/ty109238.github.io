@@ -799,7 +799,8 @@
       "rainbowEggKey": "rainbow-egg/19.webp",
       "nightmareEggKey": "nightmare-egg/19.webp",
       "shinyEggKey": "shiny-egg/19.webp",
-      "archetype": "自爆"
+      "archetype": "自爆",
+      "element2": "草"
     },
     {
       "id": 60011,
@@ -841,7 +842,8 @@
       "rainbowEggKey": "rainbow-egg/19.webp",
       "nightmareEggKey": "nightmare-egg/19.webp",
       "shinyEggKey": "shiny-egg/19.webp",
-      "archetype": "防御"
+      "archetype": "防御",
+      "element2": "草"
     },
     {
       "id": 60012,
@@ -883,7 +885,8 @@
       "rainbowEggKey": "rainbow-egg/19.webp",
       "nightmareEggKey": "nightmare-egg/19.webp",
       "shinyEggKey": "shiny-egg/19.webp",
-      "archetype": "防御"
+      "archetype": "防御",
+      "element2": "草"
     },
     {
       "id": 60013,
@@ -2101,7 +2104,8 @@
       "rainbowEggKey": "rainbow-egg/50.webp",
       "nightmareEggKey": "nightmare-egg/50.webp",
       "shinyEggKey": "shiny-egg/50.webp",
-      "archetype": "速度"
+      "archetype": "速度",
+      "element2": "草"
     },
     {
       "id": 60042,
