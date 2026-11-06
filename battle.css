@@ -622,3 +622,182 @@ body.in-battle .mini-card .hpbar i { display: block; height: 100%; background: #
 
 /* 顶部区域收紧 */
 body.in-battle #battleView > .round-badge + .weather-badge { margin-left: 6px !important; }
+
+
+/* ===== 对角竞技场 ===== */
+body.in-battle #battleView { position: relative; }
+
+/* 科技感背景（不影响文字） */
+body.in-battle #battleView::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(circle at 22% 28%, rgba(120,190,255,.28), transparent 42%),
+    radial-gradient(circle at 78% 72%, rgba(255,170,120,.26), transparent 42%),
+    linear-gradient(160deg, #0d1a2b 0%, #16324a 45%, #0b1725 100%);
+  border-radius: 18px;
+}
+body.in-battle #battleView::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+  border-radius: 18px;
+  mask-image: radial-gradient(circle at 50% 50%, #000 55%, transparent 90%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 55%, transparent 90%);
+}
+body.in-battle #battleView > * { position: relative; z-index: 1; }
+
+/* 顶部徽章改深色玻璃 */
+body.in-battle #roundBadge {
+  background: rgba(10, 24, 40, .78) !important;
+  border: 1px solid rgba(140,200,255,.45);
+  backdrop-filter: blur(6px);
+}
+body.in-battle #battleView .weather-badge,
+body.in-battle #battleView .field-bar {
+  background: rgba(10, 24, 40, .6) !important;
+  color: #cfe6ff !important;
+  border: 1px solid rgba(140,200,255,.3) !important;
+  border-radius: 999px;
+}
+
+/* 竞技场：敌左上 / 我右下 */
+body.in-battle .battle-hud {
+  position: relative !important;
+  display: block !important;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+body.in-battle .battle-hud > div:nth-child(1) { /* 队伍缩略条 */
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  display: flex !important; gap: 10px; z-index: 3;
+}
+body.in-battle .battle-hud > div:nth-child(2) { /* 敌方：左上 */
+  position: absolute; left: 2%; top: 8%;
+  width: 46%; z-index: 2;
+}
+body.in-battle .battle-hud > div:nth-child(3) { /* 我方：右下 */
+  position: absolute; right: 2%; bottom: 6%;
+  width: 46%; z-index: 2;
+}
+
+body.in-battle .battle-hud .active-mon {
+  height: auto !important;
+  display: block !important;
+}
+body.in-battle .battle-hud .active-mon > div {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  display: flex; flex-direction: column; align-items: center;
+}
+body.in-battle .battle-hud .active-mon img {
+  max-height: 26vh !important;
+  max-width: 100% !important;
+  width: auto !important;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
+  animation: mon-idle 3.6s ease-in-out infinite;
+}
+body.in-battle .battle-hud > div:nth-child(3) .active-mon img { animation-delay: 1.1s; }
+
+@keyframes mon-idle {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.015); }
+}
+
+/* 信息卡：浮在灵宠上方 */
+body.in-battle .battle-hud .active-mon h4 {
+  color: #fff !important;
+  font-size: 14px !important;
+  margin: 0 0 2px !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,.6);
+}
+body.in-battle .battle-hud .active-mon .tags {
+  color: #bcd6f2 !important;
+  font-size: 10.5px !important;
+  text-align: center;
+}
+body.in-battle .battle-hud .active-mon .hp-wrap { width: 100%; margin-top: 4px; }
+body.in-battle .battle-hud .active-mon .hp-line {
+  color: #d8ecff !important;
+  font-size: 10.5px !important;
+}
+body.in-battle .battle-hud .active-mon .hp-bar {
+  height: 7px !important;
+  background: rgba(255,255,255,.18) !important;
+  border-radius: 999px;
+  overflow: hidden;
+}
+body.in-battle .battle-hud .active-mon .hp-bar i {
+  background: linear-gradient(90deg, #46d16b, #9be15d) !important;
+}
+body.in-battle .battle-hud .active-mon .hp-bar.low i {
+  background: linear-gradient(90deg, #ff6b5b, #ffb03a) !important;
+}
+
+/* 状态 / 增益：醒目胶囊，悬停展开全部 */
+body.in-battle .battle-hud .active-mon .st-line {
+  display: flex; flex-wrap: wrap; gap: 3px; justify-content: center;
+  max-height: 22px; overflow: hidden;
+  margin-top: 4px;
+  transition: max-height .2s;
+}
+body.in-battle .battle-hud .active-mon:hover .st-line { max-height: 160px; }
+body.in-battle .battle-hud .active-mon .chip {
+  font-size: 10px !important;
+  padding: 2px 7px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.14) !important;
+  color: #e8f3ff !important;
+  border: 1px solid rgba(255,255,255,.22) !important;
+}
+body.in-battle .battle-hud .active-mon .chip.bad {
+  background: rgba(255,90,90,.28) !important;
+  border-color: rgba(255,120,120,.6) !important;
+  color: #ffdede !important;
+}
+body.in-battle .battle-hud .active-mon .chip.good {
+  background: rgba(90,200,255,.24) !important;
+  border-color: rgba(120,210,255,.6) !important;
+  color: #dff2ff !important;
+}
+body.in-battle .battle-hud .active-mon .trait-line {
+  font-size: 10px; color: #ffd98a; text-align: center;
+  max-height: 0; overflow: hidden; transition: max-height .2s;
+}
+body.in-battle .battle-hud .active-mon:hover .trait-line { max-height: 40px; }
+
+/* 日志移到左下，半透明 */
+body.in-battle #battleView .log {
+  position: absolute !important;
+  left: 2%; bottom: 30%; width: 40%;
+  height: 74px !important; max-height: 74px !important;
+  background: rgba(8, 20, 34, .62) !important;
+  color: #cfe6ff !important;
+  border: 1px solid rgba(120,190,255,.25);
+  z-index: 3;
+}
+body.in-battle #battleView .log p { color: #cfe6ff !important; }
+body.in-battle #battleView .log .turn { color: #ffd98a !important; }
+
+/* 技能栏玻璃化 */
+body.in-battle #battleView .actions { position: relative; z-index: 4; }
+body.in-battle #battleView .skill-btn {
+  background: rgba(10, 26, 44, .82) !important;
+  border: 1px solid rgba(120,190,255,.4) !important;
+  color: #dff0ff !important;
+  backdrop-filter: blur(6px);
+}
+body.in-battle #battleView .skill-btn:hover {
+  border-color: #7fd0ff !important;
+  box-shadow: 0 0 0 2px rgba(120,200,255,.28);
+}
+body.in-battle #battleView .switch-bar button {
+  background: rgba(10, 26, 44, .7) !important;
+  color: #cfe6ff !important;
+  border: 1px solid rgba(120,190,255,.3) !important;
+}
