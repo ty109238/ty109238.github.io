@@ -1700,3 +1700,14 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   }
   .ts-menu .ts-elem.on { background: #ffe9a8; border-color: #e0b64a; color: #6b4b00; }
 }
+
+
+/* 形态筛选（菜单内） */
+@media (max-width: 640px) {
+  .ts-menu .ts-forms { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 4px 6px; border-top: 1px solid #eee; margin-top: 4px; }
+  .ts-menu .ts-form {
+    padding: 5px 10px; border: 1px solid #e5e5e5; border-radius: 999px;
+    background: #fff; font: inherit; font-size: 12px; font-weight: 700; color: #555; cursor: pointer;
+  }
+  .ts-menu .ts-form.on { background: #ffe9a8; border-color: #e0b64a; color: #6b4b00; }
+}
