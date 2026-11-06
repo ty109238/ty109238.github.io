@@ -1643,3 +1643,60 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   .mobile-nav .mnav-btn { flex: 1 1 0; gap: 3px; }
   .mobile-nav .mnav-btn span { font-size: 10.5px; }
 }
+
+
+/* ===== 属性胶囊 + 溢出菜单 ===== */
+@media (max-width: 640px) {
+  .creature-card .chip-row { display: flex; gap: 6px; align-items: center; margin-top: 3px; }
+  .creature-card .elem-chip, .creature-card .stage-chip {
+    font-size: 11.5px; font-weight: 800; line-height: 1;
+    padding: 5px 10px; border-radius: 7px; color: #fff; white-space: nowrap;
+  }
+  .creature-card .stage-chip { background: #efefef; color: #6b6b6b; }
+
+  .elem-chip[data-elem="草"] { background: linear-gradient(135deg,#7ec850,#4e9d2e); }
+  .elem-chip[data-elem="水"] { background: linear-gradient(135deg,#5aa9e6,#2f7bc4); }
+  .elem-chip[data-elem="火"] { background: linear-gradient(135deg,#ff9a4d,#ef5b1f); }
+  .elem-chip[data-elem="冰"] { background: linear-gradient(135deg,#8fe0ef,#4fb6cc); }
+  .elem-chip[data-elem="土"] { background: linear-gradient(135deg,#d3ab7c,#a97b45); }
+  .elem-chip[data-elem="钢"] { background: linear-gradient(135deg,#a9b6c0,#7c8b96); }
+  .elem-chip[data-elem="风"] { background: linear-gradient(135deg,#8fe3cf,#4fbfa4); }
+  .elem-chip[data-elem="雷"] { background: linear-gradient(135deg,#ffe06a,#e8b21d); color: #4a3600; }
+  .elem-chip[data-elem="光"] { background: linear-gradient(135deg,#ffe9a8,#f0c04a); color: #5a4300; }
+  .elem-chip[data-elem="暗"] { background: linear-gradient(135deg,#9a7bc4,#5f3f95); }
+
+  /* 网格视图 */
+  .creature-grid.grid-view {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    gap: 9px !important;
+  }
+  .creature-grid.grid-view .creature-card {
+    flex-direction: column !important; align-items: flex-start !important;
+    padding: 8px !important;
+  }
+  .creature-grid.grid-view .creature-art { width: 100% !important; flex: 0 0 auto !important; height: 96px !important; }
+  .creature-grid.grid-view .creature-art img { max-height: 96px !important; }
+  .creature-grid.grid-view .creature-card h3 { font-size: 13px !important; }
+  .creature-grid.grid-view .elem-chip, .creature-grid.grid-view .stage-chip { font-size: 10px; padding: 4px 7px; }
+
+  /* 溢出菜单 */
+  .ts-menu {
+    position: fixed; z-index: 9500;
+    background: #fff; border-radius: 14px; padding: 8px;
+    box-shadow: 0 12px 32px rgba(0,0,0,.18);
+    display: flex; flex-direction: column; gap: 4px;
+    min-width: 190px;
+  }
+  .ts-menu > button {
+    text-align: left; padding: 10px 12px; border: 0; border-radius: 9px;
+    background: transparent; font: inherit; font-size: 13.5px; font-weight: 700; color: #2a2520; cursor: pointer;
+  }
+  .ts-menu > button:active { background: #f2f2f2; }
+  .ts-menu .ts-elems { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 4px 4px; border-top: 1px solid #eee; margin-top: 4px; }
+  .ts-menu .ts-elem {
+    padding: 5px 10px; border: 1px solid #e5e5e5; border-radius: 999px;
+    background: #fff; font: inherit; font-size: 12px; font-weight: 700; color: #555; cursor: pointer;
+  }
+  .ts-menu .ts-elem.on { background: #ffe9a8; border-color: #e0b64a; color: #6b4b00; }
+}
