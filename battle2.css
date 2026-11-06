@@ -1121,3 +1121,27 @@ body.in-battle .sk-elem { width: 24px !important; height: 24px !important; flex:
 body.in-battle .sk-row2 { font-size: 11px !important; }
 body.in-battle .sk-mid { color: #b7d6f2; font-size: 10.5px; }
 body.in-battle .sk-cat { font-size: 10.5px; }
+
+
+/* 双打：替补提示醒目化 */
+#dblSwitch.urgent {
+  border: 2px solid #ffca46 !important;
+  border-radius: 12px;
+  padding: 8px !important;
+  background: rgba(255,202,70,.12) !important;
+  animation: sub-pulse 1.2s ease-in-out infinite;
+}
+#dblSwitch .await-tip {
+  color: #ffdf9a;
+  font-weight: 800;
+  font-size: 12.5px;
+  margin-bottom: 6px;
+}
+#dblSwitch .switch-btn.urge {
+  border-color: #ffca46 !important;
+  box-shadow: 0 0 0 2px rgba(255,202,70,.35);
+}
+@keyframes sub-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,202,70,.35); }
+  50% { box-shadow: 0 0 0 5px rgba(255,202,70,0); }
+}
