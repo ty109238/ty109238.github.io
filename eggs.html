@@ -18,6 +18,7 @@
       </div>
     </header>
     <main class="wrap">
+<div class="egg-form-bar" id="eggFormBar"></div>
       <section class="hero">
         <h2>每一只，都先是一枚蛋</h2>
         <p>观察局按家族整理了所有已知的蛋形态。绝大多数的壳纹都能对应到家族的属性——拿不准的时候，看颜色。</p>
@@ -86,5 +87,47 @@
         }
       })();
     </script>
-  </body>
+  <script>
+(function () {
+  var mode = localStorage.getItem('dex:catalogForm') || 'normal';
+  var kinds = [['normal','普通'],['shiny','异色'],['rainbow','彩虹'],['nightmare','魇化']];
+  var bar = document.getElementById('eggFormBar');
+  kinds.forEach(function (p) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = p[1];
+    b.setAttribute('data-k', p[0]);
+    if (p[0] === mode) b.className = 'on';
+    b.addEventListener('click', function () {
+      mode = p[0];
+      localStorage.setItem('dex:catalogForm', mode);
+      [].forEach.call(bar.children, function (o) { o.className = o === b ? 'on' : ''; });
+      apply();
+    });
+    bar.appendChild(b);
+  });
+
+  function apply() {
+    var imgs = document.querySelectorAll('img[src*="/media/eggs/"]');
+    for (var i = 0; i < imgs.length; i++) {
+      var img = imgs[i];
+      var src = img.getAttribute('src');
+      if (!img.getAttribute('data-n')) img.setAttribute('data-n', src);
+      var m = /(\d+)\.webp/.exec(src);
+      if (!m) continue;
+      var dex = ('0' + parseInt(m[1], 10)).slice(-2);
+      var want = mode === 'normal' ? img.getAttribute('data-n') : '/media/eggs-form/' + mode + '/' + dex + '.webp';
+      if (img.getAttribute('src') !== want) img.setAttribute('src', want);
+    }
+  }
+  var tries = 0;
+  var t = setInterval(function () {
+    if (document.querySelectorAll('img[src*="/media/eggs/"]').length || ++tries > 40) {
+      clearInterval(t);
+      apply();
+    }
+  }, 250);
+})();
+</script>
+</body>
 </html>

@@ -103,3 +103,31 @@ body {
 }
 .egg-link em { font-style: normal; font-size: 10px; color: #9aa9b8; }
 .egg-link:hover { border-color: var(--pink); color: var(--pink); }
+
+/* mobile v1 */
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+  .top { padding: 10px 12px !important; }
+  .top h1 { font-size: 16px !important; }
+  .top p { font-size: 11px !important; margin: 2px 0 0 !important; }
+  .wrap { padding: 0 10px 80px !important; }
+  .hero { padding: 12px !important; }
+  .hero h2, .hero p { font-size: 13px !important; }
+
+  .fam { padding: 10px !important; margin-bottom: 10px !important; border-radius: 14px !important; }
+  .fam h2, .fam h3 { font-size: 14px !important; }
+
+  .eggs { display: grid !important; grid-template-columns: repeat(2, minmax(0,1fr)) !important; gap: 8px !important; }
+  .egg { width: auto !important; padding: 6px !important; border-radius: 12px !important; }
+  .egg img {
+    width: 100% !important; height: auto !important;
+    aspect-ratio: 1 / 1; object-fit: contain;
+    max-height: 120px !important; display: block; margin: 0 auto;
+  }
+  .egg p, .egg strong, .egg span { font-size: 10.5px !important; line-height: 1.4 !important; }
+  .egg-link { font-size: 10.5px !important; padding: 2px 6px !important; }
+  .egg-members { gap: 4px !important; flex-wrap: wrap; }
+
+  .egg-form-bar { position: sticky; top: 0; z-index: 50; }
+  .egg-form-bar button { padding: 6px 12px !important; font-size: 12px !important; }
+}
