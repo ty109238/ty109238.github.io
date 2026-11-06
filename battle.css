@@ -974,3 +974,81 @@ body.in-battle .log p.trait { color: #ffd98a !important; }
   40% { opacity: .9; transform: scaleY(1); }
   100% { opacity: 0; transform: scaleY(1.1) translateY(-16px); }
 }
+
+
+/* ===== 灵宠卡去白底 + 技能卡三行 ===== */
+body.in-battle .active-mon,
+body.in-battle .active-mon > div,
+body.in-battle .active-mon > div > * {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+body.in-battle .active-mon > div {
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+/* 特性悬停说明 */
+body.in-battle .trait-tip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 6px);
+  transform: translateX(-50%) translateY(4px);
+  width: 190px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(6,18,30,.94);
+  border: 1px solid rgba(255,210,110,.5);
+  color: #ffe9b8;
+  font-size: 11px;
+  line-height: 1.6;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .16s, transform .16s;
+  z-index: 30;
+}
+body.in-battle .trait-line { cursor: help; }
+body.in-battle .trait-line:hover + .trait-tip,
+body.in-battle .trait-tip:hover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 技能卡：三行布局 */
+body.in-battle .skill-btn {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 3px !important;
+  padding: 7px 8px !important;
+}
+body.in-battle .sk-row1 {
+  display: flex; align-items: center; gap: 5px;
+}
+body.in-battle .sk-elem {
+  width: 22px !important; height: 22px !important;
+  object-fit: contain;
+  flex: 0 0 22px;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.5));
+}
+body.in-battle .sk-row1 b {
+  font-size: 12px !important; font-weight: 900;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+body.in-battle .sk-row2 {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 10px !important; color: #9fc4e8;
+}
+body.in-battle .sk-cat {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: rgba(120,190,255,.18);
+  border: 1px solid rgba(120,190,255,.35);
+  color: #cfe6ff;
+}
+body.in-battle .sk-pp { font-variant-numeric: tabular-nums; }
+body.in-battle .sk-row3 {
+  display: flex; justify-content: space-between;
+  font-size: 9.5px !important; color: #8fb2d0;
+}
