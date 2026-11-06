@@ -20,12 +20,12 @@
       "hatchCondition": "将灵宠蛋放在温暖的篝火旁，累计行走 1,200 步，并保持蛋壳干燥。",
       "arenaRate": 8,
       "exploreRate": 31,
-      "hp": 71,
-      "speed": 71,
-      "spAttack": 78,
-      "spDefense": 31,
-      "attack": 110,
-      "defense": 31,
+      "hp": 98,
+      "speed": 55,
+      "spAttack": 67,
+      "spDefense": 35,
+      "attack": 98,
+      "defense": 39,
       "createdAt": "2026-10-29T05:31:43.000Z",
       "updatedAt": "2026-10-29T15:50:24.000Z",
       "note": "尾巴上的火苗会随心情变大变小——生气时别站太近，它自己也不知道收敛。",
@@ -62,12 +62,12 @@
       "hatchCondition": "在晴热天气累计行走 1,800 步，孵化前使用一枚温热火晶唤醒核心。",
       "arenaRate": 16,
       "exploreRate": 24,
-      "hp": 89,
-      "speed": 88,
-      "spAttack": 98,
-      "spDefense": 39,
-      "attack": 137,
-      "defense": 39,
+      "hp": 123,
+      "speed": 69,
+      "spAttack": 83,
+      "spDefense": 44,
+      "attack": 122,
+      "defense": 49,
       "createdAt": "2026-10-29T05:31:44.000Z",
       "updatedAt": "2026-10-29T15:50:24.000Z",
       "note": "它替弱小灵宠挡风这件事，我观察了十七次，没有一次例外。",
@@ -150,8 +150,8 @@
       "speed": 28,
       "spAttack": 36,
       "spDefense": 77,
-      "attack": 30,
-      "defense": 114,
+      "attack": 48,
+      "defense": 96,
       "createdAt": "2026-10-29T05:31:47.000Z",
       "updatedAt": "2026-10-29T15:50:24.000Z",
       "note": "护目镜有点歪，但它坚持说这样看得更清楚。",
@@ -524,12 +524,12 @@
       "hatchCondition": "在轻快音乐中累计行走 1,200 步，每天轻拍灵宠蛋四次与之互动。",
       "arenaRate": 9,
       "exploreRate": 33,
-      "hp": 75,
-      "speed": 90,
-      "spAttack": 56,
+      "hp": 100,
+      "speed": 75,
+      "spAttack": 49,
       "spDefense": 41,
-      "attack": 75,
-      "defense": 37,
+      "attack": 64,
+      "defense": 45,
       "createdAt": "2026-10-29T10:52:42.000Z",
       "updatedAt": "2026-10-29T15:50:25.000Z",
       "note": "出拳卡在鼓点上。别笑，这真的是战术。",
@@ -654,8 +654,8 @@
       "speed": 54,
       "spAttack": 50,
       "spDefense": 78,
-      "attack": 30,
-      "defense": 75,
+      "attack": 39,
+      "defense": 66,
       "createdAt": "2026-10-29T10:53:03.000Z",
       "updatedAt": "2026-10-29T15:50:25.000Z",
       "note": "冰壳上的纹路，是它每一次挡风的记分牌。",
@@ -776,12 +776,12 @@
       "hatchCondition": "置于干燥温暖处累计行走 1,200 步，每天让灵宠蛋闻一次淡淡咖啡香。",
       "arenaRate": 5,
       "exploreRate": 37,
-      "hp": 73,
-      "speed": 72,
-      "spAttack": 80,
-      "spDefense": 32,
-      "attack": 113,
-      "defense": 32,
+      "hp": 113,
+      "speed": 44,
+      "spAttack": 68,
+      "spDefense": 36,
+      "attack": 101,
+      "defense": 40,
       "createdAt": "2026-10-29T10:53:23.000Z",
       "updatedAt": "2026-10-29T15:50:25.000Z",
       "note": "看起来没睡醒，其实一直在闻风向。",
@@ -1284,8 +1284,8 @@
       "speed": 53,
       "spAttack": 28,
       "spDefense": 49,
-      "attack": 102,
-      "defense": 69,
+      "attack": 114,
+      "defense": 57,
       "createdAt": "2026-10-29T10:54:41.000Z",
       "updatedAt": "2026-10-29T15:50:26.000Z",
       "note": "礼帽压得很低，速度却一点不含糊。",
@@ -1322,12 +1322,12 @@
       "hatchCondition": "累计行走 1,800 步，让灵宠蛋随清风平稳旋转，保持礼帽形蛋壳整洁。",
       "arenaRate": 21,
       "exploreRate": 23,
-      "hp": 100,
-      "speed": 121,
-      "spAttack": 76,
+      "hp": 135,
+      "speed": 101,
+      "spAttack": 66,
       "spDefense": 56,
-      "attack": 100,
-      "defense": 52,
+      "attack": 86,
+      "defense": 61,
       "createdAt": "2026-10-29T10:54:48.000Z",
       "updatedAt": "2026-10-29T15:50:26.000Z",
       "note": "领结永远方正。它说这是对对手的尊重。",
@@ -1364,12 +1364,12 @@
       "hatchCondition": "累计行走 2,400 步，让灵宠蛋感受十二种不同风向，破壳前完成一次高空巡游。",
       "arenaRate": 32,
       "exploreRate": 14,
-      "hp": 118,
-      "speed": 141,
-      "spAttack": 88,
+      "hp": 158,
+      "speed": 118,
+      "spAttack": 77,
       "spDefense": 65,
-      "attack": 112,
-      "defense": 65,
+      "attack": 100,
+      "defense": 71,
       "createdAt": "2026-10-29T10:54:55.000Z",
       "updatedAt": "2026-10-29T15:50:27.000Z",
       "note": "倒茶的手势标准得像在参加典礼。",
@@ -1410,8 +1410,8 @@
       "speed": 28,
       "spAttack": 35,
       "spDefense": 75,
-      "attack": 33,
-      "defense": 109,
+      "attack": 47,
+      "defense": 95,
       "createdAt": "2026-10-29T10:55:02.000Z",
       "updatedAt": "2026-10-29T15:50:27.000Z",
       "note": "躲在蛹里听外面的世界，一听就是好几天。",
@@ -1700,12 +1700,12 @@
       "hatchCondition": "活动期间累计行走 1,800 步，让灵宠蛋感受三种风向并以雷晶保持温暖。",
       "arenaRate": 23,
       "exploreRate": 17,
-      "hp": 99,
-      "speed": 118,
-      "spAttack": 74,
+      "hp": 133,
+      "speed": 99,
+      "spAttack": 64,
       "spDefense": 54,
-      "attack": 94,
-      "defense": 54,
+      "attack": 84,
+      "defense": 59,
       "createdAt": "2026-10-29T10:55:49.000Z",
       "updatedAt": "2026-10-29T15:50:27.000Z",
       "note": "顺着风走，从不跟风较劲。这是旅人的智慧。",
@@ -1742,12 +1742,12 @@
       "hatchCondition": "活动期间累计行走 2,400 步，以旋翼维持稳定气流直至灵宠蛋破壳。",
       "arenaRate": 35,
       "exploreRate": 10,
-      "hp": 122,
-      "speed": 146,
-      "spAttack": 92,
+      "hp": 165,
+      "speed": 122,
+      "spAttack": 79,
       "spDefense": 67,
-      "attack": 116,
-      "defense": 67,
+      "attack": 104,
+      "defense": 73,
       "createdAt": "2026-10-29T10:55:55.000Z",
       "updatedAt": "2026-10-29T15:50:27.000Z",
       "note": "压力越大，旋翼转得越稳。",
@@ -1784,12 +1784,12 @@
       "hatchCondition": "活动期间累计行走 1,200 步，以低亮雷晶陪伴灵宠蛋，避免强烈震动。",
       "arenaRate": 12,
       "exploreRate": 24,
-      "hp": 81,
-      "speed": 97,
-      "spAttack": 60,
+      "hp": 109,
+      "speed": 81,
+      "spAttack": 52,
       "spDefense": 44,
-      "attack": 77,
-      "defense": 44,
+      "attack": 69,
+      "defense": 48,
       "createdAt": "2026-10-29T10:56:02.000Z",
       "updatedAt": "2026-10-29T15:50:28.000Z",
       "note": "甲壳上的电纹会在下雨前变亮。当地人拿它当天气预报。",
@@ -1826,12 +1826,12 @@
       "hatchCondition": "活动期间累计行走 1,800 步，以两枚微电雷晶交替唤醒灵宠蛋。",
       "arenaRate": 22,
       "exploreRate": 18,
-      "hp": 102,
-      "speed": 123,
-      "spAttack": 77,
+      "hp": 139,
+      "speed": 102,
+      "spAttack": 66,
       "spDefense": 56,
-      "attack": 97,
-      "defense": 56,
+      "attack": 87,
+      "defense": 61,
       "createdAt": "2026-10-29T10:56:09.000Z",
       "updatedAt": "2026-10-29T15:50:28.000Z",
       "note": "雷角蓄能时会轻轻发抖，像在忍笑。",
@@ -1868,12 +1868,12 @@
       "hatchCondition": "活动期间累计行走 2,400 步，让灵宠蛋在绝缘云台吸收整夜温和雷光。",
       "arenaRate": 34,
       "exploreRate": 11,
-      "hp": 106,
-      "speed": 107,
-      "spAttack": 119,
-      "spDefense": 48,
-      "attack": 167,
-      "defense": 48,
+      "hp": 148,
+      "speed": 83,
+      "spAttack": 101,
+      "spDefense": 54,
+      "attack": 149,
+      "defense": 60,
       "createdAt": "2026-10-29T10:56:15.000Z",
       "updatedAt": "2026-10-29T15:50:28.000Z",
       "note": "虫鸣一响，雷声就跟着来。",
@@ -1910,8 +1910,8 @@
       "hatchCondition": "活动期间保持灵宠蛋湿润，在浅湾累计行走 1,200 步并聆听三次潮声。",
       "arenaRate": 13,
       "exploreRate": 23,
-      "hp": 99,
-      "speed": 53,
+      "hp": 109,
+      "speed": 43,
       "spAttack": 49,
       "spDefense": 76,
       "attack": 38,
@@ -2036,12 +2036,12 @@
       "hatchCondition": "在细雪环境累计行走 1,200 步，每天带着灵宠蛋完成一段轻快追逐。",
       "arenaRate": 10,
       "exploreRate": 32,
-      "hp": 70,
-      "speed": 71,
-      "spAttack": 79,
-      "spDefense": 32,
-      "attack": 110,
-      "defense": 32,
+      "hp": 99,
+      "speed": 55,
+      "spAttack": 67,
+      "spDefense": 35,
+      "attack": 99,
+      "defense": 39,
       "createdAt": "2026-10-29T10:56:42.000Z",
       "updatedAt": "2026-10-29T15:50:28.000Z",
       "note": "跑起来像一阵小雪崩。",
@@ -2078,12 +2078,12 @@
       "hatchCondition": "在微风环境累计行走 1,200 步，不摇晃灵宠蛋，让其安静感受气流。",
       "arenaRate": 9,
       "exploreRate": 34,
-      "hp": 75,
-      "speed": 90,
-      "spAttack": 56,
+      "hp": 114,
+      "speed": 61,
+      "spAttack": 49,
       "spDefense": 41,
-      "attack": 75,
-      "defense": 37,
+      "attack": 64,
+      "defense": 45,
       "createdAt": "2026-10-29T10:56:48.000Z",
       "updatedAt": "2026-10-29T15:50:28.000Z",
       "note": "慢，但从不射偏。",
@@ -2208,8 +2208,8 @@
       "speed": 47,
       "spAttack": 62,
       "spDefense": 62,
-      "attack": 72,
-      "defense": 52,
+      "attack": 62,
+      "defense": 62,
       "createdAt": "2026-10-29T12:38:50.000Z",
       "updatedAt": "2026-10-29T15:50:29.000Z",
       "note": "泡着泡着就睡着了，浮囊还鼓着。",
@@ -2292,8 +2292,8 @@
       "speed": 46,
       "spAttack": 62,
       "spDefense": 62,
-      "attack": 66,
-      "defense": 58,
+      "attack": 62,
+      "defense": 62,
       "createdAt": "2026-10-30T06:21:10.000Z",
       "updatedAt": "2026-10-30T06:21:10.000Z",
       "note": "王冠是它自己烧出来的。歪歪扭扭，但很得意。",
@@ -2418,8 +2418,8 @@
       "speed": 48,
       "spAttack": 72,
       "spDefense": 64,
-      "attack": 39,
-      "defense": 73,
+      "attack": 48,
+      "defense": 64,
       "createdAt": "2026-10-30T06:21:10.000Z",
       "updatedAt": "2026-10-30T06:21:10.000Z",
       "note": "冰壳裂开一条缝，是它想看看外面的信号。",
@@ -2692,12 +2692,12 @@
       "hatchCondition": "只有在地热核心旁、以沸泉水浸泡七日才能孵化。",
       "arenaRate": 2,
       "exploreRate": 6,
-      "hp": 105,
-      "speed": 106,
-      "spAttack": 118,
-      "spDefense": 47,
-      "attack": 165,
-      "defense": 47,
+      "hp": 147,
+      "speed": 82,
+      "spAttack": 100,
+      "spDefense": 53,
+      "attack": 147,
+      "defense": 59,
       "createdAt": "2026-10-30T06:21:10.000Z",
       "updatedAt": "2026-10-30T06:21:10.000Z",
       "note": "它体温维持着整片泉。地热不是天生的，是它在烧。",
@@ -2738,8 +2738,8 @@
       "speed": 28,
       "spAttack": 32,
       "spDefense": 69,
-      "attack": 57,
-      "defense": 74,
+      "attack": 43,
+      "defense": 88,
       "createdAt": "2026-10-30T06:21:10.000Z",
       "updatedAt": "2026-10-30T06:21:10.000Z",
       "note": "腮帮子鼓鼓的，怎么劝都不吐。",
@@ -3094,12 +3094,12 @@
       "hatchCondition": "把蛋放进满是气泡的海草丛中，让它跟着气泡浮起来。",
       "arenaRate": 8,
       "exploreRate": 20,
-      "hp": 80,
-      "speed": 95,
-      "spAttack": 59,
+      "hp": 108,
+      "speed": 79,
+      "spAttack": 51,
       "spDefense": 43,
-      "attack": 75,
-      "defense": 43,
+      "attack": 67,
+      "defense": 47,
       "createdAt": "2026-10-30T06:21:10.000Z",
       "updatedAt": "2026-10-30T06:21:10.000Z",
       "note": "整群一起浮着，谁也不肯先沉。",
@@ -5931,94 +5931,90 @@
     ],
     "60010": [
       {
-        "name": "提神香雾",
+        "name": "焦糖爆裂",
         "type": "土",
-        "category": "物理",
-        "power": 61,
+        "category": "特殊",
+        "power": 63,
         "accuracy": 100,
-        "pp": 20,
-        "description": "碎石先从脚下弹起，提神香雾；先手+1，基础威力 45，20% 使敌方荆棘。",
+        "pp": 15,
+        "description": "把烘焙过的糖分一次点燃，基础威力 62；命中后 50% 使敌方灼烧。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": false,
-        "prio": 1,
-        "fx": [
-          {
-            "k": "dmg",
-            "status": "荆棘",
-            "chance": 0.2
-          }
-        ],
-        "own": true
-      },
-      {
-        "name": "纸杯翻滚",
-        "type": "土",
-        "category": "特殊",
-        "power": 82,
-        "accuracy": 95,
-        "pp": 15,
-        "description": "岩层被整块掀起，纸杯翻滚；基础威力 62，35% 使敌方荆棘。",
-        "learnLevel": 8,
-        "role": "主力",
-        "exclusive": false,
+        "exclusive": true,
         "prio": 0,
         "fx": [
           {
             "k": "dmg",
-            "status": "荆棘",
-            "chance": 0.35
+            "status": "灼烧",
+            "chance": 0.5
           }
-        ],
-        "own": true
+        ]
       },
       {
-        "name": "嫩芽摇摆",
-        "type": "土",
-        "category": "特殊",
-        "power": 68,
-        "accuracy": 100,
-        "pp": 15,
-        "description": "沙浪横扫过战场，嫩芽摇摆；基础威力 50，命中全部对手。",
-        "learnLevel": 15,
-        "role": "范围",
-        "exclusive": false,
-        "prio": 0,
-        "fx": [
-          {
-            "k": "dmg",
-            "status": "荆棘",
-            "chance": 0.15
-          }
-        ],
-        "own": true
-      },
-      {
-        "name": "一缕焦香",
+        "name": "豆壳飞弹",
         "type": "土",
         "category": "物理",
-        "power": 82,
-        "accuracy": 90,
-        "pp": 5,
-        "description": "整座山压下来，一缕焦香；基础威力 101，先手-1（必定后手），25% 使敌方荆棘。",
-        "learnLevel": 22,
-        "role": "终结",
-        "exclusive": false,
-        "prio": -1,
+        "power": 48,
+        "accuracy": 95,
+        "pp": 20,
+        "description": "两段豆壳弹射，每段威力 48；每段 25% 使敌方速度 -1。",
+        "learnLevel": 10,
+        "role": "主力",
+        "exclusive": true,
+        "prio": 0,
         "fx": [
-          {
-            "k": "dmg",
-            "status": "荆棘",
-            "chance": 0.25
-          },
           {
             "k": "stat",
             "who": "foe",
             "stat": "speed",
             "stage": -1
           }
-        ],
-        "own": true
+        ]
+      },
+      {
+        "name": "提神醒脑",
+        "type": "土",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 12,
+        "description": "咖啡因冲上头顶，自身特攻、速度各 +1，并回复 15% 生命。",
+        "learnLevel": 20,
+        "role": "强化",
+        "exclusive": true,
+        "prio": 0,
+        "fx": [
+          {
+            "k": "stat",
+            "who": "self",
+            "stat": "spAttack",
+            "stage": 1
+          },
+          {
+            "k": "stat",
+            "who": "self",
+            "stat": "speed",
+            "stage": 1
+          },
+          {
+            "k": "heal",
+            "pct": 0.15
+          }
+        ]
+      },
+      {
+        "name": "最后一杯",
+        "type": "土",
+        "category": "特殊",
+        "power": 82,
+        "accuracy": 100,
+        "pp": 5,
+        "description": "把最后一杯全部倒出，基础威力 76，先手 -1；出手后自身损失 12% 生命。",
+        "learnLevel": 30,
+        "role": "终结",
+        "exclusive": true,
+        "prio": -1,
+        "fx": []
       }
     ],
     "60011": [
@@ -9828,92 +9824,88 @@
     ],
     "60037": [
       {
-        "name": "一串水泡",
+        "name": "海泡吐息",
         "type": "水",
-        "category": "物理",
-        "power": 67,
+        "category": "特殊",
+        "power": 50,
         "accuracy": 100,
-        "pp": 20,
-        "description": "水线先一步缠上对手脚踝，一串水泡；先手+1，基础威力 45，20% 使敌方潮湿。",
+        "pp": 18,
+        "description": "吹出一串海泡，基础威力 50；命中后 40% 使敌方潮湿。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": false,
-        "prio": 1,
+        "exclusive": true,
+        "prio": 0,
         "fx": [
           {
             "k": "dmg",
             "status": "潮湿",
-            "chance": 0.2
+            "chance": 0.4
           }
-        ],
-        "own": true
+        ]
       },
       {
         "name": "小小王冠",
         "type": "水",
-        "category": "特殊",
-        "power": 73,
-        "accuracy": 95,
-        "pp": 15,
-        "description": "潮头在掌下叠成一道硬边，小小王冠；基础威力 62，35% 使敌方潮湿。",
-        "learnLevel": 8,
-        "role": "主力",
-        "exclusive": false,
-        "prio": 0,
-        "fx": [
-          {
-            "k": "dmg",
-            "status": "潮湿",
-            "chance": 0.35
-          }
-        ],
-        "own": true
-      },
-      {
-        "name": "泡泡护身",
-        "type": "水",
-        "category": "特殊",
-        "power": 67,
+        "category": "变化",
+        "power": null,
         "accuracy": 100,
-        "pp": 15,
-        "description": "水幕横扫过整个战场，泡泡护身；基础威力 50，命中全部对手。",
-        "learnLevel": 15,
-        "role": "范围",
-        "exclusive": false,
+        "pp": 12,
+        "description": "扶正头上的王冠，自身特攻 +1、特防 +1，并回复 18% 生命。",
+        "learnLevel": 10,
+        "role": "主力",
+        "exclusive": true,
         "prio": 0,
         "fx": [
           {
-            "k": "dmg",
-            "status": "潮湿",
-            "chance": 0.15
+            "k": "stat",
+            "who": "self",
+            "stat": "spAttack",
+            "stage": 1
           },
           {
-            "k": "weather",
-            "name": "小雨"
+            "k": "stat",
+            "who": "self",
+            "stat": "spDefense",
+            "stage": 1
+          },
+          {
+            "k": "heal",
+            "pct": 0.18
           }
-        ],
-        "own": true
+        ]
       },
       {
-        "name": "潮王冠",
+        "name": "潮汐轻拍",
         "type": "水",
-        "category": "物理",
-        "power": 82,
-        "accuracy": 90,
-        "pp": 5,
-        "description": "所有水流都收成一束，还不懂王冠；基础威力 101，先手-1（必定后手），25% 使敌方潮湿。",
-        "learnLevel": 22,
+        "category": "特殊",
+        "power": 62,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "一层潮水贴地推过，基础威力 56，命中全部对手。",
+        "learnLevel": 20,
+        "role": "强化",
+        "exclusive": true,
+        "prio": 0,
+        "fx": []
+      },
+      {
+        "name": "洋流回响",
+        "type": "水",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 100,
+        "pp": 8,
+        "description": "把洋流声放大，基础威力 72；命中后恢复 25% 生命。",
+        "learnLevel": 30,
         "role": "终结",
-        "exclusive": false,
-        "prio": -1,
+        "exclusive": true,
+        "prio": 0,
         "fx": [
           {
-            "k": "dmg",
-            "status": "潮湿",
-            "chance": 0.25
+            "k": "heal",
+            "pct": 0.25
           }
-        ],
-        "own": true
+        ]
       }
     ],
     "60038": [
@@ -10354,94 +10346,84 @@
     ],
     "60041": [
       {
-        "name": "观察风向",
+        "name": "慢速抢拍",
         "type": "风",
         "category": "物理",
-        "power": 57,
+        "power": 44,
         "accuracy": 100,
         "pp": 20,
-        "description": "一缕气流先撩过耳侧，观察风向；先手+1，基础威力 45，20% 使敌方盲目。",
+        "description": "看起来慢，其实抢在最前，先手 +1，基础威力 44；30% 使敌方盲目。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": false,
+        "exclusive": true,
         "prio": 1,
         "fx": [
           {
             "k": "dmg",
             "status": "盲目",
-            "chance": 0.2
-          },
+            "chance": 0.3
+          }
+        ]
+      },
+      {
+        "name": "风向阅读",
+        "type": "风",
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 12,
+        "description": "读出风的走向，自身速度 +2，并获得 20% 生命护盾。",
+        "learnLevel": 10,
+        "role": "主力",
+        "exclusive": true,
+        "prio": 0,
+        "fx": [
           {
             "k": "stat",
             "who": "self",
             "stat": "speed",
-            "stage": 1
-          }
-        ],
-        "own": true
-      },
-      {
-        "name": "橙绒听觉",
-        "type": "风",
-        "category": "特殊",
-        "power": 78,
-        "accuracy": 95,
-        "pp": 15,
-        "description": "风刃贴着地面削过去，橙绒听觉；基础威力 62，35% 使敌方盲目。",
-        "learnLevel": 8,
-        "role": "主力",
-        "exclusive": false,
-        "prio": 0,
-        "fx": [
+            "stage": 2
+          },
           {
-            "k": "dmg",
-            "status": "盲目",
-            "chance": 0.35
+            "k": "shield",
+            "pct": 0.2
           }
-        ],
-        "own": true
+        ]
       },
       {
-        "name": "不慌不忙",
-        "type": "风",
-        "category": "特殊",
-        "power": 62,
-        "accuracy": 100,
-        "pp": 15,
-        "description": "整片气流卷成漩涡，不慌不忙；基础威力 50，命中全部对手。",
-        "learnLevel": 15,
-        "role": "范围",
-        "exclusive": false,
-        "prio": 0,
-        "fx": [
-          {
-            "k": "dmg",
-            "status": "盲目",
-            "chance": 0.15
-          }
-        ],
-        "own": true
-      },
-      {
-        "name": "羽呼啸",
+        "name": "长绒冲撞",
         "type": "风",
         "category": "物理",
-        "power": 82,
-        "accuracy": 90,
-        "pp": 5,
-        "description": "所有风压收成一线，最轻的呼啸；基础威力 101，先手-1（必定后手），25% 使敌方盲目。",
-        "learnLevel": 22,
-        "role": "终结",
-        "exclusive": false,
-        "prio": -1,
+        "power": 62,
+        "accuracy": 95,
+        "pp": 15,
+        "description": "全身绒毛裹成一团撞过去，基础威力 58；40% 使敌方速度 -1。",
+        "learnLevel": 20,
+        "role": "强化",
+        "exclusive": true,
+        "prio": 0,
         "fx": [
           {
-            "k": "dmg",
-            "status": "盲目",
-            "chance": 0.25
+            "k": "stat",
+            "who": "foe",
+            "stat": "speed",
+            "stage": -1
           }
-        ],
-        "own": true
+        ]
+      },
+      {
+        "name": "最轻一啸",
+        "type": "风",
+        "category": "特殊",
+        "power": 80,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "把整片风声压成一道细线，基础威力 70；先手同类招式威力更高。",
+        "learnLevel": 30,
+        "role": "终结",
+        "exclusive": true,
+        "prio": 0,
+        "fx": []
       }
     ],
     "60042": [
@@ -12588,94 +12570,86 @@
     ],
     "103186": [
       {
-        "name": "岩出来",
+        "name": "矿脉突刺",
         "type": "土",
         "category": "物理",
-        "power": 57,
-        "accuracy": 100,
-        "pp": 20,
-        "description": "碎石先从脚下弹起，矿洞滚出来；先手+1，基础威力 45，20% 使敌方荆棘。",
-        "learnLevel": 1,
-        "role": "起手",
-        "exclusive": false,
-        "prio": 1,
-        "fx": [
-          {
-            "k": "dmg",
-            "status": "荆棘",
-            "chance": 0.2
-          }
-        ],
-        "own": true
-      },
-      {
-        "name": "岩东西",
-        "type": "土",
-        "category": "特殊",
-        "power": 78,
-        "accuracy": 95,
-        "pp": 15,
-        "description": "岩层被整块掀起，亮晶晶的东西；基础威力 62，35% 使敌方荆棘。",
-        "learnLevel": 8,
-        "role": "主力",
-        "exclusive": false,
-        "prio": 0,
-        "fx": [
-          {
-            "k": "dmg",
-            "status": "荆棘",
-            "chance": 0.35
-          }
-        ],
-        "own": true
-      },
-      {
-        "name": "岩砂石",
-        "type": "土",
-        "category": "特殊",
         "power": 62,
         "accuracy": 100,
         "pp": 15,
-        "description": "沙浪横扫过战场，背上的砂石；基础威力 50，命中全部对手。",
-        "learnLevel": 15,
-        "role": "范围",
-        "exclusive": false,
+        "description": "顺着矿脉顶出硬刺，基础威力 62；30% 使敌方流血。",
+        "learnLevel": 1,
+        "role": "起手",
+        "exclusive": true,
         "prio": 0,
         "fx": [
           {
             "k": "dmg",
-            "status": "荆棘",
-            "chance": 0.15
+            "status": "流血",
+            "chance": 0.3
           }
-        ],
-        "own": true
+        ]
       },
       {
-        "name": "岩层岩",
+        "name": "硬壳抵挡",
         "type": "土",
-        "category": "物理",
-        "power": 118,
-        "accuracy": 90,
-        "pp": 5,
-        "description": "整座山压下来，刨开一层岩；基础威力 101，先手-1（必定后手），25% 使敌方荆棘。",
-        "learnLevel": 22,
-        "role": "终结",
-        "exclusive": false,
-        "prio": -1,
+        "category": "变化",
+        "power": null,
+        "accuracy": 100,
+        "pp": 10,
+        "description": "背甲合拢，抵挡下一次攻击（减伤 60%），并回复 20% 生命。",
+        "learnLevel": 10,
+        "role": "主力",
+        "exclusive": true,
+        "prio": 0,
         "fx": [
           {
-            "k": "dmg",
-            "status": "荆棘",
-            "chance": 0.25
+            "k": "guard",
+            "reduce": 0.6,
+            "rider": {
+              "weather": "沙暴",
+              "turns": 5
+            }
           },
+          {
+            "k": "heal",
+            "pct": 0.2
+          }
+        ]
+      },
+      {
+        "name": "砂石碾压",
+        "type": "土",
+        "category": "物理",
+        "power": 70,
+        "accuracy": 95,
+        "pp": 12,
+        "description": "带着砂石整体压过去，基础威力 70；命中后敌方速度 -1。",
+        "learnLevel": 20,
+        "role": "强化",
+        "exclusive": true,
+        "prio": 0,
+        "fx": [
           {
             "k": "stat",
             "who": "foe",
             "stat": "speed",
             "stage": -1
           }
-        ],
-        "own": true
+        ]
+      },
+      {
+        "name": "隧道尽头",
+        "type": "土",
+        "category": "物理",
+        "power": 110,
+        "accuracy": 90,
+        "pp": 6,
+        "description": "从隧道尽头冲出的全力一击，基础威力 88，先手 -1。",
+        "learnLevel": 30,
+        "role": "终结",
+        "exclusive": true,
+        "prio": -1,
+        "fx": []
       },
       {
         "name": "岩铠甲",
@@ -12702,7 +12676,7 @@
         "name": "矿道巡逻",
         "type": "土",
         "category": "特殊",
-        "power": 78,
+        "power": 85,
         "accuracy": 95,
         "pp": 15,
         "description": "把地脉踩断的一瞬，矿道巡逻；必定暴击，基础威力 62，代价是自身损失 12% 生命。",
@@ -13826,94 +13800,93 @@
     ],
     "103195": [
       {
-        "name": "尾焰照路",
+        "name": "桃枝点春",
         "type": "光",
-        "category": "物理",
-        "power": 92,
+        "category": "特殊",
+        "power": 54,
         "accuracy": 100,
-        "pp": 20,
-        "description": "一点微光先亮在指尖，尾焰照路；先手+1，基础威力 45，20% 使敌方恢复。",
+        "pp": 15,
+        "description": "桃枝轻点，基础威力 54；命中后回复自身 8% 生命。",
         "learnLevel": 1,
         "role": "起手",
-        "exclusive": false,
+        "exclusive": true,
+        "prio": 0,
+        "fx": [
+          {
+            "k": "heal",
+            "pct": 0.08
+          }
+        ]
+      },
+      {
+        "name": "落英回旋",
+        "type": "光",
+        "category": "特殊",
+        "power": 46,
+        "accuracy": 100,
+        "pp": 15,
+        "description": "花瓣绕身一圈再掷出，先手 +1，基础威力 46；30% 使敌方盲目。",
+        "learnLevel": 10,
+        "role": "主力",
+        "exclusive": true,
         "prio": 1,
         "fx": [
           {
             "k": "dmg",
-            "status": "恢复",
-            "chance": 0.2
+            "status": "盲目",
+            "chance": 0.3
           }
-        ],
-        "own": true
+        ]
       },
       {
-        "name": "晨雾隐身",
+        "name": "幻雾护身",
         "type": "光",
-        "category": "特殊",
-        "power": 92,
-        "accuracy": 95,
-        "pp": 15,
-        "description": "光束穿过雾霭直取一处，晨雾隐身；基础威力 62，35% 使敌方恢复。",
-        "learnLevel": 8,
-        "role": "主力",
-        "exclusive": false,
-        "prio": 0,
-        "fx": [
-          {
-            "k": "dmg",
-            "status": "恢复",
-            "chance": 0.35
-          }
-        ],
-        "own": true
-      },
-      {
-        "name": "环抱取暖",
-        "type": "光",
-        "category": "特殊",
-        "power": 92,
+        "category": "变化",
+        "power": null,
         "accuracy": 100,
-        "pp": 15,
-        "description": "光幕整片铺开，环抱取暖；基础威力 50，命中全部对手。",
-        "learnLevel": 15,
-        "role": "范围",
-        "exclusive": false,
+        "pp": 12,
+        "description": "晨雾笼身，自身特防 +1，并获得 22% 生命护盾。",
+        "learnLevel": 20,
+        "role": "强化",
+        "exclusive": true,
         "prio": 0,
         "fx": [
           {
-            "k": "dmg",
-            "status": "恢复",
-            "chance": 0.15
+            "k": "stat",
+            "who": "self",
+            "stat": "spDefense",
+            "stage": 1
+          },
+          {
+            "k": "shield",
+            "pct": 0.22
           }
-        ],
-        "own": true
+        ]
       },
       {
-        "name": "逐光小跑",
+        "name": "九尾幻光",
         "type": "光",
-        "category": "物理",
-        "power": 100,
-        "accuracy": 90,
-        "pp": 5,
-        "description": "所有光收在一点，逐光小跑；基础威力 101，先手-1（必定后手），25% 使敌方恢复。",
-        "learnLevel": 22,
+        "category": "特殊",
+        "power": 78,
+        "accuracy": 95,
+        "pp": 8,
+        "description": "光从尾尖泄出，基础威力 78；命中后自身回复造成伤害的 30%。",
+        "learnLevel": 30,
         "role": "终结",
-        "exclusive": false,
-        "prio": -1,
+        "exclusive": true,
+        "prio": 0,
         "fx": [
           {
-            "k": "dmg",
-            "status": "恢复",
-            "chance": 0.25
+            "k": "drain",
+            "pct": 0.3
           }
-        ],
-        "own": true
+        ]
       },
       {
         "name": "桃枝拂过",
         "type": "光",
         "category": "物理",
-        "power": 92,
+        "power": 96,
         "accuracy": 100,
         "pp": 20,
         "description": "三道光刃接连落下，桃枝拂过；三段连打，每段 45，每段 10% 使敌方恢复。",
