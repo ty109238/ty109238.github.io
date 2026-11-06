@@ -1603,3 +1603,43 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   }
   .sk-card p, .sk-card .sk-desc { display: none; }
 }
+
+
+/* ===== 顶部搜索 + 编号胶囊 ===== */
+@media (max-width: 640px) {
+  .top-search {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 10px 10px; background: #f7f7f7;
+    position: sticky; top: 0; z-index: 60;
+  }
+  .top-search .ts-sort, .top-search .ts-more {
+    flex: 0 0 auto; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; color: #333; background: transparent; border: 0; cursor: pointer;
+  }
+  .top-search input {
+    flex: 1 1 auto; height: 38px; border: 0; border-radius: 19px;
+    background: #ececec; padding: 0 16px; font-size: 14px; color: #333; outline: none;
+  }
+  .top-search input::placeholder { color: #9a9a9a; }
+
+  /* 编号胶囊：灰底圆角 */
+  .creature-card .dex-pill {
+    display: inline-block;
+    font-size: 12px; font-weight: 700; color: #6b6b6b;
+    background: #f0f0f0; border-radius: 7px;
+    padding: 2px 8px; margin-bottom: 2px;
+    letter-spacing: .2px;
+  }
+  /* 原来的 meta 变小灰字 */
+  .creature-card .creature-meta, .creature-card small {
+    background: transparent !important;
+    padding: 0 !important;
+    color: #8a8a8a !important;
+    font-size: 11px !important;
+  }
+
+  /* 底部导航五个 tab 均分 */
+  .mobile-nav { justify-content: space-between !important; padding: 6px 10px calc(6px + env(safe-area-inset-bottom)) !important; }
+  .mobile-nav .mnav-btn { flex: 1 1 0; gap: 3px; }
+  .mobile-nav .mnav-btn span { font-size: 10.5px; }
+}
