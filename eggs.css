@@ -121,8 +121,10 @@ body {
   .egg { width: auto !important; padding: 6px !important; border-radius: 12px !important; }
   .egg img {
     width: 100% !important; height: auto !important;
-    aspect-ratio: 1 / 1; object-fit: contain;
-    max-height: 120px !important; display: block; margin: 0 auto;
+    object-fit: contain !important;
+    object-position: center !important;
+    max-height: none !important;
+    display: block; margin: 0 auto;
   }
   .egg p, .egg strong, .egg span { font-size: 10.5px !important; line-height: 1.4 !important; }
   .egg-link { font-size: 10.5px !important; padding: 2px 6px !important; }
@@ -178,4 +180,27 @@ body {
     display: block;
   }
   .fam { padding: 10px !important; }
+}
+
+
+/* mobile v3：蛋图完整显示 */
+@media (max-width: 640px) {
+  .fam .eggs .egg {
+    height: auto !important;
+    max-height: none !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .fam .eggs .egg img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 140px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    flex: 0 0 auto;
+  }
+  /* 顶部切换条不遮住内容 */
+  .egg-form-bar { position: static !important; }
 }
