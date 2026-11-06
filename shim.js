@@ -1035,6 +1035,16 @@
       if (!img.getAttribute('data-egg-normal')) img.setAttribute('data-egg-normal', src);
       var want = on ? '/media/eggs-form/' + mode + '/' + dex + '.webp' : img.getAttribute('data-egg-normal');
       if (want && img.getAttribute('src') !== want) img.setAttribute('src', want);
+
+      // 手机上强制等比缩放，避免被压扁
+      if (window.innerWidth <= 640 && img.getAttribute('data-eggfit') !== '1') {
+        img.setAttribute('data-eggfit', '1');
+        img.style.setProperty('height', 'auto', 'important');
+        img.style.setProperty('aspect-ratio', '1 / 1', 'important');
+        img.style.setProperty('object-fit', 'contain', 'important');
+        img.style.setProperty('max-height', '120px', 'important');
+        img.style.setProperty('width', '100%', 'important');
+      }
     }
   }
 
