@@ -455,3 +455,112 @@ a { color: inherit; }
   #battleView .skill-btn small { font-size: 10px !important; }
   #battleView .actions { padding-bottom: calc(8px + env(safe-area-inset-bottom)); }
 }
+
+
+/* ===== 战斗单屏布局（不滚动） ===== */
+body.in-battle { overflow: hidden !important; }
+body.in-battle .top { display: none !important; }
+body.in-battle .wrap { padding: 8px 10px 0 !important; max-width: 100% !important; }
+
+body.in-battle #battleView {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  height: 100dvh !important;
+  min-height: 0 !important;
+  padding-bottom: calc(6px + env(safe-area-inset-bottom));
+  overflow: hidden;
+}
+
+/* 顶部一条：回合 + 环境 */
+body.in-battle #battleView .weather-badge,
+body.in-battle #battleView .field-bar {
+  flex: 0 0 auto;
+  align-self: center;
+  font-size: 11px !important;
+  padding: 2px 10px !important;
+  margin: 0 !important;
+}
+
+/* 日志：小窗，最多三行 */
+body.in-battle #battleView .log {
+  flex: 0 0 auto !important;
+  height: 62px !important;
+  max-height: 62px !important;
+  overflow-y: auto;
+  order: 0;
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+  padding: 6px 9px !important;
+  border-radius: 10px !important;
+  background: rgba(255,255,255,.72) !important;
+}
+
+/* 竞技场占满中间 */
+body.in-battle #battleView .battle-hud {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  gap: 6px 10px !important;
+  align-items: center !important;
+}
+body.in-battle .battle-hud > div:nth-child(1) { display: none; }  /* 队伍小条隐藏，省高度 */
+body.in-battle .battle-hud .active-mon {
+  height: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+body.in-battle .battle-hud .active-mon > div { padding: 8px !important; }
+body.in-battle .battle-hud .active-mon img {
+  max-height: min(30vh, 220px) !important;
+  max-width: 100% !important;
+  width: auto !important;
+}
+body.in-battle .battle-hud .active-mon .hp-line,
+body.in-battle .battle-hud .active-mon .hp-bar { font-size: 12px !important; }
+
+/* 底部：技能四格 + 换人条 */
+body.in-battle #battleView .actions {
+  flex: 0 0 auto !important;
+  position: static !important;
+  margin: 0 !important;
+  padding: 4px 0 0 !important;
+  background: transparent !important;
+}
+body.in-battle #battleView .skill-bar {
+  grid-template-columns: repeat(4, minmax(0,1fr)) !important;
+  gap: 6px !important;
+}
+body.in-battle #battleView .skill-btn {
+  padding: 8px 6px !important;
+  border-radius: 12px !important;
+}
+body.in-battle #battleView .skill-btn b { font-size: 12px !important; }
+body.in-battle #battleView .skill-btn small { font-size: 9.5px !important; }
+
+body.in-battle #battleView .switch-bar {
+  display: flex !important;
+  gap: 5px !important;
+  overflow-x: auto;
+  padding: 4px 0 0 !important;
+  max-height: 46px;
+}
+body.in-battle #battleView .switch-bar button { flex: 0 0 auto; padding: 4px 8px !important; font-size: 11px !important; }
+
+/* 认输按钮缩小并靠右 */
+body.in-battle #battleView .build-actions {
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  padding: 2px 0 0 !important;
+  display: flex;
+  justify-content: flex-end;
+}
+body.in-battle #battleView .build-actions .big-btn {
+  padding: 5px 12px !important;
+  font-size: 11.5px !important;
+  min-height: 0 !important;
+}
+body.in-battle #battleView .build-actions .big-btn img { width: 16px !important; height: 16px !important; }
+
+/* 战斗结果弹层允许滚动 */
+body.in-battle #battleView .result-card { max-height: 70dvh; overflow-y: auto; }
