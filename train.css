@@ -1485,3 +1485,20 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   .fam .eggs .egg span, .fam .eggs .egg small { font-size: 10.5px !important; line-height: 1.4 !important; }
   .fam .eggs .egg strong { font-size: 12px !important; }
 }
+
+
+/* ===== 移动端三列 ===== */
+@media (max-width: 640px) {
+  .creature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 7px !important;
+    padding: 0 8px !important;
+  }
+  .creature-card { padding: 5px !important; border-radius: 11px !important; }
+  .creature-card .creature-art { height: 82px !important; }
+  .creature-card .creature-art img { max-height: 82px !important; }
+  .creature-card h3, .creature-card .creature-name { font-size: 11.5px !important; }
+  .creature-card .creature-meta, .creature-card small { font-size: 9.5px !important; }
+  .creature-card .fav-btn { width: 18px !important; height: 18px !important; }
+  .creature-card .creature-card-copy { padding: 4px 2px 2px !important; }
+}
