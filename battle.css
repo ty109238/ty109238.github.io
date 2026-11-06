@@ -460,13 +460,13 @@ a { color: inherit; }
 /* ===== 战斗单屏布局（不滚动） ===== */
 body.in-battle { overflow: hidden !important; }
 body.in-battle .top { display: none !important; }
-body.in-battle .wrap { padding: 8px 10px 0 !important; max-width: 100% !important; }
+body.in-battle .wrap { padding: 6px 10px 0 !important; max-width: 100% !important; }
 
 body.in-battle #battleView {
   display: flex !important;
   flex-direction: column !important;
   gap: 6px !important;
-  height: 100dvh !important;
+  height: calc(100dvh - 10px) !important;
   min-height: 0 !important;
   padding-bottom: calc(6px + env(safe-area-inset-bottom));
   overflow: hidden;
