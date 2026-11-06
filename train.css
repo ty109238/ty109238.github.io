@@ -1502,3 +1502,104 @@ html.hide-notice .rail-btn[data-act="notice"] { display: none; }
   .creature-card .fav-btn { width: 18px !important; height: 18px !important; }
   .creature-card .creature-card-copy { padding: 4px 2px 2px !important; }
 }
+
+
+/* ===== 列表式排版（参考图）===== */
+@media (max-width: 640px) {
+  /* 图鉴：单列列表卡片 */
+  .creature-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 9px !important;
+    padding: 0 10px 12px !important;
+  }
+  .creature-card {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 10px 14px !important;
+    border-radius: 14px !important;
+    background: #fff !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,.06) !important;
+    min-height: 0 !important;
+    position: relative;
+  }
+  .creature-card .creature-art {
+    flex: 0 0 86px !important;
+    width: 86px !important;
+    height: 86px !important;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent !important;
+  }
+  .creature-card .creature-art img {
+    max-width: 86px !important;
+    max-height: 86px !important;
+    width: auto !important; height: auto !important;
+  }
+  .creature-card .creature-card-copy {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+  .creature-card h3, .creature-card .creature-name {
+    font-size: 17px !important;
+    font-weight: 900 !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+    order: 2;
+  }
+  /* 编号做成灰底小胶囊，排在名字上方 */
+  .creature-card .creature-meta, .creature-card small, .creature-card .dex-no {
+    font-size: 11.5px !important;
+    line-height: 1.6 !important;
+    color: #6b6b6b !important;
+    background: #f0f0f0;
+    border-radius: 7px;
+    padding: 2px 8px;
+    display: inline-block;
+    order: 1;
+    width: auto !important;
+  }
+  .creature-card .fav-btn { position: absolute; top: 8px; right: 10px; width: 20px !important; height: 20px !important; }
+
+  /* 技能页：单列列表 */
+  .sp-grid, .skill-grid, #grid {
+    display: flex !important; flex-direction: column !important;
+    gap: 9px !important; padding: 0 10px !important;
+  }
+  .sk-card {
+    padding: 12px 14px !important;
+    border-radius: 14px !important;
+    background: #fff !important;
+    display: grid !important;
+    grid-template-columns: 34px 1fr auto !important;
+    grid-template-rows: auto auto !important;
+    gap: 2px 8px !important;
+    align-items: center !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,.06) !important;
+  }
+  .sk-card > h3 {
+    grid-column: 2; grid-row: 1;
+    font-size: 17px !important; font-weight: 900 !important;
+    text-align: center !important; margin: 0 !important;
+  }
+  .sk-card .sk-meta, .sk-card .chips {
+    grid-column: 2; grid-row: 2;
+    font-size: 11.5px !important; color: #6b6b6b !important;
+    display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+  }
+  .sk-card .sk-tags, .sk-card .type-chip, .sk-card .cat-chip {
+    grid-column: 3; grid-row: 1 / span 2;
+    display: flex; flex-direction: column; gap: 5px; align-items: flex-end;
+  }
+  .sk-card .sk-num, .sk-card .num {
+    grid-column: 1; grid-row: 1 / span 2;
+    font-size: 13px; color: #8a8a8a; text-align: center;
+  }
+  .sk-card p, .sk-card .sk-desc { display: none; }
+}
