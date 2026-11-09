@@ -1278,3 +1278,60 @@ body.in-battle #myRow .mini-card img { width: 100%; height: 100%; object-fit: co
   100% { opacity: 0; transform: translate(-50%, -140%) scale(.95); }
 }
 .dmg-float.anchored { animation: dmg-rise-anchored 1s ease-out forwards; }
+
+
+/* ===== 队伍上移 + 属性浮层 + 特性点击 ===== */
+body.in-battle #myRow {
+  bottom: 196px !important;
+  gap: 6px !important;
+}
+body.in-battle #enemyRow {
+  gap: 6px !important;
+}
+body.in-battle #enemyRow .mini-card,
+body.in-battle #myRow .mini-card {
+  width: 56px !important;
+  height: 56px !important;
+  overflow: visible !important;
+}
+body.in-battle #enemyRow,
+body.in-battle #myRow { overflow: visible !important; z-index: 80 !important; }
+
+/* 悬停信息浮层（队伍头像） */
+.mini-tip { z-index: 90; }
+#myRow .mini-card:hover .mini-tip,
+#enemyRow .mini-card:hover .mini-tip { opacity: 1; }
+
+/* 出战灵宠：强化/减益浮层 */
+.buff-pop {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% - 6px);
+  transform: translateX(-50%) translateY(6px);
+  min-width: 132px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(6,18,30,.95);
+  border: 1px solid rgba(140,200,255,.45);
+  color: #eaf4ff;
+  font-size: 11.5px;
+  display: flex; flex-direction: column; gap: 3px;
+  opacity: 0; pointer-events: none;
+  transition: opacity .14s, transform .14s;
+  z-index: 90;
+}
+.buff-pop .bp-row { display: flex; justify-content: space-between; gap: 10px; }
+.buff-pop .bp-row b { font-variant-numeric: tabular-nums; }
+.buff-pop .bp-row.up b { color: #7ff0a0; }
+.buff-pop .bp-row.down b { color: #ff8f86; }
+.buff-pop .bp-row.flat b { color: #9fb6cc; }
+#myActive:hover .buff-pop,
+#enemyActive:hover .buff-pop { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* 特性：点击展开/收起 */
+body.in-battle .trait-tip.open {
+  opacity: 1 !important;
+  transform: translateX(-50%) translateY(0) !important;
+  pointer-events: auto;
+}
+body.in-battle .trait-line { cursor: pointer; }
