@@ -1253,3 +1253,28 @@ body.in-battle #myRow .mini-card img { width: 100%; height: 100%; object-fit: co
 
 /* 技能提示：更紧凑 */
 .skill-tip { max-width: 260px; }
+
+
+/* 命中特效/飘字：跟随灵宠实际位置 */
+.impact-fx.anchored {
+  position: fixed !important;
+  left: 0; top: 0;
+  transform: translate(-50%, -50%);
+}
+.dmg-float.anchored {
+  position: fixed !important;
+  transform: translate(-50%, -50%);
+}
+@keyframes impact-pop-anchored {
+  0% { opacity: .95; transform: translate(-50%, -50%) scale(.35); }
+  60% { opacity: .55; transform: translate(-50%, -50%) scale(1.2); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.65); }
+}
+.impact-fx.anchored { animation: impact-pop-anchored .6s ease-out forwards; }
+@keyframes dmg-rise-anchored {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(.7); }
+  25% { opacity: 1; transform: translate(-50%, -80%) scale(1.12); }
+  60% { opacity: 1; transform: translate(-50%, -110%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -140%) scale(.95); }
+}
+.dmg-float.anchored { animation: dmg-rise-anchored 1s ease-out forwards; }
