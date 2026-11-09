@@ -1335,3 +1335,18 @@ body.in-battle .trait-tip.open {
   pointer-events: auto;
 }
 body.in-battle .trait-line { cursor: pointer; }
+
+
+/* 出战头像呼吸金边 */
+.buff-pop .bp-empty { color: #8fa9c0; font-size: 11px; text-align: center; }
+.buff-pop .bp-row.shield b { color: #7fd3ff; }
+
+body.in-battle #enemyRow .mini-card.active,
+body.in-battle #myRow .mini-card.active {
+  border-color: #ffca46 !important;
+  animation: mini-breath 1.8s ease-in-out infinite;
+}
+@keyframes mini-breath {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,202,70,.55), 0 0 10px rgba(255,202,70,.35); }
+  50% { box-shadow: 0 0 0 4px rgba(255,202,70,0), 0 0 18px rgba(255,202,70,.85); }
+}
