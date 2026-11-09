@@ -1282,7 +1282,7 @@ body.in-battle #myRow .mini-card img { width: 100%; height: 100%; object-fit: co
 
 /* ===== 队伍上移 + 属性浮层 + 特性点击 ===== */
 body.in-battle #myRow {
-  bottom: 196px !important;
+  bottom: 214px !important;
   gap: 6px !important;
 }
 body.in-battle #enemyRow {
