@@ -1085,7 +1085,35 @@ body.in-battle #enemyRow .mini-card .hpbar,
 body.in-battle #myRow .mini-card .hpbar { height: 4px !important; }
 
 /* 顶部队伍条不再参与布局 */
-body.in-battle .battle-hud > div:nth-child(1) { display: none !important; }
+body.in-battle .battle-hud > div:nth-child(1) {
+  display: block !important;
+  position: static !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  pointer-events: none;
+}
+body.in-battle #enemyRow {
+  position: fixed !important;
+  left: 10px !important;
+  top: 8px !important;
+  bottom: auto !important;
+  transform: none !important;
+  flex-direction: column !important;
+  pointer-events: auto;
+}
+body.in-battle #myRow {
+  position: fixed !important;
+  right: 10px !important;
+  left: auto !important;
+  top: auto !important;
+  bottom: 8px !important;
+  transform: none !important;
+  flex-direction: column-reverse !important;
+  pointer-events: auto;
+}
 
 /* 血条分段配色 */
 body.in-battle .hp-bar i { background: #43c463 !important; }
