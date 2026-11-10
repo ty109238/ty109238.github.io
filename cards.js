@@ -14,6 +14,7 @@
     rarities: new Set(),
     powerBand: null,
     favOnly: false,
+    sort: 'idx',
   };
 
   function $(id) { return document.getElementById(id); }
@@ -166,6 +167,9 @@
   function renderGrid() {
     var grid = $('cardGrid');
     var filtered = state.list.filter(match);
+    if (state.sort === 'power') {
+      filtered = filtered.slice().sort(function (a, b) { return b.power - a.power; });
+    }
     var pages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
     if (state.page >= pages) state.page = pages - 1;
     if (state.page < 0) state.page = 0;
@@ -219,6 +223,8 @@
     if (state.powerBand) bits.push('战力 ' + state.powerBand[0] + '+');
     if (state.favOnly) bits.push('收藏');
     $('filterCount').textContent = bits.length ? bits.join(' ') : '全部';
+    var sortBtn = $('cardSortBtn');
+    if (sortBtn) sortBtn.textContent = state.sort === 'power' ? '战力 ↓' : '编号 ↑';
     $('cardCount').textContent = '共 ' + filtered.length + ' 张 · 第 ' + (state.page + 1) + ' / ' + pages + ' 页';
   }
 
@@ -243,6 +249,14 @@
     if (fc) {
       fc.addEventListener('click', function () {
         state.favOnly = !state.favOnly;
+        state.page = 0;
+        render();
+      });
+    }
+    var sortBtn = $('cardSortBtn');
+    if (sortBtn) {
+      sortBtn.addEventListener('click', function () {
+        state.sort = state.sort === 'power' ? 'idx' : 'power';
         state.page = 0;
         render();
       });

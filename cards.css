@@ -263,3 +263,6 @@ body {
 }
 .fav.on { background: rgba(217, 164, 65, .92); color: #3a2600; }
 .fav-chip.on { background: #fff2cf; border-color: var(--gold); color: #8a5b12; font-weight: 700; }
+
+
+.sort-btn { white-space: nowrap; font-variant-numeric: tabular-nums; }
