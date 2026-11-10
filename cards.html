@@ -6,54 +6,49 @@
     <meta name="theme-color" content="#2a2520" />
     <title>卡册 · 咻噗-奥灵宠图鉴</title>
     <link rel="icon" href="/icon.svg" />
-    <link rel="stylesheet" href="/cards.css?v=mwa40hpi" />
+    <link rel="stylesheet" href="/cards.css?v=mwa48qb0" />
   </head>
   <body>
     <header class="top">
-      <a href="/">← 返回图鉴</a>
-      <div>
+      <a href="/" class="back">←</a>
+      <div class="title">
         <h1>卡册</h1>
-        <p>77 张灵宠卡 · 每页 9 张</p>
+        <p id="cardCount">77 张 · 每页 9 张</p>
       </div>
+      <button id="favTag" type="button" class="fav-tag">★ 收藏 0</button>
     </header>
 
     <main class="wrap">
       <section class="tools">
-        <div class="search-row">
-          <input id="cardSearch" type="search" placeholder="搜索灵宠名字…" autocomplete="off" />
-          <button id="cardSortBtn" type="button" class="filter-btn sort-btn">编号 ↑</button>
-          <button id="cardFilterBtn" type="button" class="filter-btn">分类 <b id="filterCount">全部</b></button>
-        </div>
-        <div class="filter-panel hidden" id="filterPanel">
-          <div class="filter-group">
-            <span class="filter-label">阶段</span>
-            <div class="chips" id="stageChips"></div>
-          </div>
-          <div class="filter-group">
-            <span class="filter-label">属性</span>
-            <div class="chips" id="elemChips"></div>
-          </div>
-          <div class="filter-group">
-            <span class="filter-label">稀有度</span>
-            <div class="chips" id="rarityChips"></div>
-          </div>
-          <div class="filter-group">
-            <span class="filter-label">战斗力</span>
-            <div class="chips" id="powerChips"></div>
-          </div>
-          <div class="filter-group">
-            <span class="filter-label">收藏</span>
-            <div class="chips"><button type="button" class="chip fav-chip" id="favChip">☆ 只看收藏</button></div>
-          </div>
-        </div>
+        <input id="cardSearch" type="search" placeholder="搜索灵宠名字…" autocomplete="off" />
+        <button id="cardSortBtn" type="button" class="tool-btn">编号 ↑</button>
+        <button id="cardFilterBtn" type="button" class="tool-btn">分类 <b id="filterCount">全部</b></button>
       </section>
+
+      <div class="filter-panel hidden" id="filterPanel">
+        <div class="filter-group">
+          <span class="filter-label">阶段</span>
+          <div class="chips" id="stageChips"></div>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">属性</span>
+          <div class="chips" id="elemChips"></div>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">稀有度</span>
+          <div class="chips" id="rarityChips"></div>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">战斗力</span>
+          <div class="chips" id="powerChips"></div>
+        </div>
+      </div>
 
       <section class="grid" id="cardGrid"></section>
 
       <div class="empty hidden" id="cardEmpty">没有符合条件的卡牌</div>
 
       <nav class="pager" id="cardPager"></nav>
-      <p class="count" id="cardCount"></p>
     </main>
 
     <div class="viewer hidden" id="cardViewer">
@@ -62,6 +57,6 @@
       <div class="viewer-cap" id="viewerCap"></div>
     </div>
 
-    <script src="/cards.js?v=mwa40hpi" defer></script>
+    <script src="/cards.js?v=mwa48qb0" defer></script>
   </body>
 </html>
