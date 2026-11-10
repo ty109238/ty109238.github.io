@@ -31,6 +31,42 @@
     muted: false
   };
 
+  function pad2(n) { return ('0' + n).slice(-2); }
+
+  function today() {
+    var d = new Date();
+    return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+  }
+
+  function loadState() {
+    try {
+      var raw = localStorage.getItem(STORE);
+      if (!raw) return;
+      var o = JSON.parse(raw);
+      save.owned = o.owned || {};
+      save.shards = o.shards || {};
+      save.pity = o.pity || 0;
+      save.lastFree = o.lastFree || '';
+      save.redeemed = o.redeemed || {};
+      save.history = o.history || [];
+      save.muted = !!o.muted;
+    } catch (e) {}
+  }
+
+  function persist() {
+    try {
+      localStorage.setItem(STORE, JSON.stringify({
+        owned: save.owned,
+        shards: save.shards,
+        pity: save.pity,
+        lastFree: save.lastFree,
+        redeemed: save.redeemed,
+        history: (save.history || []).slice(-300),
+        muted: save.muted
+      }));
+    } catch (e) {}
+  }
+
   /* ---------- 音效（预生成 WAV，按需预加载） ---------- */
   var SFX = {
     pull: '/media/sfx/pull.wav',
