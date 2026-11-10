@@ -136,9 +136,11 @@ body {
 /* 卡槽：宽度贴合卡牌比例（11:15），只比卡牌大一点 */
 .slot {
   position: relative;
-  height: 100%;
-  max-width: 100%;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
   aspect-ratio: 11 / 15;
+  align-self: center;
   padding: 3px;
   border-radius: 10px;
   background:
