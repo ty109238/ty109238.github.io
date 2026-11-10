@@ -738,14 +738,22 @@
 
   function init() {
     loadState();
-    preloadSfx();
-    loadCards().then(function () {
-      bind();
-      renderPull();
-      renderCollection();
-    }).catch(function () {
-      $('gachaSub').textContent = '加载失败，请刷新重试';
-    });
+    try {
+      preloadSfx();
+      loadCards().then(function () {
+        try {
+          bind();
+          renderPull();
+          renderCollection();
+        } catch (e2) {
+          $('gachaSub').textContent = 'ERR-B: ' + e2.message;
+        }
+      }).catch(function (e3) {
+        $('gachaSub').textContent = 'ERR-C: ' + (e3 && e3.message ? e3.message : e3);
+      });
+    } catch (e1) {
+      $('gachaSub').textContent = 'ERR-A: ' + e1.message;
+    }
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
