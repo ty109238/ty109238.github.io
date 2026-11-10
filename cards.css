@@ -124,18 +124,24 @@ body {
 
 /* 书页容器 */
 .book {
+  position: relative;
   flex: 1 1 auto;
   min-height: 0;
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
   perspective: 1400px;
 }
 
 .page-arrow {
-  flex: 0 0 auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
   width: 30px;
-  height: 74px;
+  height: 66px;
+  background: rgba(255, 253, 247, 0.86);
+  backdrop-filter: blur(3px);
   border-radius: 10px;
   border: 2px solid var(--line);
   background: rgba(255, 253, 247, 0.9);
@@ -146,7 +152,9 @@ body {
   align-items: center;
   justify-content: center;
 }
-.page-arrow:disabled { opacity: .32; cursor: default; }
+.page-arrow:disabled { opacity: .3; cursor: default; }
+#prevPage { left: -2px; }
+#nextPage { right: -2px; }
 
 /* 3×3 卡槽阵 */
 .grid {

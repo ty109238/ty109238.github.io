@@ -45,14 +45,8 @@
     return set.has(idx);
   }
 
-  var cardColors = {};
-
-  function loadColors() {
-    return fetch('/data/card-colors.json', { cache: 'no-store' })
-      .then(function (r) { return r.json(); })
-      .then(function (m) { cardColors = m || {}; })
-      .catch(function () { cardColors = {}; });
-  }
+  var CARD_COLORS = {"01":"#bf6559","02":"#d57a61","03":"#dc8e7f","04":"#68a9cd","05":"#5682ac","06":"#7bb3c6","07":"#90b575","08":"#91b47c","09":"#71a868","10":"#509f5f","11":"#6cb671","12":"#a7cf90","13":"#99b79a","14":"#b4cca6","15":"#abc3a6","16":"#bad1e3","17":"#9bc1d3","18":"#78a6cc","19":"#b2a690","20":"#a8978c","21":"#b3a8a1","22":"#497445","23":"#446740","24":"#46683a","25":"#c4c5c2","26":"#b9b6af","27":"#c2ada3","28":"#514567","29":"#a8a1b0","30":"#36294b","31":"#d5d9d3","32":"#b2bcc0","33":"#c8d3d3","34":"#614e74","35":"#a6a29b","36":"#c9c9c1","37":"#68a267","38":"#74af68","39":"#7eb270","40":"#608398","41":"#5d85a0","42":"#5283a1","43":"#3a5d89","44":"#426787","45":"#507186","46":"#7692a9","47":"#5c7789","48":"#6b7c94","49":"#6893b4","50":"#b2c7d8","51":"#5581ae","52":"#9f7b63","53":"#6590ad","54":"#927562","55":"#664441","56":"#ceaea7","57":"#5b3431","58":"#9db9d1","59":"#5584a2","60":"#6185ac","61":"#486d4b","62":"#9a908c","63":"#b7a8a9","64":"#4f6b82","65":"#cdc8b7","66":"#beb09f","67":"#b4a388","68":"#455b82","69":"#d2c9c1","70":"#445577","71":"#d3c2c1","72":"#45697e","73":"#bcc1c8","74":"#456e8e","75":"#b99da2","76":"#c6a1a8","77":"#875c8d"};
+  var cardColors = CARD_COLORS;
 
   function load() {
     return fetch('/data/content.json', { cache: 'no-store' })
@@ -318,7 +312,7 @@
       if (e.key === 'Escape') $('cardViewer').classList.add('hidden');
     });
 
-    loadColors().then(load).then(function (items) {
+    load().then(function (items) {
       state.list = items;
       render();
     }).catch(function () {
