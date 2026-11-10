@@ -45,6 +45,15 @@
     return set.has(idx);
   }
 
+  var cardColors = {};
+
+  function loadColors() {
+    return fetch('/data/card-colors.json', { cache: 'no-store' })
+      .then(function (r) { return r.json(); })
+      .then(function (m) { cardColors = m || {}; })
+      .catch(function () { cardColors = {}; });
+  }
+
   function load() {
     return fetch('/data/content.json', { cache: 'no-store' })
       .then(function (r) { return r.json(); })
@@ -166,6 +175,7 @@
         continue;
       }
       slot.title = it.name;
+      slot.style.setProperty('--slot-bg', cardColors[pad2(it.idx)] || '#cfc2ad');
       slot.innerHTML =
         '<div class="frame"><img src="' + it.img + '" alt="' + it.name + '" loading="lazy"></div>' +
         '<span class="slot-no">卡槽 ' + (i + 1) + ' · ' + it.stage + ' · ' + it.element + '</span>' +
@@ -200,17 +210,27 @@
 
     var pager = $('cardPager');
     pager.innerHTML = '';
-    for (var p = 0; p < pages; p++) {
-      (function (pNo) {
-        var b = document.createElement('button');
-        b.type = 'button';
-        b.textContent = String(pNo + 1);
-        if (pNo === state.page) b.className = 'on';
-        b.addEventListener('click', function () { state.page = pNo; renderGrid(); });
-        pager.appendChild(b);
-      })(p);
+    if (pages > 1) {
+      var prev = document.createElement('button');
+      prev.type = 'button';
+      prev.textContent = '‹ 上一页';
+      prev.disabled = state.page <= 0;
+      prev.addEventListener('click', function () { goPage(state.page - 1); });
+      var next = document.createElement('button');
+      next.type = 'button';
+      next.textContent = '下一页 ›';
+      next.disabled = state.page >= pages - 1;
+      next.addEventListener('click', function () { goPage(state.page + 1); });
+      var label = document.createElement('b');
+      label.textContent = (state.page + 1) + ' / ' + pages;
+      pager.appendChild(prev);
+      pager.appendChild(label);
+      pager.appendChild(next);
     }
     pager.style.display = pages > 1 ? '' : 'none';
+    var pv = $('prevPage'), nx = $('nextPage');
+    if (pv) pv.disabled = state.page <= 0;
+    if (nx) nx.disabled = state.page >= pages - 1;
 
     var bits = [];
     if (state.stages.size) bits.push(Array.from(state.stages).join('/'));
@@ -228,6 +248,19 @@
     $('viewerImg').src = it.img;
     $('viewerCap').textContent = it.name + ' · ' + it.stage + ' · ' + it.element + '系 · 战力 ' + it.power + ' · ' + it.rarity;
     $('cardViewer').classList.remove('hidden');
+  }
+
+  function goPage(target) {
+    var grid = $('cardGrid');
+    var dir = target > state.page ? 'flip-next' : 'flip-prev';
+    state.page = target;
+    renderGrid();
+    if (grid) {
+      grid.classList.remove('flip-next', 'flip-prev');
+      void grid.offsetWidth;
+      grid.classList.add(dir);
+      setTimeout(function () { grid.classList.remove(dir); }, 440);
+    }
   }
 
   function render() {
@@ -250,6 +283,26 @@
       state.page = 0;
       render();
     });
+    var pv = $('prevPage'), nx = $('nextPage');
+    if (pv) pv.addEventListener('click', function () { if (state.page > 0) goPage(state.page - 1); });
+    if (nx) nx.addEventListener('click', function () { goPage(state.page + 1); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft' && state.page > 0) goPage(state.page - 1);
+      if (e.key === 'ArrowRight') goPage(state.page + 1);
+    });
+    var touchX = null;
+    var book = document.querySelector('.book');
+    if (book) {
+      book.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+      book.addEventListener('touchend', function (e) {
+        if (touchX === null) return;
+        var dx = e.changedTouches[0].clientX - touchX;
+        touchX = null;
+        if (Math.abs(dx) < 45) return;
+        if (dx < 0) goPage(state.page + 1);
+        else if (state.page > 0) goPage(state.page - 1);
+      }, { passive: true });
+    }
     $('favTag').addEventListener('click', function () {
       state.favOnly = !state.favOnly;
       state.page = 0;
@@ -265,7 +318,7 @@
       if (e.key === 'Escape') $('cardViewer').classList.add('hidden');
     });
 
-    load().then(function (items) {
+    loadColors().then(load).then(function (items) {
       state.list = items;
       render();
     }).catch(function () {
