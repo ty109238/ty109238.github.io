@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#241c14" />
+    <title>抽卡 · 咻噗-奥灵宠图鉴</title>
+    <link rel="icon" href="/icon.svg" />
+    <link rel="stylesheet" href="/gacha.css?v=mwaef9w7" />
+  </head>
+  <body>
+    <header class="top">
+      <a href="/" class="back">←</a>
+      <img class="logo" src="/media/ui/ui-gacha.webp" alt="" />
+      <div class="title">
+        <h1>抽卡</h1>
+        <p id="gachaSub">单抽 / 十连 / 60 抽保底</p>
+      </div>
+      <div class="shard-total"><span>碎片</span><b id="shardTotal">0</b></div>
+    </header>
+
+    <nav class="tabs" id="gachaTabs">
+      <button class="tab on" data-tab="pull">抽卡</button>
+      <button class="tab" data-tab="collection">收藏图鉴</button>
+      <button class="tab" data-tab="exchange">碎片兑换</button>
+      <button class="tab" data-tab="gift">赠送 / 兑换</button>
+    </nav>
+
+    <main class="wrap">
+      <!-- 抽卡 -->
+      <section class="panel" id="panel-pull">
+        <div class="pity">
+          <div class="pity-head">
+            <span>保底进度</span>
+            <b><span id="pityNow">0</span> / 60</b>
+          </div>
+          <div class="pity-bar"><i id="pityBar" style="width:0%"></i></div>
+          <p class="pity-note" id="pityNote">每 60 抽必得你自选的卡牌</p>
+        </div>
+
+        <div class="pick-row">
+          <button class="pick-btn" id="pickBtn" type="button">
+            <span class="pick-label">自选保底</span>
+            <b id="pickName">未选择</b>
+          </button>
+        </div>
+
+        <div class="pull-actions">
+          <button class="pull-btn one" id="pull1" type="button">
+            <b>单抽</b><small>1 张</small>
+          </button>
+          <button class="pull-btn ten" id="pull10" type="button">
+            <b>十连抽</b><small>必出优秀以上</small>
+          </button>
+          <button class="pull-btn free" id="pullFree" type="button">
+            <b>每日免费十连</b><small id="freeState">今日可领</small>
+          </button>
+        </div>
+
+        <div class="rates">
+          <h3>出率</h3>
+          <div class="rate-list" id="rateList"></div>
+        </div>
+      </section>
+
+      <!-- 收藏图鉴 -->
+      <section class="panel hidden" id="panel-collection">
+        <div class="col-head">
+          <span id="colCount">已收集 0 / 0</span>
+          <div class="col-filter" id="colFilter">
+            <button class="chip on" data-f="all">全部</button>
+            <button class="chip" data-f="owned">已拥有</button>
+            <button class="chip" data-f="normal">普通</button>
+            <button class="chip" data-f="good">优秀</button>
+            <button class="chip" data-f="rare">稀有</button>
+            <button class="chip" data-f="legend">传说</button>
+          </div>
+        </div>
+        <div class="col-grid" id="colGrid"></div>
+        <p class="hint">未抽到的卡只显示剪影，抽到后才会点亮。</p>
+      </section>
+
+      <!-- 碎片兑换 -->
+      <section class="panel hidden" id="panel-exchange">
+        <p class="hint">重复卡牌会自动分解成该卡碎片，用碎片解锁同名卡的其它画风。</p>
+        <div class="ex-list" id="exList"></div>
+      </section>
+
+      <!-- 赠送 / 兑换 -->
+      <section class="panel hidden" id="panel-gift">
+        <div class="gift-block">
+          <h3>生成赠送码</h3>
+          <p class="hint">选一张你已拥有的卡，生成赠送码发给朋友（同一次生成只包含一张卡）。</p>
+          <div class="gift-pick" id="giftPick"></div>
+          <div class="code-row">
+            <input id="giftCode" type="text" readonly placeholder="选择卡牌后生成" />
+            <button id="giftCopy" type="button">复制</button>
+          </div>
+        </div>
+
+        <div class="gift-block">
+          <h3>兑换好友的码</h3>
+          <p class="hint">粘贴对方给你的赠送码，即可获得那张卡（重复则转为碎片）。</p>
+          <div class="code-row">
+            <input id="redeemInput" type="text" placeholder="粘贴赠送码…" />
+            <button id="redeemBtn" type="button">兑换</button>
+          </div>
+          <p class="redeem-msg" id="redeemMsg"></p>
+        </div>
+      </section>
+    </main>
+
+    <!-- 抽卡结果 -->
+    <div class="result hidden" id="resultLayer">
+      <div class="result-box">
+        <h2 id="resultTitle">十连结果</h2>
+        <div class="result-grid" id="resultGrid"></div>
+        <button class="result-close" id="resultClose" type="button">确定</button>
+      </div>
+    </div>
+
+    <!-- 自选层 -->
+    <div class="result hidden" id="pickLayer">
+      <div class="result-box pick-box">
+        <h2>自选保底卡牌</h2>
+        <p class="hint">选择一张卡作为 60 抽保底奖励。</p>
+        <input id="pickSearch" type="search" placeholder="搜索名字…" />
+        <div class="pick-grid" id="pickGrid"></div>
+        <button class="result-close" id="pickClose" type="button">关闭</button>
+      </div>
+    </div>
+
+    <script src="/gacha.js?v=mwaef9w7" defer></script>
+  </body>
+</html>
