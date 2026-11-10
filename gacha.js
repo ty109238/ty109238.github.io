@@ -26,8 +26,49 @@
     shards: {},          // idx -> n
     pity: 0,
     lastFree: '',        // YYYY-MM-DD
-    redeemed: {}         // 已用兑换码
+    redeemed: {},        // 已用兑换码
+    history: [],         // 抽卡历史
+    muted: false
   };
+
+  /* ---------- 音效（WebAudio 合成，无外部文件） ---------- */
+  var actx = null;
+  function ac() {
+    if (save.muted) return null;
+    if (!actx) {
+      var C = window.AudioContext || window.webkitAudioContext;
+      if (!C) return null;
+      actx = new C();
+    }
+    if (actx.state === 'suspended') actx.resume();
+    return actx;
+  }
+
+  function tone(freq, dur, type, gainV, delay) {
+    var ctx = ac();
+    if (!ctx) return;
+    var t0 = ctx.currentTime + (delay || 0);
+    var osc = ctx.createOscillator();
+    var g = ctx.createGain();
+    osc.type = type || 'sine';
+    osc.frequency.setValueAtTime(freq, t0);
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(gainV || 0.12, t0 + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    osc.connect(g); g.connect(ctx.destination);
+    osc.start(t0); osc.stop(t0 + dur + 0.02);
+  }
+
+  function sfxFlip() { tone(520, 0.10, 'triangle', 0.07); tone(760, 0.10, 'triangle', 0.05, 0.03); }
+  function sfxPull() { tone(220, 0.16, 'sine', 0.08); tone(330, 0.20, 'sine', 0.06, 0.05); }
+  function sfxRare() { tone(660, 0.14, 'triangle', 0.10); tone(880, 0.18, 'triangle', 0.09, 0.10); }
+  function sfxLegend() {
+    [523, 659, 784, 1046].forEach(function (f, i) { tone(f, 0.22, 'sine', 0.11, i * 0.09); });
+  }
+  function sfxByRarity(r) {
+    if (r === 'legend') sfxLegend();
+    else if (r === 'rare') sfxRare();
+  }
 
   function $(id) { return document.getElementById(id); }
   function pad2(n) { return ('0' + n).slice(-2); }
@@ -47,12 +88,20 @@
         save.pity = o.pity || 0;
         save.lastFree = o.lastFree || '';
         save.redeemed = o.redeemed || {};
+        save.history = o.history || [];
+        save.muted = !!o.muted;
       }
     } catch (e) {}
   }
 
   function persist() {
-    try { localStorage.setItem(STORE, JSON.stringify(save)); } catch (e) {}
+    try {
+      localStorage.setItem(STORE, JSON.stringify({
+        owned: save.owned, shards: save.shards, pity: save.pity,
+        lastFree: save.lastFree, redeemed: save.redeemed,
+        history: save.history.slice(-300), muted: save.muted
+      }));
+    } catch (e) {}
   }
 
   function rarityOf(power) {
@@ -127,6 +176,7 @@
   }
 
   function doPull(count, freePull) {
+    sfxPull();
     var results = [];
     var gotGoodPlus = false;
 
@@ -146,7 +196,16 @@
         if (rar !== 'normal') gotGoodPlus = true;
       }
       if (card.rarity !== 'normal') gotGoodPlus = true;
-      results.push(grant(card));
+      var got = grant(card);
+      save.history.push({
+        t: Date.now(),
+        idx: card.idx,
+        variant: got.variant,
+        dup: got.dup,
+        shards: got.shards,
+        rarity: card.rarity
+      });
+      results.push(got);
 
       // 十连保底：最后一抽仍全是普通则升级
       if (count === 10 && i === count - 1 && !gotGoodPlus) {
@@ -212,7 +271,11 @@
       wrap.appendChild(flip);
       grid.appendChild(wrap);
 
-      setTimeout(function () { flip.classList.add('flipped'); }, 260 + i * 130);
+      setTimeout(function () {
+        flip.classList.add('flipped');
+        sfxFlip();
+        setTimeout(function () { sfxByRarity(r.card.rarity); }, 260);
+      }, 260 + i * 130);
     });
 
     $('resultTitle').textContent = count === 1 ? '单抽结果' : (count === 10 ? '十连结果' : '抽取结果');
@@ -365,6 +428,37 @@
     });
   }
 
+  /* ---------- 抽卡历史 ---------- */
+  function timeText(ts) {
+    var d = new Date(ts);
+    return (d.getMonth() + 1) + '/' + d.getDate() + ' ' +
+      pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+  }
+
+  function renderHistory() {
+    var host = $('hisList');
+    host.innerHTML = '';
+    var list = save.history.slice().reverse();
+    $('hisCount').textContent = '共 ' + save.history.length + ' 次记录';
+    if (!list.length) {
+      host.innerHTML = '<p class="hint">还没有抽卡记录。</p>';
+      return;
+    }
+    list.slice(0, 200).forEach(function (h) {
+      var c = findCard(h.idx);
+      if (!c) return;
+      var row = document.createElement('div');
+      row.className = 'his-item';
+      row.innerHTML =
+        '<img src="' + c.img + '" alt="">' +
+        '<div class="his-info"><b>' + c.name + '</b>' +
+          '<small>' + timeText(h.t) + ' · ' + VAR_NAMES[(h.variant || 1) - 1] + '</small></div>' +
+        '<span class="his-r ' + h.rarity + '">' + RARITY[h.rarity].label + '</span>' +
+        '<span class="his-tag ' + (h.dup ? 'dup' : 'new') + '">' + (h.dup ? ('重复 +' + h.shards) : '新卡') + '</span>';
+      host.appendChild(row);
+    });
+  }
+
   /* ---------- 自选层 ---------- */
   function renderPickLayer() {
     var grid = $('pickGrid');
@@ -426,6 +520,95 @@
     }
   }
 
+  /* ---------- 云存档：GitHub Gist ---------- */
+  var GH_KEY = 'gacha:ghtoken';
+  var GIST_KEY = 'gacha:gistid';
+
+  function ghToken() {
+    try { return localStorage.getItem(GH_KEY) || ''; } catch (e) { return ''; }
+  }
+
+  function savePayload() {
+    return JSON.stringify({
+      owned: save.owned, shards: save.shards, pity: save.pity,
+      lastFree: save.lastFree, history: save.history.slice(-300), at: Date.now()
+    });
+  }
+
+  function cloudPush() {
+    var tk = $('ghToken').value.trim() || ghToken();
+    var msg = $('cloudMsg');
+    if (!tk) { msg.className = 'sync-msg bad'; msg.textContent = '请先填入 GitHub Token'; return; }
+    localStorage.setItem(GH_KEY, tk);
+    var gid = '';
+    try { gid = localStorage.getItem(GIST_KEY) || ''; } catch (e) {}
+
+    var body = {
+      description: '咻噗·奥灵宠 抽卡存档',
+      files: { 'aoling-gacha-save.json': { content: savePayload() } }
+    };
+    var url = gid ? ('https://api.github.com/gists/' + gid) : 'https://api.github.com/gists';
+    msg.className = 'sync-msg'; msg.textContent = '上传中…';
+    fetch(url, {
+      method: gid ? 'PATCH' : 'POST',
+      headers: { Authorization: 'token ' + tk, 'Content-Type': 'application/json' },
+      body: JSON.stringify(gid ? { files: body.files } : body)
+    }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).then(function (j) {
+      localStorage.setItem(GIST_KEY, j.id);
+      msg.className = 'sync-msg ok';
+      msg.textContent = '已上传云端（gist ' + j.id.slice(0, 8) + '…）';
+    }).catch(function (e) {
+      msg.className = 'sync-msg bad';
+      msg.textContent = '上传失败：' + e.message + '（检查 Token 的 gist 权限）';
+    });
+  }
+
+  function cloudPull() {
+    var tk = $('ghToken').value.trim() || ghToken();
+    var msg = $('cloudMsg');
+    if (!tk) { msg.className = 'sync-msg bad'; msg.textContent = '请先填入 GitHub Token'; return; }
+    localStorage.setItem(GH_KEY, tk);
+    var gid = '';
+    try { gid = localStorage.getItem(GIST_KEY) || ''; } catch (e) {}
+    if (!gid) { msg.className = 'sync-msg bad'; msg.textContent = '本机还没有云端存档记录，请先上传一次'; return; }
+
+    msg.className = 'sync-msg'; msg.textContent = '拉取中…';
+    fetch('https://api.github.com/gists/' + gid, {
+      headers: { Authorization: 'token ' + tk }
+    }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).then(function (j) {
+      var f = j.files && j.files['aoling-gacha-save.json'];
+      if (!f) throw new Error('云端存档缺少数据文件');
+      var content = f.content;
+      if (f.truncated && f.raw_url) {
+        return fetch(f.raw_url).then(function (r2) { return r2.text(); });
+      }
+      return content;
+    }).then(function (txt) {
+      var o = typeof txt === 'string' ? JSON.parse(txt) : txt;
+      var addCards = 0, addShards = 0;
+      Object.keys(o.owned || {}).forEach(function (k) { if (!save.owned[k]) { save.owned[k] = 1; addCards++; } });
+      Object.keys(o.shards || {}).forEach(function (k) {
+        save.shards[k] = (save.shards[k] || 0) + (o.shards[k] || 0);
+        addShards += (o.shards[k] || 0);
+      });
+      if (typeof o.pity === 'number') save.pity = Math.max(save.pity, o.pity);
+      if (Array.isArray(o.history)) save.history = save.history.concat(o.history).slice(-300);
+      persist();
+      renderPull(); renderCollection(); renderGift(); renderHistory();
+      msg.className = 'sync-msg ok';
+      msg.textContent = '已拉取：新增 ' + addCards + ' 张卡、+' + addShards + ' 碎片';
+    }).catch(function (e) {
+      msg.className = 'sync-msg bad';
+      msg.textContent = '拉取失败：' + e.message;
+    });
+  }
+
   /* ---------- 初始化 ---------- */
   function bind() {
     $('pull1').addEventListener('click', function () { doPull(1, false); });
@@ -444,12 +627,13 @@
       if (!b) return;
       var tab = b.getAttribute('data-tab');
       [].slice.call(document.querySelectorAll('.tab')).forEach(function (x) { x.classList.toggle('on', x === b); });
-      ['pull', 'collection', 'exchange', 'gift'].forEach(function (k) {
+      ['pull', 'collection', 'exchange', 'history', 'gift'].forEach(function (k) {
         $('panel-' + k).classList.toggle('hidden', k !== tab);
       });
       if (tab === 'collection') renderCollection();
       if (tab === 'exchange') renderExchange();
       if (tab === 'gift') renderGift();
+      if (tab === 'history') renderHistory();
     });
 
     $('colFilter').addEventListener('click', function (e) {
@@ -465,6 +649,34 @@
       if (!v) return;
       if (navigator.clipboard) navigator.clipboard.writeText(v).then(function () { $('giftCopy').textContent = '已复制'; setTimeout(function () { $('giftCopy').textContent = '复制'; }, 1200); });
     });
+
+    var mb = $('muteBtn');
+    if (mb) {
+      mb.textContent = save.muted ? '🔇' : '🔊';
+      mb.classList.toggle('off', save.muted);
+      mb.addEventListener('click', function () {
+        save.muted = !save.muted;
+        persist();
+        mb.textContent = save.muted ? '🔇' : '🔊';
+        mb.classList.toggle('off', save.muted);
+        if (!save.muted) sfxFlip();
+      });
+    }
+
+    if ($('hisClear')) {
+      $('hisClear').addEventListener('click', function () {
+        if (!confirm('清空抽卡历史？（不影响卡牌和碎片）')) return;
+        save.history = [];
+        persist();
+        renderHistory();
+      });
+    }
+
+    if ($('ghToken')) {
+      try { $('ghToken').value = ghToken(); } catch (e) {}
+      $('cloudPush').addEventListener('click', cloudPush);
+      $('cloudPull').addEventListener('click', cloudPull);
+    }
 
     var sa = $('syncArea');
     if (sa) {

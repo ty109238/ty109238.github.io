@@ -313,3 +313,41 @@ body {
 .sync-msg { font-size: 12px; margin-top: 6px; min-height: 16px; }
 .sync-msg.ok { color: #2f7a49; }
 .sync-msg.bad { color: #b03a2e; }
+
+
+/* 音效按钮 */
+.mute-btn {
+  flex: 0 0 auto;
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  border: 2px solid var(--line);
+  background: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+.mute-btn.off { opacity: .55; }
+
+/* 抽卡历史 */
+.his-head { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #6b5a45; margin-bottom: 8px; }
+.his-list { display: flex; flex-direction: column; gap: 7px; max-height: 66vh; overflow-y: auto; }
+.his-item {
+  display: flex; align-items: center; gap: 9px;
+  border: 2px solid var(--line); border-radius: 10px; padding: 7px 9px; background: #fffaf0;
+}
+.his-item img { width: 34px; height: 46px; object-fit: cover; border-radius: 5px; flex: 0 0 auto; }
+.his-info { flex: 1 1 auto; min-width: 0; font-size: 12px; }
+.his-info b { font-size: 12.5px; }
+.his-info small { display: block; color: #8a7a63; font-size: 10.5px; margin-top: 1px; }
+.his-tag { font-size: 10.5px; padding: 1px 7px; border-radius: 999px; flex: 0 0 auto; }
+.his-tag.new { background: #eaf7ee; color: #2f7a49; border: 1px solid #9ad3ae; }
+.his-tag.dup { background: #f6efe1; color: #8a7a63; border: 1px solid #ddd0b6; }
+.his-r { font-size: 10.5px; font-weight: 800; }
+.his-r.normal { color: var(--c-normal); }
+.his-r.good { color: var(--c-good); }
+.his-r.rare { color: var(--c-rare); }
+.his-r.legend { color: #a5701a; }
+
+/* 云存档 */
+.cloud-block { margin-top: 16px; border-top: 2px dashed var(--line); padding-top: 12px; }
+.cloud-block h3 { margin: 0 0 4px; font-size: 13px; }
+.cloud-block .hint b { color: #8a5b12; }

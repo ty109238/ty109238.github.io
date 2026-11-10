@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#241c14" />
     <title>抽卡 · 咻噗-奥灵宠图鉴</title>
     <link rel="icon" href="/icon.svg" />
-    <link rel="stylesheet" href="/gacha.css?v=mwaeyy3m" />
+    <link rel="stylesheet" href="/gacha.css?v=mwafatir" />
   </head>
   <body>
     <header class="top">
@@ -16,6 +16,7 @@
         <h1>抽卡</h1>
         <p id="gachaSub">单抽 / 十连 / 60 抽保底</p>
       </div>
+      <button class="mute-btn" id="muteBtn" type="button" title="音效开关">🔊</button>
       <div class="shard-total"><span>碎片</span><b id="shardTotal">0</b></div>
     </header>
 
@@ -23,6 +24,7 @@
       <button class="tab on" data-tab="pull">抽卡</button>
       <button class="tab" data-tab="collection">收藏图鉴</button>
       <button class="tab" data-tab="exchange">碎片兑换</button>
+      <button class="tab" data-tab="history">抽卡历史</button>
       <button class="tab" data-tab="gift">赠送 / 兑换</button>
     </nav>
 
@@ -86,6 +88,15 @@
         <div class="ex-list" id="exList"></div>
       </section>
 
+      <!-- 抽卡历史 -->
+      <section class="panel hidden" id="panel-history">
+        <div class="his-head">
+          <span id="hisCount">共 0 次记录</span>
+          <button class="chip" id="hisClear" type="button">清空历史</button>
+        </div>
+        <div class="his-list" id="hisList"></div>
+      </section>
+
       <!-- 赠送 / 兑换 -->
       <section class="panel hidden" id="panel-gift">
         <div class="gift-block">
@@ -118,6 +129,19 @@
             <button id="syncCopy" class="ghost" type="button">复制</button>
           </div>
           <p class="sync-msg" id="syncMsg"></p>
+
+          <div class="cloud-block">
+            <h3>云存档（GitHub Gist）</h3>
+            <p class="hint">填入一个有 <b>gist</b> 权限的 GitHub Token，即可把存档存到云端，换设备用同一个 Token 拉取。Token 只保存在本机浏览器。</p>
+            <div class="code-row">
+              <input id="ghToken" type="password" placeholder="GitHub Token（gist 权限）" autocomplete="off" />
+            </div>
+            <div class="sync-row">
+              <button id="cloudPush" type="button">上传到云端</button>
+              <button id="cloudPull" type="button">从云端拉取</button>
+            </div>
+            <p class="sync-msg" id="cloudMsg"></p>
+          </div>
         </div>
       </section>
     </main>
@@ -142,6 +166,6 @@
       </div>
     </div>
 
-    <script src="/gacha.js?v=mwaeyy3m" defer></script>
+    <script src="/gacha.js?v=mwafatir" defer></script>
   </body>
 </html>
