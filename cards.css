@@ -208,3 +208,58 @@ body {
   .card .tag { font-size: 10px; padding: 1px 6px; }
   .top h1 { font-size: 16px; }
 }
+
+
+/* 稀有度 / 战力 / 收藏 */
+.rar {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  padding: 2px 8px;
+  font-size: 10.5px;
+  font-weight: 800;
+  border-radius: 999px;
+  color: #fff;
+  letter-spacing: .5px;
+}
+.rar.r-普通 { background: rgba(120, 120, 120, .85); }
+.rar.r-优秀 { background: rgba(58, 150, 90, .9); }
+.rar.r-稀有 { background: rgba(58, 110, 200, .92); }
+.rar.r-传说 { background: linear-gradient(135deg, #d99a20, #f0c040); color: #3a2600; }
+
+.chip.r-普通.on { background: #eee; }
+.chip.r-优秀.on { background: #dff5e5; border-color: #46a06a; }
+.chip.r-稀有.on { background: #e2ecff; border-color: #3c6fc8; }
+.chip.r-传说.on { background: #fff2cf; border-color: #d9a441; }
+
+.pw {
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+  padding: 2px 7px;
+  font-size: 10.5px;
+  border-radius: 999px;
+  background: rgba(20, 20, 20, .62);
+  color: #ffd9a0;
+  font-variant-numeric: tabular-nums;
+}
+
+.fav {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(20, 20, 20, .5);
+  color: #ffe9b8;
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fav.on { background: rgba(217, 164, 65, .92); color: #3a2600; }
+.fav-chip.on { background: #fff2cf; border-color: var(--gold); color: #8a5b12; font-weight: 700; }
