@@ -31,77 +31,54 @@
     muted: false
   };
 
-  /* ---------- 音效（WebAudio 合成，无外部文件） ---------- */
-  var actx = null;
-  function ac() {
-    if (save.muted) return null;
-    if (!actx) {
-      var C = window.AudioContext || window.webkitAudioContext;
-      if (!C) return null;
-      actx = new C();
+  /* ---------- 音效（预生成 WAV，按需预加载） ---------- */
+  var SFX = {
+    pull: '/media/sfx/pull.wav',
+    flip: '/media/sfx/flip.wav',
+    rare: '/media/sfx/rare.wav',
+    legend: '/media/sfx/legend.wav',
+    dup: '/media/sfx/dup.wav',
+    click: '/media/sfx/click.wav'
+  };
+  var sfxCache = {};
+
+  function preloadSfx() {
+    if (save.muted) return;
+    Object.keys(SFX).forEach(function (k) {
+      if (sfxCache[k]) return;
+      var a = new Audio(SFX[k]);
+      a.preload = 'auto';
+      a.volume = 0.55;
+      sfxCache[k] = a;
+    });
+  }
+
+  function playSfx(k, vol) {
+    if (save.muted) return;
+    var a = sfxCache[k];
+    if (!a) {
+      a = new Audio(SFX[k]);
+      a.preload = 'auto';
+      sfxCache[k] = a;
     }
-    if (actx.state === 'suspended') actx.resume();
-    return actx;
+    try {
+      a.pause();
+      a.currentTime = 0;
+      a.volume = vol == null ? 0.55 : vol;
+      var p = a.play();
+      if (p && p.catch) p.catch(function () {});
+    } catch (e) {}
   }
 
-  function tone(freq, dur, type, gainV, delay) {
-    var ctx = ac();
-    if (!ctx) return;
-    var t0 = ctx.currentTime + (delay || 0);
-    var osc = ctx.createOscillator();
-    var g = ctx.createGain();
-    osc.type = type || 'sine';
-    osc.frequency.setValueAtTime(freq, t0);
-    g.gain.setValueAtTime(0.0001, t0);
-    g.gain.exponentialRampToValueAtTime(gainV || 0.12, t0 + 0.02);
-    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
-    osc.connect(g); g.connect(ctx.destination);
-    osc.start(t0); osc.stop(t0 + dur + 0.02);
-  }
-
-  function sfxFlip() { tone(520, 0.10, 'triangle', 0.07); tone(760, 0.10, 'triangle', 0.05, 0.03); }
-  function sfxPull() { tone(220, 0.16, 'sine', 0.08); tone(330, 0.20, 'sine', 0.06, 0.05); }
-  function sfxRare() { tone(660, 0.14, 'triangle', 0.10); tone(880, 0.18, 'triangle', 0.09, 0.10); }
-  function sfxLegend() {
-    [523, 659, 784, 1046].forEach(function (f, i) { tone(f, 0.22, 'sine', 0.11, i * 0.09); });
-  }
+  function sfxFlip() { playSfx('flip', 0.45); }
+  function sfxPull() { playSfx('pull', 0.5); }
+  function sfxRare() { playSfx('rare', 0.55); }
+  function sfxLegend() { playSfx('legend', 0.6); }
+  function sfxDup() { playSfx('dup', 0.4); }
+  function sfxClick() { playSfx('click', 0.4); }
   function sfxByRarity(r) {
     if (r === 'legend') sfxLegend();
     else if (r === 'rare') sfxRare();
-  }
-
-  function $(id) { return document.getElementById(id); }
-  function pad2(n) { return ('0' + n).slice(-2); }
-
-  function today() {
-    var d = new Date();
-    return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
-  }
-
-  function loadState() {
-    try {
-      var raw = localStorage.getItem(STORE);
-      if (raw) {
-        var o = JSON.parse(raw);
-        save.owned = o.owned || {};
-        save.shards = o.shards || {};
-        save.pity = o.pity || 0;
-        save.lastFree = o.lastFree || '';
-        save.redeemed = o.redeemed || {};
-        save.history = o.history || [];
-        save.muted = !!o.muted;
-      }
-    } catch (e) {}
-  }
-
-  function persist() {
-    try {
-      localStorage.setItem(STORE, JSON.stringify({
-        owned: save.owned, shards: save.shards, pity: save.pity,
-        lastFree: save.lastFree, redeemed: save.redeemed,
-        history: save.history.slice(-300), muted: save.muted
-      }));
-    } catch (e) {}
   }
 
   function rarityOf(power) {
@@ -274,7 +251,9 @@
       setTimeout(function () {
         flip.classList.add('flipped');
         sfxFlip();
-        setTimeout(function () { sfxByRarity(r.card.rarity); }, 260);
+        setTimeout(function () {
+          if (r.dup) sfxDup(); else sfxByRarity(r.card.rarity);
+        }, 260);
       }, 260 + i * 130);
     });
 
@@ -611,10 +590,11 @@
 
   /* ---------- 初始化 ---------- */
   function bind() {
-    $('pull1').addEventListener('click', function () { doPull(1, false); });
-    $('pull10').addEventListener('click', function () { doPull(10, false); });
+    $('pull1').addEventListener('click', function () { sfxClick(); doPull(1, false); });
+    $('pull10').addEventListener('click', function () { sfxClick(); doPull(10, false); });
     $('pullFree').addEventListener('click', function () {
       if (save.lastFree === today()) return;
+      sfxClick();
       doPull(10, true);
     });
     $('resultClose').addEventListener('click', function () { $('resultLayer').classList.add('hidden'); });
@@ -659,7 +639,7 @@
         persist();
         mb.textContent = save.muted ? '🔇' : '🔊';
         mb.classList.toggle('off', save.muted);
-        if (!save.muted) sfxFlip();
+        if (!save.muted) { preloadSfx(); sfxFlip(); }
       });
     }
 
@@ -722,6 +702,7 @@
 
   function init() {
     loadState();
+    preloadSfx();
     loadCards().then(function () {
       bind();
       renderPull();
