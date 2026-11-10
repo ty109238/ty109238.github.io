@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#241c14" />
     <title>抽卡 · 咻噗-奥灵宠图鉴</title>
     <link rel="icon" href="/icon.svg" />
-    <link rel="stylesheet" href="/gacha.css?v=mwagswuo" />
+    <link rel="stylesheet" href="/gacha.css?v=mwah8edf" />
   </head>
   <body>
     <header class="top">
@@ -67,6 +67,7 @@
 
       <!-- 收藏图鉴 -->
       <section class="panel hidden" id="panel-collection">
+        <button class="back-tab" type="button">← 返回抽卡</button>
         <div class="col-head">
           <span id="colCount">已收集 0 / 0</span>
           <div class="col-filter" id="colFilter">
@@ -84,12 +85,14 @@
 
       <!-- 碎片兑换 -->
       <section class="panel hidden" id="panel-exchange">
+        <button class="back-tab" type="button">← 返回抽卡</button>
         <p class="hint">重复卡牌会自动分解成该卡碎片，用碎片解锁同名卡的其它画风。</p>
         <div class="ex-list" id="exList"></div>
       </section>
 
       <!-- 抽卡历史 -->
       <section class="panel hidden" id="panel-history">
+        <button class="back-tab" type="button">← 返回抽卡</button>
         <div class="his-head">
           <span id="hisCount">共 0 次记录</span>
           <button class="chip" id="hisClear" type="button">清空历史</button>
@@ -99,6 +102,7 @@
 
       <!-- 赠送 / 兑换 -->
       <section class="panel hidden" id="panel-gift">
+        <button class="back-tab" type="button">← 返回抽卡</button>
         <div class="gift-block">
           <h3>生成赠送码</h3>
           <p class="hint">选一张你已拥有的卡，生成赠送码发给朋友（同一次生成只包含一张卡）。</p>
@@ -166,6 +170,6 @@
       </div>
     </div>
 
-    <script src="/gacha.js?v=mwagswuo" defer></script>
+    <script src="/gacha.js?v=mwah8edf" defer></script>
   </body>
 </html>

@@ -155,7 +155,19 @@ body {
   background: #eee3cc;
 }
 .col-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.col-card.locked img { filter: brightness(0) opacity(.22); }
+.col-card.locked img {
+  filter: grayscale(1) brightness(1.25) contrast(.85) opacity(.55);
+}
+.col-card.locked { background: #f1e9d8; }
+.col-card.locked::after {
+  content: "未获得";
+  position: absolute; left: 0; right: 0; top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 10px; color: #8a7a63;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
 .col-card .rt {
   position: absolute; right: 3px; top: 3px;
   padding: 0 5px; font-size: 8.5px; font-weight: 800; border-radius: 999px; color: #fff;
@@ -351,3 +363,20 @@ body {
 .cloud-block { margin-top: 16px; border-top: 2px dashed var(--line); padding-top: 12px; }
 .cloud-block h3 { margin: 0 0 4px; font-size: 13px; }
 .cloud-block .hint b { color: #8a5b12; }
+
+
+/* 子页返回按钮 */
+.back-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10px;
+  padding: 7px 12px;
+  font-size: 12.5px;
+  border-radius: 10px;
+  border: 2px solid var(--line);
+  background: #fff;
+  color: #6b5a45;
+  cursor: pointer;
+}
+.back-tab:active { background: #f6efe1; }

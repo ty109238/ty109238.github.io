@@ -654,6 +654,14 @@
       if (tab === 'history') renderHistory();
     });
 
+    function backTabClick() {
+      var pullTab = document.querySelector('.tab[data-tab="pull"]');
+      if (pullTab) pullTab.click();
+    }
+    [].slice.call(document.querySelectorAll('.back-tab')).forEach(function (b) {
+      b.addEventListener('click', function () { sfxClick(); backTabClick(); });
+    });
+
     $('colFilter').addEventListener('click', function (e) {
       var b = e.target.closest('.chip');
       if (!b) return;
