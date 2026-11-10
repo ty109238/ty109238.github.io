@@ -1,0 +1,210 @@
+/* 卡册页面 */
+:root {
+  --ink: #2b241c;
+  --paper: #f6efe1;
+  --gold: #d9a441;
+  --line: rgba(43, 36, 28, 0.16);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, #fbf6ea, #efe4cd 60%, #e7d9bd);
+  color: var(--ink);
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: rgba(255, 252, 244, 0.92);
+  border-bottom: 2px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(8px);
+}
+.top a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 10px;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+.top h1 { font-size: 18px; margin: 0; }
+.top p { margin: 2px 0 0; font-size: 12px; color: #7a6a55; }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 16px 14px 60px; }
+
+.tools { margin-bottom: 14px; }
+.search-row { display: flex; gap: 10px; }
+#cardSearch {
+  flex: 1;
+  padding: 11px 14px;
+  font-size: 14px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: #fffdf7;
+  outline: none;
+}
+#cardSearch:focus { border-color: var(--gold); }
+.filter-btn {
+  padding: 11px 14px;
+  font-size: 14px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: #fffdf7;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.filter-btn b { color: #b4802a; font-weight: 700; }
+
+.filter-panel {
+  margin-top: 10px;
+  padding: 12px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: #fffdf7;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.filter-panel.hidden { display: none; }
+.filter-group { display: flex; gap: 10px; align-items: flex-start; }
+.filter-label {
+  flex: 0 0 40px;
+  font-size: 12px;
+  color: #7a6a55;
+  padding-top: 6px;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  padding: 5px 11px;
+  font-size: 12.5px;
+  border-radius: 999px;
+  border: 2px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+.chip.on {
+  border-color: var(--gold);
+  background: #fff3d8;
+  color: #8a5b12;
+  font-weight: 700;
+}
+
+/* 3×3 卡阵 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  border: 2px solid var(--line);
+  box-shadow: 0 8px 20px rgba(60, 45, 25, 0.12);
+  cursor: zoom-in;
+  aspect-ratio: 11 / 15;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.card .tag {
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  padding: 2px 8px;
+  font-size: 11px;
+  border-radius: 999px;
+  background: rgba(20, 20, 20, 0.62);
+  color: #ffe9b8;
+  font-weight: 700;
+}
+
+.empty {
+  padding: 40px 0;
+  text-align: center;
+  color: #8a7a63;
+}
+.empty.hidden { display: none; }
+
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin: 18px 0 8px;
+}
+.pager button {
+  min-width: 38px;
+  padding: 8px 11px;
+  font-size: 13px;
+  border-radius: 10px;
+  border: 2px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+}
+.pager button.on {
+  border-color: var(--gold);
+  background: #fff3d8;
+  font-weight: 700;
+}
+.count { text-align: center; font-size: 12px; color: #8a7a63; }
+
+/* 放大查看 */
+.viewer {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 12, 8, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 90;
+  padding: 20px;
+}
+.viewer.hidden { display: none; }
+.viewer img {
+  max-width: min(92vw, 560px);
+  max-height: 76vh;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+.viewer-cap { color: #ffe9b8; font-size: 13px; }
+.viewer-close {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .wrap { padding: 12px 10px 50px; }
+  .grid { gap: 8px; }
+  .card { border-radius: 11px; }
+  .card .tag { font-size: 10px; padding: 1px 6px; }
+  .top h1 { font-size: 16px; }
+}
