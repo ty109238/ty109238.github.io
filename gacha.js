@@ -197,13 +197,24 @@
   function showResults(results, count) {
     var grid = $('resultGrid');
     grid.innerHTML = '';
-    results.forEach(function (r) {
-      var d = document.createElement('div');
-      d.className = 'res-card' + (r.dup ? '' : ' new');
-      d.innerHTML = '<img src="' + r.card.img + '" alt="">' +
-        '<span class="badge">' + (r.dup ? ('重复 +' + r.shards + ' 碎片') : ('新卡 ' + VAR_NAMES[r.variant - 1])) + '</span>';
-      grid.appendChild(d);
+    results.forEach(function (r, i) {
+      var wrap = document.createElement('div');
+      wrap.className = 'res-card' + (r.dup ? '' : ' new');
+
+      var flip = document.createElement('div');
+      flip.className = 'flip-wrap';
+      flip.innerHTML =
+        '<div class="flip-face flip-front"><img src="/media/cards/back.webp" alt="卡背"></div>' +
+        '<div class="flip-face flip-back"><img src="' + r.card.img + '" alt="">' +
+        '<span class="flip-badge">' + (r.dup ? ('重复 +' + r.shards + ' 碎片') : ('新卡 ' + VAR_NAMES[r.variant - 1])) + '</span></div>';
+
+      flip.addEventListener('click', function () { flip.classList.toggle('flipped'); });
+      wrap.appendChild(flip);
+      grid.appendChild(wrap);
+
+      setTimeout(function () { flip.classList.add('flipped'); }, 260 + i * 130);
     });
+
     $('resultTitle').textContent = count === 1 ? '单抽结果' : (count === 10 ? '十连结果' : '抽取结果');
     $('resultLayer').classList.remove('hidden');
   }
@@ -374,6 +385,47 @@
     });
   }
 
+  /* ---------- 跨设备存档 ---------- */
+  function exportSave() {
+    var payload = {
+      owned: save.owned,
+      shards: save.shards,
+      pity: save.pity,
+      lastFree: save.lastFree,
+      at: Date.now()
+    };
+    var body = JSON.stringify(payload);
+    var code = body + '|' + hashStr('aoling-save-' + body);
+    return 'ASV' + btoa(unescape(encodeURIComponent(code))).replace(/=+$/, '');
+  }
+
+  function importSave(raw) {
+    try {
+      var s = (raw || '').trim();
+      if (s.indexOf('ASV') !== 0) return { ok: false, msg: '不是存档码（应以 ASV 开头）' };
+      var dec = decodeURIComponent(escape(atob(s.slice(3))));
+      var cut = dec.lastIndexOf('|');
+      if (cut < 0) return { ok: false, msg: '存档码格式错误' };
+      var body = dec.slice(0, cut);
+      var sig = dec.slice(cut + 1);
+      if (hashStr('aoling-save-' + body) !== sig) return { ok: false, msg: '存档码校验失败' };
+      var o = JSON.parse(body);
+      var addedCards = 0, addedShards = 0;
+      Object.keys(o.owned || {}).forEach(function (k) {
+        if (!save.owned[k]) { save.owned[k] = 1; addedCards++; }
+      });
+      Object.keys(o.shards || {}).forEach(function (k) {
+        save.shards[k] = (save.shards[k] || 0) + (o.shards[k] || 0);
+        addedShards += (o.shards[k] || 0);
+      });
+      if (typeof o.pity === 'number') save.pity = Math.max(save.pity, o.pity);
+      persist();
+      return { ok: true, msg: '导入成功：新增 ' + addedCards + ' 张卡、+' + addedShards + ' 碎片' };
+    } catch (e) {
+      return { ok: false, msg: '存档码解析失败' };
+    }
+  }
+
   /* ---------- 初始化 ---------- */
   function bind() {
     $('pull1').addEventListener('click', function () { doPull(1, false); });
@@ -413,6 +465,28 @@
       if (!v) return;
       if (navigator.clipboard) navigator.clipboard.writeText(v).then(function () { $('giftCopy').textContent = '已复制'; setTimeout(function () { $('giftCopy').textContent = '复制'; }, 1200); });
     });
+
+    var sa = $('syncArea');
+    if (sa) {
+      $('syncExport').addEventListener('click', function () {
+        sa.value = exportSave();
+        $('syncMsg').className = 'sync-msg ok';
+        $('syncMsg').textContent = '已生成，复制发给另一台设备粘贴导入即可';
+      });
+      $('syncImport').addEventListener('click', function () {
+        var r = importSave(sa.value);
+        $('syncMsg').className = 'sync-msg ' + (r.ok ? 'ok' : 'bad');
+        $('syncMsg').textContent = r.msg;
+        if (r.ok) { renderPull(); renderCollection(); renderGift(); }
+      });
+      $('syncCopy').addEventListener('click', function () {
+        if (!sa.value) return;
+        if (navigator.clipboard) navigator.clipboard.writeText(sa.value).then(function () {
+          $('syncMsg').className = 'sync-msg ok';
+          $('syncMsg').textContent = '已复制到剪贴板';
+        });
+      });
+    }
 
     $('redeemBtn').addEventListener('click', function () {
       var msg = $('redeemMsg');

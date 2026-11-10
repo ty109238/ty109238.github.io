@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#241c14" />
     <title>抽卡 · 咻噗-奥灵宠图鉴</title>
     <link rel="icon" href="/icon.svg" />
-    <link rel="stylesheet" href="/gacha.css?v=mwaef9w7" />
+    <link rel="stylesheet" href="/gacha.css?v=mwaeyy3m" />
   </head>
   <body>
     <header class="top">
@@ -107,6 +107,18 @@
           </div>
           <p class="redeem-msg" id="redeemMsg"></p>
         </div>
+
+        <div class="sync-block">
+          <h3>跨设备同步（存档码）</h3>
+          <p class="hint">导出本机存档 → 在另一台设备粘贴导入，即可转移全部抽卡进度（卡牌 / 碎片 / 保底 / 每日免费）。</p>
+          <textarea class="sync-area" id="syncArea" placeholder="点击「导出存档码」生成，或在这里粘贴别人的存档码"></textarea>
+          <div class="sync-row">
+            <button id="syncExport" type="button">导出存档码</button>
+            <button id="syncImport" type="button">导入存档码</button>
+            <button id="syncCopy" class="ghost" type="button">复制</button>
+          </div>
+          <p class="sync-msg" id="syncMsg"></p>
+        </div>
       </section>
     </main>
 
@@ -130,6 +142,6 @@
       </div>
     </div>
 
-    <script src="/gacha.js?v=mwaef9w7" defer></script>
+    <script src="/gacha.js?v=mwaeyy3m" defer></script>
   </body>
 </html>
