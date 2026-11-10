@@ -380,3 +380,14 @@ body {
   cursor: pointer;
 }
 .back-tab:active { background: #f6efe1; }
+
+
+/* UR 结果高亮 */
+.res-card.ur .flip-back {
+  border-color: #f0c040;
+  box-shadow: 0 0 16px rgba(240, 192, 64, .8);
+}
+.res-card.ur .flip-badge {
+  background: linear-gradient(135deg, #d99a20, #f0c040);
+  color: #3a2600; font-weight: 800;
+}

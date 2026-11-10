@@ -22,7 +22,8 @@
     rarities: new Set(),
     powerBand: null,
     favOnly: false,
-    sort: 'idx'
+    sort: 'idx',
+    book: 'normal'      // normal | ur
   };
 
   function $(id) { return document.getElementById(id); }
@@ -169,11 +170,15 @@
         continue;
       }
       slot.title = it.name;
-      slot.style.setProperty('--slot-bg', cardColors[pad2(it.idx)] || '#cfc2ad');
+      var urMode = state.book === 'ur';
+      var src = urMode ? ('/media/cards-ur/' + pad2(it.idx) + '.webp') : it.img;
+      slot.className = 'slot' + (urMode ? ' ur' : '');
+      if (urMode) slot.style.setProperty('--slot-bg', '#3a2c18');
+      else slot.style.setProperty('--slot-bg', cardColors[pad2(it.idx)] || '#cfc2ad');
       slot.innerHTML =
-        '<div class="frame"><img src="' + it.img + '" alt="' + it.name + '" loading="lazy"></div>' +
+        '<div class="frame"><img src="' + src + '" alt="' + it.name + '" loading="lazy"></div>' +
         '<span class="slot-no">卡槽 ' + (i + 1) + ' · ' + it.stage + ' · ' + it.element + '</span>' +
-        '<span class="rar r-' + it.rarity + '">' + it.rarity + '</span>' +
+        '<span class="rar r-' + (urMode ? '传说' : it.rarity) + '">' + (urMode ? 'UR' : it.rarity) + '</span>' +
         '<span class="pw">战力 ' + it.power + '</span>' +
         '<button class="fav' + (it.fav ? ' on' : '') + '" type="button" title="收藏">' + (it.fav ? '★' : '☆') + '</button>';
 
@@ -239,8 +244,10 @@
   }
 
   function openViewer(it) {
-    $('viewerImg').src = it.img;
-    $('viewerCap').textContent = it.name + ' · ' + it.stage + ' · ' + it.element + '系 · 战力 ' + it.power + ' · ' + it.rarity;
+    var urMode = state.book === 'ur';
+    $('viewerImg').src = urMode ? ('/media/cards-ur/' + pad2(it.idx) + '.webp') : it.img;
+    $('viewerCap').textContent = it.name + ' · ' + it.stage + ' · ' + it.element + '系 · 战力 ' + it.power +
+      (state.book === 'ur' ? ' · UR' : ' · ' + it.rarity);
     $('cardViewer').classList.remove('hidden');
   }
 
@@ -269,6 +276,18 @@
       state.page = 0;
       renderGrid();
     });
+    var bookTabs = $('bookTabs');
+    if (bookTabs) {
+      bookTabs.addEventListener('click', function (e) {
+        var b = e.target.closest('.book-tab');
+        if (!b) return;
+        state.book = b.getAttribute('data-book');
+        state.page = 0;
+        [].slice.call(bookTabs.children).forEach(function (x) { x.classList.toggle('on', x === b); });
+        renderGrid();
+      });
+    }
+
     $('cardFilterBtn').addEventListener('click', function () {
       $('filterPanel').classList.toggle('hidden');
     });

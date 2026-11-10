@@ -337,3 +337,30 @@ body {
   .top { padding: 5px 10px; }
   .tools .tool-btn, #cardSearch { padding: 7px 9px; font-size: 12px; }
 }
+
+
+/* 普通 / UR 分册切换 */
+.book-tabs { display: flex; gap: 7px; margin-bottom: 8px; }
+.book-tab {
+  flex: 1 1 0;
+  padding: 9px 12px;
+  font-size: 13px;
+  border-radius: 11px;
+  border: 2px solid var(--line);
+  background: rgba(255, 253, 247, .85);
+  color: #6b5a45;
+  cursor: pointer;
+}
+.book-tab.on {
+  border-color: var(--gold);
+  background: #fff3d8;
+  color: #8a5b12;
+  font-weight: 800;
+}
+.book-tab[data-book="ur"].on {
+  background: linear-gradient(135deg, #fff0c8, #ffd98a);
+  border-color: #d4952b;
+  color: #7a4a05;
+}
+.slot.ur .frame { box-shadow: inset 0 0 0 2px rgba(255, 200, 80, .55); }
+.slot.ur .rar { background: linear-gradient(135deg, #d99a20, #f0c040); color: #3a2600; }
