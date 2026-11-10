@@ -739,8 +739,12 @@
   function init() {
     loadState();
     try {
+      $('gachaSub').textContent = 'STEP1';
       preloadSfx();
+      $('gachaSub').textContent = 'STEP2';
+      $('gachaSub').textContent = 'STEP3';
       loadCards().then(function () {
+        $('gachaSub').textContent = 'STEP4';
         try {
           bind();
           renderPull();
