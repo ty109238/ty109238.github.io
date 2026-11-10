@@ -391,3 +391,10 @@ body {
   background: linear-gradient(135deg, #d99a20, #f0c040);
   color: #3a2600; font-weight: 800;
 }
+
+
+/* UR 专属卡背：金色描边 */
+.flip-front.ur-face {
+  border-color: #f0c040;
+  box-shadow: 0 0 14px rgba(240, 192, 64, .65);
+}

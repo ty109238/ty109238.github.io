@@ -295,7 +295,8 @@
       var flip = document.createElement('div');
       flip.className = 'flip-wrap';
       flip.innerHTML =
-        '<div class="flip-face flip-front"><img src="/media/cards/back.webp" alt="卡背"></div>' +
+        '<div class="flip-face flip-front' + (r.variant === 2 ? ' ur-face' : '') + '"><img src="' +
+        (r.variant === 2 ? '/media/cards-ur/back-ur.webp' : '/media/cards/back.webp') + '" alt="卡背"></div>' +
         '<div class="flip-face flip-back"><img src="' + artOf(r.card, r.variant) + '" alt="">' +
         '<span class="flip-badge">' + (r.dup ? ('重复 +' + r.shards + ' 碎片') : (r.variant === 2 ? 'UR 新卡！' : '新卡 ' + VAR_NAMES[r.variant - 1])) + '</span></div>';
 
