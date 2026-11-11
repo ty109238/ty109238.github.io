@@ -66,7 +66,7 @@
             element2: c.element2 || '',
             power: power,
             rarity: rarity,
-            img: '/media/cards/' + pad2(i + 1) + '.webp?v=4',
+            img: '/media/cards/' + pad2(i + 1) + '.webp?v=5',
             fav: favs.has(i + 1)
           };
         });
