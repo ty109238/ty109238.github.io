@@ -3,8 +3,7 @@
   var STORE = 'gacha:v1';
   var PITY_MAX = 60;
   var VARIANTS = 5;                       // 每张卡预留 5 种画风
-  var VAR_NAMES = ['原型', 'UR 画风', '画风 III', '画风 IV', '画风 V'];
-  var UR_RATE = 0.012;   // 每抽出 UR 的概率
+  var VAR_NAMES = ['原型', '画风 II', '画风 III', '画风 IV', '画风 V'];
 
   var RARITY = {
     normal: { key: 'normal', label: '普通', rate: 0.52, shard: 5, cost: 60 },
@@ -143,8 +142,7 @@
             element: c.element,
             power: power,
             rarity: rar,
-            img: '/media/cards/' + pad2(i + 1) + '.webp',
-            imgUr: '/media/cards-ur/' + pad2(i + 1) + '.webp'
+            img: '/media/cards/' + pad2(i + 1) + '.webp'
           };
         });
         state.byRarity = { normal: [], good: [], rare: [], legend: [] };
@@ -179,10 +177,6 @@
     return null;
   }
 
-  function artOf(card, variant) {
-    return variant === 2 ? card.imgUr : card.img;
-  }
-
   function grant(card, forcedVariant) {
     // 已拥有 → 碎片；否则解锁一个画风（默认原型）
     var variant = forcedVariant || 1;
@@ -204,11 +198,7 @@
     for (var i = 0; i < count; i++) {
       save.pity++;
       var card;
-      var isUr = Math.random() < UR_RATE;
-      if (isUr) {
-        card = pickCardOf(rollRarity(false));
-        card.__ur = true;
-      } else if (save.pity >= PITY_MAX && state.pickIdx) {
+      if (save.pity >= PITY_MAX && state.pickIdx) {
         card = findCard(state.pickIdx) || pickCardOf('legend');
         save.pity = 0;
       } else if (save.pity >= PITY_MAX) {
@@ -221,17 +211,14 @@
         if (rar !== 'normal') gotGoodPlus = true;
       }
       if (card.rarity !== 'normal') gotGoodPlus = true;
-      var variantWanted = card.__ur ? 2 : 1;
-      delete card.__ur;
-      var got = grant(card, variantWanted);
+      var got = grant(card);
       save.history.push({
         t: Date.now(),
         idx: card.idx,
         variant: got.variant,
         dup: got.dup,
         shards: got.shards,
-        rarity: card.rarity,
-        ur: variantWanted === 2
+        rarity: card.rarity
       });
       results.push(got);
 
@@ -276,10 +263,6 @@
       d.textContent = RARITY[k].label + ' ' + Math.round(RARITY[k].rate * 100) + '%';
       rl.appendChild(d);
     });
-    var ur = document.createElement('span');
-    ur.className = 'rate-item r-legend';
-    ur.textContent = 'UR 画风 ' + (UR_RATE * 100).toFixed(1) + '%';
-    rl.appendChild(ur);
 
     $('gachaSub').textContent = '已收集 ' + Object.keys(save.owned).length + ' 张 · 保底 ' + save.pity + '/' + PITY_MAX;
   }
@@ -290,15 +273,14 @@
     grid.innerHTML = '';
     results.forEach(function (r, i) {
       var wrap = document.createElement('div');
-      wrap.className = 'res-card' + (r.dup ? '' : ' new') + (r.variant === 2 ? ' ur' : '');
+      wrap.className = 'res-card' + (r.dup ? '' : ' new');
 
       var flip = document.createElement('div');
       flip.className = 'flip-wrap';
       flip.innerHTML =
-        '<div class="flip-face flip-front' + (r.variant === 2 ? ' ur-face' : '') + '"><img src="' +
-        (r.variant === 2 ? '/media/cards-ur/back-ur.webp' : '/media/cards/back.webp') + '" alt="卡背"></div>' +
-        '<div class="flip-face flip-back"><img src="' + artOf(r.card, r.variant) + '" alt="">' +
-        '<span class="flip-badge">' + (r.dup ? ('重复 +' + r.shards + ' 碎片') : (r.variant === 2 ? 'UR 新卡！' : '新卡 ' + VAR_NAMES[r.variant - 1])) + '</span></div>';
+        '<div class="flip-face flip-front"><img src="/media/cards/back.webp" alt="卡背"></div>' +
+        '<div class="flip-face flip-back"><img src="' + r.card.img + '" alt="">' +
+        '<span class="flip-badge">' + (r.dup ? ('重复 +' + r.shards + ' 碎片') : ('新卡 ' + VAR_NAMES[r.variant - 1])) + '</span></div>';
 
       flip.addEventListener('click', function () { flip.classList.toggle('flipped'); });
       wrap.appendChild(flip);
@@ -308,9 +290,7 @@
         flip.classList.add('flipped');
         sfxFlip();
         setTimeout(function () {
-          if (r.variant === 2) sfxLegend();
-          else if (r.dup) sfxDup();
-          else sfxByRarity(r.card.rarity);
+          if (r.dup) sfxDup(); else sfxByRarity(r.card.rarity);
         }, 260);
       }, 260 + i * 130);
     });
@@ -345,8 +325,7 @@
 
       var d = document.createElement('div');
       d.className = 'col-card' + (vars.length ? '' : ' locked');
-      var showUr = vars.indexOf(2) >= 0;
-      d.innerHTML = '<img src="' + (showUr ? c.imgUr : c.img) + '" alt="">' +
+      d.innerHTML = '<img src="' + c.img + '" alt="">' +
         '<span class="rt r-' + c.rarity + '">' + RARITY[c.rarity].label + '</span>' +
         (vars.length ? '<span class="var">' + vars.length + '/' + VARIANTS + ' 画风</span>' : '');
       d.title = vars.length ? c.name : '未获得';
@@ -385,7 +364,7 @@
           var b = document.createElement('button');
           b.type = 'button';
           b.className = 'ex-var' + (has ? ' on' : ' locked');
-          var vcost = vv === 2 ? cost * 3 : cost;
+          var vcost = cost;
           b.innerHTML = VAR_NAMES[vv - 1] + (has ? '<small>已解锁</small>' : '<small>' + vcost + ' 碎片</small>');
           b.addEventListener('click', function () {
             if (has) return;
@@ -455,9 +434,8 @@
       if (!c) return;
       var d = document.createElement('div');
       d.className = 'gift-card' + (state.giftPick === key ? ' on' : '');
-      var gv = parseInt(p[1], 10);
-      d.innerHTML = '<img src="' + artOf(c, gv) + '" alt="' + c.name + '">';
-      d.title = c.name + ' · ' + VAR_NAMES[gv - 1];
+      d.innerHTML = '<img src="' + c.img + '" alt="' + c.name + '">';
+      d.title = c.name + ' · ' + VAR_NAMES[parseInt(p[1], 10) - 1];
       d.addEventListener('click', function () {
         state.giftPick = key;
         var cc = findCard(parseInt(p[0], 10));
@@ -490,7 +468,7 @@
       var row = document.createElement('div');
       row.className = 'his-item';
       row.innerHTML =
-        '<img src="' + artOf(c, h.variant || 1) + '" alt="">' +
+        '<img src="' + c.img + '" alt="">' +
         '<div class="his-info"><b>' + c.name + '</b>' +
           '<small>' + timeText(h.t) + ' · ' + VAR_NAMES[(h.variant || 1) - 1] + '</small></div>' +
         '<span class="his-r ' + h.rarity + '">' + RARITY[h.rarity].label + '</span>' +
