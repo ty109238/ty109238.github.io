@@ -160,12 +160,13 @@ body {
 .grid {
   flex: 1 1 auto;
   min-height: 0;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(3, minmax(0, 1fr));
   place-items: center;
-  align-content: center;
-  gap: 6px;
+  gap: 5px;
+  overflow: hidden;
   transform-origin: center left;
   backface-visibility: hidden;
 }
@@ -196,12 +197,14 @@ body {
   border: 2px solid rgba(43, 34, 24, 0.5);
   box-shadow: 0 5px 12px rgba(60, 45, 25, 0.16);
   max-width: 100%;
+  max-height: 100%;
   cursor: zoom-in;
   overflow: hidden;
 }
 .slot .frame {
   display: flex;
   max-width: 100%;
+  max-height: 100%;
   border-radius: 8px;
   overflow: hidden;
   background: #fff;
@@ -213,7 +216,7 @@ body {
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 30vh;
+  max-height: 100%;
   object-fit: contain;
 }
 .slot .slot-no {
@@ -334,7 +337,7 @@ body {
 }
 
 @media (max-height: 760px) {
-  .slot .frame img { max-height: 25vh; }
+  .grid { gap: 4px; }
   .top { padding: 5px 10px; }
   .tools .tool-btn, #cardSearch { padding: 7px 9px; font-size: 12px; }
 }
