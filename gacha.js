@@ -69,6 +69,66 @@
     } catch (e) {}
   }
 
+
+  /* ---------- 卡包 ---------- */
+  var PACK_META = {
+    0: { name: '彩虹卡包', desc: '全图鉴精选' },
+    24: { name: '伙伴卡包', desc: '新伙伴们' }
+  };
+
+  function packCards(packId) {
+    // 1..23：每包 3 只同族（一阶/二阶/三阶）；24：70-77；0：全部
+    if (packId === 0) return state.cards.map(function (c) { return c.idx; });
+    if (packId === 24) {
+      var out = [];
+      for (var i = 70; i <= 77; i++) out.push(i);
+      return out;
+    }
+    var base = (packId - 1) * 3 + 1;
+    return [base, base + 1, base + 2].filter(function (n) { return n <= 77; });
+  }
+
+  function packName(packId) {
+    if (PACK_META[packId]) return PACK_META[packId].name;
+    var ids = packCards(packId);
+    var first = findCard(ids[0]);
+    return (first ? first.name : '灵宠') + '卡包';
+  }
+
+  function randomPack() {
+    var r = Math.random();
+    if (r < 0.05) return 0;        // 彩虹卡包
+    if (r < 0.10) return 24;       // 伙伴卡包
+    return 1 + Math.floor(Math.random() * 23);
+  }
+
+  function drawFromPack(packId, count) {
+    var ids = packCards(packId);
+    var results = [];
+    for (var i = 0; i < count; i++) {
+      save.pity++;
+      var card;
+      if (save.pity >= PITY_MAX && state.pickIdx) {
+        card = findCard(state.pickIdx) || pickCardOf('legend');
+        save.pity = 0;
+      } else if (save.pity >= PITY_MAX) {
+        card = pickCardOf('legend');
+        save.pity = 0;
+      } else {
+        var rar = rollRarity(false);
+        var pool = ids.map(findCard).filter(function (c) { return c && c.rarity === rar; });
+        if (!pool.length) pool = ids.map(findCard).filter(Boolean);
+        card = pool[Math.floor(Math.random() * pool.length)];
+        if (rar === 'legend') save.pity = 0;
+      }
+      var got = grant(card);
+      save.history.push({ t: Date.now(), idx: card.idx, variant: got.variant,
+                          dup: got.dup, shards: got.shards, rarity: card.rarity });
+      results.push(got);
+    }
+    return results;
+  }
+
   /* ---------- 音效（预生成 WAV，按需预加载） ---------- */
   var SFX = {
     pull: '/media/sfx/pull.wav',
@@ -265,6 +325,160 @@
     });
 
     $('gachaSub').textContent = '已收集 ' + Object.keys(save.owned).length + ' 张 · 保底 ' + save.pity + '/' + PITY_MAX;
+  }
+
+
+  /* ---------- 撕卡包 ---------- */
+  var packFlow = null;
+
+  function startPackFlow(totalCards) {
+    // 10 连至少 3 种不同卡包
+    var packs = [];
+    if (totalCards <= 3) {
+      packs.push({ id: randomPack(), count: 3 });
+    } else {
+      var distinct = [];
+      while (distinct.length < 3) {
+        var id = randomPack();
+        if (distinct.indexOf(id) < 0) distinct.push(id);
+      }
+      var remain = totalCards;
+      distinct.forEach(function (id, i) {
+        var take = i === distinct.length - 1 ? remain : Math.max(2, Math.round(totalCards / distinct.length));
+        take = Math.min(take, remain - (distinct.length - 1 - i) * 2);
+        packs.push({ id: id, count: take });
+        remain -= take;
+      });
+      if (remain > 0) packs[packs.length - 1].count += remain;
+    }
+    packFlow = { packs: packs, index: 0, results: [] };
+    showPackStage();
+  }
+
+  function showPackStage() {
+    var stage = $('packStage');
+    if (!stage) {
+      stage = document.createElement('div');
+      stage.id = 'packStage';
+      stage.className = 'pack-stage';
+      stage.innerHTML =
+        '<div class="pack-wrap" id="packWrap">' +
+          '<img class="pack-img" id="packImg" alt="卡包">' +
+          '<div class="seal" id="packSeal"><span>撕开封口</span></div>' +
+        '</div>' +
+        '<div class="pack-hint" id="packHint">按住封口，从左向右滑动撕开</div>' +
+        '<div class="tear-bar"><i id="tearFill"></i></div>';
+      document.body.appendChild(stage);
+    }
+    stage.classList.remove('hidden');
+    renderPack();
+  }
+
+  function renderPack() {
+    var pf = packFlow;
+    if (!pf) return;
+    var cur = pf.packs[pf.index];
+    if (!cur) { finishPackFlow(); return; }
+    var img = $('packImg');
+    img.src = '/media/packs/' + ('0' + cur.id).slice(-2) + '.webp';
+    $('packHint').textContent = packName(cur.id) + ' · 按住封口从左向右滑动撕开（' + (pf.index + 1) + '/' + pf.packs.length + '）';
+    $('tearFill').style.width = '0%';
+    var seal = $('packSeal');
+    seal.style.transform = '';
+    seal.style.opacity = '';
+    seal.classList.remove('torn');
+    bindTear();
+  }
+
+  var tearState = null;
+
+  function bindTear() {
+    var wrap = $('packWrap'), seal = $('packSeal'), fill = $('tearFill');
+    if (!wrap || !seal) return;
+    tearState = { dragging: false, startX: 0, progress: 0, done: false };
+
+    function setProgress(p) {
+      tearState.progress = Math.max(0, Math.min(1, p));
+      fill.style.width = (tearState.progress * 100) + '%';
+      seal.style.transform = 'translateY(' + (-tearState.progress * 26) + 'px) rotate(' + (-tearState.progress * 4) + 'deg)';
+      seal.style.opacity = String(1 - tearState.progress * 0.65);
+    }
+
+    function onDown(e) {
+      if (tearState.done) return;
+      tearState.dragging = true;
+      tearState.startX = (e.touches ? e.touches[0].clientX : e.clientX);
+      tearState.progress = 0;
+      playSfx('flip', 0.3);
+    }
+    function onMove(e) {
+      if (!tearState.dragging || tearState.done) return;
+      var x = (e.touches ? e.touches[0].clientX : e.clientX);
+      var w = wrap.getBoundingClientRect().width || 240;
+      setProgress((x - tearState.startX) / (w * 0.75));
+      if (tearState.progress >= 0.92) finishTear();
+    }
+    function onUp() {
+      if (tearState.done) return;
+      tearState.dragging = false;
+      if (tearState.progress < 0.92) setProgress(tearState.progress > 0.35 ? 0.35 : 0);
+    }
+    function finishTear() {
+      if (tearState.done) return;
+      tearState.done = true;
+      tearState.dragging = false;
+      seal.classList.add('torn');
+      seal.style.transform = 'translateY(-48px) rotate(-8deg)';
+      seal.style.opacity = '0';
+      playSfx('rare', 0.5);
+      setTimeout(revealPackCards, 380);
+    }
+
+    if (tearState.bound) {
+      tearState.onDown = onDown; tearState.onMove = onMove; tearState.onUp = onUp; tearState.finishTear = finishTear;
+      return;
+    }
+    tearState.bound = true;
+    tearState.onDown = onDown; tearState.onMove = onMove; tearState.onUp = onUp; tearState.finishTear = finishTear;
+
+    seal.addEventListener('mousedown', onDown);
+    seal.addEventListener('touchstart', onDown, { passive: true });
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('touchmove', onMove, { passive: true });
+    window.addEventListener('mouseup', onUp);
+    window.addEventListener('touchend', onUp);
+  }
+
+  function revealPackCards() {
+    var pf = packFlow;
+    var cur = pf.packs[pf.index];
+    var got = drawFromPack(cur.id, cur.count);
+    pf.results = pf.results.concat(got);
+    persist();
+    renderPull();
+
+    // 用结果层展示这一包的卡
+    showResults(got, cur.count);
+    var btn = $('resultClose');
+    btn.textContent = pf.index >= pf.packs.length - 1 ? '全部收下' : '下一包 →';
+    btn.onclick = function () {
+      $('resultLayer').classList.add('hidden');
+      if (pf.index >= pf.packs.length - 1) {
+        finishPackFlow();
+      } else {
+        pf.index++;
+        renderPack();
+      }
+    };
+  }
+
+  function finishPackFlow() {
+    var stage = $('packStage');
+    if (stage) stage.classList.add('hidden');
+    packFlow = null;
+    renderPull();
+    renderCollection();
+    renderHistory();
   }
 
   /* ---------- 结果层 ---------- */
@@ -629,12 +843,14 @@
 
   /* ---------- 初始化 ---------- */
   function bind() {
-    $('pull1').addEventListener('click', function () { sfxClick(); doPull(1, false); });
-    $('pull10').addEventListener('click', function () { sfxClick(); doPull(10, false); });
+    $('pull1').addEventListener('click', function () { sfxClick(); startPackFlow(3); });
+    $('pull10').addEventListener('click', function () { sfxClick(); startPackFlow(10); });
     $('pullFree').addEventListener('click', function () {
       if (save.lastFree === today()) return;
       sfxClick();
-      doPull(10, true);
+      save.lastFree = today();
+      persist();
+      startPackFlow(10);
     });
     $('resultClose').addEventListener('click', function () { $('resultLayer').classList.add('hidden'); });
     $('pickBtn').addEventListener('click', function () { renderPickLayer(); $('pickLayer').classList.remove('hidden'); });

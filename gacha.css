@@ -388,3 +388,48 @@ body {
 }
 
 
+
+
+/* ===== 撕卡包 ===== */
+.pack-stage {
+  position: fixed; inset: 0; z-index: 95;
+  background: radial-gradient(circle at 50% 30%, #2a2018, #120d09 70%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 14px;
+  padding: 20px;
+  touch-action: none;
+}
+.pack-stage.hidden { display: none; }
+.pack-wrap {
+  position: relative;
+  width: min(76vw, 300px);
+  filter: drop-shadow(0 18px 36px rgba(0,0,0,.6));
+  user-select: none;
+}
+.pack-img { width: 100%; display: block; border-radius: 12px; }
+.seal {
+  position: absolute;
+  left: 4%; right: 4%; top: 2.2%;
+  height: 13%;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255,240,200,.95), rgba(226,186,110,.92));
+  border: 2px solid rgba(120, 78, 26, .55);
+  box-shadow: 0 6px 14px rgba(0,0,0,.35), inset 0 -2px 0 rgba(120,78,26,.25);
+  display: flex; align-items: center; justify-content: center;
+  color: #6a4513; font-size: 12px; font-weight: 800; letter-spacing: 2px;
+  cursor: grab;
+  transition: transform .18s, opacity .18s;
+}
+.seal:active { cursor: grabbing; }
+.seal.torn { transition: transform .42s cubic-bezier(.3,.1,.2,1), opacity .42s; }
+.pack-hint { color: #e8d4a8; font-size: 12.5px; text-align: center; line-height: 1.6; }
+.tear-bar {
+  width: min(70vw, 260px); height: 7px; border-radius: 999px;
+  background: rgba(255,255,255,.14); overflow: hidden;
+}
+.tear-bar i {
+  display: block; height: 100%; width: 0%;
+  background: linear-gradient(90deg, #e8b44a, #ffe08a);
+  transition: width .06s linear;
+}
