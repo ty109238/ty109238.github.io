@@ -136,7 +136,8 @@
     rare: '/media/sfx/rare.wav',
     legend: '/media/sfx/legend.wav',
     dup: '/media/sfx/dup.wav',
-    click: '/media/sfx/click.wav'
+    click: '/media/sfx/click.wav',
+    tear: '/media/sfx/tear.wav'
   };
   var sfxCache = {};
 
@@ -364,7 +365,9 @@
       stage.innerHTML =
         '<div class="pack-wrap" id="packWrap">' +
           '<img class="pack-img" id="packImg" alt="卡包">' +
+          '<img class="pack-img pack-top" id="packTop" alt="">' +
           '<div class="seal" id="packSeal"><span>撕开封口</span></div>' +
+          '<div class="paper-layer" id="paperLayer"></div>' +
         '</div>' +
         '<div class="pack-hint" id="packHint">按住封口，从左向右滑动撕开</div>' +
         '<div class="tear-bar"><i id="tearFill"></i></div>';
@@ -379,8 +382,13 @@
     if (!pf) return;
     var cur = pf.packs[pf.index];
     if (!cur) { finishPackFlow(); return; }
+    var srcPack = '/media/packs/' + ('0' + cur.id).slice(-2) + '.webp';
     var img = $('packImg');
-    img.src = '/media/packs/' + ('0' + cur.id).slice(-2) + '.webp';
+    img.src = srcPack;
+    var top = $('packTop');
+    if (top) { top.src = srcPack; top.style.clipPath = tearClip(0); top.style.transform = ''; top.style.opacity = '1'; }
+    var pl = $('paperLayer');
+    if (pl) pl.innerHTML = '';
     $('packHint').textContent = packName(cur.id) + ' · 按住封口从左向右滑动撕开（' + (pf.index + 1) + '/' + pf.packs.length + '）';
     $('tearFill').style.width = '0%';
     var seal = $('packSeal');
@@ -392,6 +400,41 @@
 
   var tearState = null;
 
+  // 生成锯齿撕口（p=0 时在顶部，p=1 时撕到底部）
+  function tearClip(p) {
+    var edge = 0.02 + p * 0.42;          // 撕口所在的相对高度
+    var teeth = 16;
+    var pts = ['0% 0%', '100% 0%'];
+    var jag = 0.012 + p * 0.02;          // 锯齿幅度
+    for (var i = teeth; i >= 0; i--) {
+      var x = (i / teeth) * 100;
+      var y = (edge + (i % 2 === 0 ? -jag : jag)) * 100;
+      pts.push(x.toFixed(2) + '% ' + y.toFixed(2) + '%');
+    }
+    return 'polygon(' + pts.join(', ') + ')';
+  }
+
+  function spawnPaperBits(host, count) {
+    if (!host) return;
+    for (var i = 0; i < count; i++) {
+      var b = document.createElement('i');
+      b.className = 'paper-bit';
+      var dx = (Math.random() - 0.5) * 220;
+      var dy = -40 - Math.random() * 120;
+      var rot = Math.random() * 720 - 360;
+      b.style.setProperty('--dx', dx.toFixed(0) + 'px');
+      b.style.setProperty('--dy', dy.toFixed(0) + 'px');
+      b.style.setProperty('--rot', rot.toFixed(0) + 'deg');
+      b.style.left = (20 + Math.random() * 60) + '%';
+      b.style.top = (14 + Math.random() * 10) + '%';
+      b.style.animationDelay = (Math.random() * 0.12) + 's';
+      host.appendChild(b);
+    }
+    setTimeout(function () {
+      if (host) host.innerHTML = '';
+    }, 1200);
+  }
+
   function bindTear() {
     var wrap = $('packWrap'), seal = $('packSeal'), fill = $('tearFill');
     if (!wrap || !seal) return;
@@ -399,9 +442,15 @@
 
     function setProgress(p) {
       tearState.progress = Math.max(0, Math.min(1, p));
-      fill.style.width = (tearState.progress * 100) + '%';
-      seal.style.transform = 'translateY(' + (-tearState.progress * 26) + 'px) rotate(' + (-tearState.progress * 4) + 'deg)';
-      seal.style.opacity = String(1 - tearState.progress * 0.65);
+      var pr = tearState.progress;
+      fill.style.width = (pr * 100) + '%';
+      seal.style.transform = 'translateY(' + (-pr * 40) + 'px) rotate(' + (-pr * 6) + 'deg)';
+      seal.style.opacity = String(1 - pr * 0.8);
+      var top = $('packTop');
+      if (top) {
+        top.style.clipPath = tearClip(pr * 0.35);
+        top.style.transform = 'translateY(' + (-pr * 10) + 'px)';
+      }
     }
 
     function onDown(e) {
@@ -427,11 +476,21 @@
       if (tearState.done) return;
       tearState.done = true;
       tearState.dragging = false;
+      playSfx('tear', 0.75);
       seal.classList.add('torn');
-      seal.style.transform = 'translateY(-48px) rotate(-8deg)';
+      seal.style.transform = 'translateY(-70px) rotate(-14deg)';
       seal.style.opacity = '0';
-      playSfx('rare', 0.5);
-      setTimeout(revealPackCards, 380);
+
+      var top = $('packTop');
+      if (top) {
+        top.style.clipPath = tearClip(1);
+        top.classList.add('peel');
+        top.style.transform = 'translateY(-64%) rotate(-9deg)';
+        top.style.opacity = '0';
+      }
+      spawnPaperBits($('paperLayer'), 18);
+      setTimeout(function () { playSfx('rare', 0.45); }, 200);
+      setTimeout(revealPackCards, 620);
     }
 
     if (tearState.bound) {

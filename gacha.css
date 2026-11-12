@@ -433,3 +433,32 @@ body {
   background: linear-gradient(90deg, #e8b44a, #ffe08a);
   transition: width .06s linear;
 }
+
+
+/* 撕口上下分层 + 纸屑 */
+.pack-top {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: transform .55s cubic-bezier(.3,.1,.2,1), opacity .55s;
+  will-change: transform, clip-path;
+}
+.pack-top.peel { transition: transform .6s cubic-bezier(.2,.1,.3,1), opacity .6s; }
+.paper-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+.paper-bit {
+  position: absolute;
+  width: 7px; height: 9px;
+  background: linear-gradient(160deg, #fff3d4, #e2be7a);
+  border-radius: 1px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.35);
+  animation: paper-fly .95s ease-out forwards;
+}
+@keyframes paper-fly {
+  0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+  100% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--rot)) scale(.7); }
+}
