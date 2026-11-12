@@ -567,8 +567,27 @@
     var got = cur.results || [];
     pf.results = pf.results.concat(got);
 
-    // 用结果层展示这一包的卡
-    showResults(got, cur.count);
+    // 等这一包的卡图下载完再翻牌（最多等 700ms）
+    var imgs = got.map(function (r) {
+      var im = new Image();
+      im.src = r.card.imgSm || r.card.img;
+      return im;
+    });
+    var done = false;
+    var show = function () {
+      if (done) return;
+      done = true;
+      showResults(got, cur.count);
+    };
+    Promise.all(imgs.map(function (im) {
+      if (im.complete && im.naturalWidth) return Promise.resolve();
+      return new Promise(function (res) {
+        im.onload = im.onerror = res;
+        if (im.decode) im.decode().then(res).catch(res);
+      });
+    })).then(show).catch(show);
+    setTimeout(show, 700);
+    return;
     var btn = $('resultClose');
     btn.textContent = pf.index >= pf.packs.length - 1 ? '全部收下' : '下一包 →';
     btn.onclick = function (ev) {
