@@ -1368,3 +1368,7 @@ body.in-battle .trait-tip span {
   width: 200px;
 }
 body.in-battle .trait-tip { width: auto; }
+
+
+/* 状态类日志：淡紫 */
+body.in-battle .log .status { color: #c9b3ea !important; }
