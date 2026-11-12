@@ -393,7 +393,9 @@ body {
 /* ===== 撕卡包 ===== */
 .pack-stage {
   position: fixed; inset: 0; z-index: 95;
-  background: radial-gradient(circle at 50% 30%, #2a2018, #120d09 70%);
+  background: rgba(24, 16, 10, 0.42);
+  backdrop-filter: blur(7px) saturate(.9);
+  -webkit-backdrop-filter: blur(7px) saturate(.9);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: 14px;
@@ -416,8 +418,7 @@ body {
   background: linear-gradient(180deg, rgba(255,240,200,.95), rgba(226,186,110,.92));
   border: 2px solid rgba(120, 78, 26, .55);
   box-shadow: 0 6px 14px rgba(0,0,0,.35), inset 0 -2px 0 rgba(120,78,26,.25);
-  display: flex; align-items: center; justify-content: center;
-  color: #6a4513; font-size: 12px; font-weight: 800; letter-spacing: 2px;
+  display: block;
   cursor: grab;
   transition: transform .18s, opacity .18s;
 }
@@ -487,3 +488,18 @@ body {
   100% { transform: translateY(0) rotate(0deg) scale(1); }
 }
 .pack-wrap.bounce { animation: pack-bounce .62s cubic-bezier(.3,.9,.3,1); }
+
+
+/* 无文字的封口：只留一条细亮边 + 呼吸微光 */
+.seal.plain {
+  height: 9px;
+  top: 3.2%;
+  background: linear-gradient(180deg, rgba(255, 236, 186, .95), rgba(232, 196, 126, .8));
+  border-width: 1px;
+  box-shadow: 0 0 12px rgba(255, 220, 150, .55);
+  animation: seal-breathe 2.2s ease-in-out infinite;
+}
+@keyframes seal-breathe {
+  0%, 100% { opacity: .85; }
+  50% { opacity: 1; }
+}

@@ -366,12 +366,10 @@
         '<div class="pack-wrap" id="packWrap">' +
           '<img class="pack-img" id="packImg" alt="卡包">' +
           '<img class="pack-img pack-top" id="packTop" alt="">' +
-          '<div class="seal" id="packSeal"><span>撕开封口</span></div>' +
+          '<div class="seal plain" id="packSeal"></div>' +
           '<div class="tear-rim" id="tearRim"></div>' +
           '<div class="paper-layer" id="paperLayer"></div>' +
-        '</div>' +
-        '<div class="pack-hint" id="packHint">按住封口，从左向右滑动撕开</div>' +
-        '<div class="tear-bar"><i id="tearFill"></i></div>';
+        '</div>';
       document.body.appendChild(stage);
     }
     stage.classList.remove('hidden');
@@ -394,8 +392,7 @@
     if (pl) pl.innerHTML = '';
     var rim = $('tearRim');
     if (rim) { rim.style.backgroundImage = RIM_SVG; rim.style.top = '2%'; rim.style.opacity = '0'; }
-    $('packHint').textContent = packName(cur.id) + ' · 按住封口从左向右滑动撕开（' + (pf.index + 1) + '/' + pf.packs.length + '）';
-    $('tearFill').style.width = '0%';
+    
     var seal = $('packSeal');
     seal.style.transform = '';
     seal.style.opacity = '';
@@ -473,7 +470,7 @@
     function setProgress(p) {
       tearState.progress = Math.max(0, Math.min(1, p));
       var pr = tearState.progress;
-      fill.style.width = (pr * 100) + '%';
+      if (fill) fill.style.width = (pr * 100) + '%';
       seal.style.transform = 'translateY(' + (-pr * 40) + 'px) rotate(' + (-pr * 6) + 'deg)';
       seal.style.opacity = String(1 - pr * 0.8);
       var top = $('packTop');
