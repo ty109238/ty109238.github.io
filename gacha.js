@@ -1097,12 +1097,19 @@
     loadState();
     try {
       preloadSfx();
-    setTimeout(function () {
+    (function warm() {
       for (var pi = 0; pi <= 24; pi++) {
         var im = new Image();
+        im.decoding = 'async';
         im.src = '/media/packs/' + ('0' + pi).slice(-2) + '.webp';
       }
-    }, 1200);
+      // 先热身 12 张卡图，抽到时基本已在缓存
+      for (var ci = 1; ci <= 12; ci++) {
+        var c2 = new Image();
+        c2.decoding = 'async';
+        c2.src = '/media/cards-sm/' + ('0' + ci).slice(-2) + '.webp';
+      }
+    })();
       loadCards().then(function () {
         try {
           bind();
