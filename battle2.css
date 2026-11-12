@@ -1372,3 +1372,11 @@ body.in-battle .trait-tip { width: auto; }
 
 /* 状态类日志：淡紫 */
 body.in-battle .log .status { color: #c9b3ea !important; }
+
+
+/* 点击角色也可展开属性浮层（手机） */
+body.in-battle #myActive.show-buffs .buff-pop,
+body.in-battle #enemyActive.show-buffs .buff-pop {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
