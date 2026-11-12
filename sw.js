@@ -1,5 +1,5 @@
 /* 离线缓存：首次打开后，断网也能完整浏览 */
-const VERSION = 'vmwd8ul4k';
+const VERSION = 'vmwd90o6b';
 const SHELL = 'dex-shell-' + VERSION;
 const IMG = 'dex-img-' + VERSION;
 

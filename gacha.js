@@ -528,16 +528,12 @@
     }
 
     window.__finishTear = finishTear;
-    document.addEventListener('mousedown', function (e) {
-      if (e.target && e.target.id === 'packSeal') onDown(e);
-    });
-    document.addEventListener('touchstart', function (e) {
-      if (e.target && e.target.id === 'packSeal') onDown(e);
-    }, { passive: true });
-    document.addEventListener('mousemove', onMove);
-    document.addEventListener('touchmove', onMove, { passive: true });
-    document.addEventListener('mouseup', onUp);
-    document.addEventListener('touchend', onUp);
+    seal.addEventListener('mousedown', onDown);
+    seal.addEventListener('touchstart', onDown, { passive: true });
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('touchmove', onMove, { passive: true });
+    window.addEventListener('mouseup', onUp);
+    window.addEventListener('touchend', onUp);
   }
 
   function finishTear() {
