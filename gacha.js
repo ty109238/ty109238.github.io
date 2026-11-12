@@ -541,7 +541,7 @@
       }
       spawnPaperBits($('paperLayer'), 18);
       setTimeout(function () { playSfx('rare', 0.45); }, 120);
-      setTimeout(revealPackCards, 300);
+      setTimeout(revealPackCards, 140);
     }
 
     if (tearState.bound) {
@@ -567,27 +567,8 @@
     var got = cur.results || [];
     pf.results = pf.results.concat(got);
 
-    // 等这一包的卡图下载完再翻牌（最多等 700ms）
-    var imgs = got.map(function (r) {
-      var im = new Image();
-      im.src = r.card.imgSm || r.card.img;
-      return im;
-    });
-    var done = false;
-    var show = function () {
-      if (done) return;
-      done = true;
-      showResults(got, cur.count);
-    };
-    Promise.all(imgs.map(function (im) {
-      if (im.complete && im.naturalWidth) return Promise.resolve();
-      return new Promise(function (res) {
-        im.onload = im.onerror = res;
-        if (im.decode) im.decode().then(res).catch(res);
-      });
-    })).then(show).catch(show);
-    setTimeout(show, 420);
-    return;
+    showResults(got, cur.count);
+
     var btn = $('resultClose');
     btn.textContent = pf.index >= pf.packs.length - 1 ? '全部收下' : '下一包 →';
     btn.onclick = function (ev) {
@@ -636,7 +617,7 @@
         setTimeout(function () {
           if (r.dup) sfxDup(); else sfxByRarity(r.card.rarity);
         }, 260);
-      }, 260 + i * 130);
+      }, 60 + i * 90);
     });
 
     $('resultTitle').textContent = count === 1 ? '单抽结果' : (count === 10 ? '十连结果' : '抽取结果');
