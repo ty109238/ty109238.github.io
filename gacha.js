@@ -381,6 +381,8 @@
   function renderPack() {
     var pf = packFlow;
     if (!pf) return;
+    var stage1 = $('packStage');
+    if (stage1) stage1.classList.remove('hidden');
     var cur = pf.packs[pf.index];
     if (!cur) { finishPackFlow(); return; }
     var srcPack = '/media/packs/' + ('0' + cur.id).slice(-2) + '.webp';
@@ -546,6 +548,8 @@
   }
 
   function revealPackCards() {
+    var stage0 = $('packStage');
+    if (stage0) stage0.classList.add('hidden');
     var pf = packFlow;
     var cur = pf.packs[pf.index];
     var got = drawFromPack(cur.id, cur.count);
@@ -557,7 +561,8 @@
     showResults(got, cur.count);
     var btn = $('resultClose');
     btn.textContent = pf.index >= pf.packs.length - 1 ? '全部收下' : '下一包 →';
-    btn.onclick = function () {
+    btn.onclick = function (ev) {
+      if (ev) ev.stopPropagation();
       $('resultLayer').classList.add('hidden');
       if (pf.index >= pf.packs.length - 1) {
         finishPackFlow();
