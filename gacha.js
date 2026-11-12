@@ -540,8 +540,8 @@
         setTimeout(function () { wrap2.classList.remove('bounce'); }, 700);
       }
       spawnPaperBits($('paperLayer'), 18);
-      setTimeout(function () { playSfx('rare', 0.45); }, 200);
-      setTimeout(revealPackCards, 620);
+      setTimeout(function () { playSfx('rare', 0.45); }, 120);
+      setTimeout(revealPackCards, 300);
     }
 
     if (tearState.bound) {
@@ -586,7 +586,7 @@
         if (im.decode) im.decode().then(res).catch(res);
       });
     })).then(show).catch(show);
-    setTimeout(show, 700);
+    setTimeout(show, 420);
     return;
     var btn = $('resultClose');
     btn.textContent = pf.index >= pf.packs.length - 1 ? '全部收下' : '下一包 →';
