@@ -203,7 +203,8 @@
             element: c.element,
             power: power,
             rarity: rar,
-            img: '/media/cards/' + pad2(i + 1) + '.webp'
+            img: '/media/cards/' + pad2(i + 1) + '.webp',
+            imgSm: '/media/cards-sm/' + pad2(i + 1) + '.webp'
           };
         });
         state.byRarity = { normal: [], good: [], rare: [], legend: [] };
@@ -392,6 +393,18 @@
     if (pl) pl.innerHTML = '';
     var rim = $('tearRim');
     if (rim) { rim.style.backgroundImage = RIM_SVG; rim.style.top = '2%'; rim.style.opacity = '0'; }
+
+    // 先抽好这一包，边撕边把卡图下载好
+    if (!cur.results) {
+      cur.results = drawFromPack(cur.id, cur.count);
+      persist();
+      renderPull();
+    }
+    cur.results.forEach(function (r) {
+      var im = new Image();
+      im.decoding = 'async';
+      im.src = r.card.imgSm || r.card.img;
+    });
     
     var seal = $('packSeal');
     seal.style.transform = '';
@@ -551,10 +564,8 @@
     if (stage0) stage0.classList.add('hidden');
     var pf = packFlow;
     var cur = pf.packs[pf.index];
-    var got = drawFromPack(cur.id, cur.count);
+    var got = cur.results || [];
     pf.results = pf.results.concat(got);
-    persist();
-    renderPull();
 
     // 用结果层展示这一包的卡
     showResults(got, cur.count);
@@ -593,7 +604,7 @@
       flip.className = 'flip-wrap';
       flip.innerHTML =
         '<div class="flip-face flip-front"><img src="/media/cards/back.webp" alt="卡背"></div>' +
-        '<div class="flip-face flip-back"><img src="' + r.card.img + '" alt="">' +
+        '<div class="flip-face flip-back"><img src="' + (r.card.imgSm || r.card.img) + '" alt="" decoding="async">' +
         '<span class="flip-badge">' + (r.dup ? ('重复 +' + r.shards + ' 碎片') : ('新卡 ' + VAR_NAMES[r.variant - 1])) + '</span></div>';
 
       flip.addEventListener('click', function () { flip.classList.toggle('flipped'); });
@@ -1067,6 +1078,12 @@
     loadState();
     try {
       preloadSfx();
+    setTimeout(function () {
+      for (var pi = 0; pi <= 24; pi++) {
+        var im = new Image();
+        im.src = '/media/packs/' + ('0' + pi).slice(-2) + '.webp';
+      }
+    }, 1200);
       loadCards().then(function () {
         try {
           bind();

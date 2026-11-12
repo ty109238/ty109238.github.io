@@ -525,3 +525,8 @@ body {
   100% { left: 105%; opacity: 0; }
 }
 .seal.plain.hinting-off::after { animation: none; opacity: 0; }
+
+
+/* 结果层性能 */
+.flip-wrap { contain: layout paint; }
+.flip-face img { display: block; }
