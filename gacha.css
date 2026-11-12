@@ -462,3 +462,28 @@ body {
   0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
   100% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--rot)) scale(.7); }
 }
+
+
+/* 撕口毛边（白纸纤维） */
+.tear-rim {
+  position: absolute;
+  left: 0; right: 0;
+  height: 14px;
+  margin-top: -7px;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .35));
+  opacity: 0;
+  pointer-events: none;
+  transition: top .08s linear, opacity .12s;
+  z-index: 3;
+}
+
+/* 撕开后下半包弹动 */
+@keyframes pack-bounce {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  28% { transform: translateY(7px) rotate(-1.2deg) scale(1.012); }
+  58% { transform: translateY(-3px) rotate(0.7deg) scale(1.004); }
+  100% { transform: translateY(0) rotate(0deg) scale(1); }
+}
+.pack-wrap.bounce { animation: pack-bounce .62s cubic-bezier(.3,.9,.3,1); }

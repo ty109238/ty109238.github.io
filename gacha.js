@@ -367,6 +367,7 @@
           '<img class="pack-img" id="packImg" alt="卡包">' +
           '<img class="pack-img pack-top" id="packTop" alt="">' +
           '<div class="seal" id="packSeal"><span>撕开封口</span></div>' +
+          '<div class="tear-rim" id="tearRim"></div>' +
           '<div class="paper-layer" id="paperLayer"></div>' +
         '</div>' +
         '<div class="pack-hint" id="packHint">按住封口，从左向右滑动撕开</div>' +
@@ -389,6 +390,8 @@
     if (top) { top.src = srcPack; top.style.clipPath = tearClip(0); top.style.transform = ''; top.style.opacity = '1'; }
     var pl = $('paperLayer');
     if (pl) pl.innerHTML = '';
+    var rim = $('tearRim');
+    if (rim) { rim.style.backgroundImage = RIM_SVG; rim.style.top = '2%'; rim.style.opacity = '0'; }
     $('packHint').textContent = packName(cur.id) + ' · 按住封口从左向右滑动撕开（' + (pf.index + 1) + '/' + pf.packs.length + '）';
     $('tearFill').style.width = '0%';
     var seal = $('packSeal');
@@ -399,6 +402,31 @@
   }
 
   var tearState = null;
+
+  // 纸张撕裂白边的 SVG（锯齿 + 细微纤维）
+  var RIM_SVG = (function () {
+    var teeth = 26, w = 260, h = 14, step = w / teeth, d = [];
+    d.push('M0 0');
+    for (var i = 0; i <= teeth; i++) {
+      var x = i * step;
+      var y = (i % 2 === 0) ? h * 0.15 : h * 0.85;
+      d.push('L' + x.toFixed(1) + ' ' + y.toFixed(1));
+    }
+    d.push('L' + w + ' 0 Z');
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '">' +
+      '<path d="' + d.join(' ') + '" fill="#fdf8ec"/>' +
+      '<path d="' + d.join(' ') + '" fill="none" stroke="#c9b48c" stroke-width="0.7" opacity="0.55"/>' +
+      '</svg>';
+    return 'url("data:image/svg+xml;utf8,' + encodeURIComponent(svg) + '")';
+  })();
+
+  function placeRim(p) {
+    var rim = $('tearRim');
+    if (!rim) return;
+    var seam = 0.02 + p * 0.35;          // 与 tearClip 的 edge 保持一致
+    rim.style.top = (seam * 100) + '%';
+    rim.style.opacity = p > 0.02 ? '1' : '0';
+  }
 
   // 生成锯齿撕口（p=0 时在顶部，p=1 时撕到底部）
   function tearClip(p) {
@@ -451,6 +479,7 @@
         top.style.clipPath = tearClip(pr * 0.35);
         top.style.transform = 'translateY(' + (-pr * 10) + 'px)';
       }
+      placeRim(pr * 0.35);
     }
 
     function onDown(e) {
@@ -487,6 +516,14 @@
         top.classList.add('peel');
         top.style.transform = 'translateY(-64%) rotate(-9deg)';
         top.style.opacity = '0';
+      }
+      placeRim(0.35);
+      var rim2 = $('tearRim');
+      if (rim2) { rim2.style.opacity = '1'; }
+      var wrap2 = $('packWrap');
+      if (wrap2) {
+        wrap2.classList.add('bounce');
+        setTimeout(function () { wrap2.classList.remove('bounce'); }, 700);
       }
       spawnPaperBits($('paperLayer'), 18);
       setTimeout(function () { playSfx('rare', 0.45); }, 200);
