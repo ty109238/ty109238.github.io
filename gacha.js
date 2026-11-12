@@ -568,6 +568,33 @@
     setTimeout(revealPackCards, 140);
   }
 
+  function revealPackCards() {
+    var pf = packFlow;
+    if (!pf) return;
+    var stage0 = $('packStage');
+    if (stage0) stage0.classList.add('hidden');
+    var cur = pf.packs[pf.index];
+    if (!cur) { finishPackFlow(); return; }
+    var got = cur.results || [];
+    pf.results = pf.results.concat(got);
+
+    showResults(got, cur.count);
+
+    var btn = $('resultClose');
+    var last = pf.index >= pf.packs.length - 1;
+    btn.textContent = last ? '全部收下' : '下一包 →';
+    btn.onclick = function (ev) {
+      if (ev) ev.stopPropagation();
+      $('resultLayer').classList.add('hidden');
+      if (last) {
+        finishPackFlow();
+      } else {
+        pf.index++;
+        renderPack();
+      }
+    };
+  }
+
   function finishPackFlow() {
     var stage = $('packStage');
     if (stage) stage.classList.add('hidden');
