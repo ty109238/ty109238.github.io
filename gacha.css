@@ -528,5 +528,4 @@ body {
 
 
 /* 结果层性能 */
-.flip-wrap { contain: layout paint; }
 .flip-face img { display: block; }
