@@ -397,6 +397,7 @@
     seal.style.transform = '';
     seal.style.opacity = '';
     seal.classList.remove('torn');
+    seal.classList.remove('hinting-off');
     bindTear();
   }
 
@@ -483,6 +484,7 @@
 
     function onDown(e) {
       if (tearState.done) return;
+      if (seal) seal.classList.add('hinting-off');
       tearState.dragging = true;
       tearState.startX = (e.touches ? e.touches[0].clientX : e.clientX);
       tearState.progress = 0;

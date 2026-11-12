@@ -503,3 +503,25 @@ body {
   0%, 100% { opacity: .85; }
   50% { opacity: 1; }
 }
+
+
+/* 封口上的流光提示（无文字） */
+.seal.plain::after {
+  content: "";
+  position: absolute;
+  top: -1px; bottom: -1px;
+  width: 42%;
+  left: -45%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.95), rgba(255,255,255,0));
+  filter: blur(1px);
+  animation: seal-sweep 1.9s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes seal-sweep {
+  0% { left: -45%; opacity: 0; }
+  18% { opacity: .95; }
+  70% { opacity: .9; }
+  100% { left: 105%; opacity: 0; }
+}
+.seal.plain.hinting-off::after { animation: none; opacity: 0; }
