@@ -476,6 +476,8 @@
     }, 1200);
   }
 
+  var tearBound = false;
+
   function bindTear() {
     var wrap = $('packWrap'), seal = $('packSeal'), fill = $('tearFill');
     if (!wrap || !seal) return;
@@ -495,92 +497,79 @@
       placeRim(pr * 0.35);
     }
 
+    tearState.setProgress = setProgress;
+    tearState.seal = seal;
+
+    if (tearBound) return;
+    tearBound = true;
+
     function onDown(e) {
-      if (tearState.done) return;
-      if (seal) seal.classList.add('hinting-off');
-      tearState.dragging = true;
-      tearState.startX = (e.touches ? e.touches[0].clientX : e.clientX);
-      tearState.progress = 0;
+      var t = tearState;
+      if (!t || t.done) return;
+      if (t.seal) t.seal.classList.add('hinting-off');
+      t.dragging = true;
+      t.startX = (e.touches ? e.touches[0].clientX : e.clientX);
+      t.progress = 0;
       playSfx('flip', 0.3);
     }
     function onMove(e) {
-      if (!tearState.dragging || tearState.done) return;
+      var t = tearState;
+      if (!t || !t.dragging || t.done) return;
       var x = (e.touches ? e.touches[0].clientX : e.clientX);
-      var w = wrap.getBoundingClientRect().width || 240;
-      setProgress((x - tearState.startX) / (w * 0.75));
-      if (tearState.progress >= 0.92) finishTear();
+      var w = ($('packWrap') || {}).getBoundingClientRect ? $('packWrap').getBoundingClientRect().width : 240;
+      t.setProgress((x - t.startX) / ((w || 240) * 0.75));
+      if (t.progress >= 0.92) finishTear();
     }
     function onUp() {
-      if (tearState.done) return;
-      tearState.dragging = false;
-      if (tearState.progress < 0.92) setProgress(tearState.progress > 0.35 ? 0.35 : 0);
+      var t = tearState;
+      if (!t || t.done) return;
+      t.dragging = false;
+      if (t.progress < 0.92) t.setProgress(t.progress > 0.35 ? 0.35 : 0);
     }
-    function finishTear() {
-      if (tearState.done) return;
-      tearState.done = true;
-      tearState.dragging = false;
-      playSfx('tear', 0.75);
+
+    window.__finishTear = finishTear;
+    document.addEventListener('mousedown', function (e) {
+      if (e.target && e.target.id === 'packSeal') onDown(e);
+    });
+    document.addEventListener('touchstart', function (e) {
+      if (e.target && e.target.id === 'packSeal') onDown(e);
+    }, { passive: true });
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('touchmove', onMove, { passive: true });
+    document.addEventListener('mouseup', onUp);
+    document.addEventListener('touchend', onUp);
+  }
+
+  function finishTear() {
+    var t = tearState;
+    if (!t || t.done) return;
+    t.done = true;
+    t.dragging = false;
+    playSfx('tear', 0.75);
+    var seal = t.seal;
+    if (seal) {
       seal.classList.add('torn');
       seal.style.transform = 'translateY(-70px) rotate(-14deg)';
       seal.style.opacity = '0';
-
-      var top = $('packTop');
-      if (top) {
-        top.style.clipPath = tearClip(1);
-        top.classList.add('peel');
-        top.style.transform = 'translateY(-64%) rotate(-9deg)';
-        top.style.opacity = '0';
-      }
-      placeRim(0.35);
-      var rim2 = $('tearRim');
-      if (rim2) { rim2.style.opacity = '1'; }
-      var wrap2 = $('packWrap');
-      if (wrap2) {
-        wrap2.classList.add('bounce');
-        setTimeout(function () { wrap2.classList.remove('bounce'); }, 700);
-      }
-      spawnPaperBits($('paperLayer'), 18);
-      setTimeout(function () { playSfx('rare', 0.45); }, 120);
-      setTimeout(revealPackCards, 140);
     }
-
-    if (tearState.bound) {
-      tearState.onDown = onDown; tearState.onMove = onMove; tearState.onUp = onUp; tearState.finishTear = finishTear;
-      return;
+    var top = $('packTop');
+    if (top) {
+      top.style.clipPath = tearClip(1);
+      top.classList.add('peel');
+      top.style.transform = 'translateY(-64%) rotate(-9deg)';
+      top.style.opacity = '0';
     }
-    tearState.bound = true;
-    tearState.onDown = onDown; tearState.onMove = onMove; tearState.onUp = onUp; tearState.finishTear = finishTear;
-
-    seal.addEventListener('mousedown', onDown);
-    seal.addEventListener('touchstart', onDown, { passive: true });
-    window.addEventListener('mousemove', onMove);
-    window.addEventListener('touchmove', onMove, { passive: true });
-    window.addEventListener('mouseup', onUp);
-    window.addEventListener('touchend', onUp);
-  }
-
-  function revealPackCards() {
-    var stage0 = $('packStage');
-    if (stage0) stage0.classList.add('hidden');
-    var pf = packFlow;
-    var cur = pf.packs[pf.index];
-    var got = cur.results || [];
-    pf.results = pf.results.concat(got);
-
-    showResults(got, cur.count);
-
-    var btn = $('resultClose');
-    btn.textContent = pf.index >= pf.packs.length - 1 ? '全部收下' : '下一包 →';
-    btn.onclick = function (ev) {
-      if (ev) ev.stopPropagation();
-      $('resultLayer').classList.add('hidden');
-      if (pf.index >= pf.packs.length - 1) {
-        finishPackFlow();
-      } else {
-        pf.index++;
-        renderPack();
-      }
-    };
+    placeRim(0.35);
+    var rim2 = $('tearRim');
+    if (rim2) rim2.style.opacity = '1';
+    var wrap2 = $('packWrap');
+    if (wrap2) {
+      wrap2.classList.add('bounce');
+      setTimeout(function () { wrap2.classList.remove('bounce'); }, 700);
+    }
+    spawnPaperBits($('paperLayer'), 18);
+    setTimeout(function () { playSfx('rare', 0.45); }, 120);
+    setTimeout(revealPackCards, 140);
   }
 
   function finishPackFlow() {
